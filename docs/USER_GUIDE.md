@@ -71,4 +71,4 @@ Mastery per skill (0 to 100) with evidence: completions, independent solves (no 
 
 ## Settings
 
-Theme, daily goal, voice consent and options, coaching engine (rules by default; optional Claude proxy with separate consent), the optional Go race-detector service URL, export/import/reset of all data, and the live list of what is verified, partial, unverified or planned.
+Target role (which posting your gap map and recommendations are built around), theme, daily goal, voice consent and options, coaching engine (rules by default; optional Claude proxy with separate consent), the optional Go race-detector service URL, export/import/reset of all data, and the live list of what is verified, partial, unverified or planned.

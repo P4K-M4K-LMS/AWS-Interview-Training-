@@ -70,6 +70,8 @@ Legend: **verified** = automated tests pass in CI · **unverified** = implemente
 | Replication-lag simulation: read replica, stale map reads, blocked apply thread, failover data-loss trap | verified (unit + e2e) |
 | Go race-detector service (optional, local): `npm run race-server`, panel in the Go Laboratory and Go missions | verified (unit tests run the real detector on the data-race mission; e2e covers the UI states) |
 | Remaining track content (see docs/CURRICULUM.md) | planned |
+| Target roles: two postings quoted as provided, role picker at onboarding and in Settings, qualification gap map on Learning Paths, weakest-qualification panel on the Dashboard | verified (unit tests on the mapping and the gap engine; e2e picks the serverless role and reads its map) |
+| Serverless track, design-exercise mission type, Agile/Scrum lesson (for the SDE II Serverless role) | planned |
 | Full accessibility audit | planned (skip link, labels, keyboard nav exist) |
 
 ## Known limitations
@@ -83,5 +85,6 @@ Legend: **verified** = automated tests pass in CI · **unverified** = implemente
 
 ## Next steps (in order)
 
-1. More missions per track (see the planned list in CURRICULUM.md: cron/backup script, regex extractor, API client, recursion, BFS, firewall triage, web-log hunt).
-2. Accessibility audit with a screen reader; reduce bundle size by lazy-loading CodeMirror and the interview pages.
+1. For the SDE II Serverless role: a simulated serverless track on the shared engine, then a design-exercise mission type, then the Agile/Scrum lesson and role-specific interview questions.
+2. More missions per track (see the planned list in CURRICULUM.md: cron/backup script, regex extractor, API client, recursion, BFS, firewall triage, web-log hunt).
+3. Accessibility audit with a screen reader; reduce bundle size by lazy-loading CodeMirror and the interview pages.

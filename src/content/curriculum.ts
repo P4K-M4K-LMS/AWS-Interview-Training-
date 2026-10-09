@@ -21,8 +21,6 @@ export const TRACKS: Track[] = [
     shortName: "Linux",
     summary:
       "Navigate, inspect and repair Linux systems from the terminal: files, permissions, processes, services and logs.",
-    postingAlignment:
-      "Supporting area chosen by the learner. Linux skills underpin automation, monitoring and troubleshooting work.",
     skills: [
       S("linux.navigation", "Terminal navigation", "Move around the filesystem with pwd, cd and ls; understand absolute and relative paths."),
       S("linux.files", "File creation and manipulation", "Create, copy, move and delete files and directories.", ["linux.navigation"]),
@@ -43,8 +41,6 @@ export const TRACKS: Track[] = [
     shortName: "Python",
     summary:
       "Write real, executed Python: from variables and loops to file parsing, error handling, testing and automation scripts.",
-    postingAlignment:
-      "Basic qualification: programming experience in a modern language. Preferred qualification: proficiency with Python scripting.",
     skills: [
       S("python.basics", "Variables, types and strings", "Store and transform numbers and strings."),
       S("python.control", "Conditions and loops", "Branch with if/elif/else and repeat with for/while.", ["python.basics"]),
@@ -66,8 +62,6 @@ export const TRACKS: Track[] = [
     shortName: "Algorithms",
     summary:
       "Reason about how work grows with input size, measure it, and pick data structures that keep systems fast.",
-    postingAlignment:
-      "Supporting area chosen by the learner. Underpins the preferred qualification about high-throughput systems.",
     skills: [
       S("algorithms.thinking", "Algorithmic thinking", "Describe a procedure as precise steps and count its operations."),
       S("algorithms.bigo", "Big O notation", "Classify growth as O(1), O(log n), O(n), O(n log n), O(n^2) or exponential.", ["algorithms.thinking"]),
@@ -85,8 +79,6 @@ export const TRACKS: Track[] = [
     shortName: "Network & Security",
     summary:
       "Understand how machines talk, where failures and attacks show up, and how to harden and investigate systems.",
-    postingAlignment:
-      "Basic qualification alternative: CND or GSEC. OpsForge teaches related foundations but is not a certification.",
     skills: [
       S("netsec.addressing", "IP addressing and subnets", "Read addresses, masks and routes."),
       S("netsec.dns-ports", "DNS, ports and protocols", "Resolve names; distinguish TCP/UDP; recognise well-known ports.", ["netsec.addressing"]),
@@ -104,8 +96,6 @@ export const TRACKS: Track[] = [
     shortName: "DevOps",
     summary:
       "Ship changes safely: version control, automated tests, CI/CD pipelines, monitoring, rollbacks and incident documentation.",
-    postingAlignment:
-      "Basic qualification: experience using automation tools for building, testing, releasing or monitoring.",
     skills: [
       S("devops.git", "Git and version control", "Commit, branch, inspect history and recover mistakes."),
       S("devops.testing", "Automated tests", "Make a pipeline fail fast on real defects.", ["devops.git"]),
@@ -122,8 +112,6 @@ export const TRACKS: Track[] = [
     shortName: "Distributed",
     summary:
       "Reason about throughput, latency, failure and consistency in systems made of many cooperating services.",
-    postingAlignment:
-      "Preferred qualifications: experience with highly concurrent, high-throughput systems and complex distributed systems.",
     skills: [
       S("distributed.architecture", "Client/server and dependencies", "Map services, dependencies and traffic flow."),
       S("distributed.concurrency", "Concurrency vs parallelism", "Threads, processes, async, race conditions and locks.", ["distributed.architecture"]),
@@ -189,19 +177,3 @@ export const TRACK_BY_ID = new Map(TRACKS.map((t) => [t.id, t]));
 export function stageInfo(stage: CareerStage): StageInfo {
   return STAGES[stage - 1];
 }
-
-/** Topics the posting lists verbatim; shown on the Learning Paths page. */
-export const POSTING_QUALIFICATIONS = {
-  basic: [
-    "Associate's degree or above, or CND (Certified Network Defender), or GSEC (GIAC Security Essentials).",
-    "Experience programming with at least one modern language such as C++, C#, Java, Python, Go, PowerShell, or Ruby.",
-    "Experience using automation tools for building, testing, releasing, or monitoring.",
-  ],
-  preferred: [
-    "Knowledge of and proficiency with Python scripting.",
-    "Experience with highly concurrent, high-throughput systems.",
-    "Knowledge of complex distributed systems.",
-  ],
-  disclaimer:
-    "OpsForge develops skills related to these qualifications. Completing missions does not satisfy any degree or certification requirement, and the exact job title and responsibilities were not available, so nothing here is presented as an official Amazon requirement.",
-};

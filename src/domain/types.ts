@@ -48,9 +48,53 @@ export interface Track {
   name: string;
   shortName: string;
   summary: string;
-  /** Qualification from the posting this track supports (never invented). */
-  postingAlignment: string;
   skills: Skill[];
+}
+
+/* ------------------------------------------------------------------ */
+/* Target roles (job postings the learner trains toward)               */
+/* ------------------------------------------------------------------ */
+
+export type RoleId = "ops-automation" | "sde2-serverless";
+
+/**
+ * How far OpsForge can take a learner toward one qualification.
+ * trainable: skills and missions exist; partial: some skills exist, gaps are
+ * named; planned: nothing built yet but it is buildable; not-addressable: a
+ * credential, tenure or clearance no training app can supply.
+ */
+export type QualificationCoverage = "trainable" | "partial" | "planned" | "not-addressable";
+
+export interface RoleQualification {
+  id: string;
+  kind: "basic" | "preferred";
+  /** The posting's wording, verbatim. */
+  text: string;
+  coverage: QualificationCoverage;
+  /** Skills whose mastery measures progress toward this qualification (empty when not trainable). */
+  skills: SkillId[];
+  /** Honest note on what is and is not covered. */
+  note: string;
+}
+
+export interface TargetRole {
+  id: RoleId;
+  /** Posting title, or an honest placeholder when the posting did not include one. */
+  title: string;
+  team?: string;
+  location?: string;
+  /** Date shown on the posting, as given. */
+  updated?: string;
+  /** Where the text came from, so nothing here is presented as more official than it is. */
+  source: string;
+  /** Verbatim excerpt of the description, if any was provided. */
+  descriptionExcerpt?: string;
+  qualifications: RoleQualification[];
+  /** One line per track: which qualification it supports for this role. */
+  trackAlignment: Record<TrackId, string>;
+  /** Interview themes to expect for this role, drawn from its qualifications. */
+  interviewFocus: string[];
+  disclaimer: string;
 }
 
 /* ------------------------------------------------------------------ */
@@ -414,6 +458,8 @@ export interface LearnerProfile {
   /** Results of the initial beginner assessment, by skill. */
   assessment: Partial<Record<SkillId, number>>;
   settings: LearnerSettings;
+  /** Posting the learner trains toward; absent on profiles created before roles existed (treated as the default role). */
+  targetRoleId?: RoleId;
 }
 
 export interface SkillEvidence {
