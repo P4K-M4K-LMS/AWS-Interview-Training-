@@ -884,3 +884,36 @@ test("recovery planner: an over-provisioned plan fails the lean check, the right
   await page.getByTestId("lab-tab-recovery").click();
   await expect(page.getByRole("heading", { name: "Recovery planner" })).toBeVisible();
 });
+
+test("alarm lab: a trigger-happy alarm pages on a deploy, the error-rate alarm catches the incident and credits the Study objective", async ({ page }) => {
+  await onboard(page);
+  await page.goto("/#/study/soa-c03/1");
+  const objective = page.getByTestId("study-objective-5");
+  await expect(objective).toContainText("Do it: mission or lab");
+  await objective.getByTestId("study-practise-5").click();
+  await expect(page).toHaveURL(/#\/labs\/alarms\?exercise=alarm-03-right-metric/);
+  await expect(page.getByRole("heading", { name: "Metric alarms" })).toBeVisible();
+  // Exercise 3 as given: the error-rate alarm never fires for the dead-consumer incident.
+  await expect(page.getByTestId("alarm-check-dead-alert")).toHaveAttribute("data-ok", "0");
+  await expect(page.getByTestId("alarm-check-dead-alert")).toContainText("never fired");
+  await expect(page.getByTestId("alarm-check")).toBeDisabled();
+  await page.getByTestId("alarm-chart-toggle-dead").click();
+  await expect(page.getByTestId("alarm-charts")).toContainText("error rate");
+  // A hair-trigger queue alarm catches the incident but also pages on the draining burst.
+  await page.getByTestId("alarm-editable").fill("alert: queueDepth > 300 for 1 of 1");
+  await expect(page.getByTestId("alarm-check-dead-alert")).toHaveAttribute("data-ok", "1");
+  await expect(page.getByTestId("alarm-check-burst-alert")).toContainText("false alarm");
+  // A bad line is reported by number.
+  await page.getByTestId("alarm-editable").fill("alert: queueDepth > 300 for 15 of 15\nqueue is big");
+  await expect(page.getByTestId("alarm-errors")).toContainText("line 2");
+  // The sustained-queue alarm passes and credits the objective.
+  await page.getByTestId("alarm-editable").fill("alert: queueDepth > 300 for 15 of 15");
+  await expect(page.getByTestId("alarm-check")).toBeEnabled();
+  await page.getByTestId("alarm-check").click();
+  await expect(page.getByTestId("alarm-passed")).toContainText("Credited");
+  await page.getByTestId("alarm-back-link").click();
+  await expect(page.getByTestId("study-status-5")).toHaveText("Guided");
+  await page.goto("/#/labs");
+  await page.getByTestId("lab-tab-alarms").click();
+  await expect(page.getByRole("heading", { name: "Metric alarms" })).toBeVisible();
+});

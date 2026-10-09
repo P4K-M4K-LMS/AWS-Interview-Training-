@@ -14,6 +14,7 @@ export const LABS = [
   { to: "/labs/policy", label: "Policies", hint: "Authorization policies with a decision trace" },
   { to: "/labs/network", label: "Network", hint: "Trace a packet through the virtual network" },
   { to: "/labs/dr", label: "Recovery", hint: "Plan recovery to a time, a point and a budget" },
+  { to: "/labs/alarms", label: "Alarms", hint: "Alarms that catch incidents without paging for nothing" },
 ];
 
 export function LabsPage() {

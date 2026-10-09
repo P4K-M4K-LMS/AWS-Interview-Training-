@@ -239,8 +239,14 @@
           "text": "Recommending the metrics that give the clearest visibility into network status",
           "sourceHash": "e31159cadd9c",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "alarms",
+            "exerciseId": "alarm-03-right-metric",
+            "coverage": "partial"
+          }
         },
         {
           "id": "ans-c01:1:24",
@@ -1086,8 +1092,14 @@
           "text": "Implementing automated alarms and custom metrics with CloudWatch",
           "sourceHash": "c34699d739e5",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "alarms",
+            "exerciseId": "alarm-02-periods",
+            "coverage": "partial"
+          }
         },
         {
           "id": "ans-c01:4:13",
@@ -1189,6 +1201,6 @@
     "units": 4,
     "objectives": 109,
     "bookkeeping": 0,
-    "linked": 6
+    "linked": 8
   }
 }

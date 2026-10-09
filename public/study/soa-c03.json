@@ -29,8 +29,15 @@
           "text": "Monitoring different workload shapes -- serverless, compute, AI -- and what changes between them",
           "sourceHash": "be78c4326d66",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "alarms",
+            "exerciseId": "alarm-05-function",
+            "coverage": "partial",
+            "note": "function throttling versus cold starts"
+          }
         },
         {
           "id": "soa-c03:1:3",
@@ -49,8 +56,15 @@
           "text": "Configuring CloudWatch alarms, including composite alarms and the actions they can invoke",
           "sourceHash": "11f3477b9695",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "alarms",
+            "exerciseId": "alarm-06-severity",
+            "coverage": "partial",
+            "note": "thresholds, periods and composite conditions; no actions"
+          }
         },
         {
           "id": "soa-c03:1:5",
@@ -59,8 +73,14 @@
           "text": "Troubleshooting an alarm that never fires, or fires on the wrong thing",
           "sourceHash": "c3522dc81695",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "alarms",
+            "exerciseId": "alarm-03-right-metric",
+            "coverage": "full"
+          }
         },
         {
           "id": "soa-c03:1:6",
@@ -99,8 +119,15 @@
           "text": "Analyzing performance metrics and automating remediation with CloudWatch, AWS Lambda, AWS Systems Manager, and CloudTrail",
           "sourceHash": "c02fd19d7ad2",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "alarms",
+            "exerciseId": "alarm-01-threshold",
+            "coverage": "partial",
+            "note": "reading the metrics; no remediation"
+          }
         },
         {
           "id": "soa-c03:1:10",
@@ -179,8 +206,15 @@
           "text": "Monitoring Amazon RDS with Performance Insights and CloudWatch alarms, and acting on proactive recommendations",
           "sourceHash": "47b0680520b3",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "alarms",
+            "exerciseId": "alarm-04-replica",
+            "coverage": "partial",
+            "note": "replica lag and database saturation"
+          }
         },
         {
           "id": "soa-c03:1:18",
@@ -719,6 +753,6 @@
     "units": 5,
     "objectives": 59,
     "bookkeeping": 0,
-    "linked": 9
+    "linked": 14
   }
 }

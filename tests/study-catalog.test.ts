@@ -8,6 +8,7 @@ import { BOOKKEEPING_UNITS, STUDY_LAB_LINKS, STUDY_LINKS, UNIT_ENGINE_GATES } fr
 import { POLICY_EXERCISE_BY_ID } from "../src/content/study/policyExercises";
 import { NETWORK_EXERCISE_BY_ID } from "../src/content/study/networkExercises";
 import { DR_EXERCISE_BY_ID } from "../src/content/study/drExercises";
+import { ALARM_EXERCISE_BY_ID } from "../src/content/study/alarmExercises";
 import { LAB_LABELS } from "../src/content/study/labs";
 import { ENGINE_GATES, LAB_LINKS, MISSION_LINKS } from "../src/content/study/missionLinks";
 import type { StudyCatalogIndex, StudyCourse } from "../src/domain/types";
@@ -74,6 +75,7 @@ describe("Study catalog (Ascendra snapshot)", () => {
       if (l.lab === "policy") expect(POLICY_EXERCISE_BY_ID.has(l.exerciseId ?? ""), `exercise ${l.exerciseId}`).toBe(true);
       if (l.lab === "network") expect(NETWORK_EXERCISE_BY_ID.has(l.exerciseId ?? ""), `exercise ${l.exerciseId}`).toBe(true);
       if (l.lab === "dr") expect(DR_EXERCISE_BY_ID.has(l.exerciseId ?? ""), `exercise ${l.exerciseId}`).toBe(true);
+      if (l.lab === "alarms") expect(ALARM_EXERCISE_BY_ID.has(l.exerciseId ?? ""), `exercise ${l.exerciseId}`).toBe(true);
     }
     const labLinked = built.courses.flatMap((c) => c.units.flatMap((u) => u.objectives.filter((o) => o.link?.kind === "lab")));
     expect(labLinked).toHaveLength(STUDY_LAB_LINKS.length);

@@ -94,17 +94,17 @@
         "units": 4,
         "objectives": 98,
         "bookkeeping": 0,
-        "linked": 13
+        "linked": 15
       },
       "modalities": {
-        "do-existing": 13,
+        "do-existing": 15,
         "do-new": 0,
-        "read": 85,
+        "read": 83,
         "combo": 0,
         "explain": 0
       },
       "file": "dva-c02.json",
-      "hash": "351ec92a80bf4f4b"
+      "hash": "a9a614b09962096b"
     },
     {
       "id": "soa-c03",
@@ -119,17 +119,17 @@
         "units": 5,
         "objectives": 59,
         "bookkeeping": 0,
-        "linked": 9
+        "linked": 14
       },
       "modalities": {
-        "do-existing": 9,
+        "do-existing": 14,
         "do-new": 0,
-        "read": 50,
+        "read": 45,
         "combo": 0,
         "explain": 0
       },
       "file": "soa-c03.json",
-      "hash": "63eedc88b100f8b9"
+      "hash": "0948e2293ef20c09"
     },
     {
       "id": "dea-c01",
@@ -144,17 +144,17 @@
         "units": 4,
         "objectives": 113,
         "bookkeeping": 0,
-        "linked": 3
+        "linked": 4
       },
       "modalities": {
-        "do-existing": 3,
+        "do-existing": 4,
         "do-new": 0,
-        "read": 110,
+        "read": 109,
         "combo": 0,
         "explain": 0
       },
       "file": "dea-c01.json",
-      "hash": "a71e14bc3faf9006"
+      "hash": "e3e79eaa4ec18a70"
     },
     {
       "id": "mla-c02",
@@ -169,17 +169,17 @@
         "units": 4,
         "objectives": 107,
         "bookkeeping": 0,
-        "linked": 2
+        "linked": 3
       },
       "modalities": {
-        "do-existing": 2,
+        "do-existing": 3,
         "do-new": 0,
-        "read": 105,
+        "read": 104,
         "combo": 0,
         "explain": 0
       },
       "file": "mla-c02.json",
-      "hash": "7b8cdd035033ad43"
+      "hash": "7ba30394cc33c742"
     },
     {
       "id": "sap-c02",
@@ -195,17 +195,17 @@
         "units": 4,
         "objectives": 113,
         "bookkeeping": 0,
-        "linked": 8
+        "linked": 10
       },
       "modalities": {
-        "do-existing": 8,
+        "do-existing": 10,
         "do-new": 0,
-        "read": 105,
+        "read": 103,
         "combo": 0,
         "explain": 0
       },
       "file": "sap-c02.json",
-      "hash": "68d5daf3f9dc6624"
+      "hash": "f9d2b6a18e55d3eb"
     },
     {
       "id": "dop-c02",
@@ -220,17 +220,17 @@
         "units": 6,
         "objectives": 114,
         "bookkeeping": 0,
-        "linked": 8
+        "linked": 11
       },
       "modalities": {
-        "do-existing": 8,
+        "do-existing": 11,
         "do-new": 0,
-        "read": 106,
+        "read": 103,
         "combo": 0,
         "explain": 0
       },
       "file": "dop-c02.json",
-      "hash": "c804e84b6f271635"
+      "hash": "12a80ea41a49bd4e"
     },
     {
       "id": "scs-c03",
@@ -271,17 +271,17 @@
         "units": 4,
         "objectives": 109,
         "bookkeeping": 0,
-        "linked": 6
+        "linked": 8
       },
       "modalities": {
-        "do-existing": 6,
+        "do-existing": 8,
         "do-new": 0,
-        "read": 103,
+        "read": 101,
         "combo": 0,
         "explain": 0
       },
       "file": "ans-c01.json",
-      "hash": "082f159a7d851193"
+      "hash": "2bb67dcc12e5a365"
     },
     {
       "id": "mscs",
