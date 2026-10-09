@@ -835,6 +835,13 @@ export const GENERAL_QUESTIONS: InterviewQuestion[] = [
     kind: "behavioral",
   },
   {
+    id: "general-agile",
+    principleId: null,
+    text: "Tell me about working in an Agile or Scrum team. How did you handle unplanned work during a sprint?",
+    listeningFor: ["The sprint goal and your role on the team", "What the unplanned work was and how you made it visible", "What you personally did (split, re-plan, backlog, retrospective)", "What changed in the next sprint"],
+    kind: "behavioral",
+  },
+  {
     id: "general-4",
     principleId: null,
     text: "Tell me about a time you disagreed with a teammate.",

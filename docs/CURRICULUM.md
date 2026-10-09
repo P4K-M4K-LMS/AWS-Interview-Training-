@@ -15,7 +15,7 @@ The learner picks a target role at onboarding (changeable in Settings). Each rol
 | B. Python Programming | Basic qualification (modern language); preferred (Python scripting) | Modern language (Python; Go on track F) | basics, control, functions, collections, errors, files, data (JSON/CSV), regex, testing, automation, OOP, async |
 | C. Data Structures, Algorithms and Big O | Learner priority; supports high-throughput reasoning | Supporting: scaling and throughput reasoning | thinking, bigo, search, sorting, structures, recursion, trees/graphs, optimization |
 | D. Networking and Defensive Security | Basic qualification alternative (CND/GSEC foundations, not equivalence) | Systems engineering fundamentals (networking) | addressing, dns/ports, http, troubleshooting, authz, hardening, logs, incident |
-| E. Automation, DevOps and Monitoring | Basic qualification (automation tools for build/test/release/monitor) | Supporting: reliability practices behind the design qualification | git, testing, cicd, config, containers, monitoring, release |
+| E. Automation, DevOps and Monitoring | Basic qualification (automation tools for build/test/release/monitor) | Supporting: reliability practices behind the design qualification; preferred: Agile/Scrum (lesson) | git, testing, cicd, config, containers, monitoring, release, agile |
 | F. Concurrency and Distributed Systems | Preferred qualifications (concurrent/high-throughput; distributed systems) | Designing/architecting for reliability and scaling; distributed systems at scale | architecture, concurrency, queues, performance, scaling, resilience, consistency, observability |
 | G. Serverless and Event-Driven Systems | Supporting: event-driven designs | Preferred: building services with managed function platforms (concepts only, simulated; not AWS experience) | functions, scaling (concurrency/cold starts), events (retries/DLQ), idempotency, observability |
 
@@ -62,6 +62,7 @@ Nothing here claims to satisfy a degree, certification, tenure or clearance requ
 | 30 | Incident: customers charged twice after function timeouts | Serverless | 29 | idempotency, events, resilience |
 | 31 | Write an idempotent event handler | Serverless (Python) | 30, 26 | idempotency, errors |
 | 32 | Design exercise: the vehicle-position ingest and map read path | Serverless (design) | 29 | architecture, scaling, serverless scaling/events |
+| 33 | Agile and Scrum for an operations engineer (lesson + scenario quiz) | DevOps (lesson) | 10 | agile |
 | 17 | Go for a Python engineer: a config parser with real error values | Distributed (Go) | 8 | python.basics, architecture |
 | 18 | A worker pool: goroutines, channels and WaitGroups | Distributed (Go) | 17 | concurrency, queues |
 | 19 | Timeouts and cancellation with context and select | Distributed (Go) | 18 | resilience, concurrency |

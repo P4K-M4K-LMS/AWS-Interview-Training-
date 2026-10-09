@@ -47,6 +47,10 @@ Security investigations run on isolated fictional hosts. The monitoring page is 
 
 Some missions ship their own command-line tools, listed at the end of `help`: `ci run` / `ci log` / `ci status` execute and inspect a simulated pipeline defined in `.ci/pipeline.yml`; `deployctl status` / `history` / `rollback VERSION` manage which release is live; `metrics errors` / `latency` query the live service. The pipeline runner reacts to the real repository state, and the checks reject shortcuts: a retry that happens to pass, a skipped test, a secret pasted into the pipeline file, or a rollback that is never verified.
 
+### Lesson missions
+
+Some topics are process rather than practice (Agile and Scrum). A lesson mission shows the lesson inline, gives a concrete fictional scenario, and checks understanding with a short quiz; a wrong answer tells you which section to re-read without giving the answer away. The interview cue at the bottom says how the topic comes up in interviews and how to shape a STAR answer.
+
 ### Design exercises
 
 A design mission gives you requirements with numbers (peak load, latency budget, monthly budget, which paths may not have a single point of failure, what must never be lost) and a palette of components, each with its cost, capacity, latency and failure mode. Pick one per slot and the **Consequences** panel recomputes cost, capacity, read latency, single points of failure and durability live. Then size the numbers the requirements imply (rate × duration, events ÷ throughput), answer **failure drills** whose correct answer depends on the components you chose, and write a justification. The rubric is transparent and structural: it checks the numbers and that you named your components and tradeoffs; it cannot judge whether the reasoning is good, and it says so. Use the reflection prompt and the interview coach for that.

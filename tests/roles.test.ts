@@ -52,8 +52,8 @@ describe("role gap map", () => {
   it("starts at zero and averages only mapped qualifications", () => {
     const gap = roleGapMap(roleFor("sde2-serverless"), new Map(), new Map());
     expect(gap.trainablePct).toBe(0);
-    expect(gap.counts).toEqual({ trainable: 2, partial: 3, planned: 1, "not-addressable": 3 });
-    expect(gap.qualifications.filter((q) => q.pct === null)).toHaveLength(4);
+    expect(gap.counts).toEqual({ trainable: 2, partial: 4, planned: 0, "not-addressable": 3 });
+    expect(gap.qualifications.filter((q) => q.pct === null)).toHaveLength(3);
     expect(gap.weakest?.pct).toBe(0);
     const first = nextMissionForGap(gap);
     expect(first).not.toBeNull();

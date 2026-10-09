@@ -9,8 +9,9 @@ import { cicdMissions } from "./cicd";
 import { goMissions } from "./go";
 import { serverlessIncidents, serverlessPythonMissions } from "./serverless";
 import { designMissions } from "./design";
+import { agileMissions } from "./agile";
 
-export const MISSIONS: Mission[] = [...linuxMissions, ...pythonMissions, ...bigoMissions, ...netsecMissions, ...devopsMissions, ...cicdMissions, ...incidentMissions, ...goMissions, ...serverlessIncidents, ...serverlessPythonMissions, ...designMissions];
+export const MISSIONS: Mission[] = [...linuxMissions, ...pythonMissions, ...bigoMissions, ...netsecMissions, ...devopsMissions, ...cicdMissions, ...incidentMissions, ...goMissions, ...serverlessIncidents, ...serverlessPythonMissions, ...designMissions, ...agileMissions];
 export const MISSION_BY_ID = new Map(MISSIONS.map((m) => [m.id, m]));
 
 export function missionsForTrack(trackId: TrackId): Mission[] {
@@ -34,6 +35,7 @@ export const RECOMMENDED_ORDER: string[] = [
   "python-04-fleet-report",
   "bigo-03-structures",
   "devops-01-broken-pipeline",
+  "agile-01-scrum-for-engineers",
   "devops-02-green-locally-red-in-ci",
   "devops-03-bad-release-rollback",
   "devops-04-secret-wiring",
