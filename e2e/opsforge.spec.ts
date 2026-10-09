@@ -308,6 +308,45 @@ test("serverless incident: size the function's concurrency from rate × duration
   await expect(page.getByText("Mission complete: explain what you did")).toBeVisible();
 });
 
+test("design exercise: choose components, see consequences, size, answer drills from the design, justify", async ({ page }) => {
+  test.setTimeout(120_000);
+  await onboard(page);
+  const now = new Date().toISOString();
+  const done = (missionId: string) => ({ missionId, schemaVersion: 1, status: "completed", attempts: 1, hintsUsed: 0, maxHintLevel: 0, bestScore: 1, startedAt: now, completedAt: now, reflections: [] });
+  const bundle = { app: "opsforge", schemaVersion: 1, exportedAt: now, missions: ["linux-01-find-your-way", "linux-02-log-detective", "linux-03-locked-out", "devops-01-broken-pipeline", "incident-01-cache-stampede", "incident-02-traffic-surge", "serverless-01-throttled-function", "serverless-02-poison-messages"].map(done) };
+  await page.goto("/#/settings");
+  await page.locator('input[type="file"]').setInputFiles({ name: "progress.json", mimeType: "application/json", buffer: Buffer.from(JSON.stringify(bundle)) });
+  await expect(page.getByText(/Imported .*8 mission records/)).toBeVisible();
+
+  await page.goto("/#/missions/design-01-position-ingest");
+  await expect(page.getByText("Consequences of your design")).toBeVisible({ timeout: 20_000 });
+  // A wrong design first: the consequences panel names the single point of failure and the capacity shortfall.
+  await page.getByTestId("opt-ingest-vm").check();
+  await page.getByTestId("opt-buffer-direct").check();
+  await page.getByTestId("opt-storage-single-db").check();
+  await page.getByTestId("opt-read-direct-read").check();
+  await expect(page.getByTestId("design-derived")).toContainText("Single VM running the API (write)");
+  await expect(page.getByTestId("design-derived")).toContainText("800/s");
+  await expect(page.getByTestId("mission-checks")).toContainText("capacity 800/s");
+  // Fix the design.
+  await page.getByTestId("opt-ingest-function").check();
+  await page.getByTestId("opt-buffer-durable-queue").check();
+  await page.getByTestId("opt-storage-kv-store").check();
+  await page.getByTestId("opt-read-cache").check();
+  await expect(page.getByTestId("design-derived")).toContainText("820");
+  await expect(page.getByTestId("design-derived")).toContainText("none");
+  await page.getByTestId("qty-concurrency").fill("300");
+  await page.getByTestId("qty-consumers").fill("100");
+  await page.getByTestId("qty-dlq").fill("3");
+  await page.getByTestId("drill-storage-outage-0").check();
+  await page.getByTestId("drill-primary-failover-0").check();
+  await expect(page.getByText(/^Correct\. Only a durable queue/)).toBeVisible();
+  await page.getByTestId("design-justification").fill("Ingest with a function behind an API gateway for scale at low cost; a durable queue so a storage failure delays writes instead of losing them; the key-value store is eventually consistent, fine for a map; the cache keeps read latency at 25 ms. Total cost 820.");
+  await expect(page.getByText(/^Checks \((\d+)\/\1\)$/)).toBeVisible({ timeout: 20_000 });
+  await page.getByTestId("mission-complete").click();
+  await expect(page.getByText("Mission complete: explain what you did")).toBeVisible();
+});
+
 test("CI/CD: a flaky test is fixed at the cause, not retried or skipped", async ({ page }) => {
   await onboard(page);
   const now = new Date().toISOString();

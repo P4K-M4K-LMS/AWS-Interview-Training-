@@ -32,6 +32,7 @@ describe("mission catalogue integrity", () => {
     expect(MISSIONS.filter((m) => m.trackId === "devops").length).toBe(5);
     expect(by("incident")).toBe(7);
     expect(by("go")).toBe(5);
+    expect(by("design")).toBe(1);
   });
   it("every mission in the recommended order becomes available in sequence", () => {
     const progress = new Map<string, MissionProgress>();

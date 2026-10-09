@@ -22,6 +22,7 @@ From an empty repository to a deployed, tested web application: a Linux/Python/G
 | #10 | Five missions for the thin tracks: disk full, runaway process (Linux), cron persistence / reverse shell (security), CSV→JSON report (Python), hash tables vs lists (Big O); shell gains virtual file sizes, `truncate`, and established connections in `ss` |
 | #11 | Target roles: the original posting and the SDE II Lambda/Serverless posting (pasted by the owner) as selectable roles; qualification gap map with honest coverage labels; role picker at onboarding and in Settings; dashboard panel |
 | #12 | Serverless track G on the shared engine: function concurrency/throttling, cold starts/provisioned concurrency, poison messages/DLQ, retries/idempotency; three incidents + an idempotent-handler Python mission; the AWS-products qualification moves from planned to partly covered |
+| #13 | Design-exercise mission type (`kind: "design"`): components with cost/capacity/latency/failure modes, a transparent rubric that computes consequences, sizing ranges, design-dependent failure drills and a structural justification check; first exercise: position ingest + map read path |
 
 Feature branches still exist on GitHub (`ccr-221527a4-xf3zs7`, `lp-verified-interview-cues`, `retention-checks`, `phase7-incidents`, `cicd-failure-modes`, `go-runner-spike`); this environment cannot delete remote branches, so delete them from the Branches page.
 
@@ -41,16 +42,17 @@ Feature branches still exist on GitHub (`ccr-221527a4-xf3zs7`, `lp-verified-inte
 - `src/engine/python/*` + `src/workers/python.worker.ts`: Pyodide in a worker, 10 s kill switch. `src/engine/go/runner.ts` + `src/workers/go.worker.ts` + `go/runner/main.go`: Yaegi in a classic worker; built by `scripts/build-go-runner.mjs` into `public/go/` (gitignored; CI installs Go 1.24).
 - `src/engine/sim/*`: platform simulation (load, cache, database capacity, queue accumulation, logs) and the incident state machine. `src/engine/cicd/pipeline.ts`: pipeline runner and the `ci` program.
 - `src/engine/learner/*`: mastery, spaced repetition, retention checks, recommendations. `src/engine/missions/engine.ts`: status, attempts, hints, completion.
+- `src/engine/design/evaluate.ts`: design-exercise rubric (cost sum, weakest write-path capacity, read-path latency sum, SPOFs, durability, sizing ranges, design-dependent drills, structural justification). `src/components/players/DesignMissionPlayer.tsx` renders it.
 - `src/engine/interview/*`: STAR analysis, gap detection, Dive Deeper follow-ups, rubric scoring. `src/content/leadershipPrinciples.ts`: 16 LPs (verified 2026-10-09).
 - `src/content/missions/*`: all missions; the level-4 hint of every terminal mission is a runnable guided example that the test suite executes.
 
-## Verification state (PR #12 head)
+## Verification state (PR #13 head)
 
 | Check | Result |
 |---|---|
 | `npm run typecheck` / `npm run lint` | 0 errors |
-| `npm run test` | 97 passed, 1 skipped placeholder |
-| `npm run test:e2e` | 30 passed (15 scenarios, desktop + Pixel 5) |
+| `npm run test` | 101 passed, 1 skipped placeholder |
+| `npm run test:e2e` | 32 passed (16 scenarios, desktop + Pixel 5) |
 | `npm run build` | succeeds |
 
 Unverified by automation: voice recognition/synthesis (browser-only), the Claude proxy (needs a key), realistic timed interview mode UI.
@@ -63,8 +65,8 @@ Unverified by automation: voice recognition/synthesis (browser-only), the Claude
 
 ## Open items, in order
 
-1. Merge PR #12 when CI is green.
-2. For the serverless role: design-exercise mission type, Agile/Scrum lesson, role-specific interview questions.
+1. Merge PR #13 when CI is green.
+2. For the serverless role: Agile/Scrum lesson, role-specific interview questions, more design exercises.
 3. More missions per track (see `docs/CURRICULUM.md` planned list).
 4. Accessibility audit; lazy-load CodeMirror and the interview pages to cut the 1.2 MB bundle.
 5. Manual checks the owner can do: voice in Chrome/Edge; the Claude proxy with `ANTHROPIC_API_KEY=... npm run coach-server`.

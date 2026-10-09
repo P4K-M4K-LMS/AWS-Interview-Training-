@@ -72,7 +72,8 @@ Legend: **verified** = automated tests pass in CI · **unverified** = implemente
 | Remaining track content (see docs/CURRICULUM.md) | planned |
 | Target roles: two postings quoted as provided, role picker at onboarding and in Settings, qualification gap map on Learning Paths, weakest-qualification panel on the Dashboard | verified (unit tests on the mapping and the gap engine; e2e picks the serverless role and reads its map) |
 | Serverless track: simulated function platform on the shared engine (concurrency limit / throttling, cold starts / provisioned concurrency, poison messages / DLQ, retries / idempotency); 3 incidents + 1 Python handler mission | verified (unit tests prove each solvable and reject the symptom-only fixes; e2e on the throttled-function incident) |
-| Design-exercise mission type, Agile/Scrum lesson, role-specific interview questions (for the SDE II Serverless role) | planned |
+| Design-exercise mission type: components with cost/capacity/latency/failure modes, computed consequences, sizing arithmetic, design-dependent failure drills, structural justification check; 1 exercise (position ingest + map read path) | verified (unit tests on the rubric; e2e completes the exercise after a wrong design first) |
+| Agile/Scrum lesson, role-specific interview questions, more design exercises (for the SDE II Serverless role) | planned |
 | Full accessibility audit | planned (skip link, labels, keyboard nav exist) |
 
 ## Known limitations
@@ -86,6 +87,6 @@ Legend: **verified** = automated tests pass in CI · **unverified** = implemente
 
 ## Next steps (in order)
 
-1. For the SDE II Serverless role: a design-exercise mission type, then the Agile/Scrum lesson and role-specific interview questions.
+1. For the SDE II Serverless role: the Agile/Scrum lesson and role-specific interview questions; more design exercises.
 2. More missions per track (see the planned list in CURRICULUM.md: cron/backup script, regex extractor, API client, recursion, BFS, firewall triage, web-log hunt).
 3. Accessibility audit with a screen reader; reduce bundle size by lazy-loading CodeMirror and the interview pages.
