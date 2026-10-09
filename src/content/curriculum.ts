@@ -104,6 +104,7 @@ export const TRACKS: Track[] = [
       S("devops.containers", "Containers and infrastructure as code", "Package services and declare infrastructure.", ["devops.config"]),
       S("devops.monitoring", "Monitoring, metrics and alerts", "Turn metrics into actionable alerts.", ["devops.cicd"]),
       S("devops.release", "Rollbacks and release management", "Recover quickly and document incidents.", ["devops.monitoring"]),
+      S("devops.agile", "Agile and Scrum practice", "Work in sprints: backlog, planning, daily scrum, review, retrospective; bring operational work into the process.", []),
     ],
   },
   {

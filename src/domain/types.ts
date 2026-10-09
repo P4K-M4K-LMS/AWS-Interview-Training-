@@ -102,7 +102,7 @@ export interface TargetRole {
 /* Missions                                                            */
 /* ------------------------------------------------------------------ */
 
-export type MissionKind = "terminal" | "python" | "go" | "bigo" | "investigation" | "incident" | "design";
+export type MissionKind = "terminal" | "python" | "go" | "bigo" | "investigation" | "incident" | "design" | "lesson";
 
 /** Languages with an in-browser runtime. */
 export type CodeLanguage = "python" | "go";
@@ -548,7 +548,26 @@ export interface DesignMission extends MissionBase {
   referenceDesign: { choices: Record<string, string>; quantities: Record<string, number>; justification: string };
 }
 
-export type Mission = TerminalMission | CodeMission | BigOMission | InvestigationMission | IncidentMission | DesignMission;
+/* --- Lesson missions (knowledge with a check quiz; for process topics) --- */
+
+export interface QuizQuestion {
+  id: string;
+  prompt: string;
+  options: string[];
+  correctIndex: number;
+  explanation: string;
+}
+
+export interface LessonMission extends MissionBase {
+  kind: "lesson";
+  /** Short scenario the quiz questions refer to. */
+  scenario: string;
+  quiz: QuizQuestion[];
+  /** How this topic comes up in interviews and how to answer. */
+  interviewCue: string;
+}
+
+export type Mission = TerminalMission | CodeMission | BigOMission | InvestigationMission | IncidentMission | DesignMission | LessonMission;
 
 /* ------------------------------------------------------------------ */
 /* Learner state (persisted)                                           */

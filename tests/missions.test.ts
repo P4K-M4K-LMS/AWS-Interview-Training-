@@ -29,7 +29,8 @@ describe("mission catalogue integrity", () => {
     expect(by("python")).toBe(5);
     expect(by("bigo")).toBe(3);
     expect(MISSIONS.filter((m) => m.trackId === "netsec").length).toBe(2);
-    expect(MISSIONS.filter((m) => m.trackId === "devops").length).toBe(5);
+    expect(MISSIONS.filter((m) => m.trackId === "devops").length).toBe(6);
+    expect(by("lesson")).toBe(1);
     expect(by("incident")).toBe(7);
     expect(by("go")).toBe(5);
     expect(by("design")).toBe(1);

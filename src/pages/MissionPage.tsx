@@ -10,6 +10,7 @@ import { CodeMissionPlayer } from "../components/players/CodeMissionPlayer";
 import { BigOMissionPlayer } from "../components/players/BigOMissionPlayer";
 import { IncidentPlayer } from "../components/players/IncidentPlayer";
 import { DesignMissionPlayer } from "../components/players/DesignMissionPlayer";
+import { LessonMissionPlayer } from "../components/players/LessonMissionPlayer";
 import { Callout, EmptyState } from "../components/ui";
 
 export function MissionPage() {
@@ -110,6 +111,8 @@ export function MissionPage() {
         return <IncidentPlayer key={key} mission={mission} {...common} />;
       case "design":
         return <DesignMissionPlayer key={key} mission={mission} {...common} />;
+      case "lesson":
+        return <LessonMissionPlayer key={key} mission={mission} {...common} />;
     }
   })();
 

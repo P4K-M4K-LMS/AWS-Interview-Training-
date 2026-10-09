@@ -180,7 +180,8 @@ test("target role: pick the serverless posting, see its gap map, switch roles in
   await expect(page.getByTestId("gap-b6")).toContainText("Not addressable in OpsForge");
   await expect(page.getByTestId("gap-b6")).toContainText("Top Secret with SCI");
   await expect(page.getByTestId("gap-p2")).toContainText("Partly covered");
-  await expect(page.getByTestId("gap-p3")).toContainText("Planned, not built");
+  await expect(page.getByTestId("gap-p3")).toContainText("Partly covered");
+  await expect(page.getByTestId("gap-p3")).toContainText("Agile and Scrum for an operations engineer");
   await expect(page.getByTestId("gap-b4")).toContainText("Trainable here");
   await expect(page.getByTestId("gap-b4")).toContainText("Your first script: an uptime report");
   await page.getByTestId("role-select").selectOption("ops-automation");
@@ -343,6 +344,31 @@ test("design exercise: choose components, see consequences, size, answer drills 
   await expect(page.getByText(/^Correct\. Only a durable queue/)).toBeVisible();
   await page.getByTestId("design-justification").fill("Ingest with a function behind an API gateway for scale at low cost; a durable queue so a storage failure delays writes instead of losing them; the key-value store is eventually consistent, fine for a map; the cache keeps read latency at 25 ms. Total cost 820.");
   await expect(page.getByText(/^Checks \((\d+)\/\1\)$/)).toBeVisible({ timeout: 20_000 });
+  await page.getByTestId("mission-complete").click();
+  await expect(page.getByText("Mission complete: explain what you did")).toBeVisible();
+});
+
+test("lesson mission: read the Scrum lesson, answer the scenario quiz, complete", async ({ page }) => {
+  await onboard(page);
+  const now = new Date().toISOString();
+  const done = (missionId: string) => ({ missionId, schemaVersion: 1, status: "completed", attempts: 1, hintsUsed: 0, maxHintLevel: 0, bestScore: 1, startedAt: now, completedAt: now, reflections: [] });
+  const bundle = { app: "opsforge", schemaVersion: 1, exportedAt: now, missions: ["linux-01-find-your-way", "linux-02-log-detective", "linux-03-locked-out", "devops-01-broken-pipeline"].map(done) };
+  await page.goto("/#/settings");
+  await page.locator('input[type="file"]').setInputFiles({ name: "progress.json", mimeType: "application/json", buffer: Buffer.from(JSON.stringify(bundle)) });
+  await expect(page.getByText(/Imported .*4 mission records/)).toBeVisible();
+  await page.goto("/#/missions/agile-01-scrum-for-engineers");
+  await expect(page.getByText("Check yourself", { exact: true })).toBeVisible({ timeout: 20_000 });
+  await expect(page.getByText("Sprint 14 at Nimbus Freight")).toBeVisible();
+  // A wrong answer explains itself without giving the answer away.
+  await page.getByTestId("quiz-q1-0").check();
+  await expect(page.getByText(/^Not quite\./).first()).toBeVisible();
+  await page.getByTestId("quiz-q1-1").check();
+  await page.getByTestId("quiz-q2-1").check();
+  await page.getByTestId("quiz-q3-1").check();
+  await page.getByTestId("quiz-q4-1").check();
+  await page.getByTestId("quiz-q5-0").check();
+  await page.getByTestId("quiz-q6-2").check();
+  await expect(page.getByText("Checks (6/6)")).toBeVisible();
   await page.getByTestId("mission-complete").click();
   await expect(page.getByText("Mission complete: explain what you did")).toBeVisible();
 });
