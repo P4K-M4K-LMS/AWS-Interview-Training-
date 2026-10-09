@@ -3,6 +3,7 @@
 ## Requirements
 
 - Node.js 22 or newer (npm 10+)
+- Optional: Go 1.22 or newer, to build the Go Laboratory runtime (`npm run build:go`). Without Go the app still builds and runs; the Go Laboratory shows that its runtime is unavailable.
 - A modern browser. Chrome or Edge give the best voice support; Firefox works for everything except microphone speech recognition.
 
 ## Install and run
@@ -12,7 +13,7 @@ npm ci            # or: npm install
 npm run dev       # http://localhost:5173
 ```
 
-The first dev/build run copies the Pyodide runtime (about 14 MB) from `node_modules/pyodide` into `public/pyodide/`. That folder is gitignored and regenerated automatically. The Python Laboratory loads it once per browser and then uses the browser cache.
+The first dev/build run copies the Pyodide runtime (about 14 MB) from `node_modules/pyodide` into `public/pyodide/`, and, when a Go toolchain is present, compiles the Go runner (Yaegi interpreter, about 38 MB raw / 8 MB compressed) from `go/runner` into `public/go/`. Both folders are gitignored and regenerated automatically; set `SKIP_GO_BUILD=1` to skip the Go step. The Python Laboratory loads it once per browser and then uses the browser cache.
 
 ## Tests
 

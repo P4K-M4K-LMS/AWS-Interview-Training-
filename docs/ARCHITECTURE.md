@@ -12,6 +12,7 @@ OpsForge is a single-page web application. Everything a learner needs runs in th
 | Persistence | IndexedDB via Dexie 4 | Structured local storage with live queries |
 | Code editor | CodeMirror 6 | Lightweight Python highlighting |
 | Python | Pyodide (CPython 3.14 compiled to WebAssembly) in a Web Worker | Real execution, isolated from the UI thread, killable on timeout |
+| Go | Yaegi (Go interpreter) compiled to WebAssembly from `go/runner`, in a classic Web Worker | Real Go semantics incl. goroutines/channels, offline, same timeout model; built in CI with the Go toolchain |
 | Terminal | Custom deterministic simulator | Safe, inspectable state for validation; no host shell |
 | Tests | Vitest (unit, Node + jsdom) and Playwright (e2e) | Engines tested in Node; acceptance criteria tested in a real browser |
 | Optional coaching | Node HTTP server + `@anthropic-ai/sdk` | Keeps the key server-side; falls back to rules |
@@ -31,6 +32,10 @@ src/
   engine/python/execute.ts   Pyodide execution core (shared by worker and Node tests)
   engine/python/runner.ts    Main-thread worker client with timeout/restart
   workers/python.worker.ts   The Web Worker that owns the interpreter
+  engine/go/runner.ts        Go worker client (same contract as the Python runner)
+  workers/go.worker.ts       Classic worker: loads wasm_exec.js + gorunner.wasm, exposes goRun
+go/runner/main.go            Yaegi-based runner exposing goRun(code, testsJSON) via syscall/js
+scripts/build-go-runner.mjs  Builds public/go/gorunner.wasm (skips with a warning without Go)
   engine/bigo/algorithms.ts  Instrumented algorithms, step recorder, growth tables
   engine/sim/model.ts        Platform simulation: config → metrics, queue accumulation, coherent logs
   engine/sim/incident.ts     Incident state machine: actions, inspection, root cause, recovery, checks
@@ -62,6 +67,7 @@ server/index.ts              Optional coaching proxy
 
 ## Safety
 
+- Learner Go runs in the Yaegi interpreter inside WebAssembly in a Web Worker: no filesystem, network or cgo; the worker is terminated after 10 seconds.
 - Learner Python runs in a Web Worker inside WebAssembly. It has no access to the page, the filesystem or the network, and the main thread terminates the worker after 10 seconds.
 - The terminal is a simulation. Unsupported commands return `command not found` and say so; `help` documents the subset.
 - The proxy never embeds keys in the client; the client sends transcripts only, size-limited and CORS-restricted by `COACH_ALLOWED_ORIGIN`.

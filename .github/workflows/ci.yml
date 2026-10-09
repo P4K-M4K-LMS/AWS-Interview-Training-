@@ -12,6 +12,10 @@ jobs:
         with:
           node-version: 22
           cache: npm
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.24"
+          cache-dependency-path: go/runner/go.sum
       - run: npm ci
       - run: npm run typecheck
       - run: npm run lint

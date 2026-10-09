@@ -9,6 +9,7 @@ export type FeatureStatus = "verified" | "partial" | "unverified" | "planned";
 export const FEATURE_STATUS: Array<{ feature: string; status: FeatureStatus; note: string }> = [
   { feature: "Terminal simulator", status: "verified", note: "48 documented commands, pipes, redirection, permissions, processes, services. Unit-tested." },
   { feature: "Python execution (Pyodide)", status: "verified", note: "Real CPython 3.14 in a Web Worker with a 10s timeout. Execution core unit-tested in Node; browser worker checked end-to-end." },
+  { feature: "Go Laboratory (Yaegi interpreter in WebAssembly)", status: "verified", note: "Real Go incl. goroutines, channels, select, sync, generics and most of the standard library, in a Web Worker with a 10s timeout. Single-threaded WebAssembly: no data races or race detector. Runtime built from go/runner in CI; Node + browser tests." },
   { feature: "Big O laboratory", status: "verified", note: "9 instrumented algorithms, step-through, growth tables, comparisons. Unit-tested." },
   { feature: "16 missions", status: "verified", note: "3 Linux, 3 Python, 2 Big O, 1 security, 4 CI/CD, 3 incidents. Each verified completable by automated tests; shortcut fixes (retry, skip, paste a secret, shed traffic) are rejected." },
   { feature: "Persistent progress", status: "verified", note: "IndexedDB via Dexie; export/import/reset. Covered by tests and e2e reload check." },

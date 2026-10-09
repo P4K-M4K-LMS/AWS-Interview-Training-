@@ -10,6 +10,7 @@ export const NAV = [
   { to: "/missions", label: "Mission Control", icon: "◎" },
   { to: "/terminal", label: "Linux Terminal", icon: ">_" },
   { to: "/python", label: "Python Laboratory", icon: "py" },
+  { to: "/go", label: "Go Laboratory", icon: "go" },
   { to: "/algorithms", label: "Algorithms Laboratory", icon: "∑" },
   { to: "/security", label: "Security Operations", icon: "⛨" },
   { to: "/monitoring", label: "System Monitoring", icon: "▥" },
