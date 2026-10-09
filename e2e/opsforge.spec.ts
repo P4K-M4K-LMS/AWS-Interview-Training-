@@ -346,7 +346,7 @@ test("serverless incident: size the function's concurrency from rate × duration
   await expect(page.getByTestId("stat-fn-concurrency")).toContainText("36 / 10");
   await expect(page.getByTestId("stat-fn-throttled")).toContainText("72%");
   await page.getByTestId("tab-logs").click();
-  await expect(page.getByTestId("incident-logs")).toContainText("Rate exceeded");
+  await expect(page.getByTestId("incident-logs")).toContainText("concurrency limit reached");
   await page.getByTestId("tab-diagram").click();
   await expect(page.getByTestId("node-fn-sync")).toContainText("72% throttled");
   await page.getByTestId("root-cause-1").check();
