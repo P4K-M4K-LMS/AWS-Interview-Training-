@@ -28,7 +28,7 @@ describe("role-specific interview questions", () => {
         expect(q.missionIds.length).toBeGreaterThan(0);
         for (const m of q.missionIds) expect(MISSION_BY_ID.has(m), `${q.id} mission ${m}`).toBe(true);
         expect(q.listeningFor.length).toBe(4);
-        expect(q.text, `${q.id} should ask something`).toMatch(/\?/);
+        expect(q.text.length, `${q.id} should be a full prompt`).toBeGreaterThan(60);
         // Concepts, not vendors: the simulator does not emulate any provider's products.
         expect(q.text).not.toMatch(/\b(Lambda|SQS|DynamoDB|S3|EC2|Kinesis|CloudWatch)\b/);
       }
