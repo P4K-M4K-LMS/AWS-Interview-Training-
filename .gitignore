@@ -32,3 +32,6 @@ coverage/
 # Local secrets for the optional coaching proxy
 .env
 .env.local
+
+# Generated Go runner (built from go/runner by scripts/build-go-runner.mjs)
+public/go/

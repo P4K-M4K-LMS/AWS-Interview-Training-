@@ -239,3 +239,19 @@ test("CI/CD: a flaky test is fixed at the cause, not retried or skipped", async 
   await page.getByTestId("mission-complete").click();
   await expect(page.getByText("Mission complete: explain what you did")).toBeVisible();
 });
+
+test("Go Laboratory: runs real Go with goroutines in the browser and reports compile errors", async ({ page }) => {
+  test.setTimeout(180_000);
+  await onboard(page);
+  await page.goto("/#/go");
+  await expect(page.getByTestId("go-status")).toContainText("Go ready", { timeout: 120_000 });
+  await page.getByTestId("go-run").click();
+  await expect(page.getByTestId("python-stdout")).toContainText("processed 5 jobs with 3 workers", { timeout: 60_000 });
+  const editor = page.locator(".cm-content");
+  await editor.click();
+  await page.keyboard.press("Control+A");
+  await page.keyboard.insertText('package main\nimport "fmt"\nfunc main() { fmt.Println(nope) }\n');
+  await page.getByTestId("go-run").click();
+  await expect(page.getByTestId("python-error")).toContainText("undefined: nope", { timeout: 60_000 });
+  await expect(page.getByText("About this undefined identifier")).toBeVisible();
+});

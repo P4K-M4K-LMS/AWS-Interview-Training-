@@ -6,6 +6,7 @@ import { MissionControlPage } from "./pages/MissionControlPage";
 import { MissionPage } from "./pages/MissionPage";
 import { TerminalPage } from "./pages/TerminalPage";
 import { PythonLabPage } from "./pages/PythonLabPage";
+import { GoLabPage } from "./pages/GoLabPage";
 import { AlgorithmsLabPage } from "./pages/AlgorithmsLabPage";
 import { SecurityOpsPage } from "./pages/SecurityOpsPage";
 import { MonitoringPage } from "./pages/MonitoringPage";
@@ -32,6 +33,7 @@ export const routes: RouteObject[] = [
       { path: "missions/:missionId", element: <MissionPage /> },
       { path: "terminal", element: <TerminalPage /> },
       { path: "python", element: <PythonLabPage /> },
+      { path: "go", element: <GoLabPage /> },
       { path: "algorithms", element: <AlgorithmsLabPage /> },
       { path: "security", element: <SecurityOpsPage /> },
       { path: "monitoring", element: <MonitoringPage /> },

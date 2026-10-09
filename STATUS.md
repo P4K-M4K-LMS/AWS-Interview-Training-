@@ -2,7 +2,7 @@
 
 Resume-from-here document for multi-session work. Update on every phase.
 
-**Last updated:** 2026-10-09 · branch `cicd-failure-modes` (PRs #1-#4 merged; site live at https://paukennick.github.io/AWS-Interview-Training-/)
+**Last updated:** 2026-10-09 · branch `go-runner-spike` (PRs #1-#5 merged; site live at https://paukennick.github.io/AWS-Interview-Training-/)
 
 ## Decisions (do not re-litigate without reason)
 
@@ -12,6 +12,7 @@ Resume-from-here document for multi-session work. Update on every phase.
 - Delivery: one draft PR, one commit per phase.
 - Job posting: only the qualifications in the master prompt are used; no title or responsibilities are invented.
 - Pyodide is served from `public/pyodide/` (copied from node_modules at build time) because public CDNs may be unreachable; this also makes the lab work offline.
+- Go runs in the browser through Yaegi (a Go interpreter) compiled to WebAssembly from `go/runner`, built by `scripts/build-go-runner.mjs` (needs a Go toolchain; CI installs Go 1.24). Decided 2026-10-09 over a backend runner so the GitHub Pages site stays self-contained; a local `go test -race` service remains an option for race-detector lessons.
 
 ## Feature status
 
@@ -63,7 +64,9 @@ Legend: **verified** = automated tests pass in CI · **unverified** = implemente
 | Incident management console + 3 incident missions (cache stampede, traffic surge, dead consumers) | verified (unit tests prove solvable and reject symptom-only fixes; e2e on incident 1) |
 | System architecture visualizer with live health | verified (e2e) |
 | CI/CD failure-mode missions: flaky test, bad release rollback, secret wiring (simulated pipeline runner, mission tools) | verified (unit tests prove solvable and reject shortcuts; e2e on the flaky-test mission) |
-| Concurrency/race, retries/idempotency, replication lag simulations | planned |
+| Go Laboratory: Yaegi-in-WebAssembly runtime, worker with timeout, free-play page | verified (Node runner tests + browser e2e) |
+| Go missions (worker pool, timeouts/context, retries/idempotency) | planned (next slice) |
+| Concurrency/race (needs race detector: optional local service), replication lag simulations | planned |
 | Remaining track content (see docs/CURRICULUM.md) | planned |
 | Full accessibility audit | planned (skip link, labels, keyboard nav exist) |
 
@@ -71,11 +74,13 @@ Legend: **verified** = automated tests pass in CI · **unverified** = implemente
 
 - Mission availability depends only on prerequisite missions (fixed 2026-10-09: skill-prerequisite gating could lock a mission behind the skill it teaches). Skill mastery gates stage promotion.
 - The terminal is a simulation: no globbing, loops, functions or package managers. Missions may ship their own tools (e.g. `ci`, `deployctl`, `metrics`), listed by `help`. `sed` follows POSIX basic-regex semantics (parentheses literal unless escaped) and substitutes once per line.
+- The Go runtime is 37.6 MB raw (about 8 MB gzip-compressed) and is fetched only when the Go Laboratory opens. WebAssembly is single-threaded, so goroutine interleaving is cooperative: concurrency semantics are faithful, data races are not reproducible and the race detector is unavailable.
 - The rule-based coach matches linguistic cues; it cannot judge truth or technical correctness and says so in every report.
 - Voice features depend on the browser and were only checked manually in design; CI cannot exercise microphones.
 
 ## Next steps (in order)
 
-1. Remaining Phase 7: concurrency (race condition, locking) and resilience (retries, idempotency, replication lag) simulations on the shared engine.
-2. More missions per track (see CURRICULUM.md).
-3. Accessibility audit with a screen reader; reduce bundle size by lazy-loading CodeMirror and the interview pages.
+1. Go missions on the new runtime: Go basics for a Python learner, worker pool draining a queue, timeouts and context cancellation, retries with backoff and idempotency keys (generalise the Python mission player into a code-mission player with a language field).
+2. Remaining Phase 7: replication-lag scenario on the shared engine; optional local `go test -race` service for a data-race lesson.
+3. More missions per track (see CURRICULUM.md).
+4. Accessibility audit with a screen reader; reduce bundle size by lazy-loading CodeMirror and the interview pages.

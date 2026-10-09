@@ -27,6 +27,10 @@ A simulator with a documented subset of commands (type `help`). It has a real fi
 
 Real CPython runs in your browser. Press **Run** to execute and see real output or a real traceback (with a plain-language explanation for common errors). Press **Run tests** to run the mission's test cases; they execute your functions directly, so names and return values matter. Infinite loops are stopped after 10 seconds.
 
+### Go Laboratory
+
+Real Go runs in your browser through an interpreter compiled to WebAssembly. Goroutines, channels, select, WaitGroups, mutexes, generics and most of the standard library work; there is no network, filesystem or race detector, and goroutines interleave cooperatively because WebAssembly is single-threaded. Press Run for real output or a compiler error with a plain-language explanation. The runtime (about 8 MB compressed) downloads the first time you open the lab.
+
 ### Algorithms Laboratory
 
 Pick an algorithm and an input size, press Run. You get an **operation count** (deterministic, the thing Big O describes) and an **elapsed time** (measured on your device, noisy). For small n you can step through the algorithm. Growth tables and side-by-side comparison show how work scales.

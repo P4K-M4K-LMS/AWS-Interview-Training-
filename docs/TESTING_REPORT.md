@@ -1,15 +1,15 @@
 # Testing report
 
-Executed on 2026-10-09 (updated after the CI/CD failure-mode missions) in the build environment (Linux, Node 22.22, Chromium 1194 via Playwright 1.64). Every number below comes from a real run; nothing is estimated.
+Executed on 2026-10-09 (updated after the Go runtime spike) in the build environment (Linux, Node 22.22, Chromium 1194 via Playwright 1.64). Every number below comes from a real run; nothing is estimated.
 
 ## Commands
 
 ```
 npm run typecheck   # tsc -b                      -> 0 errors
 npm run lint        # oxlint                      -> 0 errors, 11 warnings (React fast-refresh / effect style; no behaviour impact)
-npm run test        # vitest run                  -> 8 files, 65 tests passed
+npm run test        # vitest run                  -> 9 files, 68 tests passed, 1 skipped (the "artifact not built" placeholder, which only runs without a Go toolchain)
 npm run build       # vite build                  -> dist/ 15 MB incl. Pyodide runtime; app JS 1.2 MB (390 kB gzip)
-npm run test:e2e    # playwright test             -> 20 passed (10 scenarios × desktop + Pixel 5), 0 failed
+npm run test:e2e    # playwright test             -> 22 passed (11 scenarios × desktop + Pixel 5), 0 failed
 ```
 
 ## Unit and engine tests (Vitest)
@@ -20,6 +20,7 @@ npm run test:e2e    # playwright test             -> 20 passed (10 scenarios × 
 | `tests/python-execute.test.ts` | 6 | real CPython (Pyodide 3.14) stdout capture; real tracebacks with exception type; test cases in learner namespace; isolation between runs; stdin to input(); tests skipped when the program itself fails |
 | `tests/bigo.test.ts` | 5 | growth ratios match classes (linear ≈10×, binary <25 ops at 1M, bubble >50× for 10×n, constant flat); exponential cap; step recording only for small n; sorts produce sorted output; theoretical reference for every algorithm |
 | `tests/missions.test.ts` | 14 | catalogue counts (3 Linux, 3 Python, 2 Big O, 1 security, 4 CI/CD, 3 incidents); all skills/prereqs exist; every mission in the recommended order becomes available in sequence; every terminal/investigation mission starts unsolved and is solved by executing its level-4 guided example; every Python mission's starter fails and reference solution passes all tests |
+| `tests/go-runner.test.ts` | 3 | Yaegi WebAssembly runner in Node: goroutines, channels, mutex, generics produce exact output once; compile errors carry line numbers and runtime panics do not crash the runtime; test snippets run in the program namespace with separated output |
 | `tests/cicd.test.ts` | 5 | pipeline parsing (env, steps, comments); `ci` program stops at the first failing step, writes the log, reports status; flaky-test mission: retry fails, skipping makes CI green but fails the mission checks; secret-wiring mission: pasted token refused by secret scanning, reference fix passes; rollback mission: sudo required, unknown release rejected, metrics follow the live release, deploy log appended |
 | `tests/incidents.test.ts` | 8 | simulation reacts coherently to each lever; queue accumulates and drains; logs carry evidence; every incident opens unhealthy with unmet checks; cache stampede solved only by re-warming the cache (workers/traffic shedding rejected); traffic surge solved only by sizing both workers and consumers; dead consumers solved by restarting enough consumers; out-of-runbook actions ignored and the recovery timer resets on every action |
 | `tests/retention.test.ts` | 4 | retention check refuses non-completed missions; passing adds +8 mastery, doubles the interval and records history/activity; giving up subtracts 12 and schedules a review in one day; a due skill is recommended as a retention check on its completed mission |
@@ -39,6 +40,7 @@ Mapped to the nonnegotiable acceptance criteria (Part 20). Each runs on a deskto
 | 18–20 | Skill progress page; Settings "what works today" feature status; mobile layout renders | passed |
 | keyboard | Skip link focusable and visible on focus; desktop Tab order reaches navigation | passed |
 | retention | Complete a mission, reopen with `?retention=1`: fresh environment (0/3 checks), hints disabled, confirm after redoing it, "Retention check passed" shown and evidence recorded | passed |
+| go | Go Laboratory loads the WebAssembly runtime, runs the worker-pool starter (real output), then a program with an undefined identifier shows the compiler error and its explanation | passed |
 | cicd | Unlock via Settings import; `ci log`, `ci run` (retry fails), inspect the test, `sed` the local-time call to UTC, `ci run` green, answer the retry question, 6/6 checks, complete | passed |
 | incident | Import a progress bundle via Settings to unlock the incident; console opens unhealthy; logs show the cache expiry evidence; metrics and diagram render; correct root cause; re-warm cache; advance; health turns healthy; note written; 5/5 checks; complete | passed |
 
