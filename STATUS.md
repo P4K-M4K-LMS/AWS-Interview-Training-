@@ -83,6 +83,8 @@ Three groups with plain names: **Learn** (Today, Curriculum, Missions), **Practi
 
 ## Known limitations
 
+- Pages load on demand, so a browser that still holds the previous `index.html` right after a deploy can request chunk files that no longer exist. The app reloads once automatically when that happens and otherwise shows a readable error page with a Reload button instead of a blank page; progress is in IndexedDB and is unaffected. A hard refresh also fixes it.
+
 - Mission availability depends only on prerequisite missions (fixed 2026-10-09: skill-prerequisite gating could lock a mission behind the skill it teaches). Skill mastery gates stage promotion.
 - The terminal is a simulation: no globbing, loops, functions or package managers. Missions may ship their own tools (e.g. `ci`, `deployctl`, `metrics`), listed by `help`. Large files carry a virtual size (shown by ls/du/df/stat) without storing gigabytes of content; `truncate -s 0` empties a file in place and, like real bash, `sudo echo > FILE` does not elevate the redirection. `sed` follows POSIX basic-regex semantics (parentheses literal unless escaped) and substitutes once per line.
 - Code missions are generic over language (`kind: "python" | "go"`); the player picks the runtime and editor mode. Yaegi quirk found: a `range` over a slice literal evaluated at the interpreter top level can nil-dereference, so mission test snippets avoid top-level `range`.
