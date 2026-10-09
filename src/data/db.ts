@@ -1,6 +1,7 @@
 import Dexie, { type EntityTable } from "dexie";
 import {
   SCHEMA_VERSION,
+  SUPPORTED_SCHEMA_VERSIONS,
   type ActivityEvent,
   type ExportBundle,
   type InterviewSession,
@@ -10,6 +11,8 @@ import {
   type SkillState,
   type Story,
   type StudyDay,
+  type StudyObjectiveState,
+  type StudyUnitState,
 } from "../domain/types";
 
 /**
@@ -25,6 +28,8 @@ export class OpsForgeDB extends Dexie {
   sessions!: EntityTable<InterviewSession, "id">;
   activity!: EntityTable<ActivityEvent, "id">;
   studyDays!: EntityTable<StudyDay, "date">;
+  studyObjectives!: EntityTable<StudyObjectiveState, "objectiveId">;
+  studyUnits!: EntityTable<StudyUnitState, "id">;
 
   constructor(name = "opsforge") {
     super(name);
@@ -36,6 +41,12 @@ export class OpsForgeDB extends Dexie {
       sessions: "id, mode, startedAt, principleId, storyId",
       activity: "++id, at, type, missionId",
       studyDays: "date",
+    });
+    // v2 (Study catalog): objective status and unit scenario attempts. The
+    // v1 stores are unchanged, so an existing database upgrades in place.
+    this.version(2).stores({
+      studyObjectives: "objectiveId, courseId, unitId, status, nextReviewAt",
+      studyUnits: "id, courseId",
     });
   }
 }
@@ -124,13 +135,15 @@ export async function logActivity(event: Omit<ActivityEvent, "id" | "at">, datab
 }
 
 export async function exportAll(database: OpsForgeDB = db): Promise<ExportBundle> {
-  const [profile, skills, missions, stories, sessions, activity] = await Promise.all([
+  const [profile, skills, missions, stories, sessions, activity, studyObjectives, studyUnits] = await Promise.all([
     database.profile.get("me"),
     database.skills.toArray(),
     database.missions.toArray(),
     database.stories.toArray(),
     database.sessions.toArray(),
     database.activity.toArray(),
+    database.studyObjectives.toArray(),
+    database.studyUnits.toArray(),
   ]);
   return {
     app: "opsforge",
@@ -142,6 +155,8 @@ export async function exportAll(database: OpsForgeDB = db): Promise<ExportBundle
     stories,
     sessions,
     activity,
+    studyObjectives,
+    studyUnits,
   };
 }
 
@@ -149,8 +164,8 @@ export function validateBundle(data: unknown): ExportBundle {
   if (!data || typeof data !== "object") throw new Error("Import file is not a JSON object.");
   const b = data as Partial<ExportBundle>;
   if (b.app !== "opsforge") throw new Error("This file was not exported by OpsForge.");
-  if (b.schemaVersion !== SCHEMA_VERSION) {
-    throw new Error(`Unsupported schema version ${String(b.schemaVersion)} (expected ${SCHEMA_VERSION}).`);
+  if (typeof b.schemaVersion !== "number" || !SUPPORTED_SCHEMA_VERSIONS.includes(b.schemaVersion)) {
+    throw new Error(`Unsupported schema version ${String(b.schemaVersion)} (expected one of ${SUPPORTED_SCHEMA_VERSIONS.join(", ")}).`);
   }
   return b as ExportBundle;
 }
@@ -158,7 +173,7 @@ export function validateBundle(data: unknown): ExportBundle {
 export async function importAll(bundle: ExportBundle, database: OpsForgeDB = db, mode: "merge" | "replace" = "merge") {
   await database.transaction(
     "rw",
-    [database.profile, database.skills, database.missions, database.stories, database.sessions, database.activity],
+    [database.profile, database.skills, database.missions, database.stories, database.sessions, database.activity, database.studyObjectives, database.studyUnits],
     async () => {
       if (mode === "replace") {
         await Promise.all([
@@ -167,6 +182,8 @@ export async function importAll(bundle: ExportBundle, database: OpsForgeDB = db,
           database.stories.clear(),
           database.sessions.clear(),
           database.activity.clear(),
+          database.studyObjectives.clear(),
+          database.studyUnits.clear(),
         ]);
       }
       if (bundle.profile) await database.profile.put(bundle.profile);
@@ -177,6 +194,8 @@ export async function importAll(bundle: ExportBundle, database: OpsForgeDB = db,
       if (bundle.activity) {
         await database.activity.bulkPut(bundle.activity.map((a) => ({ ...a, id: undefined })));
       }
+      if (bundle.studyObjectives) await database.studyObjectives.bulkPut(bundle.studyObjectives);
+      if (bundle.studyUnits) await database.studyUnits.bulkPut(bundle.studyUnits);
     },
   );
 }
@@ -193,6 +212,8 @@ export async function resetAll(database: OpsForgeDB = db) {
       database.sessions,
       database.activity,
       database.studyDays,
+      database.studyObjectives,
+      database.studyUnits,
     ],
     async () => {
       await Promise.all([
@@ -203,6 +224,8 @@ export async function resetAll(database: OpsForgeDB = db) {
         database.sessions.clear(),
         database.activity.clear(),
         database.studyDays.clear(),
+        database.studyObjectives.clear(),
+        database.studyUnits.clear(),
       ]);
     },
   );

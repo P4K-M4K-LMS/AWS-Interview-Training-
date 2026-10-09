@@ -67,6 +67,8 @@ Study (Learn group) holds exam-style objective catalogs taken from the Ascendra 
 
 Every objective carries a label that says how it is best learned here: "Do it: existing mission" means an OpsForge mission already makes you do it, and the card links straight to that mission; "Read and check", "Read, then a scenario" and "Explain it back" describe the lesson formats that arrive with the generated content; "Do it: lab planned" names a hands-on lab that does not exist yet. Today only the mission links are live; the rest of each objective is a catalog entry.
 
+Each objective also shows its status on Ascendra's 0–4 rubric: Introduced (recognises the terms), Guided (answers check questions, or did it in a mission), Independent (explains it back), Transfer-ready (handles scenarios, graded by the proxy), Needs review (recent misses; a review comes back after 1, 7 and 21 days). Completing a linked mission credits the objective to Guided. Each course page shows readiness weighted by the published exam-domain weights, which is a study measure, not a prediction. Progress lists every course you have started and Today surfaces due reviews.
+
 Study material is unofficial: the objectives are paraphrased from public exam guides, OpsForge is not affiliated with any certification body, and finishing a course here is not a credential. Study status is separate from skill mastery, which still comes only from missions.
 
 ## Story Bank drafts from missions

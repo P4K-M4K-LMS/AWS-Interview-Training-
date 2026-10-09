@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useMissionStatuses, useProfile, useSessions, useStudyDays } from "../data/hooks";
+import { useMissionStatuses, useProfile, useSessions, useStudyDays, useStudyStates } from "../data/hooks";
 import { recommendNext } from "../engine/learner/recommend";
 import { stageProgress } from "../engine/learner/mastery";
 import { stageInfo } from "../content/curriculum";
@@ -14,12 +14,14 @@ export function DashboardPage() {
   const { statuses, progress, skills } = useMissionStatuses();
   const sessions = useSessions();
   const days = useStudyDays();
+  const studyStates = useStudyStates();
   if (!profile) return null;
 
   const role = roleFor(profile.targetRoleId);
   const gap = roleGapMap(role, skills, progress);
   const gapMission = nextMissionForGap(gap);
-  const recs = recommendNext(progress, skills);
+  const lastStudied = [...studyStates.values()].sort((a, b) => (b.lastPracticedAt ?? "").localeCompare(a.lastPracticedAt ?? ""))[0];
+  const recs = recommendNext(progress, skills, new Date(), studyStates.size ? { states: studyStates.values(), next: lastStudied ? { courseId: lastStudied.courseId, title: lastStudied.courseId.toUpperCase() } : undefined } : undefined);
   const primary = recs[0];
   const stage = stageInfo(profile.stage);
   const sp = stageProgress(profile.stage, skills);

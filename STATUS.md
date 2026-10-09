@@ -80,7 +80,8 @@ Legend: **verified** = automated tests pass in CI · **unverified** = implemente
 | Design-exercise mission type: components with cost/capacity/latency/failure modes, computed consequences, sizing arithmetic, design-dependent failure drills, structural justification check; 1 exercise (position ingest + map read path) | verified (unit tests on the rubric; e2e completes the exercise after a wrong design first) |
 | Agile/Scrum lesson mission (lesson + scenario quiz + interview cue) and an Agile practice question in the general pool | verified (content tests; e2e completes the quiz) |
 | Study catalog: 20 Ascendra courses (1,481 objectives + 20 bookkeeping lines) built into static JSON, browsable course → unit → objectives with modality labels, 66 curated objective-to-mission links, unit gates mapped to three planned labs, provenance and exam-churn notes | partial (catalog build, ids, links and provenance unit-tested; browse e2e; no lessons, no objective status, no labs yet) |
-| Study lessons (generated, static), objective status and reviews, explain-it-back grading, policy and network labs | planned (slices 2–8 of the Study plan) |
+| Study objective status: 0–4 rubric over attempt history, 1/7/21-day reviews, readiness weighted by exam domain, mission bridge (first completion credits linked objectives to Guided), Today and Progress surfaces, schema 2 with v1 imports | verified (unit tests on the rubric, schedule, readiness, bridge and bundles; e2e sees the credit after the replication-lag incident) |
+| Study lessons (generated, static), explain-it-back grading, policy and network labs | planned (slices 3–8 of the Study plan) |
 | Role-specific technical interview questions, more design exercises (for the SDE II Serverless role) | planned |
 | Full accessibility audit | planned (skip link, labels, keyboard nav exist) |
 
@@ -102,7 +103,7 @@ Three groups with plain names: **Learn** (Today, Curriculum, Missions, Study), *
 
 ## Next steps (in order)
 
-1. Study slices 2–8: objective mastery store and mission bridge; generation script and the first course (SAA-C03) with the owner's quality gate; lesson loop, reviews and Today; proxy grading and unit scenarios; authorization policy lab; network path lab; the remaining 19 courses.
+1. Study slices 3–8: generation script and the first course (SAA-C03) with the owner's quality gate; lesson loop, reviews and Today; proxy grading and unit scenarios; authorization policy lab; network path lab; the remaining 19 courses.
 2. For the SDE II Serverless role: more design exercises.
 1. For the SDE II Serverless role: role-specific technical interview questions; more design exercises.
 2. More missions per track (see the planned list in CURRICULUM.md: cron/backup script, regex extractor, API client, recursion, BFS, firewall triage, web-log hunt).

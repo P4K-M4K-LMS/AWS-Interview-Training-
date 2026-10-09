@@ -327,6 +327,12 @@ test("incident console: replication lag is fixed at the cause without failing ov
   await expect(page.getByText("Checks (5/5)")).toBeVisible({ timeout: 20_000 });
   await page.getByTestId("mission-complete").click();
   await expect(page.getByText("Mission complete: explain what you did")).toBeVisible();
+  // Study bridge: the SAA-C03 "read replicas" objective is credited to Guided by this completion.
+  await page.goto("/#/study/saa-c03/2");
+  await expect(page.getByTestId("study-status-12")).toHaveText("Guided");
+  await expect(page.getByTestId("study-status-7")).toHaveText("Not started");
+  await page.goto("/#/progress");
+  await expect(page.getByTestId("study-progress")).toContainText("saa-c03");
 });
 
 test("serverless incident: size the function's concurrency from rate × duration, watch cold starts, recover", async ({ page }) => {
@@ -672,6 +678,8 @@ test("study: browse the catalog from a course to a unit and into the mission tha
   await expect(replicas.getByText("Do it: existing mission")).toBeVisible();
   await replicas.getByTestId("study-practise-12").click();
   await expect(page).toHaveURL(/missions\/incident-04-replica-lag/);
+  await page.getByTestId("study-back-link").click();
+  await expect(page).toHaveURL(/#\/study\/saa-c03\/2/);
   // Bookkeeping lines are kept but folded away.
   await page.goto("/#/study/cmpcbs/28");
   await expect(page.getByTestId("study-bookkeeping")).toContainText("6 degree-plan lines");
