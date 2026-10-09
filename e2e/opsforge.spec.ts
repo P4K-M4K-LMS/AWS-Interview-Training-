@@ -162,6 +162,20 @@ test("navigation: three groups, labs hub with tabs, old addresses redirect", asy
   await expect(page.getByRole("heading", { name: "Curriculum" })).toBeVisible();
 });
 
+test("stale deploy: a page whose code cannot load reloads once, then shows a readable error instead of a blank page", async ({ page }) => {
+  await onboard(page);
+  // Simulate the chunk files of the previous deploy having disappeared.
+  await page.route(/\/assets\/CurriculumPage-.*\.js$/, (route) => route.abort());
+  await page.goto("/#/curriculum");
+  await expect(page.getByTestId("route-error")).toBeVisible({ timeout: 20_000 });
+  await expect(page.getByTestId("route-error")).toContainText(/updated while this page was open|could not be loaded/);
+  await expect(page.getByRole("button", { name: "Reload" })).toBeVisible();
+  // Once the files are reachable again, Reload recovers without losing progress.
+  await page.unroute(/\/assets\/CurriculumPage-.*\.js$/);
+  await page.getByRole("button", { name: "Reload" }).click();
+  await expect(page.getByRole("heading", { name: "Curriculum" })).toBeVisible({ timeout: 20_000 });
+});
+
 test("keyboard navigation: skip link and nav are reachable", async ({ page }, testInfo) => {
   await onboard(page);
   const skip = page.getByText("Skip to content");
