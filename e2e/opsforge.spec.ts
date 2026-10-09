@@ -128,6 +128,9 @@ test("18-20: progress history and feature status are visible; mobile layout rend
 test("navigation: three groups, labs hub with tabs, old addresses redirect", async ({ page }) => {
   await onboard(page);
   await expect(page.getByRole("heading", { name: "Today", exact: true })).toBeVisible();
+  // On phones the sidebar is behind the menu button; roles only resolve visible elements.
+  const menu = page.getByRole("button", { name: "Open navigation" });
+  if (await menu.isVisible()) await menu.click();
   const nav = page.getByRole("navigation", { name: "Main navigation" });
   for (const label of ["Today", "Curriculum", "Missions", "Labs", "Interview", "Progress", "Settings"]) {
     await expect(nav.getByRole("link", { name: label })).toBeAttached();
