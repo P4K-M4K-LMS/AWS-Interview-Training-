@@ -162,7 +162,7 @@ describe("mission bridge into Study", () => {
     const due = applyStudyAttempt(emptyStudyState("saa-c03:2:12"), { at: T0, format: "mc", verdict: "incorrect", source: "auto", questionId: "q" });
     const recs = recommendNext(new Map(), new Map(), new Date("2026-10-12T00:00:00Z"), { states: [due], next: { courseId: "saa-c03", title: "AWS Solutions Architect Associate" } });
     const review = recs.find((r) => r.kind === "study-review");
-    expect(review?.path).toBe("/study/saa-c03/2");
+    expect(review?.path).toBe("/study/saa-c03/2/12?review=1");
     expect(recs.find((r) => r.kind === "study-next")).toBeUndefined();
     const later = recommendNext(new Map(), new Map(), new Date("2026-10-09T00:00:00Z"), { states: [due], next: { courseId: "saa-c03", title: "AWS Solutions Architect Associate" } });
     expect(later.find((r) => r.kind === "study-review")).toBeUndefined();

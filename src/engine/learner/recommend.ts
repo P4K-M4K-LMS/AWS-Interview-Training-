@@ -47,12 +47,12 @@ export function recommendNext(progress: Map<string, MissionProgress>, skills: Ma
   const studyDue = study ? dueStudyReviews(study.states, now) : [];
   if (studyDue.length) {
     const s = studyDue[0];
-    const [courseId, unitIndex] = s.objectiveId.split(":");
+    const [courseId, unitIndex, objectiveIndex] = s.objectiveId.split(":");
     out.push({
       kind: "study-review",
       title: `Study review due: ${studyDue.length} objective${studyDue.length === 1 ? "" : "s"}`,
       reason: "A missed check question comes back after 1, 7 and 21 days. Answer an unseen question to move it on.",
-      path: `/study/${courseId}/${unitIndex}`,
+      path: `/study/${courseId}/${unitIndex}/${objectiveIndex}?review=1`,
     });
   }
   for (const id of RECOMMENDED_ORDER) {

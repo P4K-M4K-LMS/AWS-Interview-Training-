@@ -104,6 +104,26 @@ export function SettingsPage() {
         <div className="text-xs muted mt-2">{s.explanationLevel ? "Set by you." : `Following your target role: ${roleFor(profile.targetRoleId).title}.`}</div>
       </Panel>
 
+      <Panel title="Study style">
+        <p className="text-sm muted mb-2">How Study orders the objectives in a unit. Nothing is hidden; this only changes what comes first.</p>
+        <div className="space-y-1 text-sm">
+          {(
+            [
+              ["mixed", "Mixed", "Catalog order, the way the exam guide lists them."],
+              ["doing", "Doing first", "Objectives a mission or lab makes you do come first, then scenarios, then reading."],
+              ["reading", "Reading first", "Explanations and check questions first; hands-on objectives after."],
+            ] as const
+          ).map(([value, label, help]) => (
+            <label key={value} className="flex items-start gap-2">
+              <input type="radio" name="study-style" checked={(s.studyStyle ?? "mixed") === value} onChange={() => set({ studyStyle: value })} data-testid={`study-style-${value}`} />
+              <span>
+                <strong>{label}.</strong> {help}
+              </span>
+            </label>
+          ))}
+        </div>
+      </Panel>
+
       <Panel title="Voice and privacy">
         <ul className="text-sm space-y-1 mb-3">
           <li>Speech recognition (your voice → text): {caps.recognition ? "available in this browser" : "not available in this browser (text fallback will be used)"}</li>
