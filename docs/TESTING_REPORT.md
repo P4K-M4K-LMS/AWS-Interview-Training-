@@ -56,7 +56,7 @@ Mapped to the nonnegotiable acceptance criteria (Part 20). Each runs on a deskto
 | incident | Import a progress bundle via Settings to unlock the incident; console opens unhealthy; logs show the cache expiry evidence; metrics and diagram render; correct root cause; re-warm cache; advance; health turns healthy; note written; 5/5 checks; complete | passed |
 | lesson | Unlock via bundle; lesson and scenario render; a wrong answer shows "Not quite" without revealing the answer; all six answered; 6/6; complete | passed |
 | design exercise | Unlock via bundle; a wrong design (VM, direct writes, single-node DB, direct reads) shows the SPOF and the 800/s capacity in the consequences panel and the checks; the reference design shows 820 and no SPOF; sizing, both drills correct for the design, justification; all checks pass; complete | passed |
-| serverless incident | Unlock via bundle; console opens critical; function stats show 36 needed / limit 10 and 72% throttled; logs show Rate exceeded; diagram function node; correct root cause; limit 40 + provisioned 36; advance; healthy; note; 5/5; complete | passed |
+| serverless incident | Unlock via bundle; console opens critical; function stats show 36 needed / limit 10 and 72% throttled; logs show concurrency limit reached; diagram function node; correct root cause; limit 40 + provisioned 36; advance; healthy; note; 5/5; complete | passed |
 | incident: replication lag | Unlock via bundle; console opens degraded with normal errors; logs name the blocked apply thread and data age; replica-lag stat and replica node (apply BLOCKED) render; correct root cause; kill the blocking statement; advance 30s; health healthy; note; 5/5 checks; complete | passed |
 
 ## Not verified (honest gaps)

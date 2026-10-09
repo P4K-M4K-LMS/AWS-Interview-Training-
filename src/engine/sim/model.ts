@@ -358,14 +358,14 @@ export function generateLogs(state: SimState, m: SimMetrics = computeMetrics(sta
   const s = c.serverless;
   if (s && m.fn) {
     const f = m.fn;
-    if (f.throttleRate > 0.03 && every(2)) lines.push(`${ts} fn-positions WARN ${Math.round(f.invocationsPerSec * f.throttleRate)} invocations/s throttled: concurrency ${s.reservedConcurrency}/${s.reservedConcurrency} in use (Rate exceeded), needed ${Math.ceil(f.neededConcurrency)}`);
+    if (f.throttleRate > 0.03 && every(2)) lines.push(`${ts} fn-positions WARN ${Math.round(f.invocationsPerSec * f.throttleRate)} invocations/s throttled: concurrency ${s.reservedConcurrency}/${s.reservedConcurrency} in use (concurrency limit reached), needed ${Math.ceil(f.neededConcurrency)}`);
     if (f.coldStartShare > 0.05 && every(3, 1)) lines.push(`${ts} fn-positions INFO cold start: init ${COLD_START_MS - 20 + Math.round(jitter(9, state.tick) * 40)}ms, env #${Math.round(state.warmEnvironments) + 1} (${Math.round(f.coldStartShare * 100)}% of invocations cold this second)`);
     if (s.poisonRate > 0 && state.poisonBacklog > 5 && every(2, 1)) lines.push(`${ts} fn-billing ERROR message ${(0x8f3a + (state.tick % 7)).toString(16)}: KeyError 'vehicle_id' in payload (receive count ${Math.round(14 + state.poisonBacklog)}${s.dlqEnabled ? `, max ${s.maxReceiveCount}` : ", no dead-letter queue"})`);
     if (s.dlqEnabled && state.dlqDepth > 0 && every(5)) lines.push(`${ts} queue-01 INFO message moved to billing-dlq after ${s.maxReceiveCount} attempts; dlq depth=${Math.round(state.dlqDepth)}`);
-    if (!s.dlqEnabled && state.poisonBacklog > 5 && every(6, 3)) lines.push(`${ts} queue-01 WARN ${Math.round(state.poisonBacklog)} messages have exceeded 10 receives; retrying every visibility timeout`);
+    if (!s.dlqEnabled && state.poisonBacklog > 5 && every(6, 3)) lines.push(`${ts} queue-01 WARN ${Math.round(state.poisonBacklog)} messages have exceeded 10 receives; retried after every redelivery delay`);
     if (f.duplicatesPerSec > 0 && every(3, 2)) lines.push(`${ts} fn-invoice WARN retry of invocation ${(0x7c1d + state.tick).toString(16)} after timeout; charge for invoice INV-${5500 + state.tick} recorded twice`);
     if (f.lostPerSec > 0 && every(3, 2)) lines.push(`${ts} fn-invoice ERROR invocation ${(0x7c1d + state.tick).toString(16)} timed out; retries=0, event dropped (invoice INV-${5500 + state.tick} never sent)`);
-    if (s.timeoutRate > 0.05 && every(4)) lines.push(`${ts} fn-invoice WARN Task timed out after 3.00 seconds (payment-provider call took 2.9s)`);
+    if (s.timeoutRate > 0.05 && every(4)) lines.push(`${ts} fn-invoice WARN handler exceeded its 3.0 s time limit (payment-provider call took 2.9s)`);
   }
   if (m.health === "healthy" && every(10)) lines.push(`${ts} health-check INFO all services healthy`);
   return lines;
