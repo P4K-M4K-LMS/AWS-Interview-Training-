@@ -16,6 +16,7 @@ import { MESSAGING_EXERCISE_BY_ID } from "../src/content/study/messagingExercise
 import { AUTOSCALE_EXERCISE_BY_ID } from "../src/content/study/autoscaleExercises";
 import { SQL_EXERCISE_BY_ID } from "../src/content/study/sqlExercises";
 import { PYTHON_DRILL_BY_ID } from "../src/content/study/pythonDrills";
+import { JS_DRILL_BY_ID } from "../src/content/study/jsDrills";
 import { LAB_LABELS } from "../src/content/study/labs";
 import { ENGINE_GATES, LAB_LINKS, MISSION_LINKS } from "../src/content/study/missionLinks";
 import type { StudyCatalogIndex, StudyCourse } from "../src/domain/types";
@@ -90,6 +91,7 @@ describe("Study catalog (Ascendra snapshot)", () => {
       if (l.lab === "autoscale") expect(AUTOSCALE_EXERCISE_BY_ID.has(l.exerciseId ?? ""), `exercise ${l.exerciseId}`).toBe(true);
       if (l.lab === "sql") expect(SQL_EXERCISE_BY_ID.has(l.exerciseId ?? ""), `exercise ${l.exerciseId}`).toBe(true);
       if (l.lab === "python-drills") expect(PYTHON_DRILL_BY_ID.has(l.exerciseId ?? ""), `exercise ${l.exerciseId}`).toBe(true);
+      if (l.lab === "javascript") expect(JS_DRILL_BY_ID.has(l.exerciseId ?? ""), `exercise ${l.exerciseId}`).toBe(true);
     }
     const labLinked = built.courses.flatMap((c) => c.units.flatMap((u) => u.objectives.filter((o) => o.link?.kind === "lab")));
     expect(labLinked).toHaveLength(STUDY_LAB_LINKS.length);
@@ -100,7 +102,8 @@ describe("Study catalog (Ascendra snapshot)", () => {
 
   it("maps unit gates to planned engines that are declared, and bookkeeping units to the degree plan", () => {
     for (const g of UNIT_ENGINE_GATES) expect(ENGINE_BY_ID.has(g.engine), g.engine).toBe(true);
-    expect(Object.keys(ENGINE_GATES).sort()).toEqual(["dr-planner", "net-trace", "policy-eval"]);
+    expect(Object.keys(ENGINE_GATES).sort()).toEqual(["dr-planner", "js-runtime", "net-trace", "policy-eval"]);
+    expect(ENGINE_GATES["js-runtime"]).toEqual(["javascript:1", "javascript:2", "javascript:3", "javascript:4", "javascript:5", "javascript:6", "javascript:7", "javascript:8", "javascript:9"]);
     for (const ids of Object.values(ENGINE_GATES)) expect(ids.length).toBeGreaterThan(0);
     for (const b of BOOKKEEPING_UNITS) expect(b.course).toBe("CMPCBS");
     const cmpcbs = built.courses.find((c) => c.id === "cmpcbs") as StudyCourse;

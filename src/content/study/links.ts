@@ -350,7 +350,52 @@ export const PYTHON_DRILL_LINKS: StudyLabLink[] = [
   { course: "CMPCBS", text: "Recursion as a problem-solving technique", lab: "python-drills", exerciseId: "py-04-recursion", coverage: "partial", note: "in Python" },
 ];
 
-export const STUDY_LAB_LINKS: StudyLabLink[] = [...POLICY_LAB_LINKS, ...NETWORK_LAB_LINKS, ...DR_LAB_LINKS, ...ALARM_LAB_LINKS, ...COST_LAB_LINKS, ...DEPLOY_LAB_LINKS, ...CRYPTO_LAB_LINKS, ...MESSAGING_LAB_LINKS, ...AUTOSCALE_LAB_LINKS, ...SQL_LAB_LINKS, ...PYTHON_DRILL_LINKS];
+const js = (text: string, exerciseId: string, coverage: "full" | "partial" = "full", note?: string): StudyLabLink => ({ course: "JAVASCRIPT", text, lab: "javascript", exerciseId, coverage, ...(note ? { note } : {}) });
+
+export const JS_LAB_LINKS: StudyLabLink[] = [
+  js("Variables: var vs. let vs. const, and why hoisting makes var risky", "js-01-hoisting"),
+  js("Primitive types, typeof, and type coercion pitfalls", "js-02-coercion"),
+  js("Operators and expressions; operator precedence", "js-02-coercion", "partial", "comparison and logical operators"),
+  js("Conditional logic: if/else, switch, and the ternary operator", "js-02-coercion"),
+  js("Loops: for, while, for...of, for...in, and when to use each", "js-03-loops"),
+  js("Function declarations vs. function expressions vs. arrow functions", "js-04-parameters"),
+  js("Parameters: default values, rest parameters", "js-04-parameters"),
+  js("Scope: function scope vs. block scope, and the temporal dead zone", "js-01-hoisting"),
+  js("Closures: what they capture and a real use case for one", "js-06-closures"),
+  js("Understanding `this` in different call contexts", "js-05-this"),
+  js("Object literals, property access, and shorthand syntax", "js-08-destructuring", "partial"),
+  js("Array methods: map, filter, reduce, find, some, every", "js-07-array-methods"),
+  js("Destructuring assignment for objects and arrays", "js-08-destructuring"),
+  js("Spread and rest syntax in object/array contexts", "js-08-destructuring"),
+  js("Shallow vs. deep copying, and why reference semantics matter", "js-09-copying"),
+  js("The event loop, call stack, and task queue", "js-10-event-loop"),
+  js("Callbacks and callback hell", "js-11-promises"),
+  js("Promises: states, .then/.catch/.finally, Promise.all", "js-11-promises", "partial", "promisifying and Promise.all"),
+  js("async/await syntax and error handling with try/catch", "js-12-fetch"),
+  js("Fetching data with the Fetch API and handling JSON responses", "js-12-fetch", "partial", "against a simulated API"),
+  js("Template literals and tagged templates", "js-13-modules", "partial", "template literals; no tagged templates"),
+  js("ES modules: import/export, default vs. named exports", "js-13-modules"),
+  js("Classes: constructor, methods, inheritance, static members", "js-14-classes"),
+  js("Map and Set as alternatives to plain objects/arrays", "js-15-map-set"),
+  js("Optional chaining and nullish coalescing", "js-15-map-set"),
+  js("The prototype chain and how method lookup actually works", "js-16-prototypes"),
+  js("Object.create and prototypal inheritance vs. classical inheritance", "js-16-prototypes"),
+  js("Higher-order functions: functions that take or return functions", "js-17-patterns"),
+  js("Currying and function composition basics", "js-17-patterns"),
+  js("Common design patterns in JS: module pattern, observer pattern", "js-17-patterns"),
+  js("Selecting and traversing the DOM", "dom-01-traverse"),
+  js("Creating, modifying, and removing DOM nodes", "dom-02-render"),
+  js("Event listeners: bubbling, capturing, delegation, and preventDefault", "dom-03-delegation", "partial", "bubbling, delegation and preventDefault; the capture phase is not modelled"),
+  js("Working with forms and form validation", "dom-04-form"),
+  js("Basic accessibility considerations when manipulating the DOM", "dom-05-disclosure"),
+  js("Writing unit tests with Jest: assertions, mocks, test structure", "test-01-reproduce", "partial", "a Jest-style test API, not Jest itself"),
+  js("Building a simple HTTP server or Express route", "node-01-handler", "partial", "a request handler called directly; no sockets or framework"),
+  js("Handling JSON request/response bodies and status codes", "node-01-handler"),
+  js("Environment variables and basic configuration management", "node-01-handler", "partial", "process.env only"),
+  js("Integrating prior units into one small end-to-end project", "node-02-race", "partial", "promises, closures and a handler together under concurrent requests"),
+];
+
+export const STUDY_LAB_LINKS: StudyLabLink[] = [...POLICY_LAB_LINKS, ...NETWORK_LAB_LINKS, ...DR_LAB_LINKS, ...ALARM_LAB_LINKS, ...COST_LAB_LINKS, ...DEPLOY_LAB_LINKS, ...CRYPTO_LAB_LINKS, ...MESSAGING_LAB_LINKS, ...AUTOSCALE_LAB_LINKS, ...SQL_LAB_LINKS, ...PYTHON_DRILL_LINKS, ...JS_LAB_LINKS];
 
 /**
  * Unit gates that a planned engine would make playable. The gate sentence
@@ -363,6 +408,15 @@ export const UNIT_ENGINE_GATES: StudyEngineGate[] = [
   { course: "AWSANS", gateText: "find it with flow logs", engine: "net-trace" },
   { course: "AWSSOA", gateText: "Given an access denial or an audit finding, trace it to the policy", engine: "policy-eval" },
   { course: "AWSSCS", gateText: "find the policy that allowed it", engine: "policy-eval" },
+  { course: "JAVASCRIPT", gateText: "predict its output and explain any hoisting or scoping surprise", engine: "js-runtime" },
+  { course: "JAVASCRIPT", gateText: "the difference in `this` binding would matter", engine: "js-runtime" },
+  { course: "JAVASCRIPT", gateText: "using destructuring, spread, and array methods", engine: "js-runtime" },
+  { course: "JAVASCRIPT", gateText: "write it correctly with async/await including error handling", engine: "js-runtime" },
+  { course: "JAVASCRIPT", gateText: "into ES modules with template literals", engine: "js-runtime" },
+  { course: "JAVASCRIPT", gateText: "Explain the prototype chain for a given object", engine: "js-runtime" },
+  { course: "JAVASCRIPT", gateText: "updates the DOM in response to a user event", engine: "js-runtime" },
+  { course: "JAVASCRIPT", gateText: "write a failing Jest test that reproduces the bug", engine: "js-runtime" },
+  { course: "JAVASCRIPT", gateText: "what happens if two requests arrive concurrently", engine: "js-runtime" },
 ];
 
 /**

@@ -137,6 +137,17 @@ export const ENGINE_GATES: Record<string, string[]> = {
     "saa-c03:2",
     "soa-c03:2"
   ],
+  "js-runtime": [
+    "javascript:1",
+    "javascript:2",
+    "javascript:3",
+    "javascript:4",
+    "javascript:5",
+    "javascript:6",
+    "javascript:7",
+    "javascript:8",
+    "javascript:9"
+  ],
   "net-trace": [
     "ans-c01:3",
     "soa-c03:5"
@@ -295,6 +306,21 @@ export const LAB_LINKS: Record<string, string[]> = {
     "dop-c02:5:11",
     "sap-c02:2:4"
   ],
+  "dom-01-traverse": [
+    "javascript:4:1"
+  ],
+  "dom-02-render": [
+    "javascript:4:2"
+  ],
+  "dom-03-delegation": [
+    "javascript:4:3"
+  ],
+  "dom-04-form": [
+    "javascript:4:4"
+  ],
+  "dom-05-disclosure": [
+    "javascript:4:5"
+  ],
   "dr-01-match-the-need": [
     "clf-c02:3:6",
     "saa-c03:2:20",
@@ -321,6 +347,70 @@ export const LAB_LINKS: Record<string, string[]> = {
     "sap-c02:1:19",
     "securityx:1:5",
     "soa-c03:2:8"
+  ],
+  "js-01-hoisting": [
+    "javascript:1:1",
+    "javascript:2:3"
+  ],
+  "js-02-coercion": [
+    "javascript:1:2",
+    "javascript:1:3",
+    "javascript:1:4"
+  ],
+  "js-03-loops": [
+    "javascript:1:5"
+  ],
+  "js-04-parameters": [
+    "javascript:2:1",
+    "javascript:2:2"
+  ],
+  "js-05-this": [
+    "javascript:2:5"
+  ],
+  "js-06-closures": [
+    "javascript:2:4"
+  ],
+  "js-07-array-methods": [
+    "javascript:3:2"
+  ],
+  "js-08-destructuring": [
+    "javascript:3:1",
+    "javascript:3:3",
+    "javascript:3:4"
+  ],
+  "js-09-copying": [
+    "javascript:3:5"
+  ],
+  "js-10-event-loop": [
+    "javascript:5:1"
+  ],
+  "js-11-promises": [
+    "javascript:5:2",
+    "javascript:5:3"
+  ],
+  "js-12-fetch": [
+    "javascript:5:4",
+    "javascript:5:5"
+  ],
+  "js-13-modules": [
+    "javascript:6:1",
+    "javascript:6:2"
+  ],
+  "js-14-classes": [
+    "javascript:6:3"
+  ],
+  "js-15-map-set": [
+    "javascript:6:4",
+    "javascript:6:5"
+  ],
+  "js-16-prototypes": [
+    "javascript:7:1",
+    "javascript:7:2"
+  ],
+  "js-17-patterns": [
+    "javascript:7:3",
+    "javascript:7:4",
+    "javascript:7:5"
   ],
   "msg-01-decouple": [
     "clf-c02:3:28",
@@ -384,6 +474,14 @@ export const LAB_LINKS: Record<string, string[]> = {
     "ans-c01:2:17",
     "dop-c02:6:9",
     "sap-c02:1:14"
+  ],
+  "node-01-handler": [
+    "javascript:9:2",
+    "javascript:9:3",
+    "javascript:9:4"
+  ],
+  "node-02-race": [
+    "javascript:9:5"
   ],
   "policy-01-default-deny": [
     "clf-c02:2:11",
@@ -497,5 +595,8 @@ export const LAB_LINKS: Record<string, string[]> = {
   ],
   "sql-06-plan": [
     "mscs:9:8"
+  ],
+  "test-01-reproduce": [
+    "javascript:8:1"
   ]
 };
