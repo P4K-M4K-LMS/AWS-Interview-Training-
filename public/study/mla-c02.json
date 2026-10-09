@@ -699,8 +699,14 @@
           "text": "Selecting the metrics that drive auto scaling",
           "sourceHash": "d193f049c320",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "autoscale",
+            "exerciseId": "as-06-metric",
+            "coverage": "full"
+          }
         },
         {
           "id": "mla-c02:3:15",
@@ -980,8 +986,14 @@
           "text": "Optimizing capacity for cost, performance, and reliability",
           "sourceHash": "4aca6041faf6",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "autoscale",
+            "exerciseId": "as-01-elastic",
+            "coverage": "partial"
+          }
         },
         {
           "id": "mla-c02:4:11",
@@ -1170,6 +1182,6 @@
     "units": 4,
     "objectives": 107,
     "bookkeeping": 0,
-    "linked": 7
+    "linked": 9
   }
 }

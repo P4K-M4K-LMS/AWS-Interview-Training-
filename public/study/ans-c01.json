@@ -179,8 +179,14 @@
           "text": "Integrating auto scaling with load balancing",
           "sourceHash": "06a6cd19ac5c",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "autoscale",
+            "exerciseId": "as-05-health",
+            "coverage": "partial"
+          }
         },
         {
           "id": "ans-c01:1:18",
@@ -1201,6 +1207,6 @@
     "units": 4,
     "objectives": 109,
     "bookkeeping": 0,
-    "linked": 8
+    "linked": 9
   }
 }

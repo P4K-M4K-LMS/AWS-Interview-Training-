@@ -1042,3 +1042,39 @@ test("messaging lab: direct calls lose the outage, a queue holds it; the poison 
   await page.getByTestId("lab-tab-events").click();
   await expect(page.getByRole("heading", { name: "Messaging and events" })).toBeVisible();
 });
+
+test("autoscaling lab: a CPU target never fires on an I/O-bound service; requests per instance scales it and credits the Study objective", async ({ page }) => {
+  await onboard(page);
+  await page.goto("/#/study/saa-c03/3");
+  const objective = page.getByTestId("study-objective-7");
+  await expect(objective).toContainText("Do it: mission or lab");
+  await objective.getByTestId("study-practise-7").click();
+  await expect(page).toHaveURL(/#\/labs\/autoscale\?exercise=as-06-metric/);
+  await expect(page.getByRole("heading", { name: "Autoscaling" })).toBeVisible();
+  await expect(page.getByTestId("autoscale-actions")).toHaveText("0");
+  await expect(page.getByTestId("autoscale-check-failed")).toHaveAttribute("data-ok", "0");
+  await expect(page.getByTestId("autoscale-check")).toBeDisabled();
+  await page.getByTestId("autoscale-metric").selectOption("requests");
+  // The default target of 14 req/s per instance is a little tight for this ramp.
+  await expect(page.getByTestId("autoscale-check-slow")).toHaveAttribute("data-ok", "0");
+  await page.getByTestId("autoscale-target").fill("12");
+  await expect(page.getByTestId("autoscale-failed")).toHaveText("0");
+  await expect(page.getByTestId("autoscale-peak")).toHaveText("25");
+  await expect(page.getByTestId("autoscale-check")).toBeEnabled();
+  await page.getByTestId("autoscale-check").click();
+  await expect(page.getByTestId("autoscale-passed")).toContainText("Credited");
+  await page.getByTestId("autoscale-back-link").click();
+  await expect(page.getByTestId("study-status-7")).toHaveText("Guided");
+  // The health-check exercise: interval × threshold is the detection time.
+  await page.goto("/#/labs/autoscale?exercise=as-05-health");
+  await expect(page.getByTestId("autoscale-check-failed")).toContainText("detected after 120 s");
+  await page.getByTestId("autoscale-hc-interval").fill("10");
+  await page.getByTestId("autoscale-hc-threshold").fill("1");
+  await expect(page.getByTestId("autoscale-check-churn")).toHaveAttribute("data-ok", "0");
+  await page.getByTestId("autoscale-hc-threshold").fill("2");
+  await expect(page.getByTestId("autoscale-check-failed")).toContainText("detected after 10 s");
+  await expect(page.getByTestId("autoscale-check")).toBeEnabled();
+  await page.goto("/#/labs");
+  await page.getByTestId("lab-tab-scaling").click();
+  await expect(page.getByRole("heading", { name: "Autoscaling" })).toBeVisible();
+});

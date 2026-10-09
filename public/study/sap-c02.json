@@ -606,8 +606,14 @@
           "text": "Auto scaling policies and events",
           "sourceHash": "00e68087fc32",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "autoscale",
+            "exerciseId": "as-04-thrash",
+            "coverage": "full"
+          }
         },
         {
           "id": "sap-c02:2:24",
@@ -656,8 +662,15 @@
           "text": "Designing an elastic architecture from business objectives",
           "sourceHash": "ed7d29e56eb9",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "autoscale",
+            "exerciseId": "as-03-flash-sale",
+            "coverage": "partial",
+            "note": "a known surge scheduled ahead"
+          }
         },
         {
           "id": "sap-c02:2:29",
@@ -1332,6 +1345,6 @@
     "units": 4,
     "objectives": 113,
     "bookkeeping": 0,
-    "linked": 23
+    "linked": 25
   }
 }

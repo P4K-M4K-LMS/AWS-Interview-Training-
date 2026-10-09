@@ -697,8 +697,14 @@
           "text": "Amazon EC2 Auto Scaling and AWS Auto Scaling: the metrics and conditions that trigger scaling",
           "sourceHash": "d51053ee908d",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "autoscale",
+            "exerciseId": "as-06-metric",
+            "coverage": "full"
+          }
         },
         {
           "id": "saa-c03:3:8",
@@ -1050,8 +1056,15 @@
           "text": "Scaling methods that cut spend, including EC2 hibernation",
           "sourceHash": "dcbacd497a5e",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "autoscale",
+            "exerciseId": "as-01-elastic",
+            "coverage": "partial",
+            "note": "scaling in when demand falls; no hibernation"
+          }
         },
         {
           "id": "saa-c03:4:12",
@@ -1233,6 +1246,6 @@
     "units": 4,
     "objectives": 99,
     "bookkeeping": 0,
-    "linked": 30
+    "linked": 32
   }
 }

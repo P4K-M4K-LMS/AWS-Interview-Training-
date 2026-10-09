@@ -1074,8 +1074,15 @@
           "text": "Configuring application health checks and readiness probes",
           "sourceHash": "b31fdf0022df",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "autoscale",
+            "exerciseId": "as-05-health",
+            "coverage": "partial",
+            "note": "balancer health checks; readiness is the warm-up"
+          }
         },
         {
           "id": "dva-c02:4:16",
@@ -1183,6 +1190,6 @@
     "units": 4,
     "objectives": 98,
     "bookkeeping": 0,
-    "linked": 25
+    "linked": 26
   }
 }

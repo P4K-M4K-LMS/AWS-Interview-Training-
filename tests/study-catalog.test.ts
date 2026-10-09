@@ -13,6 +13,7 @@ import { COST_EXERCISE_BY_ID } from "../src/content/study/costExercises";
 import { DEPLOY_EXERCISE_BY_ID } from "../src/content/study/deployExercises";
 import { CRYPTO_EXERCISE_BY_ID } from "../src/content/study/cryptoExercises";
 import { MESSAGING_EXERCISE_BY_ID } from "../src/content/study/messagingExercises";
+import { AUTOSCALE_EXERCISE_BY_ID } from "../src/content/study/autoscaleExercises";
 import { LAB_LABELS } from "../src/content/study/labs";
 import { ENGINE_GATES, LAB_LINKS, MISSION_LINKS } from "../src/content/study/missionLinks";
 import type { StudyCatalogIndex, StudyCourse } from "../src/domain/types";
@@ -84,6 +85,7 @@ describe("Study catalog (Ascendra snapshot)", () => {
       if (l.lab === "deploy") expect(DEPLOY_EXERCISE_BY_ID.has(l.exerciseId ?? ""), `exercise ${l.exerciseId}`).toBe(true);
       if (l.lab === "crypto") expect(CRYPTO_EXERCISE_BY_ID.has(l.exerciseId ?? ""), `exercise ${l.exerciseId}`).toBe(true);
       if (l.lab === "messaging") expect(MESSAGING_EXERCISE_BY_ID.has(l.exerciseId ?? ""), `exercise ${l.exerciseId}`).toBe(true);
+      if (l.lab === "autoscale") expect(AUTOSCALE_EXERCISE_BY_ID.has(l.exerciseId ?? ""), `exercise ${l.exerciseId}`).toBe(true);
     }
     const labLinked = built.courses.flatMap((c) => c.units.flatMap((u) => u.objectives.filter((o) => o.link?.kind === "lab")));
     expect(labLinked).toHaveLength(STUDY_LAB_LINKS.length);
