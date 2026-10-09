@@ -4,6 +4,7 @@ import { db, logActivity, updateProfile } from "../data/db";
 import { useProfile } from "../data/hooks";
 import { emptySkill } from "../engine/learner/mastery";
 import { DEFAULT_ROLE_ID, ROLES } from "../content/roles";
+import { defaultExplanationLevel } from "../engine/learner/explanation";
 import type { RoleId, SkillId } from "../domain/types";
 import { Callout, Panel } from "../components/ui";
 
@@ -74,7 +75,11 @@ export function OnboardingPage() {
                   <span>
                     <span className="font-medium">{r.title}</span>
                     {r.team && <span className="muted"> · {r.team}</span>}
-                    <span className="block text-xs muted">{r.qualifications.length} listed qualifications; the Curriculum page shows which ones OpsForge can train. You can change this in Settings.</span>
+                    <span className="block text-xs muted">
+                      {r.qualifications.length} listed qualifications; the Curriculum page shows which ones OpsForge can train.{" "}
+                      {defaultExplanationLevel(r.id) === "beginner" ? "Lessons start from plain words and explain why before how." : "Lessons assume programming experience; the plain-words primer stays one click away."}{" "}
+                      You can change both in Settings.
+                    </span>
                   </span>
                 </label>
               ))}

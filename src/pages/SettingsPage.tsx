@@ -7,6 +7,7 @@ import { probeCoachProxy } from "../services/coach";
 import { probeRaceService } from "../services/race";
 import { FEATURE_STATUS } from "../content/featureStatus";
 import { ROLES, roleFor } from "../content/roles";
+import { effectiveExplanationLevel } from "../engine/learner/explanation";
 import { Link } from "react-router-dom";
 
 export function SettingsPage() {
@@ -19,6 +20,7 @@ export function SettingsPage() {
   const s = profile.settings;
   const set = (patch: Partial<typeof s>) => void updateProfile({ settings: { ...s, ...patch } });
   const caps = voiceCapabilities();
+  const level = effectiveExplanationLevel(profile);
 
   const doExport = async () => {
     const bundle = await exportAll();
@@ -79,6 +81,27 @@ export function SettingsPage() {
         <Link to="/curriculum" className="text-xs underline mt-2 inline-block">
           See the qualification gap map
         </Link>
+      </Panel>
+
+      <Panel title="Explanations">
+        <p className="text-sm muted mb-2">
+          How mission lessons open. Beginner-first lessons start with a primer in plain words: what the thing is, why it matters and why this approach. The default follows your target role; a choice here overrides it.
+        </p>
+        <div className="space-y-1 text-sm">
+          <label className="flex items-start gap-2">
+            <input type="radio" name="explanations" checked={level === "beginner"} onChange={() => set({ explanationLevel: "beginner" })} data-testid="explain-beginner" />
+            <span>
+              <strong>Start from the basics.</strong> Primer open on every mission, and the hints panel explains why the first step is the first step. Recommended if you are new to engineering.
+            </span>
+          </label>
+          <label className="flex items-start gap-2">
+            <input type="radio" name="explanations" checked={level === "standard"} onChange={() => set({ explanationLevel: "standard" })} data-testid="explain-standard" />
+            <span>
+              <strong>Standard.</strong> Lessons assume programming experience; the primer stays one click away under "Start from the basics".
+            </span>
+          </label>
+        </div>
+        <div className="text-xs muted mt-2">{s.explanationLevel ? "Set by you." : `Following your target role: ${roleFor(profile.targetRoleId).title}.`}</div>
       </Panel>
 
       <Panel title="Voice and privacy">
