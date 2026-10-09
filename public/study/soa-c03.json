@@ -415,8 +415,14 @@
           "text": "Implementing deployment strategies and the services that carry them out",
           "sourceHash": "ba373bb1e3bf",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "deploy",
+            "exerciseId": "deploy-05-too-slow",
+            "coverage": "partial"
+          }
         },
         {
           "id": "soa-c03:3:6",
@@ -759,6 +765,6 @@
     "units": 5,
     "objectives": 59,
     "bookkeeping": 0,
-    "linked": 15
+    "linked": 16
   }
 }
