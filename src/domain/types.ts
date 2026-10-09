@@ -131,6 +131,7 @@ export interface MissionPrimer {
 
 /** How mission lessons open: primer expanded (beginner) or collapsed (standard). */
 export type ExplanationLevel = "beginner" | "standard";
+export type StudyStyle = "doing" | "reading" | "mixed";
 
 export interface GlossaryEntry {
   term: string;
@@ -618,6 +619,8 @@ export interface LearnerSettings {
   dailyGoalMinutes: number;
   /** Unset = follow the target role (the unnamed-role track is beginner-first). */
   explanationLevel?: ExplanationLevel;
+  /** Study: order objectives by learning style. Unset = mixed (catalog order). Never hides anything. */
+  studyStyle?: StudyStyle;
 }
 
 export interface LearnerProfile {

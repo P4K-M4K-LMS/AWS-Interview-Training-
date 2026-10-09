@@ -27,6 +27,7 @@ const SkillProgressPage = lazy(() => import("./pages/SkillProgressPage").then((m
 const StudyHomePage = lazy(() => import("./pages/study/StudyHomePage").then((m) => ({ default: m.StudyHomePage })));
 const StudyCoursePage = lazy(() => import("./pages/study/StudyCoursePage").then((m) => ({ default: m.StudyCoursePage })));
 const StudyUnitPage = lazy(() => import("./pages/study/StudyUnitPage").then((m) => ({ default: m.StudyUnitPage })));
+const StudyObjectivePage = lazy(() => import("./pages/study/StudyObjectivePage").then((m) => ({ default: m.StudyObjectivePage })));
 const SettingsPage = lazy(() => import("./pages/SettingsPage").then((m) => ({ default: m.SettingsPage })));
 
 export const routes: RouteObject[] = [
@@ -42,6 +43,7 @@ export const routes: RouteObject[] = [
       { path: "study", element: <StudyHomePage /> },
       { path: "study/:courseId", element: <StudyCoursePage /> },
       { path: "study/:courseId/:unitIndex", element: <StudyUnitPage /> },
+      { path: "study/:courseId/:unitIndex/:objectiveIndex", element: <StudyObjectivePage /> },
       {
         path: "labs",
         element: <LabsPage />,

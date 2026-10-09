@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import type { StudyCatalogIndex, StudyCourse } from "../../domain/types";
+import type { StudyCatalogIndex, StudyCourse, StudyLessonsFile } from "../../domain/types";
 
 /**
  * Loads the Study catalog JSON from public/study on demand and memoises it
@@ -33,6 +33,23 @@ export async function loadCourse(courseId: string): Promise<StudyCourse> {
   return fetchJson<StudyCourse>(`${courseId}.json`);
 }
 
+/** Generated lessons for a course; null when none have been generated yet (404). */
+export async function loadLessons(courseId: string): Promise<StudyLessonsFile | null> {
+  if (!/^[a-z0-9-]+$/.test(courseId)) throw new Error("Study catalog: bad course id");
+  const key = `${courseId}.lessons.json`;
+  let p = cache.get(key) as Promise<StudyLessonsFile | null> | undefined;
+  if (!p) {
+    p = fetch(`${base}${key}`).then(async (r) => {
+      if (r.status === 404) return null;
+      if (!r.ok) throw new Error(`Study lessons: ${key} returned ${r.status}`);
+      return (await r.json()) as StudyLessonsFile;
+    });
+    cache.set(key, p);
+    p.catch(() => cache.delete(key));
+  }
+  return p;
+}
+
 export type Loaded<T> = { status: "loading" } | { status: "ready"; data: T } | { status: "error"; message: string };
 
 function useLoaded<T>(load: (() => Promise<T>) | null, key: string): Loaded<T> {
@@ -60,6 +77,10 @@ export function useStudyIndex(): Loaded<StudyCatalogIndex> {
 
 export function useStudyCourse(courseId: string | undefined): Loaded<StudyCourse> {
   return useLoaded(courseId ? () => loadCourse(courseId) : null, courseId ?? "");
+}
+
+export function useStudyLessons(courseId: string | undefined): Loaded<StudyLessonsFile | null> {
+  return useLoaded(courseId ? () => loadLessons(courseId) : null, `${courseId ?? ""}.lessons`);
 }
 
 /** Test seam: forget everything fetched so far. */
