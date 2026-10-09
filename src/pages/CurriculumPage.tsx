@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { STAGES, TRACKS } from "../content/curriculum";
-import { missionsForTrack } from "../content/missions";
+import { MISSION_BY_ID, missionsForTrack } from "../content/missions";
+import { roleQuestionsFor } from "../content/roleQuestions";
 import { COVERAGE_LABELS, ROLES, roleFor } from "../content/roles";
 import { useMissionStatuses, useProfile } from "../data/hooks";
 import { updateProfile } from "../data/db";
@@ -127,6 +128,19 @@ export function CurriculumPage() {
             <ul className="list-disc pl-5 text-sm">
               {role.interviewFocus.map((f) => (
                 <li key={f}>{f}</li>
+              ))}
+            </ul>
+          </div>
+          <div className="mt-3">
+            <div className="label">Technical questions for this role</div>
+            <ul className="text-sm space-y-1" data-testid="role-questions">
+              {roleQuestionsFor(role.id).map((q) => (
+                <li key={q.id}>
+                  <Link to={`/interview/practice?question=${q.id}`} className="hover:underline">
+                    {q.text}
+                  </Link>
+                  <span className="block text-xs muted">Prepares you: {q.missionIds.map((id) => MISSION_BY_ID.get(id)?.title ?? id).join(" · ")}</span>
+                </li>
               ))}
             </ul>
           </div>

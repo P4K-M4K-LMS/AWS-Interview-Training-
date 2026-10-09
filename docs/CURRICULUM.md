@@ -21,6 +21,10 @@ The learner picks a target role at onboarding (changeable in Settings). Each rol
 
 Nothing here claims to satisfy a degree, certification, tenure or clearance requirement, and no job title or responsibility is invented.
 
+## Role-specific interview questions
+
+`src/content/roleQuestions.ts` holds nine technical questions per target role. Each one names the qualification it probes (by the id used in `roles.ts`), the missions that prepare for it, and four "listening for" cues taken from the lessons. They use generic terms (a function platform, a queue) rather than product names, because OpsForge simulates concepts. `tests/roleQuestions.test.ts` enforces the links and that every qualification with mapped skills has at least one question.
+
 ## Explanation levels and primers
 
 Learners on the unnamed-role posting (`ops-automation`) are new to engineering, so every mission carries a **primer** (`src/content/primers.ts`) that comes before the lesson's how:

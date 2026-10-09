@@ -17,9 +17,10 @@ interface Props {
   onReset: () => void;
   retention?: boolean;
   onGiveUp?: () => void;
+  onRedo?: () => void;
 }
 
-export function TerminalMissionPlayer({ mission, progress, completed, onComplete, onReset, retention, onGiveUp }: Props) {
+export function TerminalMissionPlayer({ mission, progress, completed, onComplete, onReset, retention, onGiveUp, onRedo }: Props) {
   const [shell] = useState(() => {
     const saved = progress?.savedState as { shell?: ShellSnapshot } | undefined;
     return new Shell(mission.world, {}, saved?.shell);
@@ -92,6 +93,7 @@ export function TerminalMissionPlayer({ mission, progress, completed, onComplete
         progress={progress}
         retention={retention}
         onGiveUp={onGiveUp}
+      onRedo={onRedo}
         checks={allChecks}
         completed={completed}
         onComplete={onComplete}

@@ -17,7 +17,8 @@ Every mission page has:
 - A **workstation**: the terminal, the code editor, the algorithms lab, the incident console or the design canvas.
 - **Checks** on the right: live validation of the real state (files, permissions, services, test results, experiments). "Complete mission" only unlocks when every check passes.
 - **Hints** in four levels: nudge, specific hint, concept explanation, guided example. Each level you reveal reduces the mastery gained, so try first. Beginner-first learners also see **Why start here**, one sentence on why the mission's first move is the first move, before any hint is revealed.
-- **Reset mission environment** if you want a clean slate.
+- **Reset mission environment** if you want a clean slate while you are working.
+- After completion, **Redo this mission** reopens it with a fresh workstation and hints on. Your completion date, reflections and retention history stay, missions that depend on it stay unlocked, and finishing again changes no mastery; it is practice. **Start over (forgets this completion)** is the hard reset, which also makes dependants lock again.
 - After completion, a **reflection prompt** asks you to explain what you did, interview-style. You can send that explanation to the interview coach.
 
 ### Linux Terminal
@@ -69,6 +70,8 @@ Saving a mission's reflection also saves a draft story in the Story Bank, tagged
 Mastery per skill (0 to 100) with evidence: completions, independent solves (no hints, two attempts or fewer), retention checks. Stage promotion requires the next stage's skills at 60 percent. Retention checks appear when spaced repetition says a skill is due. Opening one replays the completed mission from a fresh environment with hints disabled: passing adds mastery and doubles the review interval; "I need the lesson again" ends the check, lowers mastery a little and schedules a review for tomorrow.
 
 ## Interview
+
+**Role questions**: Interview → Role questions (or the "Role questions" set in Practice) lists technical questions drawn from your target posting's qualifications, each naming the missions that prepare you for it and the cues an interviewer may listen for. They are practice examples written for this app, not a leaked question bank. In Realistic mode the technical follow-up is drawn from this set. The Curriculum page's role lens lists the same questions under the gap map.
 
 - **STAR Academy**: what each part of a STAR answer needs, weak vs strong examples, how to talk about failures, ownership language.
 - **Leadership Principles**: all 16, each with an explanation, evidence to show, practice questions, follow-ups and examples.

@@ -28,6 +28,8 @@ From an empty repository to a deployed, tested web application: a Linux/Python/G
 | #17 | Deploy resilience: one automatic reload when a page chunk fails to load after a deploy, and a readable route error page with Reload (reported by the owner as "not loading" right after the part-2 deploy) |
 | #18 | Deploy fix for the "not loading" reports: every push to `main` produced two Pages deployments, GitHub's Jekyll build of the raw repository (source "Deploy from a branch") and the Actions build of `dist/`, and whichever finished last was served; the Jekyll one shows a blank page. The workflow now switches the Pages source to GitHub Actions, or waits so its own deployment lands last |
 | #19 | Beginner primers for all 33 missions (option 1): In plain words, Why it matters, Why this way, Why start here; expanded for the unnamed-role track, collapsed under "Start from the basics" for the SDE II track; Settings → Explanations overrides; glossary terms linked from the primer. Owner's rule: the unnamed-role track needs beginner-level explanations with the why |
+| #20 | Docs: Pages source recorded as GitHub Actions (owner set it by hand; the workflow token gets 403 on the Pages update endpoint). Its merge showed the Jekyll build still running; a diagnostic run at 05:19 UTC confirmed the source had switched after that push |
+| #22 | Role-specific technical interview questions (nine per role, tied to quoted qualifications and preparing missions, cues, Realistic-mode follow-ups, Curriculum role lens) and Redo after completion (fresh workstation, record kept, dependants stay unlocked, no second mastery) |
 | #16 | Reorganisation part 2: Curriculum page with two lenses (by track: expandable tracks with skills, evidence, ordered missions and the lab; by target role: the gap map), per-track skill panels moved out of Progress, lab link on every mission, What-next panel after completion, reflections saved as draft stories marked as practice |
 
 Feature branches still exist on GitHub (`ccr-221527a4-xf3zs7`, `lp-verified-interview-cues`, `retention-checks`, `phase7-incidents`, `cicd-failure-modes`, `go-runner-spike`); this environment cannot delete remote branches, so delete them from the Branches page.
@@ -72,7 +74,7 @@ Unverified by automation: voice recognition/synthesis (browser-only), the Claude
 
 ## Open items, in order
 
-1. PR #19 (beginner primers) is merged. The owner set Settings → Pages → Source to GitHub Actions by hand (the workflow token could not); confirm on the next push to `main` that the "pages build and deployment" workflow no longer runs and the deploy job skips its wait.
+1. Merge PR #22 (role questions + redo) when CI is green. Its merge is the first push to `main` since the Pages source switched; confirm that the "pages build and deployment" workflow no longer runs and the deploy job skips its wait.
 2. For the serverless role: role-specific technical interview questions, more design exercises.
 3. Cleanup: the 22 static-component lint warnings in the architecture diagram; accessibility pass.
 3. More missions per track (see `docs/CURRICULUM.md` planned list).

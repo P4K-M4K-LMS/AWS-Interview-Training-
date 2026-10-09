@@ -8,6 +8,8 @@ Resume-from-here document for multi-session work. Update on every phase.
 
 - Stack: React 19 + TypeScript + Vite 8 + Tailwind v4, Dexie/IndexedDB, CodeMirror 6, Pyodide in a Web Worker, hash routing for GitHub Pages. See `docs/ARCHITECTURE.md`.
 - Coaching: rule-based engine is the always-on default. Optional Claude coaching goes through `server/index.ts` (user's choice, 2026-10-08); the browser never holds a key.
+- Redo after completion: `redoMission` reopens a completed mission as in-progress with a fresh workstation while keeping `completedAt`, reflections and retention history; `computeStatus` treats a mission with `completedAt` as satisfying prerequisites, and `completeMission` awards mastery only once.
+- Role-specific interview questions: `src/content/roleQuestions.ts`, nine per role, tied to quoted qualifications and preparing missions; surfaced in Practice (question set "Role questions"), Realistic mode's technical follow-up, Interview home and the Curriculum role lens.
 - Explanation levels: every mission has a beginner primer (plain words, why it matters, why this way, why start here) in `src/content/primers.ts`; expanded for the unnamed-role track, collapsed for the SDE II track, switchable in Settings. See `docs/CURRICULUM.md`.
 - Deployment: local dev + GitHub Pages via `.github/workflows/pages.yml` (builds with `VITE_BASE_PATH=/<repo>/`). The Pages source must be GitHub Actions (set by hand on 2026-10-09; the workflow token cannot change it). A branch source adds a competing Jekyll deployment of the raw repository that produces a blank site when it lands last (root cause of the 2026-10-09 "not loading" reports); the workflow detects that case and waits so its own build lands last.
 - Delivery: one draft PR, one commit per phase.

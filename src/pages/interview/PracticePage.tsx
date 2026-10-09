@@ -4,6 +4,9 @@ import { useLiveQuery } from "dexie-react-hooks";
 import { db, logActivity, nowIso, uid } from "../../data/db";
 import { useProfile, useStories } from "../../data/hooks";
 import { GENERAL_QUESTIONS, LEADERSHIP_PRINCIPLES, LP_BY_ID } from "../../content/leadershipPrinciples";
+import { ALL_ROLE_QUESTIONS, roleQuestionById, roleQuestionsFor } from "../../content/roleQuestions";
+import { roleFor } from "../../content/roles";
+import type { RoleId } from "../../domain/types";
 import { SCHEMA_VERSION, type DeliveryObservations, type FeedbackReport, type InterviewMode, type InterviewQuestion, type InterviewSession, type InterviewTurn, type LeadershipPrincipleId } from "../../domain/types";
 import { applyFollowUpAnswer, createDiveDeeperState, nextFollowUp, stopDiveDeeper } from "../../engine/interview/diveDeeper";
 import { compareFeedback } from "../../engine/interview/scoring";
@@ -13,7 +16,16 @@ import { speak, stopSpeaking, canSpeak } from "../../services/voice/synthesis";
 import { VoiceInput } from "../../components/VoiceInput";
 import { Callout, PageHeader, Panel, ProgressBar } from "../../components/ui";
 
-const ALL_QUESTIONS: InterviewQuestion[] = [...GENERAL_QUESTIONS, ...LEADERSHIP_PRINCIPLES.flatMap((p) => p.questions)];
+const ALL_QUESTIONS: InterviewQuestion[] = [...GENERAL_QUESTIONS, ...LEADERSHIP_PRINCIPLES.flatMap((p) => p.questions), ...ALL_ROLE_QUESTIONS];
+const ROLE_TECH_TEXTS = new Set(ALL_ROLE_QUESTIONS.map((q) => q.text));
+/** Realistic mode's technical follow-up: a role question when the learner has a target role, else the generic pool. */
+function pickTechFollowup(roleId: RoleId | undefined): string {
+  const pool = roleQuestionsFor(roleId).map((q) => q.text);
+  const list = pool.length ? pool : TECH_FOLLOWUPS;
+  return list[Math.floor(Math.random() * list.length)];
+}
+const isTechFollowup = (text: string) => TECH_FOLLOWUPS.includes(text) || ROLE_TECH_TEXTS.has(text);
+type QuestionSet = LeadershipPrincipleId | "" | "role";
 const TECH_FOLLOWUPS = [
   "Walk me through how you would investigate a Linux service that fails to start after a deploy.",
   "How would you find the most frequent error in a large log file from the command line?",
@@ -31,7 +43,7 @@ export function PracticePage() {
   const existing = useLiveQuery(() => (sessionId ? db.sessions.get(sessionId) : undefined), [sessionId]);
 
   const [mode, setMode] = useState<InterviewMode>((params.get("mode") as InterviewMode) || "practice");
-  const [principleId, setPrincipleId] = useState<LeadershipPrincipleId | "">("");
+  const [principleId, setPrincipleId] = useState<QuestionSet>(params.get("set") === "role" ? "role" : "");
   const [questionId, setQuestionId] = useState<string>(params.get("question") ?? "");
   const [customQuestion, setCustomQuestion] = useState<string>(params.get("question") && !ALL_QUESTIONS.some((q) => q.id === params.get("question")) ? params.get("question")! : "");
   const [storyId, setStoryId] = useState<string>(params.get("story") ?? "");
@@ -40,6 +52,7 @@ export function PracticePage() {
   useEffect(() => {
     const q = ALL_QUESTIONS.find((x) => x.id === params.get("question"));
     if (q?.principleId) setPrincipleId(q.principleId);
+    else if (q && roleQuestionById(q.id)) setPrincipleId("role");
   }, [params]);
 
   if (sessionId) {
@@ -49,12 +62,13 @@ export function PracticePage() {
   }
   if (!profile) return null;
 
-  const questions = principleId ? (LP_BY_ID.get(principleId)?.questions ?? []) : GENERAL_QUESTIONS;
+  const role = roleFor(profile.targetRoleId);
+  const questions: InterviewQuestion[] = principleId === "role" ? roleQuestionsFor(role.id) : principleId ? (LP_BY_ID.get(principleId)?.questions ?? []) : GENERAL_QUESTIONS;
 
   const start = async () => {
     const q = ALL_QUESTIONS.find((x) => x.id === questionId);
     const text = customQuestion.trim() || q?.text || questions[0]?.text || GENERAL_QUESTIONS[0].text;
-    const pid = (q?.principleId ?? principleId) || null;
+    const pid: LeadershipPrincipleId | null = q?.principleId ?? (principleId && principleId !== "role" ? principleId : null);
     const id = uid("session");
     const realistic =
       mode === "realistic"
@@ -111,8 +125,9 @@ export function PracticePage() {
           <label className="label" htmlFor="lp">
             Leadership Principle (optional)
           </label>
-          <select id="lp" className="input" value={principleId} onChange={(e) => { setPrincipleId(e.target.value as LeadershipPrincipleId | ""); setQuestionId(""); }}>
+          <select id="lp" className="input" value={principleId} onChange={(e) => { setPrincipleId(e.target.value as QuestionSet); setQuestionId(""); }} data-testid="question-set">
             <option value="">General behavioral question</option>
+            <option value="role">Role questions: {role.title}</option>
             {LEADERSHIP_PRINCIPLES.map((p) => (
               <option key={p.id} value={p.id}>
                 {p.name}
@@ -184,6 +199,7 @@ function SessionRunner({ session }: { session: InterviewSession }) {
   const spokenRef = useRef<string | null>(null);
   const settings = profile?.settings;
   const story = stories.find((s) => s.id === session.storyId);
+  const roleQuestion = roleQuestionById(session.questionId);
   const lastInterviewer = [...session.turns].reverse().find((t) => t.role === "interviewer");
   const learnerTurns = session.turns.filter((t) => t.role === "learner");
   const dd = session.diveDeeper;
@@ -287,9 +303,9 @@ function SessionRunner({ session }: { session: InterviewSession }) {
       await save({ turns: [...turns, t], diveDeeper: null, realistic: { ...r, currentIndex: nextIndex }, questionId: q.id, questionText: q.text, principleId: q.principleId });
       return;
     }
-    const techAsked = turns.some((t) => t.role === "interviewer" && TECH_FOLLOWUPS.includes(t.text));
+    const techAsked = turns.some((t) => t.role === "interviewer" && isTechFollowup(t.text));
     if (!techAsked) {
-      const tech = TECH_FOLLOWUPS[Math.floor(Math.random() * TECH_FOLLOWUPS.length)];
+      const tech = pickTechFollowup(profile?.targetRoleId);
       const t = addTurn({ role: "interviewer", text: tech });
       await save({ turns: [...turns, t], diveDeeper: null, realistic: { ...r, currentIndex: nextIndex }, questionId: "technical", questionText: tech, principleId: null });
       return;
@@ -359,6 +375,13 @@ function SessionRunner({ session }: { session: InterviewSession }) {
         </div>
       </div>
 
+      {roleQuestion && (
+        <Callout kind="info" title={`Role question · ${roleFor(roleQuestion.roleId).title}`}>
+          <div className="text-xs" data-testid="role-cues">
+            Probes: {roleFor(roleQuestion.roleId).qualifications.find((q) => q.id === roleQuestion.qualificationId)?.text ?? roleQuestion.qualificationId}. Interviewers may listen for (practice example, not official): {roleQuestion.listeningFor.join("; ")}.
+          </div>
+        </Callout>
+      )}
       {story && (
         <Callout kind="info" title={`Using story: ${story.title}`}>
           <span className="text-xs">S: {story.situation.slice(0, 120)}… · confidence {story.confidence}</span>

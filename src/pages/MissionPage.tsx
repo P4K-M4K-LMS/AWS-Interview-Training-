@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Link, useParams, useSearchParams } from "react-router-dom";
 import { MISSION_BY_ID, RECOMMENDED_ORDER } from "../content/missions";
 import { useMissionStatuses, useProfile } from "../data/hooks";
-import { completeMission, completeRetentionCheck, resetMission, startMission, startRetentionCheck } from "../engine/missions/engine";
+import { completeMission, completeRetentionCheck, redoMission, resetMission, startMission, startRetentionCheck } from "../engine/missions/engine";
 import { eligibleStage } from "../engine/learner/mastery";
 import { db, logActivity, updateProfile } from "../data/db";
 import { TerminalMissionPlayer } from "../components/players/TerminalMissionPlayer";
@@ -81,6 +81,10 @@ export function MissionPage() {
     await startMission(mission.id);
     setResetKey((k) => k + 1);
   };
+  const onRedo = async () => {
+    await redoMission(mission.id);
+    setResetKey((k) => k + 1);
+  };
   const finishRetention = async (passed: boolean) => {
     await completeRetentionCheck(mission, passed, minutesSpent());
     setRetentionResult(passed ? "passed" : "failed");
@@ -103,7 +107,7 @@ export function MissionPage() {
 
   const common = retentionActive
     ? { progress: p, completed: false, onComplete: () => void finishRetention(true), onReset: () => void restartRetention(), retention: true, onGiveUp: () => void finishRetention(false) }
-    : { progress: p, completed: status === "completed", onComplete: () => void onComplete(), onReset: () => void onReset() };
+    : { progress: p, completed: status === "completed", onComplete: () => void onComplete(), onReset: () => void onReset(), onRedo: () => void onRedo() };
   const key = `${mission.id}-${resetKey}-${retentionActive ? "retention" : "normal"}`;
 
   const player = (() => {
@@ -137,6 +141,11 @@ export function MissionPage() {
           No problem. Mastery dipped slightly and a review is scheduled for tomorrow. The lesson and hints are available again below; work through the mission once more at your own pace.
         </Callout>
       )}
+      {p?.redoCount && status !== "completed" && !retentionActive ? (
+        <Callout kind="info" title="Redo in progress">
+          You completed this mission before, so this run is practice: hints are available, nothing is scored, and finishing it again changes no mastery. Your first completion, reflections and retention history are kept.
+        </Callout>
+      ) : null}
       {player}
       {status === "completed" && !retentionActive && (
         <Callout kind="info" title="What next">

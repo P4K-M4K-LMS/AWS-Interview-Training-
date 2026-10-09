@@ -33,7 +33,11 @@ export function computeStatus(mission: Mission, progress: Map<string, MissionPro
   const own = progress.get(mission.id);
   if (own?.status === "completed") return "completed";
   if (own?.status === "in-progress") return "in-progress";
-  const prereqsDone = mission.prerequisites.every((p) => progress.get(p)?.status === "completed");
+  // A mission being redone (completedAt set, status in-progress) still counts for its dependants.
+  const prereqsDone = mission.prerequisites.every((p) => {
+    const q = progress.get(p);
+    return q?.status === "completed" || Boolean(q?.completedAt);
+  });
   return prereqsDone ? "available" : "locked";
 }
 
@@ -85,10 +89,14 @@ export async function completeMission(mission: Mission, minutes: number) {
   const at = nowIso();
   const p = (await db.missions.get(mission.id)) ?? emptyProgress(mission.id);
   const attempts = Math.max(1, p.attempts);
-  const alreadyDone = p.status === "completed";
+  const alreadyDone = p.status === "completed" || Boolean(p.completedAt);
   const next: MissionProgress = { ...p, status: "completed", completedAt: p.completedAt ?? at, bestScore: 1, attempts, savedState: undefined };
   await db.missions.put(next);
-  if (alreadyDone) return next;
+  if (alreadyDone) {
+    // A redo: practice only. Mastery was recorded by the first completion.
+    if (p.status !== "completed") await logActivity({ type: "mission-complete", missionId: mission.id, minutes, detail: "redo, no mastery change" });
+    return next;
+  }
   for (const skillId of mission.skills) {
     const state = (await db.skills.get(skillId)) ?? emptySkill(skillId);
     await db.skills.put(applyMissionCompletion(state, { missionId: mission.id, attempts, maxHintLevel: p.maxHintLevel, score: 1, at }));
@@ -97,8 +105,32 @@ export async function completeMission(mission: Mission, minutes: number) {
   return next;
 }
 
+/** Forget everything about a mission, including its completion. */
 export async function resetMission(missionId: string) {
   await db.missions.delete(missionId);
+}
+
+/**
+ * Reopen a completed mission with a fresh workstation, keeping the record:
+ * completion date, reflections and retention history stay. Hints are
+ * available, nothing is scored, and completing it again changes no mastery.
+ */
+export async function redoMission(missionId: string) {
+  const p = await db.missions.get(missionId);
+  if (!p?.completedAt) throw new Error("Only a completed mission can be redone.");
+  const next: MissionProgress = {
+    ...p,
+    status: "in-progress",
+    attempts: 0,
+    hintsUsed: 0,
+    maxHintLevel: 0,
+    startedAt: nowIso(),
+    savedState: undefined,
+    retention: undefined,
+    redoCount: (p.redoCount ?? 0) + 1,
+  };
+  await db.missions.put(next);
+  return next;
 }
 
 export async function saveReflection(missionId: string, prompt: string, answer: string) {
