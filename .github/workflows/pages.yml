@@ -20,6 +20,10 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - name: Configure GitHub Pages (enables Pages with the Actions source if needed)
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
       - name: Build with repository base path
         run: VITE_BASE_PATH="/${GITHUB_REPOSITORY#*/}/" npm run build
       - run: cp dist/index.html dist/404.html
