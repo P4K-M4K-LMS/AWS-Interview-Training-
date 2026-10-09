@@ -15,7 +15,7 @@ export function LearningPathsPage() {
   const gap = roleGapMap(role, skills, progress);
   return (
     <div className="space-y-5">
-      <PageHeader title="Learning Paths" subtitle="Six tracks with prerequisites. Mastery comes only from missions, independent solves and retention checks." />
+      <PageHeader title="Curriculum" subtitle="Seven tracks with prerequisites, the missions in each, and how far they take you toward your target role. Mastery comes only from missions, independent solves and retention checks." />
       <Panel
         title="Target role: qualification gap map"
         actions={

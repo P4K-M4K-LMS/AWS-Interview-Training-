@@ -20,7 +20,7 @@ export function SkillProgressPage() {
 
   return (
     <div className="space-y-4">
-      <PageHeader title="Skill Progress" subtitle="Mastery reflects demonstrated ability: mission completions, independent solves and retention checks. Time spent is tracked but never counts as mastery." />
+      <PageHeader title="Progress" subtitle="Mastery reflects demonstrated ability: mission completions, independent solves and retention checks. Time spent is tracked but never counts as mastery." />
       <div className="grid sm:grid-cols-4 gap-3">
         <Panel title="Study time">
           <div className="text-2xl font-bold">{totalMinutes} min</div>
@@ -70,6 +70,25 @@ export function SkillProgressPage() {
             </li>
           ))}
         </ol>
+      </Panel>
+
+      <Panel title="Recent activity">
+        {activity.length === 0 ? (
+          <p className="text-sm muted">Nothing yet. Start your first mission.</p>
+        ) : (
+          <ul className="text-sm space-y-1">
+            {activity.slice(0, 12).map((a) => (
+              <li key={a.id} className="flex gap-3">
+                <span className="muted text-xs w-36 shrink-0">{new Date(a.at).toLocaleString()}</span>
+                <span>
+                  {a.type.replace("-", " ")}
+                  {a.missionId ? ` · ${a.missionId}` : ""}
+                  {a.detail ? ` · ${a.detail}` : ""}
+                </span>
+              </li>
+            ))}
+          </ul>
+        )}
       </Panel>
 
       {TRACKS.map((t) => (

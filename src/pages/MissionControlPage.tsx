@@ -9,7 +9,7 @@ export function MissionControlPage() {
   const ordered = RECOMMENDED_ORDER.map((id) => MISSIONS.find((m) => m.id === id)!).filter(Boolean);
   return (
     <div className="space-y-5">
-      <PageHeader title="Mission Control" subtitle="Missions in recommended order. Locked missions unlock when their prerequisites are completed and the related skills show enough mastery." />
+      <PageHeader title="Missions" subtitle="All missions in recommended order. A locked mission unlocks when its prerequisite missions are completed." />
       <Panel>
         <ol className="divide-y" style={{ borderColor: "var(--border)" }}>
           {ordered.map((m, i) => {

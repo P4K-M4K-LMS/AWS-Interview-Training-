@@ -1,25 +1,30 @@
-import type { RouteObject } from "react-router-dom";
+import { lazy } from "react";
+import { Navigate, type RouteObject } from "react-router-dom";
 import { AppShell } from "./app/AppShell";
 import { DashboardPage } from "./pages/DashboardPage";
-import { LearningPathsPage } from "./pages/LearningPathsPage";
-import { MissionControlPage } from "./pages/MissionControlPage";
-import { MissionPage } from "./pages/MissionPage";
-import { TerminalPage } from "./pages/TerminalPage";
-import { PythonLabPage } from "./pages/PythonLabPage";
-import { GoLabPage } from "./pages/GoLabPage";
-import { AlgorithmsLabPage } from "./pages/AlgorithmsLabPage";
-import { SecurityOpsPage } from "./pages/SecurityOpsPage";
-import { MonitoringPage } from "./pages/MonitoringPage";
-import { InterviewHomePage } from "./pages/interview/InterviewHomePage";
-import { StarAcademyPage } from "./pages/interview/StarAcademyPage";
-import { PrinciplesPage } from "./pages/interview/PrinciplesPage";
-import { StoryBankPage } from "./pages/interview/StoryBankPage";
-import { PracticePage } from "./pages/interview/PracticePage";
-import { HistoryPage } from "./pages/interview/HistoryPage";
-import { SkillProgressPage } from "./pages/SkillProgressPage";
-import { SettingsPage } from "./pages/SettingsPage";
 import { OnboardingPage } from "./pages/OnboardingPage";
 import { NotFoundPage } from "./pages/NotFoundPage";
+import { LabsPage } from "./pages/LabsPage";
+
+// Heavy pages load on demand so the first screen does not carry CodeMirror,
+// the simulation engine or the interview coach.
+const LearningPathsPage = lazy(() => import("./pages/LearningPathsPage").then((m) => ({ default: m.LearningPathsPage })));
+const MissionControlPage = lazy(() => import("./pages/MissionControlPage").then((m) => ({ default: m.MissionControlPage })));
+const MissionPage = lazy(() => import("./pages/MissionPage").then((m) => ({ default: m.MissionPage })));
+const TerminalPage = lazy(() => import("./pages/TerminalPage").then((m) => ({ default: m.TerminalPage })));
+const PythonLabPage = lazy(() => import("./pages/PythonLabPage").then((m) => ({ default: m.PythonLabPage })));
+const GoLabPage = lazy(() => import("./pages/GoLabPage").then((m) => ({ default: m.GoLabPage })));
+const AlgorithmsLabPage = lazy(() => import("./pages/AlgorithmsLabPage").then((m) => ({ default: m.AlgorithmsLabPage })));
+const SecurityOpsPage = lazy(() => import("./pages/SecurityOpsPage").then((m) => ({ default: m.SecurityOpsPage })));
+const MonitoringPage = lazy(() => import("./pages/MonitoringPage").then((m) => ({ default: m.MonitoringPage })));
+const InterviewHomePage = lazy(() => import("./pages/interview/InterviewHomePage").then((m) => ({ default: m.InterviewHomePage })));
+const StarAcademyPage = lazy(() => import("./pages/interview/StarAcademyPage").then((m) => ({ default: m.StarAcademyPage })));
+const PrinciplesPage = lazy(() => import("./pages/interview/PrinciplesPage").then((m) => ({ default: m.PrinciplesPage })));
+const StoryBankPage = lazy(() => import("./pages/interview/StoryBankPage").then((m) => ({ default: m.StoryBankPage })));
+const PracticePage = lazy(() => import("./pages/interview/PracticePage").then((m) => ({ default: m.PracticePage })));
+const HistoryPage = lazy(() => import("./pages/interview/HistoryPage").then((m) => ({ default: m.HistoryPage })));
+const SkillProgressPage = lazy(() => import("./pages/SkillProgressPage").then((m) => ({ default: m.SkillProgressPage })));
+const SettingsPage = lazy(() => import("./pages/SettingsPage").then((m) => ({ default: m.SettingsPage })));
 
 export const routes: RouteObject[] = [
   {
@@ -28,15 +33,22 @@ export const routes: RouteObject[] = [
     children: [
       { index: true, element: <DashboardPage /> },
       { path: "onboarding", element: <OnboardingPage /> },
-      { path: "paths", element: <LearningPathsPage /> },
+      { path: "curriculum", element: <LearningPathsPage /> },
       { path: "missions", element: <MissionControlPage /> },
       { path: "missions/:missionId", element: <MissionPage /> },
-      { path: "terminal", element: <TerminalPage /> },
-      { path: "python", element: <PythonLabPage /> },
-      { path: "go", element: <GoLabPage /> },
-      { path: "algorithms", element: <AlgorithmsLabPage /> },
-      { path: "security", element: <SecurityOpsPage /> },
-      { path: "monitoring", element: <MonitoringPage /> },
+      {
+        path: "labs",
+        element: <LabsPage />,
+        children: [
+          { index: true, element: <Navigate to="/labs/terminal" replace /> },
+          { path: "terminal", element: <TerminalPage /> },
+          { path: "python", element: <PythonLabPage /> },
+          { path: "go", element: <GoLabPage /> },
+          { path: "algorithms", element: <AlgorithmsLabPage /> },
+          { path: "security", element: <SecurityOpsPage /> },
+          { path: "monitoring", element: <MonitoringPage /> },
+        ],
+      },
       { path: "interview", element: <InterviewHomePage /> },
       { path: "interview/star", element: <StarAcademyPage /> },
       { path: "interview/principles", element: <PrinciplesPage /> },
@@ -47,6 +59,14 @@ export const routes: RouteObject[] = [
       { path: "interview/history", element: <HistoryPage /> },
       { path: "progress", element: <SkillProgressPage /> },
       { path: "settings", element: <SettingsPage /> },
+      // Old addresses keep working.
+      { path: "paths", element: <Navigate to="/curriculum" replace /> },
+      { path: "terminal", element: <Navigate to="/labs/terminal" replace /> },
+      { path: "python", element: <Navigate to="/labs/python" replace /> },
+      { path: "go", element: <Navigate to="/labs/go" replace /> },
+      { path: "algorithms", element: <Navigate to="/labs/algorithms" replace /> },
+      { path: "security", element: <Navigate to="/labs/security" replace /> },
+      { path: "monitoring", element: <Navigate to="/labs/monitoring" replace /> },
       { path: "*", element: <NotFoundPage /> },
     ],
   },

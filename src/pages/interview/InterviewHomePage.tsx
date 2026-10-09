@@ -22,7 +22,7 @@ export function InterviewHomePage() {
 
   return (
     <div className="space-y-4">
-      <PageHeader title="Interview Command Center" subtitle="Prepare for Amazon/AWS-style behavioral and technical interviews. Unofficial practice: questions are examples, scores are coaching signals, and nothing here reproduces Amazon's private process." />
+      <PageHeader title="Interview" subtitle="Prepare for Amazon/AWS-style behavioral and technical interviews. Unofficial practice: questions are examples, scores are coaching signals, and nothing here reproduces Amazon's private process." />
       <div className="grid md:grid-cols-2 gap-4">
         {cards.map((c) => (
           <Link key={c.to} to={c.to} className="panel p-4 hover:border-amber-500 transition block">

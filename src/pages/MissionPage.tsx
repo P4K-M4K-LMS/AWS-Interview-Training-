@@ -44,7 +44,7 @@ export function MissionPage() {
     });
   }, [mission, retentionRequested, status, p?.retention, retentionResult]);
 
-  if (!mission) return <EmptyState title="Mission not found" body="This mission id does not exist." cta={{ to: "/missions", label: "Back to Mission Control" }} />;
+  if (!mission) return <EmptyState title="Mission not found" body="This mission id does not exist." cta={{ to: "/missions", label: "Back to missions" }} />;
 
   if (status === "locked") {
     return (
@@ -120,7 +120,7 @@ export function MissionPage() {
     <div className="space-y-4">
       {retentionResult === "passed" && (
         <Callout kind="success" title="Retention check passed">
-          You recalled this without hints. Mastery for {mission.skills.length} skill(s) increased and the next review is further out. <Link to="/progress" className="underline">See Skill Progress</Link>.
+          You recalled this without hints. Mastery for {mission.skills.length} skill(s) increased and the next review is further out. <Link to="/progress" className="underline">See Progress</Link>.
         </Callout>
       )}
       {retentionResult === "failed" && (

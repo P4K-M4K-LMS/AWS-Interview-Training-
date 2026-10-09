@@ -6,14 +6,14 @@ You are asked for a name and six quick placement questions. They only set a star
 
 ## The daily loop (about 30 minutes)
 
-The Dashboard has one big **Continue Learning** button. It takes you to the most useful thing right now: an unfinished mission, a retention check that is due, or the next mission in the recommended order. The suggested shape of a session is 3 minutes recall, 7 minutes new concept (the mission's Lesson tab), 15 minutes hands-on, 5 minutes reflection. Nothing penalises a missed day.
+**Today** (the home page) has one big **Continue Learning** button. It takes you to the most useful thing right now: an unfinished mission, a retention check that is due, or the next mission in the recommended order. The suggested shape of a session is 3 minutes recall, 7 minutes new concept (the mission's Lesson tab), 15 minutes hands-on, 5 minutes reflection. Nothing penalises a missed day.
 
 ## Missions
 
 Every mission page has:
 
 - **Briefing / Lesson / Glossary** tabs. Read the lesson when a concept is new. Reading never earns mastery.
-- A **workstation**: the terminal, the Python editor, or the Algorithms Laboratory.
+- A **workstation**: the terminal, the code editor, the algorithms lab, the incident console or the design canvas.
 - **Checks** on the right: live validation of the real state (files, permissions, services, test results, experiments). "Complete mission" only unlocks when every check passes.
 - **Hints** in four levels: nudge, specific hint, concept explanation, guided example. Each level you reveal reduces the mastery gained, so try first.
 - **Reset mission environment** if you want a clean slate.
@@ -23,11 +23,11 @@ Every mission page has:
 
 A simulator with a documented subset of commands (type `help`). It has a real filesystem model, permissions, `sudo`, processes, services (`systemctl`, `journalctl`), pipes and redirection. `nano FILE` opens a small editor. Unsupported commands say so. Use ↑/↓ for history, Tab to complete paths, Ctrl+L to clear.
 
-### Python Laboratory
+### Python lab
 
 Real CPython runs in your browser. Press **Run** to execute and see real output or a real traceback (with a plain-language explanation for common errors). Press **Run tests** to run the mission's test cases; they execute your functions directly, so names and return values matter. Infinite loops are stopped after 10 seconds.
 
-### Go Laboratory
+### Go lab
 
 Real Go runs in your browser through an interpreter compiled to WebAssembly. Goroutines, channels, select, WaitGroups, mutexes, generics and most of the standard library work; there is no network or filesystem, and goroutines interleave cooperatively because WebAssembly is single-threaded: races around a blocking call (a sleep, a channel, a lock) do reproduce, bare `counter++` races do not. Press Run for real output or a compiler error with a plain-language explanation. The runtime (about 8 MB compressed) downloads the first time you open the lab.
 
@@ -35,7 +35,7 @@ Real Go runs in your browser through an interpreter compiled to WebAssembly. Gor
 
 Go missions (on the Distributed track, unlocked after the Python config validator) work like Python missions: edit the program, Run to see output, Run tests to execute the mission's Go test snippets in the same interpreter. They cover a config parser with error values, a worker pool, timeouts with context and select, and retries with idempotency keys.
 
-### Algorithms Laboratory
+### Algorithms lab
 
 Pick an algorithm and an input size, press Run. You get an **operation count** (deterministic, the thing Big O describes) and an **elapsed time** (measured on your device, noisy). For small n you can step through the algorithm. Growth tables and side-by-side comparison show how work scales.
 
@@ -59,11 +59,11 @@ A design mission gives you requirements with numbers (peak load, latency budget,
 
 Incident missions open with a ticket and a broken platform on a one-second clock. Tabs: **Ticket**, **Metrics** (live stats and sparklines), **Logs** (evidence that names the failing component), **Diagram** (each component coloured by its own health). **Runbook actions** change the platform; every action resets the recovery timer. Answer the **root cause** question, apply a remediation that removes the cause (symptom-only fixes such as shedding legitimate traffic are rejected with a reason), wait until health stays green for the required seconds (use Advance 10s to skip ahead), then write the **post-incident note**. All five checks must pass to complete. Serverless incidents add function stats (needed vs allowed concurrency, throttles, cold starts, dead-letter queue depth, duplicate and lost invocations) and runbook actions for the concurrency limit, provisioned concurrency, dead-letter queue, retries, the idempotent handler and the timeout. Some wrong actions cannot be undone inside the incident (failing over to a replica that is behind discards its missing writes); the check tells you why, and **Reset** restarts the incident.
 
-## Skill Progress
+## Progress
 
 Mastery per skill (0 to 100) with evidence: completions, independent solves (no hints, two attempts or fewer), retention checks. Stage promotion requires the next stage's skills at 60 percent. Retention checks appear when spaced repetition says a skill is due. Opening one replays the completed mission from a fresh environment with hints disabled: passing adds mastery and doubles the review interval; "I need the lesson again" ends the check, lowers mastery a little and schedules a review for tomorrow.
 
-## Interview Command Center
+## Interview
 
 - **STAR Academy**: what each part of a STAR answer needs, weak vs strong examples, how to talk about failures, ownership language.
 - **Leadership Principles**: all 16, each with an explanation, evidence to show, practice questions, follow-ups and examples.

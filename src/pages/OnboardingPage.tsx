@@ -74,7 +74,7 @@ export function OnboardingPage() {
                   <span>
                     <span className="font-medium">{r.title}</span>
                     {r.team && <span className="muted"> · {r.team}</span>}
-                    <span className="block text-xs muted">{r.qualifications.length} listed qualifications; the Learning Paths page shows which ones OpsForge can train. You can change this in Settings.</span>
+                    <span className="block text-xs muted">{r.qualifications.length} listed qualifications; the Curriculum page shows which ones OpsForge can train. You can change this in Settings.</span>
                   </span>
                 </label>
               ))}

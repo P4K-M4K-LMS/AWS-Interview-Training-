@@ -1,18 +1,17 @@
 import { Link } from "react-router-dom";
-import { useActivity, useMissionStatuses, useProfile, useSessions, useStudyDays } from "../data/hooks";
+import { useMissionStatuses, useProfile, useSessions, useStudyDays } from "../data/hooks";
 import { recommendNext } from "../engine/learner/recommend";
 import { stageProgress } from "../engine/learner/mastery";
 import { stageInfo } from "../content/curriculum";
 import { MISSIONS } from "../content/missions";
 import { roleFor } from "../content/roles";
 import { nextMissionForGap, roleGapMap } from "../engine/learner/roleGap";
-import { Callout, PageHeader, Panel, ProgressBar } from "../components/ui";
+import { PageHeader, Panel, ProgressBar } from "../components/ui";
 import { localDate } from "../data/db";
 
 export function DashboardPage() {
   const profile = useProfile();
   const { statuses, progress, skills } = useMissionStatuses();
-  const activity = useActivity(8);
   const sessions = useSessions();
   const days = useStudyDays();
   if (!profile) return null;
@@ -33,8 +32,8 @@ export function DashboardPage() {
   return (
     <div className="space-y-5">
       <PageHeader
-        title={`Welcome back, ${profile.displayName}`}
-        subtitle={`Stage ${stage.stage}: ${stage.title}. ${stage.focus}`}
+        title="Today"
+        subtitle={`Welcome back, ${profile.displayName}. Stage ${stage.stage}: ${stage.title}. ${stage.focus}`}
         actions={
           <Link to={primary.path} className="btn-primary text-base px-5 py-2.5" data-testid="continue-learning">
             Continue Learning →
@@ -62,7 +61,7 @@ export function DashboardPage() {
           </div>
           <ProgressBar value={(completed / MISSIONS.length) * 100} />
           <Link to="/missions" className="text-sm accent underline mt-2 inline-block">
-            Open Mission Control
+            All missions
           </Link>
         </Panel>
         <Panel title={sp.next ? `Toward Stage ${sp.next.stage}: ${sp.next.title}` : "Final stage reached"}>
@@ -118,14 +117,14 @@ export function DashboardPage() {
           )}
           <p className="text-xs muted mt-2">
             {gap.counts["not-addressable"]} qualification(s) cannot be addressed here (degree, tenure, clearance); {gap.counts.planned} are planned.{" "}
-            <Link to="/paths" className="underline">
+            <Link to="/curriculum" className="underline">
               Full gap map
             </Link>
           </p>
         </Panel>
         <Panel title="Interview readiness">
           <p className="text-sm">
-            {sessions.length === 0 ? "No practice sessions yet." : `${sessions.length} practice session(s) saved.`} The Interview Command Center has STAR training, all 16 Leadership Principles, a private story bank, and Dive Deeper Mode.
+            {sessions.length === 0 ? "No practice sessions yet." : `${sessions.length} practice session(s) saved.`} The Interview section has STAR training, all 16 Leadership Principles, a private story bank, and Dive Deeper follow-ups.
           </p>
           <div className="flex gap-2 mt-3 flex-wrap">
             <Link to="/interview/star" className="btn-secondary">
@@ -138,28 +137,6 @@ export function DashboardPage() {
         </Panel>
       </div>
 
-      <Panel title="Recent activity">
-        {activity.length === 0 ? (
-          <p className="text-sm muted">Nothing yet. Start your first mission.</p>
-        ) : (
-          <ul className="text-sm space-y-1">
-            {activity.map((a) => (
-              <li key={a.id} className="flex gap-3">
-                <span className="muted text-xs w-36 shrink-0">{new Date(a.at).toLocaleString()}</span>
-                <span>
-                  {a.type.replace("-", " ")}
-                  {a.missionId ? ` · ${a.missionId}` : ""}
-                  {a.detail ? ` · ${a.detail}` : ""}
-                </span>
-              </li>
-            ))}
-          </ul>
-        )}
-      </Panel>
-
-      <Callout kind="info" title="What works today vs what is planned">
-        Missions, the terminal simulator, real Python execution, Big O labs, STAR coaching and Dive Deeper Mode are implemented. Voice depends on your browser. See Settings → About for the live feature status.
-      </Callout>
     </div>
   );
 }

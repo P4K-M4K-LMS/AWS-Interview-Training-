@@ -10,7 +10,7 @@ export function SecurityOpsPage() {
   const missions = missionsForTrack("netsec");
   return (
     <div className="space-y-4">
-      <PageHeader title="Security Operations" subtitle="Defensive investigations on isolated, fictional systems. Nothing here touches real networks." />
+      <PageHeader title="Security" subtitle="Defensive investigations on isolated, fictional systems. Nothing here touches real networks." />
       <Callout kind="warn" title="Not a certification">
         These labs introduce foundations related to CND/GSEC topics (logging, least privilege, hardening, incident response). They do not claim equivalence with, or endorsement by, any certification body.
       </Callout>
