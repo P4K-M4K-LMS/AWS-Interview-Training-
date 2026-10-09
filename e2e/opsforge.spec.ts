@@ -1239,6 +1239,7 @@ test("JavaScript lab, DOM and server units: delegation passes from a Study objec
 });
 
 test("lab layout: a long line in the editor wraps or scrolls inside its column, never widens the page", async ({ page }) => {
+  test.setTimeout(120_000);
   await onboard(page);
   // An unbroken 300-character word: long enough to overflow any column at any viewport.
   const long = "x".repeat(300);
@@ -1262,4 +1263,13 @@ test("lab layout: a long line in the editor wraps or scrolls inside its column, 
     await page.keyboard.insertText(`\n${long}`);
     await expect.poll(overflow).toBe(0);
   }
+  // The JavaScript lab prints what the program logs and throws.
+  await page.goto("/#/labs/javascript");
+  await page.locator(".cm-content").first().click();
+  await page.keyboard.press("Control+End");
+  await page.keyboard.insertText(`\nconsole.log("${long}");`);
+  await expect(page.getByTestId("js-run")).toBeEnabled({ timeout: 60_000 });
+  await page.getByTestId("js-run").click();
+  await expect(page.getByTestId("js-console")).toContainText(long);
+  await expect.poll(overflow).toBe(0);
 });

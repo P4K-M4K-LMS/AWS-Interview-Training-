@@ -109,7 +109,7 @@ function DrillView({ drill, fromPath, pick }: { drill: JsDrill; fromPath: string
         {credited.length > 0 && <p className="muted text-xs mt-1">Counts toward {credited.length} Study objective{credited.length === 1 ? "" : "s"}.</p>}
       </Panel>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        <div className="space-y-3 min-w-0">
+        <div className="space-y-3 min-w-0 break-words">
           <Panel title={isModules ? "Your modules" : "Your code"} actions={<StatusLine status={status} detail={detail} />}>
             {isModules && (
               <div className="flex gap-1 mb-2" role="tablist" aria-label="Files">
@@ -145,7 +145,7 @@ function DrillView({ drill, fromPath, pick }: { drill: JsDrill; fromPath: string
             </Panel>
           )}
         </div>
-        <div className="space-y-3 min-w-0">
+        <div className="space-y-3 min-w-0 break-words">
           <Panel title="Tests">
             <ul className="space-y-1 text-sm" data-testid="js-tests">
               {drill.tests.map((t) => {
