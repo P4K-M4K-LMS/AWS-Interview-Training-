@@ -1,0 +1,49 @@
+# Testing report
+
+Executed on 2026-10-09 in the build environment (Linux, Node 22.22, Chromium 1194 via Playwright 1.64). Every number below comes from a real run; nothing is estimated.
+
+## Commands
+
+```
+npm run typecheck   # tsc -b                      -> 0 errors
+npm run lint        # oxlint                      -> 0 errors, 11 warnings (React fast-refresh / effect style; no behaviour impact)
+npm run test        # vitest run                  -> 5 files, 43 tests passed
+npm run build       # vite build                  -> dist/ 15 MB incl. Pyodide runtime; app JS 1.2 MB (390 kB gzip)
+npm run test:e2e    # playwright test             -> 14 passed (7 scenarios × desktop + Pixel 5), 0 failed
+```
+
+## Unit and engine tests (Vitest)
+
+| File | Tests | What is verified |
+|---|---|---|
+| `tests/shell.test.ts` | 14 | tokenizer; navigation; cat/grep/pipes/redirection; mkdir/touch/mv/cp/rm; permissions, chmod, sudo; env expansion; ps/top/kill affecting services; systemctl with config validation and journal; unsupported commands return 127 with guidance; snapshot/restore; validator context; editor action; simulated ping/curl/dig/ss |
+| `tests/python-execute.test.ts` | 6 | real CPython (Pyodide 3.14) stdout capture; real tracebacks with exception type; test cases in learner namespace; isolation between runs; stdin to input(); tests skipped when the program itself fails |
+| `tests/bigo.test.ts` | 5 | growth ratios match classes (linear ≈10×, binary <25 ops at 1M, bubble >50× for 10×n, constant flat); exponential cap; step recording only for small n; sorts produce sorted output; theoretical reference for every algorithm |
+| `tests/missions.test.ts` | 10 | catalogue counts (3 Linux, 3 Python, 2 Big O, 1 security, 1 automation); all skills/prereqs exist; every terminal/investigation mission starts unsolved and is solved by executing its level-4 guided example; every Python mission's starter fails and reference solution passes all tests |
+| `tests/interview.test.ts` | 8 | vague answers produce ownership/technical/results gaps; complete STAR answer recognised; Dive Deeper asks targeted follow-ups, keeps original context, resolves gaps with evidence, accepts "I don't know", never repeats a gap/level, stops when sufficient or asked; scoring separates weak and strong answers with evidence and limitations; improvement only declared with stronger evidence; 16 LPs present with questions and examples |
+
+## Browser acceptance tests (Playwright, production build)
+
+Mapped to the nonnegotiable acceptance criteria (Part 20). Each runs on a desktop viewport and on a Pixel 5 viewport.
+
+| Criteria | Scenario | Result |
+|---|---|---|
+| 1, 2 | App opens; onboarding; dashboard with Continue Learning and recommendations | passed |
+| 3, 7 | Complete the first Linux mission by typing real commands; checks 3/3; completion persists across reload; skill appears in progress | passed |
+| 4, 6 | Python mission: interpreter loads, correct code prints real output, tests 4/4; NameError produces real traceback plus explanation | passed |
+| 5 | Algorithms lab: run binary search, step through | passed |
+| 8–17 | Interview Command Center, a Leadership Principle page, Story Bank create, practice session with text input, Dive Deeper follow-up, stop and receive feedback with revised outline and limitations, history | passed |
+| 18–20 | Skill progress page; Settings "what works today" feature status; mobile layout renders | passed |
+| keyboard | Skip link focusable and visible on focus; desktop Tab order reaches navigation | passed |
+
+## Not verified (honest gaps)
+
+- **Voice** (microphone permission flows, speech recognition, text-to-speech, transcript correction, cancellation): implemented against the Web Speech API with explicit states, but headless CI cannot grant a microphone or run a recognizer. Status: unverified; manual test plan in `docs/USER_GUIDE.md` (Interview section).
+- **Claude coaching proxy**: requires an API key; not exercised. The fallback path (proxy unreachable → rule-based report with a note) is exercised implicitly because e2e runs with rules mode.
+- **Realistic timed mode** and **guided builder UI**: implemented, not covered by e2e.
+- **Accessibility**: labels, roles, skip link and keyboard navigation exist; no screen-reader audit was performed.
+- **Offline fallback**: the app has no service worker; it works offline only if already cached by the browser.
+
+## Skipped
+
+None of the written tests are skipped.
