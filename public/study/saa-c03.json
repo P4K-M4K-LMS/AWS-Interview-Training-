@@ -495,8 +495,14 @@
           "text": "Disaster recovery strategies: backup and restore, pilot light, warm standby, active-active failover",
           "sourceHash": "8b82a3335ebf",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "dr",
+            "exerciseId": "dr-02-order-api",
+            "coverage": "full"
+          }
         },
         {
           "id": "saa-c03:2:20",
@@ -505,8 +511,14 @@
           "text": "RTO and RPO, and letting them choose the DR strategy rather than the other way round",
           "sourceHash": "f66dce547341",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "dr",
+            "exerciseId": "dr-01-match-the-need",
+            "coverage": "full"
+          }
         },
         {
           "id": "saa-c03:2:21",
@@ -515,8 +527,15 @@
           "text": "Failover strategies and the health checks that trigger them",
           "sourceHash": "99eecaf667d3",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "dr",
+            "exerciseId": "dr-03-payments",
+            "coverage": "partial",
+            "note": "manual versus automatic trigger"
+          }
         },
         {
           "id": "saa-c03:2:22",
@@ -924,8 +943,14 @@
           "text": "Selecting a backup or archival solution on cost",
           "sourceHash": "f7b4f54064c4",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "dr",
+            "exerciseId": "dr-01-match-the-need",
+            "coverage": "partial"
+          }
         },
         {
           "id": "saa-c03:4:7",
@@ -1024,8 +1049,15 @@
           "text": "Backup and retention policy design, including snapshot frequency",
           "sourceHash": "9c68d854f916",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "dr",
+            "exerciseId": "dr-02-order-api",
+            "coverage": "partial",
+            "note": "snapshot frequency as the recovery point"
+          }
         },
         {
           "id": "saa-c03:4:17",
@@ -1126,6 +1158,6 @@
     "units": 4,
     "objectives": 99,
     "bookkeeping": 0,
-    "linked": 13
+    "linked": 18
   }
 }

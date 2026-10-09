@@ -161,7 +161,27 @@ export const NETWORK_LAB_LINKS: StudyLabLink[] = [
   { course: "AWSMLA", text: "Creating VPCs, subnets, and security groups that isolate ML and AI systems", lab: "network", exerciseId: "net-04-endpoint", coverage: "partial" },
 ];
 
-export const STUDY_LAB_LINKS: StudyLabLink[] = [...POLICY_LAB_LINKS, ...NETWORK_LAB_LINKS];
+export const DR_LAB_LINKS: StudyLabLink[] = [
+  { course: "AWSSAA", text: "Disaster recovery strategies: backup and restore, pilot light, warm standby, active-active failover", lab: "dr", exerciseId: "dr-02-order-api", coverage: "full" },
+  { course: "AWSSAA", text: "RTO and RPO, and letting them choose the DR strategy", lab: "dr", exerciseId: "dr-01-match-the-need", coverage: "full" },
+  { course: "AWSSAA", text: "Failover strategies and the health checks that trigger them", lab: "dr", exerciseId: "dr-03-payments", coverage: "partial", note: "manual versus automatic trigger" },
+  { course: "AWSSAA", text: "Selecting a backup or archival solution on cost", lab: "dr", exerciseId: "dr-01-match-the-need", coverage: "partial" },
+  { course: "AWSSAA", text: "Backup and retention policy design, including snapshot frequency", lab: "dr", exerciseId: "dr-02-order-api", coverage: "partial", note: "snapshot frequency as the recovery point" },
+  { course: "AWSCLF", text: "When a workload needs multiple Regions: disaster recovery", lab: "dr", exerciseId: "dr-01-match-the-need", coverage: "partial" },
+  { course: "AWSSOA", text: "Restoring databases, including point-in-time restore, against RTO, RPO, and cost requirements", lab: "dr", exerciseId: "dr-05-restore-dominates", coverage: "partial", note: "restore time against the objectives" },
+  { course: "AWSSOA", text: "Following disaster recovery procedures: backup and restore, pilot light, warm standby", lab: "dr", exerciseId: "dr-04-untested", coverage: "partial" },
+  { course: "AWSDOP", text: "Disaster recovery concepts and strategies that meet RTO and RPO", lab: "dr", exerciseId: "dr-02-order-api", coverage: "full" },
+  { course: "AWSDOP", text: "Testing failover of Multi-AZ and multi-Region workloads", lab: "dr", exerciseId: "dr-04-untested", coverage: "partial", note: "the restore drill" },
+  { course: "AWSSAP", text: "Designing disaster recovery to stated RTO and RPO", lab: "dr", exerciseId: "dr-03-payments", coverage: "partial" },
+  { course: "AWSSAP", text: "Disaster recovery patterns at scale: pilot light, warm standby, multi-site", lab: "dr", exerciseId: "dr-02-order-api", coverage: "partial" },
+  { course: "AWSSAP", text: "Designing an effective backup and restoration strategy", lab: "dr", exerciseId: "dr-05-restore-dominates", coverage: "full" },
+  { course: "AWSSAP", text: "Performing disaster recovery testing rather than assuming it works", lab: "dr", exerciseId: "dr-04-untested", coverage: "full" },
+  { course: "AWSSAP", text: "Architecting automated, cost-effective backup", lab: "dr", exerciseId: "dr-01-match-the-need", coverage: "partial" },
+  { course: "SECPLUS", text: "Business continuity and disaster recovery: BIA, RTO/RPO, backup types, DR sites", lab: "dr", exerciseId: "dr-02-order-api", coverage: "partial", note: "RTO/RPO and standby sites" },
+  { course: "SECURITYX", text: "Business continuity and disaster recovery at an enterprise architecture level", lab: "dr", exerciseId: "dr-05-restore-dominates", coverage: "partial" },
+];
+
+export const STUDY_LAB_LINKS: StudyLabLink[] = [...POLICY_LAB_LINKS, ...NETWORK_LAB_LINKS, ...DR_LAB_LINKS];
 
 /**
  * Unit gates that a planned engine would make playable. The gate sentence

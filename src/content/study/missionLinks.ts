@@ -149,6 +149,33 @@ export const ENGINE_GATES: Record<string, string[]> = {
 
 /** Lab exercise id -> Study objective ids that passing it credits. */
 export const LAB_LINKS: Record<string, string[]> = {
+  "dr-01-match-the-need": [
+    "clf-c02:3:6",
+    "saa-c03:2:20",
+    "saa-c03:4:6",
+    "sap-c02:2:9"
+  ],
+  "dr-02-order-api": [
+    "dop-c02:3:14",
+    "saa-c03:2:19",
+    "saa-c03:4:16",
+    "sap-c02:1:16",
+    "secplus:4:7"
+  ],
+  "dr-03-payments": [
+    "saa-c03:2:21",
+    "sap-c02:1:15"
+  ],
+  "dr-04-untested": [
+    "dop-c02:3:15",
+    "sap-c02:2:8",
+    "soa-c03:2:10"
+  ],
+  "dr-05-restore-dominates": [
+    "sap-c02:1:19",
+    "securityx:1:5",
+    "soa-c03:2:8"
+  ],
   "net-01-stateful-source": [
     "ans-c01:3:13",
     "dea-c01:4:1",

@@ -434,8 +434,14 @@
           "text": "When a workload needs multiple Regions: disaster recovery, business continuity, latency, data sovereignty",
           "sourceHash": "afac29f4c697",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "dr",
+            "exerciseId": "dr-01-match-the-need",
+            "coverage": "partial"
+          }
         },
         {
           "id": "clf-c02:3:7",
@@ -877,6 +883,6 @@
     "units": 4,
     "objectives": 80,
     "bookkeeping": 0,
-    "linked": 3
+    "linked": 4
   }
 }

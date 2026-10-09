@@ -4,6 +4,7 @@ import type { StudyLink } from "../../domain/types";
 export const LAB_LABELS: Record<string, string> = {
   policy: "Authorization policy lab",
   network: "Network path lab",
+  dr: "Recovery planner lab",
 };
 
 export function labExercisePath(link: Extract<StudyLink, { kind: "lab" }>, objectiveId: string): string {

@@ -289,8 +289,15 @@
           "text": "Restoring databases, including point-in-time restore, against RTO, RPO, and cost requirements",
           "sourceHash": "e7ab1ce1766d",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "dr",
+            "exerciseId": "dr-05-restore-dominates",
+            "coverage": "partial",
+            "note": "restore time against the objectives"
+          }
         },
         {
           "id": "soa-c03:2:9",
@@ -309,8 +316,14 @@
           "text": "Following disaster recovery procedures: backup and restore, pilot light, warm standby, active/active",
           "sourceHash": "ed74a3fb99b8",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "dr",
+            "exerciseId": "dr-04-untested",
+            "coverage": "partial"
+          }
         }
       ]
     },
@@ -706,6 +719,6 @@
     "units": 5,
     "objectives": 59,
     "bookkeeping": 0,
-    "linked": 7
+    "linked": 9
   }
 }

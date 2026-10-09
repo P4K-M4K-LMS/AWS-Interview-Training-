@@ -849,3 +849,38 @@ test("network lab: trace a dropped packet to the hop, fix the filter, pass and c
   await page.getByTestId("lab-tab-network").click();
   await expect(page.getByRole("heading", { name: "Network path" })).toBeVisible();
 });
+
+test("recovery planner: an over-provisioned plan fails the lean check, the right plan passes and credits the Study objective", async ({ page }) => {
+  await onboard(page);
+  await page.goto("/#/study/saa-c03/2");
+  const objective = page.getByTestId("study-objective-20");
+  await expect(objective).toContainText("Do it: mission or lab");
+  await objective.getByTestId("study-practise-20").click();
+  await expect(page).toHaveURL(/#\/labs\/dr\?exercise=dr-01-match-the-need/);
+  await expect(page.getByRole("heading", { name: "Recovery planner" })).toBeVisible();
+  // The starting plan is a hot standby with continuous replication: far over budget, restore never tested.
+  await expect(page.getByTestId("dr-check-budget")).toHaveAttribute("data-ok", "0");
+  await expect(page.getByTestId("dr-check-tested")).toHaveAttribute("data-ok", "0");
+  await expect(page.getByTestId("dr-check-lean")).toContainText("cheapest plan that meets this requirement costs 60 credits");
+  await expect(page.getByTestId("dr-check")).toBeDisabled();
+  await page.getByTestId("dr-backup-daily-snapshot").check();
+  await page.getByTestId("dr-standby-none").check();
+  await page.getByTestId("dr-trigger-manual").check();
+  await page.getByTestId("dr-tested").check();
+  await expect(page.getByTestId("dr-cost")).toHaveText("60");
+  await expect(page.getByTestId("dr-rpo")).toHaveText("24 h");
+  await expect(page.getByTestId("dr-rto")).toHaveText("6 h 15 min");
+  // The drill: name the dominant step (bringing up the standby takes four hours).
+  await page.getByTestId("dr-drill").selectOption("restore");
+  await expect(page.getByTestId("dr-drill-verdict")).toContainText("Not for this plan");
+  await page.getByTestId("dr-drill").selectOption("provision");
+  await expect(page.getByTestId("dr-drill-verdict")).toContainText("Right");
+  await expect(page.getByTestId("dr-check")).toBeEnabled();
+  await page.getByTestId("dr-check").click();
+  await expect(page.getByTestId("dr-passed")).toContainText("Credited");
+  await page.getByTestId("dr-back-link").click();
+  await expect(page.getByTestId("study-status-20")).toHaveText("Guided");
+  await page.goto("/#/labs");
+  await page.getByTestId("lab-tab-recovery").click();
+  await expect(page.getByRole("heading", { name: "Recovery planner" })).toBeVisible();
+});
