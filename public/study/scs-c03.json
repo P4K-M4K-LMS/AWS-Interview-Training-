@@ -764,8 +764,14 @@
           "text": "Using tags to group resources by department, cost center, and environment",
           "sourceHash": "028efb02dc55",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "cost",
+            "exerciseId": "cost-06-cache-and-alarm",
+            "coverage": "partial"
+          }
         },
         {
           "id": "scs-c03:6:8",
@@ -836,6 +842,6 @@
     "units": 6,
     "objectives": 70,
     "bookkeeping": 0,
-    "linked": 10
+    "linked": 11
   }
 }

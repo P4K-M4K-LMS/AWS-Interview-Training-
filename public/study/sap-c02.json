@@ -283,8 +283,14 @@
           "text": "Purchasing options and their effect on cost and performance: Reserved Instances, Savings Plans, Spot Instances",
           "sourceHash": "9364eb836fd7",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "cost",
+            "exerciseId": "cost-03-interruptible",
+            "coverage": "partial"
+          }
         },
         {
           "id": "sap-c02:1:26",
@@ -662,8 +668,14 @@
           "text": "Designing a rightsizing strategy",
           "sourceHash": "2b9516881d35",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "cost",
+            "exerciseId": "cost-01-rightsize",
+            "coverage": "partial"
+          }
         },
         {
           "id": "sap-c02:2:33",
@@ -672,8 +684,14 @@
           "text": "Identifying appropriate pricing models: Reserved Instances and AWS Savings Plans",
           "sourceHash": "7b57412d647b",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "cost",
+            "exerciseId": "cost-02-commit-baseline",
+            "coverage": "partial"
+          }
         },
         {
           "id": "sap-c02:2:34",
@@ -682,8 +700,14 @@
           "text": "Storage tiering and data transfer modeling to reduce cost",
           "sourceHash": "0b869a0fe598",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "cost",
+            "exerciseId": "cost-04-tiering",
+            "coverage": "partial"
+          }
         },
         {
           "id": "sap-c02:2:35",
@@ -997,8 +1021,14 @@
           "text": "Designing billing alarms based on expected usage patterns",
           "sourceHash": "0e67071d90cb",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "cost",
+            "exerciseId": "cost-06-cache-and-alarm",
+            "coverage": "partial"
+          }
         },
         {
           "id": "sap-c02:3:30",
@@ -1017,8 +1047,14 @@
           "text": "Using tagging for cost allocation and reporting",
           "sourceHash": "0550056f5b4f",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "cost",
+            "exerciseId": "cost-06-cache-and-alarm",
+            "coverage": "partial"
+          }
         }
       ]
     },
@@ -1249,6 +1285,6 @@
     "units": 4,
     "objectives": 113,
     "bookkeeping": 0,
-    "linked": 10
+    "linked": 16
   }
 }

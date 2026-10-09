@@ -109,8 +109,14 @@
           "text": "Fixed costs versus variable costs",
           "sourceHash": "d1ca6ef116c8",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "cost",
+            "exerciseId": "cost-02-commit-baseline",
+            "coverage": "partial"
+          }
         },
         {
           "id": "clf-c02:1:11",
@@ -139,8 +145,14 @@
           "text": "Rightsizing, and why it is a recurring exercise rather than a one-time one",
           "sourceHash": "87a7b054c98e",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "cost",
+            "exerciseId": "cost-01-rightsize",
+            "coverage": "full"
+          }
         },
         {
           "id": "clf-c02:1:14",
@@ -731,8 +743,15 @@
           "text": "Compute purchasing options: On-Demand, Reserved Instances, Spot Instances, Savings Plans, Dedicated Hosts, Dedicated Instances, Capacity Reservations",
           "sourceHash": "cf028e7180d2",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "cost",
+            "exerciseId": "cost-03-interruptible",
+            "coverage": "partial",
+            "note": "committed, on-demand and interruptible capacity in generic terms"
+          }
         },
         {
           "id": "clf-c02:4:2",
@@ -761,8 +780,14 @@
           "text": "Data transfer costs: inbound, outbound, Region to Region, and within a Region",
           "sourceHash": "57af48ba5cd1",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "cost",
+            "exerciseId": "cost-05-transfer-path",
+            "coverage": "partial"
+          }
         },
         {
           "id": "clf-c02:4:5",
@@ -771,8 +796,14 @@
           "text": "Pricing across storage options and tiers",
           "sourceHash": "8a5a91fe4259",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "cost",
+            "exerciseId": "cost-04-tiering",
+            "coverage": "partial"
+          }
         },
         {
           "id": "clf-c02:4:6",
@@ -781,8 +812,15 @@
           "text": "AWS Budgets and AWS Cost Explorer, and which question each answers",
           "sourceHash": "0b8cf40344bc",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "cost",
+            "exerciseId": "cost-06-cache-and-alarm",
+            "coverage": "partial",
+            "note": "a spend alarm and allocation tags"
+          }
         },
         {
           "id": "clf-c02:4:7",
@@ -811,8 +849,14 @@
           "text": "Cost allocation tags and the AWS Cost and Usage Report",
           "sourceHash": "533fe4e408f9",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "cost",
+            "exerciseId": "cost-06-cache-and-alarm",
+            "coverage": "partial"
+          }
         },
         {
           "id": "clf-c02:4:10",
@@ -883,6 +927,6 @@
     "units": 4,
     "objectives": 80,
     "bookkeeping": 0,
-    "linked": 4
+    "linked": 11
   }
 }

@@ -200,7 +200,35 @@ export const ALARM_LAB_LINKS: StudyLabLink[] = [
   { course: "AWSDEA", text: "Using notifications during monitoring to send alerts", lab: "alarms", exerciseId: "alarm-06-severity", coverage: "partial" },
 ];
 
-export const STUDY_LAB_LINKS: StudyLabLink[] = [...POLICY_LAB_LINKS, ...NETWORK_LAB_LINKS, ...DR_LAB_LINKS, ...ALARM_LAB_LINKS];
+export const COST_LAB_LINKS: StudyLabLink[] = [
+  { course: "AWSCLF", text: "Fixed costs versus variable costs", lab: "cost", exerciseId: "cost-02-commit-baseline", coverage: "partial" },
+  { course: "AWSCLF", text: "Rightsizing, and why it is a recurring exercise", lab: "cost", exerciseId: "cost-01-rightsize", coverage: "full" },
+  { course: "AWSCLF", text: "Compute purchasing options: On-Demand, Reserved Instances, Spot Instances", lab: "cost", exerciseId: "cost-03-interruptible", coverage: "partial", note: "committed, on-demand and interruptible capacity in generic terms" },
+  { course: "AWSCLF", text: "Data transfer costs: inbound, outbound, Region to Region, and within a Region", lab: "cost", exerciseId: "cost-05-transfer-path", coverage: "partial" },
+  { course: "AWSCLF", text: "Pricing across storage options and tiers", lab: "cost", exerciseId: "cost-04-tiering", coverage: "partial" },
+  { course: "AWSCLF", text: "AWS Budgets and AWS Cost Explorer, and which question each answers", lab: "cost", exerciseId: "cost-06-cache-and-alarm", coverage: "partial", note: "a spend alarm and allocation tags" },
+  { course: "AWSCLF", text: "Cost allocation tags and the AWS Cost and Usage Report", lab: "cost", exerciseId: "cost-06-cache-and-alarm", coverage: "partial" },
+  { course: "AWSSAA", text: "Selecting the most cost-effective storage service for a workload", lab: "cost", exerciseId: "cost-04-tiering", coverage: "partial" },
+  { course: "AWSSAA", text: "Purchasing options on cost: On-Demand, Spot Instances, Reserved Instances, Savings Plans", lab: "cost", exerciseId: "cost-02-commit-baseline", coverage: "partial" },
+  { course: "AWSSAA", text: "Selecting instance family and size for cost", lab: "cost", exerciseId: "cost-01-rightsize", coverage: "partial", note: "size only" },
+  { course: "AWSSAA", text: "NAT gateway cost: one shared gateway versus one per Availability Zone", lab: "cost", exerciseId: "cost-05-transfer-path", coverage: "full" },
+  { course: "AWSSAA", text: "Routing that minimizes transfer cost: VPC endpoints, VPC peering", lab: "cost", exerciseId: "cost-05-transfer-path", coverage: "partial" },
+  { course: "AWSSAA", text: "CDN and edge caching to cut origin cost", lab: "cost", exerciseId: "cost-06-cache-and-alarm", coverage: "full" },
+  { course: "AWSSAA", text: "Cost visibility: AWS Cost Explorer, AWS Budgets, the AWS Cost and Usage Report, cost allocation tags", lab: "cost", exerciseId: "cost-06-cache-and-alarm", coverage: "partial" },
+  { course: "AWSSAP", text: "Purchasing options and their effect on cost and performance", lab: "cost", exerciseId: "cost-03-interruptible", coverage: "partial" },
+  { course: "AWSSAP", text: "Designing a rightsizing strategy", lab: "cost", exerciseId: "cost-01-rightsize", coverage: "partial" },
+  { course: "AWSSAP", text: "Identifying appropriate pricing models: Reserved Instances and AWS Savings Plans", lab: "cost", exerciseId: "cost-02-commit-baseline", coverage: "partial" },
+  { course: "AWSSAP", text: "Storage tiering and data transfer modeling to reduce cost", lab: "cost", exerciseId: "cost-04-tiering", coverage: "partial" },
+  { course: "AWSSAP", text: "Designing billing alarms based on expected usage patterns", lab: "cost", exerciseId: "cost-06-cache-and-alarm", coverage: "partial" },
+  { course: "AWSSAP", text: "Using tagging for cost allocation and reporting", lab: "cost", exerciseId: "cost-06-cache-and-alarm", coverage: "partial" },
+  { course: "AWSSOA", text: "Optimizing the cost of a network architecture", lab: "cost", exerciseId: "cost-05-transfer-path", coverage: "partial" },
+  { course: "AWSMLA", text: "Cutting infrastructure cost through purchasing options", lab: "cost", exerciseId: "cost-03-interruptible", coverage: "partial" },
+  { course: "AWSMLA", text: "Balancing on-demand against provisioned resources for performance and cost", lab: "cost", exerciseId: "cost-02-commit-baseline", coverage: "partial" },
+  { course: "AWSDEA", text: "Optimizing cost while processing data", lab: "cost", exerciseId: "cost-03-interruptible", coverage: "partial" },
+  { course: "AWSSCS", text: "Using tags to group resources by department, cost center, and environment", lab: "cost", exerciseId: "cost-06-cache-and-alarm", coverage: "partial" },
+];
+
+export const STUDY_LAB_LINKS: StudyLabLink[] = [...POLICY_LAB_LINKS, ...NETWORK_LAB_LINKS, ...DR_LAB_LINKS, ...ALARM_LAB_LINKS, ...COST_LAB_LINKS];
 
 /**
  * Unit gates that a planned engine would make playable. The gate sentence

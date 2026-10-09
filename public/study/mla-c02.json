@@ -637,8 +637,14 @@
           "text": "Balancing on-demand against provisioned resources for performance and cost",
           "sourceHash": "2c1ac14442fe",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "cost",
+            "exerciseId": "cost-02-commit-baseline",
+            "coverage": "partial"
+          }
         },
         {
           "id": "mla-c02:3:10",
@@ -982,8 +988,14 @@
           "text": "Cutting infrastructure cost through purchasing options",
           "sourceHash": "f01ae2fed7f1",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "cost",
+            "exerciseId": "cost-03-interruptible",
+            "coverage": "partial"
+          }
         },
         {
           "id": "mla-c02:4:13",
@@ -1146,6 +1158,6 @@
     "units": 4,
     "objectives": 107,
     "bookkeeping": 0,
-    "linked": 3
+    "linked": 5
   }
 }
