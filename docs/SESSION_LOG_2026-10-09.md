@@ -72,7 +72,7 @@ Unverified by automation: voice recognition/synthesis (browser-only), the Claude
 
 ## Open items, in order
 
-1. Merge PR #19 (beginner primers) when CI is green. PR #18 is merged; check on the next push that the "pages build and deployment" workflow no longer runs, otherwise set Settings → Pages → Source to GitHub Actions by hand.
+1. PR #19 (beginner primers) is merged. The owner set Settings → Pages → Source to GitHub Actions by hand (the workflow token could not); confirm on the next push to `main` that the "pages build and deployment" workflow no longer runs and the deploy job skips its wait.
 2. For the serverless role: role-specific technical interview questions, more design exercises.
 3. Cleanup: the 22 static-component lint warnings in the architecture diagram; accessibility pass.
 3. More missions per track (see `docs/CURRICULUM.md` planned list).
