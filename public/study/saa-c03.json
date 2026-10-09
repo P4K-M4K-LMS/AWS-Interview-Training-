@@ -749,8 +749,15 @@
           "text": "Choosing a database type: relational, non-relational, in-memory, serverless",
           "sourceHash": "677fd6d32b24",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "sql",
+            "exerciseId": "sql-03-normalise",
+            "coverage": "partial",
+            "note": "the relational option"
+          }
         },
         {
           "id": "saa-c03:3:12",
@@ -1246,6 +1253,6 @@
     "units": 4,
     "objectives": 99,
     "bookkeeping": 0,
-    "linked": 32
+    "linked": 33
   }
 }

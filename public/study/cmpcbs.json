@@ -243,8 +243,15 @@
           "text": "Networking and database fundamentals",
           "sourceHash": "62ffe2b38bd4",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "sql",
+            "exerciseId": "sql-01-join",
+            "coverage": "partial",
+            "note": "the database half"
+          }
         },
         {
           "id": "cmpcbs:7:6",
@@ -1503,6 +1510,6 @@
     "units": 28,
     "objectives": 102,
     "bookkeeping": 20,
-    "linked": 3
+    "linked": 4
   }
 }

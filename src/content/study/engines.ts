@@ -24,7 +24,7 @@ export const ENGINES: StudyEngine[] = [
   { id: "workflow", name: "Workflow state machine", what: "A workflow runner with retries, timeouts and compensation on the shared engine.", status: "planned", approxObjectives: 12 },
   { id: "envelope-crypto", name: "Envelope encryption lab", what: "A simulated key service: data keys in two forms, sealing locally or in the service, key policies and cross-account grants, rotation with versions; every step traced.", status: "built", lab: "/labs/crypto", approxObjectives: 40 },
   { id: "autoscale", name: "Autoscaling policies", what: "Target-tracking and step policies on a fleet behind a load balancer: warm-up, cooldowns, scheduled minimums, the metric that measures the load, health-check detection and churn; what each costs, second by second.", status: "built", lab: "/labs/autoscale", approxObjectives: 30 },
-  { id: "sql-lab", name: "SQL lab", what: "Queries, indexes and query plans in the Python lab's bundled SQLite.", status: "planned", approxObjectives: 20 },
+  { id: "sql-lab", name: "SQL lab", what: "Real SQL on an in-memory SQLite inside the Python runtime: joins and aggregates, indexes and the plans that use or miss them, normalisation, transactions, views.", status: "built", lab: "/labs/sql", approxObjectives: 20 },
   { id: "js-runtime", name: "JavaScript runtime", what: "A sandboxed worker for the JavaScript course.", status: "planned", approxObjectives: 45 },
 ];
 

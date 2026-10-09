@@ -1078,3 +1078,31 @@ test("autoscaling lab: a CPU target never fires on an I/O-bound service; request
   await page.getByTestId("lab-tab-scaling").click();
   await expect(page.getByRole("heading", { name: "Autoscaling" })).toBeVisible();
 });
+
+test("SQL lab: a lookup scans the table until an index exists; real SQLite shows the plan and the pass credits the Study objective", async ({ page }) => {
+  await onboard(page);
+  await page.goto("/#/study/mscs/9");
+  const objective = page.getByTestId("study-objective-4");
+  await expect(objective).toContainText("Do it: mission or lab");
+  await objective.getByTestId("study-practise-4").click();
+  await expect(page).toHaveURL(/#\/labs\/sql\?exercise=sql-02-index/);
+  await expect(page.getByRole("heading", { name: "SQL" })).toBeVisible();
+  await expect(page.getByTestId("sql-run")).toBeEnabled({ timeout: 90_000 });
+  await page.getByTestId("sql-run").click();
+  await expect(page.getByTestId("sql-plan")).toContainText("SCAN orders", { timeout: 60_000 });
+  await expect(page.getByTestId("sql-rows")).toContainText("2026-01-05");
+  await expect(page.getByTestId("sql-check-plan")).toHaveAttribute("data-ok", "0");
+  await expect(page.getByTestId("sql-check")).toBeDisabled();
+  await page.getByTestId("sql-program").fill("CREATE INDEX idx_orders_customer ON orders (customer_id, placed_at);\nSELECT id, placed_at, status FROM orders WHERE customer_id = 17 ORDER BY placed_at;");
+  await page.getByTestId("sql-run").click();
+  await expect(page.getByTestId("sql-plan")).toContainText("SEARCH orders USING INDEX idx_orders_customer", { timeout: 60_000 });
+  await expect(page.getByTestId("sql-objects")).toContainText("idx_orders_customer on orders");
+  await expect(page.getByTestId("sql-check")).toBeEnabled();
+  await page.getByTestId("sql-check").click();
+  await expect(page.getByTestId("sql-passed")).toContainText("Credited");
+  await page.getByTestId("sql-back-link").click();
+  await expect(page.getByTestId("study-status-4")).toHaveText("Guided");
+  await page.goto("/#/labs");
+  await page.getByTestId("lab-tab-sql").click();
+  await expect(page.getByRole("heading", { name: "SQL" })).toBeVisible();
+});

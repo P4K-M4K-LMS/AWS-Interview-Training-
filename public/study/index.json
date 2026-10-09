@@ -18,17 +18,17 @@
         "units": 4,
         "objectives": 80,
         "bookkeeping": 0,
-        "linked": 14
+        "linked": 15
       },
       "modalities": {
-        "do-existing": 14,
+        "do-existing": 15,
         "do-new": 0,
-        "read": 66,
+        "read": 65,
         "combo": 0,
         "explain": 0
       },
       "file": "clf-c02.json",
-      "hash": "f5cbe77a96e13efb"
+      "hash": "5cd64f914b9f74dc"
     },
     {
       "id": "aif-c01",
@@ -68,17 +68,17 @@
         "units": 4,
         "objectives": 99,
         "bookkeeping": 0,
-        "linked": 32
+        "linked": 33
       },
       "modalities": {
-        "do-existing": 32,
+        "do-existing": 33,
         "do-new": 0,
-        "read": 67,
+        "read": 66,
         "combo": 0,
         "explain": 0
       },
       "file": "saa-c03.json",
-      "hash": "58ea7a907e42f505"
+      "hash": "c6bb76ed0a08a094"
     },
     {
       "id": "dva-c02",
@@ -144,17 +144,17 @@
         "units": 4,
         "objectives": 113,
         "bookkeeping": 0,
-        "linked": 11
+        "linked": 16
       },
       "modalities": {
-        "do-existing": 11,
+        "do-existing": 16,
         "do-new": 0,
-        "read": 102,
+        "read": 97,
         "combo": 0,
         "explain": 0
       },
       "file": "dea-c01.json",
-      "hash": "3bf68297d59ea6b6"
+      "hash": "f9ff0bce7747807c"
     },
     {
       "id": "mla-c02",
@@ -294,17 +294,17 @@
         "units": 15,
         "objectives": 113,
         "bookkeeping": 0,
-        "linked": 11
+        "linked": 16
       },
       "modalities": {
-        "do-existing": 11,
+        "do-existing": 16,
         "do-new": 0,
-        "read": 102,
+        "read": 97,
         "combo": 0,
         "explain": 0
       },
       "file": "mscs.json",
-      "hash": "dbfdb74716dbeac2"
+      "hash": "aabfeb33683a92ec"
     },
     {
       "id": "python",
@@ -478,17 +478,17 @@
         "units": 28,
         "objectives": 102,
         "bookkeeping": 20,
-        "linked": 3
+        "linked": 4
       },
       "modalities": {
-        "do-existing": 3,
+        "do-existing": 4,
         "do-new": 0,
-        "read": 99,
+        "read": 98,
         "combo": 0,
         "explain": 0
       },
       "file": "cmpcbs.json",
-      "hash": "84b351438fcffaf5"
+      "hash": "f066c82d527f39f6"
     }
   ]
 }

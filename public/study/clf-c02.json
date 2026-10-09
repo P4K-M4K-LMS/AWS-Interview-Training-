@@ -535,8 +535,15 @@
           "text": "Relational databases: Amazon RDS and Amazon Aurora",
           "sourceHash": "50e9d075d05d",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "sql",
+            "exerciseId": "sql-01-join",
+            "coverage": "partial",
+            "note": "what relational means"
+          }
         },
         {
           "id": "clf-c02:3:14",
@@ -947,6 +954,6 @@
     "units": 4,
     "objectives": 80,
     "bookkeeping": 0,
-    "linked": 14
+    "linked": 15
   }
 }
