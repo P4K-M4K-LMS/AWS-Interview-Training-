@@ -102,7 +102,7 @@ export interface TargetRole {
 /* Missions                                                            */
 /* ------------------------------------------------------------------ */
 
-export type MissionKind = "terminal" | "python" | "go" | "bigo" | "investigation" | "incident";
+export type MissionKind = "terminal" | "python" | "go" | "bigo" | "investigation" | "incident" | "design";
 
 /** Languages with an in-browser runtime. */
 export type CodeLanguage = "python" | "go";
@@ -472,7 +472,83 @@ export interface IncidentMission extends MissionBase {
   scenario: IncidentScenario;
 }
 
-export type Mission = TerminalMission | CodeMission | BigOMission | InvestigationMission | IncidentMission;
+/* --- Design exercises (requirements in, justified design out) ---------- */
+
+export interface DesignOption {
+  id: string;
+  name: string;
+  description: string;
+  /** Monthly cost in fictional currency units. */
+  cost: number;
+  /** Sustained capacity in requests or events per second, when the option sits on the ingest path. */
+  capacity?: number;
+  /** Added latency on the read path, ms. */
+  latencyMs?: number;
+  /** True when losing this one component stops the path it is on. */
+  spof?: boolean;
+  /** True when the option keeps data safely across a downstream outage. */
+  durable?: boolean;
+  consistency?: "strong" | "eventual";
+}
+
+export interface DesignSlot {
+  id: string;
+  label: string;
+  prompt: string;
+  /** Which requirement paths this slot belongs to. */
+  paths: Array<"write" | "read">;
+  options: DesignOption[];
+}
+
+export interface DesignQuantity {
+  id: string;
+  label: string;
+  prompt: string;
+  unit: string;
+  /** Accepted range (inclusive). */
+  min: number;
+  max: number;
+  explanation: string;
+}
+
+export interface DesignDrill {
+  id: string;
+  prompt: string;
+  options: string[];
+  /** The correct option depends on the design: a pure function of the chosen option ids per slot. */
+  answerFor: (choices: Record<string, string>) => number;
+  explanation: string;
+}
+
+export interface DesignRequirements {
+  functional: string[];
+  /** Peak load the write path must sustain, events per second. */
+  peakIngestPerSec: number;
+  /** p95 read latency budget, ms (sum of read-path latencies). */
+  maxReadLatencyMs: number;
+  /** Monthly budget. */
+  budget: number;
+  /** No single point of failure allowed on these paths. */
+  noSpofOn: Array<"write" | "read">;
+  /** Data on the write path must survive a storage outage (a durable buffer or equivalent). */
+  durableWrites: boolean;
+  /** Terms a justification must touch (at least `justificationMinTerms` of them). */
+  justificationTerms: string[];
+  justificationMinTerms: number;
+  justificationMinChars: number;
+}
+
+export interface DesignMission extends MissionBase {
+  kind: "design";
+  requirements: DesignRequirements;
+  slots: DesignSlot[];
+  quantities: DesignQuantity[];
+  drills: DesignDrill[];
+  /** A design that satisfies every check; used by tests and the level-4 hint. */
+  referenceDesign: { choices: Record<string, string>; quantities: Record<string, number>; justification: string };
+}
+
+export type Mission = TerminalMission | CodeMission | BigOMission | InvestigationMission | IncidentMission | DesignMission;
 
 /* ------------------------------------------------------------------ */
 /* Learner state (persisted)                                           */

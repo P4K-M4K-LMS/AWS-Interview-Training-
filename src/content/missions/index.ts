@@ -8,8 +8,9 @@ import { incidentMissions } from "./incidents";
 import { cicdMissions } from "./cicd";
 import { goMissions } from "./go";
 import { serverlessIncidents, serverlessPythonMissions } from "./serverless";
+import { designMissions } from "./design";
 
-export const MISSIONS: Mission[] = [...linuxMissions, ...pythonMissions, ...bigoMissions, ...netsecMissions, ...devopsMissions, ...cicdMissions, ...incidentMissions, ...goMissions, ...serverlessIncidents, ...serverlessPythonMissions];
+export const MISSIONS: Mission[] = [...linuxMissions, ...pythonMissions, ...bigoMissions, ...netsecMissions, ...devopsMissions, ...cicdMissions, ...incidentMissions, ...goMissions, ...serverlessIncidents, ...serverlessPythonMissions, ...designMissions];
 export const MISSION_BY_ID = new Map(MISSIONS.map((m) => [m.id, m]));
 
 export function missionsForTrack(trackId: TrackId): Mission[] {
@@ -44,6 +45,7 @@ export const RECOMMENDED_ORDER: string[] = [
   "serverless-02-poison-messages",
   "serverless-03-duplicate-charges",
   "serverless-04-idempotent-handler",
+  "design-01-position-ingest",
   "go-01-config-parser",
   "go-02-worker-pool",
   "go-03-timeouts-context",

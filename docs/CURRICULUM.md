@@ -61,6 +61,7 @@ Nothing here claims to satisfy a degree, certification, tenure or clearance requ
 | 29 | Incident: billing events pile up behind poison messages | Serverless | 28 | events, observability, queues |
 | 30 | Incident: customers charged twice after function timeouts | Serverless | 29 | idempotency, events, resilience |
 | 31 | Write an idempotent event handler | Serverless (Python) | 30, 26 | idempotency, errors |
+| 32 | Design exercise: the vehicle-position ingest and map read path | Serverless (design) | 29 | architecture, scaling, serverless scaling/events |
 | 17 | Go for a Python engineer: a config parser with real error values | Distributed (Go) | 8 | python.basics, architecture |
 | 18 | A worker pool: goroutines, channels and WaitGroups | Distributed (Go) | 17 | concurrency, queues |
 | 19 | Timeouts and cancellation with context and select | Distributed (Go) | 18 | resilience, concurrency |
@@ -72,7 +73,7 @@ Nothing here claims to satisfy a degree, certification, tenure or clearance requ
 - Python: regex log extractor; API client with retries; unit-test a buggy module; async fetcher.
 - Algorithms: recursion and stack depth; BFS over a service graph.
 - Net/Sec: firewall triage; web log anomaly hunt; hardening checklist.
-- Serverless: API throttling and client backoff; scheduled functions and cost; a design exercise (requirements in, justified design out).
+- Serverless: API throttling and client backoff; scheduled functions and cost; more design exercises (billing pipeline, multi-region read path).
 - DevOps: alert that never fired; container that will not start; dependency pin drift.
 - Distributed: cache invalidation; select-based pipeline stage.
 
