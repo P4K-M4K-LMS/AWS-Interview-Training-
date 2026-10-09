@@ -149,8 +149,14 @@
           "text": "Route tables, security groups, and network ACLs as organization-wide controls",
           "sourceHash": "b790221c6d50",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "network",
+            "exerciseId": "net-06-rule-order",
+            "coverage": "partial"
+          }
         },
         {
           "id": "sap-c02:1:15",
@@ -424,8 +430,14 @@
           "text": "Specifying inbound and outbound network flows with security group and network ACL rules",
           "sourceHash": "b489eb3e8e1b",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "network",
+            "exerciseId": "net-02-stateless-reply",
+            "coverage": "full"
+          }
         },
         {
           "id": "sap-c02:2:14",
@@ -1195,6 +1207,6 @@
     "units": 4,
     "objectives": 113,
     "bookkeeping": 0,
-    "linked": 1
+    "linked": 3
   }
 }

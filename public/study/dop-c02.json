@@ -1113,8 +1113,14 @@
           "text": "Network security components: security groups, network ACLs, routing, AWS Network Firewall, AWS WAF, AWS Shield",
           "sourceHash": "41a53c59e2c7",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "network",
+            "exerciseId": "net-06-rule-order",
+            "coverage": "partial"
+          }
         },
         {
           "id": "dop-c02:6:10",
@@ -1245,6 +1251,6 @@
     "units": 6,
     "objectives": 114,
     "bookkeeping": 0,
-    "linked": 5
+    "linked": 6
   }
 }

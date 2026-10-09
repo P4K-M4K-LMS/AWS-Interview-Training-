@@ -85,13 +85,13 @@ Legend: **verified** = automated tests pass in CI · **unverified** = implemente
 | Study lesson loop: guess → read → check (unseen-first bank, reshuffled choices) → explain it back (self-rated) → summary; review mode from Today; study style setting; objective pages; "no lesson yet" fallback with the mission link | verified (selection unit-tested; e2e runs the loop on a fixture lesson and sees Introduced → Guided → Independent) |
 | Study grading via the proxy (`POST /api/study/grade` with the answer key; explain-it-back and unit scenarios; proxy verdicts count toward Transfer-ready, self-ratings cap at Independent) and unit scenario player with self-check fallback | partial (client fallbacks unit-tested; scenario self-check e2e; the proxy path needs a key) |
 | Authorization policy lab (Labs → Policies): own grammar, decision trace, six exercises (default deny, deny wins, boundary ceiling, organisation guardrail, cross-account, tag-based access), 18 Study objectives credited to Guided on passing | verified (engine, grammar and every exercise unit-tested; e2e from a Study objective to a pass) |
-| Study network path lab | planned (slice 7 of the Study plan) |
+| Network path lab (Labs → Network): vendor-neutral virtual network, three line grammars (stateful filter, stateless filter, route table) plus hub routes, hop-by-hop trace naming the dropping hop with flow-log lines, six exercises, 23 Study objectives credited to Guided on passing | verified (primitives, grammars, each rule and every exercise unit-tested; e2e from a Study objective to a pass) |
 | Role-specific technical interview questions, more design exercises (for the SDE II Serverless role) | planned |
 | Full accessibility audit | planned (skip link, labels, keyboard nav exist) |
 
 ## Navigation (reorganised 2026-10-09, option B part 1)
 
-Three groups with plain names: **Learn** (Today, Curriculum, Missions, Study), **Practise** (Labs with Terminal / Python / Go / Algorithms / Security / Monitoring / Policies tabs, Interview), **You** (Progress, Settings). The old addresses (`/paths`, `/terminal`, `/python`, `/go`, `/algorithms`, `/security`, `/monitoring`) redirect. Heavy pages load on demand. Part 2 (done): one explorable **Curriculum** with a by-track lens (expandable tracks with skills, evidence, missions and the matching lab) and a by-target-role lens (the gap map); every mission links to its lab and offers the next mission on completion; mission reflections become draft stories in the Story Bank, marked as practice. Progress keeps study stats, stage, retention and activity.
+Three groups with plain names: **Learn** (Today, Curriculum, Missions, Study), **Practise** (Labs with Terminal / Python / Go / Algorithms / Security / Monitoring / Policies / Network tabs, Interview), **You** (Progress, Settings). The old addresses (`/paths`, `/terminal`, `/python`, `/go`, `/algorithms`, `/security`, `/monitoring`) redirect. Heavy pages load on demand. Part 2 (done): one explorable **Curriculum** with a by-track lens (expandable tracks with skills, evidence, missions and the matching lab) and a by-target-role lens (the gap map); every mission links to its lab and offers the next mission on completion; mission reflections become draft stories in the Story Bank, marked as practice. Progress keeps study stats, stage, retention and activity.
 
 ## Known limitations
 
@@ -107,7 +107,7 @@ Three groups with plain names: **Learn** (Today, Curriculum, Missions, Study), *
 
 ## Next steps (in order)
 
-1. Owner: generate SAA-C03 locally (`docs/STUDY_GENERATION.md`) and run the quality gate. Study slices 7–8: network lab, remaining courses, reviews and Today; proxy grading and unit scenarios; authorization policy lab; network path lab; the remaining 19 courses.
+1. Owner: generate SAA-C03 locally (`docs/STUDY_GENERATION.md`) and run the quality gate. Study slice 8: generate the remaining 19 courses after the SAA-C03 quality gate, reviews and Today; proxy grading and unit scenarios; authorization policy lab; network path lab; the remaining 19 courses.
 2. For the SDE II Serverless role: more design exercises.
 1. For the SDE II Serverless role: role-specific technical interview questions; more design exercises.
 2. More missions per track (see the planned list in CURRICULUM.md: cron/backup script, regex extractor, API client, recursion, BFS, firewall triage, web-log hunt).

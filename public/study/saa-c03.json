@@ -109,8 +109,14 @@
           "text": "VPC security components: security groups, network ACLs, route tables, NAT gateways",
           "sourceHash": "608c76328048",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "network",
+            "exerciseId": "net-01-stateful-source",
+            "coverage": "full"
+          }
         },
         {
           "id": "saa-c03:1:9",
@@ -119,8 +125,14 @@
           "text": "Network segmentation with public and private subnets",
           "sourceHash": "6fa31a771709",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "network",
+            "exerciseId": "net-03-nat",
+            "coverage": "full"
+          }
         },
         {
           "id": "saa-c03:1:10",
@@ -189,8 +201,15 @@
           "text": "AWS service endpoints and private access with AWS PrivateLink and VPC endpoints",
           "sourceHash": "6b5103cb1c52",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "network",
+            "exerciseId": "net-04-endpoint",
+            "coverage": "partial",
+            "note": "endpoint routing; no endpoint policies"
+          }
         },
         {
           "id": "saa-c03:1:17",
@@ -740,8 +759,14 @@
           "text": "Network topology design: subnet tiers, routing, IP addressing",
           "sourceHash": "5574f5cb6ed7",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "network",
+            "exerciseId": "net-05-hub",
+            "coverage": "partial"
+          }
         },
         {
           "id": "saa-c03:3:18",
@@ -1101,6 +1126,6 @@
     "units": 4,
     "objectives": 99,
     "bookkeeping": 0,
-    "linked": 9
+    "linked": 13
   }
 }

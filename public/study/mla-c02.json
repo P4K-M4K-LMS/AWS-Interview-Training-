@@ -1082,8 +1082,14 @@
           "text": "Creating VPCs, subnets, and security groups that isolate ML and AI systems",
           "sourceHash": "78395573809d",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "network",
+            "exerciseId": "net-04-endpoint",
+            "coverage": "partial"
+          }
         },
         {
           "id": "mla-c02:4:23",
@@ -1134,6 +1140,6 @@
     "units": 4,
     "objectives": 107,
     "bookkeeping": 0,
-    "linked": 1
+    "linked": 2
   }
 }
