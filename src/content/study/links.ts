@@ -241,7 +241,28 @@ export const DEPLOY_LAB_LINKS: StudyLabLink[] = [
   { course: "AWSMLA", text: "Automated deployment strategies and rollback actions", lab: "deploy", exerciseId: "deploy-02-canary", coverage: "partial" },
 ];
 
-export const STUDY_LAB_LINKS: StudyLabLink[] = [...POLICY_LAB_LINKS, ...NETWORK_LAB_LINKS, ...DR_LAB_LINKS, ...ALARM_LAB_LINKS, ...COST_LAB_LINKS, ...DEPLOY_LAB_LINKS];
+export const CRYPTO_LAB_LINKS: StudyLabLink[] = [
+  { course: "AWSSAA", text: "Encrypting data at rest with AWS KMS, and writing key policies that hold", lab: "crypto", exerciseId: "crypto-04-cross-account", coverage: "full" },
+  { course: "AWSSAA", text: "Rotating encryption keys and renewing certificates before they expire", lab: "crypto", exerciseId: "crypto-05-rotation", coverage: "partial", note: "key rotation; certificates are not simulated" },
+  { course: "AWSDVA", text: "Encryption at rest and encryption in transit, defined precisely", lab: "crypto", exerciseId: "crypto-02-direct", coverage: "partial", note: "the at-rest half" },
+  { course: "AWSDVA", text: "Client-side encryption versus server-side encryption", lab: "crypto", exerciseId: "crypto-02-direct", coverage: "full" },
+  { course: "AWSDVA", text: "Using encryption keys to encrypt and decrypt data", lab: "crypto", exerciseId: "crypto-01-envelope", coverage: "full" },
+  { course: "AWSDVA", text: "Using encryption across account boundaries", lab: "crypto", exerciseId: "crypto-04-cross-account", coverage: "full" },
+  { course: "AWSDVA", text: "Enabling and disabling key rotation", lab: "crypto", exerciseId: "crypto-05-rotation", coverage: "partial", note: "rotation and versions; no disabling" },
+  { course: "AWSDVA", text: "Encrypting environment variables that contain sensitive data", lab: "crypto", exerciseId: "crypto-02-direct", coverage: "partial", note: "a small secret sealed directly" },
+  { course: "AWSSOA", text: "Implementing, configuring, and troubleshooting encryption at rest with AWS KMS", lab: "crypto", exerciseId: "crypto-03-unwrap", coverage: "partial" },
+  { course: "AWSDEA", text: "Using AWS KMS keys to encrypt and decrypt data", lab: "crypto", exerciseId: "crypto-01-envelope", coverage: "full" },
+  { course: "AWSDEA", text: "Configuring encryption across AWS account boundaries", lab: "crypto", exerciseId: "crypto-04-cross-account", coverage: "full" },
+  { course: "AWSSAP", text: "Developing encryption strategies for data at rest and in transit", lab: "crypto", exerciseId: "crypto-02-direct", coverage: "partial", note: "at rest: direct against envelope" },
+  { course: "AWSSAP", text: "Deploying encryption strategies for data at rest and in transit with AWS KMS and AWS Certificate Manager", lab: "crypto", exerciseId: "crypto-01-envelope", coverage: "partial", note: "the at-rest half" },
+  { course: "AWSDOP", text: "Data management: classification, encryption, key management, access controls", lab: "crypto", exerciseId: "crypto-06-separation", coverage: "partial", note: "key management and access controls" },
+  { course: "AWSDOP", text: "Encrypting data in transit and at rest with AWS KMS, AWS CloudHSM, and AWS Certificate Manager", lab: "crypto", exerciseId: "crypto-05-rotation", coverage: "partial", note: "the at-rest half" },
+  { course: "AWSSCS", text: "Encryption at rest: choosing between AWS KMS and AWS CloudHSM, and client-side against server-side encryption", lab: "crypto", exerciseId: "crypto-02-direct", coverage: "partial", note: "client-side against server-side" },
+  { course: "AWSSCS", text: "Creating and managing encryption keys and certificates across one or many Regions", lab: "crypto", exerciseId: "crypto-05-rotation", coverage: "partial", note: "key versions and policies; no regions or certificates" },
+  { course: "AWSCLF", text: "Encryption at rest and encryption in transit as two separate decisions", lab: "crypto", exerciseId: "crypto-01-envelope", coverage: "partial", note: "the at-rest half" },
+];
+
+export const STUDY_LAB_LINKS: StudyLabLink[] = [...POLICY_LAB_LINKS, ...NETWORK_LAB_LINKS, ...DR_LAB_LINKS, ...ALARM_LAB_LINKS, ...COST_LAB_LINKS, ...DEPLOY_LAB_LINKS, ...CRYPTO_LAB_LINKS];
 
 /**
  * Unit gates that a planned engine would make playable. The gate sentence

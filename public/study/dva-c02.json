@@ -440,8 +440,15 @@
           "text": "Encryption at rest and encryption in transit, defined precisely",
           "sourceHash": "e897af8578c2",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "crypto",
+            "exerciseId": "crypto-02-direct",
+            "coverage": "partial",
+            "note": "the at-rest half"
+          }
         },
         {
           "id": "dva-c02:2:10",
@@ -460,8 +467,14 @@
           "text": "Client-side encryption versus server-side encryption",
           "sourceHash": "cb6f0b3ec471",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "crypto",
+            "exerciseId": "crypto-02-direct",
+            "coverage": "full"
+          }
         },
         {
           "id": "dva-c02:2:12",
@@ -470,8 +483,14 @@
           "text": "Using encryption keys to encrypt and decrypt data",
           "sourceHash": "6d2079b199bb",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "crypto",
+            "exerciseId": "crypto-01-envelope",
+            "coverage": "full"
+          }
         },
         {
           "id": "dva-c02:2:13",
@@ -490,8 +509,14 @@
           "text": "Using encryption across account boundaries",
           "sourceHash": "8b1ef27c2dd2",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "crypto",
+            "exerciseId": "crypto-04-cross-account",
+            "coverage": "full"
+          }
         },
         {
           "id": "dva-c02:2:15",
@@ -500,8 +525,15 @@
           "text": "Enabling and disabling key rotation",
           "sourceHash": "cf764cf42b4c",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "crypto",
+            "exerciseId": "crypto-05-rotation",
+            "coverage": "partial",
+            "note": "rotation and versions; no disabling"
+          }
         },
         {
           "id": "dva-c02:2:16",
@@ -520,8 +552,15 @@
           "text": "Encrypting environment variables that contain sensitive data",
           "sourceHash": "ec4e6f2a4f99",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "crypto",
+            "exerciseId": "crypto-02-direct",
+            "coverage": "partial",
+            "note": "a small secret sealed directly"
+          }
         },
         {
           "id": "dva-c02:2:18",
@@ -1125,6 +1164,6 @@
     "units": 4,
     "objectives": 98,
     "bookkeeping": 0,
-    "linked": 16
+    "linked": 22
   }
 }

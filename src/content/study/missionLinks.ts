@@ -214,6 +214,36 @@ export const LAB_LINKS: Record<string, string[]> = {
     "sap-c02:3:31",
     "scs-c03:6:7"
   ],
+  "crypto-01-envelope": [
+    "clf-c02:2:7",
+    "dea-c01:4:15",
+    "dva-c02:2:12",
+    "sap-c02:1:12"
+  ],
+  "crypto-02-direct": [
+    "dva-c02:2:11",
+    "dva-c02:2:17",
+    "dva-c02:2:9",
+    "sap-c02:2:15",
+    "scs-c03:5:4"
+  ],
+  "crypto-03-unwrap": [
+    "soa-c03:4:7"
+  ],
+  "crypto-04-cross-account": [
+    "dea-c01:4:16",
+    "dva-c02:2:14",
+    "saa-c03:1:17"
+  ],
+  "crypto-05-rotation": [
+    "dop-c02:6:15",
+    "dva-c02:2:15",
+    "saa-c03:1:19",
+    "scs-c03:5:12"
+  ],
+  "crypto-06-separation": [
+    "dop-c02:6:11"
+  ],
   "deploy-01-all-at-once": [
     "dop-c02:1:7",
     "sap-c02:3:6"

@@ -1198,8 +1198,15 @@
           "text": "Data management: classification, encryption, key management, access controls",
           "sourceHash": "dad6746b6cf6",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "crypto",
+            "exerciseId": "crypto-06-separation",
+            "coverage": "partial",
+            "note": "key management and access controls"
+          }
         },
         {
           "id": "dop-c02:6:12",
@@ -1238,8 +1245,15 @@
           "text": "Encrypting data in transit and at rest with AWS KMS, AWS CloudHSM, and AWS Certificate Manager",
           "sourceHash": "1626dea2ed1f",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "crypto",
+            "exerciseId": "crypto-05-rotation",
+            "coverage": "partial",
+            "note": "the at-rest half"
+          }
         },
         {
           "id": "dop-c02:6:16",
@@ -1310,6 +1324,6 @@
     "units": 6,
     "objectives": 114,
     "bookkeeping": 0,
-    "linked": 15
+    "linked": 17
   }
 }

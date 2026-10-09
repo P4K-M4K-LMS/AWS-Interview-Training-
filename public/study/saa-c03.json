@@ -218,8 +218,14 @@
           "text": "Encrypting data at rest with AWS KMS, and writing key policies that hold",
           "sourceHash": "b31633dba197",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "crypto",
+            "exerciseId": "crypto-04-cross-account",
+            "coverage": "full"
+          }
         },
         {
           "id": "saa-c03:1:18",
@@ -238,8 +244,15 @@
           "text": "Rotating encryption keys and renewing certificates before they expire",
           "sourceHash": "fadae734b2e4",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "crypto",
+            "exerciseId": "crypto-05-rotation",
+            "coverage": "partial",
+            "note": "key rotation; certificates are not simulated"
+          }
         },
         {
           "id": "saa-c03:1:20",
@@ -1207,6 +1220,6 @@
     "units": 4,
     "objectives": 99,
     "bookkeeping": 0,
-    "linked": 26
+    "linked": 28
   }
 }
