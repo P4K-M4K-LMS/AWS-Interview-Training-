@@ -317,7 +317,40 @@ export const SQL_LAB_LINKS: StudyLabLink[] = [
   { course: "CMPCBS", text: "Networking and database fundamentals", lab: "sql", exerciseId: "sql-01-join", coverage: "partial", note: "the database half" },
 ];
 
-export const STUDY_LAB_LINKS: StudyLabLink[] = [...POLICY_LAB_LINKS, ...NETWORK_LAB_LINKS, ...DR_LAB_LINKS, ...ALARM_LAB_LINKS, ...COST_LAB_LINKS, ...DEPLOY_LAB_LINKS, ...CRYPTO_LAB_LINKS, ...MESSAGING_LAB_LINKS, ...AUTOSCALE_LAB_LINKS, ...SQL_LAB_LINKS];
+export const PYTHON_DRILL_LINKS: StudyLabLink[] = [
+  { course: "PYTHON", text: "Operators: arithmetic, comparison, logical, and operator precedence", lab: "python-drills", exerciseId: "py-01-truthiness", coverage: "full" },
+  { course: "PYTHON", text: "Conditional logic: if/elif/else and truthiness", lab: "python-drills", exerciseId: "py-01-truthiness", coverage: "full" },
+  { course: "PYTHON", text: "Defining functions: positional, keyword, default, and *args/**kwargs parameters", lab: "python-drills", exerciseId: "py-02-arguments", coverage: "full" },
+  { course: "PYTHON", text: "Return values vs. side effects", lab: "python-drills", exerciseId: "py-12-decorators", coverage: "partial", note: "a wrapper that forgets to return" },
+  { course: "PYTHON", text: "Local, enclosing, and global scope (the LEGB rule)", lab: "python-drills", exerciseId: "py-03-closures", coverage: "full" },
+  { course: "PYTHON", text: "Recursion: base case, recursive case, and stack depth limits", lab: "python-drills", exerciseId: "py-04-recursion", coverage: "full" },
+  { course: "PYTHON", text: "The mutable-default-argument pitfall and how to avoid it", lab: "python-drills", exerciseId: "py-05-mutable-default", coverage: "full" },
+  { course: "PYTHON", text: "Lists: indexing, slicing, mutation, and common methods", lab: "python-drills", exerciseId: "py-06-slicing", coverage: "full" },
+  { course: "PYTHON", text: "Tuples and immutability; when to prefer a tuple over a list", lab: "python-drills", exerciseId: "py-06-slicing", coverage: "full" },
+  { course: "PYTHON", text: "Sets: membership testing and set operations", lab: "python-drills", exerciseId: "py-07-sets", coverage: "full" },
+  { course: "PYTHON", text: "List, dict, and set comprehensions", lab: "python-drills", exerciseId: "py-08-comprehensions", coverage: "full" },
+  { course: "PYTHON", text: "Nested data structures (lists of dicts, dicts of lists)", lab: "python-drills", exerciseId: "py-08-comprehensions", coverage: "full" },
+  { course: "PYTHON", text: "Reading and writing text files; the with statement and context managers", lab: "python-drills", exerciseId: "py-14-stdlib-files", coverage: "full" },
+  { course: "PYTHON", text: "Classes, instances, attributes, and methods", lab: "python-drills", exerciseId: "py-09-classes", coverage: "full" },
+  { course: "PYTHON", text: "__init__, self, and instance vs. class attributes", lab: "python-drills", exerciseId: "py-09-classes", coverage: "full" },
+  { course: "PYTHON", text: "Inheritance, method overriding, and super()", lab: "python-drills", exerciseId: "py-10-inheritance", coverage: "full" },
+  { course: "PYTHON", text: "Composition vs. inheritance", lab: "python-drills", exerciseId: "py-10-inheritance", coverage: "full" },
+  { course: "PYTHON", text: "Common dunder methods: __str__, __repr__, __eq__, __len__", lab: "python-drills", exerciseId: "py-09-classes", coverage: "partial", note: "__repr__ and __eq__" },
+  { course: "PYTHON", text: "Useful standard library modules: os, sys, datetime, collections, itertools", lab: "python-drills", exerciseId: "py-14-stdlib-files", coverage: "partial", note: "heapq and the file API" },
+  { course: "PYTHON", text: "Iterators and the iterator protocol", lab: "python-drills", exerciseId: "py-11-generators", coverage: "full" },
+  { course: "PYTHON", text: "Generators and yield; generator expressions", lab: "python-drills", exerciseId: "py-11-generators", coverage: "full" },
+  { course: "PYTHON", text: "First-class functions: passing functions as arguments, lambda expressions", lab: "python-drills", exerciseId: "py-12-decorators", coverage: "full" },
+  { course: "PYTHON", text: "Closures and what they actually capture", lab: "python-drills", exerciseId: "py-03-closures", coverage: "full" },
+  { course: "PYTHON", text: "Decorators: what they are, how to write one, common built-in examples", lab: "python-drills", exerciseId: "py-12-decorators", coverage: "full" },
+  { course: "PYTHON", text: "Debugging techniques: reading tracebacks", lab: "python-drills", exerciseId: "py-05-mutable-default", coverage: "partial", note: "the interpreter's own messages on every failed test" },
+  { course: "PYTHON", text: "Type hints: basic annotations, Optional, List/Dict generics, and static checking with mypy", lab: "python-drills", exerciseId: "py-13-typing", coverage: "partial", note: "annotations; no checker runs" },
+  { course: "MSCS", text: "Trace recursion and identify base cases", lab: "python-drills", exerciseId: "py-04-recursion", coverage: "full" },
+  { course: "CMPCBS", text: "Object-oriented programming basics", lab: "python-drills", exerciseId: "py-09-classes", coverage: "partial", note: "in Python" },
+  { course: "CMPCBS", text: "Recursive programming", lab: "python-drills", exerciseId: "py-04-recursion", coverage: "partial", note: "in Python" },
+  { course: "CMPCBS", text: "Recursion as a problem-solving technique", lab: "python-drills", exerciseId: "py-04-recursion", coverage: "partial", note: "in Python" },
+];
+
+export const STUDY_LAB_LINKS: StudyLabLink[] = [...POLICY_LAB_LINKS, ...NETWORK_LAB_LINKS, ...DR_LAB_LINKS, ...ALARM_LAB_LINKS, ...COST_LAB_LINKS, ...DEPLOY_LAB_LINKS, ...CRYPTO_LAB_LINKS, ...MESSAGING_LAB_LINKS, ...AUTOSCALE_LAB_LINKS, ...SQL_LAB_LINKS, ...PYTHON_DRILL_LINKS];
 
 /**
  * Unit gates that a planned engine would make playable. The gate sentence

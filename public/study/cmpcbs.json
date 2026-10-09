@@ -1164,8 +1164,15 @@
           "text": "Object-oriented programming basics",
           "sourceHash": "fc9b4ebd8acb",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "python-drills",
+            "exerciseId": "py-09-classes",
+            "coverage": "partial",
+            "note": "in Python"
+          }
         },
         {
           "id": "cmpcbs:23:3",
@@ -1233,8 +1240,15 @@
           "text": "Recursive programming",
           "sourceHash": "ff86594f472c",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "python-drills",
+            "exerciseId": "py-04-recursion",
+            "coverage": "partial",
+            "note": "in Python"
+          }
         },
         {
           "id": "cmpcbs:24:4",
@@ -1332,8 +1346,15 @@
           "text": "Recursion as a problem-solving technique",
           "sourceHash": "d7db22bfc758",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "python-drills",
+            "exerciseId": "py-04-recursion",
+            "coverage": "partial",
+            "note": "in Python"
+          }
         },
         {
           "id": "cmpcbs:25:7",
@@ -1510,6 +1531,6 @@
     "units": 28,
     "objectives": 102,
     "bookkeeping": 20,
-    "linked": 4
+    "linked": 7
   }
 }

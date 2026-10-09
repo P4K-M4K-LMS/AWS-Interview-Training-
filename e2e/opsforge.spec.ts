@@ -1106,3 +1106,34 @@ test("SQL lab: a lookup scans the table until an index exists; real SQLite shows
   await page.getByTestId("lab-tab-sql").click();
   await expect(page.getByRole("heading", { name: "SQL" })).toBeVisible();
 });
+
+test("Python drills: the shared mutable default fails the interpreter's own test; the None idiom passes and credits the Study objective", async ({ page }) => {
+  test.setTimeout(180_000);
+  await onboard(page);
+  await page.goto("/#/study/python/2");
+  const objective = page.getByTestId("study-objective-6");
+  await expect(objective).toContainText("Do it: mission or lab");
+  await objective.getByTestId("study-practise-6").click();
+  await expect(page).toHaveURL(/#\/labs\/python-drills\?exercise=py-05-mutable-default/);
+  await expect(page.getByRole("heading", { name: "Python drills" })).toBeVisible();
+  await expect(page.getByTestId("pydrill-run")).toBeEnabled({ timeout: 120_000 });
+  await page.getByTestId("pydrill-run").click();
+  await expect(page.getByTestId("pydrill-test-second")).toHaveAttribute("data-ok", "0", { timeout: 60_000 });
+  await expect(page.getByTestId("pydrill-test-first")).toHaveAttribute("data-ok", "1");
+  await expect(page.getByTestId("python-tests")).toContainText("the default list is shared");
+  await expect(page.getByTestId("pydrill-check")).toBeDisabled();
+  const editor = page.locator(".cm-content");
+  await editor.click();
+  await page.keyboard.press("Control+A");
+  await page.keyboard.insertText("def add_tag(tag, tags=None):\n    if tags is None:\n        tags = []\n    tags.append(tag)\n    return tags\n");
+  await page.getByTestId("pydrill-run").click();
+  await expect(page.getByTestId("pydrill-summary")).toHaveText("4 of 4 passed.", { timeout: 60_000 });
+  await expect(page.getByTestId("pydrill-check")).toBeEnabled();
+  await page.getByTestId("pydrill-check").click();
+  await expect(page.getByTestId("pydrill-passed")).toContainText("Credited");
+  await page.getByTestId("pydrill-back-link").click();
+  await expect(page.getByTestId("study-status-6")).toHaveText("Guided");
+  await page.goto("/#/labs");
+  await page.getByTestId("lab-tab-drills").click();
+  await expect(page.getByRole("heading", { name: "Python drills" })).toBeVisible();
+});

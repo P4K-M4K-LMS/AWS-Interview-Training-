@@ -415,6 +415,64 @@ export const LAB_LINKS: Record<string, string[]> = {
     "scs-c03:4:5",
     "soa-c03:4:1"
   ],
+  "py-01-truthiness": [
+    "python:1:2",
+    "python:1:4"
+  ],
+  "py-02-arguments": [
+    "python:2:1"
+  ],
+  "py-03-closures": [
+    "python:2:3",
+    "python:7:5"
+  ],
+  "py-04-recursion": [
+    "cmpcbs:24:3",
+    "cmpcbs:25:6",
+    "mscs:4:1",
+    "python:2:5"
+  ],
+  "py-05-mutable-default": [
+    "python:2:6",
+    "python:8:2"
+  ],
+  "py-06-slicing": [
+    "python:3:1",
+    "python:3:2"
+  ],
+  "py-07-sets": [
+    "python:3:4"
+  ],
+  "py-08-comprehensions": [
+    "python:3:5",
+    "python:3:6"
+  ],
+  "py-09-classes": [
+    "cmpcbs:23:2",
+    "python:5:1",
+    "python:5:2",
+    "python:5:5"
+  ],
+  "py-10-inheritance": [
+    "python:5:3",
+    "python:5:4"
+  ],
+  "py-11-generators": [
+    "python:7:1",
+    "python:7:2"
+  ],
+  "py-12-decorators": [
+    "python:2:2",
+    "python:7:3",
+    "python:7:6"
+  ],
+  "py-13-typing": [
+    "python:8:3"
+  ],
+  "py-14-stdlib-files": [
+    "python:4:2",
+    "python:6:5"
+  ],
   "sql-01-join": [
     "clf-c02:3:13",
     "cmpcbs:7:5",

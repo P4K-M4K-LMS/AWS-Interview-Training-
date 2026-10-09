@@ -15,6 +15,7 @@ import { CRYPTO_EXERCISE_BY_ID } from "../src/content/study/cryptoExercises";
 import { MESSAGING_EXERCISE_BY_ID } from "../src/content/study/messagingExercises";
 import { AUTOSCALE_EXERCISE_BY_ID } from "../src/content/study/autoscaleExercises";
 import { SQL_EXERCISE_BY_ID } from "../src/content/study/sqlExercises";
+import { PYTHON_DRILL_BY_ID } from "../src/content/study/pythonDrills";
 import { LAB_LABELS } from "../src/content/study/labs";
 import { ENGINE_GATES, LAB_LINKS, MISSION_LINKS } from "../src/content/study/missionLinks";
 import type { StudyCatalogIndex, StudyCourse } from "../src/domain/types";
@@ -88,6 +89,7 @@ describe("Study catalog (Ascendra snapshot)", () => {
       if (l.lab === "messaging") expect(MESSAGING_EXERCISE_BY_ID.has(l.exerciseId ?? ""), `exercise ${l.exerciseId}`).toBe(true);
       if (l.lab === "autoscale") expect(AUTOSCALE_EXERCISE_BY_ID.has(l.exerciseId ?? ""), `exercise ${l.exerciseId}`).toBe(true);
       if (l.lab === "sql") expect(SQL_EXERCISE_BY_ID.has(l.exerciseId ?? ""), `exercise ${l.exerciseId}`).toBe(true);
+      if (l.lab === "python-drills") expect(PYTHON_DRILL_BY_ID.has(l.exerciseId ?? ""), `exercise ${l.exerciseId}`).toBe(true);
     }
     const labLinked = built.courses.flatMap((c) => c.units.flatMap((u) => u.objectives.filter((o) => o.link?.kind === "lab")));
     expect(labLinked).toHaveLength(STUDY_LAB_LINKS.length);
