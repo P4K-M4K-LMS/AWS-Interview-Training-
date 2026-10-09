@@ -863,8 +863,14 @@
           "text": "Interpreting application metrics, logs, and traces together",
           "sourceHash": "e012fa7824ed",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "alarms",
+            "exerciseId": "alarm-02-periods",
+            "coverage": "partial"
+          }
         },
         {
           "id": "dva-c02:4:3",
@@ -898,8 +904,14 @@
           "text": "Reviewing application health with dashboards and insights",
           "sourceHash": "68dd4c9ff41c",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "alarms",
+            "exerciseId": "alarm-04-replica",
+            "coverage": "partial"
+          }
         },
         {
           "id": "dva-c02:4:6",
@@ -1107,6 +1119,6 @@
     "units": 4,
     "objectives": 98,
     "bookkeeping": 0,
-    "linked": 13
+    "linked": 15
   }
 }

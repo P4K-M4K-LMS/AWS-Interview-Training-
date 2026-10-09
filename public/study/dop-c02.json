@@ -740,8 +740,14 @@
           "text": "Common metrics and logs that signal trouble: EC2 CPU utilization, RDS queue length, Application Load Balancer 5xx errors",
           "sourceHash": "15be3227fdf3",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "alarms",
+            "exerciseId": "alarm-03-right-metric",
+            "coverage": "partial"
+          }
         },
         {
           "id": "dop-c02:4:13",
@@ -780,8 +786,14 @@
           "text": "Associating CloudWatch alarms with standard and custom metrics",
           "sourceHash": "ecb32c11704e",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "alarms",
+            "exerciseId": "alarm-01-threshold",
+            "coverage": "partial"
+          }
         },
         {
           "id": "dop-c02:4:17",
@@ -840,8 +852,15 @@
           "text": "Alert notification and action capabilities: alarms to Amazon SNS or Lambda, EC2 automatic recovery",
           "sourceHash": "1ba6558e0c43",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "alarms",
+            "exerciseId": "alarm-06-severity",
+            "coverage": "partial",
+            "note": "severity tiers; no notification wiring"
+          }
         },
         {
           "id": "dop-c02:4:23",
@@ -1264,6 +1283,6 @@
     "units": 6,
     "objectives": 114,
     "bookkeeping": 0,
-    "linked": 8
+    "linked": 11
   }
 }

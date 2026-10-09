@@ -812,8 +812,14 @@
           "text": "Using notifications during monitoring to send alerts",
           "sourceHash": "d607c313b8ce",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "alarms",
+            "exerciseId": "alarm-06-severity",
+            "coverage": "partial"
+          }
         },
         {
           "id": "dea-c01:3:19",
@@ -1205,6 +1211,6 @@
     "units": 4,
     "objectives": 113,
     "bookkeeping": 0,
-    "linked": 3
+    "linked": 4
   }
 }

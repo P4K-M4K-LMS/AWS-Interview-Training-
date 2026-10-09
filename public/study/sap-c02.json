@@ -434,8 +434,14 @@
           "text": "Centralized monitoring that recovers proactively from system failures",
           "sourceHash": "56ea9b856b16",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "alarms",
+            "exerciseId": "alarm-06-severity",
+            "coverage": "partial"
+          }
         },
         {
           "id": "sap-c02:2:12",
@@ -705,8 +711,14 @@
           "text": "Determining the most appropriate logging and monitoring strategy with Amazon CloudWatch",
           "sourceHash": "d96808ba102e",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "alarms",
+            "exerciseId": "alarm-01-threshold",
+            "coverage": "partial"
+          }
         },
         {
           "id": "sap-c02:3:2",
@@ -1237,6 +1249,6 @@
     "units": 4,
     "objectives": 113,
     "bookkeeping": 0,
-    "linked": 8
+    "linked": 10
   }
 }

@@ -149,6 +149,34 @@ export const ENGINE_GATES: Record<string, string[]> = {
 
 /** Lab exercise id -> Study objective ids that passing it credits. */
 export const LAB_LINKS: Record<string, string[]> = {
+  "alarm-01-threshold": [
+    "dop-c02:4:16",
+    "sap-c02:3:1",
+    "soa-c03:1:9"
+  ],
+  "alarm-02-periods": [
+    "ans-c01:4:12",
+    "dva-c02:4:2",
+    "mla-c02:4:2"
+  ],
+  "alarm-03-right-metric": [
+    "ans-c01:1:23",
+    "dop-c02:4:12",
+    "soa-c03:1:5"
+  ],
+  "alarm-04-replica": [
+    "dva-c02:4:5",
+    "soa-c03:1:17"
+  ],
+  "alarm-05-function": [
+    "soa-c03:1:2"
+  ],
+  "alarm-06-severity": [
+    "dea-c01:3:18",
+    "dop-c02:4:22",
+    "sap-c02:2:11",
+    "soa-c03:1:4"
+  ],
   "dr-01-match-the-need": [
     "clf-c02:3:6",
     "saa-c03:2:20",

@@ -876,8 +876,14 @@
           "text": "Monitoring workflows for anomalies and errors in data processing or model inference",
           "sourceHash": "5d44a49ebdbc",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "alarms",
+            "exerciseId": "alarm-02-periods",
+            "coverage": "partial"
+          }
         },
         {
           "id": "mla-c02:4:3",
@@ -1140,6 +1146,6 @@
     "units": 4,
     "objectives": 107,
     "bookkeeping": 0,
-    "linked": 2
+    "linked": 3
   }
 }

@@ -5,6 +5,7 @@ export const LAB_LABELS: Record<string, string> = {
   policy: "Authorization policy lab",
   network: "Network path lab",
   dr: "Recovery planner lab",
+  alarms: "Metric alarm lab",
 };
 
 export function labExercisePath(link: Extract<StudyLink, { kind: "lab" }>, objectiveId: string): string {

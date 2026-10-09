@@ -181,7 +181,26 @@ export const DR_LAB_LINKS: StudyLabLink[] = [
   { course: "SECURITYX", text: "Business continuity and disaster recovery at an enterprise architecture level", lab: "dr", exerciseId: "dr-05-restore-dominates", coverage: "partial" },
 ];
 
-export const STUDY_LAB_LINKS: StudyLabLink[] = [...POLICY_LAB_LINKS, ...NETWORK_LAB_LINKS, ...DR_LAB_LINKS];
+export const ALARM_LAB_LINKS: StudyLabLink[] = [
+  { course: "AWSSOA", text: "Configuring CloudWatch alarms, including composite alarms", lab: "alarms", exerciseId: "alarm-06-severity", coverage: "partial", note: "thresholds, periods and composite conditions; no actions" },
+  { course: "AWSSOA", text: "Troubleshooting an alarm that never fires, or fires on the wrong thing", lab: "alarms", exerciseId: "alarm-03-right-metric", coverage: "full" },
+  { course: "AWSSOA", text: "Analyzing performance metrics and automating remediation", lab: "alarms", exerciseId: "alarm-01-threshold", coverage: "partial", note: "reading the metrics; no remediation" },
+  { course: "AWSSOA", text: "Monitoring Amazon RDS with Performance Insights and CloudWatch alarms", lab: "alarms", exerciseId: "alarm-04-replica", coverage: "partial", note: "replica lag and database saturation" },
+  { course: "AWSSOA", text: "Monitoring different workload shapes -- serverless, compute, AI", lab: "alarms", exerciseId: "alarm-05-function", coverage: "partial", note: "function throttling versus cold starts" },
+  { course: "AWSDOP", text: "Common metrics and logs that signal trouble", lab: "alarms", exerciseId: "alarm-03-right-metric", coverage: "partial" },
+  { course: "AWSDOP", text: "Associating CloudWatch alarms with standard and custom metrics", lab: "alarms", exerciseId: "alarm-01-threshold", coverage: "partial" },
+  { course: "AWSDOP", text: "Alert notification and action capabilities", lab: "alarms", exerciseId: "alarm-06-severity", coverage: "partial", note: "severity tiers; no notification wiring" },
+  { course: "AWSDVA", text: "Interpreting application metrics, logs, and traces together", lab: "alarms", exerciseId: "alarm-02-periods", coverage: "partial" },
+  { course: "AWSDVA", text: "Reviewing application health with dashboards and insights", lab: "alarms", exerciseId: "alarm-04-replica", coverage: "partial" },
+  { course: "AWSANS", text: "Implementing automated alarms and custom metrics with CloudWatch", lab: "alarms", exerciseId: "alarm-02-periods", coverage: "partial" },
+  { course: "AWSANS", text: "Recommending the metrics that give the clearest visibility", lab: "alarms", exerciseId: "alarm-03-right-metric", coverage: "partial" },
+  { course: "AWSSAP", text: "Centralized monitoring that recovers proactively from system failures", lab: "alarms", exerciseId: "alarm-06-severity", coverage: "partial" },
+  { course: "AWSSAP", text: "Determining the most appropriate logging and monitoring strategy", lab: "alarms", exerciseId: "alarm-01-threshold", coverage: "partial" },
+  { course: "AWSMLA", text: "Monitoring workflows for anomalies and errors in data processing or model inference", lab: "alarms", exerciseId: "alarm-02-periods", coverage: "partial" },
+  { course: "AWSDEA", text: "Using notifications during monitoring to send alerts", lab: "alarms", exerciseId: "alarm-06-severity", coverage: "partial" },
+];
+
+export const STUDY_LAB_LINKS: StudyLabLink[] = [...POLICY_LAB_LINKS, ...NETWORK_LAB_LINKS, ...DR_LAB_LINKS, ...ALARM_LAB_LINKS];
 
 /**
  * Unit gates that a planned engine would make playable. The gate sentence
