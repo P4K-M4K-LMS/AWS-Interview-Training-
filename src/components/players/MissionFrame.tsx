@@ -1,8 +1,10 @@
 import { useState, type ReactNode } from "react";
 import { Link } from "react-router-dom";
-import type { CheckResult, Mission, MissionProgress } from "../../domain/types";
+import type { CheckResult, GlossaryEntry, Mission, MissionPrimer, MissionProgress } from "../../domain/types";
 import { TRACK_BY_ID, SKILL_BY_ID } from "../../content/curriculum";
 import { revealHint, saveReflectionAndStory } from "../../engine/missions/engine";
+import { effectiveExplanationLevel, primerFor, primerTerms } from "../../engine/learner/explanation";
+import { useProfile } from "../../data/hooks";
 import { Callout, Markdown, Panel } from "../ui";
 
 interface Props {
@@ -52,6 +54,10 @@ export function MissionFrame({ mission, progress, checks, completed, onComplete,
   const passed = checks.filter((c) => c.passed).length;
   const allPassed = checks.length > 0 && passed === checks.length;
   const lab = labForMission(mission);
+  const profile = useProfile();
+  const level = effectiveExplanationLevel(profile);
+  const primer = primerFor(mission);
+  const terms = primerTerms(mission);
 
   const showHint = async (level: number) => {
     setHintLevel(level);
@@ -99,6 +105,15 @@ export function MissionFrame({ mission, progress, checks, completed, onComplete,
               <Callout kind="info" title="Fictional scenario">
                 <Markdown text={mission.briefing} />
               </Callout>
+              {primer && level === "beginner" && (
+                <p className="text-sm" data-testid="primer-nudge">
+                  New to this? Open the{" "}
+                  <button type="button" className="underline" onClick={() => setTab("lesson")}>
+                    Lesson tab
+                  </button>{" "}
+                  first: it starts in plain words and explains why before how.
+                </p>
+              )}
               <div>
                 <div className="label">Objectives</div>
                 <ul className="list-disc pl-5 text-sm space-y-0.5">
@@ -112,6 +127,20 @@ export function MissionFrame({ mission, progress, checks, completed, onComplete,
           )}
           {tab === "lesson" && (
             <div className="space-y-4">
+              {primer &&
+                (level === "beginner" ? (
+                  <section className="panel-2 p-3" data-testid="primer">
+                    <PrimerBody primer={primer} terms={terms} onTerm={() => setTab("glossary")} />
+                  </section>
+                ) : (
+                  <details className="panel-2 p-3" data-testid="primer-collapsed">
+                    <summary className="cursor-pointer text-sm font-semibold">Start from the basics: plain words and the why</summary>
+                    <div className="mt-3">
+                      <PrimerBody primer={primer} terms={terms} onTerm={() => setTab("glossary")} />
+                    </div>
+                  </details>
+                ))}
+              {primer && <div className="label">How to do it</div>}
               {mission.lesson.map((l) => (
                 <div key={l.title}>
                   <h3 className="font-semibold">{l.title}</h3>
@@ -218,6 +247,12 @@ export function MissionFrame({ mission, progress, checks, completed, onComplete,
           ) : (
           <>
           <p className="text-xs muted mb-2">Hints get more specific. Using fewer hints earns more mastery. Stuck for 5+ minutes? Take one.</p>
+          {primer && (level === "beginner" || hintLevel >= 1) && (
+            <div className="panel-2 p-2 mb-2 text-sm" data-testid="primer-first-step">
+              <div className="text-xs font-semibold">Why start here</div>
+              <p>{primer.firstStep}</p>
+            </div>
+          )}
           <ol className="space-y-2">
             {mission.hints.map((h) => (
               <li key={h.level}>
@@ -246,6 +281,39 @@ export function MissionFrame({ mission, progress, checks, completed, onComplete,
           </div>
         )}
       </aside>
+    </div>
+  );
+}
+
+/** The three primer questions, then the glossary terms the primer leans on. */
+function PrimerBody({ primer, terms, onTerm }: { primer: MissionPrimer; terms: GlossaryEntry[]; onTerm: () => void }) {
+  return (
+    <div className="space-y-3 text-sm">
+      <div>
+        <h3 className="font-semibold">In plain words</h3>
+        <Markdown text={primer.plain} />
+      </div>
+      <div>
+        <h3 className="font-semibold">Why it matters</h3>
+        <Markdown text={primer.why} />
+      </div>
+      <div>
+        <h3 className="font-semibold">Why this way</h3>
+        <Markdown text={primer.whyThisWay} />
+      </div>
+      {terms.length > 0 && (
+        <p className="text-xs muted" data-testid="primer-terms">
+          Terms used here, defined in the Glossary tab:{" "}
+          {terms.map((t, i) => (
+            <span key={t.term}>
+              {i > 0 && ", "}
+              <button type="button" className="underline" onClick={onTerm}>
+                {t.term}
+              </button>
+            </span>
+          ))}
+        </p>
+      )}
     </div>
   );
 }

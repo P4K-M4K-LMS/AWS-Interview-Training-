@@ -21,6 +21,17 @@ The learner picks a target role at onboarding (changeable in Settings). Each rol
 
 Nothing here claims to satisfy a degree, certification, tenure or clearance requirement, and no job title or responsibility is invented.
 
+## Explanation levels and primers
+
+Learners on the unnamed-role posting (`ops-automation`) are new to engineering, so every mission carries a **primer** (`src/content/primers.ts`) that comes before the lesson's how:
+
+- **In plain words**: what the thing is, in everyday language with an analogy where it helps; no code spans by rule.
+- **Why it matters**: what breaks in real work, or what an interviewer is probing, if you skip it.
+- **Why this way**: why these steps beat the obvious alternative (retrying, skipping, adding capacity, pasting the secret).
+- **Why start here**: one sentence beside the hint ladder on why the first step is the first step.
+
+The explanation level is `beginner` (primer expanded, first-step note always shown) or `standard` (primer collapsed under "Start from the basics", first-step note after hint 1). The default follows the target role: beginner for the unnamed role, standard for the SDE II posting. `settings.explanationLevel` overrides it (Settings → Explanations). `tests/primers.test.ts` enforces one primer per mission, minimum lengths, plain words without code, and that every "why" grounds the lesson in work or interviews.
+
 ## Career stages (game levels)
 
 1. Engineering Trainee

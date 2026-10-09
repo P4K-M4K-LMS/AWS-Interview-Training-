@@ -13,9 +13,10 @@ You are asked for a name and six quick placement questions. They only set a star
 Every mission page has:
 
 - **Briefing / Lesson / Glossary** tabs. Read the lesson when a concept is new. Reading never earns mastery.
+- A **primer** at the top of every lesson, written for someone new to engineering: *In plain words* (what the thing is, with an everyday analogy), *Why it matters* (what breaks in real work without it) and *Why this way* (why these steps beat the obvious alternative), followed by the terms it uses, linked to the Glossary. On the unnamed-role track the primer is open; on the SDE II track it is collapsed under "Start from the basics". Settings → Explanations switches either way.
 - A **workstation**: the terminal, the code editor, the algorithms lab, the incident console or the design canvas.
 - **Checks** on the right: live validation of the real state (files, permissions, services, test results, experiments). "Complete mission" only unlocks when every check passes.
-- **Hints** in four levels: nudge, specific hint, concept explanation, guided example. Each level you reveal reduces the mastery gained, so try first.
+- **Hints** in four levels: nudge, specific hint, concept explanation, guided example. Each level you reveal reduces the mastery gained, so try first. Beginner-first learners also see **Why start here**, one sentence on why the mission's first move is the first move, before any hint is revealed.
 - **Reset mission environment** if you want a clean slate.
 - After completion, a **reflection prompt** asks you to explain what you did, interview-style. You can send that explanation to the interview coach.
 

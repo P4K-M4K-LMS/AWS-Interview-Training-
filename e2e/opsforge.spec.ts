@@ -540,3 +540,31 @@ func main() {
   await page.getByTestId("mission-complete").click();
   await expect(page.getByText("Mission complete: explain what you did")).toBeVisible();
 });
+
+test("beginner primers: open first on the unnamed-role track, collapsed after switching to standard", async ({ page }) => {
+  await onboard(page);
+  await page.goto("/#/missions/linux-01-find-your-way");
+  await expect(page.getByTestId("primer-nudge")).toBeVisible();
+  await page.getByRole("tab", { name: /^Lesson/ }).click();
+  const primer = page.getByTestId("primer");
+  await expect(primer).toBeVisible();
+  await expect(primer).toContainText("In plain words");
+  await expect(primer).toContainText("Why it matters");
+  await expect(primer).toContainText("Why this way");
+  await expect(page.getByTestId("primer-first-step")).toContainText("pwd");
+  // A glossary term named by the primer jumps to the Glossary tab.
+  await page.getByTestId("primer-terms").getByRole("button", { name: "directory" }).click();
+  await expect(page.getByRole("tab", { name: "Glossary" })).toHaveAttribute("aria-selected", "true");
+
+  await page.goto("/#/settings");
+  await expect(page.getByTestId("explain-beginner")).toBeChecked();
+  await page.getByTestId("explain-standard").click();
+  await expect(page.getByTestId("explain-standard")).toBeChecked();
+
+  await page.goto("/#/missions/linux-01-find-your-way");
+  await expect(page.getByTestId("primer-nudge")).toHaveCount(0);
+  await page.getByRole("tab", { name: /^Lesson/ }).click();
+  await expect(page.getByTestId("primer-collapsed")).toBeVisible();
+  await expect(page.getByTestId("primer")).toHaveCount(0);
+  await expect(page.getByTestId("primer-first-step")).toHaveCount(0);
+});

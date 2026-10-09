@@ -114,6 +114,22 @@ export interface LessonBlock {
   body: string;
 }
 
+/**
+ * Beginner primer shown before a mission's lesson: what the thing is in plain
+ * words, why it matters in real work, why this approach rather than the obvious
+ * alternative, and why the first step is the first step (shown by the hints).
+ */
+export interface MissionPrimer {
+  /** No code spans: everyday words and, where it helps, an analogy. */
+  plain: string;
+  why: string;
+  whyThisWay: string;
+  firstStep: string;
+}
+
+/** How mission lessons open: primer expanded (beginner) or collapsed (standard). */
+export type ExplanationLevel = "beginner" | "standard";
+
 export interface GlossaryEntry {
   term: string;
   definition: string;
@@ -592,6 +608,8 @@ export interface LearnerSettings {
   /** Base URL of the optional local race-detector service, e.g. http://localhost:8788. Empty = off. */
   raceServiceUrl?: string;
   dailyGoalMinutes: number;
+  /** Unset = follow the target role (the unnamed-role track is beginner-first). */
+  explanationLevel?: ExplanationLevel;
 }
 
 export interface LearnerProfile {
