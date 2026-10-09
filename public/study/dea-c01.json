@@ -1085,8 +1085,14 @@
           "text": "Using AWS KMS keys to encrypt and decrypt data",
           "sourceHash": "cf48eba136d3",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "crypto",
+            "exerciseId": "crypto-01-envelope",
+            "coverage": "full"
+          }
         },
         {
           "id": "dea-c01:4:16",
@@ -1095,8 +1101,14 @@
           "text": "Configuring encryption across AWS account boundaries",
           "sourceHash": "2e484c21a764",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "crypto",
+            "exerciseId": "crypto-04-cross-account",
+            "coverage": "full"
+          }
         },
         {
           "id": "dea-c01:4:17",
@@ -1217,6 +1229,6 @@
     "units": 4,
     "objectives": 113,
     "bookkeeping": 0,
-    "linked": 5
+    "linked": 7
   }
 }

@@ -552,8 +552,14 @@
           "text": "Implementing, configuring, and troubleshooting encryption at rest with AWS KMS",
           "sourceHash": "aa7df6ddb6a1",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "crypto",
+            "exerciseId": "crypto-03-unwrap",
+            "coverage": "partial"
+          }
         },
         {
           "id": "soa-c03:4:8",
@@ -765,6 +771,6 @@
     "units": 5,
     "objectives": 59,
     "bookkeeping": 0,
-    "linked": 16
+    "linked": 17
   }
 }

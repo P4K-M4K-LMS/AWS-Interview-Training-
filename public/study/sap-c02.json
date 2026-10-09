@@ -129,8 +129,15 @@
           "text": "Deploying encryption strategies for data at rest and in transit with AWS KMS and AWS Certificate Manager",
           "sourceHash": "489f2a42e53b",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "crypto",
+            "exerciseId": "crypto-01-envelope",
+            "coverage": "partial",
+            "note": "the at-rest half"
+          }
         },
         {
           "id": "sap-c02:1:13",
@@ -505,8 +512,15 @@
           "text": "Developing encryption strategies for data at rest and in transit",
           "sourceHash": "4dbd3a50f986",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "crypto",
+            "exerciseId": "crypto-02-direct",
+            "coverage": "partial",
+            "note": "at rest: direct against envelope"
+          }
         },
         {
           "id": "sap-c02:2:16",
@@ -1298,6 +1312,6 @@
     "units": 4,
     "objectives": 113,
     "bookkeeping": 0,
-    "linked": 18
+    "linked": 20
   }
 }

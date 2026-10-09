@@ -599,8 +599,15 @@
           "text": "Encryption at rest: choosing between AWS KMS and AWS CloudHSM, and client-side against server-side encryption",
           "sourceHash": "b17e3d6f4df1",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "crypto",
+            "exerciseId": "crypto-02-direct",
+            "coverage": "partial",
+            "note": "client-side against server-side"
+          }
         },
         {
           "id": "scs-c03:5:5",
@@ -679,8 +686,15 @@
           "text": "Creating and managing encryption keys and certificates across one or many Regions with KMS customer managed keys and AWS Private Certificate Authority",
           "sourceHash": "bfc8c6607dd7",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "crypto",
+            "exerciseId": "crypto-05-rotation",
+            "coverage": "partial",
+            "note": "key versions and policies; no regions or certificates"
+          }
         }
       ]
     },
@@ -842,6 +856,6 @@
     "units": 6,
     "objectives": 70,
     "bookkeeping": 0,
-    "linked": 11
+    "linked": 13
   }
 }

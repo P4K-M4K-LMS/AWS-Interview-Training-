@@ -21,7 +21,7 @@ export const ENGINES: StudyEngine[] = [
   { id: "cost-model", name: "Cost model in fictional credits", what: "Size a design and watch the monthly bill move; purchasing options and right-sizing without any real price list.", status: "built", lab: "/labs/cost", approxObjectives: 50 },
   { id: "deploy-shift", name: "Deployment strategies", what: "All-at-once, rolling, canary and second-fleet releases on the simulated platform, with an alarm guard and automatic rollback, second by second.", status: "built", lab: "/labs/deploy", approxObjectives: 45 },
   { id: "messaging", name: "Pub/sub, streams and workflow state machine", what: "Fan-out topics, ordered streams and a workflow runner with retries and compensation on the shared engine.", status: "planned", approxObjectives: 40 },
-  { id: "envelope-crypto", name: "Envelope encryption lab", what: "Data keys, key keys, rotation and who can decrypt what, in Python.", status: "planned", approxObjectives: 40 },
+  { id: "envelope-crypto", name: "Envelope encryption lab", what: "A simulated key service: data keys in two forms, sealing locally or in the service, key policies and cross-account grants, rotation with versions; every step traced.", status: "built", lab: "/labs/crypto", approxObjectives: 40 },
   { id: "autoscale", name: "Autoscaling policies", what: "Target-tracking and step policies on the simulated tiers; see thrash, cooldowns and warm-up.", status: "planned", approxObjectives: 30 },
   { id: "sql-lab", name: "SQL lab", what: "Queries, indexes and query plans in the Python lab's bundled SQLite.", status: "planned", approxObjectives: 20 },
   { id: "js-runtime", name: "JavaScript runtime", what: "A sandboxed worker for the JavaScript course.", status: "planned", approxObjectives: 45 },

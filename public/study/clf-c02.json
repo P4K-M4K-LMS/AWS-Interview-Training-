@@ -250,8 +250,15 @@
           "text": "Encryption at rest and encryption in transit as two separate decisions",
           "sourceHash": "ee2695776bd1",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "crypto",
+            "exerciseId": "crypto-01-envelope",
+            "coverage": "partial",
+            "note": "the at-rest half"
+          }
         },
         {
           "id": "clf-c02:2:8",
@@ -927,6 +934,6 @@
     "units": 4,
     "objectives": 80,
     "bookkeeping": 0,
-    "linked": 11
+    "linked": 12
   }
 }

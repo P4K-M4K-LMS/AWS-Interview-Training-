@@ -980,3 +980,32 @@ test("deploy lab: a wide rollout of a bad release exposes a quarter of the traff
   await page.getByTestId("lab-tab-deploys").click();
   await expect(page.getByRole("heading", { name: "Deployment strategies" })).toBeVisible();
 });
+
+test("encryption lab: the key service refuses a large object, a data key seals it locally and the stored wrapped key credits the Study objective", async ({ page }) => {
+  await onboard(page);
+  await page.goto("/#/study/dva-c02/2");
+  const objective = page.getByTestId("study-objective-12");
+  await expect(objective).toContainText("Do it: mission or lab");
+  await objective.getByTestId("study-practise-12").click();
+  await expect(page).toHaveURL(/#\/labs\/crypto\?exercise=crypto-01-envelope/);
+  await expect(page.getByRole("heading", { name: "Envelope encryption" })).toBeVisible();
+  await expect(page.getByTestId("crypto-trace-1")).toHaveAttribute("data-ok", "0");
+  await expect(page.getByTestId("crypto-trace-1")).toContainText("at most 4 KB");
+  await expect(page.getByTestId("crypto-check-sealed")).toHaveAttribute("data-ok", "0");
+  await expect(page.getByTestId("crypto-check")).toBeDisabled();
+  // Seal with a data key but keep the plaintext key around: one check still fails.
+  await page.getByTestId("crypto-program").fill("datakey orders-key as orders-app -> dk1\nencrypt orders-archive with dk1\nstore orders-archive with dk1");
+  await expect(page.getByTestId("crypto-check-stored")).toHaveAttribute("data-ok", "1");
+  await expect(page.getByTestId("crypto-check-forgotten")).toHaveAttribute("data-ok", "0");
+  await expect(page.getByTestId("crypto-memory")).toContainText("dk1 (orders-key v1)");
+  await page.getByTestId("crypto-program").fill("datakey orders-key as orders-app -> dk1\nencrypt orders-archive with dk1\nstore orders-archive with dk1\nforget dk1");
+  await expect(page.getByTestId("crypto-object-orders-archive")).toContainText("stored with wrapped dk1");
+  await expect(page.getByTestId("crypto-check")).toBeEnabled();
+  await page.getByTestId("crypto-check").click();
+  await expect(page.getByTestId("crypto-passed")).toContainText("Credited");
+  await page.getByTestId("crypto-back-link").click();
+  await expect(page.getByTestId("study-status-12")).toHaveText("Guided");
+  await page.goto("/#/labs");
+  await page.getByTestId("lab-tab-encryption").click();
+  await expect(page.getByRole("heading", { name: "Envelope encryption" })).toBeVisible();
+});
