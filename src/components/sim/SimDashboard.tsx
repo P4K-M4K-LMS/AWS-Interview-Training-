@@ -38,6 +38,18 @@ export function MetricsGrid({ m, config }: { m: SimMetrics; config: SimConfig })
       <Stat label="Queue depth" value={String(m.queueDepth)} tone={m.queueDepth > 1500 ? "bad" : m.queueDepth > 300 ? "warn" : "ok"} testId="stat-queue" />
       <Stat label="CPU / memory" value={`${m.cpu.toFixed(0)}% / ${m.memory.toFixed(0)}%`} tone={m.cpu > 85 ? "bad" : m.cpu > 70 ? "warn" : "ok"} />
       <Stat label={`Replica lag (stale > ${STALE_READ_SEC}s)`} value={`${m.replicaLag}s`} tone={m.replicaLag > 180 ? "bad" : m.replicaLag > STALE_READ_SEC ? "warn" : "ok"} testId="stat-replica" />
+      {m.fn && (
+        <>
+          <Stat label="Function concurrency (needed / limit)" value={`${Math.ceil(m.fn.neededConcurrency)} / ${m.fn.reservedConcurrency}`} tone={m.fn.throttleRate > 0.2 ? "bad" : m.fn.throttleRate > 0.03 ? "warn" : "ok"} testId="stat-fn-concurrency" />
+          <Stat label="Throttled invocations" value={`${(m.fn.throttleRate * 100).toFixed(0)}%`} tone={m.fn.throttleRate > 0.2 ? "bad" : m.fn.throttleRate > 0.03 ? "warn" : "ok"} testId="stat-fn-throttled" />
+          <Stat label="Cold starts (warm envs)" value={`${(m.fn.coldStartShare * 100).toFixed(0)}% (${Math.round(m.fn.warmEnvironments)} warm)`} tone={m.fn.coldStartShare > 0.2 ? "warn" : "ok"} testId="stat-fn-cold" />
+          <Stat label="Function p95" value={`${m.fn.p95.toFixed(0)} ms`} tone={m.fn.p95 > 1500 ? "bad" : m.fn.p95 > 500 ? "warn" : "ok"} />
+          <Stat label="Dead-letter queue depth" value={String(m.fn.dlqDepth)} tone={m.fn.dlqDepth > 0 ? "warn" : "ok"} testId="stat-dlq" />
+          <Stat label="Poison messages retrying" value={Math.round(m.fn.poisonBacklog).toString()} tone={m.fn.poisonBacklog > 20 ? "bad" : m.fn.poisonBacklog > 5 ? "warn" : "ok"} testId="stat-poison" />
+          <Stat label="Duplicate side effects (total)" value={`${m.fn.duplicateSideEffects} (+${m.fn.duplicatesPerSec.toFixed(1)}/s)`} tone={m.fn.duplicatesPerSec > 0 ? "bad" : "ok"} testId="stat-duplicates" />
+          <Stat label="Lost invocations (total)" value={`${m.fn.lostInvocations} (+${m.fn.lostPerSec.toFixed(1)}/s)`} tone={m.fn.lostPerSec > 0 ? "bad" : "ok"} testId="stat-lost" />
+        </>
+      )}
       <div className="sm:col-span-2 lg:col-span-3 text-xs muted">
         Deployment: {config.deployInProgress ? "rolling deploy in progress (2 of N workers restarted)" : "stable"}. Map reads: {config.readsFromPrimary ? "pinned to the primary" : m.staleReads ? "served STALE from the replica" : "served from the replica"}.
       </div>

@@ -45,7 +45,7 @@ export function ArchitectureDiagram({ state, metrics }: { state: SimState; metri
   );
 
   return (
-    <svg viewBox="0 0 760 360" className="w-full h-auto" role="img" aria-label="Architecture diagram with live health" data-testid="architecture-diagram">
+    <svg viewBox={`0 0 760 ${c.serverless ? 440 : 360}`} className="w-full h-auto" role="img" aria-label="Architecture diagram with live health" data-testid="architecture-diagram">
       <defs>
         <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
           <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8" />
@@ -67,8 +67,18 @@ export function ArchitectureDiagram({ state, metrics }: { state: SimState; metri
       <Node x={580} y={185} w={170} label="DB replica" sub={state.lostWritesSec > 0 ? `promoted ${state.lostWritesSec}s behind: data loss` : c.replicaBlocked ? `lag ${metrics.replicaLag}s, apply BLOCKED` : `lag ${metrics.replicaLag}s`} color={replicaColor} testId="node-replica" />
       <Node x={370} y={260} w={120} label="Job queue" sub={`depth ${metrics.queueDepth}`} color={queueColor} testId="node-queue" />
       <Node x={580} y={260} w={170} label={`Consumers ×${c.queueConsumers}`} sub={c.queueConsumers === 0 ? "none running" : `${c.queueConsumers * 25} jobs/s capacity`} color={consumerColor} testId="node-consumers" />
+      {c.serverless && metrics.fn && (
+        <>
+          <Edge x1={240} y1={84} x2={240} y2={340} width={edge(c.requestsPerSec)} color={metrics.fn.throttleRate > 0.03 ? bad : ok} label={`${c.requestsPerSec} invocations/s`} />
+          <Node x={180} y={340} w={150} label="Function (sync)" sub={`${Math.ceil(metrics.fn.neededConcurrency)} needed / limit ${metrics.fn.reservedConcurrency}, ${(metrics.fn.throttleRate * 100).toFixed(0)}% throttled`} color={metrics.fn.throttleRate > 0.2 ? bad : metrics.fn.throttleRate > 0.03 || metrics.fn.coldStartShare > 0.2 ? warn : ok} testId="node-fn-sync" />
+          <Edge x1={430} y1={314} x2={430} y2={340} width={edge(c.queueConsumers * 25)} color={metrics.fn.poisonBacklog > 5 ? warn : ok} />
+          <Node x={370} y={340} w={150} label="Function (async)" sub={metrics.fn.duplicatesPerSec > 0 ? `duplicating side effects` : metrics.fn.lostPerSec > 0 ? "dropping timed-out events" : `${Math.round(metrics.fn.poisonBacklog)} poison retrying`} color={metrics.fn.duplicatesPerSec > 0 || metrics.fn.lostPerSec > 0 || metrics.fn.poisonBacklog > 20 ? bad : metrics.fn.poisonBacklog > 5 ? warn : ok} testId="node-fn-async" />
+          <Edge x1={520} y1={367} x2={580} y2={367} width={2} color={c.serverless.dlqEnabled ? ok : off} />
+          <Node x={580} y={340} w={170} label="Dead-letter queue" sub={c.serverless.dlqEnabled ? `depth ${metrics.fn.dlqDepth} (max receive ${c.serverless.maxReceiveCount})` : "not configured"} color={c.serverless.dlqEnabled ? ok : off} testId="node-dlq" />
+        </>
+      )}
       {c.deployInProgress && (
-        <text x={10} y={350} fontSize="11" fill={warn}>
+        <text x={10} y={c.serverless ? 430 : 350} fontSize="11" fill={warn}>
           Rolling deploy in progress
         </text>
       )}

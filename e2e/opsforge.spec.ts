@@ -179,7 +179,8 @@ test("target role: pick the serverless posting, see its gap map, switch roles in
   await expect(page.getByTestId("role-title")).toHaveText("System Development Engineer II, Lambda/Serverless");
   await expect(page.getByTestId("gap-b6")).toContainText("Not addressable in OpsForge");
   await expect(page.getByTestId("gap-b6")).toContainText("Top Secret with SCI");
-  await expect(page.getByTestId("gap-p2")).toContainText("Planned, not built");
+  await expect(page.getByTestId("gap-p2")).toContainText("Partly covered");
+  await expect(page.getByTestId("gap-p3")).toContainText("Planned, not built");
   await expect(page.getByTestId("gap-b4")).toContainText("Trainable here");
   await expect(page.getByTestId("gap-b4")).toContainText("Your first script: an uptime report");
   await page.getByTestId("role-select").selectOption("ops-automation");
@@ -268,6 +269,40 @@ test("incident console: replication lag is fixed at the cause without failing ov
   for (let i = 0; i < 3; i++) await page.getByTestId("advance-10").click();
   await expect(page.getByTestId("incident-health")).toHaveText("healthy", { timeout: 20_000 });
   await page.getByTestId("postmortem").fill("What: live map a minute stale. Why: an analytics query held a lock the replica apply thread needed, so replication stalled. Fix: killed the statement; did not fail over because the standby was behind. Prevention: statement timeout on the replica, alert on lag.");
+  await expect(page.getByText("Checks (5/5)")).toBeVisible({ timeout: 20_000 });
+  await page.getByTestId("mission-complete").click();
+  await expect(page.getByText("Mission complete: explain what you did")).toBeVisible();
+});
+
+test("serverless incident: size the function's concurrency from rate × duration, watch cold starts, recover", async ({ page }) => {
+  test.setTimeout(120_000);
+  await onboard(page);
+  const now = new Date().toISOString();
+  const done = (missionId: string) => ({ missionId, schemaVersion: 1, status: "completed", attempts: 1, hintsUsed: 0, maxHintLevel: 0, bestScore: 1, startedAt: now, completedAt: now, reflections: [] });
+  const bundle = { app: "opsforge", schemaVersion: 1, exportedAt: now, missions: ["linux-01-find-your-way", "linux-02-log-detective", "linux-03-locked-out", "devops-01-broken-pipeline", "incident-01-cache-stampede", "incident-02-traffic-surge"].map(done) };
+  await page.goto("/#/settings");
+  await page.locator('input[type="file"]').setInputFiles({ name: "progress.json", mimeType: "application/json", buffer: Buffer.from(JSON.stringify(bundle)) });
+  await expect(page.getByText(/Imported .*6 mission records/)).toBeVisible();
+
+  await page.goto("/#/missions/serverless-01-throttled-function");
+  await expect(page.getByText("Incident console")).toBeVisible({ timeout: 20_000 });
+  await expect(page.getByTestId("incident-health")).toHaveText("critical");
+  await page.getByTestId("tab-metrics").click();
+  await expect(page.getByTestId("stat-fn-concurrency")).toContainText("36 / 10");
+  await expect(page.getByTestId("stat-fn-throttled")).toContainText("72%");
+  await page.getByTestId("tab-logs").click();
+  await expect(page.getByTestId("incident-logs")).toContainText("Rate exceeded");
+  await page.getByTestId("tab-diagram").click();
+  await expect(page.getByTestId("node-fn-sync")).toContainText("72% throttled");
+  await page.getByTestId("root-cause-1").check();
+  await expect(page.getByText(/^Correct\./)).toBeVisible();
+  await page.locator("#concurrency").fill("40");
+  await page.getByTestId("act-concurrency").click();
+  await page.locator("#provisioned").fill("36");
+  await page.getByTestId("act-provisioned").click();
+  await page.getByTestId("advance-10").click();
+  await expect(page.getByTestId("incident-health")).toHaveText("healthy", { timeout: 20_000 });
+  await page.getByTestId("postmortem").fill("What: positions function throttled after partner traffic tripled. Why: limit 10 vs 300/s × 120 ms = 36 needed. Fix: limit 40 and provisioned 36 to avoid cold starts. Prevention: alert on throttles and size limits from rate × duration.");
   await expect(page.getByText("Checks (5/5)")).toBeVisible({ timeout: 20_000 });
   await page.getByTestId("mission-complete").click();
   await expect(page.getByText("Mission complete: explain what you did")).toBeVisible();

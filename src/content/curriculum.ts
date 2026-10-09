@@ -123,6 +123,20 @@ export const TRACKS: Track[] = [
       S("distributed.observability", "Observability", "Logs, metrics and traces that explain distributed failures.", ["distributed.performance"]),
     ],
   },
+  {
+    id: "serverless",
+    name: "Serverless and Event-Driven Systems",
+    shortName: "Serverless",
+    summary:
+      "Functions that scale per request and queues that feed them: concurrency limits, cold starts, retries, dead-letter queues and idempotent handlers, on a simulated platform (not an emulation of any vendor).",
+    skills: [
+      S("serverless.functions", "Functions and the invocation model", "Synchronous vs asynchronous invocations, timeouts, and what a concurrency limit means.", ["distributed.architecture"]),
+      S("serverless.scaling", "Concurrency, throttling and cold starts", "Size reserved concurrency from rate × duration; use provisioned concurrency for latency.", ["serverless.functions", "distributed.scaling"]),
+      S("serverless.events", "Event sources, retries and dead-letter queues", "Queue-triggered functions, receive counts, poison messages and the DLQ.", ["serverless.functions", "distributed.queues"]),
+      S("serverless.idempotency", "Idempotent handlers", "Make retries safe with idempotency keys and at-most-once side effects.", ["serverless.events", "distributed.resilience"]),
+      S("serverless.observability", "Function observability", "Throttles, cold starts, DLQ depth and duplicate side effects as the signals that matter.", ["serverless.scaling", "distributed.observability"]),
+    ],
+  },
 ];
 
 export const STAGES: StageInfo[] = [

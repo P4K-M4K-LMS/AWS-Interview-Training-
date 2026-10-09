@@ -19,7 +19,8 @@ export type TrackId =
   | "algorithms"
   | "netsec"
   | "devops"
-  | "distributed";
+  | "distributed"
+  | "serverless";
 
 /** Six fictional career stages. These are game levels, not credentials. */
 export type CareerStage = 1 | 2 | 3 | 4 | 5 | 6;
@@ -376,9 +377,52 @@ export interface SimConfig {
   replicaBlocked?: boolean;
   /** Map reads pinned to the primary (mitigates stale reads at the cost of primary load). */
   readsFromPrimary?: boolean;
+  /** Present when the scenario runs the serverless (function-based) part of the platform. */
+  serverless?: ServerlessConfig;
 }
 
-export type SimActionType = "scale-workers" | "set-cache-hit" | "restart-db" | "set-consumers" | "rollback-deploy" | "set-traffic" | "kill-blocking-query" | "route-reads-primary" | "route-reads-replica";
+/**
+ * Simulated serverless platform: a synchronous function behind the API and
+ * an asynchronous function fed by the job queue. Generic concepts only
+ * (concurrency limits, cold starts, retries, dead-letter queues, idempotency);
+ * this is not an emulation of any vendor's service.
+ */
+export interface ServerlessConfig {
+  /** Average handler duration of the synchronous function, ms. */
+  durationMs: number;
+  /** Maximum concurrent executions allowed for the synchronous function. */
+  reservedConcurrency: number;
+  /** Pre-warmed execution environments (no cold start for these). */
+  provisionedConcurrency: number;
+  /** Share of queue messages the async function can never process (malformed payloads). */
+  poisonRate: number;
+  /** Attempts before a message is moved to the dead-letter queue (when enabled). */
+  maxReceiveCount: number;
+  dlqEnabled: boolean;
+  /** Share of async invocations that time out (slow downstream) and get retried by the platform. */
+  timeoutRate: number;
+  /** Platform retries for a failed asynchronous invocation. */
+  asyncRetries: number;
+  /** The async handler tolerates being run more than once for the same event. */
+  handlerIdempotent: boolean;
+}
+
+export type SimActionType =
+  | "scale-workers"
+  | "set-cache-hit"
+  | "restart-db"
+  | "set-consumers"
+  | "rollback-deploy"
+  | "set-traffic"
+  | "kill-blocking-query"
+  | "route-reads-primary"
+  | "route-reads-replica"
+  | "set-reserved-concurrency"
+  | "set-provisioned-concurrency"
+  | "enable-dlq"
+  | "set-async-retries"
+  | "make-handler-idempotent"
+  | "raise-function-timeout";
 
 /** Time-accumulated parts of the simulation that a remediation check may need. */
 export interface SimSnapshot {
@@ -387,6 +431,12 @@ export interface SimSnapshot {
   replicaLag: number;
   /** Seconds of committed writes lost by promoting a lagging replica (0 when none). */
   lostWritesSec: number;
+  /** Serverless accumulations (0 when the scenario has no serverless part). */
+  warmEnvironments: number;
+  poisonBacklog: number;
+  dlqDepth: number;
+  duplicateSideEffects: number;
+  lostInvocations: number;
 }
 
 export interface IncidentTicket {
@@ -404,6 +454,8 @@ export interface IncidentScenario {
   initialQueueDepth: number;
   /** Replica lag in seconds at the start (grows while replication is blocked). */
   initialReplicaLag?: number;
+  /** Serverless accumulations at the start. */
+  initialServerless?: Partial<Pick<SimSnapshot, "warmEnvironments" | "poisonBacklog" | "dlqDepth" | "duplicateSideEffects" | "lostInvocations">>;
   ticket: IncidentTicket;
   /** Runbook actions available to the responder. */
   allowedActions: SimActionType[];

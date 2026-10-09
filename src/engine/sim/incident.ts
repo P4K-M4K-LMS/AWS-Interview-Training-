@@ -20,7 +20,7 @@ export interface IncidentState {
 }
 
 export function createIncident(mission: IncidentMission): IncidentState {
-  const sim = createState(mission.scenario.initialConfig, mission.scenario.initialQueueDepth, mission.scenario.initialReplicaLag ?? 0);
+  const sim = createState(mission.scenario.initialConfig, mission.scenario.initialQueueDepth, mission.scenario.initialReplicaLag ?? 0, mission.scenario.initialServerless ?? {});
   const state: IncidentState = {
     sim,
     actions: [],
@@ -83,6 +83,18 @@ export function describeAction(a: SimAction): string {
       return "pinned map reads to the primary";
     case "route-reads-replica":
       return "routed map reads back to the replica";
+    case "set-reserved-concurrency":
+      return `set the function's concurrency limit to ${a.concurrency}`;
+    case "set-provisioned-concurrency":
+      return `set provisioned concurrency to ${a.concurrency}`;
+    case "enable-dlq":
+      return `enabled the dead-letter queue (max receive count ${a.maxReceiveCount})`;
+    case "set-async-retries":
+      return `set async retries to ${a.retries}`;
+    case "make-handler-idempotent":
+      return "deployed the idempotent handler (idempotency keys)";
+    case "raise-function-timeout":
+      return "raised the function timeout and the downstream timeout budget";
   }
 }
 

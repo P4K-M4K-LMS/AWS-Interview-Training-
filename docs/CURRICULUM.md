@@ -17,6 +17,7 @@ The learner picks a target role at onboarding (changeable in Settings). Each rol
 | D. Networking and Defensive Security | Basic qualification alternative (CND/GSEC foundations, not equivalence) | Systems engineering fundamentals (networking) | addressing, dns/ports, http, troubleshooting, authz, hardening, logs, incident |
 | E. Automation, DevOps and Monitoring | Basic qualification (automation tools for build/test/release/monitor) | Supporting: reliability practices behind the design qualification | git, testing, cicd, config, containers, monitoring, release |
 | F. Concurrency and Distributed Systems | Preferred qualifications (concurrent/high-throughput; distributed systems) | Designing/architecting for reliability and scaling; distributed systems at scale | architecture, concurrency, queues, performance, scaling, resilience, consistency, observability |
+| G. Serverless and Event-Driven Systems | Supporting: event-driven designs | Preferred: building services with managed function platforms (concepts only, simulated; not AWS experience) | functions, scaling (concurrency/cold starts), events (retries/DLQ), idempotency, observability |
 
 Nothing here claims to satisfy a degree, certification, tenure or clearance requirement, and no job title or responsibility is invented.
 
@@ -56,6 +57,10 @@ Nothing here claims to satisfy a degree, certification, tenure or clearance requ
 | 25 | Persistence: a cron job that phones home | Net/Sec | 7, 24 | logs, incident, hardening |
 | 26 | From CSV to JSON: a fuel-efficiency report | Python | 8 | data, collections |
 | 27 | Pick the right structure: hash tables vs lists | Algorithms | 9 | structures, optimization |
+| 28 | Incident: the positions function is throttling under a traffic surge | Serverless | 15 | functions, scaling, observability |
+| 29 | Incident: billing events pile up behind poison messages | Serverless | 28 | events, observability, queues |
+| 30 | Incident: customers charged twice after function timeouts | Serverless | 29 | idempotency, events, resilience |
+| 31 | Write an idempotent event handler | Serverless (Python) | 30, 26 | idempotency, errors |
 | 17 | Go for a Python engineer: a config parser with real error values | Distributed (Go) | 8 | python.basics, architecture |
 | 18 | A worker pool: goroutines, channels and WaitGroups | Distributed (Go) | 17 | concurrency, queues |
 | 19 | Timeouts and cancellation with context and select | Distributed (Go) | 18 | resilience, concurrency |
@@ -67,6 +72,7 @@ Nothing here claims to satisfy a degree, certification, tenure or clearance requ
 - Python: regex log extractor; API client with retries; unit-test a buggy module; async fetcher.
 - Algorithms: recursion and stack depth; BFS over a service graph.
 - Net/Sec: firewall triage; web log anomaly hunt; hardening checklist.
+- Serverless: API throttling and client backoff; scheduled functions and cost; a design exercise (requirements in, justified design out).
 - DevOps: alert that never fired; container that will not start; dependency pin drift.
 - Distributed: cache invalidation; select-based pipeline stage.
 

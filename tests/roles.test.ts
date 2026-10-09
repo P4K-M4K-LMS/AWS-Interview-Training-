@@ -40,7 +40,8 @@ describe("target roles", () => {
     expect(byId("b6").coverage).toBe("not-addressable");
     expect(byId("b1").coverage).toBe("not-addressable");
     expect(byId("b2").coverage).toBe("not-addressable");
-    expect(byId("p2").coverage).toBe("planned");
+    expect(byId("p2").coverage).toBe("partial");
+    expect(byId("p2").note).toMatch(/does not emulate AWS/);
     expect(r.descriptionExcerpt).toMatch(/excerpt ends here/);
   });
 });
@@ -51,8 +52,8 @@ describe("role gap map", () => {
   it("starts at zero and averages only mapped qualifications", () => {
     const gap = roleGapMap(roleFor("sde2-serverless"), new Map(), new Map());
     expect(gap.trainablePct).toBe(0);
-    expect(gap.counts).toEqual({ trainable: 2, partial: 2, planned: 2, "not-addressable": 3 });
-    expect(gap.qualifications.filter((q) => q.pct === null)).toHaveLength(5);
+    expect(gap.counts).toEqual({ trainable: 2, partial: 3, planned: 1, "not-addressable": 3 });
+    expect(gap.qualifications.filter((q) => q.pct === null)).toHaveLength(4);
     expect(gap.weakest?.pct).toBe(0);
     const first = nextMissionForGap(gap);
     expect(first).not.toBeNull();

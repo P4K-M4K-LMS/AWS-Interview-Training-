@@ -29,6 +29,10 @@ export function IncidentPlayer({ mission, progress, completed, onComplete, onRes
   const [workers, setWorkers] = useState(mission.scenario.initialConfig.workers);
   const [consumers, setConsumers] = useState(Math.max(2, mission.scenario.initialConfig.queueConsumers));
   const [traffic, setTraffic] = useState(mission.scenario.initialConfig.requestsPerSec);
+  const [concurrency, setConcurrency] = useState(mission.scenario.initialConfig.serverless?.reservedConcurrency ?? 10);
+  const [provisioned, setProvisioned] = useState(mission.scenario.initialConfig.serverless?.provisionedConcurrency ?? 0);
+  const [maxReceive, setMaxReceive] = useState(3);
+  const [retries, setRetries] = useState(mission.scenario.initialConfig.serverless?.asyncRetries ?? 2);
   const logRef = useRef<HTMLDivElement>(null);
   const metrics = useMemo(() => computeMetrics(state.sim), [state.sim]);
   const checks = useMemo(() => incidentChecks(mission, state, metrics), [mission, state, metrics]);
@@ -220,6 +224,60 @@ export function IncidentPlayer({ mission, progress, completed, onComplete, onRes
                 {sc.allowedActions.includes("route-reads-primary") && (
                   <button type="button" className="btn-secondary ml-2" disabled={completed || !!state.sim.config.readsFromPrimary} onClick={() => act({ type: "route-reads-primary" })} data-testid="act-reads-primary">
                     {ACTION_LABELS["route-reads-primary"]}
+                  </button>
+                )}
+                {sc.allowedActions.includes("set-reserved-concurrency") && (
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <label htmlFor="concurrency" className="w-44">
+                      {ACTION_LABELS["set-reserved-concurrency"]}
+                    </label>
+                    <input id="concurrency" type="number" className="input w-20" min={1} max={1000} value={concurrency} onChange={(e) => setConcurrency(Number(e.target.value) || 1)} />
+                    <button type="button" className="btn-secondary" disabled={completed} onClick={() => act({ type: "set-reserved-concurrency", concurrency })} data-testid="act-concurrency">
+                      Apply
+                    </button>
+                  </div>
+                )}
+                {sc.allowedActions.includes("set-provisioned-concurrency") && (
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <label htmlFor="provisioned" className="w-44">
+                      {ACTION_LABELS["set-provisioned-concurrency"]}
+                    </label>
+                    <input id="provisioned" type="number" className="input w-20" min={0} max={1000} value={provisioned} onChange={(e) => setProvisioned(Number(e.target.value) || 0)} />
+                    <button type="button" className="btn-secondary" disabled={completed} onClick={() => act({ type: "set-provisioned-concurrency", concurrency: provisioned })} data-testid="act-provisioned">
+                      Apply
+                    </button>
+                  </div>
+                )}
+                {sc.allowedActions.includes("enable-dlq") && (
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <label htmlFor="maxreceive" className="w-44">
+                      {ACTION_LABELS["enable-dlq"]}
+                    </label>
+                    <input id="maxreceive" type="number" className="input w-20" min={1} max={20} value={maxReceive} onChange={(e) => setMaxReceive(Number(e.target.value) || 1)} />
+                    <button type="button" className="btn-secondary" disabled={completed} onClick={() => act({ type: "enable-dlq", maxReceiveCount: maxReceive })} data-testid="act-dlq">
+                      Apply
+                    </button>
+                  </div>
+                )}
+                {sc.allowedActions.includes("set-async-retries") && (
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <label htmlFor="retries" className="w-44">
+                      {ACTION_LABELS["set-async-retries"]}
+                    </label>
+                    <input id="retries" type="number" className="input w-20" min={0} max={5} value={retries} onChange={(e) => setRetries(Number(e.target.value) || 0)} />
+                    <button type="button" className="btn-secondary" disabled={completed} onClick={() => act({ type: "set-async-retries", retries })} data-testid="act-retries">
+                      Apply
+                    </button>
+                  </div>
+                )}
+                {sc.allowedActions.includes("make-handler-idempotent") && (
+                  <button type="button" className="btn-secondary ml-2" disabled={completed || !!state.sim.config.serverless?.handlerIdempotent} onClick={() => act({ type: "make-handler-idempotent" })} data-testid="act-idempotent">
+                    {ACTION_LABELS["make-handler-idempotent"]}
+                  </button>
+                )}
+                {sc.allowedActions.includes("raise-function-timeout") && (
+                  <button type="button" className="btn-secondary ml-2" disabled={completed} onClick={() => act({ type: "raise-function-timeout" })} data-testid="act-timeout">
+                    {ACTION_LABELS["raise-function-timeout"]}
                   </button>
                 )}
                 {sc.allowedActions.includes("route-reads-replica") && (

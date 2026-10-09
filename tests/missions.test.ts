@@ -26,11 +26,11 @@ describe("mission catalogue integrity", () => {
   it("has the MVP counts", () => {
     const by = (k: string) => MISSIONS.filter((m) => m.kind === k).length;
     expect(MISSIONS.filter((m) => m.trackId === "linux").length).toBe(5);
-    expect(by("python")).toBe(4);
+    expect(by("python")).toBe(5);
     expect(by("bigo")).toBe(3);
     expect(MISSIONS.filter((m) => m.trackId === "netsec").length).toBe(2);
     expect(MISSIONS.filter((m) => m.trackId === "devops").length).toBe(5);
-    expect(by("incident")).toBe(4);
+    expect(by("incident")).toBe(7);
     expect(by("go")).toBe(5);
   });
   it("every mission in the recommended order becomes available in sequence", () => {
