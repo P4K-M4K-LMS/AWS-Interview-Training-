@@ -44,6 +44,11 @@ Nothing here claims to satisfy a degree or certification requirement, and no job
 | 16 | Incident: the job queue is growing (dead consumers) | Distributed | 15 | queues, release |
 | 21 | Incident: dispatchers see positions that are a minute old (replication lag) | Distributed | 16 | consistency, observability |
 | 22 | A double spend: data races, critical sections and the race detector | Distributed (Go) | 20 | concurrency, resilience |
+| 23 | Disk full: find what is eating the space and free it safely | Linux | 6 | performance, logs |
+| 24 | Runaway process: find what is burning the CPU and stop it properly | Linux | 23 | processes, performance |
+| 25 | Persistence: a cron job that phones home | Net/Sec | 7, 24 | logs, incident, hardening |
+| 26 | From CSV to JSON: a fuel-efficiency report | Python | 8 | data, collections |
+| 27 | Pick the right structure: hash tables vs lists | Algorithms | 9 | structures, optimization |
 | 17 | Go for a Python engineer: a config parser with real error values | Distributed (Go) | 8 | python.basics, architecture |
 | 18 | A worker pool: goroutines, channels and WaitGroups | Distributed (Go) | 17 | concurrency, queues |
 | 19 | Timeouts and cancellation with context and select | Distributed (Go) | 18 | resilience, concurrency |
@@ -51,10 +56,10 @@ Nothing here claims to satisfy a degree or certification requirement, and no job
 
 ## Planned missions (not built)
 
-- Linux: runaway process and CPU investigation; disk full; cron job gone wrong; writing a backup script.
-- Python: JSON/CSV report generator; regex log extractor; API client with retries; unit-test a buggy module; async fetcher.
-- Algorithms: hash table vs list for lookups; recursion and stack depth; BFS over a service graph.
-- Net/Sec: firewall triage; suspicious cron; web log anomaly hunt; hardening checklist.
+- Linux: cron job gone wrong; writing a backup script.
+- Python: regex log extractor; API client with retries; unit-test a buggy module; async fetcher.
+- Algorithms: recursion and stack depth; BFS over a service graph.
+- Net/Sec: firewall triage; web log anomaly hunt; hardening checklist.
 - DevOps: alert that never fired; container that will not start; dependency pin drift.
 - Distributed: cache invalidation; select-based pipeline stage.
 

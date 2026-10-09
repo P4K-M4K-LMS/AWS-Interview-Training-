@@ -25,9 +25,10 @@ Legend: **verified** = automated tests pass in CI · **unverified** = implemente
 | Functional dashboard with Continue Learning | verified | e2e test 1-2 |
 | Learner profile + onboarding assessment | verified | e2e; seeds max 20 mastery |
 | Persistent progress, save/resume/reset, export/import | verified | reload check in e2e; Dexie |
-| Three Linux missions | verified | `tests/missions.test.ts` executes each guided solution |
-| Three Python missions | verified | reference solutions pass real Pyodide tests; starter code fails |
-| Two Big O missions | verified | content checks; visualizer e2e |
+| Five Linux missions (navigation, log detective, permissions/services, disk full, runaway process) | verified | `tests/missions.test.ts` executes each guided solution |
+| Four Python missions (uptime report, log parser, config validator, CSV→JSON report) | verified | reference solutions pass real Pyodide tests; starter code fails |
+| Three Big O missions (growth, search/sort, hash tables vs lists) | verified | content checks; visualizer e2e |
+| Two security investigations (SSH brute force, cron persistence / reverse shell) | verified | guided solutions executed; containment checks inspect processes, files and the socket table |
 | One networking/security mission | verified | SSH brute-force investigation |
 | One automation mission | verified | CI pipeline repair with simulated runner |
 | Stateful terminal simulator | verified | 14 unit tests; 48 documented commands |
@@ -74,7 +75,7 @@ Legend: **verified** = automated tests pass in CI · **unverified** = implemente
 ## Known limitations
 
 - Mission availability depends only on prerequisite missions (fixed 2026-10-09: skill-prerequisite gating could lock a mission behind the skill it teaches). Skill mastery gates stage promotion.
-- The terminal is a simulation: no globbing, loops, functions or package managers. Missions may ship their own tools (e.g. `ci`, `deployctl`, `metrics`), listed by `help`. `sed` follows POSIX basic-regex semantics (parentheses literal unless escaped) and substitutes once per line.
+- The terminal is a simulation: no globbing, loops, functions or package managers. Missions may ship their own tools (e.g. `ci`, `deployctl`, `metrics`), listed by `help`. Large files carry a virtual size (shown by ls/du/df/stat) without storing gigabytes of content; `truncate -s 0` empties a file in place and, like real bash, `sudo echo > FILE` does not elevate the redirection. `sed` follows POSIX basic-regex semantics (parentheses literal unless escaped) and substitutes once per line.
 - Code missions are generic over language (`kind: "python" | "go"`); the player picks the runtime and editor mode. Yaegi quirk found: a `range` over a slice literal evaluated at the interpreter top level can nil-dereference, so mission test snippets avoid top-level `range`.
 - The Go runtime is 37.6 MB raw (about 8 MB gzip-compressed) and is fetched only when the Go Laboratory opens. WebAssembly is single-threaded, so goroutine interleaving is cooperative: concurrency semantics are faithful; races whose critical section blocks reproduce, bare counter races do not. The optional local race-detector service (needs Go and a C compiler) covers those; it runs the submitted code on the learner's machine and is documented as such.
 - The rule-based coach matches linguistic cues; it cannot judge truth or technical correctness and says so in every report.
@@ -82,5 +83,5 @@ Legend: **verified** = automated tests pass in CI · **unverified** = implemente
 
 ## Next steps (in order)
 
-1. More missions per track (see CURRICULUM.md).
+1. More missions per track (see the planned list in CURRICULUM.md: cron/backup script, regex extractor, API client, recursion, BFS, firewall triage, web-log hunt).
 2. Accessibility audit with a screen reader; reduce bundle size by lazy-loading CodeMirror and the interview pages.

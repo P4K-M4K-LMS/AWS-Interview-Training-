@@ -112,6 +112,8 @@ export interface FsFileSpec {
   mode?: number; // e.g. 0o644
   owner?: string;
   group?: string;
+  /** Reported size in bytes when larger than the content (big logs, dumps); dropped once the file is rewritten. */
+  size?: number;
 }
 export interface FsDirSpec {
   type: "dir";
@@ -181,6 +183,13 @@ export interface TerminalWorld {
   env?: Record<string, string>;
   /** Mission-specific programs, keyed by command name. */
   programs?: Record<string, SimProgram>;
+  /** Simulated network for ping/dig/curl/ss: hosts, HTTP responses, listening sockets, established connections. */
+  network?: {
+    hosts?: Record<string, { ip: string; reachable: boolean; latencyMs?: number }>;
+    http?: Record<string, { status: number; body: string; headers?: Record<string, string> }>;
+    listening?: Array<{ proto: "tcp" | "udp"; port: number; process: string; address?: string }>;
+    connections?: Array<{ proto: "tcp" | "udp"; local: string; peer: string; process: string; pid?: number }>;
+  };
 }
 
 /** Result of a terminal validation rule. */
@@ -214,6 +223,8 @@ export interface TerminalCheckContext {
   isDir: (path: string) => boolean;
   mode: (path: string) => number | null;
   owner: (path: string) => string | null;
+  /** Reported size in bytes (virtual size for abbreviated large files); null if missing. */
+  size: (path: string) => number | null;
   history: string[];
   /** Full output text of every command executed so far. */
   outputs: Array<{ command: string; stdout: string; stderr: string; exitCode: number }>;

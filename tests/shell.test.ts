@@ -178,4 +178,33 @@ describe("Shell basics", () => {
     expect(sh.execute("dig db.internal").stdout).toContain("10.0.2.15");
     expect(sh.execute("ss -tlnp").stdout).toContain("8080");
   });
+
+  it("takes the network table from the world, lists connections, and drops a killed process's connection", () => {
+    const sh = new Shell({
+      ...world,
+      processes: [{ pid: 7, user: "root", cpu: 0, mem: 0, command: "init" }, { pid: 99, user: "trainee", cpu: 50, mem: 1, command: "/tmp/x" }],
+      network: { listening: [{ proto: "tcp", port: 22, process: "sshd" }], connections: [{ proto: "tcp", local: "10.0.0.2:4000", peer: "203.0.113.9:4444", process: "x", pid: 99 }] },
+    });
+    expect(sh.execute("ss -tnp").stdout).toContain("203.0.113.9:4444");
+    expect(sh.execute("kill -9 99").exitCode).toBe(0);
+    expect(sh.execute("ss -tnp").stdout).not.toContain("203.0.113.9");
+    expect(sh.execute("ss -tnp").stdout).toContain(":22");
+  });
+
+  it("reports virtual sizes for large files, truncates in place, and does not elevate a sudo redirection", () => {
+    const sh = new Shell({
+      ...world,
+      fs: { ...world.fs, "/var/log/big.log": { type: "file", content: "tail\n", size: 3_000_000_000, owner: "root", group: "root", mode: 0o644 } },
+    });
+    expect(sh.execute("ls -lh /var/log").stdout).toMatch(/2\.8G .*big\.log/);
+    expect(sh.execute("du -sh /var/log").stdout).toMatch(/^2\.8G/);
+    expect(sh.execute("stat /var/log/big.log").stdout).toContain("Size: 3000000000");
+    expect(sh.execute("df -h").stdout).toMatch(/4[45]% \//);
+    expect(sh.execute("sudo echo > /var/log/big.log").exitCode).toBe(1);
+    expect(sh.execute("truncate -s 0 /var/log/big.log").stderr).toContain("Permission denied");
+    expect(sh.execute("sudo truncate -s 0 /var/log/big.log").exitCode).toBe(0);
+    expect(sh.checkContext().size("/var/log/big.log")).toBe(0);
+    expect(sh.execute("df -h").stdout).toMatch(/30% \//);
+    expect(sh.execute("cat /var/log/big.log").stdout).toBe("");
+  });
 });

@@ -17,6 +17,13 @@ export interface FsNode {
   owner: string;
   group: string;
   mtime: number;
+  /** Virtual size in bytes for files whose content is abbreviated (large logs); undefined = content length. */
+  size?: number;
+}
+
+/** Reported size of a node: the virtual size when set, else the content length. */
+export function nodeSize(n: FsNode): number {
+  return n.size ?? n.content.length;
 }
 
 export interface ExecResult {
@@ -93,7 +100,8 @@ function fmtDate(ms: number): string {
 function humanSize(n: number): string {
   if (n < 1024) return `${n}`;
   if (n < 1024 * 1024) return `${(n / 1024).toFixed(1)}K`;
-  return `${(n / 1024 / 1024).toFixed(1)}M`;
+  if (n < 1024 * 1024 * 1024) return `${(n / 1024 / 1024).toFixed(1)}M`;
+  return `${(n / 1024 / 1024 / 1024).toFixed(1)}G`;
 }
 
 /**
@@ -268,6 +276,7 @@ export const COMMAND_DOCS: CommandDoc[] = [
   { name: "free", usage: "free [-m] [-h]", summary: "Memory usage." },
   { name: "df", usage: "df [-h]", summary: "Disk space by filesystem." },
   { name: "du", usage: "du [-s] [-h] [path]", summary: "Disk usage of a path." },
+  { name: "truncate", usage: "truncate -s SIZE file", summary: "Set a file's size (truncate -s 0 empties a file a process still holds open)." },
   { name: "systemctl", usage: "systemctl status|start|stop|restart SERVICE", summary: "Manage simulated services." },
   { name: "journalctl", usage: "journalctl -u SERVICE [-n N]", summary: "Show a service's log entries." },
   { name: "nano", usage: "nano file (also vi, vim)", summary: "Open the file in the built-in editor pane." },
@@ -302,6 +311,8 @@ export interface NetworkTable {
   hosts?: Record<string, { ip: string; reachable: boolean; latencyMs?: number }>;
   http?: Record<string, { status: number; body: string; headers?: Record<string, string> }>;
   listening?: Array<{ proto: "tcp" | "udp"; port: number; process: string; address?: string }>;
+  /** Established connections shown by `ss` / `netstat`; a pid ties the row to a simulated process so it disappears when killed. */
+  connections?: Array<{ proto: "tcp" | "udp"; local: string; peer: string; process: string; pid?: number }>;
 }
 
 export class Shell {
@@ -324,7 +335,7 @@ export class Shell {
 
   constructor(world: TerminalWorld, network: NetworkTable = {}, snapshot?: ShellSnapshot) {
     this.world = world;
-    this.network = network;
+    this.network = Object.keys(network).length ? network : (world.network ?? {});
     this.user = world.user;
     this.home = world.user === ROOT_USER ? "/root" : `/home/${world.user}`;
     this.clock = Date.UTC(2026, 2, 9, 9, 15, 0);
@@ -385,6 +396,7 @@ export class Shell {
       this.fs[path] = {
         type: node.type,
         content: node.type === "file" ? node.content : "",
+        ...(node.type === "file" && node.size !== undefined ? { size: node.size } : {}),
         mode: node.mode ?? (node.type === "dir" ? 0o755 : 0o644),
         owner: node.owner ?? (path.startsWith(this.home) ? this.world.user : "root"),
         group: node.group ?? (path.startsWith(this.home) ? this.world.user : "root"),
@@ -411,6 +423,7 @@ export class Shell {
       isDir: (p) => this.fs[this.abs(p)]?.type === "dir",
       mode: (p) => this.fs[this.abs(p)]?.mode ?? null,
       owner: (p) => this.fs[this.abs(p)]?.owner ?? null,
+      size: (p) => { const n = this.fs[this.abs(p)]; return n ? nodeSize(n) : null; },
       history: this.history,
       outputs: this.outputs,
       services: { ...this.serviceStatus },
@@ -453,6 +466,7 @@ export class Shell {
     if (existing) {
       if (!this.can(existing, "w", effectiveUser)) return { ok: false, error: `${p}: Permission denied` };
       existing.content = content;
+      existing.size = undefined;
       existing.mtime = this.tick();
     } else {
       if (!this.can(parent, "w", effectiveUser)) return { ok: false, error: `${p}: Permission denied` };
@@ -974,7 +988,7 @@ export class Shell {
       case "stat": {
         const n = this.fs[this.abs(rest[0] ?? "")];
         if (!n) return fail(`stat: cannot stat '${rest[0] ?? ""}': No such file or directory`);
-        return ok(`  File: ${rest[0]}\n  Size: ${n.content.length}\tType: ${n.type === "dir" ? "directory" : "regular file"}\nAccess: (0${n.mode.toString(8)}/${modeString(n)})  Uid: ${n.owner}   Gid: ${n.group}\nModify: ${new Date(n.mtime).toISOString()}\n`);
+        return ok(`  File: ${rest[0]}\n  Size: ${nodeSize(n)}\tType: ${n.type === "dir" ? "directory" : "regular file"}\nAccess: (0${n.mode.toString(8)}/${modeString(n)})  Uid: ${n.owner}   Gid: ${n.group}\nModify: ${new Date(n.mtime).toISOString()}\n`);
       }
       case "file": {
         const n = this.fs[this.abs(rest[0] ?? "")];
@@ -1010,11 +1024,27 @@ export class Shell {
         return ok(`               total        used        free\nMem:            ${total}        ${usedMb}        ${total - usedMb}\nSwap:           1024           0        1024\n`);
       }
       case "df": {
-        const used = Object.values(this.fs).reduce((a, n) => a + n.content.length, 0);
+        const used = Object.values(this.fs).reduce((a, n) => a + nodeSize(n), 0);
         const pct = Math.min(99, Math.round(((used + 6_000_000_000) / 20_000_000_000) * 100));
         return ok(rest.includes("-h")
           ? `Filesystem      Size  Used Avail Use% Mounted on\n/dev/sda1        20G  ${((used + 6_000_000_000) / 1e9).toFixed(1)}G   ${(20 - (used + 6_000_000_000) / 1e9).toFixed(1)}G  ${pct}% /\ntmpfs           2.0G     0  2.0G   0% /tmp\n`
           : `Filesystem     1K-blocks     Used Available Use% Mounted on\n/dev/sda1       20971520 ${Math.round((used + 6_000_000_000) / 1024)} ${Math.round(20971520 - (used + 6_000_000_000) / 1024)}  ${pct}% /\n`);
+      }
+      case "truncate": {
+        const si = rest.indexOf("-s");
+        const sizeArg = si >= 0 ? rest[si + 1] : undefined;
+        const target = rest.filter((a, i) => a !== "-s" && i !== si + 1).find((a) => !a.startsWith("-"));
+        if (!sizeArg || !target || !/^\d+$/.test(sizeArg)) return fail("truncate: usage: truncate -s SIZE FILE");
+        const path = this.abs(target);
+        const n = this.fs[path];
+        if (!n) return fail(`truncate: cannot open '${target}' for writing: No such file or directory`);
+        if (n.type === "dir") return fail(`truncate: cannot open '${target}' for writing: Is a directory`);
+        if (!this.can(n, "w")) return fail(`truncate: cannot open '${target}' for writing: Permission denied`);
+        const size = Number(sizeArg);
+        n.content = size === 0 ? "" : n.content.slice(0, size);
+        n.size = size > n.content.length ? size : undefined;
+        n.mtime = this.tick();
+        return ok("");
       }
       case "du": {
         const target = rest.find((a) => !a.startsWith("-")) ?? ".";
@@ -1023,7 +1053,7 @@ export class Shell {
         const summarize = rest.includes("-s") || rest.includes("-sh") || rest.includes("-hs");
         const human = rest.includes("-h") || rest.includes("-sh") || rest.includes("-hs");
         const entries = Object.keys(this.fs).filter((k) => k === base || k.startsWith(base === "/" ? "/" : base + "/"));
-        const sizeOf = (p: string) => entries.filter((k) => k === p || k.startsWith(p + "/")).reduce((a, k) => a + this.fs[k].content.length, 0);
+        const sizeOf = (p: string) => entries.filter((k) => k === p || k.startsWith(p + "/")).reduce((a, k) => a + nodeSize(this.fs[k]), 0);
         const fmt = (n: number) => (human ? humanSize(n) : String(Math.ceil(n / 1024)));
         if (summarize) return ok(`${fmt(sizeOf(base))}\t${target}\n`);
         const dirs = entries.filter((k) => this.fs[k].type === "dir").sort((a, b) => b.length - a.length);
@@ -1098,7 +1128,9 @@ export class Shell {
       case "ss":
       case "netstat": {
         const rows = (this.network.listening ?? []).map((l) => `${l.proto.padEnd(6)}LISTEN 0      128    ${(l.address ?? "0.0.0.0") + ":" + l.port}`.padEnd(45) + `users:(("${l.process}"))`);
-        return ok(`Netid State  Recv-Q Send-Q Local Address:Port   Process\n${rows.join("\n")}${rows.length ? "\n" : ""}`);
+        const live = (this.network.connections ?? []).filter((c) => c.pid === undefined || this.processes.some((p) => p.pid === c.pid));
+        const conns = live.map((c) => `${c.proto.padEnd(6)}ESTAB  0      0      ${c.local}`.padEnd(45) + `${c.peer.padEnd(22)}users:(("${c.process}"${c.pid !== undefined ? `,pid=${c.pid}` : ""}))`);
+        return ok(`Netid State  Recv-Q Send-Q Local Address:Port                    Peer Address:Port     Process\n${[...rows, ...conns].join("\n")}${rows.length + conns.length ? "\n" : ""}`);
       }
       default: {
         const prog = this.world.programs?.[cmd];
@@ -1156,7 +1188,7 @@ export class Shell {
       if (long) {
         if (n.type === "dir") out += `total ${entries.length}\n`;
         for (const [name, node] of entries) {
-          const size = human ? humanSize(node.content.length) : String(node.content.length);
+          const size = human ? humanSize(nodeSize(node)) : String(nodeSize(node));
           out += `${modeString(node)} 1 ${node.owner.padEnd(8)} ${node.group.padEnd(8)} ${size.padStart(6)} ${fmtDate(node.mtime)} ${name}${node.type === "dir" ? "/" : ""}\n`;
         }
       } else {
