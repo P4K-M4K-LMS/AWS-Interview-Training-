@@ -544,8 +544,14 @@
           "text": "VPC components: subnets, route tables, internet gateways, NAT gateways",
           "sourceHash": "f5092f576144",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "network",
+            "exerciseId": "net-03-nat",
+            "coverage": "full"
+          }
         },
         {
           "id": "clf-c02:3:18",
@@ -554,8 +560,14 @@
           "text": "Security inside a VPC: security groups versus network ACLs",
           "sourceHash": "18c5559cde18",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "network",
+            "exerciseId": "net-02-stateless-reply",
+            "coverage": "full"
+          }
         },
         {
           "id": "clf-c02:3:19",
@@ -865,6 +877,6 @@
     "units": 4,
     "objectives": 80,
     "bookkeeping": 0,
-    "linked": 1
+    "linked": 3
   }
 }

@@ -113,7 +113,7 @@ export const STUDY_LINKS: StudyMissionLink[] = [
   { course: "SECPLUS", text: "High availability and resilience design", mission: "design-01-position-ingest", coverage: "full" },
 ];
 
-export const STUDY_LAB_LINKS: StudyLabLink[] = [
+const POLICY_LAB_LINKS: StudyLabLink[] = [
   // Authorization policy lab (/labs/policy)
   { course: "AWSSAA", text: "A flexible authorization model built from IAM users, groups, roles, and policies", lab: "policy", exerciseId: "policy-01-default-deny", coverage: "partial", note: "policies and the evaluation rules; no users, groups or roles" },
   { course: "AWSSAA", text: "Resource-based policies, and when they beat an identity-based policy", lab: "policy", exerciseId: "policy-05-cross-account", coverage: "full" },
@@ -134,6 +134,34 @@ export const STUDY_LAB_LINKS: StudyLabLink[] = [
   { course: "AWSSAP", text: "Specifying IAM users and roles that hold to least privilege", lab: "policy", exerciseId: "policy-01-default-deny", coverage: "partial" },
   { course: "AWSMLA", text: "Configuring IAM policies and roles for users and applications in ML", lab: "policy", exerciseId: "policy-01-default-deny", coverage: "partial" },
 ];
+
+export const NETWORK_LAB_LINKS: StudyLabLink[] = [
+  { course: "AWSSAA", text: "VPC security components: security groups, network ACLs, route tables, NAT gateways", lab: "network", exerciseId: "net-01-stateful-source", coverage: "full" },
+  { course: "AWSSAA", text: "Network segmentation with public and private subnets", lab: "network", exerciseId: "net-03-nat", coverage: "full" },
+  { course: "AWSSAA", text: "AWS service endpoints and private access with AWS PrivateLink and VPC endpoints", lab: "network", exerciseId: "net-04-endpoint", coverage: "partial", note: "endpoint routing; no endpoint policies" },
+  { course: "AWSSAA", text: "Network topology design: subnet tiers, routing, IP addressing", lab: "network", exerciseId: "net-05-hub", coverage: "partial" },
+  { course: "AWSCLF", text: "VPC components: subnets, route tables, internet gateways, NAT gateways", lab: "network", exerciseId: "net-03-nat", coverage: "full" },
+  { course: "AWSCLF", text: "Security inside a VPC: security groups versus network ACLs", lab: "network", exerciseId: "net-02-stateless-reply", coverage: "full" },
+  { course: "AWSSOA", text: "Configuring a VPC: subnets, route tables, network ACLs, security groups, NAT gateways", lab: "network", exerciseId: "net-03-nat", coverage: "partial" },
+  { course: "AWSSOA", text: "Configuring private connectivity: VPC endpoints, AWS PrivateLink, VPC peering", lab: "network", exerciseId: "net-04-endpoint", coverage: "partial" },
+  { course: "AWSSOA", text: "Troubleshooting VPC configurations: subnets, route tables, network ACLs, security groups, transit gateways, NAT gateways", lab: "network", exerciseId: "net-01-stateful-source", coverage: "full" },
+  { course: "AWSSOA", text: "Collecting and interpreting networking logs: VPC flow logs", lab: "network", exerciseId: "net-02-stateless-reply", coverage: "partial", note: "flow-log style verdicts per hop" },
+  { course: "AWSANS", text: "Configuring a hub-and-spoke architecture with Transit Gateway", lab: "network", exerciseId: "net-05-hub", coverage: "partial" },
+  { course: "AWSANS", text: "Implementing security between network boundaries with security groups, network ACLs", lab: "network", exerciseId: "net-06-rule-order", coverage: "partial" },
+  { course: "AWSANS", text: "Using route tables and automatic propagation to direct traffic", lab: "network", exerciseId: "net-05-hub", coverage: "partial", note: "no propagation" },
+  { course: "AWSANS", text: "Troubleshooting connectivity caused by misconfiguration with Reachability Analyzer", lab: "network", exerciseId: "net-01-stateful-source", coverage: "partial", note: "the trace plays the analyzer's part" },
+  { course: "AWSANS", text: "Private application connectivity with AWS PrivateLink", lab: "network", exerciseId: "net-04-endpoint", coverage: "partial" },
+  { course: "AWSANS", text: "Creating and analyzing VPC flow logs, including base and extended fields", lab: "network", exerciseId: "net-02-stateless-reply", coverage: "partial", note: "verdict lines only" },
+  { course: "AWSDOP", text: "Network security components: security groups, network ACLs, routing", lab: "network", exerciseId: "net-06-rule-order", coverage: "partial" },
+  { course: "AWSSAP", text: "Specifying inbound and outbound network flows with security group and network ACL rules", lab: "network", exerciseId: "net-02-stateless-reply", coverage: "full" },
+  { course: "AWSSAP", text: "Route tables, security groups, and network ACLs as organization-wide controls", lab: "network", exerciseId: "net-06-rule-order", coverage: "partial" },
+  { course: "AWSSCS", text: "Designing and troubleshooting network controls that permit or prevent traffic: security groups, network ACLs", lab: "network", exerciseId: "net-01-stateful-source", coverage: "full" },
+  { course: "AWSSCS", text: "Network segmentation from security requirements: north/south and east/west protection, isolated subnets", lab: "network", exerciseId: "net-04-endpoint", coverage: "partial" },
+  { course: "AWSDEA", text: "Updating VPC security groups to permit data access", lab: "network", exerciseId: "net-01-stateful-source", coverage: "full" },
+  { course: "AWSMLA", text: "Creating VPCs, subnets, and security groups that isolate ML and AI systems", lab: "network", exerciseId: "net-04-endpoint", coverage: "partial" },
+];
+
+export const STUDY_LAB_LINKS: StudyLabLink[] = [...POLICY_LAB_LINKS, ...NETWORK_LAB_LINKS];
 
 /**
  * Unit gates that a planned engine would make playable. The gate sentence

@@ -817,3 +817,35 @@ test("policy lab: default deny, fix the policy, read the trace, pass and credit 
   await page.getByTestId("lab-tab-policies").click();
   await expect(page.getByRole("heading", { name: "Authorization policies" })).toBeVisible();
 });
+
+test("network lab: trace a dropped packet to the hop, fix the filter, pass and credit the Study objective", async ({ page }) => {
+  await onboard(page);
+  await page.goto("/#/study/saa-c03/1");
+  const objective = page.getByTestId("study-objective-8");
+  await expect(objective).toContainText("Do it: mission or lab");
+  await objective.getByTestId("study-practise-8").click();
+  await expect(page).toHaveURL(/#\/labs\/network\?exercise=net-01-stateful-source/);
+  await expect(page.getByRole("heading", { name: "Network path" })).toBeVisible();
+  await expect(page.getByTestId("network-result-app-db")).toHaveText("dropped");
+  await expect(page.getByTestId("network-flow-app-db")).toContainText("Dropped at db-1 stateful filter (inbound)");
+  await expect(page.getByTestId("network-check")).toBeDisabled();
+  await page.getByTestId("network-trace-toggle-app-db").click();
+  await expect(page.getByTestId("network-trace")).toContainText("REJECT at db-1 stateful filter");
+  // Opening the database to everyone is caught by the web host flow.
+  await page.getByTestId("network-editable").fill("in tcp 5432 from 0.0.0.0/0\nout any any to 0.0.0.0/0");
+  await expect(page.getByTestId("network-result-app-db")).toHaveText("reaches");
+  await expect(page.getByTestId("network-flow-web-db")).toHaveAttribute("data-ok", "0");
+  // A bad line is reported by number.
+  await page.getByTestId("network-editable").fill("in tcp 5432 from filter:filter-app\nallow everything");
+  await expect(page.getByTestId("network-errors")).toContainText("line 2");
+  // The precise fix passes and credits the objective.
+  await page.getByTestId("network-editable").fill("in tcp 5432 from filter:filter-app\nout any any to 0.0.0.0/0");
+  await expect(page.getByTestId("network-check")).toBeEnabled();
+  await page.getByTestId("network-check").click();
+  await expect(page.getByTestId("network-passed")).toContainText("Credited");
+  await page.getByTestId("network-back-link").click();
+  await expect(page.getByTestId("study-status-8")).toHaveText("Guided");
+  await page.goto("/#/labs");
+  await page.getByTestId("lab-tab-network").click();
+  await expect(page.getByRole("heading", { name: "Network path" })).toBeVisible();
+});

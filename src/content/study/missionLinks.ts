@@ -149,6 +149,41 @@ export const ENGINE_GATES: Record<string, string[]> = {
 
 /** Lab exercise id -> Study objective ids that passing it credits. */
 export const LAB_LINKS: Record<string, string[]> = {
+  "net-01-stateful-source": [
+    "ans-c01:3:13",
+    "dea-c01:4:1",
+    "saa-c03:1:8",
+    "scs-c03:3:12",
+    "soa-c03:5:8"
+  ],
+  "net-02-stateless-reply": [
+    "ans-c01:4:10",
+    "clf-c02:3:18",
+    "sap-c02:2:13",
+    "soa-c03:5:9"
+  ],
+  "net-03-nat": [
+    "clf-c02:3:17",
+    "saa-c03:1:9",
+    "soa-c03:5:1"
+  ],
+  "net-04-endpoint": [
+    "ans-c01:2:13",
+    "mla-c02:4:22",
+    "saa-c03:1:16",
+    "scs-c03:3:15",
+    "soa-c03:5:2"
+  ],
+  "net-05-hub": [
+    "ans-c01:2:14",
+    "ans-c01:3:5",
+    "saa-c03:3:17"
+  ],
+  "net-06-rule-order": [
+    "ans-c01:2:17",
+    "dop-c02:6:9",
+    "sap-c02:1:14"
+  ],
   "policy-01-default-deny": [
     "clf-c02:2:11",
     "mla-c02:4:19",

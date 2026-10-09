@@ -12,6 +12,7 @@ export const LABS = [
   { to: "/labs/security", label: "Security", hint: "Defensive investigations" },
   { to: "/labs/monitoring", label: "Monitoring", hint: "The simulated platform" },
   { to: "/labs/policy", label: "Policies", hint: "Authorization policies with a decision trace" },
+  { to: "/labs/network", label: "Network", hint: "Trace a packet through the virtual network" },
 ];
 
 export function LabsPage() {

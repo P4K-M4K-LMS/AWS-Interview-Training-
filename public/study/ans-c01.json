@@ -478,8 +478,14 @@
           "text": "Private application connectivity with AWS PrivateLink",
           "sourceHash": "b2e390ede6d2",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "network",
+            "exerciseId": "net-04-endpoint",
+            "coverage": "partial"
+          }
         },
         {
           "id": "ans-c01:2:14",
@@ -488,8 +494,14 @@
           "text": "Configuring a hub-and-spoke architecture with Transit Gateway or a transit VPC",
           "sourceHash": "2e6a733008f4",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "network",
+            "exerciseId": "net-05-hub",
+            "coverage": "partial"
+          }
         },
         {
           "id": "ans-c01:2:15",
@@ -518,8 +530,14 @@
           "text": "Implementing security between network boundaries with security groups, network ACLs, and AWS Network Firewall",
           "sourceHash": "e77cb70af901",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "network",
+            "exerciseId": "net-06-rule-order",
+            "coverage": "partial"
+          }
         },
         {
           "id": "ans-c01:2:18",
@@ -718,8 +736,15 @@
           "text": "Using route tables and automatic propagation to direct traffic",
           "sourceHash": "b039782e3b54",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "network",
+            "exerciseId": "net-05-hub",
+            "coverage": "partial",
+            "note": "no propagation"
+          }
         },
         {
           "id": "ans-c01:3:6",
@@ -798,8 +823,15 @@
           "text": "Troubleshooting connectivity caused by misconfiguration with Reachability Analyzer",
           "sourceHash": "f319a9898b98",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "network",
+            "exerciseId": "net-01-stateful-source",
+            "coverage": "partial",
+            "note": "the trace plays the analyzer's part"
+          }
         },
         {
           "id": "ans-c01:3:14",
@@ -1027,8 +1059,15 @@
           "text": "Creating and analyzing VPC flow logs, including base and extended fields",
           "sourceHash": "31058e786f9f",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "network",
+            "exerciseId": "net-02-stateless-reply",
+            "coverage": "partial",
+            "note": "verdict lines only"
+          }
         },
         {
           "id": "ans-c01:4:11",
@@ -1150,6 +1189,6 @@
     "units": 4,
     "objectives": 109,
     "bookkeeping": 0,
-    "linked": 0
+    "linked": 6
   }
 }

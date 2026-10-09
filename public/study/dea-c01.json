@@ -921,8 +921,14 @@
           "text": "Updating VPC security groups to permit data access",
           "sourceHash": "39484de1b409",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "network",
+            "exerciseId": "net-01-stateful-source",
+            "coverage": "full"
+          }
         },
         {
           "id": "dea-c01:4:2",
@@ -1199,6 +1205,6 @@
     "units": 4,
     "objectives": 113,
     "bookkeeping": 0,
-    "linked": 2
+    "linked": 3
   }
 }

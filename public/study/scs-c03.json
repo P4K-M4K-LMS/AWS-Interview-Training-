@@ -377,8 +377,14 @@
           "text": "Designing and troubleshooting network controls that permit or prevent traffic: security groups, network ACLs, AWS Network Firewall",
           "sourceHash": "cd6d89c6eaed",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "network",
+            "exerciseId": "net-01-stateful-source",
+            "coverage": "full"
+          }
         },
         {
           "id": "scs-c03:3:13",
@@ -407,8 +413,14 @@
           "text": "Network segmentation from security requirements: north/south and east/west protection, isolated subnets",
           "sourceHash": "f42bfc8ff9f1",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "network",
+            "exerciseId": "net-04-endpoint",
+            "coverage": "partial"
+          }
         },
         {
           "id": "scs-c03:3:16",
@@ -824,6 +836,6 @@
     "units": 6,
     "objectives": 70,
     "bookkeeping": 0,
-    "linked": 8
+    "linked": 10
   }
 }

@@ -549,8 +549,14 @@
           "text": "Configuring a VPC: subnets, route tables, network ACLs, security groups, NAT gateways, internet gateway, egress-only internet gateway",
           "sourceHash": "61ac086de62c",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "network",
+            "exerciseId": "net-03-nat",
+            "coverage": "partial"
+          }
         },
         {
           "id": "soa-c03:5:2",
@@ -559,8 +565,14 @@
           "text": "Configuring private connectivity: VPC endpoints, AWS PrivateLink, VPC peering",
           "sourceHash": "a9e601396da7",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "network",
+            "exerciseId": "net-04-endpoint",
+            "coverage": "partial"
+          }
         },
         {
           "id": "soa-c03:5:3",
@@ -619,8 +631,14 @@
           "text": "Troubleshooting VPC configurations: subnets, route tables, network ACLs, security groups, transit gateways, NAT gateways",
           "sourceHash": "3ed67e9ce9ef",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "network",
+            "exerciseId": "net-01-stateful-source",
+            "coverage": "full"
+          }
         },
         {
           "id": "soa-c03:5:9",
@@ -629,8 +647,15 @@
           "text": "Collecting and interpreting networking logs: VPC flow logs, ELB access logs, AWS WAF web ACL logs, CloudFront logs, container logs",
           "sourceHash": "f04c844a1209",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "network",
+            "exerciseId": "net-02-stateless-reply",
+            "coverage": "partial",
+            "note": "flow-log style verdicts per hop"
+          }
         },
         {
           "id": "soa-c03:5:10",
@@ -681,6 +706,6 @@
     "units": 5,
     "objectives": 59,
     "bookkeeping": 0,
-    "linked": 3
+    "linked": 7
   }
 }

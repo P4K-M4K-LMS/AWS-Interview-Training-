@@ -17,6 +17,7 @@ const GoLabPage = lazy(() => import("./pages/GoLabPage").then((m) => ({ default:
 const AlgorithmsLabPage = lazy(() => import("./pages/AlgorithmsLabPage").then((m) => ({ default: m.AlgorithmsLabPage })));
 const SecurityOpsPage = lazy(() => import("./pages/SecurityOpsPage").then((m) => ({ default: m.SecurityOpsPage })));
 const PolicyLabPage = lazy(() => import("./pages/PolicyLabPage").then((m) => ({ default: m.PolicyLabPage })));
+const NetworkLabPage = lazy(() => import("./pages/NetworkLabPage").then((m) => ({ default: m.NetworkLabPage })));
 const MonitoringPage = lazy(() => import("./pages/MonitoringPage").then((m) => ({ default: m.MonitoringPage })));
 const InterviewHomePage = lazy(() => import("./pages/interview/InterviewHomePage").then((m) => ({ default: m.InterviewHomePage })));
 const StarAcademyPage = lazy(() => import("./pages/interview/StarAcademyPage").then((m) => ({ default: m.StarAcademyPage })));
@@ -57,6 +58,7 @@ export const routes: RouteObject[] = [
           { path: "security", element: <SecurityOpsPage /> },
           { path: "monitoring", element: <MonitoringPage /> },
           { path: "policy", element: <PolicyLabPage /> },
+          { path: "network", element: <NetworkLabPage /> },
         ],
       },
       { path: "interview", element: <InterviewHomePage /> },
