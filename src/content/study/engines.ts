@@ -26,7 +26,7 @@ export const ENGINES: StudyEngine[] = [
   { id: "autoscale", name: "Autoscaling policies", what: "Target-tracking and step policies on a fleet behind a load balancer: warm-up, cooldowns, scheduled minimums, the metric that measures the load, health-check detection and churn; what each costs, second by second.", status: "built", lab: "/labs/autoscale", approxObjectives: 30 },
   { id: "sql-lab", name: "SQL lab", what: "Real SQL on an in-memory SQLite inside the Python runtime: joins and aggregates, indexes and the plans that use or miss them, normalisation, transactions, views.", status: "built", lab: "/labs/sql", approxObjectives: 20 },
   { id: "python-drills", name: "Python drills", what: "One idea per drill on the real interpreter: arguments, closures, recursion, mutable defaults, slices, sets, comprehensions, classes, inheritance, generators, decorators, type hints, files and the standard library.", status: "built", lab: "/labs/python-drills", approxObjectives: 30 },
-  { id: "js-runtime", name: "JavaScript runtime", what: "A sandboxed worker for the JavaScript course.", status: "planned", approxObjectives: 45 },
+  { id: "js-runtime", name: "JavaScript lab", what: "The browser's own JavaScript engine in a Web Worker with a time limit: script and real ES-module drills, captured console output, the event loop's real order, and fetch against a simulated API. The DOM, testing and server units follow.", status: "built", lab: "/labs/javascript", approxObjectives: 45 },
 ];
 
 export const ENGINE_BY_ID = new Map(ENGINES.map((e) => [e.id, e]));

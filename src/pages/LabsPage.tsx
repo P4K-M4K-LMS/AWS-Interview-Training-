@@ -22,6 +22,7 @@ export const LABS = [
   { to: "/labs/autoscale", label: "Scaling", hint: "Policies, warm-up, cooldowns and health checks" },
   { to: "/labs/sql", label: "SQL", hint: "Real SQL on an in-memory SQLite" },
   { to: "/labs/python-drills", label: "Drills", hint: "One Python idea per drill, tested on the real interpreter" },
+  { to: "/labs/javascript", label: "JavaScript", hint: "One JavaScript idea per drill, on the browser's own engine" },
 ];
 
 export function LabsPage() {
