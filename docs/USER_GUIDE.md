@@ -31,6 +31,8 @@ Real CPython runs in your browser. Press **Run** to execute and see real output 
 
 Real Go runs in your browser through an interpreter compiled to WebAssembly. Goroutines, channels, select, WaitGroups, mutexes, generics and most of the standard library work; there is no network, filesystem or race detector, and goroutines interleave cooperatively because WebAssembly is single-threaded. Press Run for real output or a compiler error with a plain-language explanation. The runtime (about 8 MB compressed) downloads the first time you open the lab.
 
+Go missions (on the Distributed track, unlocked after the Python config validator) work like Python missions: edit the program, Run to see output, Run tests to execute the mission's Go test snippets in the same interpreter. They cover a config parser with error values, a worker pool, timeouts with context and select, and retries with idempotency keys.
+
 ### Algorithms Laboratory
 
 Pick an algorithm and an input size, press Run. You get an **operation count** (deterministic, the thing Big O describes) and an **elapsed time** (measured on your device, noisy). For small n you can step through the algorithm. Growth tables and side-by-side comparison show how work scales.

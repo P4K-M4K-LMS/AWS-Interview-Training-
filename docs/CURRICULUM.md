@@ -42,6 +42,10 @@ Nothing here claims to satisfy a degree or certification requirement, and no job
 | 14 | Incident: positions API slow after the deploy (cache stampede) | DevOps | 10 | monitoring, architecture |
 | 15 | Incident: capacity exhausted during a traffic surge | Distributed | 14 | performance, scaling |
 | 16 | Incident: the job queue is growing (dead consumers) | Distributed | 15 | queues, release |
+| 17 | Go for a Python engineer: a config parser with real error values | Distributed (Go) | 8 | python.basics, architecture |
+| 18 | A worker pool: goroutines, channels and WaitGroups | Distributed (Go) | 17 | concurrency, queues |
+| 19 | Timeouts and cancellation with context and select | Distributed (Go) | 18 | resilience, concurrency |
+| 20 | Retries with backoff, and idempotency keys | Distributed (Go) | 19 | resilience, queues |
 
 ## Planned missions (not built)
 
@@ -50,7 +54,7 @@ Nothing here claims to satisfy a degree or certification requirement, and no job
 - Algorithms: hash table vs list for lookups; recursion and stack depth; BFS over a service graph.
 - Net/Sec: firewall triage; suspicious cron; web log anomaly hunt; hardening checklist.
 - DevOps: alert that never fired; container that will not start; dependency pin drift.
-- Distributed: race condition in a worker; retry storm and idempotency; replication lag; cache invalidation.
+- Distributed: data race in a worker (needs the race detector: optional local service); replication lag; cache invalidation; select-based pipeline stage.
 
 ## Assessment and progression rules
 

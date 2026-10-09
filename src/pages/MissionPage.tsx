@@ -6,7 +6,7 @@ import { completeMission, completeRetentionCheck, resetMission, startMission, st
 import { eligibleStage } from "../engine/learner/mastery";
 import { db, logActivity, updateProfile } from "../data/db";
 import { TerminalMissionPlayer } from "../components/players/TerminalMissionPlayer";
-import { PythonMissionPlayer } from "../components/players/PythonMissionPlayer";
+import { CodeMissionPlayer } from "../components/players/CodeMissionPlayer";
 import { BigOMissionPlayer } from "../components/players/BigOMissionPlayer";
 import { IncidentPlayer } from "../components/players/IncidentPlayer";
 import { Callout, EmptyState } from "../components/ui";
@@ -101,7 +101,8 @@ export function MissionPage() {
       case "investigation":
         return <TerminalMissionPlayer key={key} mission={mission} {...common} />;
       case "python":
-        return <PythonMissionPlayer key={key} mission={mission} {...common} />;
+      case "go":
+        return <CodeMissionPlayer key={key} mission={mission} {...common} />;
       case "bigo":
         return <BigOMissionPlayer key={key} mission={mission} {...common} />;
       case "incident":
