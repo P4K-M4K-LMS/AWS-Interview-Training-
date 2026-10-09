@@ -7,11 +7,11 @@
 export type FeatureStatus = "verified" | "partial" | "unverified" | "planned";
 
 export const FEATURE_STATUS: Array<{ feature: string; status: FeatureStatus; note: string }> = [
-  { feature: "Terminal simulator", status: "verified", note: "48 documented commands, pipes, redirection, permissions, processes, services. Unit-tested." },
+  { feature: "Terminal simulator", status: "verified", note: "49 documented commands, pipes, redirection, permissions, processes, services, simulated network table with listening sockets and connections, virtual sizes for large files. Unit-tested." },
   { feature: "Python execution (Pyodide)", status: "verified", note: "Real CPython 3.14 in a Web Worker with a 10s timeout. Execution core unit-tested in Node; browser worker checked end-to-end." },
   { feature: "Go Laboratory (Yaegi interpreter in WebAssembly)", status: "verified", note: "Real Go incl. goroutines, channels, select, sync, generics and most of the standard library, in a Web Worker with a 10s timeout. Single-threaded WebAssembly: bare data races do not reproduce (see the race-detector service). Runtime built from go/runner in CI; Node + browser tests." },
   { feature: "Big O laboratory", status: "verified", note: "9 instrumented algorithms, step-through, growth tables, comparisons. Unit-tested." },
-  { feature: "22 missions", status: "verified", note: "3 Linux, 3 Python, 5 Go, 2 Big O, 1 security, 4 CI/CD, 4 incidents. Each verified completable by automated tests; shortcut fixes (retry, skip, paste a secret, shed traffic) are rejected." },
+  { feature: "27 missions", status: "verified", note: "5 Linux, 4 Python, 5 Go, 3 Big O, 2 security, 4 CI/CD, 4 incidents. Each verified completable by automated tests; shortcut fixes (retry, skip, paste a secret, shed traffic) are rejected." },
   { feature: "Persistent progress", status: "verified", note: "IndexedDB via Dexie; export/import/reset. Covered by tests and e2e reload check." },
   { feature: "Adaptive learning", status: "partial", note: "Mastery from demonstrated work, hint penalties, prerequisites, spaced-repetition due dates, retention checks (fresh replay without hints) and recommendations. Transfer-task variants are planned." },
   { feature: "STAR Academy + 16 Leadership Principles", status: "verified", note: "Official wording verified against amazon.jobs on 2026-10-09; three practice questions and an interview cue per principle. Content tests check all 16." },

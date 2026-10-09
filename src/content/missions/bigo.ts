@@ -104,4 +104,56 @@ export const bigoMissions: BigOMission[] = [
       { id: "pred-bubble", label: "Predict: bubble sort (worst case)", type: "predict", prompt: "What is the worst-case time complexity of bubble sort?", algorithms: ["bubble-sort"], expected: "O(n^2)", explanation: "Nested passes over the list." },
     ],
   },
+  {
+    id: "bigo-03-structures",
+    kind: "bigo",
+    trackId: "algorithms",
+    stage: 2,
+    title: "Pick the right structure: hash tables vs lists",
+    summary: "Measure membership checks in a list against a hash table, then choose the structure for a dispatcher that answers 'is this vehicle known?' thousands of times a second.",
+    briefing: "The dispatcher checks whether an incoming GPS report belongs to a known vehicle by scanning a list of vehicle IDs. At 50 vehicles it was instant; at 50,000 vehicles and 5,000 reports a second the CPU is pinned. Measure why, and justify the replacement.",
+    objectives: [
+      "Run hash table lookup and linear search at the same large n and compare operation counts",
+      "Explain why a hash table answers in constant time while a list must be scanned",
+      "Predict the complexity of each membership check and of the naive duplicate finder",
+    ],
+    skills: ["algorithms.structures", "algorithms.optimization"],
+    prerequisites: ["bigo-02-search-sort"],
+    estimatedMinutes: 15,
+    lesson: [
+      {
+        title: "Lists are scanned, hash tables are indexed",
+        body: "`vehicle_id in ids_list` walks the list from the start until it finds a match or reaches the end: O(n) per check. `vehicle_id in ids_set` (a Python set or dict, a JS Map) hashes the key to a bucket and looks there: O(1) on average, no matter how many keys the table holds. 5,000 checks per second against 50,000 IDs is 250 million comparisons per second with a list, and about 5,000 hash operations with a set.",
+      },
+      {
+        title: "What a hash table costs",
+        body: "The constant time is bought with memory (the table keeps spare buckets) and with the assumption that keys hash well. Worst-case collisions degrade to O(n), which is why Big O for hash lookups is usually stated as *average* O(1). Order is not preserved by a plain hash table; if you need sorted traversal, keep a sorted structure or sort on demand.",
+      },
+      {
+        title: "Choosing by workload",
+        body: "Ask what operation dominates. Many membership checks or lookups by key: hash table. Append and iterate in order: list. Frequent 'smallest first': a heap. Range queries on sorted keys: a sorted array with binary search, or a tree. Finding duplicates by comparing every pair is O(n²); with a set it is O(n).",
+      },
+    ],
+    glossary: [
+      { term: "hash table", definition: "A structure that maps keys to buckets via a hash function so lookups take constant time on average (dict/set in Python, Map/Set in JavaScript)." },
+      { term: "membership check", definition: "Asking whether a value is present: `x in collection`." },
+      { term: "collision", definition: "Two keys hashing to the same bucket; handled by chaining or probing, and the reason hash lookups are average-case O(1)." },
+      { term: "average vs worst case", definition: "Typical cost over realistic inputs versus the cost of the most unfavourable input." },
+    ],
+    hints: [
+      { level: 1, title: "Same n, two structures", body: "Run Hash table lookup and Linear search both at n = 100,000 or more. Compare the operations column, not the milliseconds." },
+      { level: 2, title: "Read the counts", body: "Linear search reports about n operations; the hash lookup reports a handful regardless of n. That gap is the whole lesson." },
+      { level: 3, title: "Duplicates", body: "Comparing every pair of n items is n(n-1)/2 comparisons: O(n²). With a set you visit each item once: O(n)." },
+      { level: 4, title: "Guided example", body: "Run 'Hash table lookup' at n = 1,000,000 (count stays tiny). Run 'Linear search' at n = 1,000,000 (count about a million). Then answer: hash lookup = O(1), list membership (linear search) = O(n), all-pairs duplicate finder = O(n^2)." },
+    ],
+    reflectionPrompts: ["Using the counts you measured, justify replacing the vehicle ID list with a set, and name one situation where you would keep the list."],
+    transferNote: "'Which data structure and why' is the most common follow-up in coding interviews; answering with measured counts and the workload in mind is what interviewers want.",
+    tasks: [
+      { id: "exp-hash", label: "Run hash table lookup at n >= 100,000", type: "experiment", prompt: "Run Hash table lookup at n = 1,000,000 (or at least 100,000) and note the operation count.", algorithms: ["hash-lookup"], minInputSize: 100000, explanation: "Hashing the key and checking its bucket costs the same whatever n is." },
+      { id: "cmp-hash-list", label: "Compare hash lookup vs linear search at the same n", type: "compare", prompt: "Run both at the same n and compare operation counts.", algorithms: ["hash-lookup", "linear-search"], explanation: "The list scan does about n operations; the hash lookup does a constant handful." },
+      { id: "pred-hash", label: "Predict: hash table membership check", type: "predict", prompt: "What is the average time complexity of `x in a_set`?", algorithms: ["hash-lookup"], expected: "O(1)", explanation: "Hash the key, look in its bucket: constant on average." },
+      { id: "pred-list", label: "Predict: list membership check", type: "predict", prompt: "What is the time complexity of `x in a_list`?", algorithms: ["linear-search"], expected: "O(n)", explanation: "The list is scanned until a match or the end." },
+      { id: "pred-dup", label: "Predict: finding duplicates by comparing every pair", type: "predict", prompt: "What is the time complexity of comparing every pair of n items to find duplicates?", algorithms: ["nested-pairs"], expected: "O(n^2)", explanation: "n(n-1)/2 comparisons. A set does it in O(n)." },
+    ],
+  },
 ];

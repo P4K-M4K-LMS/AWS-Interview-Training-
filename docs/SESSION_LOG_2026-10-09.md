@@ -19,6 +19,7 @@ From an empty repository to a deployed, tested web application: a Linux/Python/G
 | #7 | Code missions generalized by language; four Go missions (config parser, worker pool, timeouts/context, retries + idempotency) |
 | #8 | Replication-lag scenario: read replica on the shared engine, stale reads, blocked apply thread, failover data-loss trap; incident mission 4 |
 | #9 | Go race-detector service (`server/race.ts`, local, `go build -race`), race panel in the Go Lab and Go missions, data-race mission (double spend) |
+| #10 | Five missions for the thin tracks: disk full, runaway process (Linux), cron persistence / reverse shell (security), CSV→JSON report (Python), hash tables vs lists (Big O); shell gains virtual file sizes, `truncate`, and established connections in `ss` |
 
 Feature branches still exist on GitHub (`ccr-221527a4-xf3zs7`, `lp-verified-interview-cues`, `retention-checks`, `phase7-incidents`, `cicd-failure-modes`, `go-runner-spike`); this environment cannot delete remote branches, so delete them from the Branches page.
 
@@ -41,12 +42,12 @@ Feature branches still exist on GitHub (`ccr-221527a4-xf3zs7`, `lp-verified-inte
 - `src/engine/interview/*`: STAR analysis, gap detection, Dive Deeper follow-ups, rubric scoring. `src/content/leadershipPrinciples.ts`: 16 LPs (verified 2026-10-09).
 - `src/content/missions/*`: all missions; the level-4 hint of every terminal mission is a runnable guided example that the test suite executes.
 
-## Verification state (PR #9 head)
+## Verification state (PR #10 head)
 
 | Check | Result |
 |---|---|
 | `npm run typecheck` / `npm run lint` | 0 errors |
-| `npm run test` | 80 passed, 1 skipped placeholder |
+| `npm run test` | 86 passed, 1 skipped placeholder |
 | `npm run test:e2e` | 26 passed (13 scenarios, desktop + Pixel 5) |
 | `npm run build` | succeeds |
 
@@ -60,7 +61,7 @@ Unverified by automation: voice recognition/synthesis (browser-only), the Claude
 
 ## Open items, in order
 
-1. Merge PR #9 when CI is green.
+1. Merge PR #10 when CI is green.
 2. More missions per track (see `docs/CURRICULUM.md` planned list).
 4. Accessibility audit; lazy-load CodeMirror and the interview pages to cut the 1.2 MB bundle.
 5. Manual checks the owner can do: voice in Chrome/Edge; the Claude proxy with `ANTHROPIC_API_KEY=... npm run coach-server`.

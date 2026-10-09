@@ -1,14 +1,14 @@
 # Testing report
 
-Executed on 2026-10-09 (updated after the race-detector service) in the build environment (Linux, Node 22.22, Chromium 1194 via Playwright 1.64). Every number below comes from a real run; nothing is estimated.
+Executed on 2026-10-09 (updated after the five thin-track missions) in the build environment (Linux, Node 22.22, Chromium 1194 via Playwright 1.64). Every number below comes from a real run; nothing is estimated.
 
 ## Commands
 
 ```
 npm run typecheck   # tsc -b                      -> 0 errors
 npm run lint        # oxlint                      -> 0 errors, 11 warnings (React fast-refresh / effect style; no behaviour impact)
-npm run test        # vitest run                  -> 11 files, 80 tests passed, 1 skipped (the "artifact not built" placeholder, which only runs without a Go toolchain)
-npm run build       # vite build                  -> dist/ 15 MB incl. Pyodide runtime; app JS 1.3 MB (436 kB gzip)
+npm run test        # vitest run                  -> 11 files, 86 tests passed, 1 skipped (the "artifact not built" placeholder, which only runs without a Go toolchain)
+npm run build       # vite build                  -> dist/ 15 MB incl. Pyodide runtime; app JS 1.4 MB (452 kB gzip)
 npm run test:e2e    # playwright test             -> 26 passed (13 scenarios × desktop + Pixel 5), 0 failed
 ```
 
@@ -16,10 +16,10 @@ npm run test:e2e    # playwright test             -> 26 passed (13 scenarios × 
 
 | File | Tests | What is verified |
 |---|---|---|
-| `tests/shell.test.ts` | 15 | tokenizer; navigation; cat/grep/pipes/redirection; mkdir/touch/mv/cp/rm; permissions, chmod, sudo; env expansion; ps/top/kill affecting services; systemctl with config validation and journal; unsupported commands return 127 with guidance; snapshot/restore; validator context; editor action; simulated ping/curl/dig/ss; sed with POSIX basic-regex semantics and per-line substitution |
+| `tests/shell.test.ts` | 17 | tokenizer; navigation; cat/grep/pipes/redirection; mkdir/touch/mv/cp/rm; permissions, chmod, sudo; env expansion; ps/top/kill affecting services; systemctl with config validation and journal; unsupported commands return 127 with guidance; snapshot/restore; validator context; editor action; simulated ping/curl/dig/ss; sed with POSIX basic-regex semantics and per-line substitution; network table taken from the mission world with established connections that disappear when their process is killed; virtual sizes for large files in ls/du/df/stat, truncate -s 0 in place, and sudo not elevating a redirection |
 | `tests/python-execute.test.ts` | 6 | real CPython (Pyodide 3.14) stdout capture; real tracebacks with exception type; test cases in learner namespace; isolation between runs; stdin to input(); tests skipped when the program itself fails |
 | `tests/bigo.test.ts` | 5 | growth ratios match classes (linear ≈10×, binary <25 ops at 1M, bubble >50× for 10×n, constant flat); exponential cap; step recording only for small n; sorts produce sorted output; theoretical reference for every algorithm |
-| `tests/missions.test.ts` | 14 | catalogue counts (3 Linux, 3 Python, 5 Go, 2 Big O, 1 security, 4 CI/CD, 4 incidents); all skills/prereqs exist; every mission in the recommended order becomes available in sequence; every terminal/investigation mission starts unsolved and is solved by executing its level-4 guided example; every Python mission's starter fails and reference solution passes all tests |
+| `tests/missions.test.ts` | 18 | catalogue counts (5 Linux, 4 Python, 5 Go, 3 Big O, 2 security, 4 CI/CD, 4 incidents); all skills/prereqs exist; every mission in the recommended order becomes available in sequence; every terminal/investigation mission starts unsolved and is solved by executing its level-4 guided example; every Python mission's starter fails and reference solution passes all tests |
 | `tests/go-missions.test.ts` | 5 | every Go mission: starter compiles but fails its tests, reference solution passes all tests in the WebAssembly runner |
 | `tests/go-runner.test.ts` | 3 | Yaegi WebAssembly runner in Node: goroutines, channels, mutex, generics produce exact output once; compile errors carry line numbers and runtime panics do not crash the runtime; test snippets run in the program namespace with separated output |
 | `tests/cicd.test.ts` | 5 | pipeline parsing (env, steps, comments); `ci` program stops at the first failing step, writes the log, reports status; flaky-test mission: retry fails, skipping makes CI green but fails the mission checks; secret-wiring mission: pasted token refused by secret scanning, reference fix passes; rollback mission: sudo required, unknown release rejected, metrics follow the live release, deploy log appended |

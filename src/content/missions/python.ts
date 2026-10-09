@@ -322,4 +322,154 @@ print(load("# comment\\nport=eighty"))
     ],
     errorHelp: COMMON_ERROR_HELP,
   },
+  {
+    id: "python-04-fleet-report",
+    kind: "python",
+    trackId: "python",
+    stage: 2,
+    title: "From CSV to JSON: a fuel-efficiency report",
+    summary: "Parse a CSV export with the csv module, aggregate per vehicle with dicts, skip bad rows deliberately, and emit a stable JSON document.",
+    briefing: `${COMPANY_INTRO}\n\nFinance exports vehicle trips as CSV (vehicle_id,date,km,fuel_l) and wants a JSON summary per vehicle: trips, total km, total fuel and litres per 100 km. The export sometimes contains blank lines and corrupted rows; those must be skipped and counted, never crash the report.`,
+    objectives: [
+      "parse_trips(text) returns (trips, skipped): a list of dicts with vehicle_id (str), date (str), km (float), fuel_l (float), and the number of rows skipped",
+      "A row is skipped when it has the wrong number of columns or km / fuel_l is not a number or is negative",
+      "summarize(trips) returns {vehicle_id: {'trips': n, 'km': total, 'fuel_l': total, 'l_per_100km': litres per 100 km rounded to 1 decimal}} (0.0 when km is 0)",
+      "to_json(summary) returns json.dumps with sorted keys and 2-space indentation so two runs produce identical text",
+    ],
+    skills: ["python.data", "python.collections"],
+    prerequisites: ["python-03-config-validator"],
+    estimatedMinutes: 25,
+    lesson: [
+      {
+        title: "Do not split CSV by hand",
+        body: "A CSV field may contain commas inside quotes, so `line.split(',')` breaks on real exports. The `csv` module handles quoting: `csv.DictReader(io.StringIO(text))` yields one dict per row keyed by the header. Convert types yourself: every value arrives as a string, so `float(row['km'])` and `int(...)` are your job, and they raise `ValueError` on junk.",
+      },
+      {
+        title: "Skip bad rows on purpose",
+        body: "A report that crashes on one corrupted line helps nobody; a report that silently swallows errors is worse. Do both halves: `try: ... except (ValueError, KeyError, TypeError): skipped += 1; continue`, and return the count so the caller can see data quality. DictReader fills missing columns with `None` and puts extra columns under the key `None`, so check for those too.",
+      },
+      {
+        title: "Aggregate with dicts, then make the output stable",
+        body: "`totals.setdefault(vehicle_id, {'trips': 0, 'km': 0.0, 'fuel_l': 0.0})` creates the entry on first sight. Compute derived numbers at the end (`round(fuel / km * 100, 1)`). `json.dumps(summary, indent=2, sort_keys=True)` produces the same text for the same data every run, which makes diffs and tests meaningful.",
+      },
+    ],
+    glossary: [
+      { term: "CSV", definition: "Comma-separated values: one record per line, fields separated by commas, with quoting rules for commas inside fields." },
+      { term: "JSON", definition: "A text format for nested data (objects, arrays, strings, numbers) that nearly every language can read." },
+      { term: "DictReader", definition: "A csv reader that uses the first row as keys and yields a dict per record." },
+      { term: "stable output", definition: "Identical input produces byte-identical output (sorted keys, fixed indentation), so diffs show real changes only." },
+    ],
+    hints: [
+      { level: 1, title: "Read with DictReader", body: "`reader = csv.DictReader(io.StringIO(text))` then `for row in reader:`. Blank lines are skipped by the reader itself. Validate `len(row) == 4` style conditions by checking that no value is None and `None not in row`." },
+      { level: 2, title: "Convert and guard", body: "`km = float(row['km']); fuel = float(row['fuel_l'])` inside a try/except ValueError. If km < 0 or fuel < 0, skip too. Append `{'vehicle_id': row['vehicle_id'], 'date': row['date'], 'km': km, 'fuel_l': fuel}`." },
+      { level: 3, title: "Aggregate", body: "Loop over trips, `entry = totals.setdefault(t['vehicle_id'], {...})`, add to the three numbers; afterwards set `l_per_100km = round(fuel / km * 100, 1) if km else 0.0`." },
+      { level: 4, title: "Guided example", body: "```\ndef parse_trips(text):\n    trips, skipped = [], 0\n    for row in csv.DictReader(io.StringIO(text)):\n        if None in row or None in row.values():\n            skipped += 1\n            continue\n        try:\n            km, fuel = float(row['km']), float(row['fuel_l'])\n        except ValueError:\n            skipped += 1\n            continue\n        if km < 0 or fuel < 0:\n            skipped += 1\n            continue\n        trips.append({'vehicle_id': row['vehicle_id'], 'date': row['date'], 'km': km, 'fuel_l': fuel})\n    return trips, skipped\n```" },
+    ],
+    reflectionPrompts: ["Explain how your parser treats a corrupted row and why you chose to count skipped rows rather than raise or ignore them."],
+    transferNote: "Turning messy exports into stable structured output is the bread and butter of operations tooling; csv + json + dict aggregation covers most of it.",
+    starterCode: `import csv
+import io
+import json
+
+SAMPLE = """vehicle_id,date,km,fuel_l
+V-100,2026-03-01,120.5,9.8
+V-200,2026-03-01,80.0,7.1
+V-100,2026-03-02,200.0,15.9
+
+V-300,2026-03-02,abc,4.0
+V-200,2026-03-02,95.5,8.2,extra
+V-100,2026-03-03,-5,1.0
+"""
+
+
+def parse_trips(text):
+    """Return (trips, skipped). Each trip: dict with vehicle_id, date, km (float), fuel_l (float)."""
+    trips = []
+    skipped = 0
+    # TODO: use csv.DictReader(io.StringIO(text)); convert km and fuel_l; skip bad rows
+    return trips, skipped
+
+
+def summarize(trips):
+    """Return {vehicle_id: {"trips": n, "km": total, "fuel_l": total, "l_per_100km": x}}."""
+    totals = {}
+    # TODO
+    return totals
+
+
+def to_json(summary):
+    """Stable JSON text: sorted keys, 2-space indent."""
+    # TODO
+    return ""
+
+
+if __name__ == "__main__":
+    trips, skipped = parse_trips(SAMPLE)
+    print(f"{len(trips)} trips, {skipped} skipped")
+    print(to_json(summarize(trips)))
+`,
+    referenceSolution: `import csv
+import io
+import json
+
+SAMPLE = """vehicle_id,date,km,fuel_l
+V-100,2026-03-01,120.5,9.8
+V-200,2026-03-01,80.0,7.1
+V-100,2026-03-02,200.0,15.9
+
+V-300,2026-03-02,abc,4.0
+V-200,2026-03-02,95.5,8.2,extra
+V-100,2026-03-03,-5,1.0
+"""
+
+
+def parse_trips(text):
+    trips = []
+    skipped = 0
+    for row in csv.DictReader(io.StringIO(text)):
+        if None in row or None in row.values():
+            skipped += 1
+            continue
+        try:
+            km = float(row["km"])
+            fuel = float(row["fuel_l"])
+        except ValueError:
+            skipped += 1
+            continue
+        if km < 0 or fuel < 0:
+            skipped += 1
+            continue
+        trips.append({"vehicle_id": row["vehicle_id"], "date": row["date"], "km": km, "fuel_l": fuel})
+    return trips, skipped
+
+
+def summarize(trips):
+    totals = {}
+    for t in trips:
+        entry = totals.setdefault(t["vehicle_id"], {"trips": 0, "km": 0.0, "fuel_l": 0.0})
+        entry["trips"] += 1
+        entry["km"] += t["km"]
+        entry["fuel_l"] += t["fuel_l"]
+    for entry in totals.values():
+        entry["l_per_100km"] = round(entry["fuel_l"] / entry["km"] * 100, 1) if entry["km"] else 0.0
+    return totals
+
+
+def to_json(summary):
+    return json.dumps(summary, indent=2, sort_keys=True)
+
+
+if __name__ == "__main__":
+    trips, skipped = parse_trips(SAMPLE)
+    print(f"{len(trips)} trips, {skipped} skipped")
+    print(to_json(summarize(trips)))
+`,
+    tests: [
+      { id: "t1", label: "parse_trips keeps 3 valid rows from SAMPLE and skips 3 bad ones with correct types", code: `trips, skipped = parse_trips(SAMPLE)\nassert skipped == 3, f"skipped {skipped}, expected 3"\nassert len(trips) == 3, f"{len(trips)} trips, expected 3"\nassert trips[0] == {"vehicle_id": "V-100", "date": "2026-03-01", "km": 120.5, "fuel_l": 9.8}, trips[0]\nassert all(isinstance(t["km"], float) and isinstance(t["fuel_l"], float) for t in trips)` },
+      { id: "t2", label: "parse_trips handles quoted commas and an empty export", code: `trips, skipped = parse_trips('vehicle_id,date,km,fuel_l\\n"V-1,North",2026-03-05,10,1\\n')\nassert skipped == 0 and trips == [{"vehicle_id": "V-1,North", "date": "2026-03-05", "km": 10.0, "fuel_l": 1.0}], (trips, skipped)\nassert parse_trips("vehicle_id,date,km,fuel_l\\n") == ([], 0)` },
+      { id: "t3", label: "summarize totals per vehicle and computes litres per 100 km", code: `s = summarize([{"vehicle_id": "A", "date": "d", "km": 100.0, "fuel_l": 8.0}, {"vehicle_id": "A", "date": "d", "km": 50.0, "fuel_l": 4.5}, {"vehicle_id": "B", "date": "d", "km": 0.0, "fuel_l": 0.0}])\nassert s["A"] == {"trips": 2, "km": 150.0, "fuel_l": 12.5, "l_per_100km": 8.3}, s["A"]\nassert s["B"] == {"trips": 1, "km": 0.0, "fuel_l": 0.0, "l_per_100km": 0.0}, s["B"]` },
+      { id: "t4", label: "to_json is stable: sorted keys, 2-space indent, round-trips", code: `out = to_json({"b": {"trips": 1, "km": 1.0, "fuel_l": 0.1, "l_per_100km": 10.0}, "a": {"trips": 0, "km": 0.0, "fuel_l": 0.0, "l_per_100km": 0.0}})\nassert out.startswith('{\\n  "a": {'), out[:20]\nassert json.loads(out)["b"]["l_per_100km"] == 10.0\nassert out.index('"fuel_l"') < out.index('"km"') < out.index('"l_per_100km"') < out.index('"trips"')` },
+    ],
+    errorHelp: COMMON_ERROR_HELP,
+  },
 ];
