@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, useParams, useSearchParams } from "react-router-dom";
-import { MISSION_BY_ID } from "../content/missions";
+import { MISSION_BY_ID, RECOMMENDED_ORDER } from "../content/missions";
 import { useMissionStatuses, useProfile } from "../data/hooks";
 import { completeMission, completeRetentionCheck, resetMission, startMission, startRetentionCheck } from "../engine/missions/engine";
 import { eligibleStage } from "../engine/learner/mastery";
@@ -92,6 +92,15 @@ export function MissionPage() {
     setResetKey((k) => k + 1);
   };
 
+  const nextMission = (() => {
+    const i = RECOMMENDED_ORDER.indexOf(mission.id);
+    for (const id of [...RECOMMENDED_ORDER.slice(i + 1), ...RECOMMENDED_ORDER.slice(0, Math.max(0, i))]) {
+      const st = statuses.get(id);
+      if (st === "available" || st === "in-progress") return MISSION_BY_ID.get(id) ?? null;
+    }
+    return null;
+  })();
+
   const common = retentionActive
     ? { progress: p, completed: false, onComplete: () => void finishRetention(true), onReset: () => void restartRetention(), retention: true, onGiveUp: () => void finishRetention(false) }
     : { progress: p, completed: status === "completed", onComplete: () => void onComplete(), onReset: () => void onReset() };
@@ -129,6 +138,25 @@ export function MissionPage() {
         </Callout>
       )}
       {player}
+      {status === "completed" && !retentionActive && (
+        <Callout kind="info" title="What next">
+          <div className="flex flex-wrap items-center gap-2 text-sm">
+            {nextMission ? (
+              <Link to={`/missions/${nextMission.id}`} className="btn-primary" data-testid="next-mission">
+                Next mission: {nextMission.title} →
+              </Link>
+            ) : (
+              <span>Every mission you can start right now is done.</span>
+            )}
+            <Link to="/curriculum" className="btn-secondary">
+              Curriculum
+            </Link>
+            <Link to="/interview/practice" className="btn-secondary">
+              Practise explaining it
+            </Link>
+          </div>
+        </Callout>
+      )}
     </div>
   );
 }

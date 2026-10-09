@@ -2,7 +2,7 @@ import { useState, type ReactNode } from "react";
 import { Link } from "react-router-dom";
 import type { CheckResult, Mission, MissionProgress } from "../../domain/types";
 import { TRACK_BY_ID, SKILL_BY_ID } from "../../content/curriculum";
-import { revealHint, saveReflection } from "../../engine/missions/engine";
+import { revealHint, saveReflectionAndStory } from "../../engine/missions/engine";
 import { Callout, Markdown, Panel } from "../ui";
 
 interface Props {
@@ -21,6 +21,25 @@ interface Props {
   onGiveUp?: () => void;
 }
 
+/** The free-play lab that matches a mission's workstation, if any. */
+export function labForMission(mission: Mission): { to: string; label: string } | null {
+  switch (mission.kind) {
+    case "terminal":
+    case "investigation":
+      return { to: "/labs/terminal", label: "Terminal lab" };
+    case "python":
+      return { to: "/labs/python", label: "Python lab" };
+    case "go":
+      return { to: "/labs/go", label: "Go lab" };
+    case "bigo":
+      return { to: "/labs/algorithms", label: "Algorithms lab" };
+    case "incident":
+      return { to: "/labs/monitoring", label: "Monitoring lab" };
+    default:
+      return null;
+  }
+}
+
 /**
  * Common chrome for every mission: briefing, lesson, glossary, objectives,
  * progressive hints, live validation and completion/reflection.
@@ -32,6 +51,7 @@ export function MissionFrame({ mission, progress, checks, completed, onComplete,
   const [reflectionSaved, setReflectionSaved] = useState(false);
   const passed = checks.filter((c) => c.passed).length;
   const allPassed = checks.length > 0 && passed === checks.length;
+  const lab = labForMission(mission);
 
   const showHint = async (level: number) => {
     setHintLevel(level);
@@ -50,6 +70,11 @@ export function MissionFrame({ mission, progress, checks, completed, onComplete,
             <span className="badge">{TRACK_BY_ID.get(mission.trackId)?.shortName}</span>
             <span className="badge">Stage {mission.stage}</span>
             <span className="badge">~{mission.estimatedMinutes} min</span>
+            {lab && (
+              <Link to={lab.to} className="badge hover:border-amber-500" title="Open the free-play lab in this tab; your mission state is saved" data-testid="mission-lab-link">
+                {lab.label} ↗
+              </Link>
+            )}
           </div>
           <h1 className="text-2xl font-bold mt-1">{mission.title}</h1>
           <p className="muted text-sm">{mission.summary}</p>
@@ -116,20 +141,29 @@ export function MissionFrame({ mission, progress, checks, completed, onComplete,
               Interview practice: answer the prompt as if a technical interviewer asked it. This builds the habit of narrating investigation steps. Remember this was a simulation, so in a real interview describe it as practice, never as workplace experience.
             </p>
             <p className="text-sm font-medium">{mission.reflectionPrompts[0]}</p>
-            <textarea className="input mt-2 h-28" value={reflection} onChange={(e) => setReflection(e.target.value)} placeholder="I started by... because... The evidence showed... I verified by..." />
+            <textarea className="input mt-2 h-28" value={reflection} onChange={(e) => setReflection(e.target.value)} placeholder="I started by... because... The evidence showed... I verified by..." data-testid="reflection-input" />
             <div className="flex items-center gap-2 mt-2">
               <button
                 type="button"
                 className="btn-secondary"
                 disabled={reflection.trim().length < 20}
                 onClick={() => {
-                  void saveReflection(mission.id, mission.reflectionPrompts[0], reflection);
+                  void saveReflectionAndStory(mission, mission.reflectionPrompts[0], reflection);
                   setReflectionSaved(true);
                 }}
+                data-testid="save-reflection"
               >
                 Save reflection
               </button>
-              {reflectionSaved && <span className="text-xs text-emerald-400">Saved.</span>}
+              {reflectionSaved && (
+                <span className="text-xs text-emerald-400" data-testid="reflection-saved">
+                  Saved, and a draft story was added to your{" "}
+                  <Link to="/interview/stories" className="underline">
+                    Story Bank
+                  </Link>{" "}
+                  (marked as practice).
+                </span>
+              )}
               <Link to={`/interview/practice?question=${encodeURIComponent(mission.reflectionPrompts[0])}&fromMission=${mission.id}`} className="btn-ghost">
                 Get STAR feedback on this →
               </Link>

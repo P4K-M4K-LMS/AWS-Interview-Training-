@@ -1,5 +1,6 @@
-import { SCHEMA_VERSION, type CheckResult, type Mission, type MissionProgress, type SkillId, type SkillState, type TerminalCheckContext, type TerminalMission, type InvestigationMission } from "../../domain/types";
-import { db, logActivity, nowIso } from "../../data/db";
+import { SCHEMA_VERSION, type CheckResult, type LeadershipPrincipleId, type Mission, type MissionProgress, type SkillId, type SkillState, type Story, type TerminalCheckContext, type TerminalMission, type InvestigationMission } from "../../domain/types";
+import { db, logActivity, nowIso, uid } from "../../data/db";
+import { SKILL_BY_ID } from "../../content/curriculum";
 import { applyMissionCompletion, applyRetentionCheck, emptySkill } from "../learner/mastery";
 
 /**
@@ -103,6 +104,63 @@ export async function resetMission(missionId: string) {
 export async function saveReflection(missionId: string, prompt: string, answer: string) {
   const p = (await db.missions.get(missionId)) ?? emptyProgress(missionId);
   await db.missions.put({ ...p, reflections: [...p.reflections.filter((r) => r.prompt !== prompt), { prompt, answer, at: nowIso() }] });
+}
+
+/** Leadership Principles a mission's story most plausibly illustrates; a suggestion the learner edits. */
+export function suggestedPrinciples(mission: Mission): LeadershipPrincipleId[] {
+  if (mission.kind === "incident") return ["ownership", "dive-deep"];
+  if (mission.kind === "design") return ["think-big", "are-right-a-lot"];
+  if (mission.kind === "lesson") return ["learn-and-be-curious"];
+  switch (mission.trackId) {
+    case "netsec":
+      return ["dive-deep", "insist-on-the-highest-standards"];
+    case "devops":
+      return ["ownership", "insist-on-the-highest-standards"];
+    case "distributed":
+    case "serverless":
+      return ["dive-deep", "are-right-a-lot"];
+    default:
+      return ["learn-and-be-curious", "dive-deep"];
+  }
+}
+
+/**
+ * Saves the reflection and keeps one draft story per mission in the Story
+ * Bank: the reflection becomes the Action, the mission's summary the
+ * Situation, its first objective the Task. The source is "technical
+ * learning" and the evidence line says it was a simulation, so the draft
+ * cannot be mistaken for work experience. Re-saving updates the same story
+ * without touching fields the learner has edited by hand (result, lessons,
+ * principles, title).
+ */
+export async function saveReflectionAndStory(mission: Mission, prompt: string, answer: string): Promise<Story> {
+  await saveReflection(mission.id, prompt, answer);
+  const existing = await db.stories.filter((s) => s.missionId === mission.id).first();
+  const now = nowIso();
+  const story: Story = existing
+    ? { ...existing, action: answer, updatedAt: now }
+    : {
+        id: uid("story"),
+        schemaVersion: SCHEMA_VERSION,
+        title: `Practice: ${mission.title}`,
+        source: "technical-learning",
+        situation: `OpsForge practice mission (fictional Nimbus Freight scenario): ${mission.summary}`,
+        task: mission.objectives[0] ?? "",
+        action: answer,
+        result: "",
+        lessons: "",
+        principles: suggestedPrinciples(mission),
+        technicalSkills: mission.skills.map((s) => SKILL_BY_ID.get(s)?.name ?? s),
+        evidence: "OpsForge simulation: practice, not workplace experience. Describe it as practice in interviews.",
+        confidence: "high",
+        practiceHistory: [],
+        missionId: mission.id,
+        createdAt: now,
+        updatedAt: now,
+      };
+  await db.stories.put(story);
+  if (!existing) await logActivity({ type: "story-saved", missionId: mission.id, detail: story.title });
+  return story;
 }
 
 /* ------------------------------------------------------------------ */

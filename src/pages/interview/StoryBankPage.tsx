@@ -203,6 +203,11 @@ export function StoryBankPage() {
               <div className="text-xs muted mb-2">
                 {SOURCES.find(([v]) => v === s.source)?.[1]} · confidence {s.confidence} · practised {s.practiceHistory.length}× · updated {new Date(s.updatedAt).toLocaleDateString()}
               </div>
+              {s.missionId && (
+                <div className="mb-2">
+                  <span className="badge border-sky-500/50 text-sky-400" data-testid="story-mission-badge">draft from a mission · practice, not experience</span>
+                </div>
+              )}
               <p className="text-sm line-clamp-3">{s.situation || s.action}</p>
               <div className="flex flex-wrap gap-1 mt-2">
                 {s.principles.map((p) => (

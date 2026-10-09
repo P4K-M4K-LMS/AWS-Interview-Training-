@@ -742,6 +742,8 @@ export interface Story {
   confidence: FactualConfidence;
   /** Interview session ids where this story was used. */
   practiceHistory: string[];
+  /** Set when the story is a draft created from a mission reflection (practice, never work experience). */
+  missionId?: string;
   createdAt: string;
   updatedAt: string;
 }

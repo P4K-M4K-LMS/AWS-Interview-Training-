@@ -8,7 +8,7 @@ import { LabsPage } from "./pages/LabsPage";
 
 // Heavy pages load on demand so the first screen does not carry CodeMirror,
 // the simulation engine or the interview coach.
-const LearningPathsPage = lazy(() => import("./pages/LearningPathsPage").then((m) => ({ default: m.LearningPathsPage })));
+const CurriculumPage = lazy(() => import("./pages/CurriculumPage").then((m) => ({ default: m.CurriculumPage })));
 const MissionControlPage = lazy(() => import("./pages/MissionControlPage").then((m) => ({ default: m.MissionControlPage })));
 const MissionPage = lazy(() => import("./pages/MissionPage").then((m) => ({ default: m.MissionPage })));
 const TerminalPage = lazy(() => import("./pages/TerminalPage").then((m) => ({ default: m.TerminalPage })));
@@ -33,7 +33,7 @@ export const routes: RouteObject[] = [
     children: [
       { index: true, element: <DashboardPage /> },
       { path: "onboarding", element: <OnboardingPage /> },
-      { path: "curriculum", element: <LearningPathsPage /> },
+      { path: "curriculum", element: <CurriculumPage /> },
       { path: "missions", element: <MissionControlPage /> },
       { path: "missions/:missionId", element: <MissionPage /> },
       {
