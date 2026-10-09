@@ -61,7 +61,7 @@ export function DesignMissionPlayer({ mission, progress, completed, onComplete, 
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-2 mt-3 text-sm">
               <div className="panel-2 p-2">
                 <div className="label">Peak ingest</div>
-                {r.peakIngestPerSec.toLocaleString()} events/s
+                {r.peakIngestPerSec.toLocaleString()} {r.unit ?? "events/s"}
               </div>
               <div className="panel-2 p-2">
                 <div className="label">Read latency budget</div>
@@ -74,7 +74,8 @@ export function DesignMissionPlayer({ mission, progress, completed, onComplete, 
               <div className="panel-2 p-2">
                 <div className="label">Availability and durability</div>
                 No SPOF on the {r.noSpofOn.join(" and ")} path{r.noSpofOn.length > 1 ? "s" : ""}
-                {r.durableWrites ? "; events survive a storage outage" : ""}
+                {r.durableWrites ? `; ${(r.durableLabel ?? "events survive a storage outage").replace(/ \(.*\)$/, "").toLowerCase()}` : ""}
+                {r.consistency ? `; ${r.consistency} consistency on reads` : ""}
               </div>
             </div>
           </Panel>
@@ -129,9 +130,17 @@ export function DesignMissionPlayer({ mission, progress, completed, onComplete, 
                   <dd className={derived.spofs.length ? "text-red-400" : ""}>{derived.spofs.length ? derived.spofs.map((s) => `${s.option} (${s.path})`).join("; ") : "none"}</dd>
                 </div>
                 <div className="flex justify-between">
-                  <dt className="muted">Events survive storage outage</dt>
+                  <dt className="muted">{(r.durableLabel ?? "Events survive a storage outage").replace(/ \(.*\)$/, "")}</dt>
                   <dd className={derived.complete && !derived.durable ? "text-red-400" : ""}>{derived.durable ? "yes" : "no"}</dd>
                 </div>
+                {r.consistency && (
+                  <div className="flex justify-between">
+                    <dt className="muted">Read consistency</dt>
+                    <dd className={derived.complete && derived.readConsistency !== r.consistency ? "text-red-400" : ""} data-testid="derived-consistency">
+                      {derived.complete ? derived.readConsistency : "incomplete"}
+                    </dd>
+                  </div>
+                )}
               </dl>
               <p className="text-xs muted mt-2">Computed from the options' numbers: cost is a sum, capacity is the weakest write-path component, latency is the sum of read-path hops.</p>
             </Panel>

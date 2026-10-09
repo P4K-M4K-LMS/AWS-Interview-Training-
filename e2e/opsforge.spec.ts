@@ -614,3 +614,41 @@ test("redo after completion: fresh workstation, record kept, dependants stay unl
   await expect(page.getByRole("listitem").filter({ hasText: "Find your way around the server" }).getByText("Resume")).toBeVisible();
   await expect(page.getByRole("listitem").filter({ hasText: "Log detective" }).getByText("Start")).toBeVisible();
 });
+
+test("design exercise 2: strong consistency rules out the cache and the key-value store; idempotency slot drives a drill", async ({ page }) => {
+  test.setTimeout(120_000);
+  await onboard(page);
+  const now = new Date().toISOString();
+  const bundle = { app: "opsforge", schemaVersion: 1, exportedAt: now, missions: [{ missionId: "design-01-position-ingest", schemaVersion: 1, status: "completed", attempts: 1, hintsUsed: 0, maxHintLevel: 0, bestScore: 1, startedAt: now, completedAt: now, reflections: [] }] };
+  await page.goto("/#/settings");
+  await page.locator('input[type="file"]').setInputFiles({ name: "progress.json", mimeType: "application/json", buffer: Buffer.from(JSON.stringify(bundle)) });
+  await expect(page.getByText(/Imported .*1 mission records/)).toBeVisible();
+
+  await page.goto("/#/missions/design-02-command-ack");
+  await expect(page.getByText("Consequences of your design")).toBeVisible({ timeout: 20_000 });
+  // Last exercise's answer, applied here: cheap and fast, but eventually consistent.
+  await page.getByTestId("opt-api-function").check();
+  await page.getByTestId("opt-buffer-durable-queue").check();
+  await page.getByTestId("opt-store-kv-store").check();
+  await page.getByTestId("opt-read-cache").check();
+  await page.getByTestId("opt-dedup-button").check();
+  await expect(page.getByTestId("derived-consistency")).toHaveText("eventual");
+  await expect(page.getByTestId("mission-checks")).toContainText("eventually consistent: Managed key-value store (replicated), Cache in front of the store");
+  // The requirements decide: strongly consistent store, direct read, server-side idempotency.
+  await page.getByTestId("opt-store-managed-db").check();
+  await page.getByTestId("opt-read-direct-read").check();
+  await page.getByTestId("opt-dedup-idempotency-key").check();
+  await expect(page.getByTestId("derived-consistency")).toHaveText("strong");
+  await expect(page.getByTestId("design-derived")).toContainText("1,110");
+  await page.getByTestId("qty-concurrency").fill("60");
+  await page.getByTestId("qty-workers").fill("20");
+  await page.getByTestId("qty-ack-timeout").fill("8");
+  await page.getByTestId("qty-idempotency-retention").fill("15");
+  await page.getByTestId("drill-gateway-outage-0").check();
+  await page.getByTestId("drill-status-after-failover-0").check();
+  await page.getByTestId("drill-double-send-0").check();
+  await page.getByTestId("design-justification").fill("The function behind an API gateway takes the 300 commands/s peak at low cost with no single point of failure. The durable queue holds commands through a gateway outage. The managed database with standby keeps status reads strongly consistent, which the cache would break, and the direct read keeps latency at 70 ms. The idempotency key makes a retry harmless.");
+  await expect(page.getByText(/^Checks \((\d+)\/\1\)$/)).toBeVisible({ timeout: 20_000 });
+  await page.getByTestId("mission-complete").click();
+  await expect(page.getByText("Mission complete: explain what you did")).toBeVisible();
+});

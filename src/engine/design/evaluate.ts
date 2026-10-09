@@ -23,6 +23,10 @@ export interface DesignDerived {
   spofs: Array<{ path: "write" | "read"; option: string }>;
   durable: boolean;
   complete: boolean;
+  /** Weakest consistency model declared on the read path; unknown when none is declared. */
+  readConsistency: "strong" | "eventual" | "unknown";
+  /** Read-path options that are eventually consistent, by name. */
+  eventualOn: string[];
 }
 
 export function emptyDesign(): DesignState {
@@ -34,6 +38,8 @@ export function deriveDesign(mission: DesignMission, state: DesignState): Design
   let ingestCapacity = Infinity;
   let readLatencyMs = 0;
   let durable = false;
+  let readConsistency: DesignDerived["readConsistency"] = "unknown";
+  const eventualOn: string[] = [];
   const spofs: DesignDerived["spofs"] = [];
   let complete = true;
   for (const slot of mission.slots) {
@@ -47,8 +53,12 @@ export function deriveDesign(mission: DesignMission, state: DesignState): Design
     if (slot.paths.includes("read") && opt.latencyMs !== undefined) readLatencyMs += opt.latencyMs;
     if (opt.durable) durable = true;
     if (opt.spof) for (const p of slot.paths) spofs.push({ path: p, option: opt.name });
+    if (slot.paths.includes("read") && opt.consistency) {
+      if (opt.consistency === "eventual") eventualOn.push(opt.name);
+      readConsistency = readConsistency === "eventual" || opt.consistency === "eventual" ? "eventual" : "strong";
+    }
   }
-  return { cost, ingestCapacity: ingestCapacity === Infinity ? 0 : ingestCapacity, readLatencyMs, spofs, durable, complete };
+  return { cost, ingestCapacity: ingestCapacity === Infinity ? 0 : ingestCapacity, readLatencyMs, spofs, durable, complete, readConsistency, eventualOn };
 }
 
 export function evaluateDesign(mission: DesignMission, state: DesignState): { checks: CheckResult[]; derived: DesignDerived } {
@@ -57,14 +67,24 @@ export function evaluateDesign(mission: DesignMission, state: DesignState): { ch
   const checks: CheckResult[] = [];
   const missing = mission.slots.filter((s) => !s.options.some((o) => o.id === state.choices[s.id])).map((s) => s.label);
   checks.push({ id: "complete", label: "A component chosen for every slot", passed: d.complete, detail: missing.length ? `missing: ${missing.join(", ")}` : undefined });
-  checks.push({ id: "throughput", label: `Write path sustains ${r.peakIngestPerSec.toLocaleString()} events/s`, passed: d.complete && d.ingestCapacity >= r.peakIngestPerSec, detail: d.complete ? `capacity ${d.ingestCapacity.toLocaleString()}/s` : "choose every component first" });
+  const unit = r.unit ?? "events/s";
+  checks.push({ id: "throughput", label: `Write path sustains ${r.peakIngestPerSec.toLocaleString()} ${unit}`, passed: d.complete && d.ingestCapacity >= r.peakIngestPerSec, detail: d.complete ? `capacity ${d.ingestCapacity.toLocaleString()}/s` : "choose every component first" });
   checks.push({ id: "latency", label: `Read path p95 within ${r.maxReadLatencyMs} ms`, passed: d.complete && d.readLatencyMs <= r.maxReadLatencyMs, detail: d.complete ? `${d.readLatencyMs} ms` : "choose every component first" });
   checks.push({ id: "budget", label: `Monthly cost within ${r.budget.toLocaleString()}`, passed: d.complete && d.cost <= r.budget, detail: `${d.cost.toLocaleString()} / month` });
   for (const path of r.noSpofOn) {
     const bad = d.spofs.filter((s) => s.path === path).map((s) => s.option);
     checks.push({ id: `spof-${path}`, label: `No single point of failure on the ${path} path`, passed: d.complete && bad.length === 0, detail: bad.length ? `single points of failure: ${bad.join(", ")}` : undefined });
   }
-  if (r.durableWrites) checks.push({ id: "durable", label: "Events survive a storage outage (durable buffer)", passed: d.complete && d.durable, detail: d.complete && !d.durable ? "nothing holds events while storage is down" : undefined });
+  if (r.durableWrites) checks.push({ id: "durable", label: r.durableLabel ?? "Events survive a storage outage (durable buffer)", passed: d.complete && d.durable, detail: d.complete && !d.durable ? "nothing holds events while the downstream is down" : undefined });
+  if (r.consistency) {
+    const ok = d.complete && d.readConsistency === r.consistency;
+    checks.push({
+      id: "consistency",
+      label: r.consistency === "strong" ? "Reads are strongly consistent (never stale)" : "Reads may be eventually consistent",
+      passed: ok,
+      detail: !d.complete ? "choose every component first" : ok ? undefined : d.eventualOn.length ? `eventually consistent: ${d.eventualOn.join(", ")}` : "no component on the read path declares its consistency",
+    });
+  }
   for (const q of mission.quantities) {
     const v = state.quantities[q.id];
     const ok = typeof v === "number" && Number.isFinite(v) && v >= q.min && v <= q.max;

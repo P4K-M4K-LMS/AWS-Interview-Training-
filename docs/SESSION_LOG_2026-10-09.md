@@ -30,6 +30,7 @@ From an empty repository to a deployed, tested web application: a Linux/Python/G
 | #19 | Beginner primers for all 33 missions (option 1): In plain words, Why it matters, Why this way, Why start here; expanded for the unnamed-role track, collapsed under "Start from the basics" for the SDE II track; Settings → Explanations overrides; glossary terms linked from the primer. Owner's rule: the unnamed-role track needs beginner-level explanations with the why |
 | #20 | Docs: Pages source recorded as GitHub Actions (owner set it by hand; the workflow token gets 403 on the Pages update endpoint). Its merge showed the Jekyll build still running; a diagnostic run at 05:19 UTC confirmed the source had switched after that push |
 | #22 | Role-specific technical interview questions (nine per role, tied to quoted qualifications and preparing missions, cues, Realistic-mode follow-ups, Curriculum role lens) and Redo after completion (fresh workstation, record kept, dependants stay unlocked, no second mastery) |
+| #23 | Second design exercise: the dispatcher command and acknowledgement path (300 commands/s, strongly consistent status reads, both paths SPOF-free, durable buffer for gateway outages, idempotency slot, three drills, four sizings). Rubric gains a consistency requirement and per-exercise labels |
 | #16 | Reorganisation part 2: Curriculum page with two lenses (by track: expandable tracks with skills, evidence, ordered missions and the lab; by target role: the gap map), per-track skill panels moved out of Progress, lab link on every mission, What-next panel after completion, reflections saved as draft stories marked as practice |
 
 Feature branches still exist on GitHub (`ccr-221527a4-xf3zs7`, `lp-verified-interview-cues`, `retention-checks`, `phase7-incidents`, `cicd-failure-modes`, `go-runner-spike`); this environment cannot delete remote branches, so delete them from the Branches page.
@@ -74,7 +75,7 @@ Unverified by automation: voice recognition/synthesis (browser-only), the Claude
 
 ## Open items, in order
 
-1. Merge PR #22 (role questions + redo) when CI is green. Its merge is the first push to `main` since the Pages source switched; confirm that the "pages build and deployment" workflow no longer runs and the deploy job skips its wait.
+1. Merge PR #23 (second design exercise) when CI is green. (PR #22's merge confirmed the Pages fix: no Jekyll run, deploy wait skipped, 49 s end to end.)
 2. For the serverless role: role-specific technical interview questions, more design exercises.
 3. Cleanup: the 22 static-component lint warnings in the architecture diagram; accessibility pass.
 3. More missions per track (see `docs/CURRICULUM.md` planned list).

@@ -546,8 +546,14 @@ export interface DesignRequirements {
   budget: number;
   /** No single point of failure allowed on these paths. */
   noSpofOn: Array<"write" | "read">;
-  /** Data on the write path must survive a storage outage (a durable buffer or equivalent). */
+  /** Data on the write path must survive a downstream outage (a durable buffer or equivalent). */
   durableWrites: boolean;
+  /** Unit shown for the peak load, default "events/s". */
+  unit?: string;
+  /** Label for the durability check, default "Events survive a storage outage (durable buffer)". */
+  durableLabel?: string;
+  /** When set, every read-path option that declares a consistency model must match it. */
+  consistency?: "strong" | "eventual";
   /** Terms a justification must touch (at least `justificationMinTerms` of them). */
   justificationTerms: string[];
   justificationMinTerms: number;
