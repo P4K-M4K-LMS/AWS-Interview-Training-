@@ -11,6 +11,7 @@
       "title": "Syntax, variables & control flow",
       "rangeLabel": "Week 1",
       "gate": "Given an unfamiliar short JS snippet using var, let, and const, predict its output and explain any hoisting or scoping surprise it contains.",
+      "gateEngine": "js-runtime",
       "objectives": [
         {
           "id": "javascript:1:1",
@@ -19,8 +20,14 @@
           "text": "Variables: var vs. let vs. const, and why hoisting makes var risky",
           "sourceHash": "46a33d5989aa",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "javascript",
+            "exerciseId": "js-01-hoisting",
+            "coverage": "full"
+          }
         },
         {
           "id": "javascript:1:2",
@@ -29,8 +36,14 @@
           "text": "Primitive types, typeof, and type coercion pitfalls (== vs. ===)",
           "sourceHash": "502b892b94f7",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "javascript",
+            "exerciseId": "js-02-coercion",
+            "coverage": "full"
+          }
         },
         {
           "id": "javascript:1:3",
@@ -39,8 +52,15 @@
           "text": "Operators and expressions; operator precedence",
           "sourceHash": "d400deddf1ea",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "javascript",
+            "exerciseId": "js-02-coercion",
+            "coverage": "partial",
+            "note": "comparison and logical operators"
+          }
         },
         {
           "id": "javascript:1:4",
@@ -49,8 +69,14 @@
           "text": "Conditional logic: if/else, switch, and the ternary operator",
           "sourceHash": "c61d520ddad2",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "javascript",
+            "exerciseId": "js-02-coercion",
+            "coverage": "full"
+          }
         },
         {
           "id": "javascript:1:5",
@@ -59,8 +85,14 @@
           "text": "Loops: for, while, for...of, for...in, and when to use each",
           "sourceHash": "43bc2beebfa5",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "javascript",
+            "exerciseId": "js-03-loops",
+            "coverage": "full"
+          }
         }
       ]
     },
@@ -70,6 +102,7 @@
       "title": "Functions & scope",
       "rangeLabel": "Week 2",
       "gate": "Write both a function declaration and an equivalent arrow function for a stated task, and explain a concrete case where the difference in `this` binding would matter.",
+      "gateEngine": "js-runtime",
       "objectives": [
         {
           "id": "javascript:2:1",
@@ -78,8 +111,14 @@
           "text": "Function declarations vs. function expressions vs. arrow functions",
           "sourceHash": "71ad4ddf622c",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "javascript",
+            "exerciseId": "js-04-parameters",
+            "coverage": "full"
+          }
         },
         {
           "id": "javascript:2:2",
@@ -88,8 +127,14 @@
           "text": "Parameters: default values, rest parameters",
           "sourceHash": "5de41f6a4ec4",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "javascript",
+            "exerciseId": "js-04-parameters",
+            "coverage": "full"
+          }
         },
         {
           "id": "javascript:2:3",
@@ -98,8 +143,14 @@
           "text": "Scope: function scope vs. block scope, and the temporal dead zone",
           "sourceHash": "8a5b78292376",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "javascript",
+            "exerciseId": "js-01-hoisting",
+            "coverage": "full"
+          }
         },
         {
           "id": "javascript:2:4",
@@ -108,8 +159,14 @@
           "text": "Closures: what they capture and a real use case for one",
           "sourceHash": "b7b2569a93ae",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "javascript",
+            "exerciseId": "js-06-closures",
+            "coverage": "full"
+          }
         },
         {
           "id": "javascript:2:5",
@@ -118,8 +175,14 @@
           "text": "Understanding `this` in different call contexts",
           "sourceHash": "9664c555e7ad",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "javascript",
+            "exerciseId": "js-05-this",
+            "coverage": "full"
+          }
         }
       ]
     },
@@ -129,6 +192,7 @@
       "title": "Objects & arrays",
       "rangeLabel": "Week 3",
       "gate": "Given a nested object and array of data, write a transformation using destructuring, spread, and array methods (map/filter/reduce) without a manual for-loop.",
+      "gateEngine": "js-runtime",
       "objectives": [
         {
           "id": "javascript:3:1",
@@ -137,8 +201,14 @@
           "text": "Object literals, property access, and shorthand syntax",
           "sourceHash": "5c065dfaa421",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "javascript",
+            "exerciseId": "js-08-destructuring",
+            "coverage": "partial"
+          }
         },
         {
           "id": "javascript:3:2",
@@ -147,8 +217,14 @@
           "text": "Array methods: map, filter, reduce, find, some, every",
           "sourceHash": "d7fe8b428ffc",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "javascript",
+            "exerciseId": "js-07-array-methods",
+            "coverage": "full"
+          }
         },
         {
           "id": "javascript:3:3",
@@ -157,8 +233,14 @@
           "text": "Destructuring assignment for objects and arrays",
           "sourceHash": "878890fcdba7",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "javascript",
+            "exerciseId": "js-08-destructuring",
+            "coverage": "full"
+          }
         },
         {
           "id": "javascript:3:4",
@@ -167,8 +249,14 @@
           "text": "Spread and rest syntax in object/array contexts",
           "sourceHash": "8863cc068535",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "javascript",
+            "exerciseId": "js-08-destructuring",
+            "coverage": "full"
+          }
         },
         {
           "id": "javascript:3:5",
@@ -177,8 +265,14 @@
           "text": "Shallow vs. deep copying, and why reference semantics matter",
           "sourceHash": "0e604178b714",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "javascript",
+            "exerciseId": "js-09-copying",
+            "coverage": "full"
+          }
         }
       ]
     },
@@ -247,6 +341,7 @@
       "title": "Asynchronous JavaScript",
       "rangeLabel": "Week 5",
       "gate": "Given a sequence of dependent network calls, write it correctly with async/await including error handling, and explain what the event loop is doing while it waits.",
+      "gateEngine": "js-runtime",
       "objectives": [
         {
           "id": "javascript:5:1",
@@ -255,8 +350,14 @@
           "text": "The event loop, call stack, and task queue (conceptual model)",
           "sourceHash": "055d30e94221",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "javascript",
+            "exerciseId": "js-10-event-loop",
+            "coverage": "full"
+          }
         },
         {
           "id": "javascript:5:2",
@@ -265,8 +366,14 @@
           "text": "Callbacks and callback hell -- what async/await actually replaces",
           "sourceHash": "a8944f3db8dd",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "javascript",
+            "exerciseId": "js-11-promises",
+            "coverage": "full"
+          }
         },
         {
           "id": "javascript:5:3",
@@ -275,8 +382,15 @@
           "text": "Promises: states, .then/.catch/.finally, Promise.all",
           "sourceHash": "7a0bacc9bcb1",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "javascript",
+            "exerciseId": "js-11-promises",
+            "coverage": "partial",
+            "note": "promisifying and Promise.all"
+          }
         },
         {
           "id": "javascript:5:4",
@@ -285,8 +399,14 @@
           "text": "async/await syntax and error handling with try/catch",
           "sourceHash": "3e8b0093d185",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "javascript",
+            "exerciseId": "js-12-fetch",
+            "coverage": "full"
+          }
         },
         {
           "id": "javascript:5:5",
@@ -295,8 +415,15 @@
           "text": "Fetching data with the Fetch API and handling JSON responses",
           "sourceHash": "43f7cdfc597e",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "javascript",
+            "exerciseId": "js-12-fetch",
+            "coverage": "partial",
+            "note": "against a simulated API"
+          }
         }
       ]
     },
@@ -306,6 +433,7 @@
       "title": "ES6+ features & modules",
       "rangeLabel": "Week 6",
       "gate": "Refactor a script that uses global variables and string concatenation into ES modules with template literals and proper imports/exports.",
+      "gateEngine": "js-runtime",
       "objectives": [
         {
           "id": "javascript:6:1",
@@ -314,8 +442,15 @@
           "text": "Template literals and tagged templates",
           "sourceHash": "d0b05b9cf31c",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "javascript",
+            "exerciseId": "js-13-modules",
+            "coverage": "partial",
+            "note": "template literals; no tagged templates"
+          }
         },
         {
           "id": "javascript:6:2",
@@ -324,8 +459,14 @@
           "text": "ES modules: import/export, default vs. named exports",
           "sourceHash": "c767e8ebcccb",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "javascript",
+            "exerciseId": "js-13-modules",
+            "coverage": "full"
+          }
         },
         {
           "id": "javascript:6:3",
@@ -334,8 +475,14 @@
           "text": "Classes: constructor, methods, inheritance, static members",
           "sourceHash": "00198ac43d3f",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "javascript",
+            "exerciseId": "js-14-classes",
+            "coverage": "full"
+          }
         },
         {
           "id": "javascript:6:4",
@@ -344,8 +491,14 @@
           "text": "Map and Set as alternatives to plain objects/arrays",
           "sourceHash": "4c4bb92d4ed4",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "javascript",
+            "exerciseId": "js-15-map-set",
+            "coverage": "full"
+          }
         },
         {
           "id": "javascript:6:5",
@@ -354,8 +507,14 @@
           "text": "Optional chaining and nullish coalescing",
           "sourceHash": "a56e99ced469",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "javascript",
+            "exerciseId": "js-15-map-set",
+            "coverage": "full"
+          }
         }
       ]
     },
@@ -365,6 +524,7 @@
       "title": "Prototypes, higher-order functions & patterns",
       "rangeLabel": "Week 7",
       "gate": "Explain the prototype chain for a given object, predict a property lookup, and rewrite a repeated pattern using a higher-order function.",
+      "gateEngine": "js-runtime",
       "objectives": [
         {
           "id": "javascript:7:1",
@@ -373,8 +533,14 @@
           "text": "The prototype chain and how method lookup actually works",
           "sourceHash": "3a43a5602dad",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "javascript",
+            "exerciseId": "js-16-prototypes",
+            "coverage": "full"
+          }
         },
         {
           "id": "javascript:7:2",
@@ -383,8 +549,14 @@
           "text": "Object.create and prototypal inheritance vs. classical inheritance",
           "sourceHash": "3b7ffba2443b",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "javascript",
+            "exerciseId": "js-16-prototypes",
+            "coverage": "full"
+          }
         },
         {
           "id": "javascript:7:3",
@@ -393,8 +565,14 @@
           "text": "Higher-order functions: functions that take or return functions",
           "sourceHash": "583411854fac",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "javascript",
+            "exerciseId": "js-17-patterns",
+            "coverage": "full"
+          }
         },
         {
           "id": "javascript:7:4",
@@ -403,8 +581,14 @@
           "text": "Currying and function composition basics",
           "sourceHash": "db80eaacab79",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "javascript",
+            "exerciseId": "js-17-patterns",
+            "coverage": "full"
+          }
         },
         {
           "id": "javascript:7:5",
@@ -413,8 +597,14 @@
           "text": "Common design patterns in JS: module pattern, observer pattern",
           "sourceHash": "b0141b2cc6a4",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "javascript",
+            "exerciseId": "js-17-patterns",
+            "coverage": "full"
+          }
         }
       ]
     },
@@ -547,6 +737,6 @@
     "units": 9,
     "objectives": 45,
     "bookkeeping": 0,
-    "linked": 0
+    "linked": 30
   }
 }

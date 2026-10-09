@@ -1137,3 +1137,56 @@ test("Python drills: the shared mutable default fails the interpreter's own test
   await page.getByTestId("lab-tab-drills").click();
   await expect(page.getByRole("heading", { name: "Python drills" })).toBeVisible();
 });
+
+test("JavaScript lab: var closures fail on the engine's own output, let fixes them and credits the Study objective; an infinite loop is stopped and the worker recovers", async ({ page }) => {
+  test.setTimeout(120_000);
+  await onboard(page);
+  await page.goto("/#/study/javascript/1");
+  await expect(page.getByText("Lab: ")).toBeVisible();
+  const objective = page.getByTestId("study-objective-1");
+  await expect(objective).toContainText("Do it: mission or lab");
+  await objective.getByTestId("study-practise-1").click();
+  await expect(page).toHaveURL(/#\/labs\/javascript\?exercise=js-01-hoisting/);
+  await expect(page.getByRole("heading", { name: "JavaScript" })).toBeVisible();
+  await expect(page.getByTestId("js-run")).toBeEnabled({ timeout: 30_000 });
+  await page.getByTestId("js-run").click();
+  await expect(page.getByTestId("js-console")).toContainText("[ undefined, undefined, undefined ]");
+  await expect(page.getByTestId("js-test-closures")).toHaveAttribute("data-ok", "0");
+  await expect(page.getByTestId("js-test-closures")).toContainText("expected [ 'north', 'south', 'east' ]");
+  await expect(page.getByTestId("js-check")).toBeDisabled();
+  const editor = page.locator(".cm-content");
+  await editor.click();
+  await page.keyboard.press("Control+A");
+  await page.keyboard.insertText(
+    'const DEPOTS = ["north", "south", "east"];\nfunction makeCheckers() {\nconst checkers = [];\nfor (let i = 0; i < DEPOTS.length; i++) checkers.push(() => DEPOTS[i]);\nreturn checkers;\n}\nfunction describe() {\nconst label = "north";\nreturn "Depot " + label;\n}\nfunction tdzDemo() {\ntry {\nconst before = depot;\nlet depot = "north";\nreturn typeof before;\n} catch (e) {\nreturn e.name;\n}\n}\nconsole.log(makeCheckers().map((c) => c()));\n',
+  );
+  await page.getByTestId("js-run").click();
+  await expect(page.getByTestId("js-summary")).toHaveText("4 of 4 passed.");
+  await expect(page.getByTestId("js-console")).toContainText("[ 'north', 'south', 'east' ]");
+  await page.getByTestId("js-check").click();
+  await expect(page.getByTestId("js-passed")).toContainText("Credited");
+  await page.getByTestId("js-back-link").click();
+  await expect(page.getByTestId("study-status-1")).toHaveText("Guided");
+  // An infinite loop cannot be interrupted from inside; the time limit terminates the worker.
+  await page.goto("/#/labs/javascript?exercise=js-02-coercion");
+  await expect(page.getByTestId("js-run")).toBeEnabled({ timeout: 30_000 });
+  await page.locator(".cm-content").click();
+  await page.keyboard.press("Control+A");
+  await page.keyboard.insertText("while (true) {}\n");
+  await page.getByTestId("js-run").click();
+  await expect(page.getByTestId("js-error")).toContainText("Execution stopped after 6 s", { timeout: 15_000 });
+  await page.locator(".cm-content").click();
+  await page.keyboard.press("Control+A");
+  await page.keyboard.insertText("console.log(typeof document, 0 == false, null == false);\n");
+  await expect(page.getByTestId("js-run")).toBeEnabled({ timeout: 30_000 });
+  await page.getByTestId("js-run").click();
+  await expect(page.getByTestId("js-console")).toContainText("undefined true false");
+  // Module drills edit several files.
+  await page.goto("/#/labs/javascript?exercise=js-13-modules");
+  await expect(page.getByTestId("js-file-main.js")).toContainText("(runs first)");
+  await page.getByTestId("js-file-config.js").click();
+  await expect(page.locator(".cm-content")).toContainText("default export");
+  await page.goto("/#/labs");
+  await page.getByTestId("lab-tab-javascript").click();
+  await expect(page.getByRole("heading", { name: "JavaScript" })).toBeVisible();
+});
