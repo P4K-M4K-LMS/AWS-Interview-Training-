@@ -18,17 +18,17 @@
         "units": 4,
         "objectives": 80,
         "bookkeeping": 0,
-        "linked": 3
+        "linked": 4
       },
       "modalities": {
-        "do-existing": 3,
+        "do-existing": 4,
         "do-new": 0,
-        "read": 77,
+        "read": 76,
         "combo": 0,
         "explain": 0
       },
       "file": "clf-c02.json",
-      "hash": "ecc9bea46696a06b"
+      "hash": "d7e818be21012fb0"
     },
     {
       "id": "aif-c01",
@@ -68,17 +68,17 @@
         "units": 4,
         "objectives": 99,
         "bookkeeping": 0,
-        "linked": 13
+        "linked": 18
       },
       "modalities": {
-        "do-existing": 13,
+        "do-existing": 18,
         "do-new": 0,
-        "read": 86,
+        "read": 81,
         "combo": 0,
         "explain": 0
       },
       "file": "saa-c03.json",
-      "hash": "6db691c48509484a"
+      "hash": "3c113096800ae4dc"
     },
     {
       "id": "dva-c02",
@@ -119,17 +119,17 @@
         "units": 5,
         "objectives": 59,
         "bookkeeping": 0,
-        "linked": 7
+        "linked": 9
       },
       "modalities": {
-        "do-existing": 7,
+        "do-existing": 9,
         "do-new": 0,
-        "read": 52,
+        "read": 50,
         "combo": 0,
         "explain": 0
       },
       "file": "soa-c03.json",
-      "hash": "0373a5066072b23c"
+      "hash": "63eedc88b100f8b9"
     },
     {
       "id": "dea-c01",
@@ -195,17 +195,17 @@
         "units": 4,
         "objectives": 113,
         "bookkeeping": 0,
-        "linked": 3
+        "linked": 8
       },
       "modalities": {
-        "do-existing": 3,
+        "do-existing": 8,
         "do-new": 0,
-        "read": 110,
+        "read": 105,
         "combo": 0,
         "explain": 0
       },
       "file": "sap-c02.json",
-      "hash": "9c5d04b1d6e449cb"
+      "hash": "68d5daf3f9dc6624"
     },
     {
       "id": "dop-c02",
@@ -220,17 +220,17 @@
         "units": 6,
         "objectives": 114,
         "bookkeeping": 0,
-        "linked": 6
+        "linked": 8
       },
       "modalities": {
-        "do-existing": 6,
+        "do-existing": 8,
         "do-new": 0,
-        "read": 108,
+        "read": 106,
         "combo": 0,
         "explain": 0
       },
       "file": "dop-c02.json",
-      "hash": "6efc40dea6945d02"
+      "hash": "c804e84b6f271635"
     },
     {
       "id": "scs-c03",
@@ -363,17 +363,17 @@
         "units": 5,
         "objectives": 36,
         "bookkeeping": 0,
-        "linked": 4
+        "linked": 5
       },
       "modalities": {
-        "do-existing": 4,
+        "do-existing": 5,
         "do-new": 0,
-        "read": 32,
+        "read": 31,
         "combo": 0,
         "explain": 0
       },
       "file": "secplus.json",
-      "hash": "6d9155addc0aa37b"
+      "hash": "e1343adabbe379f8"
     },
     {
       "id": "linuxplus",
@@ -455,17 +455,17 @@
         "units": 4,
         "objectives": 19,
         "bookkeeping": 0,
-        "linked": 1
+        "linked": 2
       },
       "modalities": {
-        "do-existing": 1,
+        "do-existing": 2,
         "do-new": 0,
-        "read": 18,
+        "read": 17,
         "combo": 0,
         "explain": 0
       },
       "file": "securityx.json",
-      "hash": "ddf0efd3ca5134e6"
+      "hash": "edee45edff5ca3b4"
     },
     {
       "id": "cmpcbs",

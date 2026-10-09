@@ -165,8 +165,14 @@
           "text": "Designing disaster recovery to stated RTO and RPO, including AWS Elastic Disaster Recovery",
           "sourceHash": "bc2a8318def9",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "dr",
+            "exerciseId": "dr-03-payments",
+            "coverage": "partial"
+          }
         },
         {
           "id": "sap-c02:1:16",
@@ -175,8 +181,14 @@
           "text": "Disaster recovery patterns at scale: pilot light, warm standby, multi-site",
           "sourceHash": "802733074652",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "dr",
+            "exerciseId": "dr-02-order-api",
+            "coverage": "partial"
+          }
         },
         {
           "id": "sap-c02:1:17",
@@ -205,8 +217,14 @@
           "text": "Designing an effective backup and restoration strategy",
           "sourceHash": "7966bfe7fd98",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "dr",
+            "exerciseId": "dr-05-restore-dominates",
+            "coverage": "full"
+          }
         },
         {
           "id": "sap-c02:1:20",
@@ -374,8 +392,14 @@
           "text": "Performing disaster recovery testing rather than assuming it works",
           "sourceHash": "f776062d0ec2",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "dr",
+            "exerciseId": "dr-04-untested",
+            "coverage": "full"
+          }
         },
         {
           "id": "sap-c02:2:9",
@@ -384,8 +408,14 @@
           "text": "Architecting automated, cost-effective backup across Availability Zones and Regions",
           "sourceHash": "95f36aee9676",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "dr",
+            "exerciseId": "dr-01-match-the-need",
+            "coverage": "partial"
+          }
         },
         {
           "id": "sap-c02:2:10",
@@ -1207,6 +1237,6 @@
     "units": 4,
     "objectives": 113,
     "bookkeeping": 0,
-    "linked": 3
+    "linked": 8
   }
 }

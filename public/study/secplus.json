@@ -359,8 +359,15 @@
           "text": "Business continuity and disaster recovery: BIA, RTO/RPO, backup types, DR sites",
           "sourceHash": "16ae2b4bf30d",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "dr",
+            "exerciseId": "dr-02-order-api",
+            "coverage": "partial",
+            "note": "RTO/RPO and standby sites"
+          },
           "labPrompt": "Draft a one-page BIA outline for a small hypothetical business."
         },
         {
@@ -455,6 +462,6 @@
     "units": 5,
     "objectives": 36,
     "bookkeeping": 0,
-    "linked": 4
+    "linked": 5
   }
 }

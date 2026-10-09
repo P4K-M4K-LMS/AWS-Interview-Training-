@@ -53,6 +53,10 @@ A fictional platform's authorization policy language, one statement per line (`a
 
 A fictional virtual network: subnets with route tables, stateful filters on hosts (they allow the reply automatically), numbered stateless filters on subnets (the first matching number wins, and the reply needs its own outbound rule on ports 1024-65535), an address translator for private hosts, private endpoints for platform services, and a hub router between networks. Each exercise lets you edit one component in a one-line-per-rule grammar and lists flows that must reach or be dropped; every flow has a hop-by-hop trace that names the hop which dropped the packet and why, with flow-log style ACCEPT and REJECT lines. Passing credits the linked Study objectives.
 
+### Recovery lab
+
+A planner for recovery to a stated time, point and budget. Pick a backup cadence (daily snapshot, hourly snapshot, continuous replication), a standby tier (none, cold, warm, hot), a failover trigger (manual, automatic) and whether the restore is drilled monthly. The recovery point is the backup interval; the recovery time is detection plus bringing up the standby plus restoring the data plus switching traffic, shown as a timeline with the dominant step; the cost is in fictional credits. The checks compare the plan with the requirement and name the cheapest plan that meets it, so spending more than needed fails just like falling short. Each exercise also asks which step dominates your plan. Passing credits the linked Study objectives.
+
 ### CI/CD missions
 
 Some missions ship their own command-line tools, listed at the end of `help`: `ci run` / `ci log` / `ci status` execute and inspect a simulated pipeline defined in `.ci/pipeline.yml`; `deployctl status` / `history` / `rollback VERSION` manage which release is live; `metrics errors` / `latency` query the live service. The pipeline runner reacts to the real repository state, and the checks reject shortcuts: a retry that happens to pass, a skipped test, a secret pasted into the pipeline file, or a rollback that is never verified.

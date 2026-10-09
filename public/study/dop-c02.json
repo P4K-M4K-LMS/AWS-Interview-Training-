@@ -562,8 +562,14 @@
           "text": "Disaster recovery concepts and strategies that meet RTO and RPO: pilot light, warm standby",
           "sourceHash": "b4827b33cfec",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "dr",
+            "exerciseId": "dr-02-order-api",
+            "coverage": "full"
+          }
         },
         {
           "id": "dop-c02:3:15",
@@ -572,8 +578,15 @@
           "text": "Testing failover of Multi-AZ and multi-Region workloads",
           "sourceHash": "13a11a83ee2f",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "dr",
+            "exerciseId": "dr-04-untested",
+            "coverage": "partial",
+            "note": "the restore drill"
+          }
         },
         {
           "id": "dop-c02:3:16",
@@ -1251,6 +1264,6 @@
     "units": 6,
     "objectives": 114,
     "bookkeeping": 0,
-    "linked": 6
+    "linked": 8
   }
 }

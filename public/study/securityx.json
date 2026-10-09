@@ -59,8 +59,14 @@
           "text": "Business continuity and disaster recovery at an enterprise architecture level",
           "sourceHash": "f48880927b8a",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "dr",
+            "exerciseId": "dr-05-restore-dominates",
+            "coverage": "partial"
+          }
         }
       ]
     },
@@ -247,6 +253,6 @@
     "units": 4,
     "objectives": 19,
     "bookkeeping": 0,
-    "linked": 1
+    "linked": 2
   }
 }
