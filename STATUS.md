@@ -77,6 +77,10 @@ Legend: **verified** = automated tests pass in CI · **unverified** = implemente
 | Role-specific technical interview questions, more design exercises (for the SDE II Serverless role) | planned |
 | Full accessibility audit | planned (skip link, labels, keyboard nav exist) |
 
+## Navigation (reorganised 2026-10-09, option B part 1)
+
+Three groups with plain names: **Learn** (Today, Curriculum, Missions), **Practise** (Labs with Terminal / Python / Go / Algorithms / Security / Monitoring tabs, Interview), **You** (Progress, Settings). The old addresses (`/paths`, `/terminal`, `/python`, `/go`, `/algorithms`, `/security`, `/monitoring`) redirect. Heavy pages load on demand. Part 2 (one explorable curriculum, mission Next button, reflections as draft stories) is next.
+
 ## Known limitations
 
 - Mission availability depends only on prerequisite missions (fixed 2026-10-09: skill-prerequisite gating could lock a mission behind the skill it teaches). Skill mastery gates stage promotion.

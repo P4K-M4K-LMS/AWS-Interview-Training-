@@ -58,7 +58,7 @@ export function CodeMissionPlayer({ mission, progress, completed, onComplete, on
         onReset();
       }}
       workstation={
-        <Panel title={mission.kind === "go" ? "Go Laboratory" : "Python Laboratory"} actions={<RunnerStatusLine status={status} detail={detail} version={runner.version} language={mission.kind} />}>
+        <Panel title={mission.kind === "go" ? "Go lab" : "Python lab"} actions={<RunnerStatusLine status={status} detail={detail} version={runner.version} language={mission.kind} />}>
           <PythonEditor language={mission.kind} value={code} onChange={(v) => { setCode(v); void saveMissionState(mission.id, { code: v, lastResult: result }); }} />
           <div className="flex gap-2 mt-3 flex-wrap">
             <button type="button" className="btn-secondary" disabled={status !== "ready"} onClick={() => void run(false)} data-testid="python-run">

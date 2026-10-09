@@ -21,7 +21,7 @@ export function PythonLabPage() {
   const { runner, status, detail } = usePythonRunner();
   return (
     <div className="space-y-4">
-      <PageHeader title="Python Laboratory" subtitle="Write and execute real Python. Code runs in an isolated Web Worker with a 10-second limit; only genuine results are shown." />
+      <PageHeader title="Python" subtitle="Write and execute real Python. Code runs in an isolated Web Worker with a 10-second limit; only genuine results are shown." />
       <Panel actions={<RunnerStatusLine status={status} detail={detail} version={runner.version} />}>
         <PythonEditor value={code} onChange={setCode} height="22rem" />
         <div className="grid sm:grid-cols-[1fr_auto] gap-3 mt-3 items-end">

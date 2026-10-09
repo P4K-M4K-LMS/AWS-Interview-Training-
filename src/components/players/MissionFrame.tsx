@@ -44,7 +44,7 @@ export function MissionFrame({ mission, progress, checks, completed, onComplete,
         <div>
           <div className="flex items-center gap-2 flex-wrap text-xs">
             <Link to="/missions" className="muted hover:underline">
-              Mission Control
+              Missions
             </Link>
             <span className="muted">/</span>
             <span className="badge">{TRACK_BY_ID.get(mission.trackId)?.shortName}</span>

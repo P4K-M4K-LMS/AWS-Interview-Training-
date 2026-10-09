@@ -61,7 +61,7 @@ export function BigOMissionPlayer({ mission, progress, completed, onComplete, on
       }}
       workstation={
         <div className="space-y-4">
-          <Panel title="Algorithms Laboratory" actions={<span className="text-xs muted">★ = used by this mission</span>}>
+          <Panel title="Algorithms lab" actions={<span className="text-xs muted">★ = used by this mission</span>}>
             <BigOVisualizer
               highlight={highlight}
               onExperiment={(r) => {

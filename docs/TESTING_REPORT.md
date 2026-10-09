@@ -1,6 +1,6 @@
 # Testing report
 
-Executed on 2026-10-09 (updated after the Agile/Scrum lesson) in the build environment (Linux, Node 22.22, Chromium 1194 via Playwright 1.64). Every number below comes from a real run; nothing is estimated.
+Executed on 2026-10-09 (updated after the navigation reorganisation) in the build environment (Linux, Node 22.22, Chromium 1194 via Playwright 1.64). Every number below comes from a real run; nothing is estimated.
 
 ## Commands
 
@@ -8,8 +8,8 @@ Executed on 2026-10-09 (updated after the Agile/Scrum lesson) in the build envir
 npm run typecheck   # tsc -b                      -> 0 errors
 npm run lint        # oxlint                      -> 0 errors, 11 warnings (React fast-refresh / effect style; no behaviour impact)
 npm run test        # vitest run                  -> 14 files, 103 tests passed, 1 skipped (the "artifact not built" placeholder, which only runs without a Go toolchain)
-npm run build       # vite build                  -> dist/ 15 MB incl. Pyodide runtime; app JS 1.5 MB (478 kB gzip)
-npm run test:e2e    # playwright test             -> 34 passed (17 scenarios × desktop + Pixel 5), 0 failed
+npm run build       # vite build                  -> dist/ 15 MB incl. Pyodide runtime; initial app JS 594 kB (185 kB gzip) after code splitting; CodeMirror (464 kB, 153 kB gzip) and each page load on demand
+npm run test:e2e    # playwright test             -> 36 passed (18 scenarios × desktop + Pixel 5), 0 failed
 ```
 
 ## Unit and engine tests (Vitest)
@@ -49,6 +49,7 @@ Mapped to the nonnegotiable acceptance criteria (Part 20). Each runs on a deskto
 | go | Go Laboratory loads the WebAssembly runtime, runs the worker-pool starter (real output), then a program with an undefined identifier shows the compiler error and its explanation; race-detector panel is disabled and labelled when unconfigured, enabled after entering a URL in Settings, and an unreachable service produces a visible error rather than a result | passed |
 | cicd | Unlock via Settings import; `ci log`, `ci run` (retry fails), inspect the test, `sed` the local-time call to UTC, `ci run` green, answer the retry question, 6/6 checks, complete | passed |
 | target role | Onboarding with the serverless posting selected; dashboard shows the role panel and weakest qualification; Learning Paths shows the title, the clearance as not addressable, AWS products as planned, the language qualification as trainable with its missions; switching role via the select and via Settings persists and the dashboard follows | passed |
+| navigation | Three groups present (Today, Curriculum, Missions, Labs, Interview, Progress, Settings); /labs redirects to the Terminal tab; the Monitoring tab switches labs; old /python and /paths addresses redirect to /labs/python and /curriculum | passed |
 | incident | Import a progress bundle via Settings to unlock the incident; console opens unhealthy; logs show the cache expiry evidence; metrics and diagram render; correct root cause; re-warm cache; advance; health turns healthy; note written; 5/5 checks; complete | passed |
 | lesson | Unlock via bundle; lesson and scenario render; a wrong answer shows "Not quite" without revealing the answer; all six answered; 6/6; complete | passed |
 | design exercise | Unlock via bundle; a wrong design (VM, direct writes, single-node DB, direct reads) shows the SPOF and the 800/s capacity in the consequences panel and the checks; the reference design shows 820 and no SPOF; sizing, both drills correct for the design, justification; all checks pass; complete | passed |

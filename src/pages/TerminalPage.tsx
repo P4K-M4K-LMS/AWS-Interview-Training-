@@ -31,7 +31,7 @@ export function TerminalPage() {
   return (
     <div className="space-y-4">
       <PageHeader
-        title="Linux Terminal"
+        title="Terminal"
         subtitle="A free-play sandbox of the OpsForge terminal simulator. Experiment safely: it is not connected to any real machine."
         actions={
           <button type="button" className="btn-secondary" onClick={() => { setShell(new Shell(SANDBOX)); setKey((k) => k + 1); }}>

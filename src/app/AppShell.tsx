@@ -1,23 +1,40 @@
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { NavLink, Outlet, useLocation, useNavigate } from "react-router-dom";
 import { useProfile } from "../data/hooks";
 import { updateProfile } from "../data/db";
 import { stageInfo } from "../content/curriculum";
 
-export const NAV = [
-  { to: "/", label: "Dashboard", icon: "⌂", end: true },
-  { to: "/paths", label: "Learning Paths", icon: "⇶" },
-  { to: "/missions", label: "Mission Control", icon: "◎" },
-  { to: "/terminal", label: "Linux Terminal", icon: ">_" },
-  { to: "/python", label: "Python Laboratory", icon: "py" },
-  { to: "/go", label: "Go Laboratory", icon: "go" },
-  { to: "/algorithms", label: "Algorithms Laboratory", icon: "∑" },
-  { to: "/security", label: "Security Operations", icon: "⛨" },
-  { to: "/monitoring", label: "System Monitoring", icon: "▥" },
-  { to: "/interview", label: "Interview Command Center", icon: "✦" },
-  { to: "/progress", label: "Skill Progress", icon: "▲" },
-  { to: "/settings", label: "Settings", icon: "⚙" },
+/**
+ * Navigation in three groups that follow the learning loop: learn (what to do
+ * now, the curriculum, the missions), practise (free-play labs and the
+ * interview coach), you (progress and settings). Plain names throughout.
+ */
+export const NAV_GROUPS: Array<{ title: string; items: Array<{ to: string; label: string; icon: string; end?: boolean }> }> = [
+  {
+    title: "Learn",
+    items: [
+      { to: "/", label: "Today", icon: "⌂", end: true },
+      { to: "/curriculum", label: "Curriculum", icon: "⇶" },
+      { to: "/missions", label: "Missions", icon: "◎" },
+    ],
+  },
+  {
+    title: "Practise",
+    items: [
+      { to: "/labs", label: "Labs", icon: ">_" },
+      { to: "/interview", label: "Interview", icon: "✦" },
+    ],
+  },
+  {
+    title: "You",
+    items: [
+      { to: "/progress", label: "Progress", icon: "▲" },
+      { to: "/settings", label: "Settings", icon: "⚙" },
+    ],
+  },
 ];
+
+export const NAV = NAV_GROUPS.flatMap((g) => g.items);
 
 export function AppShell() {
   const profile = useProfile();
@@ -56,7 +73,7 @@ export function AppShell() {
       </header>
       <nav
         aria-label="Main navigation"
-        className={`${open ? "block" : "hidden"} md:block md:w-64 shrink-0 border-r md:min-h-screen`}
+        className={`${open ? "block" : "hidden"} md:block md:w-60 shrink-0 border-r md:min-h-screen`}
         style={{ borderColor: "var(--border)", background: "var(--panel)" }}
       >
         <div className="hidden md:block px-5 pt-5 pb-3">
@@ -73,24 +90,29 @@ export function AppShell() {
             </div>
           </div>
         )}
-        <ul className="px-2 pb-4 space-y-0.5">
-          {NAV.map((n) => (
-            <li key={n.to}>
-              <NavLink
-                to={n.to}
-                end={n.end}
-                className={({ isActive }) =>
-                  `flex items-center gap-3 rounded-md px-3 py-2 text-sm transition ${isActive ? "bg-amber-500/15 text-amber-500 font-medium" : "hover:bg-[var(--panel-2)]"}`
-                }
-              >
-                <span className="w-6 text-center text-xs font-mono muted" aria-hidden>
-                  {n.icon}
-                </span>
-                {n.label}
-              </NavLink>
-            </li>
-          ))}
-        </ul>
+        {NAV_GROUPS.map((g) => (
+          <div key={g.title} className="px-2 pb-3">
+            <div className="label px-3 pb-1">{g.title}</div>
+            <ul className="space-y-0.5">
+              {g.items.map((n) => (
+                <li key={n.to}>
+                  <NavLink
+                    to={n.to}
+                    end={n.end}
+                    className={({ isActive }) =>
+                      `flex items-center gap-3 rounded-md px-3 py-2 text-sm transition ${isActive ? "bg-amber-500/15 text-amber-500 font-medium" : "hover:bg-[var(--panel-2)]"}`
+                    }
+                  >
+                    <span className="w-6 text-center text-xs font-mono muted" aria-hidden>
+                      {n.icon}
+                    </span>
+                    {n.label}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
         <div className="px-4 pb-4 text-[11px] muted">
           <button
             type="button"
@@ -103,7 +125,9 @@ export function AppShell() {
         </div>
       </nav>
       <main id="main" className="flex-1 min-w-0 px-4 py-5 md:px-8 md:py-6 max-w-7xl">
-        <Outlet />
+        <Suspense fallback={<div className="text-sm muted py-8" role="status">Loading…</div>}>
+          <Outlet />
+        </Suspense>
       </main>
     </div>
   );

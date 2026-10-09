@@ -76,7 +76,7 @@ export function SettingsPage() {
             </label>
           ))}
         </div>
-        <Link to="/paths" className="text-xs underline mt-2 inline-block">
+        <Link to="/curriculum" className="text-xs underline mt-2 inline-block">
           See the qualification gap map
         </Link>
       </Panel>
@@ -135,7 +135,7 @@ export function SettingsPage() {
       <Panel title="Go race detector (optional local service)">
         <div className="text-sm space-y-2">
           <p className="muted">
-            The in-browser Go runtime is single-threaded, so it cannot reproduce data races. A small service on your own machine runs your program with <code>go build -race</code> and returns the detector's report. Start it with <code>npm run race-server</code> (needs Go 1.22+ and a C compiler) and enter its URL. Your code is sent only when you press the race-detector button in the Go Laboratory or a Go mission.
+            The in-browser Go runtime is single-threaded, so it cannot reproduce data races. A small service on your own machine runs your program with <code>go build -race</code> and returns the detector's report. Start it with <code>npm run race-server</code> (needs Go 1.22+ and a C compiler) and enter its URL. Your code is sent only when you press the race-detector button in the Go lab or a Go mission.
           </p>
           <div className="flex gap-2 items-center flex-wrap">
             <label htmlFor="race-url" className="w-32">

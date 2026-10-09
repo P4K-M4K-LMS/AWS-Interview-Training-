@@ -82,7 +82,7 @@ test("5: explores Big O interactively", async ({ page }) => {
 test("8-17: Interview Command Center, STAR, voice/text answer, Dive Deeper, feedback, stories", async ({ page }) => {
   await onboard(page);
   await page.goto("/#/interview");
-  await expect(page.getByRole("heading", { name: "Interview Command Center" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Interview" })).toBeVisible();
   await page.goto("/#/interview/principles/ownership");
   await expect(page.getByText("Official description")).toBeVisible();
 
@@ -121,7 +121,28 @@ test("18-20: progress history and feature status are visible; mobile layout rend
   await expect(page.getByText("About: what works today")).toBeVisible();
   await expect(page.getByText("Terminal simulator")).toBeVisible();
   await page.goto("/#/progress");
-  await expect(page.getByRole("heading", { name: "Skill Progress" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Progress" })).toBeVisible();
+  await expect(page.getByText("Recent activity")).toBeVisible();
+});
+
+test("navigation: three groups, labs hub with tabs, old addresses redirect", async ({ page }) => {
+  await onboard(page);
+  await expect(page.getByRole("heading", { name: "Today", exact: true })).toBeVisible();
+  const nav = page.getByRole("navigation", { name: "Main navigation" });
+  for (const label of ["Today", "Curriculum", "Missions", "Labs", "Interview", "Progress", "Settings"]) {
+    await expect(nav.getByRole("link", { name: label })).toBeAttached();
+  }
+  await page.goto("/#/labs");
+  await expect(page).toHaveURL(/#\/labs\/terminal/);
+  await expect(page.getByRole("heading", { name: "Terminal" })).toBeVisible();
+  await page.getByTestId("lab-tab-monitoring").click();
+  await expect(page.getByRole("heading", { name: "Monitoring" })).toBeVisible();
+  await page.goto("/#/python");
+  await expect(page).toHaveURL(/#\/labs\/python/);
+  await expect(page.getByRole("heading", { name: "Python", exact: true })).toBeVisible();
+  await page.goto("/#/paths");
+  await expect(page).toHaveURL(/#\/curriculum/);
+  await expect(page.getByRole("heading", { name: "Curriculum" })).toBeVisible();
 });
 
 test("keyboard navigation: skip link and nav are reachable", async ({ page }, testInfo) => {
@@ -132,7 +153,7 @@ test("keyboard navigation: skip link and nav are reachable", async ({ page }, te
   await expect(skip).toBeVisible(); // visually hidden until focused
   if (testInfo.project.name === "desktop") {
     await page.keyboard.press("Tab");
-    await expect(page.getByRole("link", { name: "Dashboard" })).toBeFocused();
+    await expect(page.getByRole("link", { name: "Today" })).toBeFocused();
   }
   await page.keyboard.press("Enter");
   await expect(page.locator("#main")).toBeVisible();
@@ -175,7 +196,7 @@ test("target role: pick the serverless posting, see its gap map, switch roles in
   await page.getByRole("button", { name: "Start training" }).click();
   await expect(page.getByText("Target role: System Development Engineer II, Lambda/Serverless")).toBeVisible();
   await expect(page.getByTestId("role-weakest")).toBeVisible();
-  await page.goto("/#/paths");
+  await page.goto("/#/curriculum");
   await expect(page.getByTestId("role-title")).toHaveText("System Development Engineer II, Lambda/Serverless");
   await expect(page.getByTestId("gap-b6")).toContainText("Not addressable in OpsForge");
   await expect(page.getByTestId("gap-b6")).toContainText("Top Secret with SCI");
@@ -403,7 +424,7 @@ test("CI/CD: a flaky test is fixed at the cause, not retried or skipped", async 
 test("Go Laboratory: runs real Go with goroutines in the browser and reports compile errors", async ({ page }) => {
   test.setTimeout(180_000);
   await onboard(page);
-  await page.goto("/#/go");
+  await page.goto("/#/labs/go");
   await expect(page.getByTestId("go-status")).toContainText("Go ready", { timeout: 120_000 });
   await page.getByTestId("go-run").click();
   await expect(page.getByTestId("python-stdout")).toContainText("processed 5 jobs with 3 workers", { timeout: 60_000 });
@@ -419,7 +440,7 @@ test("Go Laboratory: runs real Go with goroutines in the browser and reports com
   await expect(page.getByTestId("race-run")).toBeDisabled();
   await page.goto("/#/settings");
   await page.getByTestId("race-url").fill("http://127.0.0.1:9");
-  await page.goto("/#/go");
+  await page.goto("/#/labs/go");
   await expect(page.getByTestId("go-status")).toContainText("Go ready", { timeout: 120_000 });
   await expect(page.getByTestId("race-run")).toBeEnabled();
   await page.getByTestId("race-run").click();
@@ -437,7 +458,7 @@ test("Go mission: write Go, run the mission tests in the browser, complete", asy
   await expect(page.getByText(/Imported .*6 mission records/)).toBeVisible();
 
   await page.goto("/#/missions/go-04-retries-idempotency");
-  await expect(page.getByRole("heading", { name: "Go Laboratory" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Go lab" })).toBeVisible();
   await expect(page.getByText(/Go .*ready/)).toBeVisible({ timeout: 120_000 });
   await page.getByTestId("python-run-tests").click();
   await expect(page.getByTestId("python-tests")).toBeVisible({ timeout: 60_000 });

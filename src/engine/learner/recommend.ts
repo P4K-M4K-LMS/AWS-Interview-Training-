@@ -46,7 +46,7 @@ export function recommendNext(progress: Map<string, MissionProgress>, skills: Ma
   }
   const completed = [...progress.values()].filter((p) => p.status === "completed").length;
   if (completed >= 1) {
-    out.push({ kind: "interview", title: "Practise explaining your work", reason: "Interview Command Center: turn the mission you just finished into a clear technical explanation, or practise a Leadership Principle.", path: "/interview" });
+    out.push({ kind: "interview", title: "Practise explaining your work", reason: "Interview: turn the mission you just finished into a clear technical explanation, or practise a Leadership Principle.", path: "/interview" });
   }
   if (!out.length) out.push({ kind: "done", title: "All current missions completed", reason: "More missions are planned (see STATUS). Use the labs freely or practise interviews.", path: "/interview" });
   return out;

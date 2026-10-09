@@ -33,7 +33,7 @@ export function MonitoringPage() {
 
   return (
     <div className="space-y-4">
-      <PageHeader title="System Monitoring" subtitle="A simulated observability dashboard for the fictional fleet API. Metrics react coherently to the controls; they are a model, not random numbers. Incident missions run on this same model." />
+      <PageHeader title="Monitoring" subtitle="A simulated observability dashboard for the fictional fleet API. Metrics react coherently to the controls; they are a model, not random numbers. Incident missions run on this same model." />
       <div className="grid lg:grid-cols-[1fr_20rem] gap-4">
         <div className="space-y-4">
           <MetricsGrid m={m} config={config} />

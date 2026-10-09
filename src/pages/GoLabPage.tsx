@@ -87,7 +87,7 @@ export function GoLabPage() {
 
   return (
     <div className="space-y-4">
-      <PageHeader title="Go Laboratory" subtitle="Write and run real Go, including goroutines and channels. Code runs in the Yaegi interpreter compiled to WebAssembly, inside an isolated Web Worker with a 10-second limit." />
+      <PageHeader title="Go" subtitle="Write and run real Go, including goroutines and channels. Code runs in the Yaegi interpreter compiled to WebAssembly, inside an isolated Web Worker with a 10-second limit." />
       {available === false && (
         <Callout kind="warn" title="Go runtime not available in this deployment">
           The Go runner is built from <code>go/runner</code> with <code>npm run build:go</code> (requires a Go toolchain) and deployed alongside the app. It was not found at this address, so the lab cannot run code here. Everything else in OpsForge works without it.
