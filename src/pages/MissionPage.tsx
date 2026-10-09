@@ -8,6 +8,7 @@ import { db, logActivity, updateProfile } from "../data/db";
 import { TerminalMissionPlayer } from "../components/players/TerminalMissionPlayer";
 import { PythonMissionPlayer } from "../components/players/PythonMissionPlayer";
 import { BigOMissionPlayer } from "../components/players/BigOMissionPlayer";
+import { IncidentPlayer } from "../components/players/IncidentPlayer";
 import { Callout, EmptyState } from "../components/ui";
 
 export function MissionPage() {
@@ -103,6 +104,8 @@ export function MissionPage() {
         return <PythonMissionPlayer key={key} mission={mission} {...common} />;
       case "bigo":
         return <BigOMissionPlayer key={key} mission={mission} {...common} />;
+      case "incident":
+        return <IncidentPlayer key={key} mission={mission} {...common} />;
     }
   })();
 

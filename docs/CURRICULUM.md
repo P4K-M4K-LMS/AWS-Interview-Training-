@@ -36,6 +36,9 @@ Nothing here claims to satisfy a degree or certification requirement, and no job
 | 8 | Harden a config loader (errors + tests) | Python | 5 | errors, testing |
 | 9 | Logarithms and sorting | Algorithms | 4 | search, sorting, optimization |
 | 10 | The build is red: repair a CI pipeline | DevOps | 6 | git, testing, cicd, permissions |
+| 11 | Incident: positions API slow after the deploy (cache stampede) | DevOps | 10 | monitoring, architecture |
+| 12 | Incident: capacity exhausted during a traffic surge | Distributed | 11 | performance, scaling |
+| 13 | Incident: the job queue is growing (dead consumers) | Distributed | 12 | queues, release |
 
 ## Planned missions (not built)
 
@@ -44,11 +47,11 @@ Nothing here claims to satisfy a degree or certification requirement, and no job
 - Algorithms: hash table vs list for lookups; recursion and stack depth; BFS over a service graph.
 - Net/Sec: firewall triage; suspicious cron; web log anomaly hunt; hardening checklist.
 - DevOps: rollback a bad release; alert that never fired; container that will not start.
-- Distributed: queue backlog; race condition in a worker; retry storm and idempotency; cache stampede; replication lag.
+- Distributed: race condition in a worker; retry storm and idempotency; replication lag; cache invalidation.
 
 ## Assessment and progression rules
 
 - Mastery only changes through missions, independent solves, retention checks and the initial assessment (max 20).
 - Completion gain = 35 × score × (1 − 0.15 per hint level − 0.05 per attempt beyond 2), + 10 for an independent solve, scaled by remaining headroom.
 - Retention: +8 on success (interval doubles, max 60 days), −12 on failure (interval resets to 1 day).
-- A skill unlocks when its prerequisites are at 40 or more; a mission is available when its prerequisite missions are complete.
+- A mission is available when its prerequisite missions are complete. Skill prerequisites inform the curriculum map and stage promotion; they never lock a mission.

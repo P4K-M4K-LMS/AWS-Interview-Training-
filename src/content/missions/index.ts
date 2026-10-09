@@ -4,8 +4,9 @@ import { pythonMissions } from "./python";
 import { bigoMissions } from "./bigo";
 import { netsecMissions } from "./netsec";
 import { devopsMissions } from "./devops";
+import { incidentMissions } from "./incidents";
 
-export const MISSIONS: Mission[] = [...linuxMissions, ...pythonMissions, ...bigoMissions, ...netsecMissions, ...devopsMissions];
+export const MISSIONS: Mission[] = [...linuxMissions, ...pythonMissions, ...bigoMissions, ...netsecMissions, ...devopsMissions, ...incidentMissions];
 export const MISSION_BY_ID = new Map(MISSIONS.map((m) => [m.id, m]));
 
 export function missionsForTrack(trackId: TrackId): Mission[] {
@@ -24,4 +25,7 @@ export const RECOMMENDED_ORDER: string[] = [
   "python-03-config-validator",
   "bigo-02-search-sort",
   "devops-01-broken-pipeline",
+  "incident-01-cache-stampede",
+  "incident-02-traffic-surge",
+  "incident-03-dead-consumers",
 ];

@@ -1,6 +1,6 @@
 import { SCHEMA_VERSION, type CheckResult, type Mission, type MissionProgress, type SkillId, type SkillState, type TerminalCheckContext, type TerminalMission, type InvestigationMission } from "../../domain/types";
 import { db, logActivity, nowIso } from "../../data/db";
-import { applyMissionCompletion, applyRetentionCheck, emptySkill, unlockedSkills } from "../learner/mastery";
+import { applyMissionCompletion, applyRetentionCheck, emptySkill } from "../learner/mastery";
 
 /**
  * Mission engine: status computation (locked / available / in-progress /
@@ -23,16 +23,17 @@ export function emptyProgress(missionId: string): MissionProgress {
   };
 }
 
-export function computeStatus(mission: Mission, progress: Map<string, MissionProgress>, skills: Map<SkillId, SkillState>): MissionProgress["status"] {
+/**
+ * A mission is available once its prerequisite missions are completed.
+ * Skill mastery gates stage promotion, not mission access: a mission that
+ * teaches a skill must not be locked behind that same skill.
+ */
+export function computeStatus(mission: Mission, progress: Map<string, MissionProgress>, _skills?: Map<SkillId, SkillState>): MissionProgress["status"] {
   const own = progress.get(mission.id);
   if (own?.status === "completed") return "completed";
   if (own?.status === "in-progress") return "in-progress";
   const prereqsDone = mission.prerequisites.every((p) => progress.get(p)?.status === "completed");
-  if (!prereqsDone) return "locked";
-  // Skills with prerequisites must be unlocked by demonstrated mastery, unless the mission introduces the prerequisite itself.
-  const unlocked = unlockedSkills(skills);
-  const skillOk = mission.skills.every((s) => unlocked.has(s) || mission.prerequisites.length === 0);
-  return skillOk ? "available" : "locked";
+  return prereqsDone ? "available" : "locked";
 }
 
 export function runTerminalChecks(mission: TerminalMission | InvestigationMission, ctx: TerminalCheckContext): CheckResult[] {

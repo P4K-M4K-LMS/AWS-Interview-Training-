@@ -32,6 +32,8 @@ src/
   engine/python/runner.ts    Main-thread worker client with timeout/restart
   workers/python.worker.ts   The Web Worker that owns the interpreter
   engine/bigo/algorithms.ts  Instrumented algorithms, step recorder, growth tables
+  engine/sim/model.ts        Platform simulation: config → metrics, queue accumulation, coherent logs
+  engine/sim/incident.ts     Incident state machine: actions, inspection, root cause, recovery, checks
   engine/missions/engine.ts  Status, validation, attempts, hints, completion
   engine/learner/mastery.ts  Mastery model, spaced repetition, stage eligibility
   engine/learner/recommend.ts Next-step recommendations
