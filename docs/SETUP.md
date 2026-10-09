@@ -40,7 +40,7 @@ For GitHub Pages the site must be built with the repository base path:
 VITE_BASE_PATH=/AWS-Interview-Training-/ npm run build
 ```
 
-`.github/workflows/pages.yml` does this automatically on every push to `main` and deploys `dist/`. Enable Pages in the repository settings with **Source: GitHub Actions** the first time.
+`.github/workflows/pages.yml` does this automatically on every push to `main` and deploys `dist/`. Pages must use **Source: GitHub Actions** (Settings → Pages → Build and deployment). With the older "Deploy from a branch" source GitHub also runs its own Jekyll build of the raw repository root on every push, and the two deployments race: when the Jekyll one lands last the site serves an `index.html` that points at `/src/main.tsx` and shows a blank page. The workflow now switches the source to GitHub Actions itself when the token allows it, and otherwise waits two minutes before deploying so its build is the one that stays live.
 
 ## Optional: Claude-powered coaching proxy
 

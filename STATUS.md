@@ -8,7 +8,7 @@ Resume-from-here document for multi-session work. Update on every phase.
 
 - Stack: React 19 + TypeScript + Vite 8 + Tailwind v4, Dexie/IndexedDB, CodeMirror 6, Pyodide in a Web Worker, hash routing for GitHub Pages. See `docs/ARCHITECTURE.md`.
 - Coaching: rule-based engine is the always-on default. Optional Claude coaching goes through `server/index.ts` (user's choice, 2026-10-08); the browser never holds a key.
-- Deployment: local dev + GitHub Pages via `.github/workflows/pages.yml` (builds with `VITE_BASE_PATH=/<repo>/`).
+- Deployment: local dev + GitHub Pages via `.github/workflows/pages.yml` (builds with `VITE_BASE_PATH=/<repo>/`). The Pages source must be GitHub Actions; the workflow enforces it, because a branch source adds a competing Jekyll deployment of the raw repository that produces a blank site when it lands last (root cause of the 2026-10-09 "not loading" reports).
 - Delivery: one draft PR, one commit per phase.
 - Job posting: only the qualifications in the master prompt are used; no title or responsibilities are invented.
 - Pyodide is served from `public/pyodide/` (copied from node_modules at build time) because public CDNs may be unreachable; this also makes the lab work offline.
