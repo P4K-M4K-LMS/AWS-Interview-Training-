@@ -294,17 +294,17 @@
         "units": 15,
         "objectives": 113,
         "bookkeeping": 0,
-        "linked": 16
+        "linked": 17
       },
       "modalities": {
-        "do-existing": 16,
+        "do-existing": 17,
         "do-new": 0,
-        "read": 97,
+        "read": 96,
         "combo": 0,
         "explain": 0
       },
       "file": "mscs.json",
-      "hash": "aabfeb33683a92ec"
+      "hash": "60e7a9c6d82a13a6"
     },
     {
       "id": "python",
@@ -317,17 +317,17 @@
         "units": 9,
         "objectives": 50,
         "bookkeeping": 0,
-        "linked": 8
+        "linked": 34
       },
       "modalities": {
-        "do-existing": 8,
+        "do-existing": 34,
         "do-new": 0,
-        "read": 42,
+        "read": 16,
         "combo": 0,
         "explain": 0
       },
       "file": "python.json",
-      "hash": "125e5b739ccb40db"
+      "hash": "5e7aaad06e5a75ae"
     },
     {
       "id": "javascript",
@@ -478,17 +478,17 @@
         "units": 28,
         "objectives": 102,
         "bookkeeping": 20,
-        "linked": 4
+        "linked": 7
       },
       "modalities": {
-        "do-existing": 4,
+        "do-existing": 7,
         "do-new": 0,
-        "read": 98,
+        "read": 95,
         "combo": 0,
         "explain": 0
       },
       "file": "cmpcbs.json",
-      "hash": "f066c82d527f39f6"
+      "hash": "525f7204637255be"
     }
   ]
 }

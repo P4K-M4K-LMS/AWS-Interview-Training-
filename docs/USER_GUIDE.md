@@ -85,6 +85,10 @@ A fleet behind a load balancer, scaled by a policy, second by second. Set the fl
 
 Real SQL on a real engine: each exercise's schema and fictional data are loaded into an in-memory SQLite inside the Python runtime (so the first run waits for the interpreter, like the Python lab), your statements run one by one, and you see the rows of the last query, the query plan SQLite chose for it (SCAN against SEARCH ... USING INDEX), and the indexes and views you created. The exercises cover a four-table join with aggregates, an index that turns a lookup from a scan into a search, splitting a repeating table into customers and products (third normal form), an atomic transfer with a CHECK that rolls the whole transaction back, a view for a shared report, and a function-wrapped column that hides an index from the planner. Passing credits the linked Study objectives.
 
+### Python drills
+
+Fourteen short drills, one idea each, on the real interpreter: write the functions the brief asks for, run the tests, and read the interpreter's own messages when one fails. They cover operators and truthiness, positional and keyword arguments with *args and **kwargs, scope and closures, recursion, the mutable default argument, slices and tuples, sets, comprehensions over nested data, classes with dunder methods, inheritance and super() against composition, generators, decorators, type hints with a custom exception, and files with the with statement and the standard library. Three hints per drill, the last a full program. Passing credits the linked Study objectives.
+
 ### CI/CD missions
 
 Some missions ship their own command-line tools, listed at the end of `help`: `ci run` / `ci log` / `ci status` execute and inspect a simulated pipeline defined in `.ci/pipeline.yml`; `deployctl status` / `history` / `rollback VERSION` manage which release is live; `metrics errors` / `latency` query the live service. The pipeline runner reacts to the real repository state, and the checks reject shortcuts: a retry that happens to pass, a skipped test, a secret pasted into the pipeline file, or a rollback that is never verified.

@@ -34,8 +34,14 @@
           "text": "Operators: arithmetic, comparison, logical, and operator precedence",
           "sourceHash": "fdd267e643e0",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "python-drills",
+            "exerciseId": "py-01-truthiness",
+            "coverage": "full"
+          }
         },
         {
           "id": "python:1:3",
@@ -59,8 +65,14 @@
           "text": "Conditional logic: if/elif/else and truthiness",
           "sourceHash": "976b1ec539ec",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "python-drills",
+            "exerciseId": "py-01-truthiness",
+            "coverage": "full"
+          }
         },
         {
           "id": "python:1:5",
@@ -103,8 +115,14 @@
           "text": "Defining functions: positional, keyword, default, and *args/**kwargs parameters",
           "sourceHash": "2f28437205fd",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "python-drills",
+            "exerciseId": "py-02-arguments",
+            "coverage": "full"
+          }
         },
         {
           "id": "python:2:2",
@@ -113,8 +131,15 @@
           "text": "Return values vs. side effects; functions that implicitly return None",
           "sourceHash": "13b3f027c2c9",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "python-drills",
+            "exerciseId": "py-12-decorators",
+            "coverage": "partial",
+            "note": "a wrapper that forgets to return"
+          }
         },
         {
           "id": "python:2:3",
@@ -123,8 +148,14 @@
           "text": "Local, enclosing, and global scope (the LEGB rule)",
           "sourceHash": "fd28a23112b2",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "python-drills",
+            "exerciseId": "py-03-closures",
+            "coverage": "full"
+          }
         },
         {
           "id": "python:2:4",
@@ -143,8 +174,14 @@
           "text": "Recursion: base case, recursive case, and stack depth limits",
           "sourceHash": "8e80fe40158e",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "python-drills",
+            "exerciseId": "py-04-recursion",
+            "coverage": "full"
+          }
         },
         {
           "id": "python:2:6",
@@ -153,8 +190,14 @@
           "text": "The mutable-default-argument pitfall and how to avoid it",
           "sourceHash": "ed96752a5aa2",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "python-drills",
+            "exerciseId": "py-05-mutable-default",
+            "coverage": "full"
+          }
         }
       ]
     },
@@ -172,8 +215,14 @@
           "text": "Lists: indexing, slicing, mutation, and common methods",
           "sourceHash": "c60c11cc5116",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "python-drills",
+            "exerciseId": "py-06-slicing",
+            "coverage": "full"
+          }
         },
         {
           "id": "python:3:2",
@@ -182,8 +231,14 @@
           "text": "Tuples and immutability; when to prefer a tuple over a list",
           "sourceHash": "da0b850186bb",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "python-drills",
+            "exerciseId": "py-06-slicing",
+            "coverage": "full"
+          }
         },
         {
           "id": "python:3:3",
@@ -207,8 +262,14 @@
           "text": "Sets: membership testing and set operations (union, intersection, difference)",
           "sourceHash": "0df124e4bb38",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "python-drills",
+            "exerciseId": "py-07-sets",
+            "coverage": "full"
+          }
         },
         {
           "id": "python:3:5",
@@ -217,8 +278,14 @@
           "text": "List, dict, and set comprehensions",
           "sourceHash": "52664f17febd",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "python-drills",
+            "exerciseId": "py-08-comprehensions",
+            "coverage": "full"
+          }
         },
         {
           "id": "python:3:6",
@@ -227,8 +294,14 @@
           "text": "Nested data structures (lists of dicts, dicts of lists)",
           "sourceHash": "045b48f924d9",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "python-drills",
+            "exerciseId": "py-08-comprehensions",
+            "coverage": "full"
+          }
         }
       ]
     },
@@ -261,8 +334,14 @@
           "text": "Reading and writing text files; the with statement and context managers",
           "sourceHash": "6cd225a40aea",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "python-drills",
+            "exerciseId": "py-14-stdlib-files",
+            "coverage": "full"
+          }
         },
         {
           "id": "python:4:3",
@@ -325,8 +404,14 @@
           "text": "Classes, instances, attributes, and methods",
           "sourceHash": "51f414295422",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "python-drills",
+            "exerciseId": "py-09-classes",
+            "coverage": "full"
+          }
         },
         {
           "id": "python:5:2",
@@ -335,8 +420,14 @@
           "text": "__init__, self, and instance vs. class attributes",
           "sourceHash": "6ab7c4d1ff0d",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "python-drills",
+            "exerciseId": "py-09-classes",
+            "coverage": "full"
+          }
         },
         {
           "id": "python:5:3",
@@ -345,8 +436,14 @@
           "text": "Inheritance, method overriding, and super()",
           "sourceHash": "1ef8daada6ca",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "python-drills",
+            "exerciseId": "py-10-inheritance",
+            "coverage": "full"
+          }
         },
         {
           "id": "python:5:4",
@@ -355,8 +452,14 @@
           "text": "Composition vs. inheritance -- when to prefer each",
           "sourceHash": "ff184162c99d",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "python-drills",
+            "exerciseId": "py-10-inheritance",
+            "coverage": "full"
+          }
         },
         {
           "id": "python:5:5",
@@ -365,8 +468,15 @@
           "text": "Common dunder methods: __str__, __repr__, __eq__, __len__",
           "sourceHash": "a8dece62b16a",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "python-drills",
+            "exerciseId": "py-09-classes",
+            "coverage": "partial",
+            "note": "__repr__ and __eq__"
+          }
         },
         {
           "id": "python:5:6",
@@ -434,8 +544,15 @@
           "text": "Useful standard library modules: os, sys, datetime, collections, itertools",
           "sourceHash": "9c4737109c39",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "python-drills",
+            "exerciseId": "py-14-stdlib-files",
+            "coverage": "partial",
+            "note": "heapq and the file API"
+          }
         }
       ]
     },
@@ -453,8 +570,14 @@
           "text": "Iterators and the iterator protocol (__iter__, __next__)",
           "sourceHash": "9785df9bc10c",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "python-drills",
+            "exerciseId": "py-11-generators",
+            "coverage": "full"
+          }
         },
         {
           "id": "python:7:2",
@@ -463,8 +586,14 @@
           "text": "Generators and yield; generator expressions",
           "sourceHash": "cee18432b2a6",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "python-drills",
+            "exerciseId": "py-11-generators",
+            "coverage": "full"
+          }
         },
         {
           "id": "python:7:3",
@@ -473,8 +602,14 @@
           "text": "First-class functions: passing functions as arguments, lambda expressions",
           "sourceHash": "9dfa7cb1d8fd",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "python-drills",
+            "exerciseId": "py-12-decorators",
+            "coverage": "full"
+          }
         },
         {
           "id": "python:7:4",
@@ -493,8 +628,14 @@
           "text": "Closures and what they actually capture",
           "sourceHash": "b1e585c34914",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "python-drills",
+            "exerciseId": "py-03-closures",
+            "coverage": "full"
+          }
         },
         {
           "id": "python:7:6",
@@ -503,8 +644,14 @@
           "text": "Decorators: what they are, how to write one, common built-in examples",
           "sourceHash": "fdc8b719d18b",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "python-drills",
+            "exerciseId": "py-12-decorators",
+            "coverage": "full"
+          }
         }
       ]
     },
@@ -532,8 +679,15 @@
           "text": "Debugging techniques: reading tracebacks, using a debugger, print-driven debugging tradeoffs",
           "sourceHash": "f922791bca1a",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "python-drills",
+            "exerciseId": "py-05-mutable-default",
+            "coverage": "partial",
+            "note": "the interpreter's own messages on every failed test"
+          }
         },
         {
           "id": "python:8:3",
@@ -542,8 +696,15 @@
           "text": "Type hints: basic annotations, Optional, List/Dict generics, and static checking with mypy",
           "sourceHash": "47347ad61e00",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "python-drills",
+            "exerciseId": "py-13-typing",
+            "coverage": "partial",
+            "note": "annotations; no checker runs"
+          }
         },
         {
           "id": "python:8:4",
@@ -637,6 +798,6 @@
     "units": 9,
     "objectives": 50,
     "bookkeeping": 0,
-    "linked": 8
+    "linked": 34
   }
 }

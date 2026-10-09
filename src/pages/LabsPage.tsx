@@ -21,6 +21,7 @@ export const LABS = [
   { to: "/labs/messaging", label: "Events", hint: "Queues, topics and streams, second by second" },
   { to: "/labs/autoscale", label: "Scaling", hint: "Policies, warm-up, cooldowns and health checks" },
   { to: "/labs/sql", label: "SQL", hint: "Real SQL on an in-memory SQLite" },
+  { to: "/labs/python-drills", label: "Drills", hint: "One Python idea per drill, tested on the real interpreter" },
 ];
 
 export function LabsPage() {

@@ -238,8 +238,14 @@
           "text": "Trace recursion and identify base cases",
           "sourceHash": "2fd38d92ee20",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "python-drills",
+            "exerciseId": "py-04-recursion",
+            "coverage": "full"
+          }
         },
         {
           "id": "mscs:4:2",
@@ -1371,6 +1377,6 @@
     "units": 15,
     "objectives": 113,
     "bookkeeping": 0,
-    "linked": 16
+    "linked": 17
   }
 }
