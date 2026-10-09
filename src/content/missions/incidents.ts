@@ -212,4 +212,76 @@ export const incidentMissions: IncidentMission[] = [
       postmortemPrompt: "Write the note: what happened, why the API stayed green, what you did, and the prevention steps (memory limit, alert on consumer count / queue depth).",
     },
   },
+  {
+    id: "incident-04-replica-lag",
+    kind: "incident",
+    trackId: "distributed",
+    stage: 5,
+    title: "Incident: dispatchers see positions that are a minute old",
+    summary: "Writes succeed, the API is green, yet the map is stale. Find why the read replica fell behind, fix the cause without losing data, and verify freshness.",
+    briefing: `${COMPANY_INTRO}\n\nAt 09:03 support escalates: dispatchers say the live map shows vehicles where they were a minute ago, although drivers' phones report positions every second. The API dashboard is green and nothing is erroring. The replication-lag alert fired two minutes ago.`,
+    objectives: [
+      "Use the logs to find which component is behind and what is holding it back",
+      "Identify the root cause",
+      "Remove the cause without discarding committed writes, mitigate staleness if you choose, and verify the replica catches up",
+      "Write a post-incident note with a prevention step (statement timeouts on the replica, lag alerting)",
+    ],
+    skills: ["distributed.consistency", "distributed.observability"],
+    prerequisites: ["incident-03-dead-consumers"],
+    estimatedMinutes: 20,
+    lesson: [
+      ...SHARED_LESSON,
+      {
+        title: "Replication lag and stale reads",
+        body: "Nimbus writes positions to the primary database and serves the dispatcher map from a **read replica** that replays the primary's writes. When the replica's apply thread is blocked (here by a long analytics query holding a lock on the positions table), the replica stops replaying, and its data gets older by one second every second. Writes still succeed and the API still answers quickly, so the only visible symptom is **staleness**: a consistency problem, not an availability problem.\n\nThe remedies differ in cost. Killing the blocking statement removes the cause; the replica then replays about 3 s of writes per second and catches up. Pinning map reads to the primary hides the staleness immediately but loads the primary with every map read, so it is a mitigation, not a fix. **Failing over** to a replica that is behind is the worst option: the writes it never received are gone from the new primary.",
+      },
+    ],
+    glossary: [
+      ...SHARED_GLOSSARY,
+      { term: "read replica", definition: "A copy of the database that replays the primary's writes and serves reads to spread load." },
+      { term: "replication lag", definition: "How far behind the primary a replica is, in seconds of writes not yet applied." },
+      { term: "stale read", definition: "A read answered with data older than the application tolerates." },
+      { term: "failover", definition: "Promoting a standby to primary. Safe only when the standby has every committed write." },
+    ],
+    hints: [
+      { level: 1, title: "Green is not the same as correct", body: "Error rate, latency and load are normal. Look at the replica lag figure in Metrics and the db-replica lines in Logs." },
+      { level: 2, title: "What is holding the replica back?", body: "The replica's apply thread is waiting for a lock on the positions table held by pid 8812, a long-running analytics report. Lag rises 1 s per second while it waits. The primary is healthy: it keeps committing writes." },
+      { level: 3, title: "Fix the cause, keep the data", body: "Kill the blocking statement; lag then falls about 2 s per second. Pinning reads to the primary is an acceptable stop-gap, but route them back once lag is under 5 s. Do not fail over: a standby 45+ s behind would come up missing those writes." },
+      { level: 4, title: "Guided example", body: "Open Logs (apply thread waiting for lock held by pid 8812; primary sending normally), open Metrics (replica lag rising, everything else normal), answer root cause = analytics query blocking the replica's apply thread, run 'Kill the statement blocking replication', advance time until lag is under 5 s and health stays healthy for 5 s, write the note with statement timeouts + lag alerting." },
+    ],
+    reflectionPrompts: ["Explain the difference between an availability incident and a consistency incident, and why failing over would have made this one worse."],
+    transferNote: "Replication lag, stale reads and the failover trap are standard interview topics for distributed systems; the evidence path (lag metric → blocked apply thread → the statement holding the lock) is what interviewers want to hear.",
+    scenario: {
+      initialConfig: { requestsPerSec: 150, workers: 4, cacheHitRate: 0.85, dbDegraded: false, deployInProgress: false, queueConsumers: 2, replicaBlocked: true, readsFromPrimary: false },
+      initialQueueDepth: 20,
+      initialReplicaLag: 45,
+      ticket: {
+        title: "INC-2078: live map stale by about a minute; writes succeeding",
+        reporter: "Support escalation + replication-lag alert",
+        description: "Dispatchers report vehicle positions roughly a minute old. Drivers' apps confirm positions are being sent and accepted. The API dashboard is green. The replication-lag alert fired at 09:01 and is still firing.",
+        symptoms: ["replica lag above 45 s and rising", "map reads served from the replica report data age in the logs", "API latency, error rate and load normal", "primary database committing writes normally"],
+        impact: "Dispatch decisions are made on stale positions; no data is lost yet. Grows worse each second.",
+      },
+      allowedActions: ["kill-blocking-query", "route-reads-primary", "route-reads-replica", "restart-db", "scale-workers", "set-cache-hit"],
+      rootCause: {
+        prompt: "What is the root cause?",
+        options: [
+          "The primary database is failing and must be failed over",
+          "The cache is serving stale entries",
+          "A long-running analytics query holds a lock on positions that the replica's apply thread needs, so replication has stalled and the replica falls further behind each second",
+          "API workers are too slow to serve the map",
+        ],
+        correctIndex: 2,
+        explanation: "The replica logs name the blocked apply thread and the statement holding the lock (pid 8812); the primary reports it is committing writes and sending the replication stream normally.",
+      },
+      remediationCheck: (c, sim) => {
+        if (sim.lostWritesSec > 0) return { passed: false, detail: `failing over promoted a standby ${sim.lostWritesSec}s behind: those writes are lost; this cannot be undone here (reset the mission)` };
+        if (c.replicaBlocked) return { passed: false, detail: c.readsFromPrimary ? "pinning reads to the primary hides the staleness, but the replica is still blocked and falling behind" : c.workers > 4 ? "workers were never the bottleneck" : "the replica's apply thread is still blocked" };
+        if (c.readsFromPrimary && sim.replicaLag <= 5) return { passed: false, detail: `lag is ${Math.round(sim.replicaLag)}s: route map reads back to the replica so the primary stops carrying them` };
+        return { passed: true };
+      },
+      verifyTicks: 5,
+      postmortemPrompt: "Write the note: what happened, why the API stayed green, what you did (and why you did not fail over), and the prevention steps (statement timeout on the replica, alert on replication lag, keep analytics off the serving replica).",
+    },
+  },
 ];

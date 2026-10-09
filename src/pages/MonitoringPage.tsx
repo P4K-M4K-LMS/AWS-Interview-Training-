@@ -36,7 +36,7 @@ export function MonitoringPage() {
       <PageHeader title="System Monitoring" subtitle="A simulated observability dashboard for the fictional fleet API. Metrics react coherently to the controls; they are a model, not random numbers. Incident missions run on this same model." />
       <div className="grid lg:grid-cols-[1fr_20rem] gap-4">
         <div className="space-y-4">
-          <MetricsGrid m={m} deployInProgress={config.deployInProgress} />
+          <MetricsGrid m={m} config={config} />
           <Panel title="Last 60 seconds">
             <div className="grid md:grid-cols-3 gap-3">
               <Sparkline data={history.map((h) => h.p95)} max={2000} color="#f59e0b" label="p95 latency (ms)" />
@@ -53,7 +53,7 @@ export function MonitoringPage() {
             </div>
           </Panel>
           <Callout kind="info" title="How to read this">
-            Load = requests ÷ (workers × 60). Above ~70% load latency climbs; above ~95% errors appear. Cache misses become database queries (capacity ~100 qps), and a degraded database multiplies their cost. Queue depth grows when producers (0.3 jobs per request) out-pace consumers (25 jobs/s each).
+            Load = requests ÷ (workers × 60). Above ~70% load latency climbs; above ~95% errors appear. Cache misses become database queries (capacity ~100 qps), and a degraded database multiplies their cost. Queue depth grows when producers (0.3 jobs per request) out-pace consumers (25 jobs/s each). Dispatcher map reads (0.4 per request) bypass the cache and are served by a read replica that replays about 3 s of writes per second; while its apply thread is blocked it falls behind 1 s per second, and map reads older than 5 s are stale.
           </Callout>
           <Panel title="Incident missions on this platform">
             <ul className="text-sm space-y-1">
@@ -79,6 +79,12 @@ export function MonitoringPage() {
             <label className="flex items-center gap-2">
               <input type="checkbox" checked={config.deployInProgress} onChange={(e) => set("deployInProgress", e.target.checked)} /> Inject: deploy in progress
             </label>
+            <label className="flex items-center gap-2">
+              <input type="checkbox" checked={!!config.replicaBlocked} onChange={(e) => set("replicaBlocked", e.target.checked)} /> Inject: replica apply thread blocked
+            </label>
+            <label className="flex items-center gap-2">
+              <input type="checkbox" checked={!!config.readsFromPrimary} onChange={(e) => set("readsFromPrimary", e.target.checked)} /> Mitigate: pin map reads to the primary
+            </label>
             <button
               type="button"
               className="btn-secondary w-full"
@@ -89,7 +95,7 @@ export function MonitoringPage() {
             >
               Reset to baseline
             </button>
-            <div className="text-xs muted">Scenario ideas: (1) traffic 400 with 4 workers, then scale workers. (2) cache 30%: watch db qps, then raise the hit rate. (3) consumers 0 and watch the queue, then restore them.</div>
+            <div className="text-xs muted">Scenario ideas: (1) traffic 400 with 4 workers, then scale workers. (2) cache 30%: watch db qps, then raise the hit rate. (3) consumers 0 and watch the queue, then restore them. (4) block the replica, watch lag and stale reads, pin reads to the primary (note the extra db qps), then unblock and watch lag drain.</div>
           </div>
         </Panel>
       </div>

@@ -213,6 +213,37 @@ test("incident console: investigate, remediate the cause, verify recovery, write
   await expect(page.getByText("Mission complete: explain what you did")).toBeVisible();
 });
 
+test("incident console: replication lag is fixed at the cause without failing over", async ({ page }) => {
+  test.setTimeout(120_000);
+  await onboard(page);
+  const now = new Date().toISOString();
+  const done = (missionId: string) => ({ missionId, schemaVersion: 1, status: "completed", attempts: 1, hintsUsed: 0, maxHintLevel: 0, bestScore: 1, startedAt: now, completedAt: now, reflections: [] });
+  const bundle = { app: "opsforge", schemaVersion: 1, exportedAt: now, missions: ["linux-01-find-your-way", "linux-02-log-detective", "linux-03-locked-out", "devops-01-broken-pipeline", "incident-01-cache-stampede", "incident-02-traffic-surge", "incident-03-dead-consumers"].map(done) };
+  await page.goto("/#/settings");
+  await page.locator('input[type="file"]').setInputFiles({ name: "progress.json", mimeType: "application/json", buffer: Buffer.from(JSON.stringify(bundle)) });
+  await expect(page.getByText(/Imported .*7 mission records/)).toBeVisible();
+
+  await page.goto("/#/missions/incident-04-replica-lag");
+  await expect(page.getByText("Incident console")).toBeVisible({ timeout: 20_000 });
+  await expect(page.getByTestId("incident-health")).toHaveText("degraded");
+  await page.getByTestId("tab-logs").click();
+  await expect(page.getByTestId("incident-logs")).toContainText("apply thread waiting for lock");
+  await expect(page.getByTestId("incident-logs")).toContainText("data age");
+  await page.getByTestId("tab-metrics").click();
+  await expect(page.getByTestId("stat-replica")).toContainText(/[4-9][0-9]s/);
+  await page.getByTestId("tab-diagram").click();
+  await expect(page.getByTestId("node-replica")).toContainText("apply BLOCKED");
+  await page.getByTestId("root-cause-2").check();
+  await expect(page.getByText(/^Correct\./)).toBeVisible();
+  await page.getByTestId("act-kill-query").click();
+  for (let i = 0; i < 3; i++) await page.getByTestId("advance-10").click();
+  await expect(page.getByTestId("incident-health")).toHaveText("healthy", { timeout: 20_000 });
+  await page.getByTestId("postmortem").fill("What: live map a minute stale. Why: an analytics query held a lock the replica apply thread needed, so replication stalled. Fix: killed the statement; did not fail over because the standby was behind. Prevention: statement timeout on the replica, alert on lag.");
+  await expect(page.getByText("Checks (5/5)")).toBeVisible({ timeout: 20_000 });
+  await page.getByTestId("mission-complete").click();
+  await expect(page.getByText("Mission complete: explain what you did")).toBeVisible();
+});
+
 test("CI/CD: a flaky test is fixed at the cause, not retried or skipped", async ({ page }) => {
   await onboard(page);
   const now = new Date().toISOString();
