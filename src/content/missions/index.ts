@@ -33,6 +33,7 @@ export const RECOMMENDED_ORDER: string[] = [
   "incident-01-cache-stampede",
   "incident-02-traffic-surge",
   "incident-03-dead-consumers",
+  "incident-04-replica-lag",
   "go-01-config-parser",
   "go-02-worker-pool",
   "go-03-timeouts-context",

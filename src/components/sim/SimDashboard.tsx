@@ -1,4 +1,5 @@
-import type { SimMetrics } from "../../engine/sim/model";
+import type { SimConfig } from "../../domain/types";
+import { STALE_READ_SEC, type SimMetrics } from "../../engine/sim/model";
 
 export function Stat({ label, value, tone = "ok", testId }: { label: string; value: string; tone?: "ok" | "warn" | "bad"; testId?: string }) {
   const color = tone === "ok" ? "text-emerald-400" : tone === "warn" ? "text-amber-400" : "text-red-400";
@@ -25,7 +26,7 @@ export function Sparkline({ data, max, color, label }: { data: number[]; max: nu
   );
 }
 
-export function MetricsGrid({ m, deployInProgress }: { m: SimMetrics; deployInProgress: boolean }) {
+export function MetricsGrid({ m, config }: { m: SimMetrics; config: SimConfig }) {
   return (
     <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3" data-testid="metrics-grid">
       <Stat label="Service health" value={m.health} tone={m.health === "healthy" ? "ok" : m.health === "degraded" ? "warn" : "bad"} testId="stat-health" />
@@ -36,7 +37,10 @@ export function MetricsGrid({ m, deployInProgress }: { m: SimMetrics; deployInPr
       <Stat label="DB queries / s (cap 100)" value={`${m.dbQps.toFixed(0)}`} tone={m.dbSaturation > 1 ? "bad" : m.dbSaturation > 0.7 ? "warn" : "ok"} />
       <Stat label="Queue depth" value={String(m.queueDepth)} tone={m.queueDepth > 1500 ? "bad" : m.queueDepth > 300 ? "warn" : "ok"} testId="stat-queue" />
       <Stat label="CPU / memory" value={`${m.cpu.toFixed(0)}% / ${m.memory.toFixed(0)}%`} tone={m.cpu > 85 ? "bad" : m.cpu > 70 ? "warn" : "ok"} />
-      <div className="sm:col-span-2 lg:col-span-4 text-xs muted">Deployment: {deployInProgress ? "rolling deploy in progress (2 of N workers restarted)" : "stable"}</div>
+      <Stat label={`Replica lag (stale > ${STALE_READ_SEC}s)`} value={`${m.replicaLag}s`} tone={m.replicaLag > 180 ? "bad" : m.replicaLag > STALE_READ_SEC ? "warn" : "ok"} testId="stat-replica" />
+      <div className="sm:col-span-2 lg:col-span-3 text-xs muted">
+        Deployment: {config.deployInProgress ? "rolling deploy in progress (2 of N workers restarted)" : "stable"}. Map reads: {config.readsFromPrimary ? "pinned to the primary" : m.staleReads ? "served STALE from the replica" : "served from the replica"}.
+      </div>
     </div>
   );
 }

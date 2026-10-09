@@ -6,7 +6,7 @@ Resume-from-here summary of the session that built OpsForge: Engineer in Trainin
 
 From an empty repository to a deployed, tested web application: a Linux/Python/Go/Big O engineering simulator with 20 verified-completable missions, an incident console on a shared platform simulation, a CI/CD pipeline runner, and an Amazon/AWS interview coach with STAR Academy, all 16 verified Leadership Principles, a story bank, voice input, Dive Deeper probing and transparent scoring. Live at https://paukennick.github.io/AWS-Interview-Training-/ (GitHub Pages, auto-deploys from `main`).
 
-## Pull requests (all merged into `main` except the last)
+## Pull requests (merged into `main` on the owner's word)
 
 | PR | Content |
 |---|---|
@@ -16,7 +16,8 @@ From an empty repository to a deployed, tested web application: a Linux/Python/G
 | #4 | Phase 7a: shared simulation engine, incident console, 3 incident missions, architecture visualizer; mission-availability lock bug fixed |
 | #5 | CI/CD failure-mode missions (flaky test, bad release rollback, secret wiring); mission-specific terminal tools; `sed` fixed to POSIX semantics |
 | #6 | Go Laboratory: Yaegi interpreter compiled to WebAssembly, worker with timeout, Node + browser tests |
-| #7 (open, draft) | Code missions generalized by language; four Go missions (config parser, worker pool, timeouts/context, retries + idempotency) |
+| #7 | Code missions generalized by language; four Go missions (config parser, worker pool, timeouts/context, retries + idempotency) |
+| #8 | Replication-lag scenario: read replica on the shared engine, stale reads, blocked apply thread, failover data-loss trap; incident mission 4 |
 
 Feature branches still exist on GitHub (`ccr-221527a4-xf3zs7`, `lp-verified-interview-cues`, `retention-checks`, `phase7-incidents`, `cicd-failure-modes`, `go-runner-spike`); this environment cannot delete remote branches, so delete them from the Branches page.
 
@@ -38,13 +39,13 @@ Feature branches still exist on GitHub (`ccr-221527a4-xf3zs7`, `lp-verified-inte
 - `src/engine/interview/*`: STAR analysis, gap detection, Dive Deeper follow-ups, rubric scoring. `src/content/leadershipPrinciples.ts`: 16 LPs (verified 2026-10-09).
 - `src/content/missions/*`: all missions; the level-4 hint of every terminal mission is a runnable guided example that the test suite executes.
 
-## Verification state (PR #7 head)
+## Verification state (PR #8 head)
 
 | Check | Result |
 |---|---|
 | `npm run typecheck` / `npm run lint` | 0 errors |
-| `npm run test` | 72 passed, 1 skipped placeholder |
-| `npm run test:e2e` | 24 passed (12 scenarios, desktop + Pixel 5) |
+| `npm run test` | 74 passed, 1 skipped placeholder |
+| `npm run test:e2e` | 26 passed (13 scenarios, desktop + Pixel 5) |
 | `npm run build` | succeeds |
 
 Unverified by automation: voice recognition/synthesis (browser-only), the Claude proxy (needs a key), realistic timed interview mode UI.
@@ -57,8 +58,8 @@ Unverified by automation: voice recognition/synthesis (browser-only), the Claude
 
 ## Open items, in order
 
-1. Merge PR #7 when CI is green.
-2. Replication-lag scenario on the shared simulation engine; optional local race-detector service for a data-race lesson.
+1. Merge PR #8 when CI is green.
+2. Optional local race-detector service for a data-race lesson.
 3. More missions per track (see `docs/CURRICULUM.md` planned list).
 4. Accessibility audit; lazy-load CodeMirror and the interview pages to cut the 1.2 MB bundle.
 5. Manual checks the owner can do: voice in Chrome/Edge; the Claude proxy with `ANTHROPIC_API_KEY=... npm run coach-server`.

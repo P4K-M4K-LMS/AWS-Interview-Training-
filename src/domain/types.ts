@@ -317,9 +317,22 @@ export interface SimConfig {
   dbDegraded: boolean;
   deployInProgress: boolean;
   queueConsumers: number;
+  /** A long-running statement holds a lock the replica's apply thread needs, so replication stalls. */
+  replicaBlocked?: boolean;
+  /** Map reads pinned to the primary (mitigates stale reads at the cost of primary load). */
+  readsFromPrimary?: boolean;
 }
 
-export type SimActionType = "scale-workers" | "set-cache-hit" | "restart-db" | "set-consumers" | "rollback-deploy" | "set-traffic";
+export type SimActionType = "scale-workers" | "set-cache-hit" | "restart-db" | "set-consumers" | "rollback-deploy" | "set-traffic" | "kill-blocking-query" | "route-reads-primary" | "route-reads-replica";
+
+/** Time-accumulated parts of the simulation that a remediation check may need. */
+export interface SimSnapshot {
+  queueDepth: number;
+  /** Seconds the read replica is behind the primary. */
+  replicaLag: number;
+  /** Seconds of committed writes lost by promoting a lagging replica (0 when none). */
+  lostWritesSec: number;
+}
 
 export interface IncidentTicket {
   title: string;
@@ -334,12 +347,14 @@ export interface IncidentScenario {
   initialConfig: SimConfig;
   /** Queue depth at the start (the queue accumulates over time). */
   initialQueueDepth: number;
+  /** Replica lag in seconds at the start (grows while replication is blocked). */
+  initialReplicaLag?: number;
   ticket: IncidentTicket;
   /** Runbook actions available to the responder. */
   allowedActions: SimActionType[];
   rootCause: { prompt: string; options: string[]; correctIndex: number; explanation: string };
   /** A remediation is valid when the configuration fixes the cause, not just the symptom. */
-  remediationCheck: (config: SimConfig) => { passed: boolean; detail?: string };
+  remediationCheck: (config: SimConfig, sim: SimSnapshot) => { passed: boolean; detail?: string };
   /** Consecutive healthy ticks required to declare recovery. */
   verifyTicks: number;
   postmortemPrompt: string;

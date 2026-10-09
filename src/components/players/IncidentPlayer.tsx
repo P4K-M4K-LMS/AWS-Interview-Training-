@@ -133,7 +133,7 @@ export function IncidentPlayer({ mission, progress, completed, onComplete, onRes
             )}
             {tab === "metrics" && (
               <div className="space-y-3">
-                <MetricsGrid m={metrics} deployInProgress={state.sim.config.deployInProgress} />
+                <MetricsGrid m={metrics} config={state.sim.config} />
                 <div className="grid md:grid-cols-3 gap-3">
                   <Sparkline data={history.map((h) => h.p95)} max={2000} color="#f59e0b" label="p95 latency (ms)" />
                   <Sparkline data={history.map((h) => h.err)} max={60} color="#ef4444" label="error rate (%)" />
@@ -210,6 +210,21 @@ export function IncidentPlayer({ mission, progress, completed, onComplete, onRes
                 {sc.allowedActions.includes("rollback-deploy") && (
                   <button type="button" className="btn-secondary ml-2" disabled={completed} onClick={() => act({ type: "rollback-deploy" })}>
                     {ACTION_LABELS["rollback-deploy"]}
+                  </button>
+                )}
+                {sc.allowedActions.includes("kill-blocking-query") && (
+                  <button type="button" className="btn-secondary ml-2" disabled={completed} onClick={() => act({ type: "kill-blocking-query" })} data-testid="act-kill-query">
+                    {ACTION_LABELS["kill-blocking-query"]}
+                  </button>
+                )}
+                {sc.allowedActions.includes("route-reads-primary") && (
+                  <button type="button" className="btn-secondary ml-2" disabled={completed || !!state.sim.config.readsFromPrimary} onClick={() => act({ type: "route-reads-primary" })} data-testid="act-reads-primary">
+                    {ACTION_LABELS["route-reads-primary"]}
+                  </button>
+                )}
+                {sc.allowedActions.includes("route-reads-replica") && (
+                  <button type="button" className="btn-secondary ml-2" disabled={completed || !state.sim.config.readsFromPrimary} onClick={() => act({ type: "route-reads-replica" })} data-testid="act-reads-replica">
+                    {ACTION_LABELS["route-reads-replica"]}
                   </button>
                 )}
                 {state.actions.length > 0 && (

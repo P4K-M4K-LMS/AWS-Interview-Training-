@@ -61,12 +61,13 @@ Legend: **verified** = automated tests pass in CI · **unverified** = implemente
 | Item | Status |
 |---|---|
 | Monitoring dashboard (shared simulation engine) | verified (unit tests) |
-| Incident management console + 3 incident missions (cache stampede, traffic surge, dead consumers) | verified (unit tests prove solvable and reject symptom-only fixes; e2e on incident 1) |
+| Incident management console + 4 incident missions (cache stampede, traffic surge, dead consumers, replication lag) | verified (unit tests prove solvable and reject symptom-only fixes, including failover from a lagging replica; e2e on incidents 1 and 4) |
 | System architecture visualizer with live health | verified (e2e) |
 | CI/CD failure-mode missions: flaky test, bad release rollback, secret wiring (simulated pipeline runner, mission tools) | verified (unit tests prove solvable and reject shortcuts; e2e on the flaky-test mission) |
 | Go Laboratory: Yaegi-in-WebAssembly runtime, worker with timeout, free-play page | verified (Node runner tests + browser e2e) |
 | Go missions: config parser (Go for a Python engineer), worker pool, timeouts/context, retries + idempotency | verified (reference solutions proven in the WebAssembly runner; e2e completes one) |
-| Concurrency/race (needs race detector: optional local service), replication lag simulations | planned |
+| Replication-lag simulation: read replica, stale map reads, blocked apply thread, failover data-loss trap | verified (unit + e2e) |
+| Concurrency/race lesson (needs race detector: optional local service) | planned |
 | Remaining track content (see docs/CURRICULUM.md) | planned |
 | Full accessibility audit | planned (skip link, labels, keyboard nav exist) |
 
@@ -81,6 +82,6 @@ Legend: **verified** = automated tests pass in CI · **unverified** = implemente
 
 ## Next steps (in order)
 
-1. Remaining Phase 7: replication-lag scenario on the shared engine; optional local `go test -race` service for a data-race lesson.
+1. Remaining Phase 7: optional local `go test -race` service for a data-race lesson.
 2. More missions per track (see CURRICULUM.md).
 3. Accessibility audit with a screen reader; reduce bundle size by lazy-loading CodeMirror and the interview pages.

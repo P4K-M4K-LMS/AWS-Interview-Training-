@@ -30,7 +30,7 @@ describe("mission catalogue integrity", () => {
     expect(by("bigo")).toBe(2);
     expect(MISSIONS.filter((m) => m.trackId === "netsec").length).toBe(1);
     expect(MISSIONS.filter((m) => m.trackId === "devops").length).toBe(5);
-    expect(by("incident")).toBe(3);
+    expect(by("incident")).toBe(4);
     expect(by("go")).toBe(4);
   });
   it("every mission in the recommended order becomes available in sequence", () => {
