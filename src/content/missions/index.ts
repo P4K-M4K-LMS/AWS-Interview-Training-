@@ -48,6 +48,7 @@ export const RECOMMENDED_ORDER: string[] = [
   "serverless-03-duplicate-charges",
   "serverless-04-idempotent-handler",
   "design-01-position-ingest",
+  "design-02-command-ack",
   "go-01-config-parser",
   "go-02-worker-pool",
   "go-03-timeouts-context",

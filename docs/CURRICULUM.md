@@ -78,6 +78,7 @@ The explanation level is `beginner` (primer expanded, first-step note always sho
 | 31 | Write an idempotent event handler | Serverless (Python) | 30, 26 | idempotency, errors |
 | 32 | Design exercise: the vehicle-position ingest and map read path | Serverless (design) | 29 | architecture, scaling, serverless scaling/events |
 | 33 | Agile and Scrum for an operations engineer (lesson + scenario quiz) | DevOps (lesson) | 10 | agile |
+| 34 | Design exercise: the dispatcher command and acknowledgement path (strong consistency, both paths SPOF-free, idempotency) | Serverless (design) | 32 | architecture, consistency, resilience, serverless idempotency |
 | 17 | Go for a Python engineer: a config parser with real error values | Distributed (Go) | 8 | python.basics, architecture |
 | 18 | A worker pool: goroutines, channels and WaitGroups | Distributed (Go) | 17 | concurrency, queues |
 | 19 | Timeouts and cancellation with context and select | Distributed (Go) | 18 | resilience, concurrency |

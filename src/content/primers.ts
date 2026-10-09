@@ -301,6 +301,15 @@ export const PRIMERS: Record<string, MissionPrimer> = {
       "Requirements first, components second, because a component that is better on a dimension nobody asked for is just more expensive. Capacity arithmetic (events per second times duration) is required because it shows you have run systems. The failure drills reason from your design rather than a textbook, so the right answer changes with your choices.",
     firstStep: "You start by eliminating components that violate a hard requirement because that shrinks the choice from dozens of combinations to a few, and the budget arithmetic then decides among them.",
   },
+  "design-02-command-ack": {
+    plain:
+      "The first design exercise moved vehicle positions, where a few seconds of staleness was fine. This one moves commands from a dispatcher to a vehicle and the vehicle's confirmation back, and here stale is dangerous: a dispatcher who sees a command flip back from acknowledged to pending will send it again. You choose the components once more, but with two new requirements: every status read must be current, and a retried request must never send a command twice.",
+    why:
+      "Interviewers love to ask the same design question twice with one requirement changed, because it shows whether you reason from requirements or from habit. The serverless posting asks for designing systems for reliability, and in real work the cache that saved you last month is the bug that double-sends a command this month.",
+    whyThisWay:
+      "Starting from the two hard requirements, strong consistency and no single point of failure on either path, is deliberate: they eliminate most options before cost enters, and the budget then forces the last choice. Idempotency is a component slot rather than a note because where duplicate prevention lives decides whether it works: a disabled button cannot see a network retry.",
+    firstStep: "You start by eliminating every option marked eventual or SPOF because the consistency and availability requirements are hard, and what survives them is a short list the budget can settle.",
+  },
   "agile-01-scrum-for-engineers": {
     plain:
       "Scrum is a way teams organise work into short fixed cycles called sprints, usually two weeks. Each sprint has a planning meeting, a short daily check-in, a review where the team shows what it built, and a retrospective about how the work went. Three roles share responsibility and three artifacts track the work. This lesson explains the loop and how unplanned operational work, like incidents, fits in without wrecking it.",
