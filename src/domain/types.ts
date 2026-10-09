@@ -582,6 +582,8 @@ export interface LeadershipPrinciple {
   /** Verified official Amazon wording (see content/leadershipPrinciples.ts for source + date). */
   official: string;
   plain: string;
+  /** One-line practice cue: what to show when answering for this principle. */
+  interviewCue: string;
   evidence: string[];
   questions: InterviewQuestion[];
   followUps: string[];

@@ -22,7 +22,10 @@ export function PrinciplesPage() {
           <blockquote className="text-sm border-l-2 pl-3" style={{ borderColor: "var(--border)" }}>
             {selected.official}
           </blockquote>
-          <p className="text-xs muted mt-2">Wording reproduced from Amazon's published list of Leadership Principles. The build environment could not verify it online on 2026-10-08; check amazon.jobs for the current text.</p>
+          <p className="text-xs muted mt-2">Wording from Amazon's published list of Leadership Principles (amazon.jobs), verified on 2026-10-09. Amazon may revise it; the live page is authoritative.</p>
+        </Panel>
+        <Panel title="What to show in an interview">
+          <p className="text-sm">{selected.interviewCue}</p>
         </Panel>
         <Panel title="Evidence interviewers may look for (practice guidance)">
           <ul className="list-disc pl-5 text-sm space-y-1">
