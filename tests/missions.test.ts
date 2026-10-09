@@ -29,7 +29,7 @@ describe("mission catalogue integrity", () => {
     expect(by("python")).toBe(3);
     expect(by("bigo")).toBe(2);
     expect(MISSIONS.filter((m) => m.trackId === "netsec").length).toBe(1);
-    expect(MISSIONS.filter((m) => m.trackId === "devops").length).toBe(2);
+    expect(MISSIONS.filter((m) => m.trackId === "devops").length).toBe(5);
     expect(by("incident")).toBe(3);
   });
   it("every mission in the recommended order becomes available in sequence", () => {
@@ -57,7 +57,9 @@ describe("terminal and investigation missions are completable", () => {
     it(m.id, () => {
       const sh = new Shell(m.world);
       const before = runTerminalChecks(m, sh.checkContext());
-      expect(before.every((c) => !c.passed), `${m.id} must not start already solved`).toBe(true);
+      // Invariant checks (e.g. "test not deleted", "no secret committed") may pass from the start; the mission must not.
+      expect(before.some((c) => !c.passed), `${m.id} must not start already solved`).toBe(true);
+      expect(before.filter((c) => !c.passed).length, `${m.id} should have real work to do`).toBeGreaterThanOrEqual(2);
       for (const cmd of guidedCommands(m)) {
         const r = sh.execute(cmd);
         if (m.id === "devops-01-broken-pipeline") {

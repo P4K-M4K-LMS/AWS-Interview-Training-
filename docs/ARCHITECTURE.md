@@ -34,6 +34,7 @@ src/
   engine/bigo/algorithms.ts  Instrumented algorithms, step recorder, growth tables
   engine/sim/model.ts        Platform simulation: config → metrics, queue accumulation, coherent logs
   engine/sim/incident.ts     Incident state machine: actions, inspection, root cause, recovery, checks
+  engine/cicd/pipeline.ts    Simulated pipeline runner (parse steps, run with a mission step runner, `ci` program)
   engine/missions/engine.ts  Status, validation, attempts, hints, completion
   engine/learner/mastery.ts  Mastery model, spaced repetition, stage eligibility
   engine/learner/recommend.ts Next-step recommendations
@@ -70,4 +71,5 @@ server/index.ts              Optional coaching proxy
 
 - Add a mission: create it in `src/content/missions/<track>.ts` with four hints (the level-4 hint must be a runnable guided example, which the test suite executes), then add it to `RECOMMENDED_ORDER`.
 - Add a terminal command: implement it in `Shell.dispatch` and document it in `COMMAND_DOCS`; add a test.
+- Add a mission-specific tool: define a `SimProgram` (summary, usage, run(args, host)) in the mission's `world.programs`; `help` and `which` pick it up automatically.
 - Add a coach engine: implement `getFeedback` branch in `services/coach/index.ts` returning a `FeedbackReport`.

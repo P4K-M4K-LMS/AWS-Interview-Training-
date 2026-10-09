@@ -8,7 +8,7 @@
  * It is NOT a real shell. Learners never reach the host operating system.
  * See `COMMAND_DOCS` for the exact supported surface and `help` in-app.
  */
-import type { FsSpec, SimProcessSpec, SimServiceSpec, TerminalCheckContext, TerminalWorld } from "../../domain/types";
+import type { FsSpec, ProgramHost, SimProcessSpec, SimServiceSpec, TerminalCheckContext, TerminalWorld } from "../../domain/types";
 
 export interface FsNode {
   type: "file" | "dir";
@@ -94,6 +94,34 @@ function humanSize(n: number): string {
   if (n < 1024) return `${n}`;
   if (n < 1024 * 1024) return `${(n / 1024).toFixed(1)}K`;
   return `${(n / 1024 / 1024).toFixed(1)}M`;
+}
+
+/**
+ * Converts a POSIX basic regular expression (what sed uses) to a JavaScript
+ * one: in BRE, ( ) { } + ? | are literal unless backslash-escaped.
+ */
+export function breToJs(pattern: string): string {
+  let out = "";
+  for (let i = 0; i < pattern.length; i++) {
+    const c = pattern[i];
+    if (c === "\\" && i + 1 < pattern.length) {
+      const n = pattern[i + 1];
+      if ("(){}+?|".includes(n)) {
+        out += n;
+        i++;
+        continue;
+      }
+      out += c + n;
+      i++;
+      continue;
+    }
+    if ("(){}+?|".includes(c)) {
+      out += "\\" + c;
+      continue;
+    }
+    out += c;
+  }
+  return out;
 }
 
 /* ------------------------------------------------------------------ */
@@ -395,6 +423,20 @@ export class Shell {
     return normalizePath(this.cwd, p, this.home);
   }
 
+  /** Capability view handed to mission-specific programs. */
+  programHost(): ProgramHost {
+    return {
+      readFile: (p) => this.readFile(p),
+      writeFile: (p, content, asRoot = false) => this.writeFile(p, content, asRoot || this.sudo),
+      exists: (p) => Boolean(this.fs[this.abs(p)]),
+      mode: (p) => this.fs[this.abs(p)]?.mode ?? null,
+      env: this.env,
+      cwd: this.cwd,
+      user: this.effectiveUser(),
+      history: this.history,
+    };
+  }
+
   readFile(p: string): string | null {
     const n = this.fs[this.abs(p)];
     return n && n.type === "file" ? n.content : null;
@@ -580,12 +622,15 @@ export class Shell {
       case "help":
       case "man": {
         if (rest[0]) {
+          const prog = this.world.programs?.[rest[0]];
+          if (prog) return ok(`${prog.usage}\n  ${prog.summary}\n`);
           const d = COMMAND_DOCS.find((x) => x.name === rest[0]);
           if (!d) return fail(`help: no documentation for '${rest[0]}'. This simulator supports a documented subset; run 'help' to list it.`);
           return ok(`${d.usage}\n  ${d.summary}\n${(d.flags ?? []).map((f) => `  ${f}`).join("\n")}${d.flags ? "\n" : ""}`);
         }
         const lines = COMMAND_DOCS.map((d) => `${d.name.padEnd(11)} ${d.summary}`);
-        return ok(`OpsForge terminal simulator. Supported commands (type 'help NAME' for usage):\n${lines.join("\n")}\nThis is a simulation: it is not connected to a real operating system.\n`);
+        const progs = Object.entries(this.world.programs ?? {}).map(([n, p]) => `${n.padEnd(11)} ${p.summary} (mission tool)`);
+        return ok(`OpsForge terminal simulator. Supported commands (type 'help NAME' for usage):\n${lines.join("\n")}${progs.length ? "\n" + progs.join("\n") : ""}\nThis is a simulation: it is not connected to a real operating system.\n`);
       }
       case "pwd":
         return ok(this.cwd + "\n");
@@ -610,7 +655,7 @@ export class Shell {
       case "history":
         return ok(this.history.map((h, i) => `${String(i + 1).padStart(5)}  ${h}`).join("\n") + "\n");
       case "which":
-        return rest[0] && SUPPORTED_COMMANDS.has(rest[0]) ? ok(`/usr/bin/${rest[0]}\n`) : fail(`${rest[0] ?? ""} not found`, 1);
+        return rest[0] && (SUPPORTED_COMMANDS.has(rest[0]) || this.world.programs?.[rest[0]]) ? ok(`/usr/bin/${rest[0]}\n`) : fail(`${rest[0] ?? ""} not found`, 1);
       case "env":
       case "printenv": {
         if (rest[0]) return this.env[rest[0]] !== undefined ? ok(this.env[rest[0]] + "\n") : fail("", 1);
@@ -861,20 +906,22 @@ export class Shell {
       }
       case "sed": {
         const inPlace = rest.includes("-i");
-        const a = rest.filter((x) => x !== "-i");
+        const a = rest.filter((x) => x !== "-i" && x !== "-e");
         const expr = a[0];
         const file = a[1];
         const m = expr?.match(/^s(.)(.*?)\1(.*?)\1([gi]*)$/);
         if (!m) return fail("sed: only the substitution form s/old/new/[g] is supported in this simulator");
         let re: RegExp;
         try {
-          re = new RegExp(m[2], (m[4].includes("g") ? "g" : "") + (m[4].includes("i") ? "i" : ""));
+          re = new RegExp(breToJs(m[2]), (m[4].includes("g") ? "g" : "") + (m[4].includes("i") ? "i" : ""));
         } catch {
           return fail("sed: invalid regular expression");
         }
         const content = file ? this.readForUser(file) : { content: stdin };
         if ("error" in content && content.error) return fail(`sed: can't read ${file}: ${content.error.split(": ").pop()}`);
-        const replaced = (content.content ?? "").replace(re, m[3].replace(/\\(\d)/g, "$$$1"));
+        const replacement = m[3].replace(/\\n/g, "\n").replace(/\\(\d)/g, "$$$1");
+        // Like real sed: the substitution applies to each line independently.
+        const replaced = (content.content ?? "").split("\n").map((line) => line.replace(re, replacement)).join("\n");
         if (inPlace) {
           if (!file) return fail("sed: no input files");
           const w = this.writeFile(file, replaced, this.sudo);
@@ -1053,8 +1100,14 @@ export class Shell {
         const rows = (this.network.listening ?? []).map((l) => `${l.proto.padEnd(6)}LISTEN 0      128    ${(l.address ?? "0.0.0.0") + ":" + l.port}`.padEnd(45) + `users:(("${l.process}"))`);
         return ok(`Netid State  Recv-Q Send-Q Local Address:Port   Process\n${rows.join("\n")}${rows.length ? "\n" : ""}`);
       }
-      default:
+      default: {
+        const prog = this.world.programs?.[cmd];
+        if (prog) {
+          const r = prog.run(rest, this.programHost());
+          return { stdout: r.stdout, stderr: r.stderr, exitCode: r.exitCode };
+        }
         return fail(`bash: ${cmd}: command not found (this simulator supports a documented subset; type 'help')`, 127);
+      }
     }
   }
 

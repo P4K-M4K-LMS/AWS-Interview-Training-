@@ -21,7 +21,7 @@ STAR tutorial, 16 LPs (wording to verify), Story Bank, guided answers, session m
 Microphone permission states, recording indicator, speech recognition with transcript review, text-to-speech, turn-taking, text fallback, optional model-powered coaching via proxy.
 
 ## Phase 7: Advanced engineering simulations — partial
-Done: shared simulation engine (load, cache, database capacity, queue accumulation, coherent logs), incident management console with the full investigate / root-cause / remediate / verify / postmortem workflow, three incident missions (cache stampede, two-tier traffic surge, dead queue consumers), architecture visualizer with live health, monitoring dashboard on the same engine. Planned: CI/CD failure-mode missions, concurrency and locking scenarios, retries/idempotency and replication-lag scenarios, reliability engineering missions.
+Done: shared simulation engine (load, cache, database capacity, queue accumulation, coherent logs), incident management console with the full investigate / root-cause / remediate / verify / postmortem workflow, three incident missions (cache stampede, two-tier traffic surge, dead queue consumers), architecture visualizer with live health, monitoring dashboard on the same engine; simulated pipeline runner with mission tools (`ci`, `deployctl`, `metrics`) and three CI/CD failure-mode missions (flaky test, bad release rollback, broken secret wiring). Planned: concurrency and locking scenarios, retries/idempotency and replication-lag scenarios, reliability engineering missions.
 
 ## Phase 8: Refinement and deployment — partial
 GitHub Pages workflow and CI exist. Planned: accessibility audit, lazy loading for bundle size, adaptive remediation variants, more curriculum, documentation polish.
