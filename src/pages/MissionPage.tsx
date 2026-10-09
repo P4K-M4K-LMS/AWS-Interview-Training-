@@ -12,6 +12,7 @@ import { IncidentPlayer } from "../components/players/IncidentPlayer";
 import { DesignMissionPlayer } from "../components/players/DesignMissionPlayer";
 import { LessonMissionPlayer } from "../components/players/LessonMissionPlayer";
 import { Callout, EmptyState } from "../components/ui";
+import { objectivesCreditedBy } from "../engine/study/bridge";
 
 export function MissionPage() {
   const { missionId = "" } = useParams();
@@ -27,6 +28,9 @@ export function MissionPage() {
   const status = statuses.get(missionId) ?? "locked";
   const p = progress.get(missionId);
   const retentionRequested = params.get("retention") === "1";
+  const fromObjective = params.get("from");
+  const fromUnitPath = fromObjective && /^[a-z0-9-]+:\d+:\d+$/.test(fromObjective) ? `/study/${fromObjective.split(":")[0]}/${fromObjective.split(":")[1]}` : null;
+  const credited = objectivesCreditedBy(missionId);
   const retentionActive = retentionRequested && status === "completed" && Boolean(p?.retention);
 
   useEffect(() => {
@@ -50,6 +54,11 @@ export function MissionPage() {
     return (
       <div className="space-y-4 max-w-2xl">
         <h1 className="text-2xl font-bold">{mission.title}</h1>
+        {fromUnitPath && (
+          <Callout kind="info" title="From Study">
+            This mission is still locked by its prerequisites; finishing it later credits the Study objective you came from. <Link to={fromUnitPath} className="underline" data-testid="study-back-link">Back to the unit</Link>.
+          </Callout>
+        )}
         <Callout kind="warn" title="Locked">
           Complete the prerequisite mission(s) first: {mission.prerequisites.map((id) => (
             <Link key={id} to={`/missions/${id}`} className="underline mr-2">
@@ -140,6 +149,16 @@ export function MissionPage() {
         <Callout kind="warn" title="Retention check ended: remediation scheduled">
           No problem. Mastery dipped slightly and a review is scheduled for tomorrow. The lesson and hints are available again below; work through the mission once more at your own pace.
         </Callout>
+      )}
+      {fromUnitPath && (
+        <Callout kind="info" title="From Study">
+          Finishing this mission credits the Study objective you came from (to "Guided"). <Link to={fromUnitPath} className="underline" data-testid="study-back-link">Back to the unit</Link>.
+        </Callout>
+      )}
+      {!fromUnitPath && credited.length > 0 && status !== "completed" && (
+        <p className="muted text-xs" data-testid="study-credit-note">
+          Also counts toward {credited.length} Study objective{credited.length === 1 ? "" : "s"}.
+        </p>
       )}
       {p?.redoCount && status !== "completed" && !retentionActive ? (
         <Callout kind="info" title="Redo in progress">

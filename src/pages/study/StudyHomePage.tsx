@@ -4,11 +4,13 @@ import { STUDY_DISCLAIMER, examChurnNote } from "../../content/study/disclaimer"
 import { ENGINES } from "../../content/study/engines";
 import { MODALITY_HELP, MODALITY_LABELS } from "../../content/study/links";
 import { useStudyIndex } from "../../services/study/catalog";
+import { useStudyStates } from "../../data/hooks";
+import { isMastered } from "../../engine/study/mastery";
 import type { StudyCourseSummary, StudyModality } from "../../domain/types";
 
 const MODALITY_ORDER: StudyModality[] = ["do-existing", "do-new", "combo", "explain", "read"];
 
-function CourseCard({ c }: { c: StudyCourseSummary }) {
+function CourseCard({ c, mastered, started }: { c: StudyCourseSummary; mastered: number; started: number }) {
   const churn = examChurnNote(c.credentialStatus, c.retirementDate, c.examCode);
   const doing = c.modalities["do-existing"] + c.modalities["do-new"];
   return (
@@ -23,6 +25,7 @@ function CourseCard({ c }: { c: StudyCourseSummary }) {
         <span>{c.counts.objectives} objectives</span>
         {c.counts.linked > 0 && <span className="accent">{c.counts.linked} taught by a mission</span>}
         {doing > c.counts.linked && <span>{doing - c.counts.linked} lab planned</span>}
+        {started > 0 && <span className="accent">{mastered} mastered, {started} started</span>}
       </div>
       {churn && <div className="text-xs mt-2 text-amber-500">{churn}</div>}
     </Link>
@@ -36,6 +39,15 @@ function CourseCard({ c }: { c: StudyCourseSummary }) {
  */
 export function StudyHomePage() {
   const index = useStudyIndex();
+  const states = useStudyStates();
+  const perCourse = new Map<string, { mastered: number; started: number }>();
+  for (const s of states.values()) {
+    const row = perCourse.get(s.courseId) ?? { mastered: 0, started: 0 };
+    row.started += 1;
+    if (isMastered(s.status)) row.mastered += 1;
+    perCourse.set(s.courseId, row);
+  }
+  const card = (c: StudyCourseSummary) => <CourseCard key={c.id} c={c} mastered={perCourse.get(c.id)?.mastered ?? 0} started={perCourse.get(c.id)?.started ?? 0} />;
   return (
     <div className="space-y-5">
       <PageHeader title="Study" subtitle="Exam-style objective catalogs, learned the OpsForge way: do it in a mission where one exists, read and check where it does not, and explain it back. Separate from skill mastery." />
@@ -52,12 +64,12 @@ export function StudyHomePage() {
         <>
           <Panel title="AWS certifications (11 courses)">
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3" data-testid="study-group-aws">
-              {index.data.courses.filter((c) => c.group === "aws").map((c) => <CourseCard key={c.id} c={c} />)}
+              {index.data.courses.filter((c) => c.group === "aws").map(card)}
             </div>
           </Panel>
           <Panel title="Core computer science and security (9 courses)">
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3" data-testid="study-group-core">
-              {index.data.courses.filter((c) => c.group === "core").map((c) => <CourseCard key={c.id} c={c} />)}
+              {index.data.courses.filter((c) => c.group === "core").map(card)}
             </div>
           </Panel>
         </>

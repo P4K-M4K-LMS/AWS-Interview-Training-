@@ -5,10 +5,14 @@ import { STUDY_DISCLAIMER } from "../../content/study/disclaimer";
 import { ENGINE_BY_ID } from "../../content/study/engines";
 import { MODALITY_LABELS } from "../../content/study/links";
 import { useStudyCourse } from "../../services/study/catalog";
-import type { StudyObjective } from "../../domain/types";
+import { useStudyStates } from "../../data/hooks";
+import { STUDY_STATUS_LABELS, STUDY_STATUS_MEANING, courseReadiness, statusCap } from "../../engine/study/mastery";
+import type { StudyObjective, StudyObjectiveState } from "../../domain/types";
 
-function ObjectiveRow({ o }: { o: StudyObjective }) {
+function ObjectiveRow({ o, state }: { o: StudyObjective; state?: StudyObjectiveState }) {
   const mission = o.link?.kind === "mission" ? MISSION_BY_ID.get(o.link.missionId) : undefined;
+  const status = state?.status ?? "not-started";
+  const cap = statusCap(o);
   return (
     <li className="panel-2 p-3" data-testid={`study-objective-${o.index}`}>
       <div className="flex items-start justify-between gap-3">
@@ -16,9 +20,15 @@ function ObjectiveRow({ o }: { o: StudyObjective }) {
           <span className="muted mr-2">{o.index}.</span>
           {o.text}
         </div>
-        <span className="badge shrink-0" title={o.modalitySource === "curated" ? "Curated link" : "Default until lessons are generated"}>
-          {MODALITY_LABELS[o.modality]}
-        </span>
+        <div className="flex flex-col items-end gap-1 shrink-0">
+          <span className="badge" title={o.modalitySource === "curated" ? "Curated link" : "Default until lessons are generated"}>
+            {MODALITY_LABELS[o.modality]}
+          </span>
+          <span className={`badge ${status === "needs-review" ? "text-amber-500" : status === "not-started" ? "muted" : "accent"}`} title={STUDY_STATUS_MEANING[status]} data-testid={`study-status-${o.index}`}>
+            {STUDY_STATUS_LABELS[status]}
+            {cap === "independent" && status !== "not-started" ? " (caps until the lab exists)" : ""}
+          </span>
+        </div>
       </div>
       {mission && o.link?.kind === "mission" && (
         <div className="mt-2 text-sm flex flex-wrap items-center gap-x-3 gap-y-1">
@@ -45,6 +55,7 @@ function ObjectiveRow({ o }: { o: StudyObjective }) {
 export function StudyUnitPage() {
   const { courseId, unitIndex } = useParams();
   const course = useStudyCourse(courseId);
+  const states = useStudyStates();
   if (course.status === "loading") return <p className="muted text-sm">Loading the unit…</p>;
   if (course.status === "error") {
     return (
@@ -68,6 +79,7 @@ export function StudyUnitPage() {
   const bookkeeping = unit.objectives.filter((o) => o.kind === "bookkeeping");
   const learnable = unit.objectives.filter((o) => o.kind === "objective");
   const engine = unit.gateEngine ? ENGINE_BY_ID.get(unit.gateEngine) : undefined;
+  const unitReadiness = courseReadiness({ units: [unit] }, states);
   return (
     <div className="space-y-5">
       <PageHeader
@@ -77,6 +89,7 @@ export function StudyUnitPage() {
             <Link to="/study" className="underline">Study</Link> · <Link to={`/study/${c.id}`} className="underline">{c.title}</Link>
             {unit.weight !== undefined && ` · ${unit.weight}% of the exam`}
             {unit.rangeLabel && ` · ${unit.rangeLabel}`}
+            {learnable.length > 0 && ` · ${unitReadiness.mastered} of ${unitReadiness.total} at Independent or better`}
           </>
         }
       />
@@ -93,9 +106,9 @@ export function StudyUnitPage() {
       {learnable.length > 0 && (
         <Panel title={`Objectives (${learnable.length})`}>
           <ol className="space-y-2" data-testid="study-objectives">
-            {learnable.map((o) => <ObjectiveRow key={o.id} o={o} />)}
+            {learnable.map((o) => <ObjectiveRow key={o.id} o={o} state={states.get(o.id)} />)}
           </ol>
-          <p className="muted text-xs mt-3">Lessons, check questions and explain-it-back for these objectives arrive with the generated content; the mission links work today.</p>
+          <p className="muted text-xs mt-3">Status follows the 0–4 rubric: a mission credit reaches Guided, open answers you rate yourself reach Independent, Transfer-ready needs two answers graded by the proxy. Lessons and check questions arrive with the generated content; the mission links work today.</p>
         </Panel>
       )}
       {bookkeeping.length > 0 && (

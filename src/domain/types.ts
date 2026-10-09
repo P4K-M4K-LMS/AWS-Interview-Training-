@@ -7,7 +7,9 @@
  * interview sessions are stored in IndexedDB.
  */
 
-export const SCHEMA_VERSION = 1 as const;
+export const SCHEMA_VERSION = 2 as const;
+/** Export bundles OpsForge can still import. v1 had no Study tables. */
+export const SUPPORTED_SCHEMA_VERSIONS: readonly number[] = [1, 2];
 
 /* ------------------------------------------------------------------ */
 /* Curriculum                                                          */
@@ -955,6 +957,9 @@ export interface ExportBundle {
   stories?: Story[];
   sessions?: InterviewSession[];
   activity?: ActivityEvent[];
+  /** Study objective status (schema 2+). */
+  studyObjectives?: StudyObjectiveState[];
+  studyUnits?: StudyUnitState[];
 }
 
 // ---------------------------------------------------------------------------
@@ -1044,4 +1049,45 @@ export interface StudyCatalogIndex {
   schemaVersion: 1;
   builtFrom: { sourceRepo: "ascendra"; sourceCommit: string };
   courses: StudyCourseSummary[];
+}
+
+/** Ascendra's 0–4 rubric, kept as names; "needs-review" scores 1. */
+export type StudyStatus = "not-started" | "introduced" | "guided" | "independent" | "transfer-ready" | "needs-review";
+export type StudyAttemptFormat = "mc" | "open" | "pbq" | "mission" | "lab";
+export type StudyVerdict = "correct" | "partial" | "incorrect";
+/** Who graded: the answer key (auto), the proxy, the learner (self-rated), or a mission's own checks. */
+export type StudyAttemptSource = "auto" | "proxy" | "self" | "mission";
+
+export interface StudyAttempt {
+  at: string;
+  format: StudyAttemptFormat;
+  verdict: StudyVerdict;
+  source: StudyAttemptSource;
+  questionId?: string;
+  /** Mission or lab exercise that produced the credit. */
+  ref?: string;
+}
+
+export interface StudyObjectiveState {
+  objectiveId: string;
+  courseId: string;
+  unitId: string;
+  schemaVersion: typeof SCHEMA_VERSION;
+  status: StudyStatus;
+  /** 0–4, derived from status. */
+  score: number;
+  /** Last 30 attempts, oldest first. */
+  attempts: StudyAttempt[];
+  seenQuestionIds: string[];
+  /** 0 → review in 1 day, 1 → 7 days, 2 → 21 days, 3 → resolved. */
+  reviewStage: number;
+  nextReviewAt: string | null;
+  lastPracticedAt: string | null;
+}
+
+export interface StudyUnitState {
+  id: string; // unit id
+  courseId: string;
+  schemaVersion: typeof SCHEMA_VERSION;
+  scenarioAttempts: StudyAttempt[];
 }

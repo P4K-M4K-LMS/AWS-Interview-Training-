@@ -1,5 +1,6 @@
 import { SCHEMA_VERSION, type CheckResult, type LeadershipPrincipleId, type Mission, type MissionProgress, type SkillId, type SkillState, type Story, type TerminalCheckContext, type TerminalMission, type InvestigationMission } from "../../domain/types";
 import { db, logActivity, nowIso, uid } from "../../data/db";
+import { creditLinkedObjectives } from "../study/bridge";
 import { SKILL_BY_ID } from "../../content/curriculum";
 import { applyMissionCompletion, applyRetentionCheck, emptySkill } from "../learner/mastery";
 
@@ -102,6 +103,8 @@ export async function completeMission(mission: Mission, minutes: number) {
     await db.skills.put(applyMissionCompletion(state, { missionId: mission.id, attempts, maxHintLevel: p.maxHintLevel, score: 1, at }));
   }
   await logActivity({ type: "mission-complete", missionId: mission.id, minutes });
+  // Study: the objectives curated as taught by this mission are credited once.
+  await creditLinkedObjectives(mission.id, at);
   return next;
 }
 
