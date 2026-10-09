@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { PythonEditor } from "../components/PythonEditor";
 import { Callout, PageHeader, Panel } from "../components/ui";
-import { JS_DRILLS, JS_DRILL_BY_ID, type JsDrill } from "../content/study/jsDrills";
+import { JS_DRILLS, JS_DRILL_BY_ID, type JsDrill, type JsDrillGroup } from "../content/study/jsDrills";
 import { nowIso } from "../data/db";
 import type { JsRunResult } from "../engine/js/execute";
 import { getJsRunner } from "../engine/js/runner";
@@ -12,9 +12,12 @@ import { creditLabExercise, objectivesCreditedByExercise } from "../engine/study
 /**
  * JavaScript lab: one idea per drill on the browser's own JavaScript engine,
  * in a Web Worker with a time limit. Script drills are one program; module
- * drills are real ES modules over several files. fetch reaches only the
- * simulated API. Passing every test credits the Study objectives curated
- * for the drill (Guided at most).
+ * drills are real ES modules over several files. DOM drills run against a
+ * fixture page in the worker's DOM and show the page afterwards in a frame
+ * with scripts disabled; the testing drill runs the learner's own tests; the
+ * server drills call a request handler with a simulated environment and
+ * datastore. fetch reaches only the simulated API. Passing every test
+ * credits the Study objectives curated for the drill (Guided at most).
  */
 export function JsLabPage() {
   const [params, setParams] = useSearchParams();
@@ -63,7 +66,8 @@ function DrillView({ drill, fromPath, pick }: { drill: JsDrill; fromPath: string
 
   async function run() {
     const tests = drill.tests.map((t) => ({ id: t.id, code: t.code }));
-    setResult(await runner.run(isModules ? { files, entry: drill.entry, tests } : { code, tests }));
+    const options = { tests, dom: drill.dom ? { html: drill.dom } : undefined, suite: drill.suite, store: drill.store, env: drill.env };
+    setResult(await runner.run(isModules ? { ...options, files, entry: drill.entry } : { ...options, code }));
   }
 
   async function check() {
@@ -79,17 +83,24 @@ function DrillView({ drill, fromPath, pick }: { drill: JsDrill; fromPath: string
 
   return (
     <div className="space-y-4">
-      <PageHeader title="JavaScript" subtitle="One idea per drill, on your browser's own JavaScript engine. Code runs in a Web Worker (no access to this page) with a time limit; module drills are real ES modules over several files; fetch reaches only a simulated API at api.fleet.example. Read the engine's own messages when a test fails." />
+      <PageHeader title="JavaScript" subtitle="One idea per drill, on your browser's own JavaScript engine. Code runs in a Web Worker (no access to this page) with a time limit; module drills are real ES modules over several files; DOM drills work on a page of their own inside the worker; fetch reaches only a simulated API at api.fleet.example. Read the engine's own messages when a test fails." />
       {fromPath && (
         <Callout kind="info" title="From Study">
           Passing this drill credits the objective you came from (to "Guided"). <Link to={fromPath} className="underline" data-testid="js-back-link">Back to the unit</Link>.
         </Callout>
       )}
-      <div className="flex flex-wrap gap-2" role="tablist" aria-label="Drills">
-        {JS_DRILLS.map((d, i) => (
-          <button key={d.id} type="button" role="tab" aria-selected={d.id === drill.id} className={`badge ${d.id === drill.id ? "text-amber-500" : ""}`} onClick={() => pick(d.id)} data-testid={`js-exercise-${i + 1}`}>
-            {i + 1}. {d.title}
-          </button>
+      <div className="space-y-2" aria-label="Drills">
+        {GROUPS.map((group) => (
+          <div key={group} className="flex flex-wrap items-center gap-2" role="tablist" aria-label={`${group} drills`}>
+            <span className="label w-20 shrink-0">{group}</span>
+            {JS_DRILLS.map((d, i) =>
+              (d.group ?? "Language") === group ? (
+                <button key={d.id} type="button" role="tab" aria-selected={d.id === drill.id} className={`badge ${d.id === drill.id ? "text-amber-500" : ""}`} onClick={() => pick(d.id)} data-testid={`js-exercise-${i + 1}`}>
+                  {i + 1}. {d.title}
+                </button>
+              ) : null,
+            )}
+          </div>
         ))}
       </div>
       <Panel title={`${index + 1}. ${drill.title}`}>
@@ -127,6 +138,12 @@ function DrillView({ drill, fromPath, pick }: { drill: JsDrill; fromPath: string
           <Panel title="Console">
             <Output result={result} />
           </Panel>
+          {drill.dom && (
+            <Panel title="The page after your program ran">
+              <p className="muted text-xs mb-2">Rendered with scripts disabled, from the worker's DOM. That DOM follows the standard APIs but computes no layout or styles, does not model the capture phase, and has no built-in form validity checks.</p>
+              <iframe title="Page preview" sandbox="" className="w-full h-48 rounded border bg-white" style={{ borderColor: "var(--border)" }} srcDoc={`<!doctype html><meta charset="utf-8"><style>body{font:14px system-ui;margin:8px;color:#111}table{border-collapse:collapse}td,th{border:1px solid #ccc;padding:2px 6px}.overdue{background:#fde68a}[hidden]{display:none}.error{color:#b91c1c}</style>${result?.html ?? drill.dom}`} data-testid="js-preview" />
+            </Panel>
+          )}
         </div>
         <div className="space-y-3 min-w-0">
           <Panel title="Tests">
@@ -189,6 +206,8 @@ function DrillView({ drill, fromPath, pick }: { drill: JsDrill; fromPath: string
     </div>
   );
 }
+
+const GROUPS: JsDrillGroup[] = ["Language", "The DOM", "Testing", "Server"];
 
 function StatusLine({ status, detail }: { status: RunnerStatus; detail?: string }) {
   const text = status === "loading" ? "Starting the JavaScript worker..." : status === "ready" ? "Ready. Code runs in a Web Worker with a 6-second limit." : status === "running" ? "Running..." : status === "error" ? `The worker failed to start: ${detail ?? "unknown error"}. Reload the page.` : "Worker idle.";

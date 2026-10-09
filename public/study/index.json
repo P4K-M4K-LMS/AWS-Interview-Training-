@@ -340,17 +340,17 @@
         "units": 9,
         "objectives": 45,
         "bookkeeping": 0,
-        "linked": 30
+        "linked": 40
       },
       "modalities": {
-        "do-existing": 30,
+        "do-existing": 40,
         "do-new": 0,
-        "read": 15,
+        "read": 5,
         "combo": 0,
         "explain": 0
       },
       "file": "javascript.json",
-      "hash": "83f9f869132b8562"
+      "hash": "a383df202ff2c7ac"
     },
     {
       "id": "secplus",

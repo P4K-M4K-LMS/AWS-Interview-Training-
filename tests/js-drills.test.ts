@@ -9,6 +9,10 @@ const runDrill = (d: (typeof JS_DRILLS)[number], which: "starter" | "solution") 
     code: which === "starter" ? d.starter : d.solution,
     files: which === "starter" ? d.starterFiles : d.solutionFiles,
     entry: d.entry,
+    dom: d.dom ? { html: d.dom } : undefined,
+    suite: d.suite,
+    store: d.store,
+    env: d.env,
     tests: d.tests.map((t) => ({ id: t.id, code: t.code })),
   });
 

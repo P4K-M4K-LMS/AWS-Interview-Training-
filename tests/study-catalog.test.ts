@@ -103,7 +103,7 @@ describe("Study catalog (Ascendra snapshot)", () => {
   it("maps unit gates to planned engines that are declared, and bookkeeping units to the degree plan", () => {
     for (const g of UNIT_ENGINE_GATES) expect(ENGINE_BY_ID.has(g.engine), g.engine).toBe(true);
     expect(Object.keys(ENGINE_GATES).sort()).toEqual(["dr-planner", "js-runtime", "net-trace", "policy-eval"]);
-    expect(ENGINE_GATES["js-runtime"]).toEqual(["javascript:1", "javascript:2", "javascript:3", "javascript:5", "javascript:6", "javascript:7"]);
+    expect(ENGINE_GATES["js-runtime"]).toEqual(["javascript:1", "javascript:2", "javascript:3", "javascript:4", "javascript:5", "javascript:6", "javascript:7", "javascript:8", "javascript:9"]);
     for (const ids of Object.values(ENGINE_GATES)) expect(ids.length).toBeGreaterThan(0);
     for (const b of BOOKKEEPING_UNITS) expect(b.course).toBe("CMPCBS");
     const cmpcbs = built.courses.find((c) => c.id === "cmpcbs") as StudyCourse;

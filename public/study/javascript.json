@@ -282,6 +282,7 @@
       "title": "The DOM & events",
       "rangeLabel": "Week 4",
       "gate": "Given a page layout, write vanilla JS that selects the right elements, updates the DOM in response to a user event, and avoids common event-handling bugs (e.g. missing preventDefault).",
+      "gateEngine": "js-runtime",
       "objectives": [
         {
           "id": "javascript:4:1",
@@ -290,8 +291,14 @@
           "text": "Selecting and traversing the DOM (querySelector, closest, parent/child access)",
           "sourceHash": "335369528ada",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "javascript",
+            "exerciseId": "dom-01-traverse",
+            "coverage": "full"
+          }
         },
         {
           "id": "javascript:4:2",
@@ -300,8 +307,14 @@
           "text": "Creating, modifying, and removing DOM nodes",
           "sourceHash": "c005d1c9bb77",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "javascript",
+            "exerciseId": "dom-02-render",
+            "coverage": "full"
+          }
         },
         {
           "id": "javascript:4:3",
@@ -310,8 +323,15 @@
           "text": "Event listeners: bubbling, capturing, delegation, and preventDefault",
           "sourceHash": "0c2b2028297f",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "javascript",
+            "exerciseId": "dom-03-delegation",
+            "coverage": "partial",
+            "note": "bubbling, delegation and preventDefault; the capture phase is not modelled"
+          }
         },
         {
           "id": "javascript:4:4",
@@ -320,8 +340,14 @@
           "text": "Working with forms and form validation",
           "sourceHash": "b9b965015d6b",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "javascript",
+            "exerciseId": "dom-04-form",
+            "coverage": "full"
+          }
         },
         {
           "id": "javascript:4:5",
@@ -330,8 +356,14 @@
           "text": "Basic accessibility considerations when manipulating the DOM",
           "sourceHash": "5c9e69cde9f1",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "javascript",
+            "exerciseId": "dom-05-disclosure",
+            "coverage": "full"
+          }
         }
       ]
     },
@@ -614,6 +646,7 @@
       "title": "Testing & tooling",
       "rangeLabel": "Week 8",
       "gate": "Given a small buggy function, write a failing Jest test that reproduces the bug, fix it, and explain what a linter/bundler in your toolchain would have caught earlier.",
+      "gateEngine": "js-runtime",
       "objectives": [
         {
           "id": "javascript:8:1",
@@ -622,8 +655,15 @@
           "text": "Writing unit tests with Jest: assertions, mocks, test structure",
           "sourceHash": "a071b57acb23",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "javascript",
+            "exerciseId": "test-01-reproduce",
+            "coverage": "partial",
+            "note": "a Jest-style test API, not Jest itself"
+          }
         },
         {
           "id": "javascript:8:2",
@@ -673,6 +713,7 @@
       "title": "Node.js & building a small API",
       "rangeLabel": "Week 9",
       "gate": "Build a minimal Node HTTP/Express endpoint that accepts a request, validates input, and returns JSON -- and explain what happens if two requests arrive concurrently.",
+      "gateEngine": "js-runtime",
       "objectives": [
         {
           "id": "javascript:9:1",
@@ -691,8 +732,15 @@
           "text": "Building a simple HTTP server or Express route",
           "sourceHash": "05fac6bb9c40",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "javascript",
+            "exerciseId": "node-01-handler",
+            "coverage": "partial",
+            "note": "a request handler called directly; no sockets or framework"
+          }
         },
         {
           "id": "javascript:9:3",
@@ -701,8 +749,14 @@
           "text": "Handling JSON request/response bodies and status codes",
           "sourceHash": "0f886b923244",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "javascript",
+            "exerciseId": "node-01-handler",
+            "coverage": "full"
+          }
         },
         {
           "id": "javascript:9:4",
@@ -711,8 +765,15 @@
           "text": "Environment variables and basic configuration management",
           "sourceHash": "9f09e567cc8a",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "javascript",
+            "exerciseId": "node-01-handler",
+            "coverage": "partial",
+            "note": "process.env only"
+          }
         },
         {
           "id": "javascript:9:5",
@@ -721,8 +782,15 @@
           "text": "Integrating prior units into one small end-to-end project",
           "sourceHash": "3718c60a98e4",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "javascript",
+            "exerciseId": "node-02-race",
+            "coverage": "partial",
+            "note": "promises, closures and a handler together under concurrent requests"
+          }
         }
       ]
     }
@@ -737,6 +805,6 @@
     "units": 9,
     "objectives": 45,
     "bookkeeping": 0,
-    "linked": 30
+    "linked": 40
   }
 }
