@@ -568,3 +568,49 @@ test("beginner primers: open first on the unnamed-role track, collapsed after sw
   await expect(page.getByTestId("primer")).toHaveCount(0);
   await expect(page.getByTestId("primer-first-step")).toHaveCount(0);
 });
+
+test("role questions: pick the target role's set, start a session, see the cues; listed on the Curriculum role lens", async ({ page }) => {
+  await onboard(page);
+  await page.goto("/#/interview/practice");
+  await page.getByTestId("mode-practice").click();
+  await page.getByTestId("question-set").selectOption("role");
+  await expect(page.locator("#q")).toContainText("Walk me through a script you would write");
+  await page.locator("#q").selectOption("oa-red-pipeline");
+  await page.getByTestId("start-session").click();
+  await expect(page).toHaveURL(/interview\/practice\/session_/);
+  await expect(page.getByTestId("conversation")).toContainText("A CI pipeline is red");
+  await expect(page.getByTestId("role-cues")).toContainText("Reads the failing step's log");
+
+  await page.goto("/#/curriculum");
+  await page.getByTestId("lens-role").click();
+  await expect(page.getByTestId("role-questions")).toContainText("Prepares you: The build is red");
+  await page.getByTestId("role-questions").getByRole("link", { name: /Explain retries with exponential backoff/ }).click();
+  await expect(page.locator("#q")).toHaveValue("oa-retries");
+});
+
+test("redo after completion: fresh workstation, record kept, dependants stay unlocked", async ({ page }) => {
+  await onboard(page);
+  const now = new Date().toISOString();
+  const bundle = {
+    app: "opsforge",
+    schemaVersion: 1,
+    exportedAt: now,
+    missions: ["linux-01-find-your-way"].map((missionId) => ({ missionId, schemaVersion: 1, status: "completed", attempts: 1, hintsUsed: 0, maxHintLevel: 0, bestScore: 1, startedAt: now, completedAt: now, reflections: [] })),
+  };
+  await page.goto("/#/settings");
+  await page.locator('input[type="file"]').setInputFiles({ name: "progress.json", mimeType: "application/json", buffer: Buffer.from(JSON.stringify(bundle)) });
+  await expect(page.getByText(/Imported .*1 mission records/)).toBeVisible();
+
+  await page.goto("/#/missions/linux-01-find-your-way");
+  await expect(page.getByText("Mission complete: explain what you did")).toBeVisible();
+  await page.getByTestId("mission-redo").click();
+  await expect(page.getByText("Redo in progress")).toBeVisible();
+  await expect(page.getByTestId("mission-complete")).toBeDisabled();
+  await expect(page.getByTestId("hint-1")).toBeEnabled();
+  await expect(page.getByText("Mission complete: explain what you did")).toHaveCount(0);
+
+  // The dependant mission is still open while the prerequisite is being redone.
+  await page.goto("/#/missions");
+  await expect(page.getByRole("listitem").filter({ hasText: "Find your way around the server" }).getByText("Resume")).toBeVisible();
+  await expect(page.getByRole("listitem").filter({ hasText: "Log detective" }).getByText("Start")).toBeVisible();
+});

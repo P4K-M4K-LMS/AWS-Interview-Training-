@@ -17,11 +17,12 @@ interface Props {
   onReset: () => void;
   retention?: boolean;
   onGiveUp?: () => void;
+  onRedo?: () => void;
 }
 
 type Tab = "ticket" | "metrics" | "logs" | "diagram";
 
-export function IncidentPlayer({ mission, progress, completed, onComplete, onReset, retention, onGiveUp }: Props) {
+export function IncidentPlayer({ mission, progress, completed, onComplete, onReset, retention, onGiveUp, onRedo }: Props) {
   const [state, setState] = useState<IncidentState>(() => (progress?.savedState as IncidentState | undefined)?.sim ? (progress!.savedState as IncidentState) : createIncident(mission));
   const [tab, setTab] = useState<Tab>("ticket");
   const [paused, setPaused] = useState(completed);
@@ -87,6 +88,7 @@ export function IncidentPlayer({ mission, progress, completed, onComplete, onRes
       }}
       retention={retention}
       onGiveUp={onGiveUp}
+      onRedo={onRedo}
       workstation={
         <div className="space-y-4">
           <Panel

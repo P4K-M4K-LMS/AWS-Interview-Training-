@@ -676,6 +676,12 @@ export interface MissionProgress {
   retentionHistory?: Array<{ at: string; passed: boolean; minutes: number }>;
   /** Reflection answers written after completion (Part 13). */
   reflections: Array<{ prompt: string; answer: string; at: string }>;
+  /**
+   * Times the learner chose "Redo" after completing. A redo reopens the
+   * mission as in-progress with a fresh workstation; completedAt stays set so
+   * prerequisites stay satisfied and mastery is not awarded twice.
+   */
+  redoCount?: number;
 }
 
 export interface ActivityEvent {
@@ -902,6 +908,16 @@ export interface InterviewQuestion {
   listeningFor: string[];
   /** Technical vs behavioral. */
   kind: "behavioral" | "technical";
+}
+
+/** A technical question tied to one qualification of a target posting. */
+export interface RoleQuestion extends InterviewQuestion {
+  roleId: RoleId;
+  /** Id of the qualification in the role's list that this question probes. */
+  qualificationId: string;
+  /** Missions that prepare you to answer it. */
+  missionIds: string[];
+  kind: "technical";
 }
 
 export interface LeadershipPrinciple {

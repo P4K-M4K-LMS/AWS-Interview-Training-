@@ -12,6 +12,7 @@ interface Props {
   onReset: () => void;
   retention?: boolean;
   onGiveUp?: () => void;
+  onRedo?: () => void;
 }
 
 /**
@@ -19,7 +20,7 @@ interface Props {
  * scenario and a check quiz. Each quiz item is a check; wrong answers show
  * the explanation only after an answer, so the quiz still teaches.
  */
-export function LessonMissionPlayer({ mission, progress, completed, onComplete, onReset, retention, onGiveUp }: Props) {
+export function LessonMissionPlayer({ mission, progress, completed, onComplete, onReset, retention, onGiveUp, onRedo }: Props) {
   const saved = (progress?.savedState as { answers?: Record<string, number> } | undefined)?.answers ?? {};
   const [answers, setAnswers] = useState<Record<string, number>>(saved);
   const checks: CheckResult[] = mission.quiz.map((q) => ({ id: q.id, label: q.prompt, passed: answers[q.id] === q.correctIndex, detail: answers[q.id] === undefined ? "not answered" : answers[q.id] === q.correctIndex ? undefined : "not quite; re-read the lesson" }));
@@ -37,6 +38,7 @@ export function LessonMissionPlayer({ mission, progress, completed, onComplete, 
       progress={progress}
       retention={retention}
       onGiveUp={onGiveUp}
+      onRedo={onRedo}
       checks={checks}
       completed={completed}
       onComplete={onComplete}

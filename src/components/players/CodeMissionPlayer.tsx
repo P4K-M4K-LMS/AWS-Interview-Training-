@@ -18,9 +18,10 @@ interface Props {
   onReset: () => void;
   retention?: boolean;
   onGiveUp?: () => void;
+  onRedo?: () => void;
 }
 
-export function CodeMissionPlayer({ mission, progress, completed, onComplete, onReset, retention, onGiveUp }: Props) {
+export function CodeMissionPlayer({ mission, progress, completed, onComplete, onReset, retention, onGiveUp, onRedo }: Props) {
   const saved = progress?.savedState as { code?: string; lastResult?: PyRunResult } | undefined;
   const [code, setCode] = useState(saved?.code ?? mission.starterCode);
   const [result, setResult] = useState<PyRunResult | null>(saved?.lastResult ?? null);
@@ -49,6 +50,7 @@ export function CodeMissionPlayer({ mission, progress, completed, onComplete, on
       progress={progress}
       retention={retention}
       onGiveUp={onGiveUp}
+      onRedo={onRedo}
       checks={checks}
       completed={completed}
       onComplete={onComplete}

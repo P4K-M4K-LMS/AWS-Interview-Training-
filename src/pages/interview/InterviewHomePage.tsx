@@ -1,11 +1,16 @@
 import { Link } from "react-router-dom";
-import { useSessions, useStories } from "../../data/hooks";
+import { useProfile, useSessions, useStories } from "../../data/hooks";
 import { LEADERSHIP_PRINCIPLES } from "../../content/leadershipPrinciples";
+import { roleQuestionsFor } from "../../content/roleQuestions";
+import { roleFor } from "../../content/roles";
 import { Callout, PageHeader, Panel } from "../../components/ui";
 
 export function InterviewHomePage() {
+  const profile = useProfile();
   const stories = useStories();
   const sessions = useSessions();
+  const role = roleFor(profile?.targetRoleId);
+  const roleQuestions = roleQuestionsFor(role.id);
   const withFeedback = sessions.filter((s) => s.feedback);
   const avg = withFeedback.length ? Math.round(withFeedback.reduce((a, s) => a + (s.feedback?.overall ?? 0), 0) / withFeedback.length) : null;
   const recent = withFeedback.slice(0, 5);
@@ -16,6 +21,7 @@ export function InterviewHomePage() {
     { to: "/interview/star", title: "STAR Method Academy", body: "Situation, Task, Action, Result: how to structure an answer, strong vs weak examples, and how to talk about failures honestly." },
     { to: "/interview/principles", title: "Amazon Leadership Principles", body: `All ${LEADERSHIP_PRINCIPLES.length} principles with plain-language explanations, practice questions, evidence interviewers may seek, and follow-ups.` },
     { to: "/interview/stories", title: "Personal Story Bank", body: `${stories.length} private stor${stories.length === 1 ? "y" : "ies"} saved locally. Real experiences only; the simulator's missions are labelled fictional.` },
+    { to: "/interview/practice?set=role", title: "Role questions", body: `${roleQuestions.length} technical questions drawn from the qualifications of "${role.title}", each tied to the missions that prepare you for it. Practice examples, not an official list.` },
     { to: "/interview/practice", title: "Mock interviews + Dive Deeper", body: "Guided, Practice and Realistic modes. Answer by voice or text, then get probed on vague claims and coached with a transparent rubric." },
     { to: "/interview/history", title: "Practice history", body: `${sessions.length} session(s). ${avg !== null ? `Average coaching score ${avg}/100.` : ""} ${trend !== null ? `Trend over the last 5: ${trend >= 0 ? "+" : ""}${trend}.` : ""}` },
   ];

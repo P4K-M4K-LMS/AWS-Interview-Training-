@@ -13,6 +13,7 @@ interface Props {
   onReset: () => void;
   retention?: boolean;
   onGiveUp?: () => void;
+  onRedo?: () => void;
 }
 
 /**
@@ -21,7 +22,7 @@ interface Props {
  * consequences panel shows the same arithmetic live so the learner can see
  * why a check fails before asking for a hint.
  */
-export function DesignMissionPlayer({ mission, progress, completed, onComplete, onReset, retention, onGiveUp }: Props) {
+export function DesignMissionPlayer({ mission, progress, completed, onComplete, onReset, retention, onGiveUp, onRedo }: Props) {
   const saved = progress?.savedState as DesignState | undefined;
   const [state, setState] = useState<DesignState>(() => (saved?.choices ? saved : emptyDesign()));
   const { checks, derived } = useMemo(() => evaluateDesign(mission, state), [mission, state]);
@@ -41,6 +42,7 @@ export function DesignMissionPlayer({ mission, progress, completed, onComplete, 
       progress={progress}
       retention={retention}
       onGiveUp={onGiveUp}
+      onRedo={onRedo}
       checks={checks}
       completed={completed}
       onComplete={onComplete}

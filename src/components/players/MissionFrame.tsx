@@ -21,6 +21,8 @@ interface Props {
   retention?: boolean;
   /** Retention mode only: the learner needs the lesson again (counts as not recalled). */
   onGiveUp?: () => void;
+  /** Completed missions only: reopen with a fresh workstation, keeping the record. */
+  onRedo?: () => void;
 }
 
 /** The free-play lab that matches a mission's workstation, if any. */
@@ -46,7 +48,7 @@ export function labForMission(mission: Mission): { to: string; label: string } |
  * Common chrome for every mission: briefing, lesson, glossary, objectives,
  * progressive hints, live validation and completion/reflection.
  */
-export function MissionFrame({ mission, progress, checks, completed, onComplete, onReset, workstation, extra, retention = false, onGiveUp }: Props) {
+export function MissionFrame({ mission, progress, checks, completed, onComplete, onReset, workstation, extra, retention = false, onGiveUp, onRedo }: Props) {
   const [tab, setTab] = useState<"brief" | "lesson" | "glossary">("brief");
   const [hintLevel, setHintLevel] = useState(progress?.maxHintLevel ?? 0);
   const [reflection, setReflection] = useState("");
@@ -220,9 +222,16 @@ export function MissionFrame({ mission, progress, checks, completed, onComplete,
           {extra}
           <div className="mt-3 flex flex-col gap-2">
             {completed ? (
-              <Callout kind="success" title="Completed">
-                Mastery recorded for {mission.skills.length} skill(s).
-              </Callout>
+              <>
+                <Callout kind="success" title="Completed">
+                  Mastery recorded for {mission.skills.length} skill(s).
+                </Callout>
+                {onRedo && (
+                  <button type="button" className="btn-secondary" onClick={onRedo} data-testid="mission-redo" title="Fresh workstation, hints on, nothing scored. Your completion, reflections and retention history are kept.">
+                    Redo this mission (keeps your record)
+                  </button>
+                )}
+              </>
             ) : (
               <button type="button" className="btn-primary" disabled={!allPassed} onClick={onComplete} data-testid="mission-complete">
                 {allPassed ? (retention ? "Confirm retention check" : "Complete mission") : "Complete all checks to finish"}
@@ -233,8 +242,8 @@ export function MissionFrame({ mission, progress, checks, completed, onComplete,
                 I need the lesson again (ends the check)
               </button>
             )}
-            <button type="button" className="btn-ghost text-xs" onClick={onReset}>
-              {retention ? "Restart environment" : "Reset mission environment"}
+            <button type="button" className="btn-ghost text-xs" onClick={onReset} data-testid="mission-reset">
+              {retention ? "Restart environment" : completed ? "Start over (forgets this completion)" : "Reset mission environment"}
             </button>
           </div>
         </Panel>
