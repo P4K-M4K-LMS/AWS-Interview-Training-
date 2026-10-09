@@ -13,6 +13,8 @@ interface Props {
   completed: boolean;
   onComplete: () => void;
   onReset: () => void;
+  retention?: boolean;
+  onGiveUp?: () => void;
 }
 
 interface SavedState {
@@ -20,7 +22,7 @@ interface SavedState {
   predictions: Record<string, ComplexityClass>;
 }
 
-export function BigOMissionPlayer({ mission, progress, completed, onComplete, onReset }: Props) {
+export function BigOMissionPlayer({ mission, progress, completed, onComplete, onReset, retention, onGiveUp }: Props) {
   const saved = (progress?.savedState as SavedState | undefined) ?? { experiments: [], predictions: {} };
   const [experiments, setExperiments] = useState<ExperimentRecord[]>(saved.experiments);
   const [predictions, setPredictions] = useState<Record<string, ComplexityClass>>(saved.predictions);
@@ -47,6 +49,8 @@ export function BigOMissionPlayer({ mission, progress, completed, onComplete, on
     <MissionFrame
       mission={mission}
       progress={progress}
+      retention={retention}
+      onGiveUp={onGiveUp}
       checks={checks}
       completed={completed}
       onComplete={onComplete}

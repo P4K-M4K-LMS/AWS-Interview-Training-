@@ -12,7 +12,7 @@ export const FEATURE_STATUS: Array<{ feature: string; status: FeatureStatus; not
   { feature: "Big O laboratory", status: "verified", note: "9 instrumented algorithms, step-through, growth tables, comparisons. Unit-tested." },
   { feature: "10 MVP missions", status: "verified", note: "3 Linux, 3 Python, 2 Big O, 1 security, 1 automation. Each verified completable by automated tests." },
   { feature: "Persistent progress", status: "verified", note: "IndexedDB via Dexie; export/import/reset. Covered by tests and e2e reload check." },
-  { feature: "Adaptive learning", status: "partial", note: "Mastery from demonstrated work, hint penalties, prerequisites, spaced-repetition due dates and recommendations. Remediation variants (transfer tasks) are planned." },
+  { feature: "Adaptive learning", status: "partial", note: "Mastery from demonstrated work, hint penalties, prerequisites, spaced-repetition due dates, retention checks (fresh replay without hints) and recommendations. Transfer-task variants are planned." },
   { feature: "STAR Academy + 16 Leadership Principles", status: "verified", note: "Official wording verified against amazon.jobs on 2026-10-09; three practice questions and an interview cue per principle. Content tests check all 16." },
   { feature: "Story Bank", status: "verified", note: "Create, edit, tag, export, import, delete. Local only." },
   { feature: "Rule-based STAR feedback and scoring", status: "verified", note: "Transparent rubric; cannot judge truth or technical correctness. Unit-tested." },

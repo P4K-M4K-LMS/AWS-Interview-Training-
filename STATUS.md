@@ -34,7 +34,7 @@ Legend: **verified** = automated tests pass in CI · **unverified** = implemente
 | Automated mission validation | verified | checks inspect real state |
 | Hint system (4 levels, mastery penalty) | verified (logic) / unverified (UI) | |
 | Progress dashboard / Skill Progress page | verified | e2e |
-| Adaptive engine: mastery, spaced repetition due dates, recommendations, stage promotion | partial | remediation variants / transfer tasks planned |
+| Adaptive engine: mastery, spaced repetition due dates, retention checks, recommendations, stage promotion | partial | retention checks verified by unit tests; transfer-task variants planned |
 
 ### Interview MVP (Part 16)
 
@@ -74,7 +74,6 @@ Legend: **verified** = automated tests pass in CI · **unverified** = implemente
 
 ## Next steps (in order)
 
-1. Add retention-check mode to missions (`?retention=1` currently just opens the mission).
-2. Phase 7: incident console + monitoring tied to missions; distributed systems simulations.
-3. More missions per track (see CURRICULUM.md).
-4. Accessibility audit with a screen reader; reduce bundle size by lazy-loading CodeMirror and the interview pages.
+1. Phase 7: incident console + monitoring tied to missions; distributed systems simulations.
+2. More missions per track (see CURRICULUM.md).
+3. Accessibility audit with a screen reader; reduce bundle size by lazy-loading CodeMirror and the interview pages.

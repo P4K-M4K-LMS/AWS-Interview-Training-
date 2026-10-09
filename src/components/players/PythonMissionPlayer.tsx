@@ -14,9 +14,11 @@ interface Props {
   completed: boolean;
   onComplete: () => void;
   onReset: () => void;
+  retention?: boolean;
+  onGiveUp?: () => void;
 }
 
-export function PythonMissionPlayer({ mission, progress, completed, onComplete, onReset }: Props) {
+export function PythonMissionPlayer({ mission, progress, completed, onComplete, onReset, retention, onGiveUp }: Props) {
   const saved = progress?.savedState as { code?: string; lastResult?: PyRunResult } | undefined;
   const [code, setCode] = useState(saved?.code ?? mission.starterCode);
   const [result, setResult] = useState<PyRunResult | null>(saved?.lastResult ?? null);
@@ -42,6 +44,8 @@ export function PythonMissionPlayer({ mission, progress, completed, onComplete, 
     <MissionFrame
       mission={mission}
       progress={progress}
+      retention={retention}
+      onGiveUp={onGiveUp}
       checks={checks}
       completed={completed}
       onComplete={onComplete}

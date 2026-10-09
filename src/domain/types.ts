@@ -348,6 +348,13 @@ export interface MissionProgress {
   completedAt: string | null;
   /** Serialized workstation state so a mission can be resumed. */
   savedState?: unknown;
+  /**
+   * Active spaced-repetition retention check: the learner replays a completed
+   * mission from a fresh environment with hints disabled. Cleared on finish.
+   */
+  retention?: { startedAt: string; attempts: number };
+  /** History of retention checks on this mission. */
+  retentionHistory?: Array<{ at: string; passed: boolean; minutes: number }>;
   /** Reflection answers written after completion (Part 13). */
   reflections: Array<{ prompt: string; answer: string; at: string }>;
 }

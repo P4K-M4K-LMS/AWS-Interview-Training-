@@ -137,3 +137,29 @@ test("keyboard navigation: skip link and nav are reachable", async ({ page }, te
   await page.keyboard.press("Enter");
   await expect(page.locator("#main")).toBeVisible();
 });
+
+test("retention check: fresh replay without hints raises mastery", async ({ page }) => {
+  await onboard(page);
+  await page.goto("/#/missions/linux-01-find-your-way");
+  const input = page.getByTestId("terminal-input");
+  for (const cmd of ["cd ops/handover", "cat runbook.md", "echo READY > ~/ops/ack.txt"]) {
+    await input.fill(cmd);
+    await input.press("Enter");
+  }
+  await page.getByTestId("mission-complete").click();
+  await expect(page.getByText("Mission complete: explain what you did")).toBeVisible();
+
+  await page.goto("/#/missions/linux-01-find-your-way?retention=1");
+  await expect(page.getByText("Retention check", { exact: true })).toBeVisible();
+  await expect(page.getByTestId("hints-disabled")).toBeVisible();
+  await expect(page.getByText("Checks (0/3)")).toBeVisible(); // fresh environment
+  for (const cmd of ["cd ops/handover", "cat runbook.md", "echo READY > ~/ops/ack.txt"]) {
+    await input.fill(cmd);
+    await input.press("Enter");
+  }
+  await expect(page.getByText("Checks (3/3)")).toBeVisible();
+  await page.getByRole("button", { name: "Confirm retention check" }).click();
+  await expect(page.getByText("Retention check passed")).toBeVisible();
+  await page.goto("/#/progress");
+  await expect(page.getByText(/1 evidence item|2 evidence item/).first()).toBeVisible();
+});
