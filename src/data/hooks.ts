@@ -1,7 +1,7 @@
 import { useLiveQuery } from "dexie-react-hooks";
 import { useEffect, useMemo } from "react";
 import { db, getOrCreateProfile } from "./db";
-import type { LearnerProfile, MissionProgress, SkillId, SkillState, StudyObjectiveState } from "../domain/types";
+import type { LearnerProfile, MissionProgress, SkillId, SkillState, StudyObjectiveState, StudyUnitState } from "../domain/types";
 import { MISSIONS } from "../content/missions";
 import { computeStatus } from "../engine/missions/engine";
 
@@ -54,4 +54,10 @@ export function useStudyDays() {
 export function useStudyStates(): Map<string, StudyObjectiveState> {
   const rows = useLiveQuery(() => db.studyObjectives.toArray(), []) ?? [];
   return useMemo(() => new Map(rows.map((r) => [r.objectiveId, r])), [rows]);
+}
+
+/** Study unit states (scenario attempts) keyed by unit id. */
+export function useStudyUnitStates(): Map<string, StudyUnitState> {
+  const rows = useLiveQuery(() => db.studyUnits.toArray(), []) ?? [];
+  return useMemo(() => new Map(rows.map((r) => [r.id, r])), [rows]);
 }

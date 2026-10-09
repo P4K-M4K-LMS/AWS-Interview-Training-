@@ -9,8 +9,11 @@
  *   ANTHROPIC_API_KEY=sk-ant-... npm run coach-server
  *
  * Endpoints:
- *   GET  /api/health  -> { ok, model, hasKey }
- *   POST /api/coach   -> FeedbackReport-shaped JSON (see src/domain/types.ts)
+ *   GET  /api/health      -> { ok, model, hasKey }
+ *   POST /api/coach       -> FeedbackReport-shaped JSON (see src/domain/types.ts)
+ *   POST /api/study/grade -> { verdict, feedback, missedPoints, model } for a Study
+ *                            explain-it-back answer or a unit scenario, graded
+ *                            against the model answer and rubric the request carries.
  */
 import { createServer } from "node:http";
 import Anthropic from "@anthropic-ai/sdk";
@@ -63,6 +66,26 @@ const SCHEMA = {
   },
 } as const;
 
+const STUDY_GRADE_SYSTEM = `You grade a learner's written answer for an unofficial study site. You are given the question, the model answer and the points a good answer covers.
+Rules:
+- Judge substance only, never length or style. Never mark down for brevity.
+- Grade every rubric point or sub-part explicitly and by name; list exactly the ones that are missing or wrong. Never give a blanket "partial" without naming what is missing.
+- "correct" means every point is covered (in the learner's own words is fine). "partial" means at least one point is covered and at least one is missing or wrong. "incorrect" means nothing substantive is right or the answer is off-topic.
+- Never invent facts beyond the model answer; if the learner says something true that the model answer omits, do not penalise it.
+- Feedback is 2-5 sentences, plain words, warm but direct, addressed to the learner.
+- Output strictly the JSON object requested.`;
+
+const STUDY_GRADE_SCHEMA = {
+  type: "object",
+  additionalProperties: false,
+  required: ["verdict", "feedback", "missedPoints"],
+  properties: {
+    verdict: { type: "string", enum: ["correct", "partial", "incorrect"] },
+    feedback: { type: "string" },
+    missedPoints: { type: "array", items: { type: "string" } },
+  },
+} as const;
+
 const client = process.env.ANTHROPIC_API_KEY ? new Anthropic() : null;
 
 function cors(res: import("node:http").ServerResponse) {
@@ -85,6 +108,50 @@ const server = createServer(async (req, res) => {
     return;
   }
   if (req.method === "GET" && req.url === "/api/health") return json(res, 200, { ok: true, model: MODEL, hasKey: Boolean(client) });
+  if (req.method === "POST" && req.url === "/api/study/grade") {
+    if (!client) return json(res, 503, { error: "ANTHROPIC_API_KEY is not set on the proxy server." });
+    let body = "";
+    for await (const chunk of req) {
+      body += chunk;
+      if (body.length > 200_000) return json(res, 413, { error: "Request too large." });
+    }
+    let input: { kind?: "explain" | "scenario"; prompt?: string; answer?: string; modelAnswer?: string | string[]; rubricPoints?: string[]; subParts?: string[] };
+    try {
+      input = JSON.parse(body);
+    } catch {
+      return json(res, 400, { error: "Invalid JSON." });
+    }
+    if (!input.prompt || !input.answer || !input.modelAnswer) return json(res, 400, { error: "prompt, answer and modelAnswer are required." });
+    const points = input.kind === "scenario" ? (input.subParts ?? []) : (input.rubricPoints ?? []);
+    const key = Array.isArray(input.modelAnswer) ? input.modelAnswer.map((m, i) => `${i + 1}. ${points[i] ?? `part ${i + 1}`}: ${m}`).join("\n") : input.modelAnswer;
+    const userPrompt = [
+      input.kind === "scenario" ? `Scenario with numbered sub-tasks:\n${input.prompt}` : `Question: ${input.prompt}`,
+      `Points a good answer covers (grade each by name):\n${points.map((p, i) => `${i + 1}. ${p}`).join("\n")}`,
+      `Model answer (the key):\n${key}`,
+      `Learner's answer:\n"""\n${input.answer}\n"""`,
+    ].join("\n\n");
+    try {
+      const response = await client.beta.messages.create({
+        model: MODEL,
+        max_tokens: 4000,
+        system: STUDY_GRADE_SYSTEM,
+        betas: ["server-side-fallback-2026-07-01"],
+        fallbacks: "default",
+        output_config: { effort: "low", format: { type: "json_schema", schema: STUDY_GRADE_SCHEMA } },
+        messages: [{ role: "user", content: userPrompt }],
+      } as never);
+      const msg = response as unknown as { stop_reason: string; content: Array<{ type: string; text?: string }>; model: string };
+      if (msg.stop_reason === "refusal") return json(res, 502, { error: "The model declined this request." });
+      const text = msg.content.find((b) => b.type === "text")?.text ?? "";
+      const parsed = JSON.parse(text) as { verdict: string; feedback: string; missedPoints: string[] };
+      return json(res, 200, { ...parsed, model: msg.model });
+    } catch (e) {
+      if (e instanceof Anthropic.AuthenticationError) return json(res, 502, { error: "Invalid API key on the proxy." });
+      if (e instanceof Anthropic.RateLimitError) return json(res, 429, { error: "Rate limited by the API. Try again shortly." });
+      if (e instanceof Anthropic.APIError) return json(res, 502, { error: `API error ${e.status}: ${e.message}` });
+      return json(res, 500, { error: (e as Error).message });
+    }
+  }
   if (req.method === "POST" && req.url === "/api/coach") {
     if (!client) return json(res, 503, { error: "ANTHROPIC_API_KEY is not set on the proxy server." });
     let body = "";

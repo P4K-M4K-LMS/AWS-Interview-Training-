@@ -68,7 +68,7 @@ A separate content namespace next to tracks and missions. `tools/ascendra-catalo
 ## Persistence and privacy
 
 - All data is local to the browser profile. Export/import produces a versioned JSON bundle; `validateBundle` rejects other apps and schema versions it does not know (`SUPPORTED_SCHEMA_VERSIONS`: 1 and 2).
-- No network calls are made by default. The outbound calls are to the coaching proxy (only when the learner selects Claude coaching, enters a URL and ticks consent) and to the race-detector service (only when the learner enters its URL and presses the race-detector button; the program source is what is sent). Audio is never sent anywhere by OpsForge; browser speech recognition may use the browser vendor's service, and Settings says so.
+- No network calls are made by default. The outbound calls are to the coaching proxy (only when the learner selects Claude coaching, enters a URL and ticks consent; interview transcripts to `/api/coach`, Study explanations and scenario answers with their model answers to `/api/study/grade`) and to the race-detector service (only when the learner enters its URL and presses the race-detector button; the program source is what is sent). Audio is never sent anywhere by OpsForge; browser speech recognition may use the browser vendor's service, and Settings says so.
 - Schema changes bump `SCHEMA_VERSION` and add a Dexie `version(n).upgrade()`.
 
 ## Safety

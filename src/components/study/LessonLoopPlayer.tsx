@@ -8,7 +8,8 @@ import { nowIso } from "../../data/db";
 import { STUDY_STATUS_LABELS, statusCap } from "../../engine/study/mastery";
 import { pickQuestion, presentQuestion, type Presented } from "../../engine/study/select";
 import { recordStudyAttempt } from "../../engine/study/store";
-import type { ExplanationLevel, StudyLesson, StudyObjective, StudyObjectiveState } from "../../domain/types";
+import { gradeAnswer, proxyAvailable, type GradeResult } from "../../services/study/grader";
+import type { ExplanationLevel, LearnerSettings, StudyLesson, StudyObjective, StudyObjectiveState } from "../../domain/types";
 
 type Step = "guess" | "teach" | "practice" | "explain" | "summary";
 
@@ -20,6 +21,8 @@ interface Props {
   /** Open on the practice step with an unseen question (a due review). */
   review?: boolean;
   generatedBy: { model: string; generatedAt: string };
+  /** Coaching settings decide whether the proxy grades the explanation. */
+  settings: LearnerSettings;
 }
 
 /**
@@ -30,7 +33,7 @@ interface Props {
  * at Independent. Every attempt goes through the Study store, nothing here
  * touches skill mastery.
  */
-export function LessonLoopPlayer({ objective, lesson, state, level, review, generatedBy }: Props) {
+export function LessonLoopPlayer({ objective, lesson, state, level, review, generatedBy, settings }: Props) {
   const [step, setStep] = useState<Step>(review ? "practice" : "guess");
   const [guess, setGuess] = useState("");
   const [presented, setPresented] = useState<Presented | undefined>(() => (review ? present(lesson, state) : undefined));
@@ -39,6 +42,9 @@ export function LessonLoopPlayer({ objective, lesson, state, level, review, gene
   const [explanation, setExplanation] = useState("");
   const [revealed, setRevealed] = useState(false);
   const [selfRating, setSelfRating] = useState<"correct" | "partial" | "incorrect" | null>(null);
+  const [grading, setGrading] = useState(false);
+  const [graded, setGraded] = useState<GradeResult | null>(null);
+  const proxy = proxyAvailable(settings);
   const [answered, setAnswered] = useState(0);
   const cap = statusCap(objective);
   const mission = objective.link?.kind === "mission" ? MISSION_BY_ID.get(objective.link.missionId) : undefined;
@@ -66,6 +72,19 @@ export function LessonLoopPlayer({ objective, lesson, state, level, review, gene
     setSelfRating(v);
     await recordStudyAttempt(objective.id, { at: nowIso(), format: "open", verdict: v, source: "self" }, cap);
     setStep("summary");
+  }
+
+  async function submitExplanation() {
+    setRevealed(true);
+    if (!proxy.ok) return;
+    setGrading(true);
+    const result = await gradeAnswer({ kind: "explain", prompt: lesson.explainPrompt, answer: explanation, modelAnswer: lesson.modelAnswer, rubricPoints: lesson.rubricPoints }, settings);
+    setGraded(result);
+    setGrading(false);
+    if (result.source === "proxy") {
+      setSelfRating(result.verdict);
+      await recordStudyAttempt(objective.id, { at: nowIso(), format: "open", verdict: result.verdict, source: "proxy" }, cap);
+    }
   }
 
   return (
@@ -191,8 +210,8 @@ export function LessonLoopPlayer({ objective, lesson, state, level, review, gene
           <textarea className="input min-h-32" value={explanation} onChange={(e) => setExplanation(e.target.value)} placeholder="Write it as you would say it to a teammate." data-testid="explain-input" disabled={revealed} />
           {!revealed ? (
             <div className="flex gap-2 mt-2">
-              <button type="button" className="btn-primary" onClick={() => setRevealed(true)} disabled={explanation.trim().length < 20} data-testid="explain-submit">
-                Compare with the model answer
+              <button type="button" className="btn-primary" onClick={() => void submitExplanation()} disabled={explanation.trim().length < 20} data-testid="explain-submit">
+                {proxy.ok ? "Send to the coaching proxy for grading" : "Compare with the model answer"}
               </button>
               <button type="button" className="btn-ghost" onClick={() => setStep("summary")}>
                 Skip
@@ -212,8 +231,24 @@ export function LessonLoopPlayer({ objective, lesson, state, level, review, gene
                   ))}
                 </ul>
               </section>
-              <p className="text-sm">Rate your own answer honestly. Self-rated answers reach "Independent" at most; "Transfer-ready" needs the coaching proxy to grade two answers.</p>
-              <div className="flex flex-wrap gap-2">
+              {grading && <p className="text-sm muted" data-testid="grading">Grading via the proxy…</p>}
+              {graded?.source === "proxy" && (
+                <section className="panel-2 p-3" data-testid="proxy-verdict">
+                  <div className="label">Proxy verdict: {graded.verdict}</div>
+                  <p className="text-sm">{graded.feedback}</p>
+                  {graded.missedPoints.length > 0 && <p className="text-sm mt-1">Missing: {graded.missedPoints.join("; ")}</p>}
+                  <p className="muted text-xs mt-1">Graded by a language model{graded.model ? ` (${graded.model})` : ""} against the model answer; it can misjudge. Recorded as a proxy-graded answer.</p>
+                  <button type="button" className="btn-primary mt-2" onClick={() => setStep("summary")} data-testid="proxy-continue">
+                    Continue
+                  </button>
+                </section>
+              )}
+              {!grading && graded?.source !== "proxy" && (
+                <>
+                  <p className="text-sm" data-testid="self-rate-note">
+                    {graded?.source === "self" ? graded.reason : proxy.ok ? "" : proxy.reason} Rate your own answer honestly. Self-rated answers reach "Independent" at most; "Transfer-ready" needs the coaching proxy to grade two answers.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
                 <button type="button" className="btn-primary" onClick={() => void rateExplanation("correct")} data-testid="self-correct">
                   Covered the points
                 </button>
@@ -223,7 +258,9 @@ export function LessonLoopPlayer({ objective, lesson, state, level, review, gene
                 <button type="button" className="btn-secondary" onClick={() => void rateExplanation("incorrect")} data-testid="self-incorrect">
                   Missed it
                 </button>
-              </div>
+                  </div>
+                </>
+              )}
             </div>
           )}
         </Panel>
@@ -233,7 +270,7 @@ export function LessonLoopPlayer({ objective, lesson, state, level, review, gene
         <Panel title="Summary">
           <p className="text-sm" data-testid="summary-status">
             Status now: <strong>{STUDY_STATUS_LABELS[status]}</strong>.{" "}
-            {selfRating === "correct" ? "You explained it back and rated it as covering the points." : selfRating ? "You rated your explanation honestly; come back after a review." : "You skipped the explanation; it is what takes an objective past Guided."}
+            {graded?.source === "proxy" ? `The proxy graded your explanation as ${graded.verdict}.` : selfRating === "correct" ? "You explained it back and rated it as covering the points." : selfRating ? "You rated your explanation honestly; come back after a review." : "You skipped the explanation; it is what takes an objective past Guided."}
             {cap === "independent" && " This objective caps at Independent until its lab exists."}
           </p>
           <div className="flex flex-wrap gap-2 mt-3">

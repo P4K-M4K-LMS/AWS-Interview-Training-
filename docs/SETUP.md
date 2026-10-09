@@ -65,6 +65,8 @@ Then in the app: Settings → Coaching engine → select Claude, enter `http://l
 
 The proxy only ever receives transcripts (never audio) and only when consent is given. If it is unreachable, every report falls back to the rule-based engine and says so.
 
+The same proxy also grades Study explain-it-back answers and unit scenarios at `POST /api/study/grade`; without it the learner self-rates against the revealed model answer.
+
 ## Optional: Go race-detector service
 
 The in-browser Go runtime is single-threaded and cannot reproduce data races. A second optional local service runs a program with `go build -race` on your machine and returns the detector's report to the Go Laboratory and the Go missions.
