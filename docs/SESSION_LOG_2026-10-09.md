@@ -25,6 +25,7 @@ From an empty repository to a deployed, tested web application: a Linux/Python/G
 | #13 | Design-exercise mission type (`kind: "design"`): components with cost/capacity/latency/failure modes, a transparent rubric that computes consequences, sizing ranges, design-dependent failure drills and a structural justification check; first exercise: position ingest + map read path |
 | #14 | Lesson mission type (`kind: "lesson"`) with the Agile/Scrum lesson, scenario quiz and interview cue; `devops.agile` skill; Agile practice question in the general interview pool; the serverless role's Agile/Scrum qualification moves from planned to partly covered |
 | #15 | Reorganisation part 1 (option B, plain names): navigation in three groups (Learn: Today, Curriculum, Missions; Practise: Labs, Interview; You: Progress, Settings), a Labs hub with tabs, old addresses redirect, Today trimmed to the next action, activity moved to Progress, heavy pages lazy-loaded |
+| #16 | Reorganisation part 2: Curriculum page with two lenses (by track: expandable tracks with skills, evidence, ordered missions and the lab; by target role: the gap map), per-track skill panels moved out of Progress, lab link on every mission, What-next panel after completion, reflections saved as draft stories marked as practice |
 
 Feature branches still exist on GitHub (`ccr-221527a4-xf3zs7`, `lp-verified-interview-cues`, `retention-checks`, `phase7-incidents`, `cicd-failure-modes`, `go-runner-spike`); this environment cannot delete remote branches, so delete them from the Branches page.
 
@@ -48,12 +49,12 @@ Feature branches still exist on GitHub (`ccr-221527a4-xf3zs7`, `lp-verified-inte
 - `src/engine/interview/*`: STAR analysis, gap detection, Dive Deeper follow-ups, rubric scoring. `src/content/leadershipPrinciples.ts`: 16 LPs (verified 2026-10-09).
 - `src/content/missions/*`: all missions; the level-4 hint of every terminal mission is a runnable guided example that the test suite executes.
 
-## Verification state (PR #15 head)
+## Verification state (PR #16 head)
 
 | Check | Result |
 |---|---|
 | `npm run typecheck` / `npm run lint` | 0 errors |
-| `npm run test` | 103 passed, 1 skipped placeholder |
+| `npm run test` | 105 passed, 1 skipped placeholder |
 | `npm run test:e2e` | 36 passed (18 scenarios, desktop + Pixel 5) |
 | `npm run build` | succeeds |
 
@@ -67,9 +68,9 @@ Unverified by automation: voice recognition/synthesis (browser-only), the Claude
 
 ## Open items, in order
 
-1. Merge PR #15 when CI is green.
-2. Reorganisation part 2: merge Curriculum, Missions list and skill mastery into one explorable curriculum with the role gap as a lens; consistent mission page with a Next button and the lab opened from inside the mission; reflections become draft stories in the Story Bank.
-3. For the serverless role: role-specific technical interview questions, more design exercises.
+1. Merge PR #16 when CI is green.
+2. For the serverless role: role-specific technical interview questions, more design exercises.
+3. Cleanup: the 22 static-component lint warnings in the architecture diagram; accessibility pass.
 3. More missions per track (see `docs/CURRICULUM.md` planned list).
 4. Accessibility audit; lazy-load CodeMirror and the interview pages to cut the 1.2 MB bundle.
 5. Manual checks the owner can do: voice in Chrome/Edge; the Claude proxy with `ANTHROPIC_API_KEY=... npm run coach-server`.

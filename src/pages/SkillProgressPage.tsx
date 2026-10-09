@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import { TRACKS, STAGES } from "../content/curriculum";
+import { STAGES } from "../content/curriculum";
 import { useActivity, useMissionStatuses, useProfile, useSessions, useStudyDays } from "../data/hooks";
-import { dueForReview, masteryLabel, stageProgress } from "../engine/learner/mastery";
+import { dueForReview, stageProgress } from "../engine/learner/mastery";
 import { MISSION_BY_ID } from "../content/missions";
 import { Callout, PageHeader, Panel, ProgressBar } from "../components/ui";
 
@@ -91,27 +91,9 @@ export function SkillProgressPage() {
         )}
       </Panel>
 
-      {TRACKS.map((t) => (
-        <Panel key={t.id} title={t.name}>
-          <div className="space-y-2">
-            {t.skills.map((s) => {
-              const st = skills.get(s.id);
-              const m = st?.mastery ?? 0;
-              return (
-                <div key={s.id}>
-                  <ProgressBar value={m} label={`${s.name} · ${masteryLabel(m)}`} color={m >= 85 ? "bg-emerald-500" : m >= 60 ? "bg-sky-500" : "bg-amber-500"} />
-                  {st && (
-                    <div className="text-[11px] muted mt-0.5">
-                      {st.independentSolves} independent solve(s) · {st.hintsUsed} hint(s) · {st.evidence.length} evidence item(s) · next review {st.nextReviewAt ? new Date(st.nextReviewAt).toLocaleDateString() : "n/a"}
-                      {Object.keys(st.errorPatterns).length > 0 && ` · errors: ${Object.entries(st.errorPatterns).map(([k, v]) => `${k}×${v}`).join(", ")}`}
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-        </Panel>
-      ))}
+      <Callout kind="info" title="Mastery per skill">
+        Skill-by-skill mastery, evidence and review dates live in the <Link to="/curriculum" className="underline">Curriculum</Link>, next to the missions that build each skill.
+      </Callout>
     </div>
   );
 }

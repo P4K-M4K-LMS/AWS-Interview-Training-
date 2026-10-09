@@ -35,13 +35,27 @@ test("3, 7: completes a real Linux terminal mission and progress survives reload
     await input.press("Enter");
   }
   await expect(page.getByText("Checks (3/3)")).toBeVisible();
+  await expect(page.getByTestId("mission-lab-link")).toHaveText(/Terminal lab/);
   await page.getByTestId("mission-complete").click();
   await expect(page.getByText("Mission complete: explain what you did")).toBeVisible();
+  // The reflection becomes a draft story, and the page points at the next mission.
+  await page.getByTestId("reflection-input").fill("I started with pwd and ls to orient myself, moved into ops and handover, read the runbook with cat, and wrote READY into ack.txt to confirm.");
+  await page.getByTestId("save-reflection").click();
+  await expect(page.getByTestId("reflection-saved")).toContainText("draft story");
+  await expect(page.getByTestId("next-mission")).toContainText("Your first script: an uptime report");
   await page.reload();
   await page.goto("/#/missions");
   await expect(page.getByText("Completed").first()).toBeVisible();
-  await page.goto("/#/progress");
-  await expect(page.getByText("Terminal navigation").first()).toBeVisible();
+  await page.goto("/#/interview/stories");
+  await expect(page.getByTestId("story-list")).toContainText("Practice: Find your way around the server");
+  await expect(page.getByTestId("story-mission-badge")).toBeVisible();
+  // Curriculum: tracks lens shows the Linux track's skills once expanded; the role lens shows the gap map.
+  await page.goto("/#/curriculum");
+  await page.getByTestId("track-linux").click();
+  await expect(page.getByTestId("track-linux-detail")).toContainText("Terminal navigation");
+  await expect(page.getByTestId("track-linux-detail")).toContainText("Open the Terminal lab");
+  await page.getByTestId("lens-role").click();
+  await expect(page.getByTestId("gap-map")).toBeVisible();
 });
 
 test("4, 6: writes and runs real Python code with assessment feedback", async ({ page }) => {
@@ -184,8 +198,9 @@ test("retention check: fresh replay without hints raises mastery", async ({ page
   await expect(page.getByText("Checks (3/3)")).toBeVisible();
   await page.getByRole("button", { name: "Confirm retention check" }).click();
   await expect(page.getByText("Retention check passed")).toBeVisible();
-  await page.goto("/#/progress");
-  await expect(page.getByText(/1 evidence item|2 evidence item/).first()).toBeVisible();
+  await page.goto("/#/curriculum");
+  await page.getByTestId("track-linux").click();
+  await expect(page.getByTestId("track-linux-detail").getByText(/1 evidence item|2 evidence item/).first()).toBeVisible();
 });
 
 test("target role: pick the serverless posting, see its gap map, switch roles in Settings", async ({ page }) => {
@@ -200,6 +215,7 @@ test("target role: pick the serverless posting, see its gap map, switch roles in
   await expect(page.getByText("Target role: System Development Engineer II, Lambda/Serverless")).toBeVisible();
   await expect(page.getByTestId("role-weakest")).toBeVisible();
   await page.goto("/#/curriculum");
+  await page.getByTestId("lens-role").click();
   await expect(page.getByTestId("role-title")).toHaveText("System Development Engineer II, Lambda/Serverless");
   await expect(page.getByTestId("gap-b6")).toContainText("Not addressable in OpsForge");
   await expect(page.getByTestId("gap-b6")).toContainText("Top Secret with SCI");

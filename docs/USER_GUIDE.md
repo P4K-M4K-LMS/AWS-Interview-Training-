@@ -6,7 +6,7 @@ You are asked for a name and six quick placement questions. They only set a star
 
 ## The daily loop (about 30 minutes)
 
-**Today** (the home page) has one big **Continue Learning** button. It takes you to the most useful thing right now: an unfinished mission, a retention check that is due, or the next mission in the recommended order. The suggested shape of a session is 3 minutes recall, 7 minutes new concept (the mission's Lesson tab), 15 minutes hands-on, 5 minutes reflection. Nothing penalises a missed day.
+**Today** (the home page) has one big **Continue Learning** button. The **Curriculum** page is the map: seven tracks you can expand to see their skills with mastery and evidence, their missions in order with Start/Resume/Review, and the lab each track uses; switch the lens to **By target role** to see the same data as a qualification gap map for the posting you chose. When you finish a mission, a **What next** panel offers the next mission you can start, and every mission links to its free-play lab. It takes you to the most useful thing right now: an unfinished mission, a retention check that is due, or the next mission in the recommended order. The suggested shape of a session is 3 minutes recall, 7 minutes new concept (the mission's Lesson tab), 15 minutes hands-on, 5 minutes reflection. Nothing penalises a missed day.
 
 ## Missions
 
@@ -58,6 +58,10 @@ A design mission gives you requirements with numbers (peak load, latency budget,
 ### Incident console
 
 Incident missions open with a ticket and a broken platform on a one-second clock. Tabs: **Ticket**, **Metrics** (live stats and sparklines), **Logs** (evidence that names the failing component), **Diagram** (each component coloured by its own health). **Runbook actions** change the platform; every action resets the recovery timer. Answer the **root cause** question, apply a remediation that removes the cause (symptom-only fixes such as shedding legitimate traffic are rejected with a reason), wait until health stays green for the required seconds (use Advance 10s to skip ahead), then write the **post-incident note**. All five checks must pass to complete. Serverless incidents add function stats (needed vs allowed concurrency, throttles, cold starts, dead-letter queue depth, duplicate and lost invocations) and runbook actions for the concurrency limit, provisioned concurrency, dead-letter queue, retries, the idempotent handler and the timeout. Some wrong actions cannot be undone inside the incident (failing over to a replica that is behind discards its missing writes); the check tells you why, and **Reset** restarts the incident.
+
+## Story Bank drafts from missions
+
+Saving a mission's reflection also saves a draft story in the Story Bank, tagged "draft from a mission · practice, not experience": the mission summary is the Situation, its first objective the Task, your reflection the Action, with suggested Leadership Principles and the technical skills filled in. Edit it like any story; re-saving the reflection updates only the Action. The evidence line says it was a simulation so it is never mistaken for work experience.
 
 ## Progress
 

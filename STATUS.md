@@ -79,7 +79,7 @@ Legend: **verified** = automated tests pass in CI · **unverified** = implemente
 
 ## Navigation (reorganised 2026-10-09, option B part 1)
 
-Three groups with plain names: **Learn** (Today, Curriculum, Missions), **Practise** (Labs with Terminal / Python / Go / Algorithms / Security / Monitoring tabs, Interview), **You** (Progress, Settings). The old addresses (`/paths`, `/terminal`, `/python`, `/go`, `/algorithms`, `/security`, `/monitoring`) redirect. Heavy pages load on demand. Part 2 (one explorable curriculum, mission Next button, reflections as draft stories) is next.
+Three groups with plain names: **Learn** (Today, Curriculum, Missions), **Practise** (Labs with Terminal / Python / Go / Algorithms / Security / Monitoring tabs, Interview), **You** (Progress, Settings). The old addresses (`/paths`, `/terminal`, `/python`, `/go`, `/algorithms`, `/security`, `/monitoring`) redirect. Heavy pages load on demand. Part 2 (done): one explorable **Curriculum** with a by-track lens (expandable tracks with skills, evidence, missions and the matching lab) and a by-target-role lens (the gap map); every mission links to its lab and offers the next mission on completion; mission reflections become draft stories in the Story Bank, marked as practice. Progress keeps study stats, stage, retention and activity.
 
 ## Known limitations
 
