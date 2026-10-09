@@ -20,6 +20,7 @@ From an empty repository to a deployed, tested web application: a Linux/Python/G
 | #8 | Replication-lag scenario: read replica on the shared engine, stale reads, blocked apply thread, failover data-loss trap; incident mission 4 |
 | #9 | Go race-detector service (`server/race.ts`, local, `go build -race`), race panel in the Go Lab and Go missions, data-race mission (double spend) |
 | #10 | Five missions for the thin tracks: disk full, runaway process (Linux), cron persistence / reverse shell (security), CSV→JSON report (Python), hash tables vs lists (Big O); shell gains virtual file sizes, `truncate`, and established connections in `ss` |
+| #11 | Target roles: the original posting and the SDE II Lambda/Serverless posting (pasted by the owner) as selectable roles; qualification gap map with honest coverage labels; role picker at onboarding and in Settings; dashboard panel |
 
 Feature branches still exist on GitHub (`ccr-221527a4-xf3zs7`, `lp-verified-interview-cues`, `retention-checks`, `phase7-incidents`, `cicd-failure-modes`, `go-runner-spike`); this environment cannot delete remote branches, so delete them from the Branches page.
 
@@ -27,7 +28,7 @@ Feature branches still exist on GitHub (`ccr-221527a4-xf3zs7`, `lp-verified-inte
 
 - Stack: React 19 + TypeScript + Vite 8 + Tailwind v4, Dexie/IndexedDB, CodeMirror 6, hash routing. Deployment: local dev + GitHub Pages. One draft PR per slice, merged on the owner's word.
 - Coaching: rule-based engine always on; optional Claude coaching via a local proxy (`server/index.ts`) with the API key server-side and explicit consent in Settings.
-- Job posting: only the qualifications in the master prompt are used; no title or responsibilities are invented.
+- Job postings: only qualifications as provided are used; no title or responsibilities are invented. Two target roles exist (the original posting and the SDE II Lambda/Serverless posting the owner pasted on 2026-10-09); credentials, tenure and clearance are labelled not addressable.
 - Go: in-browser via Yaegi compiled to WebAssembly (chosen over a backend runner so the Pages site stays self-contained). Known limit: single-threaded WebAssembly, so bare data races do not reproduce; the optional local race-detector service (`npm run race-server`, needs Go + a C compiler) fills that gap.
 - Mission availability depends only on prerequisite missions; skill mastery gates stage promotion (the earlier skill-gate rule could lock a mission behind the skill it teaches).
 
@@ -42,13 +43,13 @@ Feature branches still exist on GitHub (`ccr-221527a4-xf3zs7`, `lp-verified-inte
 - `src/engine/interview/*`: STAR analysis, gap detection, Dive Deeper follow-ups, rubric scoring. `src/content/leadershipPrinciples.ts`: 16 LPs (verified 2026-10-09).
 - `src/content/missions/*`: all missions; the level-4 hint of every terminal mission is a runnable guided example that the test suite executes.
 
-## Verification state (PR #10 head)
+## Verification state (PR #11 head)
 
 | Check | Result |
 |---|---|
 | `npm run typecheck` / `npm run lint` | 0 errors |
-| `npm run test` | 86 passed, 1 skipped placeholder |
-| `npm run test:e2e` | 26 passed (13 scenarios, desktop + Pixel 5) |
+| `npm run test` | 92 passed, 1 skipped placeholder |
+| `npm run test:e2e` | 28 passed (14 scenarios, desktop + Pixel 5) |
 | `npm run build` | succeeds |
 
 Unverified by automation: voice recognition/synthesis (browser-only), the Claude proxy (needs a key), realistic timed interview mode UI.
@@ -61,8 +62,9 @@ Unverified by automation: voice recognition/synthesis (browser-only), the Claude
 
 ## Open items, in order
 
-1. Merge PR #10 when CI is green.
-2. More missions per track (see `docs/CURRICULUM.md` planned list).
+1. Merge PR #11 when CI is green.
+2. For the serverless role: simulated serverless track, design-exercise mission type, Agile/Scrum lesson, role-specific interview questions.
+3. More missions per track (see `docs/CURRICULUM.md` planned list).
 4. Accessibility audit; lazy-load CodeMirror and the interview pages to cut the 1.2 MB bundle.
 5. Manual checks the owner can do: voice in Chrome/Edge; the Claude proxy with `ANTHROPIC_API_KEY=... npm run coach-server`.
 

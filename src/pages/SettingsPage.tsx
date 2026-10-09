@@ -6,6 +6,8 @@ import { voiceCapabilities } from "../services/voice/capabilities";
 import { probeCoachProxy } from "../services/coach";
 import { probeRaceService } from "../services/race";
 import { FEATURE_STATUS } from "../content/featureStatus";
+import { ROLES, roleFor } from "../content/roles";
+import { Link } from "react-router-dom";
 
 export function SettingsPage() {
   const profile = useProfile();
@@ -59,6 +61,24 @@ export function SettingsPage() {
           Daily goal (minutes)
         </label>
         <input id="goal" type="number" className="input w-28" min={10} max={180} value={s.dailyGoalMinutes} onChange={(e) => set({ dailyGoalMinutes: Math.max(10, Number(e.target.value) || 30) })} />
+      </Panel>
+
+      <Panel title="Target role">
+        <p className="text-sm muted mb-2">The posting your gap map, recommendations and interview focus are built around. Qualifications are quoted as provided; OpsForge never invents titles or duties.</p>
+        <div className="space-y-1 text-sm">
+          {ROLES.map((r) => (
+            <label key={r.id} className="flex items-start gap-2">
+              <input type="radio" name="target-role" checked={roleFor(profile.targetRoleId).id === r.id} onChange={() => void updateProfile({ targetRoleId: r.id })} data-testid={`settings-role-${r.id}`} />
+              <span>
+                {r.title}
+                {r.team && <span className="muted"> · {r.team}</span>}
+              </span>
+            </label>
+          ))}
+        </div>
+        <Link to="/paths" className="text-xs underline mt-2 inline-block">
+          See the qualification gap map
+        </Link>
       </Panel>
 
       <Panel title="Voice and privacy">

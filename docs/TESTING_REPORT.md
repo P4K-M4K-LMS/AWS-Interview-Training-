@@ -1,15 +1,15 @@
 # Testing report
 
-Executed on 2026-10-09 (updated after the five thin-track missions) in the build environment (Linux, Node 22.22, Chromium 1194 via Playwright 1.64). Every number below comes from a real run; nothing is estimated.
+Executed on 2026-10-09 (updated after the target-role slice) in the build environment (Linux, Node 22.22, Chromium 1194 via Playwright 1.64). Every number below comes from a real run; nothing is estimated.
 
 ## Commands
 
 ```
 npm run typecheck   # tsc -b                      -> 0 errors
 npm run lint        # oxlint                      -> 0 errors, 11 warnings (React fast-refresh / effect style; no behaviour impact)
-npm run test        # vitest run                  -> 11 files, 86 tests passed, 1 skipped (the "artifact not built" placeholder, which only runs without a Go toolchain)
-npm run build       # vite build                  -> dist/ 15 MB incl. Pyodide runtime; app JS 1.4 MB (452 kB gzip)
-npm run test:e2e    # playwright test             -> 26 passed (13 scenarios × desktop + Pixel 5), 0 failed
+npm run test        # vitest run                  -> 12 files, 92 tests passed, 1 skipped (the "artifact not built" placeholder, which only runs without a Go toolchain)
+npm run build       # vite build                  -> dist/ 15 MB incl. Pyodide runtime; app JS 1.4 MB (456 kB gzip)
+npm run test:e2e    # playwright test             -> 28 passed (14 scenarios × desktop + Pixel 5), 0 failed
 ```
 
 ## Unit and engine tests (Vitest)
@@ -24,6 +24,7 @@ npm run test:e2e    # playwright test             -> 26 passed (13 scenarios × 
 | `tests/go-runner.test.ts` | 3 | Yaegi WebAssembly runner in Node: goroutines, channels, mutex, generics produce exact output once; compile errors carry line numbers and runtime panics do not crash the runtime; test snippets run in the program namespace with separated output |
 | `tests/cicd.test.ts` | 5 | pipeline parsing (env, steps, comments); `ci` program stops at the first failing step, writes the log, reports status; flaky-test mission: retry fails, skipping makes CI green but fails the mission checks; secret-wiring mission: pasted token refused by secret scanning, reference fix passes; rollback mission: sudo required, unknown release rejected, metrics follow the live release, deploy log appended |
 | `tests/race-service.test.ts` | 5 | race report parser (two races with goroutines, kinds and frames; clean run); real `go build -race` on this machine: toolchain probe, the data-race mission starter reports races in Withdraw/Withdrawals and the reference solution reports none with the expected output, compile errors are returned as build output (skipped without a Go toolchain; the real-detector case also needs a C compiler) |
+| `tests/roles.test.ts` | 6 | two roles with a default and a safe fallback; every qualification maps only known skills, every track has an alignment line, untrainable/planned qualifications map no skills, trainable ones have at least one mission; the serverless posting is quoted (title, date, TS/SCI clearance) with degree, tenure and clearance not addressable and AWS products planned; gap map starts at zero and averages only mapped qualifications; per-qualification mastery, weakest detection and the next startable mission for the role; default role maps every qualification to missions |
 | `tests/incidents.test.ts` | 10 | simulation reacts coherently to each lever; queue accumulates and drains; replica lag grows while blocked, drains once unblocked, pinning reads hides staleness at the cost of primary load, and failover from a lagging standby records lost writes; logs carry evidence (incl. the blocked apply thread and data age); every incident opens unhealthy with unmet checks; cache stampede solved only by re-warming the cache (workers/traffic shedding rejected); traffic surge solved only by sizing both workers and consumers; dead consumers solved by restarting enough consumers; replication lag solved by killing the blocking statement (pin-reads-only, scaling workers and failover rejected; mitigate-then-fix-then-route-back path works); out-of-runbook actions ignored and the recovery timer resets on every action |
 | `tests/retention.test.ts` | 4 | retention check refuses non-completed missions; passing adds +8 mastery, doubles the interval and records history/activity; giving up subtracts 12 and schedules a review in one day; a due skill is recommended as a retention check on its completed mission |
 | `tests/interview.test.ts` | 8 | vague answers produce ownership/technical/results gaps; complete STAR answer recognised; Dive Deeper asks targeted follow-ups, keeps original context, resolves gaps with evidence, accepts "I don't know", never repeats a gap/level, stops when sufficient or asked; scoring separates weak and strong answers with evidence and limitations; improvement only declared with stronger evidence; 16 LPs present with questions and examples |
@@ -45,6 +46,7 @@ Mapped to the nonnegotiable acceptance criteria (Part 20). Each runs on a deskto
 | go-mission | Unlock via Settings import; open the retries mission; Run tests on the starter (0/3); paste the solution; Run tests (3/3); complete | passed |
 | go | Go Laboratory loads the WebAssembly runtime, runs the worker-pool starter (real output), then a program with an undefined identifier shows the compiler error and its explanation; race-detector panel is disabled and labelled when unconfigured, enabled after entering a URL in Settings, and an unreachable service produces a visible error rather than a result | passed |
 | cicd | Unlock via Settings import; `ci log`, `ci run` (retry fails), inspect the test, `sed` the local-time call to UTC, `ci run` green, answer the retry question, 6/6 checks, complete | passed |
+| target role | Onboarding with the serverless posting selected; dashboard shows the role panel and weakest qualification; Learning Paths shows the title, the clearance as not addressable, AWS products as planned, the language qualification as trainable with its missions; switching role via the select and via Settings persists and the dashboard follows | passed |
 | incident | Import a progress bundle via Settings to unlock the incident; console opens unhealthy; logs show the cache expiry evidence; metrics and diagram render; correct root cause; re-warm cache; advance; health turns healthy; note written; 5/5 checks; complete | passed |
 | incident: replication lag | Unlock via bundle; console opens degraded with normal errors; logs name the blocked apply thread and data age; replica-lag stat and replica node (apply BLOCKED) render; correct root cause; kill the blocking statement; advance 30s; health healthy; note; 5/5 checks; complete | passed |
 

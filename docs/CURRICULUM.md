@@ -1,17 +1,24 @@
 # Curriculum roadmap
 
-## Tracks and posting alignment
+## Target roles and posting alignment
 
-| Track | Supports | Skills |
-|---|---|---|
-| A. Linux Fundamentals and Administration | Learner priority; underpins automation and troubleshooting | navigation, files, reading, pipes, env, permissions, processes, services, logs, performance, scripting |
-| B. Python Programming | Basic qualification (modern language); preferred (Python scripting) | basics, control, functions, collections, errors, files, data (JSON/CSV), regex, testing, automation, OOP, async |
-| C. Data Structures, Algorithms and Big O | Learner priority; supports high-throughput reasoning | thinking, bigo, search, sorting, structures, recursion, trees/graphs, optimization |
-| D. Networking and Defensive Security | Basic qualification alternative (CND/GSEC foundations, not equivalence) | addressing, dns/ports, http, troubleshooting, authz, hardening, logs, incident |
-| E. Automation, DevOps and Monitoring | Basic qualification (automation tools for build/test/release/monitor) | git, testing, cicd, config, containers, monitoring, release |
-| F. Concurrency and Distributed Systems | Preferred qualifications (concurrent/high-throughput; distributed systems) | architecture, concurrency, queues, performance, scaling, resilience, consistency, observability |
+The learner picks a target role at onboarding (changeable in Settings). Each role is a job posting quoted as provided in `src/content/roles.ts`; every qualification is mapped to the skills that measure progress toward it, with an honest coverage label: **trainable**, **partly covered**, **planned (not built)** or **not addressable** (degree, tenure, clearance). The Learning Paths page renders the gap map from demonstrated mastery; the Dashboard names the weakest trainable qualification and an available mission that builds it.
 
-Nothing here claims to satisfy a degree or certification requirement, and no job title or responsibility is invented.
+| Role | Source | Not addressable | Planned |
+|---|---|---|---|
+| Target posting (title not provided), the default | Qualifications from the master build prompt | none | regex/automation Python missions |
+| System Development Engineer II, Lambda/Serverless (ADC Serverless, Seattle, updated 09/19/2026) | Posting text pasted by the owner on 2026-10-09 (description truncated) | degree/CSSLP, 2+ years experience, TS/SCI clearance | AWS products (simulated serverless track), Agile/Scrum (lesson + interview cue) |
+
+| Track | Default role | SDE II Serverless role | Skills |
+|---|---|---|---|
+| A. Linux Fundamentals and Administration | Learner priority; underpins automation and troubleshooting | Systems engineering fundamentals (operating systems) | navigation, files, reading, pipes, env, permissions, processes, services, logs, performance, scripting |
+| B. Python Programming | Basic qualification (modern language); preferred (Python scripting) | Modern language (Python; Go on track F) | basics, control, functions, collections, errors, files, data (JSON/CSV), regex, testing, automation, OOP, async |
+| C. Data Structures, Algorithms and Big O | Learner priority; supports high-throughput reasoning | Supporting: scaling and throughput reasoning | thinking, bigo, search, sorting, structures, recursion, trees/graphs, optimization |
+| D. Networking and Defensive Security | Basic qualification alternative (CND/GSEC foundations, not equivalence) | Systems engineering fundamentals (networking) | addressing, dns/ports, http, troubleshooting, authz, hardening, logs, incident |
+| E. Automation, DevOps and Monitoring | Basic qualification (automation tools for build/test/release/monitor) | Supporting: reliability practices behind the design qualification | git, testing, cicd, config, containers, monitoring, release |
+| F. Concurrency and Distributed Systems | Preferred qualifications (concurrent/high-throughput; distributed systems) | Designing/architecting for reliability and scaling; distributed systems at scale | architecture, concurrency, queues, performance, scaling, resilience, consistency, observability |
+
+Nothing here claims to satisfy a degree, certification, tenure or clearance requirement, and no job title or responsibility is invented.
 
 ## Career stages (game levels)
 

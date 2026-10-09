@@ -164,6 +164,35 @@ test("retention check: fresh replay without hints raises mastery", async ({ page
   await expect(page.getByText(/1 evidence item|2 evidence item/).first()).toBeVisible();
 });
 
+test("target role: pick the serverless posting, see its gap map, switch roles in Settings", async ({ page }) => {
+  await page.goto("/#/");
+  await expect(page).toHaveURL(/#\/onboarding/);
+  await page.getByLabel("What should we call you?").fill("Sam");
+  await page.getByTestId("role-sde2-serverless").check();
+  await page.getByRole("button", { name: "Continue" }).click();
+  for (let i = 1; i <= 6; i++) await page.locator(`input[name="q${i}"]`).first().check();
+  await page.getByRole("button", { name: "See results" }).click();
+  await page.getByRole("button", { name: "Start training" }).click();
+  await expect(page.getByText("Target role: System Development Engineer II, Lambda/Serverless")).toBeVisible();
+  await expect(page.getByTestId("role-weakest")).toBeVisible();
+  await page.goto("/#/paths");
+  await expect(page.getByTestId("role-title")).toHaveText("System Development Engineer II, Lambda/Serverless");
+  await expect(page.getByTestId("gap-b6")).toContainText("Not addressable in OpsForge");
+  await expect(page.getByTestId("gap-b6")).toContainText("Top Secret with SCI");
+  await expect(page.getByTestId("gap-p2")).toContainText("Planned, not built");
+  await expect(page.getByTestId("gap-b4")).toContainText("Trainable here");
+  await expect(page.getByTestId("gap-b4")).toContainText("Your first script: an uptime report");
+  await page.getByTestId("role-select").selectOption("ops-automation");
+  await expect(page.getByTestId("role-title")).toHaveText("Target posting (title not provided)");
+  await page.goto("/#/settings");
+  await expect(page.getByTestId("settings-role-ops-automation")).toBeChecked();
+  // Controlled radio: the checked state follows the persisted profile, so click and wait for it.
+  await page.getByTestId("settings-role-sde2-serverless").click();
+  await expect(page.getByTestId("settings-role-sde2-serverless")).toBeChecked();
+  await page.goto("/#/");
+  await expect(page.getByText("Target role: System Development Engineer II, Lambda/Serverless")).toBeVisible();
+});
+
 test("incident console: investigate, remediate the cause, verify recovery, write the note", async ({ page }) => {
   test.setTimeout(120_000);
   await onboard(page);

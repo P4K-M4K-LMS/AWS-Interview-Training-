@@ -3,7 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { db, logActivity, updateProfile } from "../data/db";
 import { useProfile } from "../data/hooks";
 import { emptySkill } from "../engine/learner/mastery";
-import type { SkillId } from "../domain/types";
+import { DEFAULT_ROLE_ID, ROLES } from "../content/roles";
+import type { RoleId, SkillId } from "../domain/types";
 import { Callout, Panel } from "../components/ui";
 
 /**
@@ -24,6 +25,7 @@ export function OnboardingPage() {
   const profile = useProfile();
   const navigate = useNavigate();
   const [name, setName] = useState("");
+  const [roleId, setRoleId] = useState<RoleId>(DEFAULT_ROLE_ID);
   const [answers, setAnswers] = useState<Record<string, number>>({});
   const [step, setStep] = useState<0 | 1 | 2>(0);
   const [saving, setSaving] = useState(false);
@@ -41,7 +43,7 @@ export function OnboardingPage() {
         await db.skills.put({ ...s, mastery, evidence: [{ at: new Date().toISOString(), missionId: "onboarding", kind: "assessment", delta: mastery, note: "initial assessment" }] });
       }
     }
-    await updateProfile({ displayName: name.trim() || "Trainee", onboardingComplete: true, assessment });
+    await updateProfile({ displayName: name.trim() || "Trainee", onboardingComplete: true, assessment, targetRoleId: roleId });
     await logActivity({ type: "assessment", detail: `${QUESTIONS.filter((q) => answers[q.id] === q.correct).length}/${QUESTIONS.length} correct` });
     navigate("/", { replace: true });
   };
@@ -63,6 +65,21 @@ export function OnboardingPage() {
             What should we call you?
           </label>
           <input id="name" className="input" value={name} onChange={(e) => setName(e.target.value)} placeholder="e.g. Sam" maxLength={40} />
+          <fieldset className="mt-3">
+            <legend className="label">Which posting are you training toward?</legend>
+            <div className="space-y-1 text-sm">
+              {ROLES.map((r) => (
+                <label key={r.id} className={`flex items-start gap-2 rounded-md border px-2 py-1.5 cursor-pointer ${roleId === r.id ? "border-amber-500" : ""}`} style={{ borderColor: roleId === r.id ? undefined : "var(--border)" }}>
+                  <input type="radio" name="role" checked={roleId === r.id} onChange={() => setRoleId(r.id)} data-testid={`role-${r.id}`} />
+                  <span>
+                    <span className="font-medium">{r.title}</span>
+                    {r.team && <span className="muted"> · {r.team}</span>}
+                    <span className="block text-xs muted">{r.qualifications.length} listed qualifications; the Learning Paths page shows which ones OpsForge can train. You can change this in Settings.</span>
+                  </span>
+                </label>
+              ))}
+            </div>
+          </fieldset>
           <Callout kind="info" title="How OpsForge works">
             You start as an Engineering Trainee at Nimbus Freight, a fictional company. Missions give you real symptoms, logs and tools. You earn mastery by solving them, not by reading. About 30 minutes a day is plenty; there are no penalties for missed days.
           </Callout>

@@ -4,6 +4,8 @@ import { recommendNext } from "../engine/learner/recommend";
 import { stageProgress } from "../engine/learner/mastery";
 import { stageInfo } from "../content/curriculum";
 import { MISSIONS } from "../content/missions";
+import { roleFor } from "../content/roles";
+import { nextMissionForGap, roleGapMap } from "../engine/learner/roleGap";
 import { Callout, PageHeader, Panel, ProgressBar } from "../components/ui";
 import { localDate } from "../data/db";
 
@@ -15,6 +17,9 @@ export function DashboardPage() {
   const days = useStudyDays();
   if (!profile) return null;
 
+  const role = roleFor(profile.targetRoleId);
+  const gap = roleGapMap(role, skills, progress);
+  const gapMission = nextMissionForGap(gap);
   const recs = recommendNext(progress, skills);
   const primary = recs[0];
   const stage = stageInfo(profile.stage);
@@ -79,7 +84,7 @@ export function DashboardPage() {
         </Panel>
       </div>
 
-      <div className="grid lg:grid-cols-2 gap-4">
+      <div className="grid lg:grid-cols-3 gap-4">
         <Panel title="Recommended next">
           <ol className="space-y-3">
             {recs.map((r, i) => (
@@ -94,6 +99,29 @@ export function DashboardPage() {
               </li>
             ))}
           </ol>
+        </Panel>
+        <Panel title={`Target role: ${role.title}`}>
+          <ProgressBar value={gap.trainablePct} label={`${gap.trainablePct}% average mastery across the qualifications OpsForge can train`} />
+          {gap.weakest && (
+            <p className="text-sm mt-2" data-testid="role-weakest">
+              Weakest: <span className="font-medium">{gap.weakest.qualification.text}</span> ({gap.weakest.pct}%).
+            </p>
+          )}
+          {gapMission && (
+            <p className="text-sm mt-1">
+              Available now for this role:{" "}
+              <Link to={`/missions/${gapMission.mission.id}`} className="underline">
+                {gapMission.mission.title}
+              </Link>{" "}
+              <span className="muted">(builds: {gapMission.gap.qualification.text.length > 60 ? gapMission.gap.qualification.text.slice(0, 60) + "…" : gapMission.gap.qualification.text})</span>
+            </p>
+          )}
+          <p className="text-xs muted mt-2">
+            {gap.counts["not-addressable"]} qualification(s) cannot be addressed here (degree, tenure, clearance); {gap.counts.planned} are planned.{" "}
+            <Link to="/paths" className="underline">
+              Full gap map
+            </Link>
+          </p>
         </Panel>
         <Panel title="Interview readiness">
           <p className="text-sm">
