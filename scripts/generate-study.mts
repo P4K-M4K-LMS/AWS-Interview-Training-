@@ -5,22 +5,44 @@
  *       Rebuilds public/study/*.json and src/content/study/missionLinks.ts
  *       from tools/ascendra-catalog and src/content/study/links.ts. No network.
  *
- *   npx tsx scripts/generate-study.mts generate --course saa-c03 [--dry-run]
- *       Generates lessons with the owner's ANTHROPIC_API_KEY. Lands in the
- *       next slice; today it explains that and exits.
+ *   npx tsx scripts/generate-study.mts generate --course saa-c03 [--unit 2] [--limit 5]
+ *       [--dry-run] [--force] [--concurrency 4] [--model <id>] [--out <file>]
+ *       Generates lessons, question banks and unit scenarios with the
+ *       owner's ANTHROPIC_API_KEY into public/study/<course>.lessons.json.
+ *       Resumable; regenerates only what is missing or stale unless --force.
+ *
+ *   npx tsx scripts/generate-study.mts review --course saa-c03
+ *       Prints the generator's modality suggestions that differ from the
+ *       catalog, for promotion into src/content/study/links.ts by hand.
+ *
+ *   npx tsx scripts/generate-study.mts validate [--course saa-c03]
+ *       Validates committed lessons files against the catalog.
  */
-import { mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import path from "node:path";
+import { pathToFileURL } from "node:url";
 import { buildCatalog, missionLinksModule, stableJson } from "./study/catalog.mts";
+import { generateCourse, readLessonsFile, reviewTable } from "./study/generate.mts";
+import type { StudyCourse, StudyLessonsFile } from "../src/domain/types.ts";
+import { validateLessonsFile } from "../src/services/study/validate.ts";
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..");
 const OUT = path.join(ROOT, "public", "study");
 const LINKS_MODULE = path.join(ROOT, "src", "content", "study", "missionLinks.ts");
+const FAILURES = path.join(ROOT, "scripts", "study", ".failures.json");
+const DEFAULT_MODEL = process.env.STUDY_MODEL ?? process.env.COACH_MODEL ?? "claude-opus-5-5";
+
+function flag(args: string[], name: string): string | undefined {
+  const i = args.indexOf(`--${name}`);
+  return i >= 0 ? args[i + 1] : undefined;
+}
+function has(args: string[], name: string): boolean {
+  return args.includes(`--${name}`);
+}
 
 function buildCatalogCommand(): void {
   const built = buildCatalog();
   mkdirSync(OUT, { recursive: true });
-  // Remove stale course files (not lessons) so a dropped course disappears.
   for (const f of readdirSync(OUT)) if (f.endsWith(".json") && !f.endsWith(".lessons.json")) rmSync(path.join(OUT, f));
   writeFileSync(path.join(OUT, "index.json"), stableJson(built.index));
   for (const c of built.courses) writeFileSync(path.join(OUT, `${c.id}.json`), stableJson(c));
@@ -39,16 +61,97 @@ function buildCatalogCommand(): void {
   for (const c of built.index.courses) console.log(`  ${c.id.padEnd(12)} ${String(c.counts.units).padStart(2)} units ${String(c.counts.objectives).padStart(3)} objectives ${String(c.counts.linked).padStart(2)} linked  ${c.title}`);
 }
 
-const [command] = process.argv.slice(2);
-switch (command) {
-  case "build-catalog":
-    buildCatalogCommand();
-    break;
-  case "generate":
-    console.error("generate: lesson generation is not in this build yet (see docs/STUDY_GENERATION.md once it lands). The catalog browse works without it.");
-    process.exit(2);
-    break;
-  default:
-    console.error("usage: npx tsx scripts/generate-study.mts <build-catalog|generate> [options]");
-    process.exit(2);
+function loadCourse(courseId: string): StudyCourse {
+  const file = path.join(OUT, `${courseId}.json`);
+  if (!existsSync(file)) throw new Error(`no catalog file for course "${courseId}" (run build-catalog; ids are like saa-c03, mscs)`);
+  return JSON.parse(readFileSync(file, "utf8")) as StudyCourse;
+}
+
+/** Mission ids and titles for the "suggested" field. Loaded dynamically because src/ uses bundler-style imports. */
+async function missionList(): Promise<Array<{ id: string; title: string }>> {
+  const mod = (await import(pathToFileURL(path.join(ROOT, "src", "content", "missions", "index.ts")).href)) as { MISSIONS: Array<{ id: string; title: string }> };
+  return mod.MISSIONS.map((m) => ({ id: m.id, title: m.title }));
+}
+async function engineList(): Promise<Array<{ id: string; name: string }>> {
+  const mod = (await import(pathToFileURL(path.join(ROOT, "src", "content", "study", "engines.ts")).href)) as { ENGINES: Array<{ id: string; name: string }> };
+  return mod.ENGINES.map((e) => ({ id: e.id, name: e.name }));
+}
+
+async function generateCommand(args: string[]): Promise<void> {
+  const courseId = flag(args, "course");
+  if (!courseId) throw new Error("generate needs --course <id>");
+  const course = loadCourse(courseId);
+  const unit = flag(args, "unit");
+  const limit = flag(args, "limit");
+  const result = await generateCourse({
+    course,
+    outFile: flag(args, "out") ?? path.join(OUT, `${courseId}.lessons.json`),
+    failuresFile: FAILURES,
+    model: flag(args, "model") ?? DEFAULT_MODEL,
+    unit: unit ? Number(unit) : undefined,
+    limit: limit ? Number(limit) : undefined,
+    concurrency: Number(flag(args, "concurrency") ?? 4),
+    force: has(args, "force"),
+    dryRun: has(args, "dry-run"),
+    missions: await missionList(),
+    engines: await engineList(),
+    log: (line) => console.log(line),
+  });
+  if (result.problems.length) {
+    console.error(`validation problems in the written file (${result.problems.length}):`);
+    for (const p of result.problems.slice(0, 40)) console.error(`  ${p.where}: ${p.message}`);
+  }
+  console.log(`generated ${result.generated} lesson(s), ${result.scenarios} scenario(s), ${result.failures} failure(s)${result.failures ? ` (see ${path.relative(ROOT, FAILURES)}; re-run to retry)` : ""}`);
+  if (result.failures || result.problems.length) process.exitCode = 1;
+}
+
+function reviewCommand(args: string[]): void {
+  const courseId = flag(args, "course");
+  if (!courseId) throw new Error("review needs --course <id>");
+  const course = loadCourse(courseId);
+  const file = readLessonsFile(path.join(OUT, `${courseId}.lessons.json`), courseId);
+  const rows = reviewTable(file, course);
+  console.log(`${file.lessons.length} lesson(s), ${rows.length} suggestion(s) that differ from the catalog:`);
+  console.log("objective\tcatalog -> suggested\tobjective text\trationale");
+  for (const r of rows) console.log(r);
+}
+
+function validateCommand(args: string[]): void {
+  const only = flag(args, "course");
+  const files = readdirSync(OUT).filter((f) => f.endsWith(".lessons.json") && (!only || f === `${only}.lessons.json`));
+  let bad = 0;
+  for (const f of files) {
+    const courseId = f.replace(/\.lessons\.json$/, "");
+    const file = JSON.parse(readFileSync(path.join(OUT, f), "utf8")) as StudyLessonsFile;
+    const problems = validateLessonsFile(file, loadCourse(courseId));
+    console.log(`${f}: ${file.lessons.length} lessons, ${file.scenarios.length} scenarios, ${problems.length} problem(s)`);
+    for (const p of problems.slice(0, 40)) console.log(`  ${p.where}: ${p.message}`);
+    bad += problems.length;
+  }
+  if (!files.length) console.log("no lessons files committed yet");
+  if (bad) process.exitCode = 1;
+}
+
+const [command, ...rest] = process.argv.slice(2);
+try {
+  switch (command) {
+    case "build-catalog":
+      buildCatalogCommand();
+      break;
+    case "generate":
+      await generateCommand(rest);
+      break;
+    case "review":
+      reviewCommand(rest);
+      break;
+    case "validate":
+      validateCommand(rest);
+      break;
+    default:
+      console.error("usage: npx tsx scripts/generate-study.mts <build-catalog|generate|review|validate> [options]");
+      process.exit(2);
+  }
+} catch (e) {
+  console.error(e instanceof Error ? e.message : String(e));
+  process.exit(1);
 }

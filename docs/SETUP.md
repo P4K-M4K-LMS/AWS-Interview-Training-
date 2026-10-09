@@ -50,7 +50,7 @@ VITE_BASE_PATH=/AWS-Interview-Training-/ npm run build
 npx tsx scripts/generate-study.mts build-catalog
 ```
 
-`tests/study-catalog.test.ts` fails when the committed JSON differs from a fresh build. Lesson generation (`generate`) is not in this build yet; when it lands it runs only on a machine with `ANTHROPIC_API_KEY`, never in CI.
+`tests/study-catalog.test.ts` fails when the committed JSON differs from a fresh build. Lesson generation (`generate`, `review`, `validate`) runs only on a machine with `ANTHROPIC_API_KEY`, never in CI; see `docs/STUDY_GENERATION.md`.
 
 ## Optional: Claude-powered coaching proxy
 

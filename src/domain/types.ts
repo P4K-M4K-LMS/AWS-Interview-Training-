@@ -1091,3 +1091,55 @@ export interface StudyUnitState {
   schemaVersion: typeof SCHEMA_VERSION;
   scenarioAttempts: StudyAttempt[];
 }
+
+/** One check question in an objective's bank: the "fade" question is mostly worked, the "solo" ones stand alone. */
+export interface StudyChoiceQuestion {
+  id: string; // `${objectiveId}:q${n}`
+  role: "fade" | "solo";
+  prompt: string;
+  choices: string[]; // exactly 4
+  correctIndex: number;
+  why: string;
+}
+
+/** Generated lesson for one objective. Static, machine-written, spot-checked by the owner. */
+export interface StudyLesson {
+  objectiveId: string;
+  sourceHash: string; // must equal the catalog objective's hash
+  promptVersion: number;
+  model: string;
+  generatedAt: string;
+  /** Beginner paragraph in plain words, no code, like a mission primer. */
+  plain: string;
+  /** Question the learner attempts from intuition before any teaching. */
+  guessPrompt: string;
+  /** The teaching: every named term defined, why it works, one worked example, one common mistake. */
+  teach: string;
+  questions: StudyChoiceQuestion[]; // 1 fade + 3 solo
+  /** Explain-it-back prompt, model answer and the points a good answer covers. */
+  explainPrompt: string;
+  modelAnswer: string;
+  rubricPoints: string[];
+  /** The generator's view of how this objective is best learned; promoted by hand into links.ts. */
+  suggested?: { modality: StudyModality; engineId?: string; missionId?: string; rationale: string };
+}
+
+/** Generated multi-part scenario for one unit, graded per sub-part. */
+export interface StudyScenario {
+  unitId: string;
+  promptVersion: number;
+  model: string;
+  generatedAt: string;
+  title: string;
+  scenario: string; // ends with 2-4 numbered sub-tasks
+  subParts: string[];
+  /** The grader's answer key, one entry per sub-part. */
+  modelAnswer: string[];
+}
+
+export interface StudyLessonsFile {
+  courseId: string;
+  generated: { scriptVersion: number; promptVersion: number; generatedAt: string; models: string[] };
+  lessons: StudyLesson[];
+  scenarios: StudyScenario[];
+}
