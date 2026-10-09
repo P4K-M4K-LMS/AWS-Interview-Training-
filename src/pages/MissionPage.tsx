@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
+import { Link, useParams, useSearchParams } from "react-router-dom";
 import { MISSION_BY_ID } from "../content/missions";
 import { useMissionStatuses, useProfile } from "../data/hooks";
-import { completeMission, resetMission, startMission } from "../engine/missions/engine";
+import { completeMission, completeRetentionCheck, resetMission, startMission, startRetentionCheck } from "../engine/missions/engine";
 import { eligibleStage } from "../engine/learner/mastery";
 import { db, logActivity, updateProfile } from "../data/db";
 import { TerminalMissionPlayer } from "../components/players/TerminalMissionPlayer";
@@ -12,20 +12,34 @@ import { Callout, EmptyState } from "../components/ui";
 
 export function MissionPage() {
   const { missionId = "" } = useParams();
+  const [params, setParams] = useSearchParams();
   const mission = MISSION_BY_ID.get(missionId);
   const { statuses, progress } = useMissionStatuses();
   const profile = useProfile();
   const [started, setStarted] = useState(false);
   const [resetKey, setResetKey] = useState(0);
   const [startedAt] = useState(() => Date.now());
+  const [retentionResult, setRetentionResult] = useState<"passed" | "failed" | null>(null);
+  const retentionStarting = useRef(false);
   const status = statuses.get(missionId) ?? "locked";
   const p = progress.get(missionId);
+  const retentionRequested = params.get("retention") === "1";
+  const retentionActive = retentionRequested && status === "completed" && Boolean(p?.retention);
 
   useEffect(() => {
     if (mission && status !== "locked" && !started) {
       void startMission(mission.id).then(() => setStarted(true));
     }
   }, [mission, status, started]);
+
+  // Begin a retention check when requested on a completed mission (fresh environment, hints off).
+  useEffect(() => {
+    if (!mission || !retentionRequested || status !== "completed" || p?.retention || retentionResult || retentionStarting.current) return;
+    retentionStarting.current = true;
+    void startRetentionCheck(mission.id).finally(() => {
+      retentionStarting.current = false;
+    });
+  }, [mission, retentionRequested, status, p?.retention, retentionResult]);
 
   if (!mission) return <EmptyState title="Mission not found" body="This mission id does not exist." cta={{ to: "/missions", label: "Back to Mission Control" }} />;
 
@@ -46,10 +60,12 @@ export function MissionPage() {
   }
 
   if (!started && !p) return <div className="muted text-sm">Loading mission...</div>;
+  if (retentionRequested && status === "completed" && !p?.retention && !retentionResult) return <div className="muted text-sm">Preparing a fresh environment for the retention check...</div>;
+
+  const minutesSpent = () => Math.min(90, Math.max(1, Math.round((Date.now() - startedAt) / 60000)));
 
   const onComplete = async () => {
-    const minutes = Math.max(1, Math.round((Date.now() - startedAt) / 60000));
-    await completeMission(mission, Math.min(minutes, 90));
+    await completeMission(mission, minutesSpent());
     const skills = new Map((await db.skills.toArray()).map((s) => [s.skillId, s]));
     const stage = eligibleStage(skills);
     if (profile && stage > profile.stage) {
@@ -62,16 +78,47 @@ export function MissionPage() {
     await startMission(mission.id);
     setResetKey((k) => k + 1);
   };
+  const finishRetention = async (passed: boolean) => {
+    await completeRetentionCheck(mission, passed, minutesSpent());
+    setRetentionResult(passed ? "passed" : "failed");
+    setParams({}, { replace: true });
+    setResetKey((k) => k + 1);
+  };
+  const restartRetention = async () => {
+    await startRetentionCheck(mission.id);
+    setResetKey((k) => k + 1);
+  };
 
-  const common = { progress: p, completed: status === "completed", onComplete: () => void onComplete(), onReset: () => void onReset() };
-  const key = `${mission.id}-${resetKey}`;
-  switch (mission.kind) {
-    case "terminal":
-    case "investigation":
-      return <TerminalMissionPlayer key={key} mission={mission} {...common} />;
-    case "python":
-      return <PythonMissionPlayer key={key} mission={mission} {...common} />;
-    case "bigo":
-      return <BigOMissionPlayer key={key} mission={mission} {...common} />;
-  }
+  const common = retentionActive
+    ? { progress: p, completed: false, onComplete: () => void finishRetention(true), onReset: () => void restartRetention(), retention: true, onGiveUp: () => void finishRetention(false) }
+    : { progress: p, completed: status === "completed", onComplete: () => void onComplete(), onReset: () => void onReset() };
+  const key = `${mission.id}-${resetKey}-${retentionActive ? "retention" : "normal"}`;
+
+  const player = (() => {
+    switch (mission.kind) {
+      case "terminal":
+      case "investigation":
+        return <TerminalMissionPlayer key={key} mission={mission} {...common} />;
+      case "python":
+        return <PythonMissionPlayer key={key} mission={mission} {...common} />;
+      case "bigo":
+        return <BigOMissionPlayer key={key} mission={mission} {...common} />;
+    }
+  })();
+
+  return (
+    <div className="space-y-4">
+      {retentionResult === "passed" && (
+        <Callout kind="success" title="Retention check passed">
+          You recalled this without hints. Mastery for {mission.skills.length} skill(s) increased and the next review is further out. <Link to="/progress" className="underline">See Skill Progress</Link>.
+        </Callout>
+      )}
+      {retentionResult === "failed" && (
+        <Callout kind="warn" title="Retention check ended: remediation scheduled">
+          No problem. Mastery dipped slightly and a review is scheduled for tomorrow. The lesson and hints are available again below; work through the mission once more at your own pace.
+        </Callout>
+      )}
+      {player}
+    </div>
+  );
 }

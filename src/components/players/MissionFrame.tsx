@@ -15,13 +15,17 @@ interface Props {
   workstation: ReactNode;
   /** Extra content under the checks (e.g. question step). */
   extra?: ReactNode;
+  /** Spaced-repetition replay: fresh environment, hints disabled. */
+  retention?: boolean;
+  /** Retention mode only: the learner needs the lesson again (counts as not recalled). */
+  onGiveUp?: () => void;
 }
 
 /**
  * Common chrome for every mission: briefing, lesson, glossary, objectives,
  * progressive hints, live validation and completion/reflection.
  */
-export function MissionFrame({ mission, progress, checks, completed, onComplete, onReset, workstation, extra }: Props) {
+export function MissionFrame({ mission, progress, checks, completed, onComplete, onReset, workstation, extra, retention = false, onGiveUp }: Props) {
   const [tab, setTab] = useState<"brief" | "lesson" | "glossary">("brief");
   const [hintLevel, setHintLevel] = useState(progress?.maxHintLevel ?? 0);
   const [reflection, setReflection] = useState("");
@@ -50,6 +54,12 @@ export function MissionFrame({ mission, progress, checks, completed, onComplete,
           <h1 className="text-2xl font-bold mt-1">{mission.title}</h1>
           <p className="muted text-sm">{mission.summary}</p>
         </div>
+
+        {retention && (
+          <Callout kind="warn" title="Retention check">
+            Spaced repetition: redo this mission from a fresh environment without hints. Passing raises mastery and pushes the next review further out; giving up lowers it and schedules a review tomorrow. The lesson tab stays available, but reading it is on you.
+          </Callout>
+        )}
 
         <Panel>
           <div className="flex gap-1 mb-3 border-b" style={{ borderColor: "var(--border)" }} role="tablist">
@@ -152,16 +162,27 @@ export function MissionFrame({ mission, progress, checks, completed, onComplete,
               </Callout>
             ) : (
               <button type="button" className="btn-primary" disabled={!allPassed} onClick={onComplete} data-testid="mission-complete">
-                {allPassed ? "Complete mission" : "Complete all checks to finish"}
+                {allPassed ? (retention ? "Confirm retention check" : "Complete mission") : "Complete all checks to finish"}
+              </button>
+            )}
+            {retention && onGiveUp && (
+              <button type="button" className="btn-secondary text-xs" onClick={onGiveUp} data-testid="retention-give-up">
+                I need the lesson again (ends the check)
               </button>
             )}
             <button type="button" className="btn-ghost text-xs" onClick={onReset}>
-              Reset mission environment
+              {retention ? "Restart environment" : "Reset mission environment"}
             </button>
           </div>
         </Panel>
 
         <Panel title="Hints">
+          {retention ? (
+            <p className="text-xs muted" data-testid="hints-disabled">
+              Hints are disabled during a retention check. If you are stuck, end the check with "I need the lesson again" and the mission reopens with hints.
+            </p>
+          ) : (
+          <>
           <p className="text-xs muted mb-2">Hints get more specific. Using fewer hints earns more mastery. Stuck for 5+ minutes? Take one.</p>
           <ol className="space-y-2">
             {mission.hints.map((h) => (
@@ -181,6 +202,8 @@ export function MissionFrame({ mission, progress, checks, completed, onComplete,
               </li>
             ))}
           </ol>
+          </>
+          )}
         </Panel>
 
         {progress && (
