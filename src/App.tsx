@@ -21,6 +21,7 @@ const NetworkLabPage = lazy(() => import("./pages/NetworkLabPage").then((m) => (
 const DrLabPage = lazy(() => import("./pages/DrLabPage").then((m) => ({ default: m.DrLabPage })));
 const AlarmLabPage = lazy(() => import("./pages/AlarmLabPage").then((m) => ({ default: m.AlarmLabPage })));
 const CostLabPage = lazy(() => import("./pages/CostLabPage").then((m) => ({ default: m.CostLabPage })));
+const DeployLabPage = lazy(() => import("./pages/DeployLabPage").then((m) => ({ default: m.DeployLabPage })));
 const MonitoringPage = lazy(() => import("./pages/MonitoringPage").then((m) => ({ default: m.MonitoringPage })));
 const InterviewHomePage = lazy(() => import("./pages/interview/InterviewHomePage").then((m) => ({ default: m.InterviewHomePage })));
 const StarAcademyPage = lazy(() => import("./pages/interview/StarAcademyPage").then((m) => ({ default: m.StarAcademyPage })));
@@ -65,6 +66,7 @@ export const routes: RouteObject[] = [
           { path: "dr", element: <DrLabPage /> },
           { path: "alarms", element: <AlarmLabPage /> },
           { path: "cost", element: <CostLabPage /> },
+          { path: "deploy", element: <DeployLabPage /> },
         ],
       },
       { path: "interview", element: <InterviewHomePage /> },

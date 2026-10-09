@@ -16,6 +16,7 @@ export const LABS = [
   { to: "/labs/dr", label: "Recovery", hint: "Plan recovery to a time, a point and a budget" },
   { to: "/labs/alarms", label: "Alarms", hint: "Alarms that catch incidents without paging for nothing" },
   { to: "/labs/cost", label: "Cost", hint: "A monthly bill in fictional credits" },
+  { to: "/labs/deploy", label: "Deploys", hint: "Rollouts, canaries and rollbacks, second by second" },
 ];
 
 export function LabsPage() {

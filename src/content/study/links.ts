@@ -228,7 +228,20 @@ export const COST_LAB_LINKS: StudyLabLink[] = [
   { course: "AWSSCS", text: "Using tags to group resources by department, cost center, and environment", lab: "cost", exerciseId: "cost-06-cache-and-alarm", coverage: "partial" },
 ];
 
-export const STUDY_LAB_LINKS: StudyLabLink[] = [...POLICY_LAB_LINKS, ...NETWORK_LAB_LINKS, ...DR_LAB_LINKS, ...ALARM_LAB_LINKS, ...COST_LAB_LINKS];
+export const DEPLOY_LAB_LINKS: StudyLabLink[] = [
+  { course: "AWSDVA", text: "Configuring deployment strategies: blue/green, canary, rolling", lab: "deploy", exerciseId: "deploy-02-canary", coverage: "full" },
+  { course: "AWSDOP", text: "Determining a deployment strategy", lab: "deploy", exerciseId: "deploy-01-all-at-once", coverage: "partial", note: "the strategies themselves; no deployment service" },
+  { course: "AWSDOP", text: "Mutable deployment patterns against immutable ones", lab: "deploy", exerciseId: "deploy-04-blue-green", coverage: "partial", note: "a second fleet as the immutable pattern" },
+  { course: "AWSDOP", text: "Using blue/green and canary deployment methods", lab: "deploy", exerciseId: "deploy-03-latent-defect", coverage: "full" },
+  { course: "AWSDOP", text: "Analyzing failed deployments", lab: "deploy", exerciseId: "deploy-06-guard", coverage: "partial", note: "why a guarded rollout did not roll back" },
+  { course: "AWSSOA", text: "Implementing deployment strategies and the services that carry them out", lab: "deploy", exerciseId: "deploy-05-too-slow", coverage: "partial" },
+  { course: "AWSSAP", text: "Selecting services for deployment strategies and appropriate rollback mechanisms", lab: "deploy", exerciseId: "deploy-06-guard", coverage: "partial", note: "rollback mechanisms" },
+  { course: "AWSSAP", text: "Deployment strategies already in place: blue/green, all-at-once, rolling", lab: "deploy", exerciseId: "deploy-01-all-at-once", coverage: "full" },
+  { course: "AWSSAA", text: "Immutable infrastructure and automation that keeps infrastructure integrity", lab: "deploy", exerciseId: "deploy-04-blue-green", coverage: "partial" },
+  { course: "AWSMLA", text: "Automated deployment strategies and rollback actions", lab: "deploy", exerciseId: "deploy-02-canary", coverage: "partial" },
+];
+
+export const STUDY_LAB_LINKS: StudyLabLink[] = [...POLICY_LAB_LINKS, ...NETWORK_LAB_LINKS, ...DR_LAB_LINKS, ...ALARM_LAB_LINKS, ...COST_LAB_LINKS, ...DEPLOY_LAB_LINKS];
 
 /**
  * Unit gates that a planned engine would make playable. The gate sentence

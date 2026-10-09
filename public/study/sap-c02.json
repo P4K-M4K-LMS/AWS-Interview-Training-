@@ -358,8 +358,15 @@
           "text": "Selecting services for deployment strategies and appropriate rollback mechanisms",
           "sourceHash": "d7e2daaec461",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "deploy",
+            "exerciseId": "deploy-06-guard",
+            "coverage": "partial",
+            "note": "rollback mechanisms"
+          }
         },
         {
           "id": "sap-c02:2:5",
@@ -791,8 +798,14 @@
           "text": "Deployment strategies already in place: blue/green, all-at-once, rolling",
           "sourceHash": "9e4c53c84b36",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "deploy",
+            "exerciseId": "deploy-01-all-at-once",
+            "coverage": "full"
+          }
         },
         {
           "id": "sap-c02:3:7",
@@ -1285,6 +1298,6 @@
     "units": 4,
     "objectives": 113,
     "bookkeeping": 0,
-    "linked": 16
+    "linked": 18
   }
 }

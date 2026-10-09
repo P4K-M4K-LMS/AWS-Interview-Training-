@@ -753,8 +753,14 @@
           "text": "Automated deployment strategies and rollback actions",
           "sourceHash": "6947a7eb1c3d",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "deploy",
+            "exerciseId": "deploy-02-canary",
+            "coverage": "partial"
+          }
         },
         {
           "id": "mla-c02:3:21",
@@ -1158,6 +1164,6 @@
     "units": 4,
     "objectives": 107,
     "bookkeeping": 0,
-    "linked": 5
+    "linked": 6
   }
 }

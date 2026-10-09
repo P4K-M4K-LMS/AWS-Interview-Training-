@@ -214,6 +214,28 @@ export const LAB_LINKS: Record<string, string[]> = {
     "sap-c02:3:31",
     "scs-c03:6:7"
   ],
+  "deploy-01-all-at-once": [
+    "dop-c02:1:7",
+    "sap-c02:3:6"
+  ],
+  "deploy-02-canary": [
+    "dva-c02:3:21",
+    "mla-c02:3:20"
+  ],
+  "deploy-03-latent-defect": [
+    "dop-c02:1:23"
+  ],
+  "deploy-04-blue-green": [
+    "dop-c02:1:19",
+    "saa-c03:2:23"
+  ],
+  "deploy-05-too-slow": [
+    "soa-c03:3:5"
+  ],
+  "deploy-06-guard": [
+    "dop-c02:5:11",
+    "sap-c02:2:4"
+  ],
   "dr-01-match-the-need": [
     "clf-c02:3:6",
     "saa-c03:2:20",

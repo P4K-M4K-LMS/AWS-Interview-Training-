@@ -946,3 +946,37 @@ test("cost lab: commit to the floor, not the ceiling; the bill, the lean check a
   await page.getByTestId("lab-tab-cost").click();
   await expect(page.getByRole("heading", { name: "Cost model" })).toBeVisible();
 });
+
+test("deploy lab: a wide rollout of a bad release exposes a quarter of the traffic; a canary with a tight guard limits it and credits the Study objective", async ({ page }) => {
+  await onboard(page);
+  await page.goto("/#/study/dva-c02/3");
+  const objective = page.getByTestId("study-objective-21");
+  await expect(objective).toContainText("Do it: mission or lab");
+  await objective.getByTestId("study-practise-21").click();
+  await expect(page).toHaveURL(/#\/labs\/deploy\?exercise=deploy-02-canary/);
+  await expect(page.getByRole("heading", { name: "Deployment strategies" })).toBeVisible();
+  await expect(page.getByTestId("deploy-failed")).toHaveText("150");
+  await expect(page.getByTestId("deploy-mincap")).toHaveText("75%");
+  await expect(page.getByTestId("deploy-check-capacity")).toHaveAttribute("data-ok", "0");
+  await expect(page.getByTestId("deploy-check")).toBeDisabled();
+  await page.getByTestId("deploy-kind-canary").check();
+  await page.getByTestId("deploy-canary").fill("5");
+  await page.getByTestId("deploy-bake").fill("30");
+  await page.getByTestId("deploy-batch").fill("25");
+  // A loose alarm never fires: the canary is promoted and the defect reaches everyone.
+  await page.getByTestId("deploy-alarm-rate").fill("50");
+  await expect(page.getByTestId("deploy-alarm")).toHaveText("never fired");
+  await expect(page.getByTestId("deploy-check-outcome")).toContainText("never fired");
+  await page.getByTestId("deploy-alarm-rate").fill("1");
+  await expect(page.getByTestId("deploy-alarm")).toHaveText("fired at 30 s");
+  await expect(page.getByTestId("deploy-failed")).toHaveText("30");
+  await expect(page.getByTestId("deploy-outcome")).toContainText("Rolled back at 50 s");
+  await expect(page.getByTestId("deploy-check")).toBeEnabled();
+  await page.getByTestId("deploy-check").click();
+  await expect(page.getByTestId("deploy-passed")).toContainText("Credited");
+  await page.getByTestId("deploy-back-link").click();
+  await expect(page.getByTestId("study-status-21")).toHaveText("Guided");
+  await page.goto("/#/labs");
+  await page.getByTestId("lab-tab-deploys").click();
+  await expect(page.getByRole("heading", { name: "Deployment strategies" })).toBeVisible();
+});

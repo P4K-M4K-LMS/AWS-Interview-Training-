@@ -554,8 +554,14 @@
           "text": "Immutable infrastructure and automation that keeps infrastructure integrity",
           "sourceHash": "c203bc4a9f0c",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "deploy",
+            "exerciseId": "deploy-04-blue-green",
+            "coverage": "partial"
+          }
         },
         {
           "id": "saa-c03:2:24",
@@ -1201,6 +1207,6 @@
     "units": 4,
     "objectives": 99,
     "bookkeeping": 0,
-    "linked": 25
+    "linked": 26
   }
 }

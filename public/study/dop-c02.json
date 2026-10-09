@@ -79,8 +79,15 @@
           "text": "Determining a deployment strategy with AWS CodeDeploy",
           "sourceHash": "fc08cced7838",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "deploy",
+            "exerciseId": "deploy-01-all-at-once",
+            "coverage": "partial",
+            "note": "the strategies themselves; no deployment service"
+          }
         },
         {
           "id": "dop-c02:1:8",
@@ -204,8 +211,15 @@
           "text": "Mutable deployment patterns against immutable ones",
           "sourceHash": "5cadd0fa6b1d",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "deploy",
+            "exerciseId": "deploy-04-blue-green",
+            "coverage": "partial",
+            "note": "a second fleet as the immutable pattern"
+          }
         },
         {
           "id": "dop-c02:1:20",
@@ -244,8 +258,14 @@
           "text": "Using blue/green and canary deployment methods",
           "sourceHash": "6714453645b9",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "deploy",
+            "exerciseId": "deploy-03-latent-defect",
+            "coverage": "full"
+          }
         },
         {
           "id": "dop-c02:1:24",
@@ -1024,8 +1044,15 @@
           "text": "Analyzing failed deployments in AWS CodePipeline, CodeBuild, CodeDeploy, CloudFormation, and CloudWatch synthetic monitoring",
           "sourceHash": "d3e824364aea",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "deploy",
+            "exerciseId": "deploy-06-guard",
+            "coverage": "partial",
+            "note": "why a guarded rollout did not roll back"
+          }
         },
         {
           "id": "dop-c02:5:12",
@@ -1283,6 +1310,6 @@
     "units": 6,
     "objectives": 114,
     "bookkeeping": 0,
-    "linked": 11
+    "linked": 15
   }
 }

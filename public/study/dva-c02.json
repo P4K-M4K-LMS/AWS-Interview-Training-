@@ -774,8 +774,14 @@
           "text": "Configuring deployment strategies: blue/green, canary, rolling",
           "sourceHash": "6d82b0278888",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "deploy",
+            "exerciseId": "deploy-02-canary",
+            "coverage": "full"
+          }
         },
         {
           "id": "dva-c02:3:22",
@@ -1119,6 +1125,6 @@
     "units": 4,
     "objectives": 98,
     "bookkeeping": 0,
-    "linked": 15
+    "linked": 16
   }
 }
