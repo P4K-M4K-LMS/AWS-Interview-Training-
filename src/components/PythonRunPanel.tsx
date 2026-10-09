@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { getPythonRunner, type RunnerStatus } from "../engine/python/runner";
+import { getGoRunner } from "../engine/go/runner";
 import type { PyRunResult } from "../engine/python/execute";
-import type { PythonMission } from "../domain/types";
+import type { CodeLanguage, CodeMission } from "../domain/types";
 import { Callout } from "./ui";
 
-export function usePythonRunner() {
-  const runner = getPythonRunner();
+/** Picks the in-browser runtime for a language; both share the same contract. */
+export function useCodeRunner(language: CodeLanguage) {
+  const runner = language === "go" ? getGoRunner() : getPythonRunner();
   const [status, setStatus] = useState<RunnerStatus>(runner.status);
   const [detail, setDetail] = useState<string | undefined>();
   useEffect(() => {
@@ -21,12 +23,18 @@ export function usePythonRunner() {
   return { runner, status, detail };
 }
 
-export function RunnerStatusLine({ status, detail, version }: { status: RunnerStatus; detail?: string; version?: string }) {
+export function usePythonRunner() {
+  return useCodeRunner("python");
+}
+
+export function RunnerStatusLine({ status, detail, version, language = "python" }: { status: RunnerStatus; detail?: string; version?: string; language?: CodeLanguage }) {
+  const name = language === "go" ? "Go" : "Python";
+  const loading = language === "go" ? "Loading the Go runtime (Yaegi in WebAssembly, ~8 MB compressed, cached after the first load)..." : "Loading the Python interpreter (Pyodide, ~14 MB, cached after the first load)...";
   const text =
     status === "loading"
-      ? "Loading the Python interpreter (Pyodide, ~14 MB, cached after the first load)..."
+      ? loading
       : status === "ready"
-        ? `Python ${version || ""} ready. Code runs in an isolated Web Worker in your browser.`
+        ? `${name} ${version || ""} ready. Code runs in an isolated Web Worker in your browser.`
         : status === "running"
           ? "Running..."
           : status === "error"
@@ -40,7 +48,7 @@ export function RunnerStatusLine({ status, detail, version }: { status: RunnerSt
   );
 }
 
-export function RunOutput({ result, errorHelp }: { result: PyRunResult | null; errorHelp?: PythonMission["errorHelp"] }) {
+export function RunOutput({ result, errorHelp }: { result: PyRunResult | null; errorHelp?: CodeMission["errorHelp"] }) {
   if (!result) return <div className="text-sm muted">Run your code to see real output here.</div>;
   const help = result.error && errorHelp ? errorHelp.find((h) => h.match.test(result.error!)) : undefined;
   return (

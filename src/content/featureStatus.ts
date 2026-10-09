@@ -11,7 +11,7 @@ export const FEATURE_STATUS: Array<{ feature: string; status: FeatureStatus; not
   { feature: "Python execution (Pyodide)", status: "verified", note: "Real CPython 3.14 in a Web Worker with a 10s timeout. Execution core unit-tested in Node; browser worker checked end-to-end." },
   { feature: "Go Laboratory (Yaegi interpreter in WebAssembly)", status: "verified", note: "Real Go incl. goroutines, channels, select, sync, generics and most of the standard library, in a Web Worker with a 10s timeout. Single-threaded WebAssembly: no data races or race detector. Runtime built from go/runner in CI; Node + browser tests." },
   { feature: "Big O laboratory", status: "verified", note: "9 instrumented algorithms, step-through, growth tables, comparisons. Unit-tested." },
-  { feature: "16 missions", status: "verified", note: "3 Linux, 3 Python, 2 Big O, 1 security, 4 CI/CD, 3 incidents. Each verified completable by automated tests; shortcut fixes (retry, skip, paste a secret, shed traffic) are rejected." },
+  { feature: "20 missions", status: "verified", note: "3 Linux, 3 Python, 4 Go, 2 Big O, 1 security, 4 CI/CD, 3 incidents. Each verified completable by automated tests; shortcut fixes (retry, skip, paste a secret, shed traffic) are rejected." },
   { feature: "Persistent progress", status: "verified", note: "IndexedDB via Dexie; export/import/reset. Covered by tests and e2e reload check." },
   { feature: "Adaptive learning", status: "partial", note: "Mastery from demonstrated work, hint penalties, prerequisites, spaced-repetition due dates, retention checks (fresh replay without hints) and recommendations. Transfer-task variants are planned." },
   { feature: "STAR Academy + 16 Leadership Principles", status: "verified", note: "Official wording verified against amazon.jobs on 2026-10-09; three practice questions and an interview cue per principle. Content tests check all 16." },
@@ -26,6 +26,7 @@ export const FEATURE_STATUS: Array<{ feature: string; status: FeatureStatus; not
   { feature: "Incident management console", status: "verified", note: "Ticket, metrics, logs, architecture view, runbook actions, root cause, recovery verification, post-incident note. 3 scenarios proven solvable; symptom-only fixes rejected." },
   { feature: "System architecture visualizer", status: "verified", note: "Live diagram with per-component health and traffic-weighted edges, in incidents and monitoring." },
   { feature: "CI/CD failure-mode missions", status: "verified", note: "Simulated pipeline runner and mission tools (ci, deployctl, metrics): flaky test, bad release rollback, broken secret wiring. Unit + e2e tested." },
-  { feature: "Concurrency and more distributed-systems simulations", status: "planned", note: "Remaining Phase 7 scope: race conditions and locking, retries/idempotency, replication lag." },
+  { feature: "Go missions (config parser, worker pool, timeouts/context, retries + idempotency)", status: "verified", note: "Reference solutions proven in the WebAssembly runner; browser scenario completes a mission end to end." },
+  { feature: "Data-race lesson and replication-lag simulation", status: "planned", note: "Data races need the race detector (optional local go test -race service); replication lag belongs on the shared simulation engine." },
   { feature: "Mobile layout, keyboard navigation", status: "partial", note: "Responsive layout and labelled controls; e2e smoke test at phone width. Full accessibility audit pending." },
 ];

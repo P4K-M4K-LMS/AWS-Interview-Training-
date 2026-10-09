@@ -57,7 +57,10 @@ export interface Track {
 /* Missions                                                            */
 /* ------------------------------------------------------------------ */
 
-export type MissionKind = "terminal" | "python" | "bigo" | "investigation" | "incident";
+export type MissionKind = "terminal" | "python" | "go" | "bigo" | "investigation" | "incident";
+
+/** Languages with an in-browser runtime. */
+export type CodeLanguage = "python" | "go";
 
 export interface LessonBlock {
   /** Short heading shown in the lesson pane. */
@@ -225,16 +228,21 @@ export interface PythonTestCase {
   id: string;
   label: string;
   /**
-   * Python source appended after the learner's code; must raise AssertionError
-   * (or any exception) on failure. Runs in the same isolated interpreter.
+   * Source evaluated after the learner's program in the same interpreter
+   * namespace; must raise/panic on failure (Python: assert; Go: panic).
    */
   code: string;
   /** Optional stdin to feed `input()`. */
   stdin?: string;
 }
 
-export interface PythonMission extends MissionBase {
-  kind: "python";
+/**
+ * A code mission: the learner edits a program in the given language and the
+ * mission's test snippets run in the same interpreter namespace afterwards.
+ * `kind` doubles as the language ("python" or "go").
+ */
+export interface CodeMission extends MissionBase {
+  kind: CodeLanguage;
   starterCode: string;
   /** Known-good solution used by the automated mission verification tests. */
   referenceSolution: string;
@@ -242,6 +250,9 @@ export interface PythonMission extends MissionBase {
   /** Common error -> explanation mapping shown next to tracebacks. */
   errorHelp?: Array<{ match: RegExp; explanation: string }>;
 }
+
+/** Backwards-compatible alias. */
+export type PythonMission = CodeMission;
 
 /* --- Big O missions --------------------------------------------------- */
 
@@ -339,7 +350,7 @@ export interface IncidentMission extends MissionBase {
   scenario: IncidentScenario;
 }
 
-export type Mission = TerminalMission | PythonMission | BigOMission | InvestigationMission | IncidentMission;
+export type Mission = TerminalMission | CodeMission | BigOMission | InvestigationMission | IncidentMission;
 
 /* ------------------------------------------------------------------ */
 /* Learner state (persisted)                                           */

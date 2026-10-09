@@ -6,8 +6,9 @@ import { netsecMissions } from "./netsec";
 import { devopsMissions } from "./devops";
 import { incidentMissions } from "./incidents";
 import { cicdMissions } from "./cicd";
+import { goMissions } from "./go";
 
-export const MISSIONS: Mission[] = [...linuxMissions, ...pythonMissions, ...bigoMissions, ...netsecMissions, ...devopsMissions, ...cicdMissions, ...incidentMissions];
+export const MISSIONS: Mission[] = [...linuxMissions, ...pythonMissions, ...bigoMissions, ...netsecMissions, ...devopsMissions, ...cicdMissions, ...incidentMissions, ...goMissions];
 export const MISSION_BY_ID = new Map(MISSIONS.map((m) => [m.id, m]));
 
 export function missionsForTrack(trackId: TrackId): Mission[] {
@@ -32,4 +33,8 @@ export const RECOMMENDED_ORDER: string[] = [
   "incident-01-cache-stampede",
   "incident-02-traffic-surge",
   "incident-03-dead-consumers",
+  "go-01-config-parser",
+  "go-02-worker-pool",
+  "go-03-timeouts-context",
+  "go-04-retries-idempotency",
 ];

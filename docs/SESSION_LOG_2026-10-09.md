@@ -1,0 +1,74 @@
+# OpsForge build session: compact reference (2026-10-08/09)
+
+Resume-from-here summary of the session that built OpsForge: Engineer in Training. Pair with `STATUS.md` (live feature status) and `docs/TESTING_REPORT.md` (latest verified numbers).
+
+## Outcome in one paragraph
+
+From an empty repository to a deployed, tested web application: a Linux/Python/Go/Big O engineering simulator with 20 verified-completable missions, an incident console on a shared platform simulation, a CI/CD pipeline runner, and an Amazon/AWS interview coach with STAR Academy, all 16 verified Leadership Principles, a story bank, voice input, Dive Deeper probing and transparent scoring. Live at https://paukennick.github.io/AWS-Interview-Training-/ (GitHub Pages, auto-deploys from `main`).
+
+## Pull requests (all merged into `main` except the last)
+
+| PR | Content |
+|---|---|
+| #1 | MVP: scaffold, terminal simulator, Python lab (Pyodide), Big O lab, 10 missions, adaptive learning, Interview Command Center, voice, Claude proxy, docs |
+| #2 | Leadership Principle wording verified by the owner against amazon.jobs; interview cues added per principle |
+| #3 | Retention checks: fresh replay of a completed mission without hints, spaced-repetition mastery updates |
+| #4 | Phase 7a: shared simulation engine, incident console, 3 incident missions, architecture visualizer; mission-availability lock bug fixed |
+| #5 | CI/CD failure-mode missions (flaky test, bad release rollback, secret wiring); mission-specific terminal tools; `sed` fixed to POSIX semantics |
+| #6 | Go Laboratory: Yaegi interpreter compiled to WebAssembly, worker with timeout, Node + browser tests |
+| #7 (open, draft) | Code missions generalized by language; four Go missions (config parser, worker pool, timeouts/context, retries + idempotency) |
+
+Feature branches still exist on GitHub (`ccr-221527a4-xf3zs7`, `lp-verified-interview-cues`, `retention-checks`, `phase7-incidents`, `cicd-failure-modes`, `go-runner-spike`); this environment cannot delete remote branches, so delete them from the Branches page.
+
+## Decisions made with the owner
+
+- Stack: React 19 + TypeScript + Vite 8 + Tailwind v4, Dexie/IndexedDB, CodeMirror 6, hash routing. Deployment: local dev + GitHub Pages. One draft PR per slice, merged on the owner's word.
+- Coaching: rule-based engine always on; optional Claude coaching via a local proxy (`server/index.ts`) with the API key server-side and explicit consent in Settings.
+- Job posting: only the qualifications in the master prompt are used; no title or responsibilities are invented.
+- Go: in-browser via Yaegi compiled to WebAssembly (chosen over a backend runner so the Pages site stays self-contained). Known limit: single-threaded WebAssembly, so no data races or race detector; a local `go test -race` service remains optional.
+- Mission availability depends only on prerequisite missions; skill mastery gates stage promotion (the earlier skill-gate rule could lock a mission behind the skill it teaches).
+
+## How it works (where to look)
+
+- `src/domain/types.ts`: typed models. `src/data/db.ts`: IndexedDB schema, export/import/reset.
+- `src/engine/terminal/shell.ts`: virtual Linux (48 commands, pipes, redirection, permissions, sudo, services, journal, simulated network tools, mission programs via `world.programs`).
+- `src/engine/python/*` + `src/workers/python.worker.ts`: Pyodide in a worker, 10 s kill switch. `src/engine/go/runner.ts` + `src/workers/go.worker.ts` + `go/runner/main.go`: Yaegi in a classic worker; built by `scripts/build-go-runner.mjs` into `public/go/` (gitignored; CI installs Go 1.24).
+- `src/engine/sim/*`: platform simulation (load, cache, database capacity, queue accumulation, logs) and the incident state machine. `src/engine/cicd/pipeline.ts`: pipeline runner and the `ci` program.
+- `src/engine/learner/*`: mastery, spaced repetition, retention checks, recommendations. `src/engine/missions/engine.ts`: status, attempts, hints, completion.
+- `src/engine/interview/*`: STAR analysis, gap detection, Dive Deeper follow-ups, rubric scoring. `src/content/leadershipPrinciples.ts`: 16 LPs (verified 2026-10-09).
+- `src/content/missions/*`: all missions; the level-4 hint of every terminal mission is a runnable guided example that the test suite executes.
+
+## Verification state (PR #7 head)
+
+| Check | Result |
+|---|---|
+| `npm run typecheck` / `npm run lint` | 0 errors |
+| `npm run test` | 72 passed, 1 skipped placeholder |
+| `npm run test:e2e` | 24 passed (12 scenarios, desktop + Pixel 5) |
+| `npm run build` | succeeds |
+
+Unverified by automation: voice recognition/synthesis (browser-only), the Claude proxy (needs a key), realistic timed interview mode UI.
+
+## Environment constraints hit this session
+
+- No account memory tools in the session: stored preferences could not be loaded.
+- Outbound network blocked for amazon.jobs, aboutamazon.com, cdn.jsdelivr.net, github.io, share.google; npm, the Go module proxy and GitHub (through the proxy) worked.
+- The GitHub proxy refuses the Pages settings API and branch deletion; Pages was enabled manually by the owner, and a `configure-pages` step was added to the workflow.
+
+## Open items, in order
+
+1. Merge PR #7 when CI is green.
+2. Replication-lag scenario on the shared simulation engine; optional local race-detector service for a data-race lesson.
+3. More missions per track (see `docs/CURRICULUM.md` planned list).
+4. Accessibility audit; lazy-load CodeMirror and the interview pages to cut the 1.2 MB bundle.
+5. Manual checks the owner can do: voice in Chrome/Edge; the Claude proxy with `ANTHROPIC_API_KEY=... npm run coach-server`.
+
+## Commands
+
+```bash
+npm ci && npm run dev        # http://localhost:5173
+npm run check                # typecheck + lint + unit tests + build
+npm run test:e2e             # Playwright against the production build
+npm run build:go             # rebuild the Go runtime (needs Go 1.22+)
+VITE_BASE_PATH=/AWS-Interview-Training-/ npm run build   # Pages build
+```

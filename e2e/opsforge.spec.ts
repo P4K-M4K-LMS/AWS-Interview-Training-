@@ -255,3 +255,64 @@ test("Go Laboratory: runs real Go with goroutines in the browser and reports com
   await expect(page.getByTestId("python-error")).toContainText("undefined: nope", { timeout: 60_000 });
   await expect(page.getByText("About this undefined identifier")).toBeVisible();
 });
+
+test("Go mission: write Go, run the mission tests in the browser, complete", async ({ page }) => {
+  test.setTimeout(180_000);
+  await onboard(page);
+  const now = new Date().toISOString();
+  const done = (missionId: string) => ({ missionId, schemaVersion: 1, status: "completed", attempts: 1, hintsUsed: 0, maxHintLevel: 0, bestScore: 1, startedAt: now, completedAt: now, reflections: [] });
+  const bundle = { app: "opsforge", schemaVersion: 1, exportedAt: now, missions: ["python-01-uptime-report", "python-02-log-parser", "python-03-config-validator", "go-01-config-parser", "go-02-worker-pool", "go-03-timeouts-context"].map(done) };
+  await page.goto("/#/settings");
+  await page.locator('input[type="file"]').setInputFiles({ name: "progress.json", mimeType: "application/json", buffer: Buffer.from(JSON.stringify(bundle)) });
+  await expect(page.getByText(/Imported .*6 mission records/)).toBeVisible();
+
+  await page.goto("/#/missions/go-04-retries-idempotency");
+  await expect(page.getByRole("heading", { name: "Go Laboratory" })).toBeVisible();
+  await expect(page.getByText(/Go .*ready/)).toBeVisible({ timeout: 120_000 });
+  await page.getByTestId("python-run-tests").click();
+  await expect(page.getByTestId("python-tests")).toBeVisible({ timeout: 60_000 });
+  await expect(page.getByText("Checks (0/3)")).toBeVisible();
+  const editor = page.locator(".cm-content");
+  await editor.click();
+  await page.keyboard.press("Control+A");
+  await page.keyboard.insertText(`package main
+
+import (
+	"errors"
+	"fmt"
+	"time"
+)
+
+func retry(attempts int, base time.Duration, sleep func(time.Duration), op func() error) error {
+	var last error
+	for i := 0; i < attempts; i++ {
+		if err := op(); err == nil {
+			return nil
+		} else {
+			last = err
+		}
+		if i < attempts-1 {
+			sleep(base << i)
+		}
+	}
+	return last
+}
+
+func chargeOnce(done map[string]bool, key string, charge func()) bool {
+	if done[key] {
+		return false
+	}
+	charge()
+	done[key] = true
+	return true
+}
+
+func main() {
+	fmt.Println(retry(1, time.Millisecond, time.Sleep, func() error { return errors.New("x") }))
+}
+`);
+  await page.getByTestId("python-run-tests").click();
+  await expect(page.getByText("Checks (3/3)")).toBeVisible({ timeout: 60_000 });
+  await page.getByTestId("mission-complete").click();
+  await expect(page.getByText("Mission complete: explain what you did")).toBeVisible();
+});
