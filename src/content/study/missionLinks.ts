@@ -141,9 +141,12 @@ export const ENGINE_GATES: Record<string, string[]> = {
     "javascript:1",
     "javascript:2",
     "javascript:3",
+    "javascript:4",
     "javascript:5",
     "javascript:6",
-    "javascript:7"
+    "javascript:7",
+    "javascript:8",
+    "javascript:9"
   ],
   "net-trace": [
     "ans-c01:3",
@@ -303,6 +306,21 @@ export const LAB_LINKS: Record<string, string[]> = {
     "dop-c02:5:11",
     "sap-c02:2:4"
   ],
+  "dom-01-traverse": [
+    "javascript:4:1"
+  ],
+  "dom-02-render": [
+    "javascript:4:2"
+  ],
+  "dom-03-delegation": [
+    "javascript:4:3"
+  ],
+  "dom-04-form": [
+    "javascript:4:4"
+  ],
+  "dom-05-disclosure": [
+    "javascript:4:5"
+  ],
   "dr-01-match-the-need": [
     "clf-c02:3:6",
     "saa-c03:2:20",
@@ -457,6 +475,14 @@ export const LAB_LINKS: Record<string, string[]> = {
     "dop-c02:6:9",
     "sap-c02:1:14"
   ],
+  "node-01-handler": [
+    "javascript:9:2",
+    "javascript:9:3",
+    "javascript:9:4"
+  ],
+  "node-02-race": [
+    "javascript:9:5"
+  ],
   "policy-01-default-deny": [
     "clf-c02:2:11",
     "mla-c02:4:19",
@@ -569,5 +595,8 @@ export const LAB_LINKS: Record<string, string[]> = {
   ],
   "sql-06-plan": [
     "mscs:9:8"
+  ],
+  "test-01-reproduce": [
+    "javascript:8:1"
   ]
 };

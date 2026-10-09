@@ -138,3 +138,100 @@ describe("executeJs, module mode", () => {
     expect(globalThis.setTimeout).toBe(before);
   });
 });
+
+describe("executeJs, DOM option", () => {
+  const html = '<table id="t"><tbody><tr data-id="S-1"><td>Leeds</td><td><button class="del">x</button></td></tr></tbody></table><a id="l" href="/x">x</a>';
+
+  it("gives the program a document and tests click helpers that bubble and report preventDefault", async () => {
+    const r = await executeJs({
+      id: "d",
+      dom: { html },
+      code: 'const hits = [];\ndocument.querySelector("#t").addEventListener("click", (e) => hits.push(e.target.closest("tr").dataset.id));\ndocument.querySelector("#l").addEventListener("click", (e) => e.preventDefault());\nconst li = document.createElement("li");\nli.textContent = "<img src=x>";\ndocument.body.append(li);',
+      tests: [
+        { id: "bubble", code: 'click(".del");\nassertEqual(hits, ["S-1"])' },
+        { id: "prevent", code: 'assert(click("#l").defaultPrevented)' },
+        { id: "text", code: 'assertEqual($$("img").length, 0)' },
+      ],
+    });
+    expect(r.error).toBeNull();
+    expect(r.tests.map((t) => t.passed)).toEqual([true, true, true]);
+    expect(r.html).toContain("<li>&lt;img src=x&gt;</li>");
+  });
+
+  it("an error in one listener is reported and the other listeners still run, as in a browser", async () => {
+    const r = await executeJs({
+      id: "d2",
+      dom: { html: '<button id="b">x</button>' },
+      code: 'let second = false;\nconst b = document.querySelector("#b");\nb.addEventListener("click", () => { null.boom; });\nb.addEventListener("click", () => { second = true; });',
+      tests: [{ id: "both", code: 'click("#b");\nassert(second, "the second listener should still run")' }],
+    });
+    expect(r.tests[0].passed).toBe(true);
+    expect(r.logs.some((l) => l.level === "error" && /Uncaught TypeError/.test(l.text))).toBe(true);
+  });
+
+  it("names a missing element in a helper", async () => {
+    const r = await executeJs({ id: "d3", dom: { html: "<p></p>" }, code: "", tests: [{ id: "x", code: 'click("#nope")' }] });
+    expect(r.tests[0].error).toMatch(/no element matches '#nope'/);
+  });
+});
+
+describe("executeJs, suite option (Jest-style test, expect, mock)", () => {
+  it("runs registered tests after the program and reports each with its message", async () => {
+    const r = await executeJs({
+      id: "s",
+      suite: true,
+      code: [
+        "const add = (a, b) => a + b;",
+        'test("adds", () => expect(add(2, 3)).toBe(5));',
+        'test("wrong", () => expect(add(2, 2)).toEqual(5));',
+        'test("not", () => expect([1, 2]).not.toContain(3));',
+        'test("throws", () => expect(() => { throw new RangeError("bad max"); }).toThrow(RangeError));',
+        'test("async", async () => { await expect(Promise.resolve(4)).resolves.toBe(4); await expect(Promise.reject(new Error("no"))).rejects.toThrow("no"); });',
+        'test("mock", () => { const m = mock((x) => x * 2); m(3); expect(m).toHaveBeenCalledWith(3); expect(m).toHaveBeenCalledTimes(1); });',
+      ].join("\n"),
+    });
+    expect(r.error).toBeNull();
+    expect(r.suite?.map((t) => [t.name, t.passed])).toEqual([
+      ["adds", true],
+      ["wrong", false],
+      ["not", true],
+      ["throws", true],
+      ["async", true],
+      ["mock", true],
+    ]);
+    expect(r.suite?.[1].error).toBe("ExpectationError: expected 4 to equal 5");
+    expect(r.logs.map((l) => l.text)).toContain("✓ adds");
+  });
+
+  it("warns when no tests were registered, and runSuite runs a test file against other files", async () => {
+    const empty = await executeJs({ id: "e", suite: true, code: "const x = 1;" });
+    expect(empty.logs.at(-1)?.text).toMatch(/No tests were registered/);
+    const r = await executeJs({
+      id: "rs",
+      code: "",
+      tests: [
+        {
+          id: "nested",
+          code: 'const files = { "lib.js": "export const double = (x) => x * 3;", "lib.test.js": "import { double } from \\"./lib.js\\";\\ntest(\\"doubles\\", () => expect(double(2)).toBe(4));" };\nconst res = await runSuite(files, "lib.test.js");\nassertEqual(res.map((t) => t.passed), [false])',
+        },
+      ],
+    });
+    expect(r.tests[0]).toMatchObject({ passed: true });
+  });
+});
+
+describe("executeJs, store and env options", () => {
+  it("concurrent handlers interleave at the datastore's awaits", async () => {
+    const r = await executeJs({
+      id: "st",
+      store: true,
+      code: 'await db.set("n", 0);\nasync function bump() { const n = await db.get("n"); await db.set("n", n + 1); }\nawait Promise.all([bump(), bump()]);\nconsole.log(await db.get("n"));',
+    });
+    expect(r.logs[0].text).toBe("1");
+  });
+
+  it("process.env is the simulated environment", async () => {
+    const r = await executeJs({ id: "env", env: { APP_ENV: "staging" }, code: "console.log(process.env.APP_ENV, process.env.MISSING ?? 'unset');" });
+    expect(r.logs[0].text).toBe("staging unset");
+  });
+});

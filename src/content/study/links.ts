@@ -383,6 +383,16 @@ export const JS_LAB_LINKS: StudyLabLink[] = [
   js("Higher-order functions: functions that take or return functions", "js-17-patterns"),
   js("Currying and function composition basics", "js-17-patterns"),
   js("Common design patterns in JS: module pattern, observer pattern", "js-17-patterns"),
+  js("Selecting and traversing the DOM", "dom-01-traverse"),
+  js("Creating, modifying, and removing DOM nodes", "dom-02-render"),
+  js("Event listeners: bubbling, capturing, delegation, and preventDefault", "dom-03-delegation", "partial", "bubbling, delegation and preventDefault; the capture phase is not modelled"),
+  js("Working with forms and form validation", "dom-04-form"),
+  js("Basic accessibility considerations when manipulating the DOM", "dom-05-disclosure"),
+  js("Writing unit tests with Jest: assertions, mocks, test structure", "test-01-reproduce", "partial", "a Jest-style test API, not Jest itself"),
+  js("Building a simple HTTP server or Express route", "node-01-handler", "partial", "a request handler called directly; no sockets or framework"),
+  js("Handling JSON request/response bodies and status codes", "node-01-handler"),
+  js("Environment variables and basic configuration management", "node-01-handler", "partial", "process.env only"),
+  js("Integrating prior units into one small end-to-end project", "node-02-race", "partial", "promises, closures and a handler together under concurrent requests"),
 ];
 
 export const STUDY_LAB_LINKS: StudyLabLink[] = [...POLICY_LAB_LINKS, ...NETWORK_LAB_LINKS, ...DR_LAB_LINKS, ...ALARM_LAB_LINKS, ...COST_LAB_LINKS, ...DEPLOY_LAB_LINKS, ...CRYPTO_LAB_LINKS, ...MESSAGING_LAB_LINKS, ...AUTOSCALE_LAB_LINKS, ...SQL_LAB_LINKS, ...PYTHON_DRILL_LINKS, ...JS_LAB_LINKS];
@@ -404,6 +414,9 @@ export const UNIT_ENGINE_GATES: StudyEngineGate[] = [
   { course: "JAVASCRIPT", gateText: "write it correctly with async/await including error handling", engine: "js-runtime" },
   { course: "JAVASCRIPT", gateText: "into ES modules with template literals", engine: "js-runtime" },
   { course: "JAVASCRIPT", gateText: "Explain the prototype chain for a given object", engine: "js-runtime" },
+  { course: "JAVASCRIPT", gateText: "updates the DOM in response to a user event", engine: "js-runtime" },
+  { course: "JAVASCRIPT", gateText: "write a failing Jest test that reproduces the bug", engine: "js-runtime" },
+  { course: "JAVASCRIPT", gateText: "what happens if two requests arrive concurrently", engine: "js-runtime" },
 ];
 
 /**

@@ -1,5 +1,7 @@
 import { deepEqual, inspect } from "./inspect";
 import { createSimFetch, type FetchLogEntry } from "./simApi";
+import { createStore } from "./store";
+import { createSuite, type SuiteResult } from "./suite";
 
 /**
  * Runs learner JavaScript and reports only what really happened. Shared by
@@ -12,6 +14,14 @@ import { createSimFetch, type FetchLogEntry } from "./simApi";
  * passed in as parameters that shadow the globals: output is captured,
  * timers are tracked so the run waits for them, and fetch reaches only the
  * simulated API.
+ *
+ * Options, each only when the request asks for it (so the names stay free
+ * otherwise): `dom` gives a script a document parsed from fixture HTML
+ * (linkedom: standard DOM APIs, no layout or styles, capture phase and form
+ * validity APIs not modelled) plus click/submit/type helpers for tests;
+ * `suite` provides a Jest-style test/expect/mock API whose results come
+ * back as `suite`; `store` provides an async datastore `db`; `env` fills a
+ * simulated process.env.
  *
  * Module mode: each file is a real ES module loaded from a data: URL, with
  * "./name.js" imports rewritten to the other files' URLs, so import and
@@ -30,6 +40,14 @@ export interface JsRunRequest {
   files?: Record<string, string>;
   entry?: string;
   tests?: JsTest[];
+  /** Script mode only: a document parsed from this HTML. */
+  dom?: { html: string };
+  /** Provide test(), expect() and mock(), and run the registered tests after the program. */
+  suite?: boolean;
+  /** Script mode only: provide the async datastore as `db`. */
+  store?: boolean;
+  /** Script mode: the simulated process.env. */
+  env?: Record<string, string>;
 }
 
 export interface JsLog {
@@ -54,6 +72,10 @@ export interface JsRunResult {
   durationMs: number;
   tests: JsTestResult[];
   timedOut?: boolean;
+  /** The learner's own test() results, when the run had a suite. */
+  suite?: SuiteResult[];
+  /** The document body after the program ran (DOM runs). */
+  html?: string;
 }
 
 export class AssertionError extends Error {
@@ -74,6 +96,42 @@ const SETTLE_MS = 2000;
 type Timer = ReturnType<typeof setTimeout>;
 
 let activeReporter: ((e: unknown) => void) | null = null;
+let listenersPatched = false;
+
+/**
+ * Browsers report an error thrown in an event listener and carry on with the
+ * other listeners; linkedom lets it escape dispatchEvent. Wrap listeners once
+ * so the lab behaves like a browser.
+ */
+function patchListeners(document: object) {
+  if (listenersPatched) return;
+  let proto: object | null = Object.getPrototypeOf(document);
+  while (proto && !Object.hasOwn(proto, "addEventListener")) proto = Object.getPrototypeOf(proto);
+  if (!proto) return;
+  const target = proto as { addEventListener: (...a: unknown[]) => unknown; removeEventListener: (...a: unknown[]) => unknown };
+  const add = target.addEventListener;
+  const remove = target.removeEventListener;
+  const wrapped = new WeakMap<object, (this: unknown, ev: unknown) => unknown>();
+  target.addEventListener = function (this: unknown, type: unknown, listener: unknown, opts: unknown) {
+    if (!listener || (typeof listener !== "function" && typeof listener !== "object")) return add.call(this, type, listener, opts);
+    let w = wrapped.get(listener as object);
+    if (!w) {
+      w = function (this: unknown, ev: unknown) {
+        try {
+          return typeof listener === "function" ? (listener as (e: unknown) => unknown).call(this, ev) : (listener as { handleEvent(e: unknown): unknown }).handleEvent(ev);
+        } catch (e) {
+          reportAsyncError(e);
+        }
+      };
+      wrapped.set(listener as object, w);
+    }
+    return add.call(this, type, w, opts);
+  };
+  target.removeEventListener = function (this: unknown, type: unknown, listener: unknown, opts: unknown) {
+    return remove.call(this, type, (listener && wrapped.get(listener as object)) || listener, opts);
+  };
+  listenersPatched = true;
+}
 
 /** The worker forwards unhandled promise rejections here, attributed to the run in progress. */
 export function reportAsyncError(e: unknown): void {
@@ -158,6 +216,7 @@ export async function executeJs(req: JsRunRequest): Promise<JsRunResult> {
     const d = describeError(e);
     logs.push({ level: "error", text: `Uncaught ${d.text}` });
   };
+  const previousReporter = activeReporter;
   activeReporter = asyncError;
 
   // Timers the run waits for; callbacks that throw are reported like the browser does.
@@ -230,6 +289,8 @@ export async function executeJs(req: JsRunRequest): Promise<JsRunResult> {
     }
     throw new AssertionError(message ?? "expected the promise to reject, but it resolved");
   };
+  const suite = req.suite ? createSuite() : null;
+  let suiteResults: SuiteResult[] | undefined;
   const helpers: Record<string, unknown> = {
     assert,
     assertEqual,
@@ -238,7 +299,58 @@ export async function executeJs(req: JsRunRequest): Promise<JsRunResult> {
     logs: () => [...programLogs],
     fetchLog: () => api.log.map((e: FetchLogEntry) => ({ ...e })),
     sleep,
+    /** Run a test file against some implementation files; returns the learner's test() results. */
+    runSuite: async (files: Record<string, string>, entry: string) => (await executeJs({ id: `${req.id}-suite`, files, entry, suite: true })).suite ?? [],
+    suiteResults: () => [...(suiteResults ?? [])],
   };
+
+  // Optional environments.
+  const extras: Record<string, unknown> = {};
+  let documentRef: { body: { innerHTML: string } } | null = null;
+  if (req.dom && !req.files) {
+    const { parseHTML } = await import("linkedom");
+    const parsed = parseHTML(`<!doctype html><html><head></head><body>${req.dom.html}</body></html>`) as unknown as Record<string, unknown> & { document: { body: { innerHTML: string }; querySelector(s: string): unknown; querySelectorAll(s: string): ArrayLike<unknown> } };
+    patchListeners(parsed.document);
+    documentRef = parsed.document;
+    const win = parsed.window as Record<string, unknown>;
+    const doc = parsed.document;
+    const pick = (target: unknown) => (typeof target === "string" ? doc.querySelector(target) : target) as { dispatchEvent(e: unknown): boolean; value?: string } | null;
+    const EventCtor = win.Event as new (type: string, init?: object) => { defaultPrevented: boolean };
+    const fire = (target: unknown, type: string) => {
+      const el = pick(target);
+      if (!el) throw new AssertionError(`no element matches ${inspect(target, 1)}`);
+      const ev = new EventCtor(type, { bubbles: true, cancelable: true });
+      el.dispatchEvent(ev);
+      return ev;
+    };
+    Object.assign(extras, {
+      window: win,
+      document: doc,
+      Event: win.Event,
+      CustomEvent: win.CustomEvent,
+      InputEvent: win.InputEvent,
+      HTMLElement: win.HTMLElement,
+      Node: win.Node,
+    });
+    Object.assign(helpers, {
+      $: (s: string) => doc.querySelector(s),
+      $$: (s: string) => Array.from(doc.querySelectorAll(s)),
+      /** Put the fixture page back as it was (listeners attached to replaced elements go with them). */
+      resetDom: () => {
+        doc.body.innerHTML = req.dom!.html;
+      },
+      click: (t: unknown) => fire(t, "click"),
+      submit: (t: unknown) => fire(t, "submit"),
+      type: (t: unknown, value: string) => {
+        const el = pick(t);
+        if (!el) throw new AssertionError(`no element matches ${inspect(t, 1)}`);
+        el.value = value;
+        return fire(el, "input");
+      },
+    });
+  }
+  if (suite) Object.assign(extras, { test: suite.test, expect: suite.expect, mock: suite.mock });
+  if (req.store) extras.db = createStore(trackedSetTimeout);
 
   let error: string | null = null;
   let errorType: string | null = null;
@@ -265,6 +377,7 @@ export async function executeJs(req: JsRunRequest): Promise<JsRunResult> {
       swap("clearTimeout", trackedClearTimeout);
       swap("setInterval", trackedSetInterval);
       swap("clearInterval", trackedClearInterval);
+      for (const [name, value] of Object.entries(extras)) swap(name, value);
       const nonce = Math.random().toString(36).slice(2);
       const order = moduleOrder(req.files);
       for (const name of order) {
@@ -288,6 +401,8 @@ export async function executeJs(req: JsRunRequest): Promise<JsRunResult> {
         clearTimeout: trackedClearTimeout,
         setInterval: trackedSetInterval,
         clearInterval: trackedClearInterval,
+        process: { env: { ...(req.env ?? {}) }, argv: [], platform: "worker" },
+        ...extras,
         ...helpers,
         $source: req.code ?? "",
       };
@@ -304,6 +419,13 @@ export async function executeJs(req: JsRunRequest): Promise<JsRunResult> {
   }
 
   await settle(SETTLE_MS);
+  const html = documentRef ? documentRef.body.innerHTML : undefined;
+  if (suite && !error) {
+    suiteResults = await suite.run((p) => withDeadline(p, TEST_DEADLINE_MS, "The test", realSetTimeout, realClearTimeout));
+    await settle(SETTLE_MS);
+    for (const r of suiteResults) logs.push(r.passed ? { level: "log", text: `✓ ${r.name}` } : { level: "error", text: `✗ ${r.name}: ${r.error}` });
+    if (suiteResults.length === 0) logs.push({ level: "warn", text: "No tests were registered: call test(name, fn) to add one." });
+  }
   programLogs = logs.filter((l) => l.level === "log" || l.level === "info").map((l) => l.text);
 
   const tests: JsTestResult[] = [];
@@ -329,7 +451,7 @@ export async function executeJs(req: JsRunRequest): Promise<JsRunResult> {
   for (const h of intervals) realClearInterval(h);
   if (leftOver) logs.push({ level: "warn", text: `${leftOver} timer${leftOver === 1 ? "" : "s"} still pending at the end of the run ${leftOver === 1 ? "was" : "were"} cancelled.` });
   for (const r of restore.reverse()) r();
-  if (activeReporter === asyncError) activeReporter = null;
+  if (activeReporter === asyncError) activeReporter = previousReporter;
 
-  return { id: req.id, logs, error, errorType, errorAt, durationMs: Math.round(now()), tests };
+  return { id: req.id, logs, error, errorType, errorAt, durationMs: Math.round(now()), tests, ...(suiteResults ? { suite: suiteResults } : {}), ...(html !== undefined ? { html } : {}) };
 }

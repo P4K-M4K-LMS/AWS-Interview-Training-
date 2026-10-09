@@ -10,10 +10,19 @@
  * Test helpers: assert, assertEqual (structural), assertThrows,
  * assertRejects, logs() (the program's console.log lines), fetchLog(),
  * sleep(ms), $source (the code, or the files in module drills), and
- * modules (each file's exports, module drills only).
+ * modules (each file's exports, module drills only). DOM drills add $, $$,
+ * click, submit, type and resetDom; the testing drill adds suiteResults()
+ * and runSuite(files, entry). The DOM, testing and server drills live in
+ * jsDrillsMore.ts.
  */
+import { MORE_JS_DRILLS } from "./jsDrillsMore";
+
+export type JsDrillGroup = "Language" | "The DOM" | "Testing" | "Server";
+
 export interface JsDrill {
   id: string;
+  /** Shown as a heading over the drill tabs; Language when absent. */
+  group?: JsDrillGroup;
   title: string;
   brief: string;
   teaches: string;
@@ -24,6 +33,14 @@ export interface JsDrill {
   starterFiles?: Record<string, string>;
   solutionFiles?: Record<string, string>;
   entry?: string;
+  /** Fixture page for DOM drills (script drills only). */
+  dom?: string;
+  /** The drill provides test(), expect() and mock() and runs the learner's tests after the program. */
+  suite?: boolean;
+  /** The drill provides the async datastore as db. */
+  store?: boolean;
+  /** The simulated process.env. */
+  env?: Record<string, string>;
   tests: Array<{ id: string; label: string; code: string }>;
   hints: string[];
 }
@@ -37,7 +54,7 @@ const SHIPMENTS = `const shipments = [
 ];
 `;
 
-export const JS_DRILLS: JsDrill[] = [
+const LANGUAGE_DRILLS: JsDrill[] = [
   {
     id: "js-01-hoisting",
     title: "var, let, const and hoisting",
@@ -924,5 +941,7 @@ function createEmitter() {
     hints: ["curry2 returns a function that returns a function: (a) => (b) => fn(a, b). pipe uses reduce, not reduceRight.", "Keep a Map from event name to an array of listeners; on returns () => remove fn from that array.", "const curry2 = (fn) => (a) => (b) => fn(a, b); const pipe = (...fns) => (x) => fns.reduce((acc, fn) => fn(acc), x); createEmitter keeps a Map of arrays, and on returns a function that splices the listener out."],
   },
 ];
+
+export const JS_DRILLS: JsDrill[] = [...LANGUAGE_DRILLS, ...MORE_JS_DRILLS];
 
 export const JS_DRILL_BY_ID = new Map(JS_DRILLS.map((d) => [d.id, d]));

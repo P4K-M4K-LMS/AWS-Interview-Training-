@@ -1190,3 +1190,50 @@ test("JavaScript lab: var closures fail on the engine's own output, let fixes th
   await page.getByTestId("lab-tab-javascript").click();
   await expect(page.getByRole("heading", { name: "JavaScript" })).toBeVisible();
 });
+
+test("JavaScript lab, DOM and server units: delegation passes from a Study objective with a page preview; the testing drill checks your tests against the buggy and a correct version; the race shows on the starter", async ({ page }) => {
+  test.setTimeout(120_000);
+  await onboard(page);
+  await page.goto("/#/study/javascript/4");
+  const objective = page.getByTestId("study-objective-3");
+  await expect(objective).toContainText("Do it: mission or lab");
+  await objective.getByTestId("study-practise-3").click();
+  await expect(page).toHaveURL(/#\/labs\/javascript\?exercise=dom-03-delegation/);
+  await expect(page.getByTestId("js-run")).toBeEnabled({ timeout: 30_000 });
+  await page.getByTestId("js-run").click();
+  await expect(page.getByTestId("js-test-later")).toHaveAttribute("data-ok", "0");
+  await expect(page.getByTestId("js-test-export")).toContainText("call event.preventDefault()");
+  await page.locator(".cm-content").click();
+  await page.keyboard.press("Control+A");
+  await page.keyboard.insertText(
+    'function addRow(id) {\nconst tr = document.createElement("tr");\ntr.dataset.id = id;\ntr.innerHTML = `<td>${id}</td><td><button class="remove">Remove</button></td>`;\ndocument.querySelector("#parcels tbody").append(tr);\n}\nfunction wire() {\ndocument.querySelector("#parcels tbody").addEventListener("click", (event) => {\nconst button = event.target.closest(".remove");\nif (button) button.closest("tr").remove();\n});\ndocument.getElementById("export").addEventListener("click", (event) => {\nevent.preventDefault();\nconsole.log("export requested");\n});\n}\nwire();\naddRow("P-3");\n',
+  );
+  await page.getByTestId("js-run").click();
+  await expect(page.getByTestId("js-summary")).toHaveText("4 of 4 passed.");
+  await expect(page.frameLocator('[data-testid="js-preview"]').locator("tr[data-id='P-3']")).toBeVisible();
+  await page.getByTestId("js-check").click();
+  await expect(page.getByTestId("js-passed")).toContainText("Credited");
+  await page.getByTestId("js-back-link").click();
+  await expect(page.getByTestId("study-status-3")).toHaveText("Guided");
+  // Testing drill: the starter's one test passes everywhere, so it does not catch the bug.
+  await page.goto("/#/labs/javascript?exercise=test-01-reproduce");
+  await expect(page.getByTestId("js-run")).toBeEnabled({ timeout: 30_000 });
+  await page.getByTestId("js-run").click();
+  await expect(page.getByTestId("js-console")).toContainText("✓ one box when the parcel fits");
+  await expect(page.getByTestId("js-test-catches")).toHaveAttribute("data-ok", "0");
+  await page.locator(".cm-content").click();
+  await page.keyboard.press("End");
+  await page.keyboard.press("Control+End");
+  await page.keyboard.insertText('\ntest("an exact multiple needs no extra box", () => {\nexpect(boxesNeeded(10, 5)).toBe(2);\n});\n');
+  await page.getByTestId("js-run").click();
+  await expect(page.getByTestId("js-console")).toContainText("✗ an exact multiple needs no extra box: ExpectationError: expected 3 to be 2");
+  await expect(page.getByTestId("js-test-catches")).toHaveAttribute("data-ok", "1");
+  await expect(page.getByTestId("js-test-agree")).toHaveAttribute("data-ok", "1");
+  await expect(page.getByTestId("js-test-fixed")).toHaveAttribute("data-ok", "0");
+  // Server drill: two requests for the last five boxes both succeed on the starter.
+  await page.goto("/#/labs/javascript?exercise=node-02-race");
+  await expect(page.getByTestId("js-run")).toBeEnabled({ timeout: 30_000 });
+  await page.getByTestId("js-run").click();
+  await expect(page.getByTestId("js-test-lastfive")).toContainText("both requests read the same stock before either wrote");
+  await expect(page.getByTestId("js-test-alone")).toHaveAttribute("data-ok", "1");
+});
