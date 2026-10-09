@@ -893,8 +893,14 @@
           "text": "Selecting the most cost-effective storage service for a workload",
           "sourceHash": "1c436c08c588",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "cost",
+            "exerciseId": "cost-04-tiering",
+            "coverage": "partial"
+          }
         },
         {
           "id": "saa-c03:4:2",
@@ -979,8 +985,14 @@
           "text": "Purchasing options on cost: On-Demand, Spot Instances, Reserved Instances, Savings Plans",
           "sourceHash": "3dac2cf1b58d",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "cost",
+            "exerciseId": "cost-02-commit-baseline",
+            "coverage": "partial"
+          }
         },
         {
           "id": "saa-c03:4:10",
@@ -989,8 +1001,15 @@
           "text": "Selecting instance family and size for cost",
           "sourceHash": "4eedb550df3f",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "cost",
+            "exerciseId": "cost-01-rightsize",
+            "coverage": "partial",
+            "note": "size only"
+          }
         },
         {
           "id": "saa-c03:4:11",
@@ -1076,8 +1095,14 @@
           "text": "NAT gateway cost: one shared gateway versus one per Availability Zone",
           "sourceHash": "684b885808c8",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "cost",
+            "exerciseId": "cost-05-transfer-path",
+            "coverage": "full"
+          }
         },
         {
           "id": "saa-c03:4:19",
@@ -1086,8 +1111,14 @@
           "text": "Routing that minimizes transfer cost: VPC endpoints, VPC peering, AWS Transit Gateway, cross-AZ and cross-Region traffic",
           "sourceHash": "af9d725449c8",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "cost",
+            "exerciseId": "cost-05-transfer-path",
+            "coverage": "partial"
+          }
         },
         {
           "id": "saa-c03:4:20",
@@ -1106,8 +1137,14 @@
           "text": "CDN and edge caching to cut origin cost",
           "sourceHash": "6cc72de75270",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "cost",
+            "exerciseId": "cost-06-cache-and-alarm",
+            "coverage": "full"
+          }
         },
         {
           "id": "saa-c03:4:22",
@@ -1136,8 +1173,14 @@
           "text": "Cost visibility: AWS Cost Explorer, AWS Budgets, the AWS Cost and Usage Report, cost allocation tags, multi-account billing",
           "sourceHash": "5c14c11b8966",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "cost",
+            "exerciseId": "cost-06-cache-and-alarm",
+            "coverage": "partial"
+          }
         }
       ]
     }
@@ -1158,6 +1201,6 @@
     "units": 4,
     "objectives": 99,
     "bookkeeping": 0,
-    "linked": 18
+    "linked": 25
   }
 }

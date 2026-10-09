@@ -15,6 +15,7 @@ export const LABS = [
   { to: "/labs/network", label: "Network", hint: "Trace a packet through the virtual network" },
   { to: "/labs/dr", label: "Recovery", hint: "Plan recovery to a time, a point and a budget" },
   { to: "/labs/alarms", label: "Alarms", hint: "Alarms that catch incidents without paging for nothing" },
+  { to: "/labs/cost", label: "Cost", hint: "A monthly bill in fictional credits" },
 ];
 
 export function LabsPage() {

@@ -638,8 +638,14 @@
           "text": "Optimizing the cost of a network architecture",
           "sourceHash": "231385583fa7",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "cost",
+            "exerciseId": "cost-05-transfer-path",
+            "coverage": "partial"
+          }
         },
         {
           "id": "soa-c03:5:5",
@@ -753,6 +759,6 @@
     "units": 5,
     "objectives": 59,
     "bookkeeping": 0,
-    "linked": 14
+    "linked": 15
   }
 }

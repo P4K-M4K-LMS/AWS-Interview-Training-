@@ -61,6 +61,10 @@ A planner for recovery to a stated time, point and budget. Pick a backup cadence
 
 Write alarms over the simulated platform's own metrics, one per line (`alert: errorRate > 0.03 for 3 of 3`, or a composite with `and`), and replay incidents and harmless moments second by second. Each run says what must happen (fire within the deadline, or stay quiet) and what your alarms did: never fired, fired late, fired for nothing, with sparklines of the metrics you alarmed on. The exercises cover thresholds above normal variation, evaluation periods against blips, choosing the metric that measures the failure, replica lag, throttling versus cold starts on the function platform, and severity tiers. Passing credits the linked Study objectives.
 
+### Cost lab
+
+A monthly bill for the fleet platform in fictional credits; every price is invented and listed on the page, so what you learn is the shape, not a price list. Choose how many capacity units to commit to (cheaper per unit, paid while idle), the instance size relative to need, the compute model for batch work (interruptible only if the job tolerates it), the cold storage tier against the retrieval speed you need, a private endpoint or the address translator for service traffic, one translator per zone or a shared one, an edge cache in front of egress, a spend alarm and allocation tags. The bill breaks down line by line, the checks compare it with the requirement, and the cheapest plan that meets the requirement is named, so spending more than needed fails just like falling short. Passing credits the linked Study objectives.
+
 ### CI/CD missions
 
 Some missions ship their own command-line tools, listed at the end of `help`: `ci run` / `ci log` / `ci status` execute and inspect a simulated pipeline defined in `.ci/pipeline.yml`; `deployctl status` / `history` / `rollback VERSION` manage which release is live; `metrics errors` / `latency` query the live service. The pipeline runner reacts to the real repository state, and the checks reject shortcuts: a retry that happens to pass, a skipped test, a secret pasted into the pipeline file, or a rollback that is never verified.

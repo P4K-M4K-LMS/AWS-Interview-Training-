@@ -177,6 +177,43 @@ export const LAB_LINKS: Record<string, string[]> = {
     "sap-c02:2:11",
     "soa-c03:1:4"
   ],
+  "cost-01-rightsize": [
+    "clf-c02:1:13",
+    "saa-c03:4:10",
+    "sap-c02:2:32"
+  ],
+  "cost-02-commit-baseline": [
+    "clf-c02:1:10",
+    "mla-c02:3:9",
+    "saa-c03:4:9",
+    "sap-c02:2:33"
+  ],
+  "cost-03-interruptible": [
+    "clf-c02:4:1",
+    "dea-c01:1:16",
+    "mla-c02:4:12",
+    "sap-c02:1:25"
+  ],
+  "cost-04-tiering": [
+    "clf-c02:4:5",
+    "saa-c03:4:1",
+    "sap-c02:2:34"
+  ],
+  "cost-05-transfer-path": [
+    "clf-c02:4:4",
+    "saa-c03:4:18",
+    "saa-c03:4:19",
+    "soa-c03:5:4"
+  ],
+  "cost-06-cache-and-alarm": [
+    "clf-c02:4:6",
+    "clf-c02:4:9",
+    "saa-c03:4:21",
+    "saa-c03:4:24",
+    "sap-c02:3:29",
+    "sap-c02:3:31",
+    "scs-c03:6:7"
+  ],
   "dr-01-match-the-need": [
     "clf-c02:3:6",
     "saa-c03:2:20",

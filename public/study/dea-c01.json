@@ -169,8 +169,14 @@
           "text": "Optimizing cost while processing data",
           "sourceHash": "41f312ff8c47",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "cost",
+            "exerciseId": "cost-03-interruptible",
+            "coverage": "partial"
+          }
         },
         {
           "id": "dea-c01:1:17",
@@ -1211,6 +1217,6 @@
     "units": 4,
     "objectives": 113,
     "bookkeeping": 0,
-    "linked": 4
+    "linked": 5
   }
 }

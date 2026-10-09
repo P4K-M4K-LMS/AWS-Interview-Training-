@@ -917,3 +917,32 @@ test("alarm lab: a trigger-happy alarm pages on a deploy, the error-rate alarm c
   await page.getByTestId("lab-tab-alarms").click();
   await expect(page.getByRole("heading", { name: "Metric alarms" })).toBeVisible();
 });
+
+test("cost lab: commit to the floor, not the ceiling; the bill, the lean check and the Study credit", async ({ page }) => {
+  await onboard(page);
+  await page.goto("/#/study/saa-c03/4");
+  const objective = page.getByTestId("study-objective-9");
+  await expect(objective).toContainText("Do it: mission or lab");
+  await objective.getByTestId("study-practise-9").click();
+  await expect(page).toHaveURL(/#\/labs\/cost\?exercise=cost-02-commit-baseline/);
+  await expect(page.getByRole("heading", { name: "Cost model" })).toBeVisible();
+  await expect(page.getByTestId("cost-total")).toContainText("1738.17");
+  await expect(page.getByTestId("cost-check-target")).toHaveAttribute("data-ok", "0");
+  await expect(page.getByTestId("cost-check-lean")).toContainText("cheapest plan that meets the requirement costs 1338.17");
+  await expect(page.getByTestId("cost-check")).toBeDisabled();
+  // Committing to the peak passes the target but fails the lean check: idle commitment.
+  await page.getByTestId("cost-commit").fill("30");
+  await expect(page.getByTestId("cost-lines")).toContainText("sit idle");
+  await expect(page.getByTestId("cost-check-lean")).toHaveAttribute("data-ok", "0");
+  // Committing to the floor is the cheapest feasible plan.
+  await page.getByTestId("cost-commit").fill("10");
+  await expect(page.getByTestId("cost-total")).toContainText("1338.17");
+  await expect(page.getByTestId("cost-check")).toBeEnabled();
+  await page.getByTestId("cost-check").click();
+  await expect(page.getByTestId("cost-passed")).toContainText("Credited");
+  await page.getByTestId("cost-back-link").click();
+  await expect(page.getByTestId("study-status-9")).toHaveText("Guided");
+  await page.goto("/#/labs");
+  await page.getByTestId("lab-tab-cost").click();
+  await expect(page.getByRole("heading", { name: "Cost model" })).toBeVisible();
+});
