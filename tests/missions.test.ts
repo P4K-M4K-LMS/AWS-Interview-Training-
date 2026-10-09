@@ -2,12 +2,12 @@
 import { beforeAll, describe, expect, it } from "vitest";
 import { loadPyodide } from "pyodide";
 import { Shell } from "../src/engine/terminal/shell";
-import { runTerminalChecks } from "../src/engine/missions/engine";
+import { computeStatus, emptyProgress, runTerminalChecks } from "../src/engine/missions/engine";
 import { MISSIONS, MISSION_BY_ID, RECOMMENDED_ORDER } from "../src/content/missions";
 import { simulatePipelineRun } from "../src/content/missions/devops";
 import { executeInPyodide, type PyodideLike } from "../src/engine/python/execute";
 import { SKILL_BY_ID } from "../src/content/curriculum";
-import type { InvestigationMission, PythonMission, TerminalMission } from "../src/domain/types";
+import type { InvestigationMission, MissionProgress, PythonMission, TerminalMission } from "../src/domain/types";
 
 /**
  * Verifies every MVP mission can actually be completed: each terminal /
@@ -29,7 +29,16 @@ describe("mission catalogue integrity", () => {
     expect(by("python")).toBe(3);
     expect(by("bigo")).toBe(2);
     expect(MISSIONS.filter((m) => m.trackId === "netsec").length).toBe(1);
-    expect(MISSIONS.filter((m) => m.trackId === "devops").length).toBe(1);
+    expect(MISSIONS.filter((m) => m.trackId === "devops").length).toBe(2);
+    expect(by("incident")).toBe(3);
+  });
+  it("every mission in the recommended order becomes available in sequence", () => {
+    const progress = new Map<string, MissionProgress>();
+    for (const id of RECOMMENDED_ORDER) {
+      const m = MISSION_BY_ID.get(id)!;
+      expect(computeStatus(m, progress, new Map()), `${id} should be available`).toBe("available");
+      progress.set(id, { ...emptyProgress(id), status: "completed" });
+    }
   });
   it("references only known skills and missions", () => {
     for (const m of MISSIONS) {

@@ -163,3 +163,52 @@ test("retention check: fresh replay without hints raises mastery", async ({ page
   await page.goto("/#/progress");
   await expect(page.getByText(/1 evidence item|2 evidence item/).first()).toBeVisible();
 });
+
+test("incident console: investigate, remediate the cause, verify recovery, write the note", async ({ page }) => {
+  test.setTimeout(120_000);
+  await onboard(page);
+  await page.goto("/#/missions/incident-01-cache-stampede");
+  await expect(page.getByText("Locked")).toBeVisible();
+
+  // Unlock the incident by importing a progress bundle through Settings (the app's own import path).
+  const now = new Date().toISOString();
+  const bundle = {
+    app: "opsforge",
+    schemaVersion: 1,
+    exportedAt: now,
+    missions: ["linux-01-find-your-way", "linux-02-log-detective", "linux-03-locked-out", "devops-01-broken-pipeline"].map((missionId) => ({
+      missionId,
+      schemaVersion: 1,
+      status: "completed",
+      attempts: 1,
+      hintsUsed: 0,
+      maxHintLevel: 0,
+      bestScore: 1,
+      startedAt: now,
+      completedAt: now,
+      reflections: [],
+    })),
+  };
+  await page.goto("/#/settings");
+  await page.locator('input[type="file"]').setInputFiles({ name: "progress.json", mimeType: "application/json", buffer: Buffer.from(JSON.stringify(bundle)) });
+  await expect(page.getByText(/Imported .*4 mission records/)).toBeVisible();
+
+  await page.goto("/#/missions/incident-01-cache-stampede");
+  await expect(page.getByText("Incident console")).toBeVisible({ timeout: 20_000 });
+  await expect(page.getByTestId("incident-health")).not.toHaveText("healthy");
+  await page.getByTestId("tab-logs").click();
+  await expect(page.getByTestId("incident-logs")).toContainText("keys expired");
+  await page.getByTestId("tab-metrics").click();
+  await expect(page.getByTestId("metrics-grid")).toBeVisible();
+  await page.getByTestId("tab-diagram").click();
+  await expect(page.getByTestId("node-cache")).toBeVisible();
+  await page.getByTestId("root-cause-1").check();
+  await expect(page.getByText(/^Correct\./)).toBeVisible();
+  await page.getByTestId("act-cache").click();
+  await page.getByTestId("advance-10").click();
+  await expect(page.getByTestId("incident-health")).toHaveText("healthy", { timeout: 20_000 });
+  await page.getByTestId("postmortem").fill("What: positions API slow after deploy. Why: cache keys expired together, overloading the database. Fix: re-warmed cache with jittered TTLs. Prevention: jitter TTLs in the deploy and alert on hit ratio.");
+  await expect(page.getByText("Checks (5/5)")).toBeVisible({ timeout: 20_000 });
+  await page.getByTestId("mission-complete").click();
+  await expect(page.getByText("Mission complete: explain what you did")).toBeVisible();
+});

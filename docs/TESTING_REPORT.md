@@ -1,15 +1,15 @@
 # Testing report
 
-Executed on 2026-10-09 (updated after the retention-check change) in the build environment (Linux, Node 22.22, Chromium 1194 via Playwright 1.64). Every number below comes from a real run; nothing is estimated.
+Executed on 2026-10-09 (updated after the Phase 7 incident slice) in the build environment (Linux, Node 22.22, Chromium 1194 via Playwright 1.64). Every number below comes from a real run; nothing is estimated.
 
 ## Commands
 
 ```
 npm run typecheck   # tsc -b                      -> 0 errors
 npm run lint        # oxlint                      -> 0 errors, 11 warnings (React fast-refresh / effect style; no behaviour impact)
-npm run test        # vitest run                  -> 6 files, 47 tests passed
+npm run test        # vitest run                  -> 7 files, 56 tests passed
 npm run build       # vite build                  -> dist/ 15 MB incl. Pyodide runtime; app JS 1.2 MB (390 kB gzip)
-npm run test:e2e    # playwright test             -> 16 passed (8 scenarios × desktop + Pixel 5), 0 failed
+npm run test:e2e    # playwright test             -> 18 passed (9 scenarios × desktop + Pixel 5), 0 failed
 ```
 
 ## Unit and engine tests (Vitest)
@@ -19,7 +19,8 @@ npm run test:e2e    # playwright test             -> 16 passed (8 scenarios × d
 | `tests/shell.test.ts` | 14 | tokenizer; navigation; cat/grep/pipes/redirection; mkdir/touch/mv/cp/rm; permissions, chmod, sudo; env expansion; ps/top/kill affecting services; systemctl with config validation and journal; unsupported commands return 127 with guidance; snapshot/restore; validator context; editor action; simulated ping/curl/dig/ss |
 | `tests/python-execute.test.ts` | 6 | real CPython (Pyodide 3.14) stdout capture; real tracebacks with exception type; test cases in learner namespace; isolation between runs; stdin to input(); tests skipped when the program itself fails |
 | `tests/bigo.test.ts` | 5 | growth ratios match classes (linear ≈10×, binary <25 ops at 1M, bubble >50× for 10×n, constant flat); exponential cap; step recording only for small n; sorts produce sorted output; theoretical reference for every algorithm |
-| `tests/missions.test.ts` | 10 | catalogue counts (3 Linux, 3 Python, 2 Big O, 1 security, 1 automation); all skills/prereqs exist; every terminal/investigation mission starts unsolved and is solved by executing its level-4 guided example; every Python mission's starter fails and reference solution passes all tests |
+| `tests/missions.test.ts` | 11 | catalogue counts (3 Linux, 3 Python, 2 Big O, 1 security, 1 automation, 3 incidents); all skills/prereqs exist; every mission in the recommended order becomes available in sequence; every terminal/investigation mission starts unsolved and is solved by executing its level-4 guided example; every Python mission's starter fails and reference solution passes all tests |
+| `tests/incidents.test.ts` | 8 | simulation reacts coherently to each lever; queue accumulates and drains; logs carry evidence; every incident opens unhealthy with unmet checks; cache stampede solved only by re-warming the cache (workers/traffic shedding rejected); traffic surge solved only by sizing both workers and consumers; dead consumers solved by restarting enough consumers; out-of-runbook actions ignored and the recovery timer resets on every action |
 | `tests/retention.test.ts` | 4 | retention check refuses non-completed missions; passing adds +8 mastery, doubles the interval and records history/activity; giving up subtracts 12 and schedules a review in one day; a due skill is recommended as a retention check on its completed mission |
 | `tests/interview.test.ts` | 8 | vague answers produce ownership/technical/results gaps; complete STAR answer recognised; Dive Deeper asks targeted follow-ups, keeps original context, resolves gaps with evidence, accepts "I don't know", never repeats a gap/level, stops when sufficient or asked; scoring separates weak and strong answers with evidence and limitations; improvement only declared with stronger evidence; 16 LPs present with questions and examples |
 
@@ -37,6 +38,7 @@ Mapped to the nonnegotiable acceptance criteria (Part 20). Each runs on a deskto
 | 18–20 | Skill progress page; Settings "what works today" feature status; mobile layout renders | passed |
 | keyboard | Skip link focusable and visible on focus; desktop Tab order reaches navigation | passed |
 | retention | Complete a mission, reopen with `?retention=1`: fresh environment (0/3 checks), hints disabled, confirm after redoing it, "Retention check passed" shown and evidence recorded | passed |
+| incident | Import a progress bundle via Settings to unlock the incident; console opens unhealthy; logs show the cache expiry evidence; metrics and diagram render; correct root cause; re-warm cache; advance; health turns healthy; note written; 5/5 checks; complete | passed |
 
 ## Not verified (honest gaps)
 

@@ -33,7 +33,11 @@ Pick an algorithm and an input size, press Run. You get an **operation count** (
 
 ### Security Operations, System Monitoring
 
-Security investigations run on isolated fictional hosts. The monitoring page is a deterministic simulation: move the sliders, inject failures, and watch latency, error rate and queue depth respond coherently.
+Security investigations run on isolated fictional hosts. The monitoring page is a deterministic simulation: move the sliders, inject failures, and watch latency, error rate, queue depth, the logs and the architecture diagram respond coherently.
+
+### Incident console
+
+Incident missions open with a ticket and a broken platform on a one-second clock. Tabs: **Ticket**, **Metrics** (live stats and sparklines), **Logs** (evidence that names the failing component), **Diagram** (each component coloured by its own health). **Runbook actions** change the platform; every action resets the recovery timer. Answer the **root cause** question, apply a remediation that removes the cause (symptom-only fixes such as shedding legitimate traffic are rejected with a reason), wait until health stays green for the required seconds (use Advance 10s to skip ahead), then write the **post-incident note**. All five checks must pass to complete.
 
 ## Skill Progress
 

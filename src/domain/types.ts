@@ -57,7 +57,7 @@ export interface Track {
 /* Missions                                                            */
 /* ------------------------------------------------------------------ */
 
-export type MissionKind = "terminal" | "python" | "bigo" | "investigation";
+export type MissionKind = "terminal" | "python" | "bigo" | "investigation" | "incident";
 
 export interface LessonBlock {
   /** Short heading shown in the lesson pane. */
@@ -270,7 +270,49 @@ export interface InvestigationMission extends MissionBase {
   commandsIntroduced: string[];
 }
 
-export type Mission = TerminalMission | PythonMission | BigOMission | InvestigationMission;
+/* --- Incident missions (monitoring + incident console) --------------- */
+
+export interface SimConfig {
+  requestsPerSec: number;
+  workers: number;
+  cacheHitRate: number;
+  dbDegraded: boolean;
+  deployInProgress: boolean;
+  queueConsumers: number;
+}
+
+export type SimActionType = "scale-workers" | "set-cache-hit" | "restart-db" | "set-consumers" | "rollback-deploy" | "set-traffic";
+
+export interface IncidentTicket {
+  title: string;
+  reporter: string;
+  description: string;
+  symptoms: string[];
+  impact: string;
+}
+
+export interface IncidentScenario {
+  /** The broken state the incident opens in. */
+  initialConfig: SimConfig;
+  /** Queue depth at the start (the queue accumulates over time). */
+  initialQueueDepth: number;
+  ticket: IncidentTicket;
+  /** Runbook actions available to the responder. */
+  allowedActions: SimActionType[];
+  rootCause: { prompt: string; options: string[]; correctIndex: number; explanation: string };
+  /** A remediation is valid when the configuration fixes the cause, not just the symptom. */
+  remediationCheck: (config: SimConfig) => { passed: boolean; detail?: string };
+  /** Consecutive healthy ticks required to declare recovery. */
+  verifyTicks: number;
+  postmortemPrompt: string;
+}
+
+export interface IncidentMission extends MissionBase {
+  kind: "incident";
+  scenario: IncidentScenario;
+}
+
+export type Mission = TerminalMission | PythonMission | BigOMission | InvestigationMission | IncidentMission;
 
 /* ------------------------------------------------------------------ */
 /* Learner state (persisted)                                           */
