@@ -1,72 +1,28 @@
+# Diagnostic version on the pages-diag branch only: no build, no deploy.
+# Dispatched by hand through the registered pages.yml name with ref=pages-diag.
 name: Deploy to GitHub Pages
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 permissions:
   contents: read
   pages: write
-  id-token: write
-concurrency:
-  group: pages
-  cancel-in-progress: true
 jobs:
-  build:
+  diag:
     runs-on: ubuntu-latest
-    outputs:
-      legacy_source: ${{ steps.source.outputs.legacy }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: npm
-      - uses: actions/setup-go@v5
-        with:
-          go-version: "1.24"
-          cache-dependency-path: go/runner/go.sum
-      - run: npm ci
-      - name: Configure GitHub Pages (enables Pages with the Actions source if needed)
-        uses: actions/configure-pages@v5
-        with:
-          enablement: true
-      - name: Make GitHub Actions the only Pages source
-        id: source
+      - name: Dump the Pages configuration as GitHub stores it
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          # When Pages was enabled with "Deploy from a branch", GitHub also builds the
-          # raw repository root with Jekyll on every push, and that deployment races
-          # this one. Whichever finishes last is what visitors get; the Jekyll one
-          # serves an index.html whose script tag points at /src/main.tsx, so the
-          # site shows a blank page. Switching the source to GitHub Actions stops
-          # the Jekyll build for good.
-          current=$(gh api "repos/${GITHUB_REPOSITORY}/pages" --jq .build_type 2>/dev/null || echo unknown)
-          echo "Pages build type before this run: ${current}"
-          if [ "${current}" = "workflow" ]; then
-            echo "legacy=false" >> "$GITHUB_OUTPUT"
-          elif gh api -X PUT "repos/${GITHUB_REPOSITORY}/pages" -f build_type=workflow >/dev/null 2>&1; then
-            echo "Switched the Pages source to GitHub Actions."
-            echo "legacy=false" >> "$GITHUB_OUTPUT"
-          else
-            echo "::warning::Could not switch the Pages source to GitHub Actions with the workflow token. Open Settings > Pages and set Source to GitHub Actions. Until then the deploy job waits so this build lands after the Jekyll one."
-            echo "legacy=true" >> "$GITHUB_OUTPUT"
-          fi
-      - name: Build with repository base path
-        run: VITE_BASE_PATH="/${GITHUB_REPOSITORY#*/}/" npm run build
-      - run: cp dist/index.html dist/404.html
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: dist
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Let the Jekyll deployment finish first so this one is the live site
-        if: needs.build.outputs.legacy_source == 'true'
-        run: sleep 120
-      - id: deployment
-        uses: actions/deploy-pages@v4
+          echo "repo: $GITHUB_REPOSITORY  ref: $GITHUB_REF"
+          echo "== GET /pages"
+          gh api "repos/$GITHUB_REPOSITORY/pages" 2>&1 || true
+          echo
+          echo "== GET /pages/builds/latest (legacy Jekyll builds)"
+          gh api "repos/$GITHUB_REPOSITORY/pages/builds/latest" 2>&1 || true
+          echo
+          echo "== PUT build_type=workflow, with the error shown"
+          gh api -X PUT "repos/$GITHUB_REPOSITORY/pages" -f build_type=workflow 2>&1 || true
+          echo
+          echo "== GET /pages afterwards"
+          gh api "repos/$GITHUB_REPOSITORY/pages" --jq '{build_type, source, status, html_url}' 2>&1 || true
