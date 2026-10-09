@@ -8,6 +8,7 @@ import type { PyRunResult } from "../engine/python/execute";
 import { RunOutput } from "../components/PythonRunPanel";
 import { useProfile } from "../data/hooks";
 import { Callout, PageHeader, Panel } from "../components/ui";
+import { RaceDetectorPanel } from "../components/RaceDetectorPanel";
 
 const STARTER = `package main
 
@@ -115,8 +116,14 @@ export function GoLabPage() {
           <RunOutput result={result} errorHelp={GO_ERROR_HELP} />
         </div>
       </Panel>
+      <Panel title="Data races: the race detector (optional local service)">
+        <p className="text-sm muted mb-2">
+          Goroutines here interleave cooperatively on one thread, so an unsynchronised <code>counter++</code> from many goroutines still adds up correctly in this lab, while on a real multi-core machine it loses updates. The Go race detector instruments memory accesses and reports such conflicts. Run the current program through it on your own machine.
+        </p>
+        <RaceDetectorPanel code={code} serviceUrl={profile?.settings.raceServiceUrl ?? ""} />
+      </Panel>
       <Callout kind="info" title="What this lab can and cannot do">
-        Real Go semantics for goroutines, channels, select, sync primitives, generics and most of the standard library (fmt, strings, sort, encoding/json, time, context, errors). No network, filesystem or cgo. WebAssembly is single-threaded, so goroutines interleave cooperatively: concurrency semantics are faithful, but true data races cannot be reproduced here and the race detector is unavailable.
+        Real Go semantics for goroutines, channels, select, sync primitives, generics and most of the standard library (fmt, strings, sort, encoding/json, time, context, errors). No network, filesystem or cgo. WebAssembly is single-threaded, so goroutines interleave cooperatively: concurrency semantics are faithful, but true data races cannot be reproduced here. Races whose critical section contains a blocking call (a sleep, a channel operation, a lock) do show up, because the scheduler switches goroutines there. For everything else use the race detector panel above with the local service.
       </Callout>
     </div>
   );

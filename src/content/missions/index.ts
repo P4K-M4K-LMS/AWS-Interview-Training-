@@ -38,4 +38,5 @@ export const RECOMMENDED_ORDER: string[] = [
   "go-02-worker-pool",
   "go-03-timeouts-context",
   "go-04-retries-idempotency",
+  "go-05-data-race",
 ];

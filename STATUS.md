@@ -65,9 +65,9 @@ Legend: **verified** = automated tests pass in CI · **unverified** = implemente
 | System architecture visualizer with live health | verified (e2e) |
 | CI/CD failure-mode missions: flaky test, bad release rollback, secret wiring (simulated pipeline runner, mission tools) | verified (unit tests prove solvable and reject shortcuts; e2e on the flaky-test mission) |
 | Go Laboratory: Yaegi-in-WebAssembly runtime, worker with timeout, free-play page | verified (Node runner tests + browser e2e) |
-| Go missions: config parser (Go for a Python engineer), worker pool, timeouts/context, retries + idempotency | verified (reference solutions proven in the WebAssembly runner; e2e completes one) |
+| Go missions: config parser (Go for a Python engineer), worker pool, timeouts/context, retries + idempotency, data race / double spend | verified (reference solutions proven in the WebAssembly runner; e2e completes one) |
 | Replication-lag simulation: read replica, stale map reads, blocked apply thread, failover data-loss trap | verified (unit + e2e) |
-| Concurrency/race lesson (needs race detector: optional local service) | planned |
+| Go race-detector service (optional, local): `npm run race-server`, panel in the Go Laboratory and Go missions | verified (unit tests run the real detector on the data-race mission; e2e covers the UI states) |
 | Remaining track content (see docs/CURRICULUM.md) | planned |
 | Full accessibility audit | planned (skip link, labels, keyboard nav exist) |
 
@@ -76,12 +76,11 @@ Legend: **verified** = automated tests pass in CI · **unverified** = implemente
 - Mission availability depends only on prerequisite missions (fixed 2026-10-09: skill-prerequisite gating could lock a mission behind the skill it teaches). Skill mastery gates stage promotion.
 - The terminal is a simulation: no globbing, loops, functions or package managers. Missions may ship their own tools (e.g. `ci`, `deployctl`, `metrics`), listed by `help`. `sed` follows POSIX basic-regex semantics (parentheses literal unless escaped) and substitutes once per line.
 - Code missions are generic over language (`kind: "python" | "go"`); the player picks the runtime and editor mode. Yaegi quirk found: a `range` over a slice literal evaluated at the interpreter top level can nil-dereference, so mission test snippets avoid top-level `range`.
-- The Go runtime is 37.6 MB raw (about 8 MB gzip-compressed) and is fetched only when the Go Laboratory opens. WebAssembly is single-threaded, so goroutine interleaving is cooperative: concurrency semantics are faithful, data races are not reproducible and the race detector is unavailable.
+- The Go runtime is 37.6 MB raw (about 8 MB gzip-compressed) and is fetched only when the Go Laboratory opens. WebAssembly is single-threaded, so goroutine interleaving is cooperative: concurrency semantics are faithful; races whose critical section blocks reproduce, bare counter races do not. The optional local race-detector service (needs Go and a C compiler) covers those; it runs the submitted code on the learner's machine and is documented as such.
 - The rule-based coach matches linguistic cues; it cannot judge truth or technical correctness and says so in every report.
 - Voice features depend on the browser and were only checked manually in design; CI cannot exercise microphones.
 
 ## Next steps (in order)
 
-1. Remaining Phase 7: optional local `go test -race` service for a data-race lesson.
-2. More missions per track (see CURRICULUM.md).
-3. Accessibility audit with a screen reader; reduce bundle size by lazy-loading CodeMirror and the interview pages.
+1. More missions per track (see CURRICULUM.md).
+2. Accessibility audit with a screen reader; reduce bundle size by lazy-loading CodeMirror and the interview pages.

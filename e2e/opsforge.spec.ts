@@ -285,6 +285,16 @@ test("Go Laboratory: runs real Go with goroutines in the browser and reports com
   await page.getByTestId("go-run").click();
   await expect(page.getByTestId("python-error")).toContainText("undefined: nope", { timeout: 60_000 });
   await expect(page.getByText("About this undefined identifier")).toBeVisible();
+  // Race detector panel: disabled until the local service is configured in Settings.
+  await expect(page.getByTestId("race-unconfigured")).toBeVisible();
+  await expect(page.getByTestId("race-run")).toBeDisabled();
+  await page.goto("/#/settings");
+  await page.getByTestId("race-url").fill("http://127.0.0.1:9");
+  await page.goto("/#/go");
+  await expect(page.getByTestId("go-status")).toContainText("Go ready", { timeout: 120_000 });
+  await expect(page.getByTestId("race-run")).toBeEnabled();
+  await page.getByTestId("race-run").click();
+  await expect(page.getByText(/Could not reach the service|Service returned HTTP/)).toBeVisible({ timeout: 30_000 });
 });
 
 test("Go mission: write Go, run the mission tests in the browser, complete", async ({ page }) => {

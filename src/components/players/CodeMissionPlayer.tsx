@@ -7,6 +7,8 @@ import { RunOutput, RunnerStatusLine, useCodeRunner } from "../PythonRunPanel";
 import { MissionFrame } from "./MissionFrame";
 import { Panel } from "../ui";
 import { logActivity } from "../../data/db";
+import { useProfile } from "../../data/hooks";
+import { RaceDetectorPanel } from "../RaceDetectorPanel";
 
 interface Props {
   mission: CodeMission;
@@ -23,6 +25,7 @@ export function CodeMissionPlayer({ mission, progress, completed, onComplete, on
   const [code, setCode] = useState(saved?.code ?? mission.starterCode);
   const [result, setResult] = useState<PyRunResult | null>(saved?.lastResult ?? null);
   const { runner, status, detail } = useCodeRunner(mission.kind);
+  const profile = useProfile();
 
   const checks: CheckResult[] = mission.tests.map((t) => {
     const r = result?.tests.find((x) => x.id === t.id);
@@ -71,6 +74,12 @@ export function CodeMissionPlayer({ mission, progress, completed, onComplete, on
           <div className="mt-3">
             <RunOutput result={result} errorHelp={mission.errorHelp} />
           </div>
+          {mission.kind === "go" && (
+            <div className="mt-4 border-t pt-3" style={{ borderColor: "var(--border)" }}>
+              <div className="label mb-1">Race detector (optional, runs on your machine)</div>
+              <RaceDetectorPanel code={code} serviceUrl={profile?.settings.raceServiceUrl ?? ""} compact />
+            </div>
+          )}
         </Panel>
       }
     />

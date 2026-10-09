@@ -13,6 +13,7 @@
     "test:watch": "vitest",
     "test:e2e": "playwright test",
     "coach-server": "tsx server/index.ts",
+    "race-server": "tsx server/race.ts",
     "check": "npm run typecheck && npm run lint && npm run test && npm run build",
     "build:go": "node scripts/build-go-runner.mjs",
     "predev": "node scripts/build-go-runner.mjs",

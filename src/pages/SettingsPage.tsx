@@ -4,12 +4,14 @@ import { useProfile } from "../data/hooks";
 import { Callout, PageHeader, Panel } from "../components/ui";
 import { voiceCapabilities } from "../services/voice/capabilities";
 import { probeCoachProxy } from "../services/coach";
+import { probeRaceService } from "../services/race";
 import { FEATURE_STATUS } from "../content/featureStatus";
 
 export function SettingsPage() {
   const profile = useProfile();
   const [msg, setMsg] = useState<string | null>(null);
   const [probe, setProbe] = useState<string | null>(null);
+  const [raceProbe, setRaceProbe] = useState<string | null>(null);
   const fileRef = useRef<HTMLInputElement>(null);
   if (!profile) return null;
   const s = profile.settings;
@@ -107,6 +109,24 @@ export function SettingsPage() {
             <input type="checkbox" checked={s.coachConsent} onChange={(e) => set({ coachConsent: e.target.checked })} />
             <span>I consent to sending my interview transcripts (never audio) to the proxy above for coaching. Requires network access.</span>
           </label>
+        </div>
+      </Panel>
+
+      <Panel title="Go race detector (optional local service)">
+        <div className="text-sm space-y-2">
+          <p className="muted">
+            The in-browser Go runtime is single-threaded, so it cannot reproduce data races. A small service on your own machine runs your program with <code>go build -race</code> and returns the detector's report. Start it with <code>npm run race-server</code> (needs Go 1.22+ and a C compiler) and enter its URL. Your code is sent only when you press the race-detector button in the Go Laboratory or a Go mission.
+          </p>
+          <div className="flex gap-2 items-center flex-wrap">
+            <label htmlFor="race-url" className="w-32">
+              Service URL
+            </label>
+            <input id="race-url" className="input max-w-md" placeholder="http://localhost:8788" value={s.raceServiceUrl ?? ""} onChange={(e) => set({ raceServiceUrl: e.target.value })} data-testid="race-url" />
+            <button type="button" className="btn-secondary" onClick={() => void probeRaceService(s.raceServiceUrl ?? "").then((p) => setRaceProbe(p.summary))}>
+              Test
+            </button>
+          </div>
+          {raceProbe && <div className="text-xs muted">{raceProbe}</div>}
         </div>
       </Panel>
 
