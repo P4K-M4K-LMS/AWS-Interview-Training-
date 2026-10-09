@@ -956,3 +956,92 @@ export interface ExportBundle {
   sessions?: InterviewSession[];
   activity?: ActivityEvent[];
 }
+
+// ---------------------------------------------------------------------------
+// Study: Ascendra's objective catalog as a sibling learning mode. A separate
+// content namespace from tracks, skills and missions; the only bridge is the
+// curated link table (src/content/study/links.ts). The JSON under
+// public/study/ is built from tools/ascendra-catalog by
+// scripts/generate-study.mts and loaded on demand.
+// ---------------------------------------------------------------------------
+
+/** How an objective is best learned on this platform. */
+export type StudyModality = "do-existing" | "do-new" | "read" | "combo" | "explain";
+
+/** Where an objective's modality came from. */
+export type StudyModalitySource = "curated" | "suggested" | "default";
+
+export type StudyLink =
+  | { kind: "mission"; missionId: string; coverage: "full" | "partial"; note?: string }
+  | { kind: "engine"; engineId: string };
+
+export interface StudyObjective {
+  id: string; // `${unitId}:${n}`, 1-based within the unit
+  unitId: string;
+  index: number;
+  text: string;
+  sourceHash: string; // first 12 hex chars of sha256(text); lessons carry it
+  kind: "objective" | "bookkeeping";
+  modality: StudyModality;
+  modalitySource: StudyModalitySource;
+  link?: StudyLink;
+  labPrompt?: string; // Ascendra's hands-on prompt, where one exists
+}
+
+export interface StudyUnit {
+  id: string; // `${courseId}:${n}`, 1-based
+  index: number;
+  title: string;
+  weight?: number; // exam weight in percent, certification courses
+  rangeLabel?: string; // "Weeks 1-2", "3 credits"
+  gate?: string; // one-sentence mastery gate from the source
+  gateEngine?: string; // engine id that would make the gate playable
+  objectives: StudyObjective[];
+}
+
+export interface StudyProvenance {
+  sourceRepo: "ascendra";
+  sourceFile: string;
+  sourceCommit: string;
+  sourceVerifiedAt?: string;
+  officialObjectivesUrl?: string;
+  providerName?: string;
+  credentialName?: string;
+  examCode?: string;
+  credentialStatus?: string; // active, transitioning, beta, retired
+  retirementDate?: string;
+  note: string;
+}
+
+export interface StudyCourse {
+  id: string; // exam code lowercased when there is one, else the track code lowercased
+  code: string; // Ascendra track code, e.g. AWSSAA
+  title: string;
+  description: string;
+  trackType: "graduate" | "certification";
+  units: StudyUnit[];
+  provenance: StudyProvenance;
+  counts: { units: number; objectives: number; bookkeeping: number; linked: number };
+}
+
+export interface StudyCourseSummary {
+  id: string;
+  code: string;
+  title: string;
+  description: string;
+  trackType: "graduate" | "certification";
+  group: "aws" | "core";
+  examCode?: string;
+  credentialStatus?: string;
+  retirementDate?: string;
+  counts: { units: number; objectives: number; bookkeeping: number; linked: number };
+  modalities: Record<StudyModality, number>;
+  file: string; // course JSON file name
+  hash: string; // sha256 of the course JSON, for cache-busting
+}
+
+export interface StudyCatalogIndex {
+  schemaVersion: 1;
+  builtFrom: { sourceRepo: "ascendra"; sourceCommit: string };
+  courses: StudyCourseSummary[];
+}

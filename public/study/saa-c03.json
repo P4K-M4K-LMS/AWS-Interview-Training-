@@ -1,0 +1,1086 @@
+{
+  "id": "saa-c03",
+  "code": "AWSSAA",
+  "title": "AWS Solutions Architect Associate",
+  "description": "AWS Certified Solutions Architect - Associate (SAA-C03): designing solutions against the Well-Architected Framework -- secure, resilient, high-performing, and cost-optimized architectures, and knowing which trade-off a requirement is really asking for.",
+  "trackType": "certification",
+  "units": [
+    {
+      "id": "saa-c03:1",
+      "index": 1,
+      "title": "Design Secure Architectures",
+      "weight": 30,
+      "gate": "Given a design with a security hole, name the missing control, the AWS service that provides it, and the specific failure it prevents -- and say whether the fix belongs in identity, network, or data.",
+      "objectives": [
+        {
+          "id": "saa-c03:1:1",
+          "unitId": "saa-c03:1",
+          "index": 1,
+          "text": "Applying IAM security practices to users and the root user, including MFA",
+          "sourceHash": "f7220b8f38ae",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:1:2",
+          "unitId": "saa-c03:1",
+          "index": 2,
+          "text": "A flexible authorization model built from IAM users, groups, roles, and policies",
+          "sourceHash": "35e30a73662e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:1:3",
+          "unitId": "saa-c03:1",
+          "index": 3,
+          "text": "Role-based access across accounts: AWS STS, role switching, cross-account roles",
+          "sourceHash": "2cf012390d7a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:1:4",
+          "unitId": "saa-c03:1",
+          "index": 4,
+          "text": "Security across many accounts: AWS Organizations, AWS Control Tower, service control policies",
+          "sourceHash": "28c05abed051",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:1:5",
+          "unitId": "saa-c03:1",
+          "index": 5,
+          "text": "Resource-based policies, and when they beat an identity-based policy",
+          "sourceHash": "93f041beec97",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:1:6",
+          "unitId": "saa-c03:1",
+          "index": 6,
+          "text": "Federating a directory service with IAM roles",
+          "sourceHash": "cc023d357326",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:1:7",
+          "unitId": "saa-c03:1",
+          "index": 7,
+          "text": "Reading the shared responsibility model as a design constraint",
+          "sourceHash": "0e217d2312af",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:1:8",
+          "unitId": "saa-c03:1",
+          "index": 8,
+          "text": "VPC security components: security groups, network ACLs, route tables, NAT gateways",
+          "sourceHash": "608c76328048",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:1:9",
+          "unitId": "saa-c03:1",
+          "index": 9,
+          "text": "Network segmentation with public and private subnets",
+          "sourceHash": "6fa31a771709",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:1:10",
+          "unitId": "saa-c03:1",
+          "index": 10,
+          "text": "Controlling ports, protocols, and traffic to and from AWS resources",
+          "sourceHash": "149cb34262dd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:1:11",
+          "unitId": "saa-c03:1",
+          "index": 11,
+          "text": "Protecting applications from external threats: AWS WAF and AWS Shield against DDoS and injection",
+          "sourceHash": "88720a6b63fa",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:1:12",
+          "unitId": "saa-c03:1",
+          "index": 12,
+          "text": "Application configuration and credentials: AWS Secrets Manager and Systems Manager Parameter Store",
+          "sourceHash": "f0818e3fc37b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:1:13",
+          "unitId": "saa-c03:1",
+          "index": 13,
+          "text": "Application user authentication with Amazon Cognito",
+          "sourceHash": "c3219e1d352a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:1:14",
+          "unitId": "saa-c03:1",
+          "index": 14,
+          "text": "Threat and data-exposure detection: Amazon GuardDuty and Amazon Macie",
+          "sourceHash": "8585f7ba73d3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:1:15",
+          "unitId": "saa-c03:1",
+          "index": 15,
+          "text": "Securing external network connections: AWS Site-to-Site VPN and AWS Direct Connect",
+          "sourceHash": "33f7cb2dd980",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:1:16",
+          "unitId": "saa-c03:1",
+          "index": 16,
+          "text": "AWS service endpoints and private access with AWS PrivateLink and VPC endpoints",
+          "sourceHash": "6b5103cb1c52",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:1:17",
+          "unitId": "saa-c03:1",
+          "index": 17,
+          "text": "Encrypting data at rest with AWS KMS, and writing key policies that hold",
+          "sourceHash": "b31633dba197",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:1:18",
+          "unitId": "saa-c03:1",
+          "index": 18,
+          "text": "Encrypting data in transit with TLS certificates from AWS Certificate Manager",
+          "sourceHash": "c8057da5ea24",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:1:19",
+          "unitId": "saa-c03:1",
+          "index": 19,
+          "text": "Rotating encryption keys and renewing certificates before they expire",
+          "sourceHash": "fadae734b2e4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:1:20",
+          "unitId": "saa-c03:1",
+          "index": 20,
+          "text": "Data classification and retention, expressed as lifecycle and access policies",
+          "sourceHash": "3891bcc9726b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:1:21",
+          "unitId": "saa-c03:1",
+          "index": 21,
+          "text": "Data backup, replication, and recovery as a security control, not just an availability one",
+          "sourceHash": "f0800d86a10e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:1:22",
+          "unitId": "saa-c03:1",
+          "index": 22,
+          "text": "Aligning AWS technologies to a stated compliance requirement",
+          "sourceHash": "d5e4b79f57d4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "saa-c03:2",
+      "index": 2,
+      "title": "Design Resilient Architectures",
+      "weight": 26,
+      "gate": "Given an RTO and RPO, pick the disaster recovery strategy that meets them at the lowest cost, and point at the single points of failure your design removed.",
+      "gateEngine": "dr-planner",
+      "objectives": [
+        {
+          "id": "saa-c03:2:1",
+          "unitId": "saa-c03:2",
+          "index": 1,
+          "text": "Multi-tier architectures, and what belongs in each tier",
+          "sourceHash": "f21106afc878",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:2:2",
+          "unitId": "saa-c03:2",
+          "index": 2,
+          "text": "Microservice design principles: stateless versus stateful workloads",
+          "sourceHash": "947505605705",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:2:3",
+          "unitId": "saa-c03:2",
+          "index": 3,
+          "text": "Event-driven architecture with Amazon EventBridge",
+          "sourceHash": "0329dfee5898",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:2:4",
+          "unitId": "saa-c03:2",
+          "index": 4,
+          "text": "Decoupling with queues and pub/sub: Amazon SQS and Amazon SNS",
+          "sourceHash": "38edbcb8a41e",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "incident-03-dead-consumers",
+            "coverage": "partial",
+            "note": "queues only"
+          }
+        },
+        {
+          "id": "saa-c03:2:5",
+          "unitId": "saa-c03:2",
+          "index": 5,
+          "text": "Workflow orchestration with AWS Step Functions",
+          "sourceHash": "96e0bc8de01f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:2:6",
+          "unitId": "saa-c03:2",
+          "index": 6,
+          "text": "API creation and management with Amazon API Gateway",
+          "sourceHash": "73d52806bfe9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:2:7",
+          "unitId": "saa-c03:2",
+          "index": 7,
+          "text": "Horizontal scaling versus vertical scaling",
+          "sourceHash": "46cab29e771b",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "incident-02-traffic-surge",
+            "coverage": "full"
+          }
+        },
+        {
+          "id": "saa-c03:2:8",
+          "unitId": "saa-c03:2",
+          "index": 8,
+          "text": "When to use containers, and orchestrating them with Amazon ECS or Amazon EKS",
+          "sourceHash": "45d5899a66c9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:2:9",
+          "unitId": "saa-c03:2",
+          "index": 9,
+          "text": "When to use serverless: AWS Lambda and AWS Fargate",
+          "sourceHash": "a0728edecb7f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:2:10",
+          "unitId": "saa-c03:2",
+          "index": 10,
+          "text": "Migrating an existing application into containers",
+          "sourceHash": "cadb89364b1a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:2:11",
+          "unitId": "saa-c03:2",
+          "index": 11,
+          "text": "Caching strategies, including edge caching with a CDN",
+          "sourceHash": "4a8682c0ac16",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "incident-01-cache-stampede",
+            "coverage": "partial",
+            "note": "cache stampede on the shared engine; no CDN"
+          }
+        },
+        {
+          "id": "saa-c03:2:12",
+          "unitId": "saa-c03:2",
+          "index": 12,
+          "text": "Read replicas, and the specific problem they solve",
+          "sourceHash": "ca586b05661e",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "incident-04-replica-lag",
+            "coverage": "full"
+          }
+        },
+        {
+          "id": "saa-c03:2:13",
+          "unitId": "saa-c03:2",
+          "index": 13,
+          "text": "Matching storage type -- object, file, block -- to a workload",
+          "sourceHash": "8221fcb64c3a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:2:14",
+          "unitId": "saa-c03:2",
+          "index": 14,
+          "text": "Using purpose-built AWS services instead of forcing one service to do everything",
+          "sourceHash": "56846ec8e29a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:2:15",
+          "unitId": "saa-c03:2",
+          "index": 15,
+          "text": "Offloading work to managed AI services such as Amazon Comprehend and Amazon Polly instead of building and operating it yourself",
+          "sourceHash": "55f6d3f6646e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:2:16",
+          "unitId": "saa-c03:2",
+          "index": 16,
+          "text": "Availability Zones, Regions, and Amazon Route 53 in a resilient design",
+          "sourceHash": "02455eeaa435",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:2:17",
+          "unitId": "saa-c03:2",
+          "index": 17,
+          "text": "Designing out single points of failure",
+          "sourceHash": "db9c3c031055",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "design-01-position-ingest",
+            "coverage": "full"
+          }
+        },
+        {
+          "id": "saa-c03:2:18",
+          "unitId": "saa-c03:2",
+          "index": 18,
+          "text": "Load balancing for availability: Application, Network, and Gateway Load Balancers",
+          "sourceHash": "22fc3cdbc803",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:2:19",
+          "unitId": "saa-c03:2",
+          "index": 19,
+          "text": "Disaster recovery strategies: backup and restore, pilot light, warm standby, active-active failover",
+          "sourceHash": "8b82a3335ebf",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:2:20",
+          "unitId": "saa-c03:2",
+          "index": 20,
+          "text": "RTO and RPO, and letting them choose the DR strategy rather than the other way round",
+          "sourceHash": "f66dce547341",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:2:21",
+          "unitId": "saa-c03:2",
+          "index": 21,
+          "text": "Failover strategies and the health checks that trigger them",
+          "sourceHash": "99eecaf667d3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:2:22",
+          "unitId": "saa-c03:2",
+          "index": 22,
+          "text": "Data durability and availability: replication, versioning, backups",
+          "sourceHash": "3d54049b1030",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:2:23",
+          "unitId": "saa-c03:2",
+          "index": 23,
+          "text": "Immutable infrastructure and automation that keeps infrastructure integrity",
+          "sourceHash": "c203bc4a9f0c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:2:24",
+          "unitId": "saa-c03:2",
+          "index": 24,
+          "text": "Service quotas and throttling, including quotas in a standby environment",
+          "sourceHash": "47c13c50a926",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "serverless-01-throttled-function",
+            "coverage": "full"
+          }
+        },
+        {
+          "id": "saa-c03:2:25",
+          "unitId": "saa-c03:2",
+          "index": 25,
+          "text": "Connection pooling and proxies, such as Amazon RDS Proxy",
+          "sourceHash": "c277a4007ede",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:2:26",
+          "unitId": "saa-c03:2",
+          "index": 26,
+          "text": "Workload visibility with AWS X-Ray",
+          "sourceHash": "bc41a5db256f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:2:27",
+          "unitId": "saa-c03:2",
+          "index": 27,
+          "text": "Raising the reliability of legacy applications you are not allowed to change",
+          "sourceHash": "7d4552a442ac",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "saa-c03:3",
+      "index": 3,
+      "title": "Design High-Performing Architectures",
+      "weight": 24,
+      "gate": "Given a performance requirement and a metric, choose the compute, storage, database, and network configuration that meets it -- and name the metric you would watch to know it worked.",
+      "objectives": [
+        {
+          "id": "saa-c03:3:1",
+          "unitId": "saa-c03:3",
+          "index": 1,
+          "text": "Choosing a storage service for performance: Amazon S3, Amazon EBS, Amazon EFS, Amazon FSx",
+          "sourceHash": "ed927ef01d23",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:3:2",
+          "unitId": "saa-c03:3",
+          "index": 2,
+          "text": "EBS volume types and Provisioned IOPS",
+          "sourceHash": "d5ecbbda0e7f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:3:3",
+          "unitId": "saa-c03:3",
+          "index": 3,
+          "text": "Hybrid storage that meets a performance requirement",
+          "sourceHash": "07deee87ba02",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:3:4",
+          "unitId": "saa-c03:3",
+          "index": 4,
+          "text": "Storage that can scale to accommodate future demand",
+          "sourceHash": "52b9f6e3c13d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:3:5",
+          "unitId": "saa-c03:3",
+          "index": 5,
+          "text": "Selecting compute options and EC2 instance types against a requirement",
+          "sourceHash": "0f5c735b5604",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:3:6",
+          "unitId": "saa-c03:3",
+          "index": 6,
+          "text": "Sizing a serverless resource, including how much memory a Lambda function needs",
+          "sourceHash": "985c372e9bfd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:3:7",
+          "unitId": "saa-c03:3",
+          "index": 7,
+          "text": "Amazon EC2 Auto Scaling and AWS Auto Scaling: the metrics and conditions that trigger scaling",
+          "sourceHash": "d51053ee908d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:3:8",
+          "unitId": "saa-c03:3",
+          "index": 8,
+          "text": "Decoupling workloads so components scale independently",
+          "sourceHash": "ca69ef54ba9e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:3:9",
+          "unitId": "saa-c03:3",
+          "index": 9,
+          "text": "Batch and big-data compute: AWS Batch and Amazon EMR",
+          "sourceHash": "48e087fc4871",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:3:10",
+          "unitId": "saa-c03:3",
+          "index": 10,
+          "text": "Distributed computing across the AWS global infrastructure and edge services",
+          "sourceHash": "9d94c2874417",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:3:11",
+          "unitId": "saa-c03:3",
+          "index": 11,
+          "text": "Choosing a database type: relational, non-relational, in-memory, serverless",
+          "sourceHash": "677fd6d32b24",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:3:12",
+          "unitId": "saa-c03:3",
+          "index": 12,
+          "text": "Choosing a database engine, and homogeneous versus heterogeneous migration",
+          "sourceHash": "4d8a67a93fef",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:3:13",
+          "unitId": "saa-c03:3",
+          "index": 13,
+          "text": "Database capacity planning: capacity units, instance types, Provisioned IOPS",
+          "sourceHash": "8b4c3b9e3553",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:3:14",
+          "unitId": "saa-c03:3",
+          "index": 14,
+          "text": "Configuring read replicas to meet a requirement",
+          "sourceHash": "7b8bfa864dfe",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:3:15",
+          "unitId": "saa-c03:3",
+          "index": 15,
+          "text": "Integrating caching with Amazon ElastiCache for read-intensive access patterns",
+          "sourceHash": "00f0ca0a8f95",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:3:16",
+          "unitId": "saa-c03:3",
+          "index": 16,
+          "text": "Database connections and proxies under load",
+          "sourceHash": "68b05be7bc29",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:3:17",
+          "unitId": "saa-c03:3",
+          "index": 17,
+          "text": "Network topology design: subnet tiers, routing, IP addressing",
+          "sourceHash": "5574f5cb6ed7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:3:18",
+          "unitId": "saa-c03:3",
+          "index": 18,
+          "text": "Edge acceleration: Amazon CloudFront and AWS Global Accelerator",
+          "sourceHash": "eae334bcfac5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:3:19",
+          "unitId": "saa-c03:3",
+          "index": 19,
+          "text": "Network connection options: AWS VPN, AWS Direct Connect, AWS PrivateLink",
+          "sourceHash": "d4ec7b0d2792",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:3:20",
+          "unitId": "saa-c03:3",
+          "index": 20,
+          "text": "Selecting a load balancing strategy for performance",
+          "sourceHash": "8cc42129f0c0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:3:21",
+          "unitId": "saa-c03:3",
+          "index": 21,
+          "text": "Designing streaming ingestion with Amazon Kinesis",
+          "sourceHash": "980ab29469ce",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:3:22",
+          "unitId": "saa-c03:3",
+          "index": 22,
+          "text": "Data transfer services: AWS DataSync, AWS Storage Gateway",
+          "sourceHash": "15f515afe4b1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:3:23",
+          "unitId": "saa-c03:3",
+          "index": 23,
+          "text": "Transforming data with AWS Glue, including format changes such as CSV to Parquet",
+          "sourceHash": "8807a72d70d6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:3:24",
+          "unitId": "saa-c03:3",
+          "index": 24,
+          "text": "Building and securing a data lake, including AWS Lake Formation",
+          "sourceHash": "b0c5da8b73d0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:3:25",
+          "unitId": "saa-c03:3",
+          "index": 25,
+          "text": "Querying and visualizing: Amazon Athena and Amazon QuickSight",
+          "sourceHash": "11165950a8af",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:3:26",
+          "unitId": "saa-c03:3",
+          "index": 26,
+          "text": "Securing the access points where data is ingested",
+          "sourceHash": "8ee91b0965e3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "saa-c03:4",
+      "index": 4,
+      "title": "Design Cost-Optimized Architectures",
+      "weight": 20,
+      "gate": "Given a running architecture and a bill, name the three changes that cut the most cost without breaking the stated requirements, and say what each one gives up.",
+      "objectives": [
+        {
+          "id": "saa-c03:4:1",
+          "unitId": "saa-c03:4",
+          "index": 1,
+          "text": "Selecting the most cost-effective storage service for a workload",
+          "sourceHash": "1c436c08c588",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:4:2",
+          "unitId": "saa-c03:4",
+          "index": 2,
+          "text": "S3 storage tiering and object lifecycles, including cold and archival tiers",
+          "sourceHash": "bbf6a5cd3fb5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:4:3",
+          "unitId": "saa-c03:4",
+          "index": 3,
+          "text": "Sizing storage correctly, and knowing when storage auto scaling is required",
+          "sourceHash": "e334936d0b34",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:4:4",
+          "unitId": "saa-c03:4",
+          "index": 4,
+          "text": "Block storage cost: HDD versus SSD volume types",
+          "sourceHash": "339f12e7bfff",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:4:5",
+          "unitId": "saa-c03:4",
+          "index": 5,
+          "text": "The lowest-cost way to move a workload's data into AWS storage: AWS DataSync, AWS Transfer Family, AWS Storage Gateway",
+          "sourceHash": "6d29de9953cf",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:4:6",
+          "unitId": "saa-c03:4",
+          "index": 6,
+          "text": "Selecting a backup or archival solution on cost",
+          "sourceHash": "f7b4f54064c4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:4:7",
+          "unitId": "saa-c03:4",
+          "index": 7,
+          "text": "Access options that shift cost, such as a Requester Pays S3 bucket",
+          "sourceHash": "5762f0bc28f3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:4:8",
+          "unitId": "saa-c03:4",
+          "index": 8,
+          "text": "Batch versus individual upload strategies",
+          "sourceHash": "bf14b5f9dadf",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:4:9",
+          "unitId": "saa-c03:4",
+          "index": 9,
+          "text": "Purchasing options on cost: On-Demand, Spot Instances, Reserved Instances, Savings Plans",
+          "sourceHash": "3dac2cf1b58d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:4:10",
+          "unitId": "saa-c03:4",
+          "index": 10,
+          "text": "Selecting instance family and size for cost",
+          "sourceHash": "4eedb550df3f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:4:11",
+          "unitId": "saa-c03:4",
+          "index": 11,
+          "text": "Scaling methods that cut spend, including EC2 hibernation",
+          "sourceHash": "dcbacd497a5e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:4:12",
+          "unitId": "saa-c03:4",
+          "index": 12,
+          "text": "Cost-effective compute choice: AWS Lambda versus Amazon EC2 versus AWS Fargate",
+          "sourceHash": "1c23ac9cffd8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:4:13",
+          "unitId": "saa-c03:4",
+          "index": 13,
+          "text": "Availability targets by workload class: production versus non-production",
+          "sourceHash": "115d285d2df2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:4:14",
+          "unitId": "saa-c03:4",
+          "index": 14,
+          "text": "Hybrid and edge compute options, including AWS Outposts",
+          "sourceHash": "22ff94d4950a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:4:15",
+          "unitId": "saa-c03:4",
+          "index": 15,
+          "text": "Cost-effective database service and type, including serverless and purpose-built engines such as time-series and columnar",
+          "sourceHash": "73c9fc47db92",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:4:16",
+          "unitId": "saa-c03:4",
+          "index": 16,
+          "text": "Backup and retention policy design, including snapshot frequency",
+          "sourceHash": "9c68d854f916",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:4:17",
+          "unitId": "saa-c03:4",
+          "index": 17,
+          "text": "Migrating database schemas and data between engines or locations",
+          "sourceHash": "b39d28ef69b3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:4:18",
+          "unitId": "saa-c03:4",
+          "index": 18,
+          "text": "NAT gateway cost: one shared gateway versus one per Availability Zone",
+          "sourceHash": "684b885808c8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:4:19",
+          "unitId": "saa-c03:4",
+          "index": 19,
+          "text": "Routing that minimizes transfer cost: VPC endpoints, VPC peering, AWS Transit Gateway, cross-AZ and cross-Region traffic",
+          "sourceHash": "af9d725449c8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:4:20",
+          "unitId": "saa-c03:4",
+          "index": 20,
+          "text": "Choosing between AWS Direct Connect, VPN, and the public internet on cost",
+          "sourceHash": "0d14ed41b9ce",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:4:21",
+          "unitId": "saa-c03:4",
+          "index": 21,
+          "text": "CDN and edge caching to cut origin cost",
+          "sourceHash": "6cc72de75270",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:4:22",
+          "unitId": "saa-c03:4",
+          "index": 22,
+          "text": "Selecting a throttling strategy and bandwidth allocation",
+          "sourceHash": "3e76304036f4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:4:23",
+          "unitId": "saa-c03:4",
+          "index": 23,
+          "text": "Choosing a load balancer type -- Application, Network, or Gateway -- on cost, not just capability",
+          "sourceHash": "29cb7f942be6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "saa-c03:4:24",
+          "unitId": "saa-c03:4",
+          "index": 24,
+          "text": "Cost visibility: AWS Cost Explorer, AWS Budgets, the AWS Cost and Usage Report, cost allocation tags, multi-account billing",
+          "sourceHash": "5c14c11b8966",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/aws.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-18T00:00:00Z",
+    "officialObjectivesUrl": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03.html",
+    "providerName": "Amazon Web Services",
+    "credentialName": "AWS Certified Solutions Architect - Associate",
+    "examCode": "SAA-C03",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 4,
+    "objectives": 99,
+    "bookkeeping": 0,
+    "linked": 6
+  }
+}

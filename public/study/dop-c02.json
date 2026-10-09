@@ -1,0 +1,1238 @@
+{
+  "id": "dop-c02",
+  "code": "AWSDOP",
+  "title": "AWS DevOps Engineer Professional",
+  "description": "AWS Certified DevOps Engineer - Professional (DOP-C02): automating the whole delivery path -- CI/CD pipelines and artifacts, infrastructure as code across many accounts, resilient and scalable systems, monitoring and logging, incident response, and security controls applied by machine rather than by hand.",
+  "trackType": "certification",
+  "units": [
+    {
+      "id": "dop-c02:1",
+      "index": 1,
+      "title": "SDLC Automation",
+      "weight": 22,
+      "gate": "Build a pipeline that takes a commit to production on its own -- builds, tests at the right stages, versioned artifacts, a deployment strategy that can roll back -- and explain what each stage would have caught. Largest domain on the exam.",
+      "objectives": [
+        {
+          "id": "dop-c02:1:1",
+          "unitId": "dop-c02:1",
+          "index": 1,
+          "text": "Software development lifecycle concepts, phases, and models",
+          "sourceHash": "6532794db775",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:1:2",
+          "unitId": "dop-c02:1",
+          "index": 2,
+          "text": "Pipeline deployment patterns for single-account and multi-account environments",
+          "sourceHash": "0303d28e8d5c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:1:3",
+          "unitId": "dop-c02:1",
+          "index": 3,
+          "text": "Configuring code, image, and artifact repositories",
+          "sourceHash": "7277c88baf3d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:1:4",
+          "unitId": "dop-c02:1",
+          "index": 4,
+          "text": "Using version control to integrate pipelines with application environments",
+          "sourceHash": "05c9999bc501",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:1:5",
+          "unitId": "dop-c02:1",
+          "index": 5,
+          "text": "Setting up build processes with AWS CodeBuild",
+          "sourceHash": "d0dae5bdbff0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:1:6",
+          "unitId": "dop-c02:1",
+          "index": 6,
+          "text": "Managing build and deployment secrets with AWS Secrets Manager and Systems Manager Parameter Store",
+          "sourceHash": "451690000d6b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:1:7",
+          "unitId": "dop-c02:1",
+          "index": 7,
+          "text": "Determining a deployment strategy with AWS CodeDeploy",
+          "sourceHash": "fc08cced7838",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:1:8",
+          "unitId": "dop-c02:1",
+          "index": 8,
+          "text": "Types of tests -- unit, integration, acceptance, user interface, security scans -- and where each belongs in a pipeline",
+          "sourceHash": "99f8ccd62b8d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:1:9",
+          "unitId": "dop-c02:1",
+          "index": 9,
+          "text": "Running builds and tests on pull requests and code merges",
+          "sourceHash": "a8dd19aced91",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "devops-02-green-locally-red-in-ci",
+            "coverage": "full"
+          }
+        },
+        {
+          "id": "dop-c02:1:10",
+          "unitId": "dop-c02:1",
+          "index": 10,
+          "text": "Running load and stress tests, performance benchmarking, and application testing at scale",
+          "sourceHash": "9e52c1f9a506",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:1:11",
+          "unitId": "dop-c02:1",
+          "index": 11,
+          "text": "Measuring application health from application exit codes",
+          "sourceHash": "f9abf2d7b090",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:1:12",
+          "unitId": "dop-c02:1",
+          "index": 12,
+          "text": "Automating unit tests and code coverage",
+          "sourceHash": "4be5d0bdd78d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:1:13",
+          "unitId": "dop-c02:1",
+          "index": 13,
+          "text": "Invoking AWS services from inside a pipeline for testing",
+          "sourceHash": "acec0ff11481",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:1:14",
+          "unitId": "dop-c02:1",
+          "index": 14,
+          "text": "Artifact use cases, secure management, and lifecycle considerations",
+          "sourceHash": "a2ad5bd28f4d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:1:15",
+          "unitId": "dop-c02:1",
+          "index": 15,
+          "text": "Creating and configuring artifact repositories: AWS CodeArtifact, Amazon S3, Amazon ECR",
+          "sourceHash": "30bf2822ce8b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:1:16",
+          "unitId": "dop-c02:1",
+          "index": 16,
+          "text": "Configuring build tools to generate artifacts with CodeBuild and AWS Lambda",
+          "sourceHash": "b5889b2af6f4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:1:17",
+          "unitId": "dop-c02:1",
+          "index": 17,
+          "text": "Automating EC2 instance and container image builds with EC2 Image Builder",
+          "sourceHash": "d60edaad1728",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:1:18",
+          "unitId": "dop-c02:1",
+          "index": 18,
+          "text": "Deployment methodologies per platform: Amazon EC2, Amazon ECS, Amazon EKS, AWS Lambda",
+          "sourceHash": "5fb4d42790aa",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:1:19",
+          "unitId": "dop-c02:1",
+          "index": 19,
+          "text": "Mutable deployment patterns against immutable ones",
+          "sourceHash": "5cadd0fa6b1d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:1:20",
+          "unitId": "dop-c02:1",
+          "index": 20,
+          "text": "Application storage patterns: Amazon EFS, Amazon S3, Amazon EBS",
+          "sourceHash": "8501ac29aa9e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:1:21",
+          "unitId": "dop-c02:1",
+          "index": 21,
+          "text": "Configuring security permissions for access to artifact repositories",
+          "sourceHash": "ae9cbf5a4d9e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:1:22",
+          "unitId": "dop-c02:1",
+          "index": 22,
+          "text": "Configuring deployment agents, including the CodeDeploy agent",
+          "sourceHash": "17f43e974a99",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:1:23",
+          "unitId": "dop-c02:1",
+          "index": 23,
+          "text": "Using blue/green and canary deployment methods",
+          "sourceHash": "6714453645b9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:1:24",
+          "unitId": "dop-c02:1",
+          "index": 24,
+          "text": "Troubleshooting deployment issues",
+          "sourceHash": "01778bb390bc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "dop-c02:2",
+      "index": 2,
+      "title": "Configuration Management and IaC",
+      "weight": 17,
+      "gate": "Stand up a new account that is governed from birth -- templates, guardrails, patching, and drift handling -- without a person clicking through the console.",
+      "objectives": [
+        {
+          "id": "dop-c02:2:1",
+          "unitId": "dop-c02:2",
+          "index": 1,
+          "text": "Infrastructure as code options and tools for AWS",
+          "sourceHash": "c1409966526f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:2:2",
+          "unitId": "dop-c02:2",
+          "index": 2,
+          "text": "Composing and deploying IaC templates: AWS SAM, AWS CloudFormation, the AWS CDK",
+          "sourceHash": "8cbd57c3d483",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:2:3",
+          "unitId": "dop-c02:2",
+          "index": 3,
+          "text": "Applying CloudFormation StackSets across multiple accounts and Regions",
+          "sourceHash": "89d887a664f3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:2:4",
+          "unitId": "dop-c02:2",
+          "index": 4,
+          "text": "Change management processes for IaC-based platforms",
+          "sourceHash": "74aa4508fcec",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:2:5",
+          "unitId": "dop-c02:2",
+          "index": 5,
+          "text": "Determining the right configuration management service: AWS OpsWorks, AWS Systems Manager, AWS Config, AWS AppConfig",
+          "sourceHash": "6fb3e410c4d6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:2:6",
+          "unitId": "dop-c02:2",
+          "index": 6,
+          "text": "Building infrastructure patterns, governance controls, and security standards into reusable templates with AWS Service Catalog, CloudFormation modules, and the CDK",
+          "sourceHash": "ae458043ef40",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:2:7",
+          "unitId": "dop-c02:2",
+          "index": 7,
+          "text": "AWS account structures and the practices around them",
+          "sourceHash": "485b301cc1b1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:2:8",
+          "unitId": "dop-c02:2",
+          "index": 8,
+          "text": "Standardizing and automating account provisioning and configuration",
+          "sourceHash": "73316643c814",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:2:9",
+          "unitId": "dop-c02:2",
+          "index": 9,
+          "text": "Creating, consolidating, and centrally managing accounts with AWS Organizations and AWS Control Tower",
+          "sourceHash": "097a534a15f0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:2:10",
+          "unitId": "dop-c02:2",
+          "index": 10,
+          "text": "IAM for multi-account and complex organizations: service control policies and role assumption",
+          "sourceHash": "daebd4e24180",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:2:11",
+          "unitId": "dop-c02:2",
+          "index": 11,
+          "text": "Governance and security controls at scale: AWS Config, Control Tower, Security Hub, Amazon Detective, Amazon GuardDuty, Service Catalog",
+          "sourceHash": "659bf217fe39",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:2:12",
+          "unitId": "dop-c02:2",
+          "index": 12,
+          "text": "Automating system inventory, configuration, and patch management with Systems Manager and AWS Config",
+          "sourceHash": "0479db894186",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:2:13",
+          "unitId": "dop-c02:2",
+          "index": 13,
+          "text": "Developing Lambda automations for complex scenarios with the AWS SDKs and AWS Step Functions",
+          "sourceHash": "e2126f8c95d2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:2:14",
+          "unitId": "dop-c02:2",
+          "index": 14,
+          "text": "Driving application configuration to a desired state with OpsWorks and Systems Manager State Manager",
+          "sourceHash": "c99163096722",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:2:15",
+          "unitId": "dop-c02:2",
+          "index": 15,
+          "text": "Maintaining software compliance with Systems Manager",
+          "sourceHash": "a3e253b51bf5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "dop-c02:3",
+      "index": 3,
+      "title": "Resilient Cloud Solutions",
+      "weight": 15,
+      "gate": "Given a resiliency requirement expressed in business terms, build the multi-AZ or multi-Region answer, then test the failover rather than assuming it works.",
+      "objectives": [
+        {
+          "id": "dop-c02:3:1",
+          "unitId": "dop-c02:3",
+          "index": 1,
+          "text": "Multi-AZ and multi-Region deployments at the compute layer and the data layer",
+          "sourceHash": "a920631cd6f1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:3:2",
+          "unitId": "dop-c02:3",
+          "index": 2,
+          "text": "Translating business requirements into technical resiliency needs, including SLAs",
+          "sourceHash": "c8665d330649",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:3:3",
+          "unitId": "dop-c02:3",
+          "index": 3,
+          "text": "Replication and failover methods for stateful services",
+          "sourceHash": "96787a375bc5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:3:4",
+          "unitId": "dop-c02:3",
+          "index": 4,
+          "text": "Identifying and remediating single points of failure in existing workloads",
+          "sourceHash": "03e02b2e00f2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:3:5",
+          "unitId": "dop-c02:3",
+          "index": 5,
+          "text": "Enabling cross-Region capabilities where they exist: Amazon DynamoDB, Amazon RDS, Amazon Route 53, Amazon S3, Amazon CloudFront",
+          "sourceHash": "c3e9d661e5c3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:3:6",
+          "unitId": "dop-c02:3",
+          "index": 6,
+          "text": "Configuring load balancing across Availability Zones",
+          "sourceHash": "ceab994e0e3e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:3:7",
+          "unitId": "dop-c02:3",
+          "index": 7,
+          "text": "Configuring applications for multiple Availability Zones and Regions while minimizing downtime",
+          "sourceHash": "e6f765d63f64",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:3:8",
+          "unitId": "dop-c02:3",
+          "index": 8,
+          "text": "Choosing the metrics that should drive scaling",
+          "sourceHash": "22336fd9145f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:3:9",
+          "unitId": "dop-c02:3",
+          "index": 9,
+          "text": "Identifying and remediating scaling issues",
+          "sourceHash": "86dca4bdecd3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:3:10",
+          "unitId": "dop-c02:3",
+          "index": 10,
+          "text": "Selecting auto scaling, load balancing, and caching solutions for the workload",
+          "sourceHash": "36e93a2a4964",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:3:11",
+          "unitId": "dop-c02:3",
+          "index": 11,
+          "text": "Deploying container-based applications on Amazon ECS and Amazon EKS",
+          "sourceHash": "05d9f6094e36",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:3:12",
+          "unitId": "dop-c02:3",
+          "index": 12,
+          "text": "Configuring serverless applications: Amazon API Gateway, AWS Lambda, AWS Fargate",
+          "sourceHash": "01ec1d3ed3c2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:3:13",
+          "unitId": "dop-c02:3",
+          "index": 13,
+          "text": "Deploying workloads across Regions for global scalability",
+          "sourceHash": "628e3c37bfee",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:3:14",
+          "unitId": "dop-c02:3",
+          "index": 14,
+          "text": "Disaster recovery concepts and strategies that meet RTO and RPO: pilot light, warm standby",
+          "sourceHash": "b4827b33cfec",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:3:15",
+          "unitId": "dop-c02:3",
+          "index": 15,
+          "text": "Testing failover of Multi-AZ and multi-Region workloads",
+          "sourceHash": "13a11a83ee2f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:3:16",
+          "unitId": "dop-c02:3",
+          "index": 16,
+          "text": "Cross-Region backup and recovery with AWS Backup, Amazon S3, and Systems Manager",
+          "sourceHash": "ce8105c149a0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:3:17",
+          "unitId": "dop-c02:3",
+          "index": 17,
+          "text": "Configuring a load balancer to recover from backend failure",
+          "sourceHash": "4b6a955f2f94",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "dop-c02:4",
+      "index": 4,
+      "title": "Monitoring and Logging",
+      "weight": 15,
+      "gate": "Given a distributed system, decide what to collect, where it is stored and encrypted, which alarm fires, and what that alarm does on its own without waking anyone.",
+      "objectives": [
+        {
+          "id": "dop-c02:4:1",
+          "unitId": "dop-c02:4",
+          "index": 1,
+          "text": "Amazon CloudWatch metrics: namespaces, metrics, dimensions, resolution",
+          "sourceHash": "bf0a4815aa15",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:4:2",
+          "unitId": "dop-c02:4",
+          "index": 2,
+          "text": "Securely storing and managing logs",
+          "sourceHash": "fba1197b72ff",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:4:3",
+          "unitId": "dop-c02:4",
+          "index": 3,
+          "text": "Encryption options for logs and metrics at rest and in transit, including AWS KMS",
+          "sourceHash": "bb65df4d2718",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:4:4",
+          "unitId": "dop-c02:4",
+          "index": 4,
+          "text": "IAM roles and permissions that allow log collection",
+          "sourceHash": "efc145215ab9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:4:5",
+          "unitId": "dop-c02:4",
+          "index": 5,
+          "text": "Creating CloudWatch metrics from log events with metric filters",
+          "sourceHash": "8cf8ff0b03c2",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "python-02-log-parser",
+            "coverage": "partial",
+            "note": "the concept, in Python; no metric-filter syntax"
+          }
+        },
+        {
+          "id": "dop-c02:4:6",
+          "unitId": "dop-c02:4",
+          "index": 6,
+          "text": "Creating CloudWatch metric streams to Amazon S3 or Amazon Data Firehose",
+          "sourceHash": "076ecca729aa",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:4:7",
+          "unitId": "dop-c02:4",
+          "index": 7,
+          "text": "Collecting custom metrics with the CloudWatch agent",
+          "sourceHash": "809f65257cd2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:4:8",
+          "unitId": "dop-c02:4",
+          "index": 8,
+          "text": "Managing log storage lifecycles: S3 lifecycle policies and CloudWatch log group retention",
+          "sourceHash": "06641a377ea8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:4:9",
+          "unitId": "dop-c02:4",
+          "index": 9,
+          "text": "Processing log data with CloudWatch Logs subscriptions into Amazon Kinesis, Lambda, or Amazon OpenSearch Service",
+          "sourceHash": "b49c6b5ac92b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:4:10",
+          "unitId": "dop-c02:4",
+          "index": 10,
+          "text": "Searching log data with filter and pattern syntax and CloudWatch Logs Insights",
+          "sourceHash": "379506beaa69",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:4:11",
+          "unitId": "dop-c02:4",
+          "index": 11,
+          "text": "Anomaly detection alarms",
+          "sourceHash": "a2808abc4994",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:4:12",
+          "unitId": "dop-c02:4",
+          "index": 12,
+          "text": "Common metrics and logs that signal trouble: EC2 CPU utilization, RDS queue length, Application Load Balancer 5xx errors",
+          "sourceHash": "15be3227fdf3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:4:13",
+          "unitId": "dop-c02:4",
+          "index": 13,
+          "text": "Amazon Inspector assessment templates and AWS Config rules as monitoring inputs",
+          "sourceHash": "e511540fab85",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:4:14",
+          "unitId": "dop-c02:4",
+          "index": 14,
+          "text": "AWS CloudTrail log events",
+          "sourceHash": "867c205379a0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:4:15",
+          "unitId": "dop-c02:4",
+          "index": 15,
+          "text": "Building CloudWatch dashboards and Amazon QuickSight visualizations",
+          "sourceHash": "184a67a0b8b9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:4:16",
+          "unitId": "dop-c02:4",
+          "index": 16,
+          "text": "Associating CloudWatch alarms with standard and custom metrics",
+          "sourceHash": "ecb32c11704e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:4:17",
+          "unitId": "dop-c02:4",
+          "index": 17,
+          "text": "Configuring AWS X-Ray for containers, Amazon API Gateway, and Lambda",
+          "sourceHash": "1b2a218f89c1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:4:18",
+          "unitId": "dop-c02:4",
+          "index": 18,
+          "text": "Analyzing real-time log streams with Amazon Kinesis Data Streams",
+          "sourceHash": "2c4f17fbed1e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:4:19",
+          "unitId": "dop-c02:4",
+          "index": 19,
+          "text": "Analyzing logs with Amazon Athena and CloudWatch Logs Insights",
+          "sourceHash": "437a807101c1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:4:20",
+          "unitId": "dop-c02:4",
+          "index": 20,
+          "text": "Event-driven, asynchronous monitoring patterns: S3 Event Notifications and EventBridge into Amazon SNS or Lambda",
+          "sourceHash": "f15d9249a10b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:4:21",
+          "unitId": "dop-c02:4",
+          "index": 21,
+          "text": "Auto scaling capabilities across services: EC2 Auto Scaling groups, RDS storage auto scaling, DynamoDB, ECS capacity providers, EKS autoscalers",
+          "sourceHash": "8c99333ef98c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:4:22",
+          "unitId": "dop-c02:4",
+          "index": 22,
+          "text": "Alert notification and action capabilities: alarms to Amazon SNS or Lambda, EC2 automatic recovery",
+          "sourceHash": "1ba6558e0c43",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:4:23",
+          "unitId": "dop-c02:4",
+          "index": 23,
+          "text": "Configuring EventBridge to notify on a particular event pattern",
+          "sourceHash": "8698f77d6640",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:4:24",
+          "unitId": "dop-c02:4",
+          "index": 24,
+          "text": "Installing and configuring agents on EC2 instances: the SSM Agent and the CloudWatch agent",
+          "sourceHash": "27cfa7b5938f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:4:25",
+          "unitId": "dop-c02:4",
+          "index": 25,
+          "text": "Configuring AWS Config rules to remediate issues",
+          "sourceHash": "f31c499ef375",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:4:26",
+          "unitId": "dop-c02:4",
+          "index": 26,
+          "text": "Configuring health checks in Application Load Balancer target groups and Amazon Route 53",
+          "sourceHash": "aad41b0b13f4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "dop-c02:5",
+      "index": 5,
+      "title": "Incident and Event Response",
+      "weight": 14,
+      "gate": "Given an event -- a health notification, a config drift, a failed deployment -- wire the response that handles it automatically, and trace a failure that got through back to its root cause.",
+      "objectives": [
+        {
+          "id": "dop-c02:5:1",
+          "unitId": "dop-c02:5",
+          "index": 1,
+          "text": "AWS services that generate, capture, and process events: AWS Health, Amazon EventBridge, AWS CloudTrail",
+          "sourceHash": "a690321158e9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:5:2",
+          "unitId": "dop-c02:5",
+          "index": 2,
+          "text": "Event-driven architectures: fan-out, event streaming, queuing",
+          "sourceHash": "25ad4e05439f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:5:3",
+          "unitId": "dop-c02:5",
+          "index": 3,
+          "text": "Integrating AWS event sources into a response workflow",
+          "sourceHash": "926eb595a662",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:5:4",
+          "unitId": "dop-c02:5",
+          "index": 4,
+          "text": "Building event processing workflows with Amazon SQS, Amazon Kinesis, Amazon SNS, AWS Lambda, and AWS Step Functions",
+          "sourceHash": "4e0fab757327",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "serverless-03-duplicate-charges",
+            "coverage": "partial",
+            "note": "retries and duplicate side effects"
+          }
+        },
+        {
+          "id": "dop-c02:5:5",
+          "unitId": "dop-c02:5",
+          "index": 5,
+          "text": "Fleet management services: AWS Systems Manager and AWS Auto Scaling",
+          "sourceHash": "1fded1861284",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:5:6",
+          "unitId": "dop-c02:5",
+          "index": 6,
+          "text": "Applying configuration changes to systems",
+          "sourceHash": "b49f6c6b0850",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:5:7",
+          "unitId": "dop-c02:5",
+          "index": 7,
+          "text": "Modifying infrastructure configurations in response to events",
+          "sourceHash": "4048521eb372",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:5:8",
+          "unitId": "dop-c02:5",
+          "index": 8,
+          "text": "Remediating a non-desired system state",
+          "sourceHash": "8ea39b9ce989",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:5:9",
+          "unitId": "dop-c02:5",
+          "index": 9,
+          "text": "Root cause analysis with AWS metrics and logging services, including Amazon CloudWatch and AWS X-Ray",
+          "sourceHash": "a2363b943551",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:5:10",
+          "unitId": "dop-c02:5",
+          "index": 10,
+          "text": "Service health services: AWS Health, CloudWatch, Systems Manager OpsCenter",
+          "sourceHash": "54a449be2bb5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:5:11",
+          "unitId": "dop-c02:5",
+          "index": 11,
+          "text": "Analyzing failed deployments in AWS CodePipeline, CodeBuild, CodeDeploy, CloudFormation, and CloudWatch synthetic monitoring",
+          "sourceHash": "d3e824364aea",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:5:12",
+          "unitId": "dop-c02:5",
+          "index": 12,
+          "text": "Analyzing incidents in failed processes: auto scaling, Amazon ECS, Amazon EKS",
+          "sourceHash": "3ed55e08346a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "dop-c02:6",
+      "index": 6,
+      "title": "Security and Compliance",
+      "weight": 17,
+      "gate": "Enforce identity, data protection, and auditing across many accounts by automation -- then show the log and the finding that would surface a violation the day it happens.",
+      "objectives": [
+        {
+          "id": "dop-c02:6:1",
+          "unitId": "dop-c02:6",
+          "index": 1,
+          "text": "IAM entities for human and machine access: users, groups, roles, identity providers, identity-based policies, resource-based policies, session policies",
+          "sourceHash": "80547a59d663",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:6:2",
+          "unitId": "dop-c02:6",
+          "index": 2,
+          "text": "Identity federation with IAM identity providers and AWS IAM Identity Center",
+          "sourceHash": "4b1024d31bab",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:6:3",
+          "unitId": "dop-c02:6",
+          "index": 3,
+          "text": "Delegating permission management with IAM permissions boundaries",
+          "sourceHash": "2bc8980b7853",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:6:4",
+          "unitId": "dop-c02:6",
+          "index": 4,
+          "text": "Service control policies in AWS Organizations",
+          "sourceHash": "1bea6f09b2af",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:6:5",
+          "unitId": "dop-c02:6",
+          "index": 5,
+          "text": "Designing policies that enforce least privilege access",
+          "sourceHash": "69ab550d8bee",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:6:6",
+          "unitId": "dop-c02:6",
+          "index": 6,
+          "text": "Implementing role-based and attribute-based access control patterns",
+          "sourceHash": "a4756a31f6fe",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:6:7",
+          "unitId": "dop-c02:6",
+          "index": 7,
+          "text": "Automating credential rotation for machine identities with AWS Secrets Manager",
+          "sourceHash": "4a2d09f45885",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:6:8",
+          "unitId": "dop-c02:6",
+          "index": 8,
+          "text": "Managing access with MFA, AWS STS, and IAM profiles",
+          "sourceHash": "a41d6378a855",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:6:9",
+          "unitId": "dop-c02:6",
+          "index": 9,
+          "text": "Network security components: security groups, network ACLs, routing, AWS Network Firewall, AWS WAF, AWS Shield",
+          "sourceHash": "41a53c59e2c7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:6:10",
+          "unitId": "dop-c02:6",
+          "index": 10,
+          "text": "Certificates and public key infrastructure",
+          "sourceHash": "d4b6c68418ff",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:6:11",
+          "unitId": "dop-c02:6",
+          "index": 11,
+          "text": "Data management: classification, encryption, key management, access controls",
+          "sourceHash": "dad6746b6cf6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:6:12",
+          "unitId": "dop-c02:6",
+          "index": 12,
+          "text": "Automating security controls across multi-account and multi-Region environments with AWS Security Hub, AWS Organizations, AWS Control Tower, and Systems Manager",
+          "sourceHash": "9a857b5fcbe9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:6:13",
+          "unitId": "dop-c02:6",
+          "index": 13,
+          "text": "Combining security controls into defense in depth",
+          "sourceHash": "e52982eb4d4a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:6:14",
+          "unitId": "dop-c02:6",
+          "index": 14,
+          "text": "Automating discovery of sensitive data at scale with Amazon Macie",
+          "sourceHash": "4c3bbcca3efa",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:6:15",
+          "unitId": "dop-c02:6",
+          "index": 15,
+          "text": "Encrypting data in transit and at rest with AWS KMS, AWS CloudHSM, and AWS Certificate Manager",
+          "sourceHash": "1626dea2ed1f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:6:16",
+          "unitId": "dop-c02:6",
+          "index": 16,
+          "text": "Security auditing services and features: AWS CloudTrail, AWS Config, VPC Flow Logs, CloudFormation drift detection",
+          "sourceHash": "5388329f9815",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:6:17",
+          "unitId": "dop-c02:6",
+          "index": 17,
+          "text": "Services that identify vulnerabilities and security events: Amazon GuardDuty, Amazon Inspector, IAM Access Analyzer, AWS Config",
+          "sourceHash": "b717cecf13dd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:6:18",
+          "unitId": "dop-c02:6",
+          "index": 18,
+          "text": "Common cloud security threats: insecure web traffic, exposed AWS access keys, S3 buckets left public or unencrypted",
+          "sourceHash": "3da5ed60c194",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:6:19",
+          "unitId": "dop-c02:6",
+          "index": 19,
+          "text": "Configuring alerting on unexpected or anomalous security events",
+          "sourceHash": "d96e794cbf48",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dop-c02:6:20",
+          "unitId": "dop-c02:6",
+          "index": 20,
+          "text": "Configuring service and application logging, then analyzing logs, metrics, and security findings",
+          "sourceHash": "95672abd3299",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/aws.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-18T00:00:00Z",
+    "officialObjectivesUrl": "https://docs.aws.amazon.com/aws-certification/latest/devops-engineer-professional-02/devops-engineer-professional-02.html",
+    "providerName": "Amazon Web Services",
+    "credentialName": "AWS Certified DevOps Engineer - Professional",
+    "examCode": "DOP-C02",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 6,
+    "objectives": 114,
+    "bookkeeping": 0,
+    "linked": 3
+  }
+}

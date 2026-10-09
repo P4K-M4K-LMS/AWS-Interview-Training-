@@ -1,0 +1,437 @@
+{
+  "id": "linuxplus",
+  "code": "LINUXPLUS",
+  "title": "Linux+",
+  "description": "CompTIA Linux+ XK0-006 exam prep across 5 weighted domains, with hands-on shell labs.",
+  "trackType": "certification",
+  "units": [
+    {
+      "id": "linuxplus:1",
+      "index": 1,
+      "title": "System Management",
+      "weight": 23,
+      "gate": "Given a Linux system in an unfamiliar state, correctly identify installed packages, running services, and storage layout using only command-line tools.",
+      "objectives": [
+        {
+          "id": "linuxplus:1:1",
+          "unitId": "linuxplus:1",
+          "index": 1,
+          "text": "Boot process, GRUB, and systemd targets",
+          "sourceHash": "d340cc981c8d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default",
+          "labPrompt": "Use lsblk and df -h to map your own system's disk layout and mounted filesystems."
+        },
+        {
+          "id": "linuxplus:1:2",
+          "unitId": "linuxplus:1",
+          "index": 2,
+          "text": "Package management across distributions (apt, dnf/yum, pacman, rpm)",
+          "sourceHash": "5b5df520a1a3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "linuxplus:1:3",
+          "unitId": "linuxplus:1",
+          "index": 3,
+          "text": "Filesystem hierarchy standard and mounting/unmounting storage",
+          "sourceHash": "4f043122602f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "linuxplus:1:4",
+          "unitId": "linuxplus:1",
+          "index": 4,
+          "text": "Disk partitioning, LVM concepts, and filesystem types (ext4, xfs, btrfs)",
+          "sourceHash": "3094498ca991",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "linuxplus:1:5",
+          "unitId": "linuxplus:1",
+          "index": 5,
+          "text": "systemd service management (systemctl, journalctl)",
+          "sourceHash": "82ba96a485c4",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "linux-03-locked-out",
+            "coverage": "full"
+          },
+          "labPrompt": "Use systemctl and journalctl to inspect the status and recent logs of a running service."
+        },
+        {
+          "id": "linuxplus:1:6",
+          "unitId": "linuxplus:1",
+          "index": 6,
+          "text": "Kernel modules and basic kernel parameter tuning",
+          "sourceHash": "2dd288bf8c8f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "linuxplus:1:7",
+          "unitId": "linuxplus:1",
+          "index": 7,
+          "text": "Managing users, groups, and permissions at the system level",
+          "sourceHash": "de80377bd79b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "linuxplus:2",
+      "index": 2,
+      "title": "Services and User Management",
+      "weight": 20,
+      "gate": "Given a multi-user Linux server scenario, correctly set up user accounts, group-based permissions, and a common network service, explaining each access-control decision.",
+      "objectives": [
+        {
+          "id": "linuxplus:2:1",
+          "unitId": "linuxplus:2",
+          "index": 1,
+          "text": "Creating and managing users and groups (useradd, usermod, groups)",
+          "sourceHash": "f90db4e1d9f6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default",
+          "labPrompt": "Create a new user and group on a test VM, then verify permissions with ls -l and id."
+        },
+        {
+          "id": "linuxplus:2:2",
+          "unitId": "linuxplus:2",
+          "index": 2,
+          "text": "File permissions and ownership: rwx, chmod, chown, umask",
+          "sourceHash": "c86ddbd0d7c0",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "linux-03-locked-out",
+            "coverage": "partial",
+            "note": "no umask"
+          }
+        },
+        {
+          "id": "linuxplus:2:3",
+          "unitId": "linuxplus:2",
+          "index": 3,
+          "text": "Special permissions: SUID, SGID, sticky bit",
+          "sourceHash": "f50d4f5e47bc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "linuxplus:2:4",
+          "unitId": "linuxplus:2",
+          "index": 4,
+          "text": "Common network services: SSH, web servers, printing, time sync (NTP)",
+          "sourceHash": "da00af775ce6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default",
+          "labPrompt": "Generate an SSH key pair and configure key-based login to a test host."
+        },
+        {
+          "id": "linuxplus:2:5",
+          "unitId": "linuxplus:2",
+          "index": 5,
+          "text": "Environment variables and shell configuration files",
+          "sourceHash": "aee854b7b82d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "linuxplus:2:6",
+          "unitId": "linuxplus:2",
+          "index": 6,
+          "text": "Print and email service basics (CUPS, mail transfer agents, conceptually)",
+          "sourceHash": "7d0a55766dcb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "linuxplus:3",
+      "index": 3,
+      "title": "Troubleshooting",
+      "weight": 22,
+      "gate": "Given symptoms of a broken Linux system (won't boot, service down, disk full, network unreachable), diagnose root cause using systematic command-line investigation, not guesswork.",
+      "objectives": [
+        {
+          "id": "linuxplus:3:1",
+          "unitId": "linuxplus:3",
+          "index": 1,
+          "text": "Systematic troubleshooting methodology for Linux systems",
+          "sourceHash": "f68d64d43412",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "linuxplus:3:2",
+          "unitId": "linuxplus:3",
+          "index": 2,
+          "text": "Diagnosing boot failures and using rescue/single-user mode",
+          "sourceHash": "16d6fe912b6d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "linuxplus:3:3",
+          "unitId": "linuxplus:3",
+          "index": 3,
+          "text": "Diagnosing storage issues: full disks, inode exhaustion, failing drives",
+          "sourceHash": "ed7ebcd59998",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "linux-04-disk-full",
+            "coverage": "partial",
+            "note": "full disk only"
+          },
+          "labPrompt": "Use df -i and du to find what is consuming disk space or inodes on a test system."
+        },
+        {
+          "id": "linuxplus:3:4",
+          "unitId": "linuxplus:3",
+          "index": 4,
+          "text": "Diagnosing network issues: ip, ping, traceroute, ss, DNS resolution",
+          "sourceHash": "be500fc2f181",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default",
+          "labPrompt": "Use ss -tulpn to identify which process is listening on a given port."
+        },
+        {
+          "id": "linuxplus:3:5",
+          "unitId": "linuxplus:3",
+          "index": 5,
+          "text": "Diagnosing performance issues: top/htop, load average, memory and swap usage",
+          "sourceHash": "7881b12ad981",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "linux-05-runaway-process",
+            "coverage": "full"
+          }
+        },
+        {
+          "id": "linuxplus:3:6",
+          "unitId": "linuxplus:3",
+          "index": 6,
+          "text": "Reading and interpreting system logs for root-cause analysis",
+          "sourceHash": "c623e90470e0",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "linux-02-log-detective",
+            "coverage": "full"
+          }
+        }
+      ]
+    },
+    {
+      "id": "linuxplus:4",
+      "index": 4,
+      "title": "Security",
+      "weight": 18,
+      "gate": "Given a freshly installed Linux server, apply a baseline hardening pass and explain what each control actually defends against.",
+      "objectives": [
+        {
+          "id": "linuxplus:4:1",
+          "unitId": "linuxplus:4",
+          "index": 1,
+          "text": "User authentication hardening: password policies, sudo configuration",
+          "sourceHash": "a6c364a12443",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "linuxplus:4:2",
+          "unitId": "linuxplus:4",
+          "index": 2,
+          "text": "Firewall basics: iptables/nftables or firewalld concepts",
+          "sourceHash": "759e232c042c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default",
+          "labPrompt": "Configure a basic firewalld or nftables rule to allow only SSH and HTTP on a test host."
+        },
+        {
+          "id": "linuxplus:4:3",
+          "unitId": "linuxplus:4",
+          "index": 3,
+          "text": "SELinux/AppArmor mandatory access control concepts",
+          "sourceHash": "924be4da9dd1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "linuxplus:4:4",
+          "unitId": "linuxplus:4",
+          "index": 4,
+          "text": "File integrity and permission auditing",
+          "sourceHash": "cd7190bf3758",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "linuxplus:4:5",
+          "unitId": "linuxplus:4",
+          "index": 5,
+          "text": "SSH hardening: key-only auth, disabling root login",
+          "sourceHash": "92021204e134",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "netsec-02-suspicious-cron",
+            "coverage": "partial",
+            "note": "one quiz question"
+          },
+          "labPrompt": "Harden a test SSH server by disabling password authentication and root login."
+        },
+        {
+          "id": "linuxplus:4:6",
+          "unitId": "linuxplus:4",
+          "index": 6,
+          "text": "Basic encryption at rest (LUKS) and in transit (TLS/SSH) concepts",
+          "sourceHash": "b0a1dd3c11ef",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "linuxplus:5",
+      "index": 5,
+      "title": "Automation, Orchestration, and Scripting",
+      "weight": 17,
+      "gate": "Write a short Bash script that automates a real multi-step admin task (e.g. log rotation or backup) using variables, conditionals, and a loop, and schedule it correctly.",
+      "objectives": [
+        {
+          "id": "linuxplus:5:1",
+          "unitId": "linuxplus:5",
+          "index": 1,
+          "text": "Bash scripting fundamentals: variables, conditionals, loops, functions",
+          "sourceHash": "4de0b23025aa",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default",
+          "labPrompt": "Write a short Bash script that finds and archives log files older than 7 days."
+        },
+        {
+          "id": "linuxplus:5:2",
+          "unitId": "linuxplus:5",
+          "index": 2,
+          "text": "Shell automation scheduling: cron, at, and systemd timers",
+          "sourceHash": "d458b5833cb8",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "linux-05-runaway-process",
+            "coverage": "partial",
+            "note": "fixes one cron entry"
+          }
+        },
+        {
+          "id": "linuxplus:5:3",
+          "unitId": "linuxplus:5",
+          "index": 3,
+          "text": "Basic regular expressions with grep/sed/awk for text processing",
+          "sourceHash": "ce21ed274d01",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "linux-02-log-detective",
+            "coverage": "partial",
+            "note": "no awk"
+          }
+        },
+        {
+          "id": "linuxplus:5:4",
+          "unitId": "linuxplus:5",
+          "index": 4,
+          "text": "Version control basics with git for configuration and scripts",
+          "sourceHash": "9f2f6516ffc7",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "devops-01-broken-pipeline",
+            "coverage": "partial",
+            "note": "no git command in the terminal"
+          }
+        },
+        {
+          "id": "linuxplus:5:5",
+          "unitId": "linuxplus:5",
+          "index": 5,
+          "text": "Configuration management and infrastructure-as-code concepts (Ansible-style, conceptual)",
+          "sourceHash": "a4df43a42f82",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "linuxplus:5:6",
+          "unitId": "linuxplus:5",
+          "index": 6,
+          "text": "Containers: what a container is, basic Docker commands (run, ps, images)",
+          "sourceHash": "fad01e772ff4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default",
+          "labPrompt": "Run a container image locally with docker run and inspect it with docker ps."
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/data.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 5,
+    "objectives": 31,
+    "bookkeeping": 0,
+    "linked": 9
+  }
+}

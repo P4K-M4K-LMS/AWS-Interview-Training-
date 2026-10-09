@@ -1,0 +1,665 @@
+{
+  "id": "soa-c03",
+  "code": "AWSSOA",
+  "title": "AWS CloudOps Engineer Associate",
+  "description": "AWS Certified CloudOps Engineer - Associate (SOA-C03), formerly SysOps Administrator - Associate: running workloads day to day -- monitoring and remediation, reliability and backups, provisioning and automation, security and compliance, and networking when the packets do not arrive.",
+  "trackType": "certification",
+  "units": [
+    {
+      "id": "soa-c03:1",
+      "index": 1,
+      "title": "Monitoring, Logging, Analysis, Remediation, and Performance Optimization",
+      "weight": 22,
+      "gate": "Given a workload that is slow or silent, say which metric or log would have told you first, wire the alarm that catches it next time, and name the automation that fixes it without a human.",
+      "objectives": [
+        {
+          "id": "soa-c03:1:1",
+          "unitId": "soa-c03:1",
+          "index": 1,
+          "text": "Configuring monitoring and logging with Amazon CloudWatch, AWS CloudTrail, and Amazon Managed Service for Prometheus",
+          "sourceHash": "d95583b411e8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "soa-c03:1:2",
+          "unitId": "soa-c03:1",
+          "index": 2,
+          "text": "Monitoring different workload shapes -- serverless, compute, AI -- and what changes between them",
+          "sourceHash": "be78c4326d66",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "soa-c03:1:3",
+          "unitId": "soa-c03:1",
+          "index": 3,
+          "text": "Installing and managing the CloudWatch agent on EC2 instances, Amazon ECS clusters, and Amazon EKS clusters",
+          "sourceHash": "cbb467808bb5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "soa-c03:1:4",
+          "unitId": "soa-c03:1",
+          "index": 4,
+          "text": "Configuring CloudWatch alarms, including composite alarms and the actions they can invoke",
+          "sourceHash": "11f3477b9695",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "soa-c03:1:5",
+          "unitId": "soa-c03:1",
+          "index": 5,
+          "text": "Troubleshooting an alarm that never fires, or fires on the wrong thing",
+          "sourceHash": "c3522dc81695",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "soa-c03:1:6",
+          "unitId": "soa-c03:1",
+          "index": 6,
+          "text": "Invoking AWS services from an alarm directly or through Amazon EventBridge",
+          "sourceHash": "035728266ed4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "soa-c03:1:7",
+          "unitId": "soa-c03:1",
+          "index": 7,
+          "text": "Building customizable, shareable CloudWatch dashboards spanning multiple accounts and Regions",
+          "sourceHash": "cfaa705d4fae",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "soa-c03:1:8",
+          "unitId": "soa-c03:1",
+          "index": 8,
+          "text": "Sending notifications to Amazon SNS from AWS services and from alarms",
+          "sourceHash": "c3889495772f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "soa-c03:1:9",
+          "unitId": "soa-c03:1",
+          "index": 9,
+          "text": "Analyzing performance metrics and automating remediation with CloudWatch, AWS Lambda, AWS Systems Manager, and CloudTrail",
+          "sourceHash": "c02fd19d7ad2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "soa-c03:1:10",
+          "unitId": "soa-c03:1",
+          "index": 10,
+          "text": "Automated remediation with newer AWS operations tooling, including Kiro and the AWS DevOps Agent",
+          "sourceHash": "23a421871502",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "soa-c03:1:11",
+          "unitId": "soa-c03:1",
+          "index": 11,
+          "text": "Routing, enriching, and delivering events with EventBridge, and debugging event bus rules",
+          "sourceHash": "60fffb41bb5f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "soa-c03:1:12",
+          "unitId": "soa-c03:1",
+          "index": 12,
+          "text": "Creating and running custom and predefined Systems Manager Automation runbooks",
+          "sourceHash": "e36bac576e2b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "soa-c03:1:13",
+          "unitId": "soa-c03:1",
+          "index": 13,
+          "text": "Optimizing compute and remediating performance problems using performance metrics, resource tags, and AWS tools",
+          "sourceHash": "6bf0d3b8f176",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "soa-c03:1:14",
+          "unitId": "soa-c03:1",
+          "index": 14,
+          "text": "Analyzing Amazon EBS performance metrics and choosing volume types for performance and cost",
+          "sourceHash": "00853258044e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "soa-c03:1:15",
+          "unitId": "soa-c03:1",
+          "index": 15,
+          "text": "S3 performance strategies: multipart uploads, S3 Transfer Acceleration, AWS DataSync, S3 Lifecycle policies",
+          "sourceHash": "0b3ffb319324",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "soa-c03:1:16",
+          "unitId": "soa-c03:1",
+          "index": 16,
+          "text": "Selecting and optimizing shared storage: Amazon EFS, Amazon FSx, and EFS lifecycle policies",
+          "sourceHash": "6bea3edd1b54",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "soa-c03:1:17",
+          "unitId": "soa-c03:1",
+          "index": 17,
+          "text": "Monitoring Amazon RDS with Performance Insights and CloudWatch alarms, and acting on proactive recommendations",
+          "sourceHash": "47b0680520b3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "soa-c03:1:18",
+          "unitId": "soa-c03:1",
+          "index": 18,
+          "text": "Using Amazon RDS Proxy to fix connection-driven performance problems",
+          "sourceHash": "1c9424fc3261",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "soa-c03:1:19",
+          "unitId": "soa-c03:1",
+          "index": 19,
+          "text": "Optimizing EC2 instances with their attached storage and networking, including placement groups",
+          "sourceHash": "386a19d96d40",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "soa-c03:2",
+      "index": 2,
+      "title": "Reliability and Business Continuity",
+      "weight": 22,
+      "gate": "Given an RTO and an RPO, configure the backup and failover that meet them -- then prove it by describing the restore, not the backup.",
+      "gateEngine": "dr-planner",
+      "objectives": [
+        {
+          "id": "soa-c03:2:1",
+          "unitId": "soa-c03:2",
+          "index": 1,
+          "text": "Configuring and managing scaling mechanisms in compute environments",
+          "sourceHash": "5e977dcd3f30",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "soa-c03:2:2",
+          "unitId": "soa-c03:2",
+          "index": 2,
+          "text": "Caching to support dynamic scalability: Amazon CloudFront and Amazon ElastiCache",
+          "sourceHash": "eb24e1e7b651",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "soa-c03:2:3",
+          "unitId": "soa-c03:2",
+          "index": 3,
+          "text": "Configuring and managing scaling in AWS managed databases: Amazon RDS and Amazon DynamoDB",
+          "sourceHash": "7a26331a2962",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "soa-c03:2:4",
+          "unitId": "soa-c03:2",
+          "index": 4,
+          "text": "Configuring and troubleshooting Elastic Load Balancing health checks",
+          "sourceHash": "4e34e003b7e7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "soa-c03:2:5",
+          "unitId": "soa-c03:2",
+          "index": 5,
+          "text": "Configuring and troubleshooting Amazon Route 53 health checks",
+          "sourceHash": "023c112c55b5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "soa-c03:2:6",
+          "unitId": "soa-c03:2",
+          "index": 6,
+          "text": "Configuring fault-tolerant systems with Multi-AZ deployments",
+          "sourceHash": "66b26c2ac510",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "soa-c03:2:7",
+          "unitId": "soa-c03:2",
+          "index": 7,
+          "text": "Automating snapshots and backups with AWS Backup across EC2 instances, RDS DB instances, EBS volumes, S3 buckets, and DynamoDB tables",
+          "sourceHash": "26722f819fac",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "soa-c03:2:8",
+          "unitId": "soa-c03:2",
+          "index": 8,
+          "text": "Restoring databases, including point-in-time restore, against RTO, RPO, and cost requirements",
+          "sourceHash": "e7ab1ce1766d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "soa-c03:2:9",
+          "unitId": "soa-c03:2",
+          "index": 9,
+          "text": "Implementing versioning on storage services: Amazon S3 and Amazon FSx",
+          "sourceHash": "4642befb5c5d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "soa-c03:2:10",
+          "unitId": "soa-c03:2",
+          "index": 10,
+          "text": "Following disaster recovery procedures: backup and restore, pilot light, warm standby, active/active",
+          "sourceHash": "ed74a3fb99b8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "soa-c03:3",
+      "index": 3,
+      "title": "Deployment, Provisioning, and Automation",
+      "weight": 22,
+      "gate": "Stand up an environment from a template, break it deliberately with a subnet that is too small or a missing permission, and read the failure back to its cause.",
+      "objectives": [
+        {
+          "id": "soa-c03:3:1",
+          "unitId": "soa-c03:3",
+          "index": 1,
+          "text": "Creating and managing AMIs and container images, including with EC2 Image Builder",
+          "sourceHash": "6dc1dce7d389",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "soa-c03:3:2",
+          "unitId": "soa-c03:3",
+          "index": 2,
+          "text": "Creating and managing AWS resources with AWS CloudFormation and the AWS CDK",
+          "sourceHash": "6408ad72d900",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "soa-c03:3:3",
+          "unitId": "soa-c03:3",
+          "index": 3,
+          "text": "Identifying and remediating deployment issues: subnet sizing, CloudFormation errors, permissions problems",
+          "sourceHash": "89e113006c25",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "soa-c03:3:4",
+          "unitId": "soa-c03:3",
+          "index": 4,
+          "text": "Provisioning and sharing resources across Regions and accounts with AWS Resource Access Manager and CloudFormation StackSets",
+          "sourceHash": "3f7a7ae82fda",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "soa-c03:3:5",
+          "unitId": "soa-c03:3",
+          "index": 5,
+          "text": "Implementing deployment strategies and the services that carry them out",
+          "sourceHash": "ba373bb1e3bf",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "soa-c03:3:6",
+          "unitId": "soa-c03:3",
+          "index": 6,
+          "text": "Using and managing third-party automation tooling, such as Terraform and Git",
+          "sourceHash": "18ac61562ef4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "soa-c03:3:7",
+          "unitId": "soa-c03:3",
+          "index": 7,
+          "text": "Automating operational processes with AWS Systems Manager",
+          "sourceHash": "9be2b24eb815",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "soa-c03:3:8",
+          "unitId": "soa-c03:3",
+          "index": 8,
+          "text": "Event-driven automation with AWS Lambda, S3 Event Notifications, EventBridge, and the AWS DevOps Agent",
+          "sourceHash": "75ef810c934e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "soa-c03:4",
+      "index": 4,
+      "title": "Security and Compliance",
+      "weight": 16,
+      "gate": "Given an access denial or an audit finding, trace it to the policy, condition, or control that caused it, and remediate without opening the door wider than needed.",
+      "gateEngine": "policy-eval",
+      "objectives": [
+        {
+          "id": "soa-c03:4:1",
+          "unitId": "soa-c03:4",
+          "index": 1,
+          "text": "Implementing IAM features: password policies, MFA, roles, federated identity, resource policies, policy conditions",
+          "sourceHash": "2c01776d4fcb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "soa-c03:4:2",
+          "unitId": "soa-c03:4",
+          "index": 2,
+          "text": "Troubleshooting and auditing access with CloudTrail, IAM Access Analyzer, and the IAM policy simulator",
+          "sourceHash": "f182f7222bb5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "soa-c03:4:3",
+          "unitId": "soa-c03:4",
+          "index": 3,
+          "text": "Implementing multi-account strategies securely: AWS Organizations, service control policies, IAM Identity Center",
+          "sourceHash": "ab51b44dd2f6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "soa-c03:4:4",
+          "unitId": "soa-c03:4",
+          "index": 4,
+          "text": "Remediating based on AWS Trusted Advisor security checks",
+          "sourceHash": "0b0f530ce2a2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "soa-c03:4:5",
+          "unitId": "soa-c03:4",
+          "index": 5,
+          "text": "Enforcing compliance and continuous monitoring, including Region and service selection and AWS Config conformance packs",
+          "sourceHash": "67fd9d554ef4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "soa-c03:4:6",
+          "unitId": "soa-c03:4",
+          "index": 6,
+          "text": "Implementing and enforcing a data classification scheme",
+          "sourceHash": "32258097c313",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "soa-c03:4:7",
+          "unitId": "soa-c03:4",
+          "index": 7,
+          "text": "Implementing, configuring, and troubleshooting encryption at rest with AWS KMS",
+          "sourceHash": "aa7df6ddb6a1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "soa-c03:4:8",
+          "unitId": "soa-c03:4",
+          "index": 8,
+          "text": "Implementing, configuring, and troubleshooting encryption in transit with AWS Certificate Manager",
+          "sourceHash": "2f5e1f762016",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "soa-c03:4:9",
+          "unitId": "soa-c03:4",
+          "index": 9,
+          "text": "Storing secrets securely with AWS services",
+          "sourceHash": "650e6c1c6d3b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "soa-c03:4:10",
+          "unitId": "soa-c03:4",
+          "index": 10,
+          "text": "Configuring reports and remediating findings from AWS Security Hub, Amazon GuardDuty, AWS Config, Amazon Inspector, and AWS Security Agent",
+          "sourceHash": "f7b9d4ef7e8d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "soa-c03:5",
+      "index": 5,
+      "title": "Networking and Content Delivery",
+      "weight": 18,
+      "gate": "Given 'it cannot reach the database', work the path -- security group, network ACL, route table, gateway, DNS -- and name the log that proves where it stopped.",
+      "gateEngine": "net-trace",
+      "objectives": [
+        {
+          "id": "soa-c03:5:1",
+          "unitId": "soa-c03:5",
+          "index": 1,
+          "text": "Configuring a VPC: subnets, route tables, network ACLs, security groups, NAT gateways, internet gateway, egress-only internet gateway",
+          "sourceHash": "61ac086de62c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "soa-c03:5:2",
+          "unitId": "soa-c03:5",
+          "index": 2,
+          "text": "Configuring private connectivity: VPC endpoints, AWS PrivateLink, VPC peering",
+          "sourceHash": "a9e601396da7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "soa-c03:5:3",
+          "unitId": "soa-c03:5",
+          "index": 3,
+          "text": "Auditing network protection services in a single account: Route 53 Resolver DNS Firewall, AWS WAF, AWS Shield, AWS Network Firewall",
+          "sourceHash": "206f624cb7bf",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "soa-c03:5:4",
+          "unitId": "soa-c03:5",
+          "index": 4,
+          "text": "Optimizing the cost of a network architecture",
+          "sourceHash": "231385583fa7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "soa-c03:5:5",
+          "unitId": "soa-c03:5",
+          "index": 5,
+          "text": "Configuring DNS, including Route 53 Resolver",
+          "sourceHash": "68bd5aec9594",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "soa-c03:5:6",
+          "unitId": "soa-c03:5",
+          "index": 6,
+          "text": "Implementing Route 53 routing policies, configurations, and query logging",
+          "sourceHash": "9c49131efefa",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "soa-c03:5:7",
+          "unitId": "soa-c03:5",
+          "index": 7,
+          "text": "Configuring content and service distribution: Amazon CloudFront and AWS Global Accelerator",
+          "sourceHash": "da009f2f82e4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "soa-c03:5:8",
+          "unitId": "soa-c03:5",
+          "index": 8,
+          "text": "Troubleshooting VPC configurations: subnets, route tables, network ACLs, security groups, transit gateways, NAT gateways",
+          "sourceHash": "3ed67e9ce9ef",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "soa-c03:5:9",
+          "unitId": "soa-c03:5",
+          "index": 9,
+          "text": "Collecting and interpreting networking logs: VPC flow logs, ELB access logs, AWS WAF web ACL logs, CloudFront logs, container logs",
+          "sourceHash": "f04c844a1209",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "soa-c03:5:10",
+          "unitId": "soa-c03:5",
+          "index": 10,
+          "text": "Identifying and remediating CloudFront caching issues",
+          "sourceHash": "b28bd94480b5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "soa-c03:5:11",
+          "unitId": "soa-c03:5",
+          "index": 11,
+          "text": "Identifying and troubleshooting hybrid connectivity and private connectivity issues",
+          "sourceHash": "690fe825afc4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "soa-c03:5:12",
+          "unitId": "soa-c03:5",
+          "index": 12,
+          "text": "Configuring and analyzing CloudWatch network monitoring services",
+          "sourceHash": "62d67de3b68b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/aws.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-18T00:00:00Z",
+    "officialObjectivesUrl": "https://docs.aws.amazon.com/aws-certification/latest/sysops-administrator-associate-03/sysops-administrator-associate-03.html",
+    "providerName": "Amazon Web Services",
+    "credentialName": "AWS Certified CloudOps Engineer - Associate",
+    "examCode": "SOA-C03",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 5,
+    "objectives": 59,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

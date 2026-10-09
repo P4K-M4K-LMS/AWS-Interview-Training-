@@ -1,0 +1,862 @@
+{
+  "id": "aif-c01",
+  "code": "AWSAIF",
+  "title": "AWS AI Practitioner",
+  "description": "AWS Certified AI Practitioner (AIF-C01): AI, ML, and generative AI on AWS for the person who uses these systems rather than builds them -- foundation models, prompt engineering, RAG and agents, responsible AI, and the security and governance around it all.",
+  "trackType": "certification",
+  "units": [
+    {
+      "id": "aif-c01:1",
+      "index": 1,
+      "title": "Fundamentals of AI and ML",
+      "weight": 20,
+      "gate": "Given a business problem, say whether AI/ML is the right tool at all, which technique fits, and which AWS managed service you would reach for -- including the cases where the honest answer is that a rule beats a prediction.",
+      "objectives": [
+        {
+          "id": "aif-c01:1:1",
+          "unitId": "aif-c01:1",
+          "index": 1,
+          "text": "Core vocabulary: AI, machine learning, deep learning, neural networks, computer vision, natural language processing",
+          "sourceHash": "ead9de4c707e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:1:2",
+          "unitId": "aif-c01:1",
+          "index": 2,
+          "text": "Model, algorithm, training, and inferencing as four distinct things",
+          "sourceHash": "c94d0ad42578",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:1:3",
+          "unitId": "aif-c01:1",
+          "index": 3,
+          "text": "Bias, fairness, and fit as properties you can measure",
+          "sourceHash": "470c9961bca9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:1:4",
+          "unitId": "aif-c01:1",
+          "index": 4,
+          "text": "Large language models, generative AI, and agentic AI defined",
+          "sourceHash": "644b188b003a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:1:5",
+          "unitId": "aif-c01:1",
+          "index": 5,
+          "text": "How AI, ML, deep learning, generative AI, and agentic AI relate, and where each stops",
+          "sourceHash": "1ca9c85f0886",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:1:6",
+          "unitId": "aif-c01:1",
+          "index": 6,
+          "text": "Types of inferencing: batch, real-time, asynchronous, serverless",
+          "sourceHash": "31fc4524f796",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:1:7",
+          "unitId": "aif-c01:1",
+          "index": 7,
+          "text": "Data types in AI models: labeled and unlabeled, structured and unstructured, tabular, time-series, image, text",
+          "sourceHash": "a69fe6223a28",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:1:8",
+          "unitId": "aif-c01:1",
+          "index": 8,
+          "text": "Learning types: supervised, unsupervised, reinforcement learning",
+          "sourceHash": "461bf7cd31f6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:1:9",
+          "unitId": "aif-c01:1",
+          "index": 9,
+          "text": "Where AI/ML adds value: assisting human decisions, scaling a solution, automation",
+          "sourceHash": "46d1e38da1ff",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:1:10",
+          "unitId": "aif-c01:1",
+          "index": 10,
+          "text": "When an AI/ML solution is the wrong answer: cost-benefit, and needing a specific outcome instead of a prediction",
+          "sourceHash": "041751f71b81",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:1:11",
+          "unitId": "aif-c01:1",
+          "index": 11,
+          "text": "Choosing a technique for a use case: regression, classification, clustering",
+          "sourceHash": "89718d4f41c4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:1:12",
+          "unitId": "aif-c01:1",
+          "index": 12,
+          "text": "Real-world applications: computer vision, NLP, speech recognition, recommendation, fraud detection, forecasting, knowledge bases, agentic AI",
+          "sourceHash": "948a4eef1056",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:1:13",
+          "unitId": "aif-c01:1",
+          "index": 13,
+          "text": "What the AWS managed AI services do: Amazon SageMaker AI, Amazon Transcribe, Amazon Translate, Amazon Comprehend, Amazon Lex, Amazon Polly",
+          "sourceHash": "ea30eb5f18e8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:1:14",
+          "unitId": "aif-c01:1",
+          "index": 14,
+          "text": "Traditional ML model versus foundation model, decided by regulation, explainability, and operational constraints",
+          "sourceHash": "8a2232729d7a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:1:15",
+          "unitId": "aif-c01:1",
+          "index": 15,
+          "text": "The components of an AI/ML pipeline, and what each one contributes",
+          "sourceHash": "f0ba7253b143",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:1:16",
+          "unitId": "aif-c01:1",
+          "index": 16,
+          "text": "Where foundation models come from: open-source pre-trained models versus training a custom model",
+          "sourceHash": "30220e879898",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:1:17",
+          "unitId": "aif-c01:1",
+          "index": 17,
+          "text": "Putting a model into production: managed API service versus self-hosted API",
+          "sourceHash": "909a14d55288",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:1:18",
+          "unitId": "aif-c01:1",
+          "index": 18,
+          "text": "AWS services and features at each stage of an AI/ML pipeline, including Amazon Bedrock, Amazon Quick, Kiro, and Amazon SageMaker AI",
+          "sourceHash": "327a7b496168",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:1:19",
+          "unitId": "aif-c01:1",
+          "index": 19,
+          "text": "MLOps fundamentals: experimentation, repeatable processes, scalable systems, technical debt, production readiness, model monitoring, retraining",
+          "sourceHash": "ca7af94750c4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:1:20",
+          "unitId": "aif-c01:1",
+          "index": 20,
+          "text": "Model performance metrics (accuracy, precision, recall, F1) against business metrics (cost per user, development cost, ROI, customer feedback)",
+          "sourceHash": "04a64715fdf1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01:2",
+      "index": 2,
+      "title": "Fundamentals of Generative AI",
+      "weight": 24,
+      "gate": "Explain what a token is, what it costs you, and how that cost shapes a design -- then name the AWS service you would build a given generative AI application on, and the limitation that would sink it.",
+      "objectives": [
+        {
+          "id": "aif-c01:2:1",
+          "unitId": "aif-c01:2",
+          "index": 1,
+          "text": "Tokens, chunking, embeddings, and vectors",
+          "sourceHash": "f821bd241424",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:2:2",
+          "unitId": "aif-c01:2",
+          "index": 2,
+          "text": "Prompt engineering as a discipline, not a trick",
+          "sourceHash": "ca07aa95467e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:2:3",
+          "unitId": "aif-c01:2",
+          "index": 3,
+          "text": "Transformer-based large language models, foundation models, multi-modal models, diffusion models",
+          "sourceHash": "49b4325e9c7e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:2:4",
+          "unitId": "aif-c01:2",
+          "index": 4,
+          "text": "Generative AI use cases: image, video, and audio generation; summarization; assistants; translation; code generation; customer service; search; recommendation",
+          "sourceHash": "852ba917692b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:2:5",
+          "unitId": "aif-c01:2",
+          "index": 5,
+          "text": "The foundation-model lifecycle: data selection, model selection, pre-training, fine-tuning, evaluation, deployment, feedback",
+          "sourceHash": "99d3263ac907",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:2:6",
+          "unitId": "aif-c01:2",
+          "index": 6,
+          "text": "Token-based pricing, and how it drives both cost and inference performance",
+          "sourceHash": "651d4416d80e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:2:7",
+          "unitId": "aif-c01:2",
+          "index": 7,
+          "text": "The role of context engineering in foundation-model applications",
+          "sourceHash": "e13dd5522559",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:2:8",
+          "unitId": "aif-c01:2",
+          "index": 8,
+          "text": "Agentic AI concepts: multi-agent system patterns, memory management, tool use, workflow orchestration",
+          "sourceHash": "591c171ebbaa",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:2:9",
+          "unitId": "aif-c01:2",
+          "index": 9,
+          "text": "Model Context Protocol (MCP) and how it connects agents to external systems",
+          "sourceHash": "0f082ad518d8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:2:10",
+          "unitId": "aif-c01:2",
+          "index": 10,
+          "text": "Advantages of generative AI: adaptability, responsiveness, conversational ability, content generation",
+          "sourceHash": "a377669ac3b3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:2:11",
+          "unitId": "aif-c01:2",
+          "index": 11,
+          "text": "Disadvantages of generative AI: hallucination, poor interpretability, inaccuracy, nondeterminism",
+          "sourceHash": "b9370ea39540",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:2:12",
+          "unitId": "aif-c01:2",
+          "index": 12,
+          "text": "Choosing a generative AI model: type, performance, capability, constraints, compliance, cost, latency, complexity",
+          "sourceHash": "fece4ad59513",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:2:13",
+          "unitId": "aif-c01:2",
+          "index": 13,
+          "text": "Business value and metrics for generative AI applications: ROI, efficiency, conversion rate, average revenue per user, customer lifetime value",
+          "sourceHash": "7c3c4961849b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:2:14",
+          "unitId": "aif-c01:2",
+          "index": 14,
+          "text": "AWS services for building generative AI applications: Amazon Bedrock, Amazon SageMaker AI, SageMaker JumpStart, Amazon Quick, Kiro, Strands Agents, Amazon Bedrock AgentCore",
+          "sourceHash": "79f092931f83",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:2:15",
+          "unitId": "aif-c01:2",
+          "index": 15,
+          "text": "Why building on AWS generative AI services lowers the barrier: accessibility, efficiency, cost-effectiveness, speed to market",
+          "sourceHash": "6c8bf5e8df30",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:2:16",
+          "unitId": "aif-c01:2",
+          "index": 16,
+          "text": "What AWS infrastructure contributes to a generative AI workload: security, compliance, responsibility, safety",
+          "sourceHash": "ebb0c1f16314",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:2:17",
+          "unitId": "aif-c01:2",
+          "index": 17,
+          "text": "Cost trade-offs across AWS generative AI services: responsiveness, availability, redundancy, regional coverage, token pricing, provisioned throughput, custom models",
+          "sourceHash": "bf04213b4dff",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01:3",
+      "index": 3,
+      "title": "Applications of Foundation Models",
+      "weight": 28,
+      "gate": "Given a requirement, choose between prompt engineering, RAG, fine-tuning, and pre-training -- and defend the choice on cost and on how fresh the knowledge has to be. This is the heaviest domain on the exam.",
+      "objectives": [
+        {
+          "id": "aif-c01:3:1",
+          "unitId": "aif-c01:3",
+          "index": 1,
+          "text": "Selection criteria for a foundation model: cost, modality, latency, multilingual support, model size, complexity, customization, input/output length, prompt caching",
+          "sourceHash": "d0f77f06ba4a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:3:2",
+          "unitId": "aif-c01:3",
+          "index": 2,
+          "text": "Inference parameters and what they change: temperature, input and output length",
+          "sourceHash": "e20aa77b3e58",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:3:3",
+          "unitId": "aif-c01:3",
+          "index": 3,
+          "text": "Retrieval Augmented Generation (RAG) and its business applications, including Amazon Bedrock Knowledge Bases",
+          "sourceHash": "57bdf158f41f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:3:4",
+          "unitId": "aif-c01:3",
+          "index": 4,
+          "text": "AWS services that store embeddings in vector databases: Amazon OpenSearch Service, Amazon Aurora, Amazon Neptune, Amazon RDS for PostgreSQL",
+          "sourceHash": "a61bdcbba851",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:3:5",
+          "unitId": "aif-c01:3",
+          "index": 5,
+          "text": "Cost trade-offs across customization approaches: pre-training, fine-tuning, in-context learning, RAG, model distillation",
+          "sourceHash": "f153755e7daf",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:3:6",
+          "unitId": "aif-c01:3",
+          "index": 6,
+          "text": "What an AI agent is, and the business applications agents are suited to",
+          "sourceHash": "88de238e9127",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:3:7",
+          "unitId": "aif-c01:3",
+          "index": 7,
+          "text": "Prompt constructs: context, instruction, negative prompts",
+          "sourceHash": "2495c199700f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:3:8",
+          "unitId": "aif-c01:3",
+          "index": 8,
+          "text": "Prompt techniques: zero-shot, single-shot, few-shot, chain-of-thought, prompt templates",
+          "sourceHash": "363d0d191db4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:3:9",
+          "unitId": "aif-c01:3",
+          "index": 9,
+          "text": "Prompt engineering best practices: specificity, concision, experimentation, guardrails, discovery",
+          "sourceHash": "ecee7774793f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:3:10",
+          "unitId": "aif-c01:3",
+          "index": 10,
+          "text": "Risks and limits of prompt engineering: exposure, poisoning, hijacking, jailbreaking",
+          "sourceHash": "995f6f26a373",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:3:11",
+          "unitId": "aif-c01:3",
+          "index": 11,
+          "text": "Prompt versioning and management with Amazon Bedrock Prompt Management",
+          "sourceHash": "c457d0e02fe4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:3:12",
+          "unitId": "aif-c01:3",
+          "index": 12,
+          "text": "Key elements of training a foundation model: pre-training, fine-tuning, continuous pre-training, distillation",
+          "sourceHash": "b0be630d7027",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:3:13",
+          "unitId": "aif-c01:3",
+          "index": 13,
+          "text": "Methods of fine-tuning: instruction tuning, domain adaptation, transfer learning, continuous pre-training",
+          "sourceHash": "b9f3c8eb6a74",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:3:14",
+          "unitId": "aif-c01:3",
+          "index": 14,
+          "text": "Preparing data to fine-tune a model: curation, governance, size, labeling, representativeness, RLHF",
+          "sourceHash": "308b85788b86",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:3:15",
+          "unitId": "aif-c01:3",
+          "index": 15,
+          "text": "Approaches to evaluating a foundation model: human-in-the-loop, benchmark datasets, Amazon Bedrock Model Evaluation",
+          "sourceHash": "2d6831664eb6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:3:16",
+          "unitId": "aif-c01:3",
+          "index": 16,
+          "text": "Evaluation metrics: ROUGE, BLEU, BERTScore, and LLM-as-a-judge",
+          "sourceHash": "4833ed015242",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:3:17",
+          "unitId": "aif-c01:3",
+          "index": 17,
+          "text": "Deciding whether a model meets the business objective, not just the benchmark",
+          "sourceHash": "6222c578f166",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:3:18",
+          "unitId": "aif-c01:3",
+          "index": 18,
+          "text": "Evaluating whole applications built on foundation models: RAG pipelines, agents, workflows",
+          "sourceHash": "41e8fb1e60f8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:3:19",
+          "unitId": "aif-c01:3",
+          "index": 19,
+          "text": "Business alignment metrics for AI applications: task completion rate, user satisfaction, cost per interaction",
+          "sourceHash": "b5c9bdb569ab",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01:4",
+      "index": 4,
+      "title": "Guidelines for Responsible AI",
+      "weight": 14,
+      "gate": "Given a model that behaves badly for one group of users, name what went wrong -- dataset, bias, variance, or missing guardrail -- and the tool that would have caught it before launch.",
+      "objectives": [
+        {
+          "id": "aif-c01:4:1",
+          "unitId": "aif-c01:4",
+          "index": 1,
+          "text": "Features of responsible AI: bias, fairness, inclusivity, robustness, safety, veracity",
+          "sourceHash": "69d4740147ba",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:4:2",
+          "unitId": "aif-c01:4",
+          "index": 2,
+          "text": "Using Amazon Bedrock Guardrails to enforce responsible-AI features",
+          "sourceHash": "89ad715b479c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:4:3",
+          "unitId": "aif-c01:4",
+          "index": 3,
+          "text": "Responsible model selection, including environmental and sustainability considerations",
+          "sourceHash": "4647b0461086",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:4:4",
+          "unitId": "aif-c01:4",
+          "index": 4,
+          "text": "Legal risks of generative AI: intellectual property infringement claims, biased outputs, hallucinations, loss of customer trust, end-user risk",
+          "sourceHash": "672d27d6989b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:4:5",
+          "unitId": "aif-c01:4",
+          "index": 5,
+          "text": "Dataset characteristics that matter: inclusivity, diversity, curated sources, balance",
+          "sourceHash": "ff89a22f02f8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:4:6",
+          "unitId": "aif-c01:4",
+          "index": 6,
+          "text": "Bias and variance and their effects: harm to demographic groups, inaccuracy, overfitting, underfitting",
+          "sourceHash": "a8d1a298ed5b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:4:7",
+          "unitId": "aif-c01:4",
+          "index": 7,
+          "text": "Detecting and monitoring bias and truthfulness: label-quality analysis, human audits, subgroup analysis",
+          "sourceHash": "c5e6880c00eb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:4:8",
+          "unitId": "aif-c01:4",
+          "index": 8,
+          "text": "Transparent and explainable models versus models that are neither",
+          "sourceHash": "36b28ec10348",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:4:9",
+          "unitId": "aif-c01:4",
+          "index": 9,
+          "text": "Tools for transparency: Amazon SageMaker Model Cards, Amazon Bedrock Model Evaluations, open-source models, data and licensing",
+          "sourceHash": "caa46ebb99f6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:4:10",
+          "unitId": "aif-c01:4",
+          "index": 10,
+          "text": "The trade-off between model safety and transparency, including interpretability against performance",
+          "sourceHash": "f104e96aff06",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:4:11",
+          "unitId": "aif-c01:4",
+          "index": 11,
+          "text": "Human-centered design for explainable AI: user-feedback mechanisms, transparency about AI decisions",
+          "sourceHash": "e3984859260f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01:5",
+      "index": 5,
+      "title": "Security, Compliance, and Governance for AI Solutions",
+      "weight": 14,
+      "gate": "Given an AI application handling customer data, name the controls that keep the data in bounds -- identity, encryption, network path, logging -- and the governance artifact that proves it to an auditor.",
+      "objectives": [
+        {
+          "id": "aif-c01:5:1",
+          "unitId": "aif-c01:5",
+          "index": 1,
+          "text": "AWS services and features that secure AI systems: IAM roles and policies, encryption, Amazon Macie, AWS PrivateLink, Amazon Bedrock Guardrails",
+          "sourceHash": "d67b8d9deedc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:5:2",
+          "unitId": "aif-c01:5",
+          "index": 2,
+          "text": "The AWS shared responsibility model applied to an AI workload",
+          "sourceHash": "f8a6c458754c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:5:3",
+          "unitId": "aif-c01:5",
+          "index": 3,
+          "text": "Identity and policy controls for agents: Amazon Bedrock AgentCore Identity and AgentCore policy",
+          "sourceHash": "fd3ccbfe10b4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:5:4",
+          "unitId": "aif-c01:5",
+          "index": 4,
+          "text": "Source citation and documenting data origins: data lineage, data cataloging, Amazon SageMaker Model Cards",
+          "sourceHash": "4e00d2ff28d0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:5:5",
+          "unitId": "aif-c01:5",
+          "index": 5,
+          "text": "Secure data engineering: data quality assessment, privacy-enhancing technologies, data access control, data integrity",
+          "sourceHash": "2e95c724549c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:5:6",
+          "unitId": "aif-c01:5",
+          "index": 6,
+          "text": "Security and privacy risks specific to AI: application security, prompt injection, data leakage, toxicity, output filtering and validation",
+          "sourceHash": "e2f19ea4a353",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:5:7",
+          "unitId": "aif-c01:5",
+          "index": 7,
+          "text": "General protections that still apply: encryption at rest and in transit, threat detection, vulnerability management, infrastructure protection",
+          "sourceHash": "17463b36b717",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:5:8",
+          "unitId": "aif-c01:5",
+          "index": 8,
+          "text": "Audit trail and logging requirements for AI interactions",
+          "sourceHash": "82610cc70b1d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:5:9",
+          "unitId": "aif-c01:5",
+          "index": 9,
+          "text": "Hallucination detection and grounding: RAG grounding, output validation, confidence scoring",
+          "sourceHash": "3f06098980ee",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:5:10",
+          "unitId": "aif-c01:5",
+          "index": 10,
+          "text": "Governance and compliance services: AWS Config, Amazon Inspector, AWS Artifact, AWS CloudTrail, AWS Trusted Advisor",
+          "sourceHash": "d3eae9d442ca",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:5:11",
+          "unitId": "aif-c01:5",
+          "index": 11,
+          "text": "Data governance strategies: data lifecycles, logging, residency, monitoring, observation, retention",
+          "sourceHash": "1ee5dac12dc8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "aif-c01:5:12",
+          "unitId": "aif-c01:5",
+          "index": 12,
+          "text": "Following governance protocols: policies, review cadence and strategy, transparency standards, team training, and the Generative AI Security Scoping Matrix",
+          "sourceHash": "ab87ff6ce44e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/aws.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-18T00:00:00Z",
+    "officialObjectivesUrl": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01.html",
+    "providerName": "Amazon Web Services",
+    "credentialName": "AWS Certified AI Practitioner",
+    "examCode": "AIF-C01",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 5,
+    "objectives": 79,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

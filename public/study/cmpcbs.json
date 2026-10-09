@@ -1,0 +1,1508 @@
+{
+  "id": "cmpcbs",
+  "code": "CMPCBS",
+  "title": "Computational Math: CS Degree",
+  "description": "Liberty University's 2026-2027 BS in Computational Mathematics: Computer Science degree completion plan (120 credits) -- gen ed, Christianity core, and the full math/CS major sequence, mirrored from the official plan.",
+  "trackType": "graduate",
+  "units": [
+    {
+      "id": "cmpcbs:1",
+      "index": 1,
+      "title": "Communication & Information Literacy",
+      "rangeLabel": "9 credits",
+      "gate": "Confirm which electives in this block are already satisfied by transfer credit before enrolling -- Info Literacy Elective I is satisfied by CSIS 110, shared with Major Foundational Courses, so it isn't a separate course to take.",
+      "objectives": [
+        {
+          "id": "cmpcbs:1:1",
+          "unitId": "cmpcbs:1",
+          "index": 1,
+          "text": "Composition and Rhetoric (ENGL 101)",
+          "sourceHash": "1e9d034ffce3",
+          "kind": "bookkeeping",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:1:2",
+          "unitId": "cmpcbs:1",
+          "index": 2,
+          "text": "Communications elective -- choose 3 credits from COMS 101, BUSI 300, ENGR 270, or GICE 220",
+          "sourceHash": "bc22b02fa64c",
+          "kind": "bookkeeping",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:1:3",
+          "unitId": "cmpcbs:1",
+          "index": 3,
+          "text": "Information Literacy Elective I -- satisfied by CSIS 110 (shared credit from Major Foundational Courses)",
+          "sourceHash": "8084de75ffab",
+          "kind": "bookkeeping",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:1:4",
+          "unitId": "cmpcbs:1",
+          "index": 4,
+          "text": "Information Literacy Elective II -- choose 3 credits from ARTS 209, BUSI 201, CSIS 100, CSIS 110, CSIS 111, ENGL 102, ENGL 103, GEOG 200, HIEU 201, HIEU 202, HIUS 221, HIUS 222, HIUS 341, HIUS 360, HIUS 380, HIWD 370, or WRSP 101",
+          "sourceHash": "37c340b4d258",
+          "kind": "bookkeeping",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "cmpcbs:2",
+      "index": 2,
+      "title": "Technological Solutions & Quantitative Reasoning",
+      "rangeLabel": "3 credits",
+      "gate": "The Math Elective here is satisfied by MATH 131, shared with Major Foundational Courses -- don't schedule it as a second course.",
+      "objectives": [
+        {
+          "id": "cmpcbs:2:1",
+          "unitId": "cmpcbs:2",
+          "index": 1,
+          "text": "Instructional Technology for Online Learning (UNIV 104)",
+          "sourceHash": "fad83c073f1a",
+          "kind": "bookkeeping",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:2:2",
+          "unitId": "cmpcbs:2",
+          "index": 2,
+          "text": "Math elective -- satisfied by MATH 131 (shared credit from Major Foundational Courses)",
+          "sourceHash": "eba6ee20054b",
+          "kind": "bookkeeping",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "cmpcbs:3",
+      "index": 3,
+      "title": "Critical Thinking",
+      "rangeLabel": "7 credits",
+      "gate": "Pick a Critical Thinking elective that won't double up with a course you're already taking elsewhere in gen ed -- several PHIL/ENGL options here overlap in skillset with the Civic & Global Engagement block.",
+      "objectives": [
+        {
+          "id": "cmpcbs:3:1",
+          "unitId": "cmpcbs:3",
+          "index": 1,
+          "text": "Critical Thinking elective -- choose 3 credits from ARTS 105, ARTS 205, ARTS 214, BUSI 205, ENGL 201, ENGL 202, ENGL 216, ENGL 221, ETHC 101, ETHC 205, PHIL 201, or PHIL 240",
+          "sourceHash": "422a9bbf6411",
+          "kind": "bookkeeping",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:3:2",
+          "unitId": "cmpcbs:3",
+          "index": 2,
+          "text": "Christian Life and Biblical Worldview (RLGN 104)",
+          "sourceHash": "7f06085f87ba",
+          "kind": "bookkeeping",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "cmpcbs:4",
+      "index": 4,
+      "title": "Civic & Global Engagement",
+      "rangeLabel": "3 credits",
+      "gate": "Choose the Cultural Studies elective based on what you can actually transfer in, if applicable -- the approved list spans languages, government, and religion, so options vary widely in workload.",
+      "objectives": [
+        {
+          "id": "cmpcbs:4:1",
+          "unitId": "cmpcbs:4",
+          "index": 1,
+          "text": "Cultural Studies elective -- choose 3 credits from ARTS 105, CSTU 101, CSTU 220, GICE 290, GOVT 200, GOVT 220, MUSC 103, or RLGN 210",
+          "sourceHash": "3eccb0a7a8e8",
+          "kind": "bookkeeping",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "cmpcbs:5",
+      "index": 5,
+      "title": "Social & Scientific Inquiry",
+      "rangeLabel": "6 credits",
+      "gate": "Pick a Natural Science elective with a lab component in mind if you'll need one later -- not all options in the approved list include one.",
+      "objectives": [
+        {
+          "id": "cmpcbs:5:1",
+          "unitId": "cmpcbs:5",
+          "index": 1,
+          "text": "Natural Science elective -- choose 3 credits from BIOL 101, BIOL 102, ETHC 210, NASC 210, PHSC 121, PHSC 122, PHSC 210, PHYS 101, PHYS 201, or PHYS 231",
+          "sourceHash": "c42710deaba4",
+          "kind": "bookkeeping",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:5:2",
+          "unitId": "cmpcbs:5",
+          "index": 2,
+          "text": "Social Science elective -- choose 3 credits from BUSI 223, BUSI 240, ECON 110, ECON 213, ECON 214, HLTH 252, PSYC 101, PSYC 210, SOCI 200, or SOCI 201",
+          "sourceHash": "d0107a70470d",
+          "kind": "bookkeeping",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "cmpcbs:6",
+      "index": 6,
+      "title": "Christianity & Contexts",
+      "rangeLabel": "8 credits",
+      "gate": "Check transfer-credit waivers before scheduling these -- students transferring in 45+ UG credits have RLGN 104 waived, and 60+ UG credits also waives THEO 104.",
+      "objectives": [
+        {
+          "id": "cmpcbs:6:1",
+          "unitId": "cmpcbs:6",
+          "index": 1,
+          "text": "Survey of Old and New Testament (BIBL 104)",
+          "sourceHash": "6addc0528ffc",
+          "kind": "bookkeeping",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:6:2",
+          "unitId": "cmpcbs:6",
+          "index": 2,
+          "text": "Introduction to Theology Survey (THEO 104)",
+          "sourceHash": "fa13a705a129",
+          "kind": "bookkeeping",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "cmpcbs:7",
+      "index": 7,
+      "title": "CSIS 110: Introduction to Computer Science",
+      "rangeLabel": "3 credits",
+      "gate": "Earn a C or higher -- Liberty requires it for every major foundational course, and this is a prerequisite the entire CS cognate sequence is built on.",
+      "objectives": [
+        {
+          "id": "cmpcbs:7:1",
+          "unitId": "cmpcbs:7",
+          "index": 1,
+          "text": "Computer architecture and system organization",
+          "sourceHash": "5733c4da1a36",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:7:2",
+          "unitId": "cmpcbs:7",
+          "index": 2,
+          "text": "Algorithm design and problem-solving strategies",
+          "sourceHash": "8ce7fd77aef8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:7:3",
+          "unitId": "cmpcbs:7",
+          "index": 3,
+          "text": "Programming languages and how compilers translate code",
+          "sourceHash": "3ec141c6b3fc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:7:4",
+          "unitId": "cmpcbs:7",
+          "index": 4,
+          "text": "Operating systems and how applications run on them",
+          "sourceHash": "d3dabe1fe37b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:7:5",
+          "unitId": "cmpcbs:7",
+          "index": 5,
+          "text": "Networking and database fundamentals",
+          "sourceHash": "62ffe2b38bd4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:7:6",
+          "unitId": "cmpcbs:7",
+          "index": 6,
+          "text": "Computing ethics: intellectual property, privacy, and computer crime",
+          "sourceHash": "b5d0b7a9d4e8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "cmpcbs:8",
+      "index": 8,
+      "title": "MATH 131: Calculus and Analytic Geometry I",
+      "rangeLabel": "4 credits",
+      "gate": "Earn a C or higher -- Liberty requires it for every major foundational course, and this is a prerequisite the entire math core sequence is built on.",
+      "objectives": [
+        {
+          "id": "cmpcbs:8:1",
+          "unitId": "cmpcbs:8",
+          "index": 1,
+          "text": "Functions and graphs, including exponential, logarithmic, and inverse trig forms",
+          "sourceHash": "5eb1de9c5ef4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:8:2",
+          "unitId": "cmpcbs:8",
+          "index": 2,
+          "text": "Limits and continuity",
+          "sourceHash": "73e91da04a77",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:8:3",
+          "unitId": "cmpcbs:8",
+          "index": 3,
+          "text": "The derivative: formal definition and differentiation rules",
+          "sourceHash": "47b0c6228c36",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:8:4",
+          "unitId": "cmpcbs:8",
+          "index": 4,
+          "text": "Applications of derivatives, including L'Hopital's Rule",
+          "sourceHash": "a116697bd124",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:8:5",
+          "unitId": "cmpcbs:8",
+          "index": 5,
+          "text": "Introduction to integrals",
+          "sourceHash": "53494352c33b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "cmpcbs:9",
+      "index": 9,
+      "title": "MATH 132: Calculus and Analytic Geometry II",
+      "rangeLabel": "4 credits",
+      "gate": "Maintain a C or higher -- Liberty requires it for every major course, and this feeds directly into Discrete Mathematics and Multivariable Calculus.",
+      "objectives": [
+        {
+          "id": "cmpcbs:9:1",
+          "unitId": "cmpcbs:9",
+          "index": 1,
+          "text": "Integration techniques beyond basic antiderivatives",
+          "sourceHash": "4232742c51a2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:9:2",
+          "unitId": "cmpcbs:9",
+          "index": 2,
+          "text": "Improper integrals",
+          "sourceHash": "d8bedae26a14",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:9:3",
+          "unitId": "cmpcbs:9",
+          "index": 3,
+          "text": "Applications of integration: area, volume, and arc length",
+          "sourceHash": "405906666797",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:9:4",
+          "unitId": "cmpcbs:9",
+          "index": 4,
+          "text": "Sequences, infinite series, and convergence tests",
+          "sourceHash": "f990dd9da852",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:9:5",
+          "unitId": "cmpcbs:9",
+          "index": 5,
+          "text": "Parametric curves and polar coordinates",
+          "sourceHash": "09113bad8057",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:9:6",
+          "unitId": "cmpcbs:9",
+          "index": 6,
+          "text": "Introduction to differential equations",
+          "sourceHash": "5bff3fcde208",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "cmpcbs:10",
+      "index": 10,
+      "title": "MATH 211: Introduction to Statistical Analysis",
+      "rangeLabel": "3 credits",
+      "gate": "Maintain a C or higher -- Liberty requires it for every major course.",
+      "objectives": [
+        {
+          "id": "cmpcbs:10:1",
+          "unitId": "cmpcbs:10",
+          "index": 1,
+          "text": "Probability theory foundations for calculus-trained students",
+          "sourceHash": "3c91426cd7fc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:10:2",
+          "unitId": "cmpcbs:10",
+          "index": 2,
+          "text": "Common probability distribution models",
+          "sourceHash": "608de67a9b8e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:10:3",
+          "unitId": "cmpcbs:10",
+          "index": 3,
+          "text": "Expected value and variance",
+          "sourceHash": "0709c49318b6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:10:4",
+          "unitId": "cmpcbs:10",
+          "index": 4,
+          "text": "Statistical inference: estimation and hypothesis testing",
+          "sourceHash": "034c310e5216",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:10:5",
+          "unitId": "cmpcbs:10",
+          "index": 5,
+          "text": "Regression and correlation between data sets",
+          "sourceHash": "b1cacfe8e6cb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "cmpcbs:11",
+      "index": 11,
+      "title": "MATH 250: Introduction to Discrete Mathematics",
+      "rangeLabel": "3 credits",
+      "gate": "Maintain a C or higher -- Liberty requires it for every major course, and this is a prerequisite for Linear Algebra, Multivariable Calculus, and CSIS 215.",
+      "objectives": [
+        {
+          "id": "cmpcbs:11:1",
+          "unitId": "cmpcbs:11",
+          "index": 1,
+          "text": "Logic and formal proof techniques",
+          "sourceHash": "15ddff835ed8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:11:2",
+          "unitId": "cmpcbs:11",
+          "index": 2,
+          "text": "Set theory fundamentals",
+          "sourceHash": "63c23454859e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:11:3",
+          "unitId": "cmpcbs:11",
+          "index": 3,
+          "text": "Boolean algebra",
+          "sourceHash": "db0daa5bbcd2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:11:4",
+          "unitId": "cmpcbs:11",
+          "index": 4,
+          "text": "Functions, sequences, and relations",
+          "sourceHash": "92b90ebb7c57",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:11:5",
+          "unitId": "cmpcbs:11",
+          "index": 5,
+          "text": "Matrices and algorithmic thinking",
+          "sourceHash": "f30539af6f38",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:11:6",
+          "unitId": "cmpcbs:11",
+          "index": 6,
+          "text": "Mathematical induction and combinatorics",
+          "sourceHash": "1e095af1ea19",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "cmpcbs:12",
+      "index": 12,
+      "title": "MATH 345: Introduction to the History of Mathematics",
+      "rangeLabel": "3 credits",
+      "gate": "Maintain a C or higher -- Liberty requires it for every major course. This one has a heavy upper-level-math prerequisite list, so schedule it after several 300/400-level math courses, not early.",
+      "objectives": [
+        {
+          "id": "cmpcbs:12:1",
+          "unitId": "cmpcbs:12",
+          "index": 1,
+          "text": "Ancient mathematics: Egyptian, Babylonian, and early number systems",
+          "sourceHash": "27c92748715a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:12:2",
+          "unitId": "cmpcbs:12",
+          "index": 2,
+          "text": "Greek geometry: Euclid, Pythagoras, and Archimedes",
+          "sourceHash": "5f6b64dddf0c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:12:3",
+          "unitId": "cmpcbs:12",
+          "index": 3,
+          "text": "The development of algebra and algebraic notation",
+          "sourceHash": "2df78f33fc24",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:12:4",
+          "unitId": "cmpcbs:12",
+          "index": 4,
+          "text": "The invention of calculus: Newton and Leibniz",
+          "sourceHash": "8935b0345f69",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:12:5",
+          "unitId": "cmpcbs:12",
+          "index": 5,
+          "text": "Non-Euclidean geometry and 19th-century developments",
+          "sourceHash": "0cf60940bc13",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:12:6",
+          "unitId": "cmpcbs:12",
+          "index": 6,
+          "text": "Foundations of set theory and modern mathematics",
+          "sourceHash": "efd0bb56e905",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "cmpcbs:13",
+      "index": 13,
+      "title": "MATH 410: Matrix and Linear Algebra",
+      "rangeLabel": "3 credits",
+      "gate": "Maintain a C or higher -- Liberty requires it for every major course, and this is load-bearing: it underpins Numerical Methods and Abstract Algebraic Structures.",
+      "objectives": [
+        {
+          "id": "cmpcbs:13:1",
+          "unitId": "cmpcbs:13",
+          "index": 1,
+          "text": "Vector spaces and subspaces",
+          "sourceHash": "c3995c4a3792",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:13:2",
+          "unitId": "cmpcbs:13",
+          "index": 2,
+          "text": "Systems of linear equations and Gaussian elimination",
+          "sourceHash": "4b895447f940",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:13:3",
+          "unitId": "cmpcbs:13",
+          "index": 3,
+          "text": "Matrix algebra and operations",
+          "sourceHash": "9871628317fc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:13:4",
+          "unitId": "cmpcbs:13",
+          "index": 4,
+          "text": "Linear transformations",
+          "sourceHash": "f2261367d675",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:13:5",
+          "unitId": "cmpcbs:13",
+          "index": 5,
+          "text": "Eigenvalues and eigenvectors",
+          "sourceHash": "a5b6a9a39b29",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "cmpcbs:14",
+      "index": 14,
+      "title": "MATH 412: Numerical Methods",
+      "rangeLabel": "3 credits",
+      "gate": "Maintain a C or higher -- Liberty requires it for every major course. Requires Matrix and Linear Algebra as a prerequisite.",
+      "objectives": [
+        {
+          "id": "cmpcbs:14:1",
+          "unitId": "cmpcbs:14",
+          "index": 1,
+          "text": "Interpolation techniques",
+          "sourceHash": "542ee51b0e73",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:14:2",
+          "unitId": "cmpcbs:14",
+          "index": 2,
+          "text": "Numerical differentiation and integration",
+          "sourceHash": "b5ba212ef8b7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:14:3",
+          "unitId": "cmpcbs:14",
+          "index": 3,
+          "text": "Numerical solutions to differential equations",
+          "sourceHash": "7a91e365722f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:14:4",
+          "unitId": "cmpcbs:14",
+          "index": 4,
+          "text": "Root-finding methods",
+          "sourceHash": "587b00a42c1f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:14:5",
+          "unitId": "cmpcbs:14",
+          "index": 5,
+          "text": "Solving linear systems numerically",
+          "sourceHash": "cb18363ee616",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:14:6",
+          "unitId": "cmpcbs:14",
+          "index": 6,
+          "text": "Error analysis",
+          "sourceHash": "da35b06f75a8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "cmpcbs:15",
+      "index": 15,
+      "title": "MATH 423: Abstract Algebraic Structures",
+      "rangeLabel": "3 credits",
+      "gate": "Maintain a C or higher -- Liberty requires it for every major course. Requires Matrix and Linear Algebra as a prerequisite.",
+      "objectives": [
+        {
+          "id": "cmpcbs:15:1",
+          "unitId": "cmpcbs:15",
+          "index": 1,
+          "text": "Groups and their properties",
+          "sourceHash": "f588c6dc8ca8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:15:2",
+          "unitId": "cmpcbs:15",
+          "index": 2,
+          "text": "Rings and fields",
+          "sourceHash": "b5f8756c2abb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:15:3",
+          "unitId": "cmpcbs:15",
+          "index": 3,
+          "text": "Homomorphisms and structure-preserving maps",
+          "sourceHash": "1561962b7ae2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:15:4",
+          "unitId": "cmpcbs:15",
+          "index": 4,
+          "text": "Formal proof-writing in algebra",
+          "sourceHash": "2da73373f459",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "cmpcbs:16",
+      "index": 16,
+      "title": "MATH 430: Multivariable Calculus",
+      "rangeLabel": "3 credits",
+      "gate": "Maintain a C or higher -- Liberty requires it for every major course, and this is load-bearing: it's a prerequisite for both Applied Differential Equations and Mathematical Modeling and Simulation.",
+      "objectives": [
+        {
+          "id": "cmpcbs:16:1",
+          "unitId": "cmpcbs:16",
+          "index": 1,
+          "text": "Limits, continuity, and differentiation for functions of several variables",
+          "sourceHash": "ceedee3eeca7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:16:2",
+          "unitId": "cmpcbs:16",
+          "index": 2,
+          "text": "Integration and power series in several variables",
+          "sourceHash": "bca774476bb0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:16:3",
+          "unitId": "cmpcbs:16",
+          "index": 3,
+          "text": "Optimization in several variables",
+          "sourceHash": "7f059d5633bb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:16:4",
+          "unitId": "cmpcbs:16",
+          "index": 4,
+          "text": "Analytic geometry of curves and surfaces",
+          "sourceHash": "c1d912464925",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:16:5",
+          "unitId": "cmpcbs:16",
+          "index": 5,
+          "text": "Vector fields and integration along curves and surfaces",
+          "sourceHash": "fd07257f567d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:16:6",
+          "unitId": "cmpcbs:16",
+          "index": 6,
+          "text": "The major theorems of vector calculus: Green's, Stokes', and the Divergence Theorem",
+          "sourceHash": "6d1269c68887",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "cmpcbs:17",
+      "index": 17,
+      "title": "MATH 432: Applied Differential Equations",
+      "rangeLabel": "3 credits",
+      "gate": "Maintain a C or higher -- Liberty requires it for every major course, and this is a prerequisite for Mathematical Modeling and Simulation and the Capstone.",
+      "objectives": [
+        {
+          "id": "cmpcbs:17:1",
+          "unitId": "cmpcbs:17",
+          "index": 1,
+          "text": "First-order differential equations",
+          "sourceHash": "fb5b526943b2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:17:2",
+          "unitId": "cmpcbs:17",
+          "index": 2,
+          "text": "Second-order linear differential equations",
+          "sourceHash": "73312ad3ab5e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:17:3",
+          "unitId": "cmpcbs:17",
+          "index": 3,
+          "text": "Systems of differential equations",
+          "sourceHash": "ff515a5fffa3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:17:4",
+          "unitId": "cmpcbs:17",
+          "index": 4,
+          "text": "Laplace transforms",
+          "sourceHash": "2ec276573e02",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:17:5",
+          "unitId": "cmpcbs:17",
+          "index": 5,
+          "text": "Applications: population growth, mechanical vibrations, and circuits",
+          "sourceHash": "c5b834e33b21",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "cmpcbs:18",
+      "index": 18,
+      "title": "MATH 441: Probability I",
+      "rangeLabel": "3 credits",
+      "gate": "Maintain a C or higher -- Liberty requires it for every major course.",
+      "objectives": [
+        {
+          "id": "cmpcbs:18:1",
+          "unitId": "cmpcbs:18",
+          "index": 1,
+          "text": "Set notation and operations applied to probability",
+          "sourceHash": "10c3b3bffeaa",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:18:2",
+          "unitId": "cmpcbs:18",
+          "index": 2,
+          "text": "Axioms and properties of probability",
+          "sourceHash": "30441f2547b8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:18:3",
+          "unitId": "cmpcbs:18",
+          "index": 3,
+          "text": "Expected value and discrete probability distributions",
+          "sourceHash": "edda86fc7626",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:18:4",
+          "unitId": "cmpcbs:18",
+          "index": 4,
+          "text": "Continuous probability distributions",
+          "sourceHash": "26f32397d4d7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "cmpcbs:19",
+      "index": 19,
+      "title": "MATH 460: Mathematical Modeling and Simulation",
+      "rangeLabel": "3 credits",
+      "gate": "Maintain a C or higher -- Liberty requires it for every major course. Requires Applied Differential Equations as a prerequisite.",
+      "objectives": [
+        {
+          "id": "cmpcbs:19:1",
+          "unitId": "cmpcbs:19",
+          "index": 1,
+          "text": "Formulating mathematical models from real-world scenarios",
+          "sourceHash": "a98a6ca3e301",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:19:2",
+          "unitId": "cmpcbs:19",
+          "index": 2,
+          "text": "Analytical techniques for evaluating model behavior",
+          "sourceHash": "a3dc7b331538",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:19:3",
+          "unitId": "cmpcbs:19",
+          "index": 3,
+          "text": "Critiquing model assumptions and limitations",
+          "sourceHash": "bfc5b93637e8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:19:4",
+          "unitId": "cmpcbs:19",
+          "index": 4,
+          "text": "Simulation-based methods",
+          "sourceHash": "805d2210f3fd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "cmpcbs:20",
+      "index": 20,
+      "title": "STAT 420: Regression and Forecasting I",
+      "rangeLabel": "3 credits",
+      "gate": "Maintain a C or higher -- Liberty requires it for every major course. Calculus-based, not just applied stats -- it leans on Calculus I and Intro to Statistical Analysis.",
+      "objectives": [
+        {
+          "id": "cmpcbs:20:1",
+          "unitId": "cmpcbs:20",
+          "index": 1,
+          "text": "Simple and multiple linear regression",
+          "sourceHash": "2ca98d242e85",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:20:2",
+          "unitId": "cmpcbs:20",
+          "index": 2,
+          "text": "Model diagnostics and checking regression assumptions",
+          "sourceHash": "ca2f144962b4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:20:3",
+          "unitId": "cmpcbs:20",
+          "index": 3,
+          "text": "Time series forecasting basics",
+          "sourceHash": "75cf8012dc89",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:20:4",
+          "unitId": "cmpcbs:20",
+          "index": 4,
+          "text": "Applying regression to a real dataset",
+          "sourceHash": "c1a5202b9341",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "cmpcbs:21",
+      "index": 21,
+      "title": "MATH 491: Computational Mathematics Capstone",
+      "rangeLabel": "3 credits",
+      "gate": "Senior standing required -- this is the last math course in the sequence, sitting after Applied Differential Equations.",
+      "objectives": [
+        {
+          "id": "cmpcbs:21:1",
+          "unitId": "cmpcbs:21",
+          "index": 1,
+          "text": "Independent capstone project synthesizing the computational math major",
+          "sourceHash": "66b851bbed59",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:21:2",
+          "unitId": "cmpcbs:21",
+          "index": 2,
+          "text": "Applying computational techniques to a substantial problem",
+          "sourceHash": "15bb7be4c0e1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:21:3",
+          "unitId": "cmpcbs:21",
+          "index": 3,
+          "text": "Written and oral presentation of results",
+          "sourceHash": "c3ca2404cae3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "cmpcbs:22",
+      "index": 22,
+      "title": "CSIS 100: Introduction to Information Sciences and Systems",
+      "rangeLabel": "3 credits",
+      "gate": "Maintain a C or higher -- Liberty requires it for every major course.",
+      "objectives": [
+        {
+          "id": "cmpcbs:22:1",
+          "unitId": "cmpcbs:22",
+          "index": 1,
+          "text": "Evaluating and choosing business technology solutions",
+          "sourceHash": "d53ad4869394",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:22:2",
+          "unitId": "cmpcbs:22",
+          "index": 2,
+          "text": "Mapping business processes to where technology adds value",
+          "sourceHash": "3fc435f7bd7b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:22:3",
+          "unitId": "cmpcbs:22",
+          "index": 3,
+          "text": "Aligning IT strategy with organizational goals",
+          "sourceHash": "2318f4870ad6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:22:4",
+          "unitId": "cmpcbs:22",
+          "index": 4,
+          "text": "Business process management concepts",
+          "sourceHash": "cd5e3bc6820b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:22:5",
+          "unitId": "cmpcbs:22",
+          "index": 5,
+          "text": "Technical writing for information systems documentation",
+          "sourceHash": "fc124e0b76b3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "cmpcbs:23",
+      "index": 23,
+      "title": "CSIS 111: Introduction to Programming Using C++",
+      "rangeLabel": "3 credits",
+      "gate": "Maintain a C or higher -- Liberty requires it for every major course, and CSIS 112 and CSIS 215 both assume the fluency this course is supposed to build, not just a passing grade in it.",
+      "objectives": [
+        {
+          "id": "cmpcbs:23:1",
+          "unitId": "cmpcbs:23",
+          "index": 1,
+          "text": "Structured programming fundamentals in C++",
+          "sourceHash": "e3f4164d5fe3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:23:2",
+          "unitId": "cmpcbs:23",
+          "index": 2,
+          "text": "Object-oriented programming basics",
+          "sourceHash": "fc9b4ebd8acb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:23:3",
+          "unitId": "cmpcbs:23",
+          "index": 3,
+          "text": "Input and output operations",
+          "sourceHash": "63bcfea85efa",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:23:4",
+          "unitId": "cmpcbs:23",
+          "index": 4,
+          "text": "Control flow: loops and conditionals",
+          "sourceHash": "78aa83f67887",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:23:5",
+          "unitId": "cmpcbs:23",
+          "index": 5,
+          "text": "Writing and using functions",
+          "sourceHash": "c90164b76190",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "cmpcbs:24",
+      "index": 24,
+      "title": "CSIS 112: Advanced Programming Using C++",
+      "rangeLabel": "3 credits",
+      "gate": "Maintain a C or higher -- Liberty requires it for every major course, and this is a prerequisite for Algorithms and Data Structures.",
+      "objectives": [
+        {
+          "id": "cmpcbs:24:1",
+          "unitId": "cmpcbs:24",
+          "index": 1,
+          "text": "Pointers and memory referencing",
+          "sourceHash": "f6670aa685f5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:24:2",
+          "unitId": "cmpcbs:24",
+          "index": 2,
+          "text": "Introductory data structures: arrays and lists",
+          "sourceHash": "6b6b4e76dab7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:24:3",
+          "unitId": "cmpcbs:24",
+          "index": 3,
+          "text": "Recursive programming",
+          "sourceHash": "ff86594f472c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:24:4",
+          "unitId": "cmpcbs:24",
+          "index": 4,
+          "text": "Internal sorting algorithms",
+          "sourceHash": "6acbc6e36a3e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:24:5",
+          "unitId": "cmpcbs:24",
+          "index": 5,
+          "text": "Internal searching algorithms",
+          "sourceHash": "ab8a93315e81",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "bigo-02-search-sort",
+            "coverage": "full"
+          }
+        }
+      ]
+    },
+    {
+      "id": "cmpcbs:25",
+      "index": 25,
+      "title": "CSIS 215: Algorithms and Data Structures",
+      "rangeLabel": "3 credits",
+      "gate": "Maintain a C or higher -- Liberty requires it for every major course. Requires both Advanced Programming Using C++ and Introduction to Discrete Mathematics as prerequisites.",
+      "objectives": [
+        {
+          "id": "cmpcbs:25:1",
+          "unitId": "cmpcbs:25",
+          "index": 1,
+          "text": "Linked lists, stacks, and queues",
+          "sourceHash": "40de55c225a4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:25:2",
+          "unitId": "cmpcbs:25",
+          "index": 2,
+          "text": "Trees and graphs",
+          "sourceHash": "49dbe2ea834f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:25:3",
+          "unitId": "cmpcbs:25",
+          "index": 3,
+          "text": "Static and dynamic memory allocation",
+          "sourceHash": "1edf00ff78cb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:25:4",
+          "unitId": "cmpcbs:25",
+          "index": 4,
+          "text": "Hashing and tree-based searching",
+          "sourceHash": "f3566d5454f8",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "bigo-03-structures",
+            "coverage": "partial"
+          }
+        },
+        {
+          "id": "cmpcbs:25:5",
+          "unitId": "cmpcbs:25",
+          "index": 5,
+          "text": "Sorting, searching, and table access algorithms",
+          "sourceHash": "e88768b3b06f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:25:6",
+          "unitId": "cmpcbs:25",
+          "index": 6,
+          "text": "Recursion as a problem-solving technique",
+          "sourceHash": "d7db22bfc758",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:25:7",
+          "unitId": "cmpcbs:25",
+          "index": 7,
+          "text": "Implementing abstract data types with C++ classes",
+          "sourceHash": "4a536d133b30",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "cmpcbs:26",
+      "index": 26,
+      "title": "CSIS 340: Studies in Information Security",
+      "rangeLabel": "3 credits",
+      "gate": "Maintain a C or higher -- Liberty requires it for every major course.",
+      "objectives": [
+        {
+          "id": "cmpcbs:26:1",
+          "unitId": "cmpcbs:26",
+          "index": 1,
+          "text": "Fundamental principles of information system security",
+          "sourceHash": "afb9bdd3db43",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:26:2",
+          "unitId": "cmpcbs:26",
+          "index": 2,
+          "text": "Security policy development and application",
+          "sourceHash": "71ae94d33227",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:26:3",
+          "unitId": "cmpcbs:26",
+          "index": 3,
+          "text": "Mechanisms for implementing security protections",
+          "sourceHash": "3ce1f1e1a0e2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:26:4",
+          "unitId": "cmpcbs:26",
+          "index": 4,
+          "text": "Common attacker tactics and how controls get bypassed",
+          "sourceHash": "58cab9e52a2b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:26:5",
+          "unitId": "cmpcbs:26",
+          "index": 5,
+          "text": "Defensive strategies and countermeasures",
+          "sourceHash": "7815cdad7f8a",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "netsec-02-suspicious-cron",
+            "coverage": "partial"
+          }
+        }
+      ]
+    },
+    {
+      "id": "cmpcbs:27",
+      "index": 27,
+      "title": "Free Electives",
+      "rangeLabel": "22 credits",
+      "gate": "No courses are specified -- use these credits deliberately (e.g. a minor, a second language, or extra CS depth) rather than defaulting to whatever fills a schedule gap.",
+      "objectives": [
+        {
+          "id": "cmpcbs:27:1",
+          "unitId": "cmpcbs:27",
+          "index": 1,
+          "text": "22 credits of free electives, any 100-400 level course not already required elsewhere in the plan",
+          "sourceHash": "cae289ae1aa6",
+          "kind": "bookkeeping",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "cmpcbs:28",
+      "index": 28,
+      "title": "Graduation Requirements",
+      "rangeLabel": "checklist",
+      "gate": "Track these five gates independently of credit totals -- it's possible to have enough overall credits and still miss the upper-level or Liberty-residency minimums.",
+      "objectives": [
+        {
+          "id": "cmpcbs:28:1",
+          "unitId": "cmpcbs:28",
+          "index": 1,
+          "text": "Minimum 120 credits overall applied to the program of study",
+          "sourceHash": "e692a4341366",
+          "kind": "bookkeeping",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:28:2",
+          "unitId": "cmpcbs:28",
+          "index": 2,
+          "text": "Minimum 2.0 graduation GPA",
+          "sourceHash": "52086be071e0",
+          "kind": "bookkeeping",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:28:3",
+          "unitId": "cmpcbs:28",
+          "index": 3,
+          "text": "Minimum 30 upper-level (300-400) credits applied to the program",
+          "sourceHash": "75fd36afaaa0",
+          "kind": "bookkeeping",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:28:4",
+          "unitId": "cmpcbs:28",
+          "index": 4,
+          "text": "Minimum 13.75 Liberty credits applied to the major",
+          "sourceHash": "7ccf123b9aeb",
+          "kind": "bookkeeping",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:28:5",
+          "unitId": "cmpcbs:28",
+          "index": 5,
+          "text": "Minimum 30 Liberty credits applied to the overall program of study",
+          "sourceHash": "a7c81addf2cc",
+          "kind": "bookkeeping",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cmpcbs:28:6",
+          "unitId": "cmpcbs:28",
+          "index": 6,
+          "text": "Submit the Degree Completion Application within the final semester before graduation",
+          "sourceHash": "2488108d1573",
+          "kind": "bookkeeping",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/data.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 28,
+    "objectives": 102,
+    "bookkeeping": 20,
+    "linked": 3
+  }
+}

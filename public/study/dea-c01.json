@@ -1,0 +1,1198 @@
+{
+  "id": "dea-c01",
+  "code": "AWSDEA",
+  "title": "AWS Data Engineer Associate",
+  "description": "AWS Certified Data Engineer - Associate (DEA-C01): building data pipelines that survive production -- ingestion and transformation, choosing and cataloging data stores, operating and monitoring pipelines, and the security and governance around the data itself.",
+  "trackType": "certification",
+  "units": [
+    {
+      "id": "dea-c01:1",
+      "index": 1,
+      "title": "Data Ingestion and Transformation",
+      "weight": 34,
+      "gate": "Given a source, a volume, and a latency requirement, design the pipeline -- streaming or batch, which transformation service, how it is orchestrated, and what happens when it fails halfway. This is the largest domain on the exam.",
+      "objectives": [
+        {
+          "id": "dea-c01:1:1",
+          "unitId": "dea-c01:1",
+          "index": 1,
+          "text": "Reading from streaming sources: Amazon Kinesis, Amazon MSK, Amazon DynamoDB Streams, AWS DMS, AWS Glue, Amazon Redshift",
+          "sourceHash": "bf93fa3aa791",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:1:2",
+          "unitId": "dea-c01:1",
+          "index": 2,
+          "text": "Reading from batch sources: Amazon S3, AWS Glue, Amazon EMR, AWS DMS, Amazon Redshift, AWS Lambda, Amazon AppFlow",
+          "sourceHash": "083615778e2f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:1:3",
+          "unitId": "dea-c01:1",
+          "index": 3,
+          "text": "Configuration options that matter for batch ingestion",
+          "sourceHash": "1a8910b68c75",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:1:4",
+          "unitId": "dea-c01:1",
+          "index": 4,
+          "text": "Consuming data APIs",
+          "sourceHash": "dc1181f25fb0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:1:5",
+          "unitId": "dea-c01:1",
+          "index": 5,
+          "text": "Scheduling jobs and crawlers with Amazon EventBridge, Apache Airflow, or time-based schedules",
+          "sourceHash": "4dd4ddebd944",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:1:6",
+          "unitId": "dea-c01:1",
+          "index": 6,
+          "text": "Setting up event triggers: Amazon S3 Event Notifications and EventBridge",
+          "sourceHash": "33a5c0fde8b1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:1:7",
+          "unitId": "dea-c01:1",
+          "index": 7,
+          "text": "Invoking a Lambda function from Kinesis",
+          "sourceHash": "1b033d9c3785",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:1:8",
+          "unitId": "dea-c01:1",
+          "index": 8,
+          "text": "Allowlisting IP addresses so connections to data sources succeed",
+          "sourceHash": "44e2252556ba",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:1:9",
+          "unitId": "dea-c01:1",
+          "index": 9,
+          "text": "Throttling and rate limits in DynamoDB, Amazon RDS, and Kinesis, and how to work within them",
+          "sourceHash": "940294289b95",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:1:10",
+          "unitId": "dea-c01:1",
+          "index": 10,
+          "text": "Managing fan-in and fan-out for streaming data distribution",
+          "sourceHash": "e47579a83d2a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:1:11",
+          "unitId": "dea-c01:1",
+          "index": 11,
+          "text": "Replayability of an ingestion pipeline",
+          "sourceHash": "9946c0550bdf",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:1:12",
+          "unitId": "dea-c01:1",
+          "index": 12,
+          "text": "Stateful versus stateless data transactions",
+          "sourceHash": "10b4666d3e13",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:1:13",
+          "unitId": "dea-c01:1",
+          "index": 13,
+          "text": "Optimizing container usage for processing performance with Amazon EKS and Amazon ECS",
+          "sourceHash": "1f04351db67f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:1:14",
+          "unitId": "dea-c01:1",
+          "index": 14,
+          "text": "Connecting to data sources over JDBC and ODBC",
+          "sourceHash": "6f2970af0882",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:1:15",
+          "unitId": "dea-c01:1",
+          "index": 15,
+          "text": "Integrating data from multiple sources",
+          "sourceHash": "02573d10c460",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:1:16",
+          "unitId": "dea-c01:1",
+          "index": 16,
+          "text": "Optimizing cost while processing data",
+          "sourceHash": "41f312ff8c47",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:1:17",
+          "unitId": "dea-c01:1",
+          "index": 17,
+          "text": "Choosing a transformation service for the requirement: Amazon EMR, AWS Glue, Lambda, Amazon Redshift",
+          "sourceHash": "4e2399a7ea17",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:1:18",
+          "unitId": "dea-c01:1",
+          "index": 18,
+          "text": "Transforming data between formats, such as CSV to Apache Parquet",
+          "sourceHash": "f24d1ec015a0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:1:19",
+          "unitId": "dea-c01:1",
+          "index": 19,
+          "text": "Troubleshooting and debugging transformation failures and performance problems",
+          "sourceHash": "d48d3c89354e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:1:20",
+          "unitId": "dea-c01:1",
+          "index": 20,
+          "text": "Creating data APIs so other systems can reach the data",
+          "sourceHash": "57051291a83f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:1:21",
+          "unitId": "dea-c01:1",
+          "index": 21,
+          "text": "Volume, velocity, and variety, and structured versus unstructured data",
+          "sourceHash": "0c2f8813f2e4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:1:22",
+          "unitId": "dea-c01:1",
+          "index": 22,
+          "text": "Integrating large language models into data processing",
+          "sourceHash": "d7495c5d4256",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:1:23",
+          "unitId": "dea-c01:1",
+          "index": 23,
+          "text": "Orchestrating ETL workflows with Lambda, EventBridge, Amazon MWAA, AWS Step Functions, and AWS Glue workflows",
+          "sourceHash": "2ed3c89ae2a9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:1:24",
+          "unitId": "dea-c01:1",
+          "index": 24,
+          "text": "Building pipelines for performance, availability, scalability, resiliency, and fault tolerance",
+          "sourceHash": "ef5a8e09c3cd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:1:25",
+          "unitId": "dea-c01:1",
+          "index": 25,
+          "text": "Implementing and maintaining serverless workflows",
+          "sourceHash": "46cf2b97c33f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:1:26",
+          "unitId": "dea-c01:1",
+          "index": 26,
+          "text": "Sending alerts from a pipeline with Amazon SNS and Amazon SQS",
+          "sourceHash": "92eeb613c7bc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:1:27",
+          "unitId": "dea-c01:1",
+          "index": 27,
+          "text": "Optimizing code to cut ingestion and transformation runtime",
+          "sourceHash": "c932f4eae32d",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "bigo-01-growth",
+            "coverage": "partial"
+          }
+        },
+        {
+          "id": "dea-c01:1:28",
+          "unitId": "dea-c01:1",
+          "index": 28,
+          "text": "Configuring Lambda functions for the concurrency and performance a pipeline needs",
+          "sourceHash": "ffb561fe7bac",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:1:29",
+          "unitId": "dea-c01:1",
+          "index": 29,
+          "text": "Languages and frameworks for data engineering: Python, SQL, Scala, R, Java, Bash, PowerShell",
+          "sourceHash": "9f572d035c6b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:1:30",
+          "unitId": "dea-c01:1",
+          "index": 30,
+          "text": "Software engineering practice applied to pipelines: version control, testing, logging, monitoring",
+          "sourceHash": "f8f72b116996",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:1:31",
+          "unitId": "dea-c01:1",
+          "index": 31,
+          "text": "Infrastructure as code for repeatable deployment: AWS CloudFormation and the AWS CDK",
+          "sourceHash": "db1863467f3b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:1:32",
+          "unitId": "dea-c01:1",
+          "index": 32,
+          "text": "Packaging and deploying serverless data pipelines with AWS SAM",
+          "sourceHash": "aaf838f2a704",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:1:33",
+          "unitId": "dea-c01:1",
+          "index": 33,
+          "text": "Using and mounting storage volumes from within a Lambda function",
+          "sourceHash": "54827ec44782",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:1:34",
+          "unitId": "dea-c01:1",
+          "index": 34,
+          "text": "Continuous integration and delivery for data pipelines",
+          "sourceHash": "16341466b494",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:1:35",
+          "unitId": "dea-c01:1",
+          "index": 35,
+          "text": "Distributed computing, and the data structures and algorithms behind pipeline work",
+          "sourceHash": "dca28be212a4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "dea-c01:2",
+      "index": 2,
+      "title": "Data Store Management",
+      "weight": 26,
+      "gate": "Choose the store and the schema for a described access pattern, then say how the catalog finds it, how the data ages out, and what happens when the schema changes underneath you.",
+      "objectives": [
+        {
+          "id": "dea-c01:2:1",
+          "unitId": "dea-c01:2",
+          "index": 1,
+          "text": "Choosing storage services for cost and performance: Amazon Redshift, Amazon EMR, AWS Lake Formation, Amazon RDS, Amazon DynamoDB, Kinesis Data Streams, Amazon MSK",
+          "sourceHash": "a0ff0d3d21a8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:2:2",
+          "unitId": "dea-c01:2",
+          "index": 2,
+          "text": "Configuring storage services for a specific access pattern",
+          "sourceHash": "31b0ee7e7e79",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:2:3",
+          "unitId": "dea-c01:2",
+          "index": 3,
+          "text": "Matching a store to a use case, such as Amazon MemoryDB for fast key/value access",
+          "sourceHash": "b7189677ce2e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:2:4",
+          "unitId": "dea-c01:2",
+          "index": 4,
+          "text": "Vector index types -- HNSW and IVF -- including HNSW with Amazon Aurora PostgreSQL",
+          "sourceHash": "6aa55a55ee66",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:2:5",
+          "unitId": "dea-c01:2",
+          "index": 5,
+          "text": "Integrating migration tools such as AWS Transfer Family into a processing system",
+          "sourceHash": "50c4ff6f6960",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:2:6",
+          "unitId": "dea-c01:2",
+          "index": 6,
+          "text": "Remote access and federation: Amazon Redshift federated queries, materialized views, Redshift Spectrum",
+          "sourceHash": "efcb009afed6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:2:7",
+          "unitId": "dea-c01:2",
+          "index": 7,
+          "text": "Managing locks that block data access in Amazon Redshift and Amazon RDS",
+          "sourceHash": "a83fd7690b4f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:2:8",
+          "unitId": "dea-c01:2",
+          "index": 8,
+          "text": "Managing open table formats, such as Apache Iceberg",
+          "sourceHash": "340883e47ec0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:2:9",
+          "unitId": "dea-c01:2",
+          "index": 9,
+          "text": "Using data catalogs to consume data from its source",
+          "sourceHash": "73e742820690",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:2:10",
+          "unitId": "dea-c01:2",
+          "index": 10,
+          "text": "Building and referencing a technical data catalog: AWS Glue Data Catalog and the Apache Hive metastore",
+          "sourceHash": "d2dbe928cf8b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:2:11",
+          "unitId": "dea-c01:2",
+          "index": 11,
+          "text": "Discovering schemas and populating catalogs with AWS Glue crawlers",
+          "sourceHash": "c673cecc061a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:2:12",
+          "unitId": "dea-c01:2",
+          "index": 12,
+          "text": "Synchronizing partitions with a data catalog",
+          "sourceHash": "20dc8aab2bc2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:2:13",
+          "unitId": "dea-c01:2",
+          "index": 13,
+          "text": "Creating source and target connections for cataloging",
+          "sourceHash": "7e59fd524832",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:2:14",
+          "unitId": "dea-c01:2",
+          "index": 14,
+          "text": "Creating and managing business data catalogs, including Amazon SageMaker Catalog",
+          "sourceHash": "fb767c0873dd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:2:15",
+          "unitId": "dea-c01:2",
+          "index": 15,
+          "text": "Load and unload operations between Amazon S3 and Amazon Redshift",
+          "sourceHash": "46632188d25d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:2:16",
+          "unitId": "dea-c01:2",
+          "index": 16,
+          "text": "S3 Lifecycle policies for changing storage tier and expiring data by age",
+          "sourceHash": "f87b460a7d5f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:2:17",
+          "unitId": "dea-c01:2",
+          "index": 17,
+          "text": "Managing S3 versioning and DynamoDB TTL",
+          "sourceHash": "e384c0a4d89c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:2:18",
+          "unitId": "dea-c01:2",
+          "index": 18,
+          "text": "Deleting data to meet business and legal requirements",
+          "sourceHash": "0e1ec0f4ab52",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:2:19",
+          "unitId": "dea-c01:2",
+          "index": 19,
+          "text": "Protecting data with appropriate resiliency and availability",
+          "sourceHash": "1b945ced6cda",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:2:20",
+          "unitId": "dea-c01:2",
+          "index": 20,
+          "text": "Designing schemas for Amazon Redshift, DynamoDB, and Lake Formation",
+          "sourceHash": "7ff8becfc0ce",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:2:21",
+          "unitId": "dea-c01:2",
+          "index": 21,
+          "text": "Addressing changes to the characteristics of data as schemas evolve",
+          "sourceHash": "0bb90b315b2d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:2:22",
+          "unitId": "dea-c01:2",
+          "index": 22,
+          "text": "Schema conversion with AWS SCT and AWS DMS Schema Conversion",
+          "sourceHash": "c712e233d0b5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:2:23",
+          "unitId": "dea-c01:2",
+          "index": 23,
+          "text": "Establishing data lineage with Amazon SageMaker ML Lineage Tracking and SageMaker Catalog",
+          "sourceHash": "be337b5c4d1b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:2:24",
+          "unitId": "dea-c01:2",
+          "index": 24,
+          "text": "Indexing, partitioning strategies, compression, and other data optimization techniques",
+          "sourceHash": "cee4a72553ba",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:2:25",
+          "unitId": "dea-c01:2",
+          "index": 25,
+          "text": "Vectorization concepts, including Amazon Bedrock knowledge bases",
+          "sourceHash": "f6925cee86e8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "dea-c01:3",
+      "index": 3,
+      "title": "Data Operations and Support",
+      "weight": 22,
+      "gate": "Given a pipeline that ran but produced wrong numbers, find it -- with logs, a query, and a data quality rule -- and say which check should have caught it before anyone looked at a dashboard.",
+      "objectives": [
+        {
+          "id": "dea-c01:3:1",
+          "unitId": "dea-c01:3",
+          "index": 1,
+          "text": "Orchestrating data pipelines with Amazon MWAA and AWS Step Functions",
+          "sourceHash": "6489a822a906",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:3:2",
+          "unitId": "dea-c01:3",
+          "index": 2,
+          "text": "Troubleshooting Amazon managed workflows",
+          "sourceHash": "cd2984eb300a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:3:3",
+          "unitId": "dea-c01:3",
+          "index": 3,
+          "text": "Calling AWS SDKs from code to drive data services",
+          "sourceHash": "9ed8f1cd5d9e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:3:4",
+          "unitId": "dea-c01:3",
+          "index": 4,
+          "text": "Processing data with the features of Amazon EMR, Amazon Redshift, and AWS Glue",
+          "sourceHash": "f4b589cb5872",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:3:5",
+          "unitId": "dea-c01:3",
+          "index": 5,
+          "text": "Consuming and maintaining data APIs",
+          "sourceHash": "6290d24b2c39",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:3:6",
+          "unitId": "dea-c01:3",
+          "index": 6,
+          "text": "Preparing data for transformation with AWS Glue DataBrew and Amazon SageMaker Unified Studio",
+          "sourceHash": "f42829c4cd9e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:3:7",
+          "unitId": "dea-c01:3",
+          "index": 7,
+          "text": "Querying data with Amazon Athena",
+          "sourceHash": "cd2649a77f4e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:3:8",
+          "unitId": "dea-c01:3",
+          "index": 8,
+          "text": "Automating data processing with AWS Lambda",
+          "sourceHash": "bfbac44041fc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:3:9",
+          "unitId": "dea-c01:3",
+          "index": 9,
+          "text": "Managing events and schedulers with Amazon EventBridge",
+          "sourceHash": "7a075f58976e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:3:10",
+          "unitId": "dea-c01:3",
+          "index": 10,
+          "text": "Visualizing data with AWS Glue DataBrew and Amazon QuickSight",
+          "sourceHash": "bb8fba16d0fd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:3:11",
+          "unitId": "dea-c01:3",
+          "index": 11,
+          "text": "Verifying and cleaning data with Lambda, Athena, QuickSight, Jupyter notebooks, and SageMaker Data Wrangler",
+          "sourceHash": "43f0aae4abbf",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:3:12",
+          "unitId": "dea-c01:3",
+          "index": 12,
+          "text": "Using SQL in Amazon Redshift and Athena to query data and create views",
+          "sourceHash": "647a51cd24a6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:3:13",
+          "unitId": "dea-c01:3",
+          "index": 13,
+          "text": "Exploring data in Athena notebooks that run Apache Spark",
+          "sourceHash": "dacdd4fa7f8b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:3:14",
+          "unitId": "dea-c01:3",
+          "index": 14,
+          "text": "Trade-offs between provisioned services and serverless services",
+          "sourceHash": "4eab4e5d2c3f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:3:15",
+          "unitId": "dea-c01:3",
+          "index": 15,
+          "text": "Data aggregation, rolling averages, grouping, and pivoting",
+          "sourceHash": "8e43a57e3c53",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:3:16",
+          "unitId": "dea-c01:3",
+          "index": 16,
+          "text": "Extracting logs for audits",
+          "sourceHash": "d18468990960",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:3:17",
+          "unitId": "dea-c01:3",
+          "index": 17,
+          "text": "Deploying logging and monitoring that makes a pipeline auditable and traceable",
+          "sourceHash": "bd90aa3486a1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:3:18",
+          "unitId": "dea-c01:3",
+          "index": 18,
+          "text": "Using notifications during monitoring to send alerts",
+          "sourceHash": "d607c313b8ce",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:3:19",
+          "unitId": "dea-c01:3",
+          "index": 19,
+          "text": "Troubleshooting pipeline performance issues",
+          "sourceHash": "47c787f5898f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:3:20",
+          "unitId": "dea-c01:3",
+          "index": 20,
+          "text": "Tracking API calls with AWS CloudTrail",
+          "sourceHash": "caa178544a86",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:3:21",
+          "unitId": "dea-c01:3",
+          "index": 21,
+          "text": "Troubleshooting and maintaining AWS Glue and Amazon EMR pipelines",
+          "sourceHash": "a96eeb64ef01",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:3:22",
+          "unitId": "dea-c01:3",
+          "index": 22,
+          "text": "Logging application data to Amazon CloudWatch Logs",
+          "sourceHash": "c48ca7ac5b13",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:3:23",
+          "unitId": "dea-c01:3",
+          "index": 23,
+          "text": "Analyzing logs with Athena, Amazon EMR, Amazon OpenSearch Service, and CloudWatch Logs Insights",
+          "sourceHash": "181daf44f345",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:3:24",
+          "unitId": "dea-c01:3",
+          "index": 24,
+          "text": "Running data quality checks during processing, such as checking for empty fields",
+          "sourceHash": "8c728de48c68",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:3:25",
+          "unitId": "dea-c01:3",
+          "index": 25,
+          "text": "Defining data quality rules and investigating data consistency with DataBrew",
+          "sourceHash": "55cec134b07d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:3:26",
+          "unitId": "dea-c01:3",
+          "index": 26,
+          "text": "Data sampling techniques",
+          "sourceHash": "4f5b89f88e6c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:3:27",
+          "unitId": "dea-c01:3",
+          "index": 27,
+          "text": "Implementing mechanisms that handle data skew",
+          "sourceHash": "13b1f23fce66",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "dea-c01:4",
+      "index": 4,
+      "title": "Data Security and Governance",
+      "weight": 18,
+      "gate": "Given a data lake several teams share, say who can read what, how it is encrypted, where the PII is, which Regions it may not leave, and which log proves all of it to an auditor.",
+      "objectives": [
+        {
+          "id": "dea-c01:4:1",
+          "unitId": "dea-c01:4",
+          "index": 1,
+          "text": "Updating VPC security groups to permit data access",
+          "sourceHash": "39484de1b409",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:4:2",
+          "unitId": "dea-c01:4",
+          "index": 2,
+          "text": "Creating and updating IAM groups, roles, endpoints, and services",
+          "sourceHash": "4177851e7bee",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:4:3",
+          "unitId": "dea-c01:4",
+          "index": 3,
+          "text": "Creating and rotating credentials with AWS Secrets Manager",
+          "sourceHash": "4b42407982d6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:4:4",
+          "unitId": "dea-c01:4",
+          "index": 4,
+          "text": "Setting up IAM roles for access from AWS Lambda, Amazon API Gateway, the AWS CLI, and CloudFormation",
+          "sourceHash": "e6bd90f02260",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:4:5",
+          "unitId": "dea-c01:4",
+          "index": 5,
+          "text": "Applying IAM policies to roles, endpoints, and services, including S3 Access Points and AWS PrivateLink",
+          "sourceHash": "e91c1adb40db",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:4:6",
+          "unitId": "dea-c01:4",
+          "index": 6,
+          "text": "Managed versus unmanaged services, and what each leaves you responsible for",
+          "sourceHash": "aaf416696709",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:4:7",
+          "unitId": "dea-c01:4",
+          "index": 7,
+          "text": "Domains, domain units, and projects in SageMaker Unified Studio",
+          "sourceHash": "dc658a06efc4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:4:8",
+          "unitId": "dea-c01:4",
+          "index": 8,
+          "text": "Writing custom IAM policies when a managed policy does not fit",
+          "sourceHash": "280db176488c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:4:9",
+          "unitId": "dea-c01:4",
+          "index": 9,
+          "text": "Storing application and database credentials in Secrets Manager or Systems Manager Parameter Store",
+          "sourceHash": "4fc9c61c0f12",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:4:10",
+          "unitId": "dea-c01:4",
+          "index": 10,
+          "text": "Granting database users, groups, and roles access and authority, as in Amazon Redshift",
+          "sourceHash": "5e3e2fcf5204",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:4:11",
+          "unitId": "dea-c01:4",
+          "index": 11,
+          "text": "Managing permissions through AWS Lake Formation for Amazon Redshift, Amazon EMR, Amazon Athena, and Amazon S3",
+          "sourceHash": "d9757d102381",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:4:12",
+          "unitId": "dea-c01:4",
+          "index": 12,
+          "text": "Role-based, tag-based, and attribute-based authorization",
+          "sourceHash": "938b78505da7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:4:13",
+          "unitId": "dea-c01:4",
+          "index": 13,
+          "text": "Constructing custom policies that hold to least privilege",
+          "sourceHash": "ad49ffedd673",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:4:14",
+          "unitId": "dea-c01:4",
+          "index": 14,
+          "text": "Data masking and anonymization to satisfy compliance law or company policy",
+          "sourceHash": "6293b3519918",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:4:15",
+          "unitId": "dea-c01:4",
+          "index": 15,
+          "text": "Using AWS KMS keys to encrypt and decrypt data",
+          "sourceHash": "cf48eba136d3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:4:16",
+          "unitId": "dea-c01:4",
+          "index": 16,
+          "text": "Configuring encryption across AWS account boundaries",
+          "sourceHash": "2e484c21a764",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:4:17",
+          "unitId": "dea-c01:4",
+          "index": 17,
+          "text": "Encrypting data in transit, or before transit",
+          "sourceHash": "dee5306d0030",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:4:18",
+          "unitId": "dea-c01:4",
+          "index": 18,
+          "text": "Tracking API calls with AWS CloudTrail, and centralizing queries with CloudTrail Lake",
+          "sourceHash": "847c8361bf80",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:4:19",
+          "unitId": "dea-c01:4",
+          "index": 19,
+          "text": "Storing and analyzing logs: CloudWatch Logs, Athena, CloudWatch Logs Insights, Amazon OpenSearch Service, and Amazon EMR for large log volumes",
+          "sourceHash": "840f3a0968e9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:4:20",
+          "unitId": "dea-c01:4",
+          "index": 20,
+          "text": "Granting permissions for data sharing, such as Amazon Redshift data sharing",
+          "sourceHash": "7244a55ae2a5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:4:21",
+          "unitId": "dea-c01:4",
+          "index": 21,
+          "text": "Identifying PII with Amazon Macie and AWS Lake Formation",
+          "sourceHash": "d8011d867ea4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:4:22",
+          "unitId": "dea-c01:4",
+          "index": 22,
+          "text": "Preventing backups or replication of data into disallowed AWS Regions",
+          "sourceHash": "66d87b3f7dc6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:4:23",
+          "unitId": "dea-c01:4",
+          "index": 23,
+          "text": "Maintaining data sovereignty",
+          "sourceHash": "42f77e393273",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:4:24",
+          "unitId": "dea-c01:4",
+          "index": 24,
+          "text": "Reviewing configuration changes in an account with AWS Config",
+          "sourceHash": "1888ace2121b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:4:25",
+          "unitId": "dea-c01:4",
+          "index": 25,
+          "text": "Managing data access through Amazon SageMaker Catalog projects",
+          "sourceHash": "68d5c7a71cf9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dea-c01:4:26",
+          "unitId": "dea-c01:4",
+          "index": 26,
+          "text": "Governance frameworks and data sharing patterns",
+          "sourceHash": "4f3e1ecb7ea4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/aws.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-18T00:00:00Z",
+    "officialObjectivesUrl": "https://docs.aws.amazon.com/aws-certification/latest/data-engineer-associate-01/data-engineer-associate-01.html",
+    "providerName": "Amazon Web Services",
+    "credentialName": "AWS Certified Data Engineer - Associate",
+    "examCode": "DEA-C01",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 4,
+    "objectives": 113,
+    "bookkeeping": 0,
+    "linked": 1
+  }
+}

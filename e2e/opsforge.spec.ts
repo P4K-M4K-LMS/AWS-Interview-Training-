@@ -146,7 +146,7 @@ test("navigation: three groups, labs hub with tabs, old addresses redirect", asy
   const menu = page.getByRole("button", { name: "Open navigation" });
   if (await menu.isVisible()) await menu.click();
   const nav = page.getByRole("navigation", { name: "Main navigation" });
-  for (const label of ["Today", "Curriculum", "Missions", "Labs", "Interview", "Progress", "Settings"]) {
+  for (const label of ["Today", "Curriculum", "Missions", "Study", "Labs", "Interview", "Progress", "Settings"]) {
     await expect(nav.getByRole("link", { name: label })).toBeAttached();
   }
   await page.goto("/#/labs");
@@ -651,4 +651,29 @@ test("design exercise 2: strong consistency rules out the cache and the key-valu
   await expect(page.getByText(/^Checks \((\d+)\/\1\)$/)).toBeVisible({ timeout: 20_000 });
   await page.getByTestId("mission-complete").click();
   await expect(page.getByText("Mission complete: explain what you did")).toBeVisible();
+});
+
+test("study: browse the catalog from a course to a unit and into the mission that teaches an objective", async ({ page }) => {
+  await onboard(page);
+  await page.goto("/#/study");
+  await expect(page.getByRole("heading", { name: "Study", exact: true })).toBeVisible();
+  await expect(page.getByTestId("study-disclaimer")).toContainText("not affiliated");
+  await expect(page.getByTestId("study-group-aws").getByRole("link")).toHaveCount(11);
+  await expect(page.getByTestId("study-group-core").getByRole("link")).toHaveCount(9);
+  await page.getByTestId("study-course-saa-c03").click();
+  await expect(page.getByRole("heading", { name: "AWS Solutions Architect Associate" })).toBeVisible();
+  await expect(page.getByTestId("study-provenance")).toContainText("Exam SAA-C03");
+  await page.getByTestId("study-unit-2").click();
+  await expect(page.getByRole("heading", { name: /Design Resilient Architectures/ })).toBeVisible();
+  await expect(page.getByTestId("study-gate")).toContainText("RTO and RPO");
+  await expect(page.getByTestId("study-objectives").getByRole("listitem")).toHaveCount(27);
+  const replicas = page.getByTestId("study-objective-12");
+  await expect(replicas).toContainText("Read replicas");
+  await expect(replicas.getByText("Do it: existing mission")).toBeVisible();
+  await replicas.getByTestId("study-practise-12").click();
+  await expect(page).toHaveURL(/missions\/incident-04-replica-lag/);
+  // Bookkeeping lines are kept but folded away.
+  await page.goto("/#/study/cmpcbs/28");
+  await expect(page.getByTestId("study-bookkeeping")).toContainText("6 degree-plan lines");
+  await expect(page.getByTestId("study-objectives")).toHaveCount(0);
 });

@@ -1,0 +1,1346 @@
+{
+  "id": "mscs",
+  "code": "MSCS",
+  "title": "MSCS Foundations",
+  "description": "15-week graduate-CS bridge covering algorithms, data structures, discrete math, OS, computer architecture, database theory, ML math, cybersecurity, HCI/UX, and big data.",
+  "trackType": "graduate",
+  "units": [
+    {
+      "id": "mscs:1",
+      "index": 1,
+      "title": "Complexity & computational thinking",
+      "rangeLabel": "Sept 15-21",
+      "gate": "Given unfamiliar short Python functions, estimate time and auxiliary-space complexity and justify each answer.",
+      "objectives": [
+        {
+          "id": "mscs:1:1",
+          "unitId": "mscs:1",
+          "index": 1,
+          "text": "Define an algorithm and input size",
+          "sourceHash": "37b86567bd36",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:1:2",
+          "unitId": "mscs:1",
+          "index": 2,
+          "text": "Distinguish correctness from efficiency",
+          "sourceHash": "4599d4adfda5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:1:3",
+          "unitId": "mscs:1",
+          "index": 3,
+          "text": "Use Big-O, Big-Omega, and Big-Theta",
+          "sourceHash": "514688cd8aee",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:1:4",
+          "unitId": "mscs:1",
+          "index": 4,
+          "text": "Compare constant, logarithmic, linear, linearithmic, quadratic, exponential, factorial growth",
+          "sourceHash": "6b172a737b4d",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "bigo-01-growth",
+            "coverage": "partial",
+            "note": "no factorial"
+          }
+        },
+        {
+          "id": "mscs:1:5",
+          "unitId": "mscs:1",
+          "index": 5,
+          "text": "Analyze simple loop and recursive patterns",
+          "sourceHash": "bc11ea117900",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "bigo-01-growth",
+            "coverage": "partial"
+          }
+        },
+        {
+          "id": "mscs:1:6",
+          "unitId": "mscs:1",
+          "index": 6,
+          "text": "Distinguish time and space complexity",
+          "sourceHash": "56ed1b986a4c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "mscs:2",
+      "index": 2,
+      "title": "Core data structures",
+      "rangeLabel": "Sept 22-28",
+      "gate": "Choose a data structure for a new problem, defend the choice, and explain the cost of rejected alternatives.",
+      "objectives": [
+        {
+          "id": "mscs:2:1",
+          "unitId": "mscs:2",
+          "index": 1,
+          "text": "Explain arrays, linked lists, stacks, queues, deques, hash tables, sets, trees, heaps",
+          "sourceHash": "504ca5005266",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:2:2",
+          "unitId": "mscs:2",
+          "index": 2,
+          "text": "Compare access/search/insert/delete/space cost",
+          "sourceHash": "d63f4bf4a9aa",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "bigo-03-structures",
+            "coverage": "partial",
+            "note": "search only"
+          }
+        },
+        {
+          "id": "mscs:2:3",
+          "unitId": "mscs:2",
+          "index": 3,
+          "text": "Explain why hash-table ops are average-case O(1), not guaranteed",
+          "sourceHash": "ec7359702437",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "bigo-03-structures",
+            "coverage": "full"
+          }
+        },
+        {
+          "id": "mscs:2:4",
+          "unitId": "mscs:2",
+          "index": 4,
+          "text": "Explain tree balance and heap invariants",
+          "sourceHash": "df2e46a7c939",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "mscs:3",
+      "index": 3,
+      "title": "Discrete mathematics I",
+      "rangeLabel": "Sept 29-Oct 5",
+      "gate": "Read symbolic notation, translate it into plain language, and construct a basic valid argument.",
+      "objectives": [
+        {
+          "id": "mscs:3:1",
+          "unitId": "mscs:3",
+          "index": 1,
+          "text": "Propositions and predicates",
+          "sourceHash": "0d702d5ea1ef",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:3:2",
+          "unitId": "mscs:3",
+          "index": 2,
+          "text": "Truth tables and logical equivalence",
+          "sourceHash": "244de99fbb8a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:3:3",
+          "unitId": "mscs:3",
+          "index": 3,
+          "text": "Sets and set operations",
+          "sourceHash": "9225f9f7a2ce",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:3:4",
+          "unitId": "mscs:3",
+          "index": 4,
+          "text": "Functions and relations",
+          "sourceHash": "4f27999fd48a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:3:5",
+          "unitId": "mscs:3",
+          "index": 5,
+          "text": "Direct proof",
+          "sourceHash": "75d60e7983ed",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:3:6",
+          "unitId": "mscs:3",
+          "index": 6,
+          "text": "Proof by contradiction",
+          "sourceHash": "575128e691c7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:3:7",
+          "unitId": "mscs:3",
+          "index": 7,
+          "text": "Mathematical induction",
+          "sourceHash": "ed7dbf6acfb4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "mscs:4",
+      "index": 4,
+      "title": "Sorting, recursion, and recurrences",
+      "rangeLabel": "Oct 6-12",
+      "gate": "Choose an appropriate sorting approach for a stated constraint and explain average/worst-case behavior.",
+      "objectives": [
+        {
+          "id": "mscs:4:1",
+          "unitId": "mscs:4",
+          "index": 1,
+          "text": "Trace recursion and identify base cases",
+          "sourceHash": "2fd38d92ee20",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:4:2",
+          "unitId": "mscs:4",
+          "index": 2,
+          "text": "Explain call-stack growth",
+          "sourceHash": "f0dc0c43223f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:4:3",
+          "unitId": "mscs:4",
+          "index": 3,
+          "text": "Compare insertion/merge/quick/heap sort",
+          "sourceHash": "cf3097ac0e70",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "bigo-02-search-sort",
+            "coverage": "partial"
+          }
+        },
+        {
+          "id": "mscs:4:4",
+          "unitId": "mscs:4",
+          "index": 4,
+          "text": "Understand stability and in-place behavior",
+          "sourceHash": "be585f6f0ec5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:4:5",
+          "unitId": "mscs:4",
+          "index": 5,
+          "text": "Interpret T(n)=2T(n/2)+O(n)",
+          "sourceHash": "5a9a09d5bcf8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:4:6",
+          "unitId": "mscs:4",
+          "index": 6,
+          "text": "Understand the Omega(n log n) comparison-sort lower bound",
+          "sourceHash": "035cb881f2a6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "mscs:5",
+      "index": 5,
+      "title": "Graph foundations",
+      "rangeLabel": "Oct 13-19",
+      "gate": "Select BFS or DFS for a new task and explain the result and complexity.",
+      "objectives": [
+        {
+          "id": "mscs:5:1",
+          "unitId": "mscs:5",
+          "index": 1,
+          "text": "Vertices and edges",
+          "sourceHash": "d7667d1a9abd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:5:2",
+          "unitId": "mscs:5",
+          "index": 2,
+          "text": "Directed/undirected, weighted/unweighted graphs",
+          "sourceHash": "d15aea936d74",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:5:3",
+          "unitId": "mscs:5",
+          "index": 3,
+          "text": "Adjacency lists and matrices",
+          "sourceHash": "94e280da7251",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:5:4",
+          "unitId": "mscs:5",
+          "index": 4,
+          "text": "BFS",
+          "sourceHash": "d977af2aeb54",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:5:5",
+          "unitId": "mscs:5",
+          "index": 5,
+          "text": "DFS",
+          "sourceHash": "463b7ceb7c57",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:5:6",
+          "unitId": "mscs:5",
+          "index": 6,
+          "text": "Traversal complexity",
+          "sourceHash": "8e785085678c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "mscs:6",
+      "index": 6,
+      "title": "Graph algorithms & design strategies",
+      "rangeLabel": "Oct 20-26",
+      "gate": "Recognize whether an unfamiliar problem suggests traversal, greedy choice, divide and conquer, or dynamic programming, and defend the classification.",
+      "objectives": [
+        {
+          "id": "mscs:6:1",
+          "unitId": "mscs:6",
+          "index": 1,
+          "text": "Shortest paths",
+          "sourceHash": "1cf5e29a8e13",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:6:2",
+          "unitId": "mscs:6",
+          "index": 2,
+          "text": "Dijkstra and its nonnegative-weight requirement",
+          "sourceHash": "6ef31245dc59",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:6:3",
+          "unitId": "mscs:6",
+          "index": 3,
+          "text": "Topological sorting",
+          "sourceHash": "973526966662",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:6:4",
+          "unitId": "mscs:6",
+          "index": 4,
+          "text": "Cycle detection",
+          "sourceHash": "63bc0f6cfc43",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:6:5",
+          "unitId": "mscs:6",
+          "index": 5,
+          "text": "Divide and conquer",
+          "sourceHash": "0b315bd9bd2f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:6:6",
+          "unitId": "mscs:6",
+          "index": 6,
+          "text": "Greedy reasoning",
+          "sourceHash": "5a8540890fa5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:6:7",
+          "unitId": "mscs:6",
+          "index": 7,
+          "text": "Memoization and dynamic programming",
+          "sourceHash": "c6c952c44818",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "mscs:7",
+      "index": 7,
+      "title": "Computer architecture",
+      "rangeLabel": "Oct 27-Nov 2",
+      "gate": "Explain how logic gates compose into arithmetic and stateful memory, then trace the conceptual path from a high-level instruction to machine execution and identify where the OS participates.",
+      "objectives": [
+        {
+          "id": "mscs:7:1",
+          "unitId": "mscs:7",
+          "index": 1,
+          "text": "Binary and hex representation",
+          "sourceHash": "d79ac1c45220",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:7:2",
+          "unitId": "mscs:7",
+          "index": 2,
+          "text": "Boolean logic: AND, OR, NOT, XOR",
+          "sourceHash": "9e9bf53cd1d9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:7:3",
+          "unitId": "mscs:7",
+          "index": 3,
+          "text": "Boolean arithmetic",
+          "sourceHash": "0adef89fc359",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:7:4",
+          "unitId": "mscs:7",
+          "index": 4,
+          "text": "Combinational vs sequential logic",
+          "sourceHash": "f83c88bcd0a1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:7:5",
+          "unitId": "mscs:7",
+          "index": 5,
+          "text": "Registers and memory",
+          "sourceHash": "0ebdd4faca4e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:7:6",
+          "unitId": "mscs:7",
+          "index": 6,
+          "text": "How state differs from pure combinational output",
+          "sourceHash": "4934464b3ffb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:7:7",
+          "unitId": "mscs:7",
+          "index": 7,
+          "text": "Instruction-set architecture",
+          "sourceHash": "d2c349d8f6c3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:7:8",
+          "unitId": "mscs:7",
+          "index": 8,
+          "text": "Machine language",
+          "sourceHash": "8123fbdf28ce",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:7:9",
+          "unitId": "mscs:7",
+          "index": 9,
+          "text": "CPU, ALU, registers, program counter, RAM",
+          "sourceHash": "6ee4cad92e0f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:7:10",
+          "unitId": "mscs:7",
+          "index": 10,
+          "text": "Fetch-decode-execute cycle",
+          "sourceHash": "d6dbe29f298a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:7:11",
+          "unitId": "mscs:7",
+          "index": 11,
+          "text": "Memory hierarchy and cache",
+          "sourceHash": "d66e243db8b0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:7:12",
+          "unitId": "mscs:7",
+          "index": 12,
+          "text": "Interrupts and I/O (conceptual)",
+          "sourceHash": "627fc972b8c1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:7:13",
+          "unitId": "mscs:7",
+          "index": 13,
+          "text": "x86 vs ARM as architecture families",
+          "sourceHash": "66e79455f1c0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:7:14",
+          "unitId": "mscs:7",
+          "index": 14,
+          "text": "Pipelining and multicore basics",
+          "sourceHash": "02c9cf053826",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "mscs:8",
+      "index": 8,
+      "title": "Operating systems",
+      "rangeLabel": "Nov 3-9",
+      "gate": "Explain a process, system call, and context switch accurately, then diagnose a simple race condition or deadlock scenario and explain how synchronization changes correctness and performance.",
+      "objectives": [
+        {
+          "id": "mscs:8:1",
+          "unitId": "mscs:8",
+          "index": 1,
+          "text": "Programs vs processes",
+          "sourceHash": "fcbbb8d6c470",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:8:2",
+          "unitId": "mscs:8",
+          "index": 2,
+          "text": "Process state",
+          "sourceHash": "58284a3ebd04",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:8:3",
+          "unitId": "mscs:8",
+          "index": 3,
+          "text": "System calls",
+          "sourceHash": "3891f450de01",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:8:4",
+          "unitId": "mscs:8",
+          "index": 4,
+          "text": "User mode vs kernel mode",
+          "sourceHash": "f9a6c256f865",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:8:5",
+          "unitId": "mscs:8",
+          "index": 5,
+          "text": "Context switching",
+          "sourceHash": "fea210f7e8b1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:8:6",
+          "unitId": "mscs:8",
+          "index": 6,
+          "text": "CPU scheduling",
+          "sourceHash": "5e66a50baf6b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:8:7",
+          "unitId": "mscs:8",
+          "index": 7,
+          "text": "Concurrency vs parallelism",
+          "sourceHash": "6dcdb0f16ef7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:8:8",
+          "unitId": "mscs:8",
+          "index": 8,
+          "text": "Container vs virtual machine",
+          "sourceHash": "b690af920b26",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:8:9",
+          "unitId": "mscs:8",
+          "index": 9,
+          "text": "Address spaces",
+          "sourceHash": "235ae2135c3a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:8:10",
+          "unitId": "mscs:8",
+          "index": 10,
+          "text": "Virtual memory",
+          "sourceHash": "e0254e4cd6df",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:8:11",
+          "unitId": "mscs:8",
+          "index": 11,
+          "text": "Paging",
+          "sourceHash": "a325388710d3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:8:12",
+          "unitId": "mscs:8",
+          "index": 12,
+          "text": "Threads",
+          "sourceHash": "3e42e385075b",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "go-02-worker-pool",
+            "coverage": "partial",
+            "note": "goroutines"
+          }
+        },
+        {
+          "id": "mscs:8:13",
+          "unitId": "mscs:8",
+          "index": 13,
+          "text": "Race conditions",
+          "sourceHash": "6d69d0327e1f",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "go-05-data-race",
+            "coverage": "full"
+          }
+        },
+        {
+          "id": "mscs:8:14",
+          "unitId": "mscs:8",
+          "index": 14,
+          "text": "Locks and mutexes",
+          "sourceHash": "6a86dbd3d040",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "go-05-data-race",
+            "coverage": "full"
+          }
+        },
+        {
+          "id": "mscs:8:15",
+          "unitId": "mscs:8",
+          "index": 15,
+          "text": "Condition variables",
+          "sourceHash": "15aeb2c94b00",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:8:16",
+          "unitId": "mscs:8",
+          "index": 16,
+          "text": "Semaphores",
+          "sourceHash": "3fc16255ea3d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:8:17",
+          "unitId": "mscs:8",
+          "index": 17,
+          "text": "Deadlocks and the four necessary conditions",
+          "sourceHash": "9b572d4b0d6b",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "go-02-worker-pool",
+            "coverage": "partial",
+            "note": "the four conditions are not taught"
+          }
+        },
+        {
+          "id": "mscs:8:18",
+          "unitId": "mscs:8",
+          "index": 18,
+          "text": "Basic file-system/persistence concepts",
+          "sourceHash": "660ff220a10b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "mscs:9",
+      "index": 9,
+      "title": "Databases and data systems",
+      "rangeLabel": "Nov 10-16",
+      "gate": "Select an appropriate data model for a new use case and explain transactional, indexing, consistency, and operational tradeoffs.",
+      "objectives": [
+        {
+          "id": "mscs:9:1",
+          "unitId": "mscs:9",
+          "index": 1,
+          "text": "Relational model",
+          "sourceHash": "0f7959014f8b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:9:2",
+          "unitId": "mscs:9",
+          "index": 2,
+          "text": "Primary/foreign keys",
+          "sourceHash": "91bdcd52b8b4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:9:3",
+          "unitId": "mscs:9",
+          "index": 3,
+          "text": "Normalization through 3NF",
+          "sourceHash": "82330254a13e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:9:4",
+          "unitId": "mscs:9",
+          "index": 4,
+          "text": "Indexes and B-trees",
+          "sourceHash": "a40e30ee55b9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:9:5",
+          "unitId": "mscs:9",
+          "index": 5,
+          "text": "Transactions and ACID",
+          "sourceHash": "8cf4e23e336d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:9:6",
+          "unitId": "mscs:9",
+          "index": 6,
+          "text": "Isolation levels",
+          "sourceHash": "73959d64b7de",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:9:7",
+          "unitId": "mscs:9",
+          "index": 7,
+          "text": "Locking and MVCC",
+          "sourceHash": "cc15648f989e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:9:8",
+          "unitId": "mscs:9",
+          "index": 8,
+          "text": "Query planning (conceptual)",
+          "sourceHash": "d368478d1d89",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:9:9",
+          "unitId": "mscs:9",
+          "index": 9,
+          "text": "Replication and partitioning",
+          "sourceHash": "627a3567cd83",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "incident-04-replica-lag",
+            "coverage": "partial",
+            "note": "replication only"
+          }
+        },
+        {
+          "id": "mscs:9:10",
+          "unitId": "mscs:9",
+          "index": 10,
+          "text": "Consistency/latency tradeoffs",
+          "sourceHash": "526405411a2a",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "design-02-command-ack",
+            "coverage": "full"
+          }
+        },
+        {
+          "id": "mscs:9:11",
+          "unitId": "mscs:9",
+          "index": 11,
+          "text": "Relational vs graph vs search-oriented systems",
+          "sourceHash": "bbe6c034555e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "mscs:10",
+      "index": 10,
+      "title": "Math & foundations for machine learning",
+      "rangeLabel": "Nov 17-23",
+      "gate": "Explain the mathematical role of vectors, similarity, probability, and gradients in plain language and apply them to small examples.",
+      "objectives": [
+        {
+          "id": "mscs:10:1",
+          "unitId": "mscs:10",
+          "index": 1,
+          "text": "Linear algebra: scalars/vectors/matrices, dot product, matrix multiplication, transpose, magnitude/distance, cosine similarity",
+          "sourceHash": "5a8ea34ddf55",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:10:2",
+          "unitId": "mscs:10",
+          "index": 2,
+          "text": "Probability & statistics: distributions, conditional probability, Bayes' theorem, expectation, variance, covariance/correlation",
+          "sourceHash": "4f2a2a5c424a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:10:3",
+          "unitId": "mscs:10",
+          "index": 3,
+          "text": "Calculus: derivative, partial derivative, gradient, learning rate, conceptual gradient descent",
+          "sourceHash": "d8b3618e3033",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:10:4",
+          "unitId": "mscs:10",
+          "index": 4,
+          "text": "ML concepts: supervised/unsupervised, classification/regression/clustering, features/labels, train/val/test, loss, overfitting/underfitting, bias/variance, embeddings, vector similarity, k-NN",
+          "sourceHash": "aaa7ce1ed351",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "mscs:11",
+      "index": 11,
+      "title": "Cybersecurity I: cryptography & secure protocols",
+      "rangeLabel": "Nov 24-30",
+      "gate": "Explain what a certificate chain actually proves, why hashing alone doesn't secure a password, and defend the choice of symmetric vs asymmetric encryption for a stated scenario.",
+      "objectives": [
+        {
+          "id": "mscs:11:1",
+          "unitId": "mscs:11",
+          "index": 1,
+          "text": "Symmetric vs asymmetric encryption, and why both exist together (e.g. TLS)",
+          "sourceHash": "14010881cc97",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:11:2",
+          "unitId": "mscs:11",
+          "index": 2,
+          "text": "Hashing vs encryption -- what each guarantees and what neither does",
+          "sourceHash": "56436a8bada9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:11:3",
+          "unitId": "mscs:11",
+          "index": 3,
+          "text": "Digital signatures and what they actually prove",
+          "sourceHash": "ec9676049a69",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:11:4",
+          "unitId": "mscs:11",
+          "index": 4,
+          "text": "Key exchange (Diffie-Hellman) at a conceptual level",
+          "sourceHash": "c32d1b981729",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:11:5",
+          "unitId": "mscs:11",
+          "index": 5,
+          "text": "What a TLS handshake establishes, step by step",
+          "sourceHash": "b64e06191ecb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:11:6",
+          "unitId": "mscs:11",
+          "index": 6,
+          "text": "PKI: certificates, certificate authorities, chains of trust",
+          "sourceHash": "8b7f0e52b8d1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "mscs:12",
+      "index": 12,
+      "title": "Cybersecurity II: network defense & threat modeling",
+      "rangeLabel": "Dec 1-7",
+      "gate": "Threat-model an unfamiliar system and defend which controls matter most, using the vocabulary a security course expects.",
+      "objectives": [
+        {
+          "id": "mscs:12:1",
+          "unitId": "mscs:12",
+          "index": 1,
+          "text": "TCP/IP layers and where common attacks target each one",
+          "sourceHash": "0c81a95af94b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:12:2",
+          "unitId": "mscs:12",
+          "index": 2,
+          "text": "Firewalls, IDS/IPS -- what each actually watches for",
+          "sourceHash": "53b88616d2e6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:12:3",
+          "unitId": "mscs:12",
+          "index": 3,
+          "text": "Defense-in-depth as a design principle, not a slogan",
+          "sourceHash": "d19ab174b7c1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:12:4",
+          "unitId": "mscs:12",
+          "index": 4,
+          "text": "STRIDE or a comparable threat-modeling framework",
+          "sourceHash": "a4b71ace48a1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:12:5",
+          "unitId": "mscs:12",
+          "index": 5,
+          "text": "Common attack classes (injection, XSS, buffer overflow) at a conceptual level",
+          "sourceHash": "741fca4f2db9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:12:6",
+          "unitId": "mscs:12",
+          "index": 6,
+          "text": "Security frameworks as an evaluation lens (NIST CSF / 800-53 families)",
+          "sourceHash": "9ec5e489e50f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "mscs:13",
+      "index": 13,
+      "title": "HCI/UX: usability, interaction design & user research",
+      "rangeLabel": "Dec 8-14",
+      "gate": "Apply the 10 heuristics to an unfamiliar interface without being told which ones are relevant and justify a concrete design change by name.",
+      "objectives": [
+        {
+          "id": "mscs:13:1",
+          "unitId": "mscs:13",
+          "index": 1,
+          "text": "Nielsen's 10 usability heuristics",
+          "sourceHash": "b0b4a9b7b1d7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:13:2",
+          "unitId": "mscs:13",
+          "index": 2,
+          "text": "Information architecture -- how structure shapes findability",
+          "sourceHash": "df4c99123fdc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:13:3",
+          "unitId": "mscs:13",
+          "index": 3,
+          "text": "Interaction design principles: affordance, feedback, consistency, error prevention",
+          "sourceHash": "034ef267f7b2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:13:4",
+          "unitId": "mscs:13",
+          "index": 4,
+          "text": "The gulf of execution vs the gulf of evaluation (Norman's model)",
+          "sourceHash": "8e71736adcf6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:13:5",
+          "unitId": "mscs:13",
+          "index": 5,
+          "text": "Why 'the user is wrong' is almost never the right diagnosis",
+          "sourceHash": "47fb24c9dfc0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:13:6",
+          "unitId": "mscs:13",
+          "index": 6,
+          "text": "Qualitative vs quantitative user research methods",
+          "sourceHash": "11a4ee0e4e46",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:13:7",
+          "unitId": "mscs:13",
+          "index": 7,
+          "text": "Personas and user journeys -- what they're for and their limits as evidence",
+          "sourceHash": "67b2d5c6aca1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:13:8",
+          "unitId": "mscs:13",
+          "index": 8,
+          "text": "Usability testing: think-aloud protocol, task success rate, time-on-task",
+          "sourceHash": "86198102f929",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:13:9",
+          "unitId": "mscs:13",
+          "index": 9,
+          "text": "Accessibility fundamentals (WCAG: perceivable, operable, understandable, robust)",
+          "sourceHash": "dc9e59a352ae",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:13:10",
+          "unitId": "mscs:13",
+          "index": 10,
+          "text": "What 'empirical evaluation' means in HCI -- evidence over opinion",
+          "sourceHash": "6f0c2c7796a8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "mscs:14",
+      "index": 14,
+      "title": "Big data systems & data mining",
+      "rangeLabel": "Dec 15-21",
+      "gate": "Explain why a MapReduce-shaped solution helps (or doesn't) for a stated problem, and distinguish 'data mining' from 'machine learning'.",
+      "objectives": [
+        {
+          "id": "mscs:14:1",
+          "unitId": "mscs:14",
+          "index": 1,
+          "text": "What actually makes data 'big' (volume/velocity/variety) vs just large",
+          "sourceHash": "488aa969c6b1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:14:2",
+          "unitId": "mscs:14",
+          "index": 2,
+          "text": "MapReduce as a programming model -- why it forces a certain shape onto a computation",
+          "sourceHash": "4346423b8a81",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:14:3",
+          "unitId": "mscs:14",
+          "index": 3,
+          "text": "Association rule mining and frequent itemsets",
+          "sourceHash": "8b4c6c0bd037",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:14:4",
+          "unitId": "mscs:14",
+          "index": 4,
+          "text": "Clustering and classification at scale -- what changes vs the small-data case",
+          "sourceHash": "4f858e4bddc4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:14:5",
+          "unitId": "mscs:14",
+          "index": 5,
+          "text": "Distributed storage and consistency tradeoffs revisited at data-mining scale",
+          "sourceHash": "f26f6ab7a081",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "mscs:15",
+      "index": 15,
+      "title": "Final integration",
+      "rangeLabel": "Dec 22-28",
+      "gate": "Defend the chosen architecture flow layer by layer -- 'AWS handles it' is never sufficient.",
+      "objectives": [
+        {
+          "id": "mscs:15:1",
+          "unitId": "mscs:15",
+          "index": 1,
+          "text": "Integrate algorithms, data structures, OS, architecture, and database theory into one architecture flow",
+          "sourceHash": "5904f90eda27",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:15:2",
+          "unitId": "mscs:15",
+          "index": 2,
+          "text": "Explain the flow through distributed systems, networking, authN/authZ, encryption, and trust boundaries",
+          "sourceHash": "bd7115bfa1b6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mscs:15:3",
+          "unitId": "mscs:15",
+          "index": 3,
+          "text": "Explain where threat modeling, usability, and a big-data/mining lens each apply to the same architecture",
+          "sourceHash": "90c30ec808b9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/data.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 15,
+    "objectives": 113,
+    "bookkeeping": 0,
+    "linked": 11
+  }
+}

@@ -3,6 +3,7 @@
 A browser-based engineering operations simulator and Amazon/AWS interview coach for a beginner who learns by doing.
 
 - **Missions** on a fictional company's infrastructure: a stateful Linux terminal simulator, real Python execution (Pyodide), interactive Big O labs, a security investigation and a CI pipeline repair. Progress is earned only by demonstrated work.
+- **Study**: twenty exam-style objective catalogs (eleven AWS certifications, nine core CS and security courses) from the Ascendra project, each objective labelled by how it is best learned here and linked to the mission that teaches it where one exists. Unofficial, not a credential; separate from skill mastery.
 - **Interview**: STAR Academy, all 16 Amazon Leadership Principles, a private Story Bank, guided/practice/realistic mock interviews with voice or text, a **Dive Deeper** interviewer that probes vague answers, and transparent coaching reports.
 - Everything runs locally in the browser. Two optional local services add Claude-powered coaching (without exposing an API key) and the Go race detector (which WebAssembly cannot run).
 

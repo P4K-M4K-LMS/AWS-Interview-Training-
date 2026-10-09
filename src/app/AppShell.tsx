@@ -6,7 +6,7 @@ import { stageInfo } from "../content/curriculum";
 
 /**
  * Navigation in three groups that follow the learning loop: learn (what to do
- * now, the curriculum, the missions), practise (free-play labs and the
+ * now, the curriculum, the missions, the study catalog), practise (free-play labs and the
  * interview coach), you (progress and settings). Plain names throughout.
  */
 export const NAV_GROUPS: Array<{ title: string; items: Array<{ to: string; label: string; icon: string; end?: boolean }> }> = [
@@ -16,6 +16,7 @@ export const NAV_GROUPS: Array<{ title: string; items: Array<{ to: string; label
       { to: "/", label: "Today", icon: "⌂", end: true },
       { to: "/curriculum", label: "Curriculum", icon: "⇶" },
       { to: "/missions", label: "Missions", icon: "◎" },
+      { to: "/study", label: "Study", icon: "▤" },
     ],
   },
   {

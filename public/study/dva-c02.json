@@ -1,0 +1,1112 @@
+{
+  "id": "dva-c02",
+  "code": "AWSDVA",
+  "title": "AWS Developer Associate",
+  "description": "AWS Certified Developer - Associate (DVA-C02): writing, securing, deploying, and debugging applications on AWS -- Lambda and event-driven code, DynamoDB access patterns, encryption and secrets, CI/CD deployment strategies, and observability when it breaks.",
+  "trackType": "certification",
+  "units": [
+    {
+      "id": "dva-c02:1",
+      "index": 1,
+      "title": "Development with AWS Services",
+      "weight": 32,
+      "gate": "Write a Lambda function that talks to DynamoDB and a queue, and explain every configuration choice you made -- memory, timeout, concurrency, partition key, retry behavior -- in terms of what would break without it.",
+      "objectives": [
+        {
+          "id": "dva-c02:1:1",
+          "unitId": "dva-c02:1",
+          "index": 1,
+          "text": "Architectural patterns in application code: event-driven, microservices, monolithic, choreography, orchestration, fanout",
+          "sourceHash": "78fac5ffaaa3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:1:2",
+          "unitId": "dva-c02:1",
+          "index": 2,
+          "text": "Stateful versus stateless components",
+          "sourceHash": "0370b3288095",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:1:3",
+          "unitId": "dva-c02:1",
+          "index": 3,
+          "text": "Tightly coupled versus loosely coupled components",
+          "sourceHash": "18a6be6d0c35",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:1:4",
+          "unitId": "dva-c02:1",
+          "index": 4,
+          "text": "Synchronous versus asynchronous patterns",
+          "sourceHash": "ba0cc1865906",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "go-02-worker-pool",
+            "coverage": "partial"
+          }
+        },
+        {
+          "id": "dva-c02:1:5",
+          "unitId": "dva-c02:1",
+          "index": 5,
+          "text": "Writing fault-tolerant, resilient application code in a high-level language",
+          "sourceHash": "c2a6d9dc2f1f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:1:6",
+          "unitId": "dva-c02:1",
+          "index": 6,
+          "text": "Creating, extending, and maintaining APIs: request and response transformations, validation rules, status code overrides",
+          "sourceHash": "a2339253ca57",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:1:7",
+          "unitId": "dva-c02:1",
+          "index": 7,
+          "text": "Writing and running unit tests in a development environment, including with AWS SAM",
+          "sourceHash": "757cc8f703a0",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "python-03-config-validator",
+            "coverage": "full"
+          }
+        },
+        {
+          "id": "dva-c02:1:8",
+          "unitId": "dva-c02:1",
+          "index": 8,
+          "text": "Writing code against messaging services",
+          "sourceHash": "60b1cd2bfb50",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "serverless-04-idempotent-handler",
+            "coverage": "full"
+          }
+        },
+        {
+          "id": "dva-c02:1:9",
+          "unitId": "dva-c02:1",
+          "index": 9,
+          "text": "Calling AWS services from code with the service APIs and the AWS SDKs",
+          "sourceHash": "f46c0adc4ee8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:1:10",
+          "unitId": "dva-c02:1",
+          "index": 10,
+          "text": "Handling streaming data with AWS services",
+          "sourceHash": "996e1094e79f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:1:11",
+          "unitId": "dva-c02:1",
+          "index": 11,
+          "text": "Implementing event-driven patterns with Amazon EventBridge",
+          "sourceHash": "3ed6d92596de",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:1:12",
+          "unitId": "dva-c02:1",
+          "index": 12,
+          "text": "Resilient integration with third-party services: retry logic, circuit breakers, error-handling patterns",
+          "sourceHash": "04ee5412647a",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "go-04-retries-idempotency",
+            "coverage": "partial",
+            "note": "retries with backoff and idempotency; timeouts in go-03"
+          }
+        },
+        {
+          "id": "dva-c02:1:13",
+          "unitId": "dva-c02:1",
+          "index": 13,
+          "text": "Using Amazon Q Developer to assist with development",
+          "sourceHash": "567497b29086",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:1:14",
+          "unitId": "dva-c02:1",
+          "index": 14,
+          "text": "Reaching private resources inside a VPC from Lambda code",
+          "sourceHash": "8a96b3be2e77",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:1:15",
+          "unitId": "dva-c02:1",
+          "index": 15,
+          "text": "Configuring a Lambda function: memory, concurrency, timeout, runtime, handler, layers, extensions, triggers, destinations",
+          "sourceHash": "274853fc2d02",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:1:16",
+          "unitId": "dva-c02:1",
+          "index": 16,
+          "text": "Environment variables and parameters in a Lambda function",
+          "sourceHash": "25318e010f66",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:1:17",
+          "unitId": "dva-c02:1",
+          "index": 17,
+          "text": "Handling the Lambda event lifecycle and errors: Lambda destinations and dead-letter queues",
+          "sourceHash": "a38584e1cbe5",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "serverless-02-poison-messages",
+            "coverage": "full"
+          }
+        },
+        {
+          "id": "dva-c02:1:18",
+          "unitId": "dva-c02:1",
+          "index": 18,
+          "text": "Writing and running test code for Lambda with AWS services and tools",
+          "sourceHash": "70e5a32b8e41",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:1:19",
+          "unitId": "dva-c02:1",
+          "index": 19,
+          "text": "Integrating Lambda functions with other AWS services",
+          "sourceHash": "6fa586f3c277",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:1:20",
+          "unitId": "dva-c02:1",
+          "index": 20,
+          "text": "Tuning a Lambda function for performance",
+          "sourceHash": "52a0849e00ef",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:1:21",
+          "unitId": "dva-c02:1",
+          "index": 21,
+          "text": "Processing and transforming data in near real time with Lambda",
+          "sourceHash": "1ae8f81e9265",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:1:22",
+          "unitId": "dva-c02:1",
+          "index": 22,
+          "text": "Amazon DynamoDB keys and indexing",
+          "sourceHash": "f537c7baadae",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:1:23",
+          "unitId": "dva-c02:1",
+          "index": 23,
+          "text": "High-cardinality partition keys, and why they keep partition access balanced",
+          "sourceHash": "91cbe33fa3ad",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:1:24",
+          "unitId": "dva-c02:1",
+          "index": 24,
+          "text": "Database consistency models: strongly consistent versus eventually consistent",
+          "sourceHash": "65ba257fcbae",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "design-02-command-ack",
+            "coverage": "full"
+          }
+        },
+        {
+          "id": "dva-c02:1:25",
+          "unitId": "dva-c02:1",
+          "index": 25,
+          "text": "Query versus scan, and the cost of reaching for scan",
+          "sourceHash": "540e88749150",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "bigo-03-structures",
+            "coverage": "partial",
+            "note": "hash lookup versus a full list walk"
+          }
+        },
+        {
+          "id": "dva-c02:1:26",
+          "unitId": "dva-c02:1",
+          "index": 26,
+          "text": "Serializing and deserializing data to persist it to a data store",
+          "sourceHash": "052f79efaab2",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "python-04-fleet-report",
+            "coverage": "full"
+          }
+        },
+        {
+          "id": "dva-c02:1:27",
+          "unitId": "dva-c02:1",
+          "index": 27,
+          "text": "Using, managing, and maintaining data stores, including data lifecycles",
+          "sourceHash": "8dd7a8e73757",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:1:28",
+          "unitId": "dva-c02:1",
+          "index": 28,
+          "text": "Using data caching services",
+          "sourceHash": "54b556cf8c62",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:1:29",
+          "unitId": "dva-c02:1",
+          "index": 29,
+          "text": "Choosing a specialized data store for an access pattern, such as Amazon OpenSearch Service",
+          "sourceHash": "00569b799949",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "dva-c02:2",
+      "index": 2,
+      "title": "Security",
+      "weight": 26,
+      "gate": "Given application code holding a secret, a token, and customer PII, say where each one should actually live, which AWS service holds it, and who can decrypt it.",
+      "objectives": [
+        {
+          "id": "dva-c02:2:1",
+          "unitId": "dva-c02:2",
+          "index": 1,
+          "text": "Federated access through an identity provider: Amazon Cognito and IAM",
+          "sourceHash": "17c13fa1fb61",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:2:2",
+          "unitId": "dva-c02:2",
+          "index": 2,
+          "text": "Securing applications with bearer tokens",
+          "sourceHash": "96399a05c6ee",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:2:3",
+          "unitId": "dva-c02:2",
+          "index": 3,
+          "text": "Configuring programmatic access to AWS",
+          "sourceHash": "c7d5e310bc4b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:2:4",
+          "unitId": "dva-c02:2",
+          "index": 4,
+          "text": "Making authenticated calls to AWS services from code",
+          "sourceHash": "650935af4725",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:2:5",
+          "unitId": "dva-c02:2",
+          "index": 5,
+          "text": "Assuming an IAM role from an application",
+          "sourceHash": "0ed24e9adad3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:2:6",
+          "unitId": "dva-c02:2",
+          "index": 6,
+          "text": "Defining permissions for IAM principals",
+          "sourceHash": "6897913e6795",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:2:7",
+          "unitId": "dva-c02:2",
+          "index": 7,
+          "text": "Application-level authorization for fine-grained access control",
+          "sourceHash": "eaf69672b323",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:2:8",
+          "unitId": "dva-c02:2",
+          "index": 8,
+          "text": "Cross-service authentication in a microservice architecture",
+          "sourceHash": "92fabb25107c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:2:9",
+          "unitId": "dva-c02:2",
+          "index": 9,
+          "text": "Encryption at rest and encryption in transit, defined precisely",
+          "sourceHash": "e897af8578c2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:2:10",
+          "unitId": "dva-c02:2",
+          "index": 10,
+          "text": "Certificate management, including AWS Private CA",
+          "sourceHash": "fc9e3f5c7808",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:2:11",
+          "unitId": "dva-c02:2",
+          "index": 11,
+          "text": "Client-side encryption versus server-side encryption",
+          "sourceHash": "cb6f0b3ec471",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:2:12",
+          "unitId": "dva-c02:2",
+          "index": 12,
+          "text": "Using encryption keys to encrypt and decrypt data",
+          "sourceHash": "6d2079b199bb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:2:13",
+          "unitId": "dva-c02:2",
+          "index": 13,
+          "text": "Generating certificates and SSH keys for development purposes",
+          "sourceHash": "41a703096490",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:2:14",
+          "unitId": "dva-c02:2",
+          "index": 14,
+          "text": "Using encryption across account boundaries",
+          "sourceHash": "8b1ef27c2dd2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:2:15",
+          "unitId": "dva-c02:2",
+          "index": 15,
+          "text": "Enabling and disabling key rotation",
+          "sourceHash": "cf764cf42b4c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:2:16",
+          "unitId": "dva-c02:2",
+          "index": 16,
+          "text": "Data classification: personally identifiable information and protected health information",
+          "sourceHash": "ec265563cb40",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:2:17",
+          "unitId": "dva-c02:2",
+          "index": 17,
+          "text": "Encrypting environment variables that contain sensitive data",
+          "sourceHash": "ec4e6f2a4f99",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:2:18",
+          "unitId": "dva-c02:2",
+          "index": 18,
+          "text": "Using secret management services rather than secrets in code",
+          "sourceHash": "de36a02c3d5a",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "devops-04-secret-wiring",
+            "coverage": "full"
+          }
+        },
+        {
+          "id": "dva-c02:2:19",
+          "unitId": "dva-c02:2",
+          "index": 19,
+          "text": "Sanitizing sensitive data, and application-level data masking",
+          "sourceHash": "d27d6738e2dc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:2:20",
+          "unitId": "dva-c02:2",
+          "index": 20,
+          "text": "Data access patterns for multi-tenant applications",
+          "sourceHash": "404a844868dd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "dva-c02:3",
+      "index": 3,
+      "title": "Deployment",
+      "weight": 24,
+      "gate": "Take a working application from a laptop to production through a pipeline: package it, template it, stage it, release it with a strategy you can name, and roll it back.",
+      "objectives": [
+        {
+          "id": "dva-c02:3:1",
+          "unitId": "dva-c02:3",
+          "index": 1,
+          "text": "Managing the code module's dependencies inside the package: environment variables, configuration files, container images",
+          "sourceHash": "b2eb3aafe3cb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:3:2",
+          "unitId": "dva-c02:3",
+          "index": 2,
+          "text": "Organizing files and directory structure for deployment",
+          "sourceHash": "93a5161f1119",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:3:3",
+          "unitId": "dva-c02:3",
+          "index": 3,
+          "text": "Using code repositories in deployment environments",
+          "sourceHash": "5bf9b261339a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:3:4",
+          "unitId": "dva-c02:3",
+          "index": 4,
+          "text": "Applying an application's resource requirements, such as memory and cores",
+          "sourceHash": "3a19adb8dd04",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:3:5",
+          "unitId": "dva-c02:3",
+          "index": 5,
+          "text": "Preparing environment-specific configuration, including with AWS AppConfig",
+          "sourceHash": "dd54cfa49ba2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:3:6",
+          "unitId": "dva-c02:3",
+          "index": 6,
+          "text": "Testing deployed code with AWS services and tools",
+          "sourceHash": "41a1994fe4f2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:3:7",
+          "unitId": "dva-c02:3",
+          "index": 7,
+          "text": "Writing integration tests and mocking APIs for external dependencies",
+          "sourceHash": "a259fd0c89e2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:3:8",
+          "unitId": "dva-c02:3",
+          "index": 8,
+          "text": "Testing against development endpoints, such as Amazon API Gateway stages",
+          "sourceHash": "69ba1416fd04",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:3:9",
+          "unitId": "dva-c02:3",
+          "index": 9,
+          "text": "Deploying stack updates to an existing environment, such as a SAM template to a different staging environment",
+          "sourceHash": "f1b2048a1a4e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:3:10",
+          "unitId": "dva-c02:3",
+          "index": 10,
+          "text": "Testing event-driven applications",
+          "sourceHash": "98f1135bb459",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:3:11",
+          "unitId": "dva-c02:3",
+          "index": 11,
+          "text": "Creating application test events: JSON payloads for Lambda, API Gateway, and SAM resources",
+          "sourceHash": "6d8ac0962085",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:3:12",
+          "unitId": "dva-c02:3",
+          "index": 12,
+          "text": "Deploying API resources to different environments",
+          "sourceHash": "95192239d684",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:3:13",
+          "unitId": "dva-c02:3",
+          "index": 13,
+          "text": "Approved-version environments for integration testing: Lambda aliases, container image tags, AWS Amplify branches, AWS Copilot environments",
+          "sourceHash": "78dfb37b07ff",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:3:14",
+          "unitId": "dva-c02:3",
+          "index": 14,
+          "text": "Implementing and deploying infrastructure as code: AWS SAM and AWS CloudFormation templates",
+          "sourceHash": "471cef5a8555",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:3:15",
+          "unitId": "dva-c02:3",
+          "index": 15,
+          "text": "Managing development, test, and production inside a single service such as API Gateway",
+          "sourceHash": "062ea978187c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:3:16",
+          "unitId": "dva-c02:3",
+          "index": 16,
+          "text": "Managing application environments across AWS services more broadly, not just within a single service",
+          "sourceHash": "9a975e395292",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:3:17",
+          "unitId": "dva-c02:3",
+          "index": 17,
+          "text": "Generating automated tests with Amazon Q Developer",
+          "sourceHash": "233453850328",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:3:18",
+          "unitId": "dva-c02:3",
+          "index": 18,
+          "text": "Lambda deployment packaging options",
+          "sourceHash": "697aef86b645",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:3:19",
+          "unitId": "dva-c02:3",
+          "index": 19,
+          "text": "API Gateway stages and custom domains",
+          "sourceHash": "fff4e63c5ae7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:3:20",
+          "unitId": "dva-c02:3",
+          "index": 20,
+          "text": "Updating existing infrastructure as code templates",
+          "sourceHash": "ad13e2efbe45",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:3:21",
+          "unitId": "dva-c02:3",
+          "index": 21,
+          "text": "Configuring deployment strategies: blue/green, canary, rolling",
+          "sourceHash": "6d82b0278888",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:3:22",
+          "unitId": "dva-c02:3",
+          "index": 22,
+          "text": "Committing code to a repository to invoke build, test, and deployment actions",
+          "sourceHash": "b4ff6c301d65",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "devops-01-broken-pipeline",
+            "coverage": "full"
+          }
+        },
+        {
+          "id": "dva-c02:3:23",
+          "unitId": "dva-c02:3",
+          "index": 23,
+          "text": "Using orchestrated workflows to deploy code to different environments",
+          "sourceHash": "f784d8a806b3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:3:24",
+          "unitId": "dva-c02:3",
+          "index": 24,
+          "text": "Rolling an application back using an existing deployment strategy",
+          "sourceHash": "18c95ec3d436",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "devops-03-bad-release-rollback",
+            "coverage": "full"
+          }
+        },
+        {
+          "id": "dva-c02:3:25",
+          "unitId": "dva-c02:3",
+          "index": 25,
+          "text": "Labels and branches for version and release management",
+          "sourceHash": "c75297256823",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:3:26",
+          "unitId": "dva-c02:3",
+          "index": 26,
+          "text": "Dynamic deployments driven by runtime configuration, such as API Gateway stage variables in Lambda",
+          "sourceHash": "d61b3dde5fcd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "dva-c02:4",
+      "index": 4,
+      "title": "Troubleshooting and Optimization",
+      "weight": 18,
+      "gate": "Given a slow or failing application, find the cause from metrics, logs, and traces -- then name the specific optimization and the number you expect it to move.",
+      "objectives": [
+        {
+          "id": "dva-c02:4:1",
+          "unitId": "dva-c02:4",
+          "index": 1,
+          "text": "Debugging code to identify defects",
+          "sourceHash": "ab660fce69f2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:4:2",
+          "unitId": "dva-c02:4",
+          "index": 2,
+          "text": "Interpreting application metrics, logs, and traces together",
+          "sourceHash": "e012fa7824ed",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:4:3",
+          "unitId": "dva-c02:4",
+          "index": 3,
+          "text": "Querying logs to find the relevant data",
+          "sourceHash": "cf8ce277c158",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "linux-02-log-detective",
+            "coverage": "full"
+          }
+        },
+        {
+          "id": "dva-c02:4:4",
+          "unitId": "dva-c02:4",
+          "index": 4,
+          "text": "Implementing custom metrics, including the CloudWatch embedded metric format",
+          "sourceHash": "eccdc46ccceb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:4:5",
+          "unitId": "dva-c02:4",
+          "index": 5,
+          "text": "Reviewing application health with dashboards and insights",
+          "sourceHash": "68dd4c9ff41c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:4:6",
+          "unitId": "dva-c02:4",
+          "index": 6,
+          "text": "Troubleshooting deployment failures from service output logs",
+          "sourceHash": "2d57cb06a206",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:4:7",
+          "unitId": "dva-c02:4",
+          "index": 7,
+          "text": "Debugging service integration issues",
+          "sourceHash": "411313a62331",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:4:8",
+          "unitId": "dva-c02:4",
+          "index": 8,
+          "text": "Logging, monitoring, and observability as three different things",
+          "sourceHash": "b4483300e664",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:4:9",
+          "unitId": "dva-c02:4",
+          "index": 9,
+          "text": "An effective logging strategy that records application behavior and state",
+          "sourceHash": "161bcae1473d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:4:10",
+          "unitId": "dva-c02:4",
+          "index": 10,
+          "text": "Structured logging for application events and user actions",
+          "sourceHash": "c0be3ce40a5f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:4:11",
+          "unitId": "dva-c02:4",
+          "index": 11,
+          "text": "Emitting custom metrics from application code",
+          "sourceHash": "d04523377c34",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:4:12",
+          "unitId": "dva-c02:4",
+          "index": 12,
+          "text": "Adding annotations for tracing services",
+          "sourceHash": "44c7a43c54f4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:4:13",
+          "unitId": "dva-c02:4",
+          "index": 13,
+          "text": "Implementing tracing with AWS services and tools",
+          "sourceHash": "a6b78e9d8187",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:4:14",
+          "unitId": "dva-c02:4",
+          "index": 14,
+          "text": "Notification alerts for specific events, such as quota limits or deployment completion",
+          "sourceHash": "5d17b3c5cd52",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:4:15",
+          "unitId": "dva-c02:4",
+          "index": 15,
+          "text": "Configuring application health checks and readiness probes",
+          "sourceHash": "b31fdf0022df",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:4:16",
+          "unitId": "dva-c02:4",
+          "index": 16,
+          "text": "Concurrency, defined and then configured",
+          "sourceHash": "3ae53a84e050",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "go-05-data-race",
+            "coverage": "partial",
+            "note": "defined here; configured in serverless-01"
+          }
+        },
+        {
+          "id": "dva-c02:4:17",
+          "unitId": "dva-c02:4",
+          "index": 17,
+          "text": "Profiling application performance",
+          "sourceHash": "53a2fce1eeed",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:4:18",
+          "unitId": "dva-c02:4",
+          "index": 18,
+          "text": "Determining the minimum memory and compute an application needs",
+          "sourceHash": "b70a12b2e498",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:4:19",
+          "unitId": "dva-c02:4",
+          "index": 19,
+          "text": "Subscription filter policies to optimize messaging",
+          "sourceHash": "989f68851591",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:4:20",
+          "unitId": "dva-c02:4",
+          "index": 20,
+          "text": "Caching content based on request headers",
+          "sourceHash": "1987e3a955e2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:4:21",
+          "unitId": "dva-c02:4",
+          "index": 21,
+          "text": "Application-level caching for performance",
+          "sourceHash": "27c9e7ab68a0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:4:22",
+          "unitId": "dva-c02:4",
+          "index": 22,
+          "text": "Optimizing application resource usage",
+          "sourceHash": "6e60073a84f3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dva-c02:4:23",
+          "unitId": "dva-c02:4",
+          "index": 23,
+          "text": "Analyzing performance issues and finding bottlenecks in application logs",
+          "sourceHash": "32bb21e6043c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/aws.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-18T00:00:00Z",
+    "officialObjectivesUrl": "https://docs.aws.amazon.com/aws-certification/latest/developer-associate-02/developer-associate-02.html",
+    "providerName": "Amazon Web Services",
+    "credentialName": "AWS Certified Developer - Associate",
+    "examCode": "DVA-C02",
+    "credentialStatus": "transitioning",
+    "retirementDate": "2026-12-01",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 4,
+    "objectives": 98,
+    "bookkeeping": 0,
+    "linked": 13
+  }
+}

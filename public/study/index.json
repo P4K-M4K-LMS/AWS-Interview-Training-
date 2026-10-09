@@ -1,0 +1,494 @@
+{
+  "schemaVersion": 1,
+  "builtFrom": {
+    "sourceRepo": "ascendra",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48"
+  },
+  "courses": [
+    {
+      "id": "clf-c02",
+      "code": "AWSCLF",
+      "title": "AWS Cloud Practitioner",
+      "description": "AWS Certified Cloud Practitioner (CLF-C02): the whole AWS Cloud at a working vocabulary level -- value and economics, security and compliance, the core service catalog, and how billing and support actually work.",
+      "trackType": "certification",
+      "group": "aws",
+      "examCode": "CLF-C02",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 4,
+        "objectives": 80,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 80,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "clf-c02.json",
+      "hash": "adf47901260bf41f"
+    },
+    {
+      "id": "aif-c01",
+      "code": "AWSAIF",
+      "title": "AWS AI Practitioner",
+      "description": "AWS Certified AI Practitioner (AIF-C01): AI, ML, and generative AI on AWS for the person who uses these systems rather than builds them -- foundation models, prompt engineering, RAG and agents, responsible AI, and the security and governance around it all.",
+      "trackType": "certification",
+      "group": "aws",
+      "examCode": "AIF-C01",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 5,
+        "objectives": 79,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 79,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "aif-c01.json",
+      "hash": "cd86522d3ff1e983"
+    },
+    {
+      "id": "saa-c03",
+      "code": "AWSSAA",
+      "title": "AWS Solutions Architect Associate",
+      "description": "AWS Certified Solutions Architect - Associate (SAA-C03): designing solutions against the Well-Architected Framework -- secure, resilient, high-performing, and cost-optimized architectures, and knowing which trade-off a requirement is really asking for.",
+      "trackType": "certification",
+      "group": "aws",
+      "examCode": "SAA-C03",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 4,
+        "objectives": 99,
+        "bookkeeping": 0,
+        "linked": 6
+      },
+      "modalities": {
+        "do-existing": 6,
+        "do-new": 0,
+        "read": 93,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "saa-c03.json",
+      "hash": "5ad6cf9c2c982fcd"
+    },
+    {
+      "id": "dva-c02",
+      "code": "AWSDVA",
+      "title": "AWS Developer Associate",
+      "description": "AWS Certified Developer - Associate (DVA-C02): writing, securing, deploying, and debugging applications on AWS -- Lambda and event-driven code, DynamoDB access patterns, encryption and secrets, CI/CD deployment strategies, and observability when it breaks.",
+      "trackType": "certification",
+      "group": "aws",
+      "examCode": "DVA-C02",
+      "credentialStatus": "transitioning",
+      "retirementDate": "2026-12-01",
+      "counts": {
+        "units": 4,
+        "objectives": 98,
+        "bookkeeping": 0,
+        "linked": 13
+      },
+      "modalities": {
+        "do-existing": 13,
+        "do-new": 0,
+        "read": 85,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "dva-c02.json",
+      "hash": "351ec92a80bf4f4b"
+    },
+    {
+      "id": "soa-c03",
+      "code": "AWSSOA",
+      "title": "AWS CloudOps Engineer Associate",
+      "description": "AWS Certified CloudOps Engineer - Associate (SOA-C03), formerly SysOps Administrator - Associate: running workloads day to day -- monitoring and remediation, reliability and backups, provisioning and automation, security and compliance, and networking when the packets do not arrive.",
+      "trackType": "certification",
+      "group": "aws",
+      "examCode": "SOA-C03",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 5,
+        "objectives": 59,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 59,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "soa-c03.json",
+      "hash": "6325286743ccae1f"
+    },
+    {
+      "id": "dea-c01",
+      "code": "AWSDEA",
+      "title": "AWS Data Engineer Associate",
+      "description": "AWS Certified Data Engineer - Associate (DEA-C01): building data pipelines that survive production -- ingestion and transformation, choosing and cataloging data stores, operating and monitoring pipelines, and the security and governance around the data itself.",
+      "trackType": "certification",
+      "group": "aws",
+      "examCode": "DEA-C01",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 4,
+        "objectives": 113,
+        "bookkeeping": 0,
+        "linked": 1
+      },
+      "modalities": {
+        "do-existing": 1,
+        "do-new": 0,
+        "read": 112,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "dea-c01.json",
+      "hash": "e41775a3a76ce839"
+    },
+    {
+      "id": "mla-c02",
+      "code": "AWSMLA",
+      "title": "AWS Machine Learning Engineer Associate",
+      "description": "AWS Certified Machine Learning Engineer - Associate (MLA-C02): building and running ML and generative AI systems on AWS -- data preparation, training and fine-tuning, deploying models, agents and RAG pipelines, and then monitoring, costing, and securing all of it in production.",
+      "trackType": "certification",
+      "group": "aws",
+      "examCode": "MLA-C02",
+      "credentialStatus": "beta",
+      "counts": {
+        "units": 4,
+        "objectives": 107,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 107,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "mla-c02.json",
+      "hash": "914f2cfa9f5bea17"
+    },
+    {
+      "id": "sap-c02",
+      "code": "AWSSAP",
+      "title": "AWS Solutions Architect Professional",
+      "description": "AWS Certified Solutions Architect - Professional (SAP-C02): architecture at organizational scale -- multi-account governance and hybrid networking, designing new solutions across all five pillars, continuously improving what already runs, and migrating and modernizing existing workloads.",
+      "trackType": "certification",
+      "group": "aws",
+      "examCode": "SAP-C02",
+      "credentialStatus": "transitioning",
+      "retirementDate": "2026-11-17",
+      "counts": {
+        "units": 4,
+        "objectives": 113,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 113,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "sap-c02.json",
+      "hash": "9f72893507e37b6d"
+    },
+    {
+      "id": "dop-c02",
+      "code": "AWSDOP",
+      "title": "AWS DevOps Engineer Professional",
+      "description": "AWS Certified DevOps Engineer - Professional (DOP-C02): automating the whole delivery path -- CI/CD pipelines and artifacts, infrastructure as code across many accounts, resilient and scalable systems, monitoring and logging, incident response, and security controls applied by machine rather than by hand.",
+      "trackType": "certification",
+      "group": "aws",
+      "examCode": "DOP-C02",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 6,
+        "objectives": 114,
+        "bookkeeping": 0,
+        "linked": 3
+      },
+      "modalities": {
+        "do-existing": 3,
+        "do-new": 0,
+        "read": 111,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "dop-c02.json",
+      "hash": "1494dce9c4d28a59"
+    },
+    {
+      "id": "scs-c03",
+      "code": "AWSSCS",
+      "title": "AWS Security Specialty",
+      "description": "AWS Certified Security - Specialty (SCS-C03): securing AWS at depth -- detection and logging pipelines, incident response and forensics, infrastructure and network controls, identity and authorization at scale, data protection and key management, and multi-account governance.",
+      "trackType": "certification",
+      "group": "aws",
+      "examCode": "SCS-C03",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 6,
+        "objectives": 70,
+        "bookkeeping": 0,
+        "linked": 2
+      },
+      "modalities": {
+        "do-existing": 2,
+        "do-new": 0,
+        "read": 68,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "scs-c03.json",
+      "hash": "551e6b767f0093f4"
+    },
+    {
+      "id": "ans-c01",
+      "code": "AWSANS",
+      "title": "AWS Advanced Networking Specialty",
+      "description": "AWS Certified Advanced Networking - Specialty (ANS-C01): hybrid and cloud networking at scale -- designing edge, DNS, load balancing and hybrid routing, implementing it across accounts and Regions, operating and troubleshooting it, and securing it. Note that this exam retires 2026-12-31.",
+      "trackType": "certification",
+      "group": "aws",
+      "examCode": "ANS-C01",
+      "credentialStatus": "transitioning",
+      "retirementDate": "2026-12-31",
+      "counts": {
+        "units": 4,
+        "objectives": 109,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 109,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "ans-c01.json",
+      "hash": "79a890f1b3d61dc5"
+    },
+    {
+      "id": "mscs",
+      "code": "MSCS",
+      "title": "MSCS Foundations",
+      "description": "15-week graduate-CS bridge covering algorithms, data structures, discrete math, OS, computer architecture, database theory, ML math, cybersecurity, HCI/UX, and big data.",
+      "trackType": "graduate",
+      "group": "core",
+      "counts": {
+        "units": 15,
+        "objectives": 113,
+        "bookkeeping": 0,
+        "linked": 11
+      },
+      "modalities": {
+        "do-existing": 11,
+        "do-new": 0,
+        "read": 102,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "mscs.json",
+      "hash": "dbfdb74716dbeac2"
+    },
+    {
+      "id": "python",
+      "code": "PYTHON",
+      "title": "Python Programming",
+      "description": "9-week intro-to-advanced Python progression: syntax and control flow through OOP, the standard library, functional patterns, testing/typing, and concurrency.",
+      "trackType": "graduate",
+      "group": "core",
+      "counts": {
+        "units": 9,
+        "objectives": 50,
+        "bookkeeping": 0,
+        "linked": 8
+      },
+      "modalities": {
+        "do-existing": 8,
+        "do-new": 0,
+        "read": 42,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "python.json",
+      "hash": "125e5b739ccb40db"
+    },
+    {
+      "id": "javascript",
+      "code": "JAVASCRIPT",
+      "title": "JavaScript Programming",
+      "description": "9-week intro-to-advanced JavaScript progression: syntax and the DOM through async patterns, ES6+, prototypes, testing/tooling, and Node.js.",
+      "trackType": "graduate",
+      "group": "core",
+      "counts": {
+        "units": 9,
+        "objectives": 45,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 45,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "javascript.json",
+      "hash": "99e39c627973a763"
+    },
+    {
+      "id": "secplus",
+      "code": "SECPLUS",
+      "title": "Security+",
+      "description": "CompTIA Security+ SY0-701 exam prep across 5 weighted domains, with PBQ scenario drilling.",
+      "trackType": "certification",
+      "group": "core",
+      "counts": {
+        "units": 5,
+        "objectives": 36,
+        "bookkeeping": 0,
+        "linked": 4
+      },
+      "modalities": {
+        "do-existing": 4,
+        "do-new": 0,
+        "read": 32,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "secplus.json",
+      "hash": "6d9155addc0aa37b"
+    },
+    {
+      "id": "linuxplus",
+      "code": "LINUXPLUS",
+      "title": "Linux+",
+      "description": "CompTIA Linux+ XK0-006 exam prep across 5 weighted domains, with hands-on shell labs.",
+      "trackType": "certification",
+      "group": "core",
+      "counts": {
+        "units": 5,
+        "objectives": 31,
+        "bookkeeping": 0,
+        "linked": 9
+      },
+      "modalities": {
+        "do-existing": 9,
+        "do-new": 0,
+        "read": 22,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "linuxplus.json",
+      "hash": "d64e24b50f940f02"
+    },
+    {
+      "id": "cysaplus",
+      "code": "CYSAPLUS",
+      "title": "CySA+",
+      "description": "CompTIA CySA+ CS0-003 exam prep across 4 weighted domains, with SOC-analyst drilling.",
+      "trackType": "certification",
+      "group": "core",
+      "counts": {
+        "units": 4,
+        "objectives": 22,
+        "bookkeeping": 0,
+        "linked": 4
+      },
+      "modalities": {
+        "do-existing": 4,
+        "do-new": 0,
+        "read": 18,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "cysaplus.json",
+      "hash": "d77952d8f5f79a7c"
+    },
+    {
+      "id": "pentestplus",
+      "code": "PENTESTPLUS",
+      "title": "PenTest+",
+      "description": "CompTIA PenTest+ PT0-003 exam prep across 5 weighted domains, with authorized lab-environment drilling.",
+      "trackType": "certification",
+      "group": "core",
+      "counts": {
+        "units": 5,
+        "objectives": 22,
+        "bookkeeping": 0,
+        "linked": 1
+      },
+      "modalities": {
+        "do-existing": 1,
+        "do-new": 0,
+        "read": 21,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "pentestplus.json",
+      "hash": "ca66c8286b1af6df"
+    },
+    {
+      "id": "securityx",
+      "code": "SECURITYX",
+      "title": "SecurityX",
+      "description": "CompTIA SecurityX CAS-005 exam prep across 4 weighted domains for enterprise security architecture and engineering.",
+      "trackType": "certification",
+      "group": "core",
+      "counts": {
+        "units": 4,
+        "objectives": 19,
+        "bookkeeping": 0,
+        "linked": 1
+      },
+      "modalities": {
+        "do-existing": 1,
+        "do-new": 0,
+        "read": 18,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "securityx.json",
+      "hash": "ddf0efd3ca5134e6"
+    },
+    {
+      "id": "cmpcbs",
+      "code": "CMPCBS",
+      "title": "Computational Math: CS Degree",
+      "description": "Liberty University's 2026-2027 BS in Computational Mathematics: Computer Science degree completion plan (120 credits) -- gen ed, Christianity core, and the full math/CS major sequence, mirrored from the official plan.",
+      "trackType": "graduate",
+      "group": "core",
+      "counts": {
+        "units": 28,
+        "objectives": 102,
+        "bookkeeping": 20,
+        "linked": 3
+      },
+      "modalities": {
+        "do-existing": 3,
+        "do-new": 0,
+        "read": 99,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "cmpcbs.json",
+      "hash": "84b351438fcffaf5"
+    }
+  ]
+}
