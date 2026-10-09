@@ -6,7 +6,9 @@ import { ENGINE_BY_ID } from "../../content/study/engines";
 import { MODALITY_LABELS } from "../../content/study/links";
 import { useStudyCourse, useStudyLessons } from "../../services/study/catalog";
 import { orderObjectives } from "../../engine/study/select";
-import { useProfile } from "../../data/hooks";
+import { useProfile, useStudyUnitStates } from "../../data/hooks";
+import { ScenarioPlayer } from "../../components/study/ScenarioPlayer";
+import { DEFAULT_SETTINGS } from "../../data/db";
 import { useStudyStates } from "../../data/hooks";
 import { STUDY_STATUS_LABELS, STUDY_STATUS_MEANING, courseReadiness, statusCap } from "../../engine/study/mastery";
 import type { StudyObjective, StudyObjectiveState } from "../../domain/types";
@@ -63,6 +65,7 @@ export function StudyUnitPage() {
   const course = useStudyCourse(courseId);
   const lessons = useStudyLessons(courseId);
   const states = useStudyStates();
+  const unitStates = useStudyUnitStates();
   const profile = useProfile();
   if (course.status === "loading") return <p className="muted text-sm">Loading the unit…</p>;
   if (course.status === "error") {
@@ -88,6 +91,7 @@ export function StudyUnitPage() {
   const style = profile?.settings.studyStyle;
   const learnable = orderObjectives(unit.objectives.filter((o) => o.kind === "objective"), style);
   const lessonIds = new Set(lessons.status === "ready" ? (lessons.data?.lessons ?? []).map((l) => l.objectiveId) : []);
+  const scenario = lessons.status === "ready" ? lessons.data?.scenarios.find((s) => s.unitId === unit.id) : undefined;
   const engine = unit.gateEngine ? ENGINE_BY_ID.get(unit.gateEngine) : undefined;
   const unitReadiness = courseReadiness({ units: [unit] }, states);
   return (
@@ -122,6 +126,7 @@ export function StudyUnitPage() {
           <p className="muted text-xs mt-3">Status follows the 0–4 rubric: a mission credit reaches Guided, open answers you rate yourself reach Independent, Transfer-ready needs two answers graded by the proxy. Lessons and check questions arrive with the generated content; the mission links work today.</p>
         </Panel>
       )}
+      {scenario && learnable.length > 0 && <ScenarioPlayer scenario={scenario} state={unitStates.get(unit.id)} settings={profile?.settings ?? DEFAULT_SETTINGS} />}
       {bookkeeping.length > 0 && (
         <details className="panel p-3" data-testid="study-bookkeeping">
           <summary className="cursor-pointer text-sm">

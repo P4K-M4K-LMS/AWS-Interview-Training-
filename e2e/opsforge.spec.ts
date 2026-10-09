@@ -711,7 +711,18 @@ test("study lesson loop: guess, read, check, explain it back; status moves and t
         rubricPoints: ["Reads move off the primary", "Replication lag means stale reads"],
       },
     ],
-    scenarios: [],
+    scenarios: [
+      {
+        unitId: "saa-c03:2",
+        promptVersion: 1,
+        model: "fixture-model",
+        generatedAt: "2026-10-09T00:00:00.000Z",
+        title: "Stale map after a surge",
+        scenario: "Dispatchers at a fictional courier see positions a minute old while writes succeed. 1. Name the likely cause. 2. Say what you would check first. 3. Say what you would not do.",
+        subParts: ["Likely cause", "First check", "What not to do"],
+        modelAnswer: ["Replication lag on the read replica.", "The replica's apply lag and any blocking statement.", "Fail over to the lagging replica."],
+      },
+    ],
   };
   await page.route("**/study/saa-c03.lessons.json", (route) => route.fulfill({ status: 200, contentType: "application/json", body: JSON.stringify(fixture) }));
   await page.goto("/#/study/saa-c03/2");
@@ -752,6 +763,17 @@ test("study lesson loop: guess, read, check, explain it back; status moves and t
   await expect(page.getByTestId("question-verdict")).toContainText("scheduled for tomorrow");
   await page.goto("/#/study/saa-c03/2");
   await expect(page.getByTestId("study-status-12")).toContainText("Independent");
+  // Unit scenario without a proxy: the model answers are revealed and the learner self-checks each sub-part.
+  await expect(page.getByTestId("scenario-text")).toContainText("1. Name the likely cause");
+  await page.getByTestId("scenario-input").fill("The replica is lagging behind the primary. I would look at the apply lag and whether a long query blocks it. I would not fail over to the lagging copy.");
+  await page.getByTestId("scenario-submit").click();
+  await expect(page.getByTestId("scenario-self-note")).toContainText("rate your own answer");
+  await page.getByTestId("scenario-check-1").check();
+  await page.getByTestId("scenario-check-2").check();
+  await page.getByTestId("scenario-save").click();
+  await expect(page.getByTestId("scenario-saved")).toContainText("partial");
+  await page.reload();
+  await expect(page.getByTestId("scenario-last")).toContainText("partial (self-checked)");
   // Study style reorders the unit: doing first puts the linked objectives at the top.
   await page.goto("/#/settings");
   await page.getByTestId("study-style-doing").click();

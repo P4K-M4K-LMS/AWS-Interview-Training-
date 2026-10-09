@@ -6,6 +6,7 @@ import { MODALITY_HELP, MODALITY_LABELS } from "../../content/study/links";
 import { useProfile, useStudyStates } from "../../data/hooks";
 import { effectiveExplanationLevel } from "../../engine/learner/explanation";
 import { useStudyCourse, useStudyLessons } from "../../services/study/catalog";
+import { DEFAULT_SETTINGS } from "../../data/db";
 
 /** One objective: its lesson loop when generated content exists, otherwise what to do instead. */
 export function StudyObjectivePage() {
@@ -54,7 +55,7 @@ export function StudyObjectivePage() {
           {lessons.message}
         </Callout>
       ) : lesson ? (
-        <LessonLoopPlayer objective={objective} lesson={lesson} state={state} level={effectiveExplanationLevel(profile)} review={review} generatedBy={{ model: lesson.model, generatedAt: lesson.generatedAt }} />
+        <LessonLoopPlayer objective={objective} lesson={lesson} state={state} level={effectiveExplanationLevel(profile)} review={review} generatedBy={{ model: lesson.model, generatedAt: lesson.generatedAt }} settings={profile?.settings ?? DEFAULT_SETTINGS} />
       ) : (
         <Callout kind="warn" title="No lesson generated yet">
           <span data-testid="no-lesson">The owner has not generated this course's lessons yet (see docs/STUDY_GENERATION.md).</span>
