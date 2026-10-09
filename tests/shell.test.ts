@@ -119,6 +119,16 @@ describe("Shell basics", () => {
     expect(sh.execute("ps aux").stdout).toContain("/usr/sbin/app");
   });
 
+  it("sed uses basic regular expressions and substitutes once per line like real sed", () => {
+    const sh = new Shell(world);
+    sh.execute("echo 'x = now()' > s.py; echo 'y = now()' >> s.py; echo 'z = now() + now()' >> s.py");
+    expect(sh.execute("sed -i 's/now()/now(utc)/' s.py && cat s.py").stdout).toBe("x = now(utc)\ny = now(utc)\nz = now(utc) + now()\n");
+    expect(sh.execute("sed 's/now(utc)/T/g' s.py").stdout).toBe("x = T\ny = T\nz = T + now()\n");
+    expect(sh.execute("echo 'a{1}' | sed 's/a{1}/ok/'").stdout).toBe("ok\n");
+    expect(sh.execute("echo 'aaa' | sed 's/a\\+/b/'").stdout).toBe("b\n");
+    expect(sh.execute("echo 'ab' | sed 's/\\(a\\)b/\\1c/'").stdout).toBe("ac\n");
+  });
+
   it("reports unsupported commands honestly and documents the subset", () => {
     const sh = new Shell(world);
     const r = sh.execute("docker ps");

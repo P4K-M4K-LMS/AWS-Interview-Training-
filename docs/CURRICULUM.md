@@ -36,9 +36,12 @@ Nothing here claims to satisfy a degree or certification requirement, and no job
 | 8 | Harden a config loader (errors + tests) | Python | 5 | errors, testing |
 | 9 | Logarithms and sorting | Algorithms | 4 | search, sorting, optimization |
 | 10 | The build is red: repair a CI pipeline | DevOps | 6 | git, testing, cicd, permissions |
-| 11 | Incident: positions API slow after the deploy (cache stampede) | DevOps | 10 | monitoring, architecture |
-| 12 | Incident: capacity exhausted during a traffic surge | Distributed | 11 | performance, scaling |
-| 13 | Incident: the job queue is growing (dead consumers) | Distributed | 12 | queues, release |
+| 11 | Green on my laptop, red in CI: fix a flaky test properly | DevOps | 10 | testing, cicd |
+| 12 | Bad release: roll back fast, then fix forward | DevOps | 11 | release, monitoring |
+| 13 | Deploy cannot authenticate: fix the secret wiring | DevOps | 12 | config, authz |
+| 14 | Incident: positions API slow after the deploy (cache stampede) | DevOps | 10 | monitoring, architecture |
+| 15 | Incident: capacity exhausted during a traffic surge | Distributed | 14 | performance, scaling |
+| 16 | Incident: the job queue is growing (dead consumers) | Distributed | 15 | queues, release |
 
 ## Planned missions (not built)
 
@@ -46,7 +49,7 @@ Nothing here claims to satisfy a degree or certification requirement, and no job
 - Python: JSON/CSV report generator; regex log extractor; API client with retries; unit-test a buggy module; async fetcher.
 - Algorithms: hash table vs list for lookups; recursion and stack depth; BFS over a service graph.
 - Net/Sec: firewall triage; suspicious cron; web log anomaly hunt; hardening checklist.
-- DevOps: rollback a bad release; alert that never fired; container that will not start.
+- DevOps: alert that never fired; container that will not start; dependency pin drift.
 - Distributed: race condition in a worker; retry storm and idempotency; replication lag; cache invalidation.
 
 ## Assessment and progression rules

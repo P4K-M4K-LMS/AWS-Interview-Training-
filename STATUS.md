@@ -2,7 +2,7 @@
 
 Resume-from-here document for multi-session work. Update on every phase.
 
-**Last updated:** 2026-10-09 · branch `phase7-incidents` (PRs #1-#3 merged; site live at https://paukennick.github.io/AWS-Interview-Training-/)
+**Last updated:** 2026-10-09 · branch `cicd-failure-modes` (PRs #1-#4 merged; site live at https://paukennick.github.io/AWS-Interview-Training-/)
 
 ## Decisions (do not re-litigate without reason)
 
@@ -62,19 +62,20 @@ Legend: **verified** = automated tests pass in CI · **unverified** = implemente
 | Monitoring dashboard (shared simulation engine) | verified (unit tests) |
 | Incident management console + 3 incident missions (cache stampede, traffic surge, dead consumers) | verified (unit tests prove solvable and reject symptom-only fixes; e2e on incident 1) |
 | System architecture visualizer with live health | verified (e2e) |
-| CI/CD failure modes, concurrency/race, retries/idempotency, replication lag simulations | planned |
+| CI/CD failure-mode missions: flaky test, bad release rollback, secret wiring (simulated pipeline runner, mission tools) | verified (unit tests prove solvable and reject shortcuts; e2e on the flaky-test mission) |
+| Concurrency/race, retries/idempotency, replication lag simulations | planned |
 | Remaining track content (see docs/CURRICULUM.md) | planned |
 | Full accessibility audit | planned (skip link, labels, keyboard nav exist) |
 
 ## Known limitations
 
 - Mission availability depends only on prerequisite missions (fixed 2026-10-09: skill-prerequisite gating could lock a mission behind the skill it teaches). Skill mastery gates stage promotion.
-- The terminal is a simulation: no globbing, loops, functions or package managers.
+- The terminal is a simulation: no globbing, loops, functions or package managers. Missions may ship their own tools (e.g. `ci`, `deployctl`, `metrics`), listed by `help`. `sed` follows POSIX basic-regex semantics (parentheses literal unless escaped) and substitutes once per line.
 - The rule-based coach matches linguistic cues; it cannot judge truth or technical correctness and says so in every report.
 - Voice features depend on the browser and were only checked manually in design; CI cannot exercise microphones.
 
 ## Next steps (in order)
 
-1. Remaining Phase 7: CI/CD failure-mode missions, concurrency (race condition, locking) and resilience (retries, idempotency, replication lag) simulations on the shared engine.
+1. Remaining Phase 7: concurrency (race condition, locking) and resilience (retries, idempotency, replication lag) simulations on the shared engine.
 2. More missions per track (see CURRICULUM.md).
 3. Accessibility audit with a screen reader; reduce bundle size by lazy-loading CodeMirror and the interview pages.

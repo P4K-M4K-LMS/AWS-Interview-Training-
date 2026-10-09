@@ -212,3 +212,30 @@ test("incident console: investigate, remediate the cause, verify recovery, write
   await page.getByTestId("mission-complete").click();
   await expect(page.getByText("Mission complete: explain what you did")).toBeVisible();
 });
+
+test("CI/CD: a flaky test is fixed at the cause, not retried or skipped", async ({ page }) => {
+  await onboard(page);
+  const now = new Date().toISOString();
+  const done = (missionId: string) => ({ missionId, schemaVersion: 1, status: "completed", attempts: 1, hintsUsed: 0, maxHintLevel: 0, bestScore: 1, startedAt: now, completedAt: now, reflections: [] });
+  const bundle = { app: "opsforge", schemaVersion: 1, exportedAt: now, missions: ["linux-01-find-your-way", "linux-02-log-detective", "linux-03-locked-out", "devops-01-broken-pipeline"].map(done) };
+  await page.goto("/#/settings");
+  await page.locator('input[type="file"]').setInputFiles({ name: "progress.json", mimeType: "application/json", buffer: Buffer.from(JSON.stringify(bundle)) });
+  await expect(page.getByText(/Imported .*4 mission records/)).toBeVisible();
+
+  await page.goto("/#/missions/devops-02-green-locally-red-in-ci");
+  const input = page.getByTestId("terminal-input");
+  const run = async (cmd: string) => {
+    await input.fill(cmd);
+    await input.press("Enter");
+  };
+  await run("ci log");
+  await run("ci run"); // retrying does not help
+  await run("grep -n now /srv/fleet-api/tests/test_schedule.py");
+  await expect(page.getByText("Checks (3/6)")).toBeVisible();
+  await run("sudo sed -i 's/datetime.datetime.now()/datetime.datetime.now(datetime.timezone.utc)/' /srv/fleet-api/tests/test_schedule.py");
+  await run("ci run");
+  await page.getByLabel(/Because the failure is deterministic/).check();
+  await expect(page.getByText("Checks (6/6)")).toBeVisible();
+  await page.getByTestId("mission-complete").click();
+  await expect(page.getByText("Mission complete: explain what you did")).toBeVisible();
+});

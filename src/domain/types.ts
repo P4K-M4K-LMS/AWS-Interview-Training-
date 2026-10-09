@@ -143,6 +143,31 @@ export interface SimServiceSpec {
   requiredWritable?: string[];
 }
 
+/** What a mission-specific program can see and do inside the simulator. */
+export interface ProgramHost {
+  readFile: (path: string) => string | null;
+  writeFile: (path: string, content: string, asRoot?: boolean) => { ok: boolean; error?: string };
+  exists: (path: string) => boolean;
+  mode: (path: string) => number | null;
+  env: Record<string, string>;
+  cwd: string;
+  user: string;
+  history: string[];
+}
+
+export interface ProgramResult {
+  stdout: string;
+  stderr: string;
+  exitCode: number;
+}
+
+/** A simulated executable shipped with a mission (e.g. `ci`, `deployctl`). */
+export interface SimProgram {
+  summary: string;
+  usage: string;
+  run: (args: string[], host: ProgramHost) => ProgramResult;
+}
+
 export interface TerminalWorld {
   hostname: string;
   user: string;
@@ -151,6 +176,8 @@ export interface TerminalWorld {
   processes?: SimProcessSpec[];
   services?: SimServiceSpec[];
   env?: Record<string, string>;
+  /** Mission-specific programs, keyed by command name. */
+  programs?: Record<string, SimProgram>;
 }
 
 /** Result of a terminal validation rule. */
