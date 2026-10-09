@@ -69,7 +69,7 @@ export function StudyCoursePage() {
         <ol className="space-y-2" data-testid="study-units">
           {c.units.map((u) => {
             const bookkeeping = u.objectives.length > 0 && u.objectives.every((o) => o.kind === "bookkeeping");
-            const linked = u.objectives.filter((o) => o.link?.kind === "mission").length;
+            const linked = u.objectives.filter((o) => o.link?.kind === "mission" || o.link?.kind === "lab").length;
             const mastered = u.objectives.filter((o) => { const st = states.get(o.id)?.status; return st === "independent" || st === "transfer-ready"; }).length;
             const touched = u.objectives.filter((o) => states.has(o.id)).length;
             const engine = u.gateEngine ? ENGINE_BY_ID.get(u.gateEngine) : undefined;
@@ -88,9 +88,9 @@ export function StudyCoursePage() {
                   {u.gate && !bookkeeping && <p className="text-sm mt-1">Gate: {u.gate}</p>}
                   <div className="muted text-xs mt-2 flex flex-wrap gap-x-3">
                     <span>{u.objectives.length} {bookkeeping ? "bookkeeping lines" : "objectives"}</span>
-                    {linked > 0 && <span className="accent">{linked} taught by a mission</span>}
+                    {linked > 0 && <span className="accent">{linked} taught by a mission or lab</span>}
                     {touched > 0 && <span>{mastered} mastered, {touched} started</span>}
-                    {engine && <span>Lab planned: {engine.name}</span>}
+                    {engine && <span>{engine.status === "built" ? "Lab" : "Lab planned"}: {engine.name}</span>}
                   </div>
                 </Link>
               </li>

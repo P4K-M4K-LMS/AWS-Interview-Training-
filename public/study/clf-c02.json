@@ -278,8 +278,15 @@
           "text": "Managed policies versus custom policies, written to least privilege",
           "sourceHash": "4e512c777327",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "policy",
+            "exerciseId": "policy-01-default-deny",
+            "coverage": "partial",
+            "note": "writing a narrow allow"
+          }
         },
         {
           "id": "clf-c02:2:12",
@@ -858,6 +865,6 @@
     "units": 4,
     "objectives": 80,
     "bookkeeping": 0,
-    "linked": 0
+    "linked": 1
   }
 }

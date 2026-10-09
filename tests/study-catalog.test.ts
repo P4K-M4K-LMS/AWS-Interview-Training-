@@ -4,8 +4,10 @@ import { describe, expect, it } from "vitest";
 import { buildCatalog, missionLinksModule, stableJson } from "../scripts/study/catalog.mts";
 import { MISSION_BY_ID } from "../src/content/missions";
 import { ENGINE_BY_ID } from "../src/content/study/engines";
-import { BOOKKEEPING_UNITS, STUDY_LINKS, UNIT_ENGINE_GATES } from "../src/content/study/links";
-import { ENGINE_GATES, MISSION_LINKS } from "../src/content/study/missionLinks";
+import { BOOKKEEPING_UNITS, STUDY_LAB_LINKS, STUDY_LINKS, UNIT_ENGINE_GATES } from "../src/content/study/links";
+import { POLICY_EXERCISE_BY_ID } from "../src/content/study/policyExercises";
+import { LAB_LABELS } from "../src/content/study/labs";
+import { ENGINE_GATES, LAB_LINKS, MISSION_LINKS } from "../src/content/study/missionLinks";
 import type { StudyCatalogIndex, StudyCourse } from "../src/domain/types";
 
 const OUT = path.resolve(__dirname, "..", "public", "study");
@@ -45,7 +47,7 @@ describe("Study catalog (Ascendra snapshot)", () => {
           seen.add(o.id);
           expect(o.sourceHash).toMatch(/^[0-9a-f]{12}$/);
           expect(["do-existing", "do-new", "read", "combo", "explain"]).toContain(o.modality);
-          if (o.link?.kind === "mission") {
+          if (o.link?.kind === "mission" || o.link?.kind === "lab") {
             expect(o.modality).toBe("do-existing");
             expect(o.modalitySource).toBe("curated");
           }
@@ -62,6 +64,18 @@ describe("Study catalog (Ascendra snapshot)", () => {
     for (const m of Object.keys(MISSION_LINKS)) expect(MISSION_BY_ID.has(m)).toBe(true);
     // Linked objectives are never bookkeeping.
     for (const o of linked) expect(o.kind).toBe("objective");
+  });
+
+  it("lab links point at real labs and exercises, and every curated entry is consumed", () => {
+    for (const l of STUDY_LAB_LINKS) {
+      expect(LAB_LABELS[l.lab], `lab ${l.lab}`).toBeTruthy();
+      if (l.lab === "policy") expect(POLICY_EXERCISE_BY_ID.has(l.exerciseId ?? ""), `exercise ${l.exerciseId}`).toBe(true);
+    }
+    const labLinked = built.courses.flatMap((c) => c.units.flatMap((u) => u.objectives.filter((o) => o.link?.kind === "lab")));
+    expect(labLinked).toHaveLength(STUDY_LAB_LINKS.length);
+    expect(Object.values(LAB_LINKS).flat()).toHaveLength(STUDY_LAB_LINKS.filter((l) => l.exerciseId).length);
+    const total = built.courses.reduce((a, c) => a + c.counts.linked, 0);
+    expect(total).toBe(STUDY_LINKS.length + STUDY_LAB_LINKS.length);
   });
 
   it("maps unit gates to planned engines that are declared, and bookkeeping units to the degree plan", () => {

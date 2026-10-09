@@ -3,6 +3,7 @@ import { Callout, EmptyState, PageHeader } from "../../components/ui";
 import { LessonLoopPlayer } from "../../components/study/LessonLoopPlayer";
 import { MISSION_BY_ID } from "../../content/missions";
 import { MODALITY_HELP, MODALITY_LABELS } from "../../content/study/links";
+import { LAB_LABELS, labExercisePath } from "../../content/study/labs";
 import { useProfile, useStudyStates } from "../../data/hooks";
 import { effectiveExplanationLevel } from "../../engine/learner/explanation";
 import { useStudyCourse, useStudyLessons } from "../../services/study/catalog";
@@ -62,6 +63,10 @@ export function StudyObjectivePage() {
           {mission ? (
             <p className="mt-2">
               You can still do it: <Link to={`/missions/${mission.id}?from=${encodeURIComponent(objective.id)}`} className="underline">{mission.title}</Link> credits this objective.
+            </p>
+          ) : objective.link?.kind === "lab" ? (
+            <p className="mt-2">
+              You can still do it: <Link to={labExercisePath(objective.link, objective.id)} className="underline">{LAB_LABELS[objective.link.labId] ?? objective.link.labId}</Link> credits this objective.
             </p>
           ) : (
             <p className="mt-2">Until then, this objective is a catalog entry. The source objective text above is the whole of it.</p>

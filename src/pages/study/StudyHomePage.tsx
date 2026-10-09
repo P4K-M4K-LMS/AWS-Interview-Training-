@@ -23,7 +23,7 @@ function CourseCard({ c, mastered, started }: { c: StudyCourseSummary; mastered:
       <div className="muted text-xs mt-2 flex flex-wrap gap-x-3 gap-y-1">
         <span>{c.counts.units} units</span>
         <span>{c.counts.objectives} objectives</span>
-        {c.counts.linked > 0 && <span className="accent">{c.counts.linked} taught by a mission</span>}
+        {c.counts.linked > 0 && <span className="accent">{c.counts.linked} taught by a mission or lab</span>}
         {doing > c.counts.linked && <span>{doing - c.counts.linked} lab planned</span>}
         {started > 0 && <span className="accent">{mastered} mastered, {started} started</span>}
       </div>
@@ -90,7 +90,7 @@ export function StudyHomePage() {
         <ul className="text-sm space-y-1" data-testid="study-engines">
           {ENGINES.map((e) => (
             <li key={e.id} className="flex flex-wrap gap-x-2">
-              <span className="font-medium">{e.name}</span>
+              {e.status === "built" && e.lab ? <Link to={e.lab} className="font-medium underline">{e.name}</Link> : <span className="font-medium">{e.name}</span>}
               <span className="badge">{e.status === "built" ? "built" : "planned"}</span>
               <span className="muted">{e.what} (about {e.approxObjectives} objectives)</span>
             </li>

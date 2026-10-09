@@ -1041,8 +1041,14 @@
           "text": "Constructing custom policies that hold to least privilege",
           "sourceHash": "ad49ffedd673",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "policy",
+            "exerciseId": "policy-02-deny-wins",
+            "coverage": "partial"
+          }
         },
         {
           "id": "dea-c01:4:14",
@@ -1193,6 +1199,6 @@
     "units": 4,
     "objectives": 113,
     "bookkeeping": 0,
-    "linked": 1
+    "linked": 2
   }
 }

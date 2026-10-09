@@ -467,8 +467,15 @@
           "text": "Designing authorization controls: Amazon Verified Permissions, IAM paths, IAM Roles Anywhere, resource policies for cross-account access, IAM role trust policies",
           "sourceHash": "f7082a7befc0",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "policy",
+            "exerciseId": "policy-05-cross-account",
+            "coverage": "partial",
+            "note": "resource policies for cross-account access"
+          }
         },
         {
           "id": "scs-c03:4:5",
@@ -477,8 +484,14 @@
           "text": "Designing attribute-based and role-based access control, including access driven by tags",
           "sourceHash": "0baf9aee363c",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "policy",
+            "exerciseId": "policy-06-tags",
+            "coverage": "full"
+          }
         },
         {
           "id": "scs-c03:4:6",
@@ -487,8 +500,14 @@
           "text": "Designing, reading, and implementing IAM policies to least privilege, including permissions boundaries and session policies",
           "sourceHash": "f7ac48b71108",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "policy",
+            "exerciseId": "policy-03-boundary",
+            "coverage": "full"
+          }
         },
         {
           "id": "scs-c03:4:7",
@@ -497,8 +516,14 @@
           "text": "Analyzing authorization failures with the IAM policy simulator and IAM Access Analyzer",
           "sourceHash": "9af57bfad4a4",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "policy",
+            "exerciseId": "policy-02-deny-wins",
+            "coverage": "full"
+          }
         },
         {
           "id": "scs-c03:4:8",
@@ -507,8 +532,14 @@
           "text": "Investigating and correcting unintended permissions granted to a resource, service, or entity",
           "sourceHash": "a06b8a951eb4",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "policy",
+            "exerciseId": "policy-03-boundary",
+            "coverage": "partial"
+          }
         }
       ]
     },
@@ -675,8 +706,14 @@
           "text": "Organization policies that manage permissions: service control policies, resource control policies, AI service opt-out policies, declarative policies",
           "sourceHash": "2e4294bdd639",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "policy",
+            "exerciseId": "policy-04-guardrail",
+            "coverage": "partial"
+          }
         },
         {
           "id": "scs-c03:6:4",
@@ -787,6 +824,6 @@
     "units": 6,
     "objectives": 70,
     "bookkeeping": 0,
-    "linked": 2
+    "linked": 8
   }
 }

@@ -1046,8 +1046,14 @@
           "text": "Configuring IAM policies and roles for users and applications in ML and AI systems",
           "sourceHash": "5f999887e5b7",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "policy",
+            "exerciseId": "policy-01-default-deny",
+            "coverage": "partial"
+          }
         },
         {
           "id": "mla-c02:4:20",
@@ -1128,6 +1134,6 @@
     "units": 4,
     "objectives": 107,
     "bookkeeping": 0,
-    "linked": 0
+    "linked": 1
   }
 }

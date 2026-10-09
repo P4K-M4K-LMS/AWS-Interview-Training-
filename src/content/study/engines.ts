@@ -14,7 +14,7 @@ export interface StudyEngine {
 }
 
 export const ENGINES: StudyEngine[] = [
-  { id: "policy-eval", name: "Authorization policy evaluator", what: "Write allow/deny statements for a fictional platform and watch the decision trace: default deny, explicit deny wins, ceilings, resource-based versus identity-based.", status: "planned", approxObjectives: 45 },
+  { id: "policy-eval", name: "Authorization policy evaluator", what: "Write allow/deny statements for a fictional platform and watch the decision trace: default deny, explicit deny wins, ceilings, resource-based versus identity-based.", status: "built", lab: "/labs/policy", approxObjectives: 45 },
   { id: "net-trace", name: "Virtual network path tracer", what: "Send a packet through subnets, route tables, stateful and stateless filters, address translation and a hub router; the trace names the hop that dropped it.", status: "planned", approxObjectives: 50 },
   { id: "dr-planner", name: "Disaster-recovery planner", what: "Given a recovery time and data-loss budget, pick backup, standby and failover pieces and see the recovery timeline and cost in fictional credits.", status: "planned", approxObjectives: 45 },
   { id: "alarm-builder", name: "Metric alarm builder", what: "Define thresholds and evaluation windows on the simulated platform's metrics and see which incidents they would have caught.", status: "planned", approxObjectives: 55 },

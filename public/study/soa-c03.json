@@ -418,8 +418,15 @@
           "text": "Implementing IAM features: password policies, MFA, roles, federated identity, resource policies, policy conditions",
           "sourceHash": "2c01776d4fcb",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "policy",
+            "exerciseId": "policy-06-tags",
+            "coverage": "partial",
+            "note": "resource policies and conditions"
+          }
         },
         {
           "id": "soa-c03:4:2",
@@ -428,8 +435,15 @@
           "text": "Troubleshooting and auditing access with CloudTrail, IAM Access Analyzer, and the IAM policy simulator",
           "sourceHash": "f182f7222bb5",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "policy",
+            "exerciseId": "policy-02-deny-wins",
+            "coverage": "partial",
+            "note": "the decision trace plays the simulator's part"
+          }
         },
         {
           "id": "soa-c03:4:3",
@@ -438,8 +452,15 @@
           "text": "Implementing multi-account strategies securely: AWS Organizations, service control policies, IAM Identity Center",
           "sourceHash": "ab51b44dd2f6",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "policy",
+            "exerciseId": "policy-04-guardrail",
+            "coverage": "partial",
+            "note": "guardrails only"
+          }
         },
         {
           "id": "soa-c03:4:4",
@@ -660,6 +681,6 @@
     "units": 5,
     "objectives": 59,
     "bookkeeping": 0,
-    "linked": 0
+    "linked": 3
   }
 }

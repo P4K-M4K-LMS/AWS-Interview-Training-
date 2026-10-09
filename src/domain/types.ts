@@ -981,6 +981,7 @@ export type StudyModalitySource = "curated" | "suggested" | "default";
 
 export type StudyLink =
   | { kind: "mission"; missionId: string; coverage: "full" | "partial"; note?: string }
+  | { kind: "lab"; labId: string; exerciseId?: string; coverage: "full" | "partial"; note?: string }
   | { kind: "engine"; engineId: string };
 
 export interface StudyObjective {
