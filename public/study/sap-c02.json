@@ -579,8 +579,15 @@
           "text": "Implementing loosely coupled dependencies with Amazon SNS, Amazon SQS, and AWS Step Functions",
           "sourceHash": "d7e587840931",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "messaging",
+            "exerciseId": "msg-03-redelivery",
+            "coverage": "partial",
+            "note": "queues and topics; no workflow yet"
+          }
         },
         {
           "id": "sap-c02:2:22",
@@ -1259,8 +1266,14 @@
           "text": "Identifying opportunities to decouple application components",
           "sourceHash": "aab59684da55",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "messaging",
+            "exerciseId": "msg-01-decouple",
+            "coverage": "full"
+          }
         },
         {
           "id": "sap-c02:4:18",
@@ -1289,8 +1302,15 @@
           "text": "Selecting the appropriate application integration service: Amazon SQS, Amazon SNS, Amazon EventBridge, AWS Step Functions",
           "sourceHash": "5f703cdb969a",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "messaging",
+            "exerciseId": "msg-04-order",
+            "coverage": "partial",
+            "note": "queue, topic or stream by the guarantees needed"
+          }
         }
       ]
     }
@@ -1312,6 +1332,6 @@
     "units": 4,
     "objectives": 113,
     "bookkeeping": 0,
-    "linked": 20
+    "linked": 23
   }
 }

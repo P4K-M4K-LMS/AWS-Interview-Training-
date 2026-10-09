@@ -707,8 +707,14 @@
           "text": "Decoupling workloads so components scale independently",
           "sourceHash": "ca69ef54ba9e",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "messaging",
+            "exerciseId": "msg-01-decouple",
+            "coverage": "full"
+          }
         },
         {
           "id": "saa-c03:3:9",
@@ -843,8 +849,15 @@
           "text": "Designing streaming ingestion with Amazon Kinesis",
           "sourceHash": "980ab29469ce",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "messaging",
+            "exerciseId": "msg-06-stream",
+            "coverage": "partial",
+            "note": "shards and partition keys; no service"
+          }
         },
         {
           "id": "saa-c03:3:22",
@@ -1220,6 +1233,6 @@
     "units": 4,
     "objectives": 99,
     "bookkeeping": 0,
-    "linked": 28
+    "linked": 30
   }
 }

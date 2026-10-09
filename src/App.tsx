@@ -23,6 +23,7 @@ const AlarmLabPage = lazy(() => import("./pages/AlarmLabPage").then((m) => ({ de
 const CostLabPage = lazy(() => import("./pages/CostLabPage").then((m) => ({ default: m.CostLabPage })));
 const DeployLabPage = lazy(() => import("./pages/DeployLabPage").then((m) => ({ default: m.DeployLabPage })));
 const CryptoLabPage = lazy(() => import("./pages/CryptoLabPage").then((m) => ({ default: m.CryptoLabPage })));
+const MessagingLabPage = lazy(() => import("./pages/MessagingLabPage").then((m) => ({ default: m.MessagingLabPage })));
 const MonitoringPage = lazy(() => import("./pages/MonitoringPage").then((m) => ({ default: m.MonitoringPage })));
 const InterviewHomePage = lazy(() => import("./pages/interview/InterviewHomePage").then((m) => ({ default: m.InterviewHomePage })));
 const StarAcademyPage = lazy(() => import("./pages/interview/StarAcademyPage").then((m) => ({ default: m.StarAcademyPage })));
@@ -69,6 +70,7 @@ export const routes: RouteObject[] = [
           { path: "cost", element: <CostLabPage /> },
           { path: "deploy", element: <DeployLabPage /> },
           { path: "crypto", element: <CryptoLabPage /> },
+          { path: "messaging", element: <MessagingLabPage /> },
         ],
       },
       { path: "interview", element: <InterviewHomePage /> },

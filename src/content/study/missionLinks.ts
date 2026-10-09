@@ -293,6 +293,34 @@ export const LAB_LINKS: Record<string, string[]> = {
     "securityx:1:5",
     "soa-c03:2:8"
   ],
+  "msg-01-decouple": [
+    "clf-c02:3:28",
+    "dva-c02:1:3",
+    "saa-c03:3:8",
+    "sap-c02:4:17"
+  ],
+  "msg-02-poison": [
+    "dea-c01:1:26"
+  ],
+  "msg-03-redelivery": [
+    "sap-c02:2:21"
+  ],
+  "msg-04-order": [
+    "sap-c02:4:20"
+  ],
+  "msg-05-fanout": [
+    "dea-c01:1:10",
+    "dop-c02:5:2",
+    "dva-c02:1:1",
+    "soa-c03:1:8"
+  ],
+  "msg-06-stream": [
+    "dea-c01:1:1",
+    "dea-c01:1:9",
+    "dva-c02:1:10",
+    "mla-c02:1:4",
+    "saa-c03:3:21"
+  ],
   "net-01-stateful-source": [
     "ans-c01:3:13",
     "dea-c01:4:1",

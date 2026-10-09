@@ -262,7 +262,26 @@ export const CRYPTO_LAB_LINKS: StudyLabLink[] = [
   { course: "AWSCLF", text: "Encryption at rest and encryption in transit as two separate decisions", lab: "crypto", exerciseId: "crypto-01-envelope", coverage: "partial", note: "the at-rest half" },
 ];
 
-export const STUDY_LAB_LINKS: StudyLabLink[] = [...POLICY_LAB_LINKS, ...NETWORK_LAB_LINKS, ...DR_LAB_LINKS, ...ALARM_LAB_LINKS, ...COST_LAB_LINKS, ...DEPLOY_LAB_LINKS, ...CRYPTO_LAB_LINKS];
+export const MESSAGING_LAB_LINKS: StudyLabLink[] = [
+  { course: "AWSSAA", text: "Decoupling workloads so components scale independently", lab: "messaging", exerciseId: "msg-01-decouple", coverage: "full" },
+  { course: "AWSSAA", text: "Designing streaming ingestion with Amazon Kinesis", lab: "messaging", exerciseId: "msg-06-stream", coverage: "partial", note: "shards and partition keys; no service" },
+  { course: "AWSDVA", text: "Architectural patterns in application code: event-driven, microservices, monolithic, choreography, orchestration, fanout", lab: "messaging", exerciseId: "msg-05-fanout", coverage: "partial", note: "fan-out and event-driven" },
+  { course: "AWSDVA", text: "Tightly coupled versus loosely coupled components", lab: "messaging", exerciseId: "msg-01-decouple", coverage: "full" },
+  { course: "AWSDVA", text: "Handling streaming data with AWS services", lab: "messaging", exerciseId: "msg-06-stream", coverage: "partial" },
+  { course: "AWSSOA", text: "Sending notifications to Amazon SNS from AWS services and from alarms", lab: "messaging", exerciseId: "msg-05-fanout", coverage: "partial", note: "a topic with filtered subscriptions" },
+  { course: "AWSDEA", text: "Reading from streaming sources", lab: "messaging", exerciseId: "msg-06-stream", coverage: "partial" },
+  { course: "AWSDEA", text: "Throttling and rate limits in DynamoDB, Amazon RDS, and Kinesis, and how to work within them", lab: "messaging", exerciseId: "msg-06-stream", coverage: "partial", note: "per-shard capacity and a hot key" },
+  { course: "AWSDEA", text: "Managing fan-in and fan-out for streaming data distribution", lab: "messaging", exerciseId: "msg-05-fanout", coverage: "full" },
+  { course: "AWSDEA", text: "Sending alerts from a pipeline with Amazon SNS and Amazon SQS", lab: "messaging", exerciseId: "msg-02-poison", coverage: "partial", note: "the queue half" },
+  { course: "AWSMLA", text: "Ingesting from AWS streaming sources", lab: "messaging", exerciseId: "msg-06-stream", coverage: "partial" },
+  { course: "AWSSAP", text: "Implementing loosely coupled dependencies with Amazon SNS, Amazon SQS, and AWS Step Functions", lab: "messaging", exerciseId: "msg-03-redelivery", coverage: "partial", note: "queues and topics; no workflow yet" },
+  { course: "AWSSAP", text: "Identifying opportunities to decouple application components", lab: "messaging", exerciseId: "msg-01-decouple", coverage: "full" },
+  { course: "AWSSAP", text: "Selecting the appropriate application integration service", lab: "messaging", exerciseId: "msg-04-order", coverage: "partial", note: "queue, topic or stream by the guarantees needed" },
+  { course: "AWSDOP", text: "Event-driven architectures: fan-out, event streaming, queuing", lab: "messaging", exerciseId: "msg-05-fanout", coverage: "full" },
+  { course: "AWSCLF", text: "Application integration: Amazon SQS, Amazon SNS, Amazon EventBridge", lab: "messaging", exerciseId: "msg-01-decouple", coverage: "partial", note: "what a queue and a topic are for" },
+];
+
+export const STUDY_LAB_LINKS: StudyLabLink[] = [...POLICY_LAB_LINKS, ...NETWORK_LAB_LINKS, ...DR_LAB_LINKS, ...ALARM_LAB_LINKS, ...COST_LAB_LINKS, ...DEPLOY_LAB_LINKS, ...CRYPTO_LAB_LINKS, ...MESSAGING_LAB_LINKS];
 
 /**
  * Unit gates that a planned engine would make playable. The gate sentence

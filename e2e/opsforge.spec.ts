@@ -1009,3 +1009,36 @@ test("encryption lab: the key service refuses a large object, a data key seals i
   await page.getByTestId("lab-tab-encryption").click();
   await expect(page.getByRole("heading", { name: "Envelope encryption" })).toBeVisible();
 });
+
+test("messaging lab: direct calls lose the outage, a queue holds it; the poison exercise needs a receive limit and a dead-letter queue", async ({ page }) => {
+  await onboard(page);
+  await page.goto("/#/study/saa-c03/3");
+  const objective = page.getByTestId("study-objective-8");
+  await expect(objective).toContainText("Do it: mission or lab");
+  await objective.getByTestId("study-practise-8").click();
+  await expect(page).toHaveURL(/#\/labs\/messaging\?exercise=msg-01-decouple/);
+  await expect(page.getByRole("heading", { name: "Messaging and events" })).toBeVisible();
+  await expect(page.getByTestId("messaging-lost")).toHaveText("600");
+  await expect(page.getByTestId("messaging-check-lost")).toHaveAttribute("data-ok", "0");
+  await expect(page.getByTestId("messaging-check")).toBeDisabled();
+  await page.getByTestId("messaging-kind-queue").click();
+  await expect(page.getByTestId("messaging-kind-queue")).toBeChecked();
+  await expect(page.getByTestId("messaging-lost")).toHaveText("0");
+  await expect(page.getByTestId("messaging-age")).toHaveText("30 s");
+  await expect(page.getByTestId("messaging-check")).toBeEnabled();
+  await page.getByTestId("messaging-check").click();
+  await expect(page.getByTestId("messaging-passed")).toContainText("Credited");
+  await page.getByTestId("messaging-back-link").click();
+  await expect(page.getByTestId("study-status-8")).toHaveText("Guided");
+  // The poison exercise: a receive limit alone drops the poison; with a dead-letter queue it is parked.
+  await page.goto("/#/labs/messaging?exercise=msg-02-poison");
+  await expect(page.getByTestId("messaging-check-drained")).toContainText("never drained");
+  await page.getByTestId("messaging-max-receives").fill("3");
+  await expect(page.getByTestId("messaging-check-lost")).toHaveAttribute("data-ok", "0");
+  await page.getByTestId("messaging-dead-letter").check();
+  await expect(page.getByTestId("messaging-wasted")).toHaveText("33 (11 parked)");
+  await expect(page.getByTestId("messaging-check")).toBeEnabled();
+  await page.goto("/#/labs");
+  await page.getByTestId("lab-tab-events").click();
+  await expect(page.getByRole("heading", { name: "Messaging and events" })).toBeVisible();
+});

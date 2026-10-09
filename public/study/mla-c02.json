@@ -49,8 +49,14 @@
           "text": "Ingesting from AWS streaming sources: Amazon Kinesis, Apache Flink, Apache Kafka",
           "sourceHash": "f2f04626d220",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "messaging",
+            "exerciseId": "msg-06-stream",
+            "coverage": "partial"
+          }
         },
         {
           "id": "mla-c02:1:5",
@@ -1164,6 +1170,6 @@
     "units": 4,
     "objectives": 107,
     "bookkeeping": 0,
-    "linked": 6
+    "linked": 7
   }
 }

@@ -18,6 +18,7 @@ export const LABS = [
   { to: "/labs/cost", label: "Cost", hint: "A monthly bill in fictional credits" },
   { to: "/labs/deploy", label: "Deploys", hint: "Rollouts, canaries and rollbacks, second by second" },
   { to: "/labs/crypto", label: "Encryption", hint: "Envelope encryption on a simulated key service" },
+  { to: "/labs/messaging", label: "Events", hint: "Queues, topics and streams, second by second" },
 ];
 
 export function LabsPage() {

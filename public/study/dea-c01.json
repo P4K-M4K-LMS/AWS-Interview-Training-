@@ -19,8 +19,14 @@
           "text": "Reading from streaming sources: Amazon Kinesis, Amazon MSK, Amazon DynamoDB Streams, AWS DMS, AWS Glue, Amazon Redshift",
           "sourceHash": "bf93fa3aa791",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "messaging",
+            "exerciseId": "msg-06-stream",
+            "coverage": "partial"
+          }
         },
         {
           "id": "dea-c01:1:2",
@@ -99,8 +105,15 @@
           "text": "Throttling and rate limits in DynamoDB, Amazon RDS, and Kinesis, and how to work within them",
           "sourceHash": "940294289b95",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "messaging",
+            "exerciseId": "msg-06-stream",
+            "coverage": "partial",
+            "note": "per-shard capacity and a hot key"
+          }
         },
         {
           "id": "dea-c01:1:10",
@@ -109,8 +122,14 @@
           "text": "Managing fan-in and fan-out for streaming data distribution",
           "sourceHash": "e47579a83d2a",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "messaging",
+            "exerciseId": "msg-05-fanout",
+            "coverage": "full"
+          }
         },
         {
           "id": "dea-c01:1:11",
@@ -275,8 +294,15 @@
           "text": "Sending alerts from a pipeline with Amazon SNS and Amazon SQS",
           "sourceHash": "92eeb613c7bc",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "messaging",
+            "exerciseId": "msg-02-poison",
+            "coverage": "partial",
+            "note": "the queue half"
+          }
         },
         {
           "id": "dea-c01:1:27",
@@ -1229,6 +1255,6 @@
     "units": 4,
     "objectives": 113,
     "bookkeeping": 0,
-    "linked": 7
+    "linked": 11
   }
 }
