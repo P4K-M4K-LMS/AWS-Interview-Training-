@@ -80,8 +80,8 @@ function ExerciseView({ exercise, fromPath, pick }: { exercise: CryptoExercise; 
         <p className="muted text-xs mt-1">Principals: {exercise.principals.map((p) => `${p.id} (${p.account})`).join(", ")}.</p>
         {credited.length > 0 && <p className="muted text-xs mt-1">Counts toward {credited.length} Study objective{credited.length === 1 ? "" : "s"}.</p>}
       </Panel>
-      <div className="grid lg:grid-cols-2 gap-4">
-        <div className="space-y-3">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <div className="space-y-3 min-w-0 break-words">
           <Panel title="Program">
             <textarea className="input font-mono text-sm w-full" rows={9} spellCheck={false} value={program} onChange={(e) => setProgram(e.target.value)} aria-label="Program" data-testid="crypto-program" />
             {errors.length > 0 && (
@@ -120,7 +120,7 @@ function ExerciseView({ exercise, fromPath, pick }: { exercise: CryptoExercise; 
             )}
           </Panel>
         </div>
-        <div className="space-y-3">
+        <div className="space-y-3 min-w-0 break-words">
           <Panel title="Key service">
             <StateView state={state} />
           </Panel>

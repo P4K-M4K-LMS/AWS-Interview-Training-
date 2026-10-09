@@ -133,8 +133,8 @@ function ExerciseView({ exercise, fromPath, pick }: { exercise: NetworkExercise;
         <p className="muted text-xs mt-2">Teaches: {exercise.teaches}</p>
         {credited.length > 0 && <p className="muted text-xs mt-1">Counts toward {credited.length} Study objective{credited.length === 1 ? "" : "s"}.</p>}
       </Panel>
-      <div className="grid lg:grid-cols-2 gap-4">
-        <div className="space-y-3">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <div className="space-y-3 min-w-0 break-words">
           <Panel title={`Editable: ${exercise.editable.id} (${exercise.editable.kind === "routes" ? "route table" : exercise.editable.kind === "hub" ? "hub routes" : `${exercise.editable.kind} filter`})`}>
             <p className="muted text-xs mb-1">{EDITABLE_HELP[exercise.editable.kind]}</p>
             <textarea className="input font-mono text-xs min-h-28" value={text} onChange={(e) => setText(e.target.value)} data-testid="network-editable" aria-label={`Edit ${exercise.editable.id}`} />
@@ -150,7 +150,7 @@ function ExerciseView({ exercise, fromPath, pick }: { exercise: NetworkExercise;
           </Panel>
           <TopologyView topology={applied.topology} editable={exercise.editable.id} />
         </div>
-        <div className="space-y-3">
+        <div className="space-y-3 min-w-0 break-words">
           <Panel title="Flows that must come out right">
             <ul className="space-y-2" data-testid="network-flows">
               {results.map((r) => {

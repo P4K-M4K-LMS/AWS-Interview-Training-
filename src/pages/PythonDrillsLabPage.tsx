@@ -68,8 +68,8 @@ function DrillView({ drill, fromPath, pick }: { drill: PythonDrill; fromPath: st
         <p className="muted text-xs mt-2">Teaches: {drill.teaches}</p>
         {credited.length > 0 && <p className="muted text-xs mt-1">Counts toward {credited.length} Study objective{credited.length === 1 ? "" : "s"}.</p>}
       </Panel>
-      <div className="grid lg:grid-cols-2 gap-4">
-        <div className="space-y-3">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <div className="space-y-3 min-w-0 break-words">
           <Panel title="Your code" actions={<RunnerStatusLine status={status} detail={detail} version={runner.version} />}>
             <PythonEditor value={code} onChange={setCode} height="22rem" />
             <div className="flex flex-wrap gap-2 mt-2">
@@ -85,7 +85,7 @@ function DrillView({ drill, fromPath, pick }: { drill: PythonDrill; fromPath: st
             <RunOutput result={result ? { ...result, tests: result.tests.map((t) => ({ ...t, id: labelOf(t.id) })) } : null} />
           </Panel>
         </div>
-        <div className="space-y-3">
+        <div className="space-y-3 min-w-0 break-words">
           <Panel title="Tests">
             <ul className="space-y-1 text-sm" data-testid="pydrill-tests">
               {drill.tests.map((t) => {

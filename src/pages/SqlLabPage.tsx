@@ -91,8 +91,8 @@ function ExerciseView({ exercise, fromPath, pick }: { exercise: SqlExercise; fro
         </details>
         {credited.length > 0 && <p className="muted text-xs mt-1">Counts toward {credited.length} Study objective{credited.length === 1 ? "" : "s"}.</p>}
       </Panel>
-      <div className="grid lg:grid-cols-2 gap-4">
-        <div className="space-y-3">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <div className="space-y-3 min-w-0 break-words">
           <Panel title="Statements" actions={<RunnerStatusLine status={status} detail={detail} version={runner.version} />}>
             <textarea className="input font-mono text-sm w-full" rows={12} spellCheck={false} value={sql} onChange={(e) => setSql(e.target.value)} aria-label="SQL statements" data-testid="sql-program" />
             <div className="flex flex-wrap gap-2 mt-2">
@@ -123,7 +123,7 @@ function ExerciseView({ exercise, fromPath, pick }: { exercise: SqlExercise; fro
             )}
           </Panel>
         </div>
-        <div className="space-y-3">
+        <div className="space-y-3 min-w-0 break-words">
           <Panel title="Rows">
             {result === null ? (
               <p className="text-sm muted">Nothing ran yet.</p>

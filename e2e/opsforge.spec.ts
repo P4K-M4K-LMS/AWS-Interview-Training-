@@ -1137,3 +1137,29 @@ test("Python drills: the shared mutable default fails the interpreter's own test
   await page.getByTestId("lab-tab-drills").click();
   await expect(page.getByRole("heading", { name: "Python drills" })).toBeVisible();
 });
+
+test("lab layout: a long line in the editor wraps or scrolls inside its column, never widens the page", async ({ page }) => {
+  await onboard(page);
+  // An unbroken 300-character word: long enough to overflow any column at any viewport.
+  const long = "x".repeat(300);
+  // A string expression: the e2e tsconfig has no DOM lib.
+  const overflow = () => page.evaluate<number>("document.documentElement.scrollWidth - document.documentElement.clientWidth");
+  // Python drills: CodeMirror, on the drill with the widest starter code.
+  await page.goto("/#/labs/python-drills?exercise=py-11-generators");
+  await expect(page.getByRole("heading", { name: "Python drills" })).toBeVisible();
+  await page.locator(".cm-content").click();
+  await page.keyboard.press("Control+End");
+  await page.keyboard.insertText(`\n# ${long}`);
+  await expect.poll(overflow).toBe(0);
+  // A button below the editor must be clickable: the layout settles instead of oscillating.
+  await page.getByTestId("pydrill-hint").click();
+  await expect(page.getByTestId("pydrill-hints")).toBeVisible();
+  // Alarms and encryption echo an unparseable line back in an error list.
+  for (const [path, box] of [["/#/labs/alarms", "alarm-editable"], ["/#/labs/crypto", "crypto-program"]] as const) {
+    await page.goto(path);
+    await page.getByTestId(box).click();
+    await page.keyboard.press("Control+End");
+    await page.keyboard.insertText(`\n${long}`);
+    await expect.poll(overflow).toBe(0);
+  }
+});
