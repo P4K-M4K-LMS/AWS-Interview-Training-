@@ -148,8 +148,14 @@
           "text": "Stateful versus stateless data transactions",
           "sourceHash": "10b4666d3e13",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "sql",
+            "exerciseId": "sql-04-transaction",
+            "coverage": "partial"
+          }
         },
         {
           "id": "dea-c01:1:13",
@@ -336,8 +342,15 @@
           "text": "Languages and frameworks for data engineering: Python, SQL, Scala, R, Java, Bash, PowerShell",
           "sourceHash": "9f572d035c6b",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "sql",
+            "exerciseId": "sql-01-join",
+            "coverage": "partial",
+            "note": "SQL"
+          }
         },
         {
           "id": "dea-c01:1:30",
@@ -645,8 +658,15 @@
           "text": "Indexing, partitioning strategies, compression, and other data optimization techniques",
           "sourceHash": "cee4a72553ba",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "sql",
+            "exerciseId": "sql-02-index",
+            "coverage": "partial",
+            "note": "indexing"
+          }
         },
         {
           "id": "dea-c01:2:25",
@@ -734,8 +754,15 @@
           "text": "Querying data with Amazon Athena",
           "sourceHash": "cd2649a77f4e",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "sql",
+            "exerciseId": "sql-01-join",
+            "coverage": "partial",
+            "note": "the SQL half"
+          }
         },
         {
           "id": "dea-c01:3:8",
@@ -784,8 +811,15 @@
           "text": "Using SQL in Amazon Redshift and Athena to query data and create views",
           "sourceHash": "647a51cd24a6",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "sql",
+            "exerciseId": "sql-05-view",
+            "coverage": "full",
+            "note": "the SQL, on SQLite"
+          }
         },
         {
           "id": "dea-c01:3:13",
@@ -1255,6 +1289,6 @@
     "units": 4,
     "objectives": 113,
     "bookkeeping": 0,
-    "linked": 11
+    "linked": 16
   }
 }

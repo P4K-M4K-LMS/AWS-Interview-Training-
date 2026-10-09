@@ -11,6 +11,7 @@ export const LAB_LABELS: Record<string, string> = {
   crypto: "Envelope encryption lab",
   messaging: "Messaging and events lab",
   autoscale: "Autoscaling lab",
+  sql: "SQL lab",
 };
 
 export function labExercisePath(link: Extract<StudyLink, { kind: "lab" }>, objectiveId: string): string {

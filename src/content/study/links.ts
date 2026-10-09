@@ -301,7 +301,23 @@ export const AUTOSCALE_LAB_LINKS: StudyLabLink[] = [
   { course: "AWSSCS", text: "Designing workload monitoring strategies, including resource health checks", lab: "autoscale", exerciseId: "as-05-health", coverage: "partial", note: "the health-check half" },
 ];
 
-export const STUDY_LAB_LINKS: StudyLabLink[] = [...POLICY_LAB_LINKS, ...NETWORK_LAB_LINKS, ...DR_LAB_LINKS, ...ALARM_LAB_LINKS, ...COST_LAB_LINKS, ...DEPLOY_LAB_LINKS, ...CRYPTO_LAB_LINKS, ...MESSAGING_LAB_LINKS, ...AUTOSCALE_LAB_LINKS];
+export const SQL_LAB_LINKS: StudyLabLink[] = [
+  { course: "MSCS", text: "Relational model", lab: "sql", exerciseId: "sql-01-join", coverage: "full" },
+  { course: "MSCS", text: "Normalization through 3NF", lab: "sql", exerciseId: "sql-03-normalise", coverage: "full" },
+  { course: "MSCS", text: "Indexes and B-trees", lab: "sql", exerciseId: "sql-02-index", coverage: "full" },
+  { course: "MSCS", text: "Transactions and ACID", lab: "sql", exerciseId: "sql-04-transaction", coverage: "full" },
+  { course: "MSCS", text: "Query planning (conceptual)", lab: "sql", exerciseId: "sql-06-plan", coverage: "full" },
+  { course: "AWSDEA", text: "Indexing, partitioning strategies, compression, and other data optimization techniques", lab: "sql", exerciseId: "sql-02-index", coverage: "partial", note: "indexing" },
+  { course: "AWSDEA", text: "Using SQL in Amazon Redshift and Athena to query data and create views", lab: "sql", exerciseId: "sql-05-view", coverage: "full", note: "the SQL, on SQLite" },
+  { course: "AWSDEA", text: "Querying data with Amazon Athena", lab: "sql", exerciseId: "sql-01-join", coverage: "partial", note: "the SQL half" },
+  { course: "AWSDEA", text: "Stateful versus stateless data transactions", lab: "sql", exerciseId: "sql-04-transaction", coverage: "partial" },
+  { course: "AWSDEA", text: "Languages and frameworks for data engineering", lab: "sql", exerciseId: "sql-01-join", coverage: "partial", note: "SQL" },
+  { course: "AWSCLF", text: "Relational databases: Amazon RDS and Amazon Aurora", lab: "sql", exerciseId: "sql-01-join", coverage: "partial", note: "what relational means" },
+  { course: "AWSSAA", text: "Choosing a database type: relational, non-relational, in-memory, serverless", lab: "sql", exerciseId: "sql-03-normalise", coverage: "partial", note: "the relational option" },
+  { course: "CMPCBS", text: "Networking and database fundamentals", lab: "sql", exerciseId: "sql-01-join", coverage: "partial", note: "the database half" },
+];
+
+export const STUDY_LAB_LINKS: StudyLabLink[] = [...POLICY_LAB_LINKS, ...NETWORK_LAB_LINKS, ...DR_LAB_LINKS, ...ALARM_LAB_LINKS, ...COST_LAB_LINKS, ...DEPLOY_LAB_LINKS, ...CRYPTO_LAB_LINKS, ...MESSAGING_LAB_LINKS, ...AUTOSCALE_LAB_LINKS, ...SQL_LAB_LINKS];
 
 /**
  * Unit gates that a planned engine would make playable. The gate sentence

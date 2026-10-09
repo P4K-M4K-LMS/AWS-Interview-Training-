@@ -414,5 +414,30 @@ export const LAB_LINKS: Record<string, string[]> = {
   "policy-06-tags": [
     "scs-c03:4:5",
     "soa-c03:4:1"
+  ],
+  "sql-01-join": [
+    "clf-c02:3:13",
+    "cmpcbs:7:5",
+    "dea-c01:1:29",
+    "dea-c01:3:7",
+    "mscs:9:1"
+  ],
+  "sql-02-index": [
+    "dea-c01:2:24",
+    "mscs:9:4"
+  ],
+  "sql-03-normalise": [
+    "mscs:9:3",
+    "saa-c03:3:11"
+  ],
+  "sql-04-transaction": [
+    "dea-c01:1:12",
+    "mscs:9:5"
+  ],
+  "sql-05-view": [
+    "dea-c01:3:12"
+  ],
+  "sql-06-plan": [
+    "mscs:9:8"
   ]
 };

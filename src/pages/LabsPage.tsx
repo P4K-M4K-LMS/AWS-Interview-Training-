@@ -20,6 +20,7 @@ export const LABS = [
   { to: "/labs/crypto", label: "Encryption", hint: "Envelope encryption on a simulated key service" },
   { to: "/labs/messaging", label: "Events", hint: "Queues, topics and streams, second by second" },
   { to: "/labs/autoscale", label: "Scaling", hint: "Policies, warm-up, cooldowns and health checks" },
+  { to: "/labs/sql", label: "SQL", hint: "Real SQL on an in-memory SQLite" },
 ];
 
 export function LabsPage() {
