@@ -1,0 +1,1155 @@
+{
+  "id": "ans-c01",
+  "code": "AWSANS",
+  "title": "AWS Advanced Networking Specialty",
+  "description": "AWS Certified Advanced Networking - Specialty (ANS-C01): hybrid and cloud networking at scale -- designing edge, DNS, load balancing and hybrid routing, implementing it across accounts and Regions, operating and troubleshooting it, and securing it. Note that this exam retires 2026-12-31.",
+  "trackType": "certification",
+  "units": [
+    {
+      "id": "ans-c01:1",
+      "index": 1,
+      "title": "Network Design",
+      "weight": 30,
+      "gate": "Given a global application with an on-premises data center and many accounts, design the edge, the DNS, the load balancing, the hybrid routing, and the visibility -- and justify each against a stated latency, availability, or address-space constraint. Largest domain on the exam.",
+      "objectives": [
+        {
+          "id": "ans-c01:1:1",
+          "unitId": "ans-c01:1",
+          "index": 1,
+          "text": "Design patterns for content distribution with Amazon CloudFront",
+          "sourceHash": "2429f60e3a7b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:1:2",
+          "unitId": "ans-c01:1",
+          "index": 2,
+          "text": "Design patterns for global traffic management with AWS Global Accelerator",
+          "sourceHash": "5f04ec673598",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:1:3",
+          "unitId": "ans-c01:1",
+          "index": 3,
+          "text": "Integrating edge services with Elastic Load Balancing and Amazon API Gateway",
+          "sourceHash": "224b49720d60",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:1:4",
+          "unitId": "ans-c01:1",
+          "index": 4,
+          "text": "Evaluating global inbound and outbound internet traffic to choose a distribution solution",
+          "sourceHash": "1d847eb75653",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:1:5",
+          "unitId": "ans-c01:1",
+          "index": 5,
+          "text": "DNS protocol fundamentals: records, TTL, zones, delegation, DNSSEC",
+          "sourceHash": "0716ea0f371c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:1:6",
+          "unitId": "ans-c01:1",
+          "index": 6,
+          "text": "Amazon Route 53 features: alias records, traffic policies, resolvers, health checks",
+          "sourceHash": "64cb5cf207d4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:1:7",
+          "unitId": "ans-c01:1",
+          "index": 7,
+          "text": "Using Route 53 public hosted zones and private hosted zones",
+          "sourceHash": "e16fa337ca34",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:1:8",
+          "unitId": "ans-c01:1",
+          "index": 8,
+          "text": "Using Route 53 Resolver endpoints in hybrid and AWS architectures",
+          "sourceHash": "d7fe5f37a4b0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:1:9",
+          "unitId": "ans-c01:1",
+          "index": 9,
+          "text": "Using Route 53 for global traffic management, and managing domain registration",
+          "sourceHash": "b76863daf8bd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:1:10",
+          "unitId": "ans-c01:1",
+          "index": 10,
+          "text": "DNS logging and monitoring",
+          "sourceHash": "229670366d4a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:1:11",
+          "unitId": "ans-c01:1",
+          "index": 11,
+          "text": "How load balancing works at layers 3, 4, and 7, and selecting the right load balancer",
+          "sourceHash": "8fe84260a2da",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:1:12",
+          "unitId": "ans-c01:1",
+          "index": 12,
+          "text": "Internal against external load balancers, and load balancer scaling factors",
+          "sourceHash": "a39508d5b1bc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:1:13",
+          "unitId": "ans-c01:1",
+          "index": 13,
+          "text": "Load balancer configuration: proxy protocol, cross-zone load balancing, session affinity, routing algorithms",
+          "sourceHash": "3678cdc9604f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:1:14",
+          "unitId": "ans-c01:1",
+          "index": 14,
+          "text": "Target group configuration: TCP, GENEVE, IP targets against instance targets",
+          "sourceHash": "10d1dabb8912",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:1:15",
+          "unitId": "ans-c01:1",
+          "index": 15,
+          "text": "Encryption and authentication at the load balancer: TLS termination against TLS passthrough",
+          "sourceHash": "6b4f8ab4129e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:1:16",
+          "unitId": "ans-c01:1",
+          "index": 16,
+          "text": "Load balancer integrations: Global Accelerator, CloudFront, AWS WAF, Route 53, Amazon EKS, AWS Certificate Manager, and the AWS Load Balancer Controller",
+          "sourceHash": "0e0923ca1cbd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:1:17",
+          "unitId": "ans-c01:1",
+          "index": 17,
+          "text": "Integrating auto scaling with load balancing",
+          "sourceHash": "06a6cd19ac5c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:1:18",
+          "unitId": "ans-c01:1",
+          "index": 18,
+          "text": "Integrating load balancers with existing application deployments",
+          "sourceHash": "f524076244a8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:1:19",
+          "unitId": "ans-c01:1",
+          "index": 19,
+          "text": "Visibility with Amazon CloudWatch metrics, agents, logs, alarms, dashboards, and insights",
+          "sourceHash": "40ac13060d4c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:1:20",
+          "unitId": "ans-c01:1",
+          "index": 20,
+          "text": "Visibility with AWS Transit Gateway Network Manager and VPC Reachability Analyzer",
+          "sourceHash": "3fb12cc8c217",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:1:21",
+          "unitId": "ans-c01:1",
+          "index": 21,
+          "text": "Flow logs, traffic mirroring, and access logging for load balancers and CloudFront",
+          "sourceHash": "69b6b9381a56",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:1:22",
+          "unitId": "ans-c01:1",
+          "index": 22,
+          "text": "Identifying logging and monitoring requirements, and capturing a baseline of network performance",
+          "sourceHash": "2ce318bd573a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:1:23",
+          "unitId": "ans-c01:1",
+          "index": 23,
+          "text": "Recommending the metrics that give the clearest visibility into network status",
+          "sourceHash": "e31159cadd9c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:1:24",
+          "unitId": "ans-c01:1",
+          "index": 24,
+          "text": "Routing fundamentals: static against dynamic routing, and BGP",
+          "sourceHash": "35b72d668c4d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:1:25",
+          "unitId": "ans-c01:1",
+          "index": 25,
+          "text": "Layer 1 and layer 2 concepts for physical interconnects: VLANs, link aggregation groups, optics, jumbo frames",
+          "sourceHash": "c4306b406403",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:1:26",
+          "unitId": "ans-c01:1",
+          "index": 26,
+          "text": "Encapsulation and encryption technologies: GRE and IPsec",
+          "sourceHash": "a4108d0039fd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:1:27",
+          "unitId": "ans-c01:1",
+          "index": 27,
+          "text": "Identifying the requirements for hybrid connectivity before designing it",
+          "sourceHash": "697a89dc4bdc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:1:28",
+          "unitId": "ans-c01:1",
+          "index": 28,
+          "text": "Designing redundant hybrid connectivity with AWS Direct Connect and AWS Site-to-Site VPN",
+          "sourceHash": "a9f70352dade",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:1:29",
+          "unitId": "ans-c01:1",
+          "index": 29,
+          "text": "Designing BGP routing with BGP attributes to shape traffic: load sharing and active/passive",
+          "sourceHash": "e0e65e7cc59c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:1:30",
+          "unitId": "ans-c01:1",
+          "index": 30,
+          "text": "Integrating SD-WAN with AWS, including Transit Gateway Connect and overlay networks",
+          "sourceHash": "0bcb97bd7c98",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:1:31",
+          "unitId": "ans-c01:1",
+          "index": 31,
+          "text": "Connectivity patterns across accounts, Regions, and VPCs: VPC peering, Transit Gateway, AWS PrivateLink",
+          "sourceHash": "3e47a5dd048d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:1:32",
+          "unitId": "ans-c01:1",
+          "index": 32,
+          "text": "VPC sharing in a multi-account setup",
+          "sourceHash": "1ba722d45f8a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:1:33",
+          "unitId": "ans-c01:1",
+          "index": 33,
+          "text": "Designing around overlapping IP address space with NAT, PrivateLink, and Transit Gateway routing",
+          "sourceHash": "a4ff258b8b25",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "ans-c01:2",
+      "index": 2,
+      "title": "Network Implementation",
+      "weight": 26,
+      "gate": "Actually build it: physical interconnect, routing protocol, hub-and-spoke topology, hybrid DNS, and the automation that reproduces the whole thing -- then prove connectivity with a tool rather than a ping.",
+      "objectives": [
+        {
+          "id": "ans-c01:2:1",
+          "unitId": "ans-c01:2",
+          "index": 1,
+          "text": "Configuring the physical requirements of hybrid connectivity: Letter of Authorization documents, colocation facilities, Direct Connect",
+          "sourceHash": "70098399aa58",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:2:2",
+          "unitId": "ans-c01:2",
+          "index": 2,
+          "text": "Configuring static and dynamic routing protocols for hybrid connectivity",
+          "sourceHash": "4d08e3fe4002",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:2:3",
+          "unitId": "ans-c01:2",
+          "index": 3,
+          "text": "Layer 2 and layer 3 configuration: VLANs, IP addressing, gateways, routing, switching",
+          "sourceHash": "8d046cf887a5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:2:4",
+          "unitId": "ans-c01:2",
+          "index": 4,
+          "text": "Implementing VPNs, including accelerated VPN and VPN security",
+          "sourceHash": "e6996cc43467",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:2:5",
+          "unitId": "ans-c01:2",
+          "index": 5,
+          "text": "Connecting existing on-premises networks to the AWS Cloud",
+          "sourceHash": "d0a2709d8398",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:2:6",
+          "unitId": "ans-c01:2",
+          "index": 6,
+          "text": "Connecting existing on-premises name resolution to AWS: conditional forwarding, hosted zones, resolvers",
+          "sourceHash": "8ad55580e792",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:2:7",
+          "unitId": "ans-c01:2",
+          "index": 7,
+          "text": "Configuring and implementing load balancing solutions, including reverse proxies",
+          "sourceHash": "36d0eac5e795",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:2:8",
+          "unitId": "ans-c01:2",
+          "index": 8,
+          "text": "Traffic management and SD-WAN with Transit Gateway Connect",
+          "sourceHash": "4ca858b38e91",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:2:9",
+          "unitId": "ans-c01:2",
+          "index": 9,
+          "text": "Multi-account networking with AWS Organizations and AWS Resource Access Manager: shared Transit Gateway, Direct Connect, VPC, Route 53",
+          "sourceHash": "675bd9bf09cf",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:2:10",
+          "unitId": "ans-c01:2",
+          "index": 10,
+          "text": "Testing and validating connectivity between environments with Route Analyzer and Reachability Analyzer",
+          "sourceHash": "60321131e226",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:2:11",
+          "unitId": "ans-c01:2",
+          "index": 11,
+          "text": "Configuring network monitoring and logging for AWS networking services",
+          "sourceHash": "3b193957c8a3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:2:12",
+          "unitId": "ans-c01:2",
+          "index": 12,
+          "text": "Inter-VPC and multi-account connectivity: VPC peering, Transit Gateway, VPN, third-party and SD-WAN solutions, MPLS",
+          "sourceHash": "b45e5d4673f0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:2:13",
+          "unitId": "ans-c01:2",
+          "index": 13,
+          "text": "Private application connectivity with AWS PrivateLink",
+          "sourceHash": "b2e390ede6d2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:2:14",
+          "unitId": "ans-c01:2",
+          "index": 14,
+          "text": "Configuring a hub-and-spoke architecture with Transit Gateway or a transit VPC",
+          "sourceHash": "2e6a733008f4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:2:15",
+          "unitId": "ans-c01:2",
+          "index": 15,
+          "text": "Configuring hybrid connectivity with existing third-party vendor solutions",
+          "sourceHash": "578f15cb25e6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:2:16",
+          "unitId": "ans-c01:2",
+          "index": 16,
+          "text": "Configuring single-VPC and multi-VPC designs: DHCP, routing, security groups",
+          "sourceHash": "7826be789243",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:2:17",
+          "unitId": "ans-c01:2",
+          "index": 17,
+          "text": "Implementing security between network boundaries with security groups, network ACLs, and AWS Network Firewall",
+          "sourceHash": "e77cb70af901",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:2:18",
+          "unitId": "ans-c01:2",
+          "index": 18,
+          "text": "Authentication and authorization in network access: SAML and Active Directory",
+          "sourceHash": "bfc6293520bf",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:2:19",
+          "unitId": "ans-c01:2",
+          "index": 19,
+          "text": "Choosing between private hosted zones and public hosted zones",
+          "sourceHash": "9412e8224260",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:2:20",
+          "unitId": "ans-c01:2",
+          "index": 20,
+          "text": "Altering traffic management through DNS: latency, geography, weighting",
+          "sourceHash": "6703529ad886",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:2:21",
+          "unitId": "ans-c01:2",
+          "index": 21,
+          "text": "DNS delegation and conditional forwarding",
+          "sourceHash": "9e18f2f87067",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:2:22",
+          "unitId": "ans-c01:2",
+          "index": 22,
+          "text": "DNS record types: A, AAAA, TXT, pointer records, alias records",
+          "sourceHash": "ed39337c863e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:2:23",
+          "unitId": "ans-c01:2",
+          "index": 23,
+          "text": "Configuring DNSSEC on Route 53",
+          "sourceHash": "35b4ae11de48",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:2:24",
+          "unitId": "ans-c01:2",
+          "index": 24,
+          "text": "Sharing DNS services between accounts with AWS RAM",
+          "sourceHash": "2d382ab8d822",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:2:25",
+          "unitId": "ans-c01:2",
+          "index": 25,
+          "text": "Inbound and outbound resolver endpoints, and when each is required",
+          "sourceHash": "b6193bcb3b90",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:2:26",
+          "unitId": "ans-c01:2",
+          "index": 26,
+          "text": "Configuring DNS monitoring and logging on Route 53",
+          "sourceHash": "9581de3ca69a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:2:27",
+          "unitId": "ans-c01:2",
+          "index": 27,
+          "text": "Infrastructure as code for networks: the AWS CDK, AWS CloudFormation, the AWS CLI, SDKs, and APIs",
+          "sourceHash": "fc940ff6edb3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:2:28",
+          "unitId": "ans-c01:2",
+          "index": 28,
+          "text": "Event-driven network automation",
+          "sourceHash": "a6c129dd4d9d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:2:29",
+          "unitId": "ans-c01:2",
+          "index": 29,
+          "text": "The problems hardcoded instructions cause in network IaC templates",
+          "sourceHash": "45d50929af76",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:2:30",
+          "unitId": "ans-c01:2",
+          "index": 30,
+          "text": "Creating repeatable network configurations and automating the optimization of network resources",
+          "sourceHash": "2ac0eb6afc76",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:2:31",
+          "unitId": "ans-c01:2",
+          "index": 31,
+          "text": "Weighing risk against cost to keep a cloud network as cheap as possible while automating it",
+          "sourceHash": "a7dcc6d9ecce",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "ans-c01:3",
+      "index": 3,
+      "title": "Network Management and Operation",
+      "weight": 20,
+      "gate": "Given 'the link is slow' or 'that host is unreachable', find it with flow logs, Reachability Analyzer, and Network Manager -- then make the network faster or cheaper without redesigning it.",
+      "gateEngine": "net-trace",
+      "objectives": [
+        {
+          "id": "ans-c01:3:1",
+          "unitId": "ans-c01:3",
+          "index": 1,
+          "text": "Routing protocols used in AWS hybrid networks, including BGP over Direct Connect",
+          "sourceHash": "75138414762d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:3:2",
+          "unitId": "ans-c01:3",
+          "index": 2,
+          "text": "Connectivity methods: Direct Connect gateway, Transit Gateway, virtual interfaces",
+          "sourceHash": "79fd8ffc3d67",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:3:3",
+          "unitId": "ans-c01:3",
+          "index": 3,
+          "text": "How limits and quotas affect networking services: bandwidth limits and route limits",
+          "sourceHash": "cc2753bb26e3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:3:4",
+          "unitId": "ans-c01:3",
+          "index": 4,
+          "text": "Maintaining private access to custom services with AWS PrivateLink and VPC peering",
+          "sourceHash": "ad13a86d3385",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:3:5",
+          "unitId": "ans-c01:3",
+          "index": 5,
+          "text": "Using route tables and automatic propagation to direct traffic",
+          "sourceHash": "b039782e3b54",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:3:6",
+          "unitId": "ans-c01:3",
+          "index": 6,
+          "text": "Optimizing routing over dynamic and static protocols: route summarization and CIDR overlap",
+          "sourceHash": "7fd6c67b38ea",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:3:7",
+          "unitId": "ans-c01:3",
+          "index": 7,
+          "text": "Setting up private or public access to AWS services over Direct Connect and VPN",
+          "sourceHash": "b08a59e42f5b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:3:8",
+          "unitId": "ans-c01:3",
+          "index": 8,
+          "text": "Inter-Regional and intra-Regional communication patterns",
+          "sourceHash": "029c5032d4b2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:3:9",
+          "unitId": "ans-c01:3",
+          "index": 9,
+          "text": "Network performance metrics and reachability constraints, including routing and packet size",
+          "sourceHash": "c086e9005c06",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:3:10",
+          "unitId": "ans-c01:3",
+          "index": 10,
+          "text": "Collecting and analyzing logs and metrics with CloudWatch, VPC flow logs, and VPC Traffic Mirroring",
+          "sourceHash": "591bcf4ebaa3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:3:11",
+          "unitId": "ans-c01:3",
+          "index": 11,
+          "text": "Mapping network topology with Transit Gateway Network Manager",
+          "sourceHash": "0d073198c4bf",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:3:12",
+          "unitId": "ans-c01:3",
+          "index": 12,
+          "text": "Analyzing packets to identify packet-shaping issues with VPC Traffic Mirroring",
+          "sourceHash": "3bcecfbd8b15",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:3:13",
+          "unitId": "ans-c01:3",
+          "index": 13,
+          "text": "Troubleshooting connectivity caused by misconfiguration with Reachability Analyzer",
+          "sourceHash": "f319a9898b98",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:3:14",
+          "unitId": "ans-c01:3",
+          "index": 14,
+          "text": "Verifying that a configuration meets design requirements, and automating verification of connectivity intent as configurations change",
+          "sourceHash": "f34bf92f4021",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:3:15",
+          "unitId": "ans-c01:3",
+          "index": 15,
+          "text": "Troubleshooting packet size mismatches inside a VPC",
+          "sourceHash": "410181cc26bb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:3:16",
+          "unitId": "ans-c01:3",
+          "index": 16,
+          "text": "Choosing between VPC peering, proxy patterns, and Transit Gateway from the requirements",
+          "sourceHash": "eab20ec632a5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:3:17",
+          "unitId": "ans-c01:3",
+          "index": 17,
+          "text": "Reducing bandwidth utilization: unicast against multicast, and CloudFront",
+          "sourceHash": "5178c62c2638",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:3:18",
+          "unitId": "ans-c01:3",
+          "index": 18,
+          "text": "Cost-effective connectivity options for data transfer between a VPC and on-premises environments",
+          "sourceHash": "83ae5fc433d8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:3:19",
+          "unitId": "ans-c01:3",
+          "index": 19,
+          "text": "Selecting the right network interface for performance: elastic network interface, Elastic Network Adapter, Elastic Fabric Adapter",
+          "sourceHash": "4a84dfb62271",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:3:20",
+          "unitId": "ans-c01:3",
+          "index": 20,
+          "text": "Implementing multicast within a VPC and on-premises",
+          "sourceHash": "9914eecee47e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:3:21",
+          "unitId": "ans-c01:3",
+          "index": 21,
+          "text": "Route 53 high-availability features: DNS load balancing with health checks, latency records, and weighted record sets",
+          "sourceHash": "d471917927d1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:3:22",
+          "unitId": "ans-c01:3",
+          "index": 22,
+          "text": "Creating Route 53 hosted zones and records to optimize application availability, such as a private zonal DNS entry that routes traffic across Availability Zones",
+          "sourceHash": "9e1eebf94844",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:3:23",
+          "unitId": "ans-c01:3",
+          "index": 23,
+          "text": "Optimizing subnets for auto scaling, and preventing IP address depletion with secondary CIDRs",
+          "sourceHash": "bc4069a1f9e4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:3:24",
+          "unitId": "ans-c01:3",
+          "index": 24,
+          "text": "Configuring jumbo frame support across connection types",
+          "sourceHash": "9922b63f9081",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:3:25",
+          "unitId": "ans-c01:3",
+          "index": 25,
+          "text": "Improving network performance and application availability with AWS Global Accelerator",
+          "sourceHash": "e40018817470",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "ans-c01:4",
+      "index": 4,
+      "title": "Network Security, Compliance, and Governance",
+      "weight": 24,
+      "gate": "Build the threat model for a given network architecture, put the inbound, outbound, and east-west controls in place, encrypt what crosses the wire, and show the audit trail that proves all of it.",
+      "objectives": [
+        {
+          "id": "ans-c01:4:1",
+          "unitId": "ans-c01:4",
+          "index": 1,
+          "text": "Threat models that follow from application architecture, and the common threats against each",
+          "sourceHash": "67916d77a8ac",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:4:2",
+          "unitId": "ans-c01:4",
+          "index": 2,
+          "text": "Securing inbound traffic flows into AWS: AWS WAF, AWS Shield, AWS Network Firewall",
+          "sourceHash": "13f359f83340",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:4:3",
+          "unitId": "ans-c01:4",
+          "index": 3,
+          "text": "Securing outbound traffic flows from AWS: Network Firewall, proxies, Gateway Load Balancers",
+          "sourceHash": "91aa12f9c52f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:4:4",
+          "unitId": "ans-c01:4",
+          "index": 4,
+          "text": "Securing inter-VPC traffic within and across accounts: security groups, network ACLs, VPC endpoint policies",
+          "sourceHash": "3fc2bd2e5b48",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:4:5",
+          "unitId": "ans-c01:4",
+          "index": 5,
+          "text": "Network architectures that meet security and compliance requirements: untrusted network, perimeter VPC, three-tier",
+          "sourceHash": "84547d736814",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:4:6",
+          "unitId": "ans-c01:4",
+          "index": 6,
+          "text": "Developing a threat model and identifying mitigations for a given architecture",
+          "sourceHash": "fb457df01d90",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:4:7",
+          "unitId": "ans-c01:4",
+          "index": 7,
+          "text": "Testing compliance against the original requirements, including failover and resiliency tests",
+          "sourceHash": "36ff689db964",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:4:8",
+          "unitId": "ans-c01:4",
+          "index": 8,
+          "text": "Automating security incident reporting and alerting",
+          "sourceHash": "61d5c37a0f40",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:4:9",
+          "unitId": "ans-c01:4",
+          "index": 9,
+          "text": "Network monitoring and logging services: CloudWatch, AWS CloudTrail, VPC Traffic Mirroring, VPC flow logs, Transit Gateway Network Manager",
+          "sourceHash": "2d9d1abe5d12",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:4:10",
+          "unitId": "ans-c01:4",
+          "index": 10,
+          "text": "Creating and analyzing VPC flow logs, including base and extended fields",
+          "sourceHash": "31058e786f9f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:4:11",
+          "unitId": "ans-c01:4",
+          "index": 11,
+          "text": "Creating and analyzing network traffic mirroring",
+          "sourceHash": "7f72f6c53944",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:4:12",
+          "unitId": "ans-c01:4",
+          "index": 12,
+          "text": "Implementing automated alarms and custom metrics with CloudWatch",
+          "sourceHash": "c34699d739e5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:4:13",
+          "unitId": "ans-c01:4",
+          "index": 13,
+          "text": "Correlating and analyzing information across single or multiple AWS log sources",
+          "sourceHash": "e0e418c95360",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:4:14",
+          "unitId": "ans-c01:4",
+          "index": 14,
+          "text": "Log creation and delivery: VPC flow logs, load balancer access logs, CloudFront access logs, delivery through Amazon Kinesis and CloudWatch",
+          "sourceHash": "7b79ab25a612",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:4:15",
+          "unitId": "ans-c01:4",
+          "index": 15,
+          "text": "Auditing network security configuration with AWS Firewall Manager, security groups, and AWS Trusted Advisor",
+          "sourceHash": "87a353533bd1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:4:16",
+          "unitId": "ans-c01:4",
+          "index": 16,
+          "text": "Network encryption options on AWS, and encryption under the shared responsibility model",
+          "sourceHash": "a1f422e60a96",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:4:17",
+          "unitId": "ans-c01:4",
+          "index": 17,
+          "text": "Implementing encryption in transit: IPsec and TLS across CloudFront, Application and Network Load Balancers, VPN over Direct Connect, AWS managed databases, Amazon S3, and Transit Gateway",
+          "sourceHash": "39a12d0d7c86",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:4:18",
+          "unitId": "ans-c01:4",
+          "index": 18,
+          "text": "VPN connectivity over Direct Connect",
+          "sourceHash": "051dbfd51316",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:4:19",
+          "unitId": "ans-c01:4",
+          "index": 19,
+          "text": "Implementing certificate management with AWS Certificate Manager and AWS Private Certificate Authority",
+          "sourceHash": "60f410b30f3f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ans-c01:4:20",
+          "unitId": "ans-c01:4",
+          "index": 20,
+          "text": "Implementing secure DNS communications, including DNSSEC",
+          "sourceHash": "e87209855035",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/aws.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-18T00:00:00Z",
+    "officialObjectivesUrl": "https://docs.aws.amazon.com/aws-certification/latest/advanced-networking-specialty-01/advanced-networking-specialty-01.html",
+    "providerName": "Amazon Web Services",
+    "credentialName": "AWS Certified Advanced Networking - Specialty",
+    "examCode": "ANS-C01",
+    "credentialStatus": "transitioning",
+    "retirementDate": "2026-12-31",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 4,
+    "objectives": 109,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

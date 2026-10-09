@@ -1,0 +1,252 @@
+{
+  "id": "securityx",
+  "code": "SECURITYX",
+  "title": "SecurityX",
+  "description": "CompTIA SecurityX CAS-005 exam prep across 4 weighted domains for enterprise security architecture and engineering.",
+  "trackType": "certification",
+  "units": [
+    {
+      "id": "securityx:1",
+      "index": 1,
+      "title": "Governance, Risk, Compliance",
+      "weight": 20,
+      "gate": "Given an enterprise scenario spanning multiple regulatory regimes, identify the applicable compliance requirements and design a risk treatment plan that satisfies them.",
+      "objectives": [
+        {
+          "id": "securityx:1:1",
+          "unitId": "securityx:1",
+          "index": 1,
+          "text": "Enterprise risk management frameworks and risk treatment strategies",
+          "sourceHash": "5b07cf17ec16",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "securityx:1:2",
+          "unitId": "securityx:1",
+          "index": 2,
+          "text": "Regulatory and legal considerations across industries and jurisdictions",
+          "sourceHash": "30a4ad6e68af",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "securityx:1:3",
+          "unitId": "securityx:1",
+          "index": 3,
+          "text": "Third-party and supply-chain risk at an enterprise scale",
+          "sourceHash": "5b13d919b11f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "securityx:1:4",
+          "unitId": "securityx:1",
+          "index": 4,
+          "text": "Governance structures: policy, standards, and enterprise security programs",
+          "sourceHash": "cf71a6e26c0c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "securityx:1:5",
+          "unitId": "securityx:1",
+          "index": 5,
+          "text": "Business continuity and disaster recovery at an enterprise architecture level",
+          "sourceHash": "f48880927b8a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "securityx:2",
+      "index": 2,
+      "title": "Security Architecture",
+      "weight": 27,
+      "gate": "Given a legacy enterprise architecture, redesign it applying Zero Trust principles and defend every architectural tradeoff you make.",
+      "objectives": [
+        {
+          "id": "securityx:2:1",
+          "unitId": "securityx:2",
+          "index": 1,
+          "text": "Enterprise security architecture and Zero Trust design principles",
+          "sourceHash": "cd60115014b4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "securityx:2:2",
+          "unitId": "securityx:2",
+          "index": 2,
+          "text": "Cloud and hybrid infrastructure security architecture",
+          "sourceHash": "76fbfb772877",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "securityx:2:3",
+          "unitId": "securityx:2",
+          "index": 3,
+          "text": "Identity and access management architecture at enterprise scale",
+          "sourceHash": "c7b07dd5b3c5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "securityx:2:4",
+          "unitId": "securityx:2",
+          "index": 4,
+          "text": "Secure network architecture: segmentation, SASE, microsegmentation",
+          "sourceHash": "40d32bb3eaad",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "securityx:2:5",
+          "unitId": "securityx:2",
+          "index": 5,
+          "text": "Data security architecture: classification, protection, and lifecycle",
+          "sourceHash": "4ed44af0cd34",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "securityx:3",
+      "index": 3,
+      "title": "Security Engineering",
+      "weight": 31,
+      "gate": "Given a complex system requiring secure integration, design and justify the cryptographic, automation, and secure-development controls needed end to end.",
+      "objectives": [
+        {
+          "id": "securityx:3:1",
+          "unitId": "securityx:3",
+          "index": 1,
+          "text": "Advanced cryptographic concepts and applied cryptography design",
+          "sourceHash": "c61d565548e2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "securityx:3:2",
+          "unitId": "securityx:3",
+          "index": 2,
+          "text": "Secure software development lifecycle and DevSecOps integration",
+          "sourceHash": "6aebefe9b52b",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "devops-04-secret-wiring",
+            "coverage": "partial"
+          }
+        },
+        {
+          "id": "securityx:3:3",
+          "unitId": "securityx:3",
+          "index": 3,
+          "text": "Enterprise mobility, endpoint, and IoT/OT security engineering",
+          "sourceHash": "44170a1eb24d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "securityx:3:4",
+          "unitId": "securityx:3",
+          "index": 4,
+          "text": "Automation and orchestration for security engineering at scale",
+          "sourceHash": "d572bd259bf5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "securityx:3:5",
+          "unitId": "securityx:3",
+          "index": 5,
+          "text": "Secure system and application integration across enterprise boundaries",
+          "sourceHash": "7ac19392bb67",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "securityx:4",
+      "index": 4,
+      "title": "Security Operations",
+      "weight": 22,
+      "gate": "Given an enterprise-scale incident, lead the technical response across teams, correlating threat intelligence with operational telemetry to drive the decision.",
+      "objectives": [
+        {
+          "id": "securityx:4:1",
+          "unitId": "securityx:4",
+          "index": 1,
+          "text": "Enterprise-scale threat management and threat intelligence integration",
+          "sourceHash": "8353626148e7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "securityx:4:2",
+          "unitId": "securityx:4",
+          "index": 2,
+          "text": "Incident response leadership across complex, multi-team environments",
+          "sourceHash": "85d1adba0898",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "securityx:4:3",
+          "unitId": "securityx:4",
+          "index": 3,
+          "text": "Vulnerability management at enterprise scale",
+          "sourceHash": "be91c921e984",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "securityx:4:4",
+          "unitId": "securityx:4",
+          "index": 4,
+          "text": "Security monitoring and analytics for enterprise operations",
+          "sourceHash": "ad78d8e50f20",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/data.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 4,
+    "objectives": 19,
+    "bookkeeping": 0,
+    "linked": 1
+  }
+}

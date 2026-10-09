@@ -61,6 +61,14 @@ A design mission gives you requirements with numbers (peak load, latency budget,
 
 Incident missions open with a ticket and a broken platform on a one-second clock. Tabs: **Ticket**, **Metrics** (live stats and sparklines), **Logs** (evidence that names the failing component), **Diagram** (each component coloured by its own health). **Runbook actions** change the platform; every action resets the recovery timer. Answer the **root cause** question, apply a remediation that removes the cause (symptom-only fixes such as shedding legitimate traffic are rejected with a reason), wait until health stays green for the required seconds (use Advance 10s to skip ahead), then write the **post-incident note**. All five checks must pass to complete. Serverless incidents add function stats (needed vs allowed concurrency, throttles, cold starts, dead-letter queue depth, duplicate and lost invocations) and runbook actions for the concurrency limit, provisioned concurrency, dead-letter queue, retries, the idempotent handler and the timeout. Some wrong actions cannot be undone inside the incident (failing over to a replica that is behind discards its missing writes); the check tells you why, and **Reset** restarts the incident.
 
+## Study
+
+Study (Learn group) holds exam-style objective catalogs taken from the Ascendra project: eleven AWS certification courses and nine core computer-science and security courses. Each course lists its units with the exam weight and a one-sentence "gate" that says what mastering the unit means, and each unit lists its objectives.
+
+Every objective carries a label that says how it is best learned here: "Do it: existing mission" means an OpsForge mission already makes you do it, and the card links straight to that mission; "Read and check", "Read, then a scenario" and "Explain it back" describe the lesson formats that arrive with the generated content; "Do it: lab planned" names a hands-on lab that does not exist yet. Today only the mission links are live; the rest of each objective is a catalog entry.
+
+Study material is unofficial: the objectives are paraphrased from public exam guides, OpsForge is not affiliated with any certification body, and finishing a course here is not a credential. Study status is separate from skill mastery, which still comes only from missions.
+
 ## Story Bank drafts from missions
 
 Saving a mission's reflection also saves a draft story in the Story Bank, tagged "draft from a mission · practice, not experience": the mission summary is the Situation, its first objective the Task, your reflection the Action, with suggested Leadership Principles and the technical skills filled in. Edit it like any story; re-saving the reflection updates only the Action. The evidence line says it was a simulation so it is never mistaken for work experience.

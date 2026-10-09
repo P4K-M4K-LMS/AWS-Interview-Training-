@@ -36,6 +36,14 @@ Learners on the unnamed-role posting (`ops-automation`) are new to engineering, 
 
 The explanation level is `beginner` (primer expanded, first-step note always shown) or `standard` (primer collapsed under "Start from the basics", first-step note after hint 1). The default follows the target role: beginner for the unnamed role, standard for the SDE II posting. `settings.explanationLevel` overrides it (Settings → Explanations). `tests/primers.test.ts` enforces one primer per mission, minimum lengths, plain words without code, and that every "why" grounds the lesson in work or interviews.
 
+## Study catalog (Ascendra snapshot)
+
+Alongside the seven tracks, Study offers twenty objective catalogs copied from the Ascendra project at a fixed commit (`tools/ascendra-catalog/PROVENANCE.md`): AWS CLF-C02, AIF-C01, SAA-C03, DVA-C02, SOA-C03, DEA-C01, MLA-C02, SAP-C02, DOP-C02, SCS-C03 and ANS-C01, plus MSCS foundations, Python, JavaScript, Security+, Linux+, CySA+, PenTest+, SecurityX and a computational-mathematics degree plan. That is 1,481 learnable objectives in 134 units, plus 20 degree-plan bookkeeping lines kept for fidelity and folded away.
+
+Each objective has a modality: `do-existing` (a mission teaches it; 66 curated links in `src/content/study/links.ts`, matched by objective text so a catalog refresh cannot silently drop one), `do-new` (a planned lab would; `src/content/study/engines.ts` lists them with honest one-liners), `read`, `combo` and `explain` (lesson formats that arrive with generated content). Three unit gates map one-to-one onto planned labs: the disaster-recovery planner, the virtual network path tracer and the authorization policy evaluator.
+
+The catalog is a separate namespace from tracks, skills and missions. Nothing in Study changes a skill's mastery; the only bridge is the link table, and the planned objective status (Ascendra's 0–4 rubric) will be credited from completed missions, never the other way round. `npx tsx scripts/generate-study.mts build-catalog` regenerates `public/study/` from the snapshot; a unit test fails when the committed JSON drifts from the build.
+
 ## Career stages (game levels)
 
 1. Engineering Trainee

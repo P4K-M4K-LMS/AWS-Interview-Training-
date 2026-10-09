@@ -1,0 +1,552 @@
+{
+  "id": "javascript",
+  "code": "JAVASCRIPT",
+  "title": "JavaScript Programming",
+  "description": "9-week intro-to-advanced JavaScript progression: syntax and the DOM through async patterns, ES6+, prototypes, testing/tooling, and Node.js.",
+  "trackType": "graduate",
+  "units": [
+    {
+      "id": "javascript:1",
+      "index": 1,
+      "title": "Syntax, variables & control flow",
+      "rangeLabel": "Week 1",
+      "gate": "Given an unfamiliar short JS snippet using var, let, and const, predict its output and explain any hoisting or scoping surprise it contains.",
+      "objectives": [
+        {
+          "id": "javascript:1:1",
+          "unitId": "javascript:1",
+          "index": 1,
+          "text": "Variables: var vs. let vs. const, and why hoisting makes var risky",
+          "sourceHash": "46a33d5989aa",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "javascript:1:2",
+          "unitId": "javascript:1",
+          "index": 2,
+          "text": "Primitive types, typeof, and type coercion pitfalls (== vs. ===)",
+          "sourceHash": "502b892b94f7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "javascript:1:3",
+          "unitId": "javascript:1",
+          "index": 3,
+          "text": "Operators and expressions; operator precedence",
+          "sourceHash": "d400deddf1ea",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "javascript:1:4",
+          "unitId": "javascript:1",
+          "index": 4,
+          "text": "Conditional logic: if/else, switch, and the ternary operator",
+          "sourceHash": "c61d520ddad2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "javascript:1:5",
+          "unitId": "javascript:1",
+          "index": 5,
+          "text": "Loops: for, while, for...of, for...in, and when to use each",
+          "sourceHash": "43bc2beebfa5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "javascript:2",
+      "index": 2,
+      "title": "Functions & scope",
+      "rangeLabel": "Week 2",
+      "gate": "Write both a function declaration and an equivalent arrow function for a stated task, and explain a concrete case where the difference in `this` binding would matter.",
+      "objectives": [
+        {
+          "id": "javascript:2:1",
+          "unitId": "javascript:2",
+          "index": 1,
+          "text": "Function declarations vs. function expressions vs. arrow functions",
+          "sourceHash": "71ad4ddf622c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "javascript:2:2",
+          "unitId": "javascript:2",
+          "index": 2,
+          "text": "Parameters: default values, rest parameters",
+          "sourceHash": "5de41f6a4ec4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "javascript:2:3",
+          "unitId": "javascript:2",
+          "index": 3,
+          "text": "Scope: function scope vs. block scope, and the temporal dead zone",
+          "sourceHash": "8a5b78292376",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "javascript:2:4",
+          "unitId": "javascript:2",
+          "index": 4,
+          "text": "Closures: what they capture and a real use case for one",
+          "sourceHash": "b7b2569a93ae",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "javascript:2:5",
+          "unitId": "javascript:2",
+          "index": 5,
+          "text": "Understanding `this` in different call contexts",
+          "sourceHash": "9664c555e7ad",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "javascript:3",
+      "index": 3,
+      "title": "Objects & arrays",
+      "rangeLabel": "Week 3",
+      "gate": "Given a nested object and array of data, write a transformation using destructuring, spread, and array methods (map/filter/reduce) without a manual for-loop.",
+      "objectives": [
+        {
+          "id": "javascript:3:1",
+          "unitId": "javascript:3",
+          "index": 1,
+          "text": "Object literals, property access, and shorthand syntax",
+          "sourceHash": "5c065dfaa421",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "javascript:3:2",
+          "unitId": "javascript:3",
+          "index": 2,
+          "text": "Array methods: map, filter, reduce, find, some, every",
+          "sourceHash": "d7fe8b428ffc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "javascript:3:3",
+          "unitId": "javascript:3",
+          "index": 3,
+          "text": "Destructuring assignment for objects and arrays",
+          "sourceHash": "878890fcdba7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "javascript:3:4",
+          "unitId": "javascript:3",
+          "index": 4,
+          "text": "Spread and rest syntax in object/array contexts",
+          "sourceHash": "8863cc068535",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "javascript:3:5",
+          "unitId": "javascript:3",
+          "index": 5,
+          "text": "Shallow vs. deep copying, and why reference semantics matter",
+          "sourceHash": "0e604178b714",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "javascript:4",
+      "index": 4,
+      "title": "The DOM & events",
+      "rangeLabel": "Week 4",
+      "gate": "Given a page layout, write vanilla JS that selects the right elements, updates the DOM in response to a user event, and avoids common event-handling bugs (e.g. missing preventDefault).",
+      "objectives": [
+        {
+          "id": "javascript:4:1",
+          "unitId": "javascript:4",
+          "index": 1,
+          "text": "Selecting and traversing the DOM (querySelector, closest, parent/child access)",
+          "sourceHash": "335369528ada",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "javascript:4:2",
+          "unitId": "javascript:4",
+          "index": 2,
+          "text": "Creating, modifying, and removing DOM nodes",
+          "sourceHash": "c005d1c9bb77",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "javascript:4:3",
+          "unitId": "javascript:4",
+          "index": 3,
+          "text": "Event listeners: bubbling, capturing, delegation, and preventDefault",
+          "sourceHash": "0c2b2028297f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "javascript:4:4",
+          "unitId": "javascript:4",
+          "index": 4,
+          "text": "Working with forms and form validation",
+          "sourceHash": "b9b965015d6b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "javascript:4:5",
+          "unitId": "javascript:4",
+          "index": 5,
+          "text": "Basic accessibility considerations when manipulating the DOM",
+          "sourceHash": "5c9e69cde9f1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "javascript:5",
+      "index": 5,
+      "title": "Asynchronous JavaScript",
+      "rangeLabel": "Week 5",
+      "gate": "Given a sequence of dependent network calls, write it correctly with async/await including error handling, and explain what the event loop is doing while it waits.",
+      "objectives": [
+        {
+          "id": "javascript:5:1",
+          "unitId": "javascript:5",
+          "index": 1,
+          "text": "The event loop, call stack, and task queue (conceptual model)",
+          "sourceHash": "055d30e94221",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "javascript:5:2",
+          "unitId": "javascript:5",
+          "index": 2,
+          "text": "Callbacks and callback hell -- what async/await actually replaces",
+          "sourceHash": "a8944f3db8dd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "javascript:5:3",
+          "unitId": "javascript:5",
+          "index": 3,
+          "text": "Promises: states, .then/.catch/.finally, Promise.all",
+          "sourceHash": "7a0bacc9bcb1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "javascript:5:4",
+          "unitId": "javascript:5",
+          "index": 4,
+          "text": "async/await syntax and error handling with try/catch",
+          "sourceHash": "3e8b0093d185",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "javascript:5:5",
+          "unitId": "javascript:5",
+          "index": 5,
+          "text": "Fetching data with the Fetch API and handling JSON responses",
+          "sourceHash": "43f7cdfc597e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "javascript:6",
+      "index": 6,
+      "title": "ES6+ features & modules",
+      "rangeLabel": "Week 6",
+      "gate": "Refactor a script that uses global variables and string concatenation into ES modules with template literals and proper imports/exports.",
+      "objectives": [
+        {
+          "id": "javascript:6:1",
+          "unitId": "javascript:6",
+          "index": 1,
+          "text": "Template literals and tagged templates",
+          "sourceHash": "d0b05b9cf31c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "javascript:6:2",
+          "unitId": "javascript:6",
+          "index": 2,
+          "text": "ES modules: import/export, default vs. named exports",
+          "sourceHash": "c767e8ebcccb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "javascript:6:3",
+          "unitId": "javascript:6",
+          "index": 3,
+          "text": "Classes: constructor, methods, inheritance, static members",
+          "sourceHash": "00198ac43d3f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "javascript:6:4",
+          "unitId": "javascript:6",
+          "index": 4,
+          "text": "Map and Set as alternatives to plain objects/arrays",
+          "sourceHash": "4c4bb92d4ed4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "javascript:6:5",
+          "unitId": "javascript:6",
+          "index": 5,
+          "text": "Optional chaining and nullish coalescing",
+          "sourceHash": "a56e99ced469",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "javascript:7",
+      "index": 7,
+      "title": "Prototypes, higher-order functions & patterns",
+      "rangeLabel": "Week 7",
+      "gate": "Explain the prototype chain for a given object, predict a property lookup, and rewrite a repeated pattern using a higher-order function.",
+      "objectives": [
+        {
+          "id": "javascript:7:1",
+          "unitId": "javascript:7",
+          "index": 1,
+          "text": "The prototype chain and how method lookup actually works",
+          "sourceHash": "3a43a5602dad",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "javascript:7:2",
+          "unitId": "javascript:7",
+          "index": 2,
+          "text": "Object.create and prototypal inheritance vs. classical inheritance",
+          "sourceHash": "3b7ffba2443b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "javascript:7:3",
+          "unitId": "javascript:7",
+          "index": 3,
+          "text": "Higher-order functions: functions that take or return functions",
+          "sourceHash": "583411854fac",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "javascript:7:4",
+          "unitId": "javascript:7",
+          "index": 4,
+          "text": "Currying and function composition basics",
+          "sourceHash": "db80eaacab79",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "javascript:7:5",
+          "unitId": "javascript:7",
+          "index": 5,
+          "text": "Common design patterns in JS: module pattern, observer pattern",
+          "sourceHash": "b0141b2cc6a4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "javascript:8",
+      "index": 8,
+      "title": "Testing & tooling",
+      "rangeLabel": "Week 8",
+      "gate": "Given a small buggy function, write a failing Jest test that reproduces the bug, fix it, and explain what a linter/bundler in your toolchain would have caught earlier.",
+      "objectives": [
+        {
+          "id": "javascript:8:1",
+          "unitId": "javascript:8",
+          "index": 1,
+          "text": "Writing unit tests with Jest: assertions, mocks, test structure",
+          "sourceHash": "a071b57acb23",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "javascript:8:2",
+          "unitId": "javascript:8",
+          "index": 2,
+          "text": "Debugging in browser devtools and Node (breakpoints, console techniques)",
+          "sourceHash": "a64746a29437",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "javascript:8:3",
+          "unitId": "javascript:8",
+          "index": 3,
+          "text": "Linting and formatting (ESLint, Prettier) and why consistency matters in teams",
+          "sourceHash": "dd658e2ac833",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "javascript:8:4",
+          "unitId": "javascript:8",
+          "index": 4,
+          "text": "What a bundler (e.g. Vite/webpack) actually does and why one is needed",
+          "sourceHash": "123c2b89712b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "javascript:8:5",
+          "unitId": "javascript:8",
+          "index": 5,
+          "text": "npm basics: package.json, scripts, semantic versioning",
+          "sourceHash": "95a46cbd6f28",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "javascript:9",
+      "index": 9,
+      "title": "Node.js & building a small API",
+      "rangeLabel": "Week 9",
+      "gate": "Build a minimal Node HTTP/Express endpoint that accepts a request, validates input, and returns JSON -- and explain what happens if two requests arrive concurrently.",
+      "objectives": [
+        {
+          "id": "javascript:9:1",
+          "unitId": "javascript:9",
+          "index": 1,
+          "text": "Node.js runtime basics: modules, the require/import system, npm scripts",
+          "sourceHash": "9a5011557212",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "javascript:9:2",
+          "unitId": "javascript:9",
+          "index": 2,
+          "text": "Building a simple HTTP server or Express route",
+          "sourceHash": "05fac6bb9c40",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "javascript:9:3",
+          "unitId": "javascript:9",
+          "index": 3,
+          "text": "Handling JSON request/response bodies and status codes",
+          "sourceHash": "0f886b923244",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "javascript:9:4",
+          "unitId": "javascript:9",
+          "index": 4,
+          "text": "Environment variables and basic configuration management",
+          "sourceHash": "9f09e567cc8a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "javascript:9:5",
+          "unitId": "javascript:9",
+          "index": 5,
+          "text": "Integrating prior units into one small end-to-end project",
+          "sourceHash": "3718c60a98e4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/data.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 9,
+    "objectives": 45,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

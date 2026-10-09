@@ -1,0 +1,460 @@
+{
+  "id": "secplus",
+  "code": "SECPLUS",
+  "title": "Security+",
+  "description": "CompTIA Security+ SY0-701 exam prep across 5 weighted domains, with PBQ scenario drilling.",
+  "trackType": "certification",
+  "units": [
+    {
+      "id": "secplus:1",
+      "index": 1,
+      "title": "General Security Concepts",
+      "weight": 12,
+      "gate": "Given an unfamiliar scenario, name which CIA-triad property and which control type/category apply, and explain a PKI or authentication choice without hand-waving the mechanism.",
+      "objectives": [
+        {
+          "id": "secplus:1:1",
+          "unitId": "secplus:1",
+          "index": 1,
+          "text": "CIA triad, non-repudiation, and the AAA security model",
+          "sourceHash": "872e268d485f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "secplus:1:2",
+          "unitId": "secplus:1",
+          "index": 2,
+          "text": "Security control types (technical, managerial, operational, physical) and control functions (preventive, detective, corrective, deterrent, compensating, directive)",
+          "sourceHash": "98c1c240b47e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "secplus:1:3",
+          "unitId": "secplus:1",
+          "index": 3,
+          "text": "Cryptographic fundamentals: symmetric vs asymmetric encryption, hashing, digital signatures, key exchange",
+          "sourceHash": "e822d51bbc75",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default",
+          "labPrompt": "Generate a self-signed TLS certificate with OpenSSL and inspect its fields with openssl x509 -text -noout."
+        },
+        {
+          "id": "secplus:1:4",
+          "unitId": "secplus:1",
+          "index": 4,
+          "text": "PKI basics: certificates, certificate authorities, chains of trust, revocation (CRL/OCSP)",
+          "sourceHash": "6a25578a09c1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default",
+          "labPrompt": "Open a site in your browser, view its certificate chain, and trace it from the leaf certificate up to the root CA."
+        },
+        {
+          "id": "secplus:1:5",
+          "unitId": "secplus:1",
+          "index": 5,
+          "text": "Authentication methods and factors: MFA, biometrics, SSO, federation",
+          "sourceHash": "e04e029edb9c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "secplus:1:6",
+          "unitId": "secplus:1",
+          "index": 6,
+          "text": "Access control models: DAC, MAC, RBAC, ABAC, and least privilege",
+          "sourceHash": "da728d10dd4e",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "netsec-01-brute-force",
+            "coverage": "partial",
+            "note": "least privilege"
+          }
+        },
+        {
+          "id": "secplus:1:7",
+          "unitId": "secplus:1",
+          "index": 7,
+          "text": "Security policies, governance basics, and change management fundamentals",
+          "sourceHash": "2e5e861ac5e4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "secplus:2",
+      "index": 2,
+      "title": "Threats, Vulnerabilities, and Mitigations",
+      "weight": 22,
+      "gate": "Given a log excerpt, alert, or short scenario, name the specific threat/attack/vulnerability at work, name the indicator that gives it away, and recommend a concrete mitigation.",
+      "objectives": [
+        {
+          "id": "secplus:2:1",
+          "unitId": "secplus:2",
+          "index": 1,
+          "text": "Threat actors, motivations, and attack surfaces",
+          "sourceHash": "49a9f259682e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "secplus:2:2",
+          "unitId": "secplus:2",
+          "index": 2,
+          "text": "Malware types: viruses, worms, trojans, ransomware, spyware, rootkits, botnets, logic bombs",
+          "sourceHash": "0e20365470a5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "secplus:2:3",
+          "unitId": "secplus:2",
+          "index": 3,
+          "text": "Social engineering techniques: phishing variants, pretexting, tailgating, business email compromise",
+          "sourceHash": "8f4829e0d4ee",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "secplus:2:4",
+          "unitId": "secplus:2",
+          "index": 4,
+          "text": "Network attacks: DoS/DDoS, on-path (MITM), spoofing, replay, DNS poisoning",
+          "sourceHash": "c1fe0c7d8e54",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "secplus:2:5",
+          "unitId": "secplus:2",
+          "index": 5,
+          "text": "Application and web attacks: injection, XSS, buffer overflow, race conditions (conceptual)",
+          "sourceHash": "47e925edd505",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "secplus:2:6",
+          "unitId": "secplus:2",
+          "index": 6,
+          "text": "Vulnerability types: misconfigurations, zero-days, legacy systems, supply-chain and third-party risk",
+          "sourceHash": "544637ebe4b4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default",
+          "labPrompt": "Run a permission-scoped Nmap scan of your own home network and record any unexpected open ports."
+        },
+        {
+          "id": "secplus:2:7",
+          "unitId": "secplus:2",
+          "index": 7,
+          "text": "Indicators of compromise and threat-hunting fundamentals",
+          "sourceHash": "be5f27a36d84",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "netsec-02-suspicious-cron",
+            "coverage": "full"
+          }
+        },
+        {
+          "id": "secplus:2:8",
+          "unitId": "secplus:2",
+          "index": 8,
+          "text": "Mitigation techniques and secure coding concepts: hardening, segmentation, input validation, patch management",
+          "sourceHash": "3ae71c2812f2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "secplus:3",
+      "index": 3,
+      "title": "Security Architecture",
+      "weight": 18,
+      "gate": "Given a system design, identify a missing architectural control and explain what specific failure it prevents.",
+      "objectives": [
+        {
+          "id": "secplus:3:1",
+          "unitId": "secplus:3",
+          "index": 1,
+          "text": "Defense-in-depth, network segmentation, and Zero Trust concepts",
+          "sourceHash": "df47929c166d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default",
+          "labPrompt": "Sketch a segmentation diagram separating IoT, guest, and trusted devices into different VLANs/subnets."
+        },
+        {
+          "id": "secplus:3:2",
+          "unitId": "secplus:3",
+          "index": 2,
+          "text": "Secure baselines and system hardening",
+          "sourceHash": "792004841a08",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default",
+          "labPrompt": "Review your router's or laptop's settings against a basic hardening checklist."
+        },
+        {
+          "id": "secplus:3:3",
+          "unitId": "secplus:3",
+          "index": 3,
+          "text": "Secure communication protocols: TLS, SSH, IPsec, DNSSEC",
+          "sourceHash": "2aa029d59547",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default",
+          "labPrompt": "Run openssl s_client -connect <site>:443 and read which TLS version/cipher suite it negotiated."
+        },
+        {
+          "id": "secplus:3:4",
+          "unitId": "secplus:3",
+          "index": 4,
+          "text": "Cloud and virtualization security: shared responsibility, containers, infrastructure as code",
+          "sourceHash": "cb10fa67377d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default",
+          "labPrompt": "List which security controls are yours to configure vs the provider's under the shared-responsibility model on a free-tier cloud VM."
+        },
+        {
+          "id": "secplus:3:5",
+          "unitId": "secplus:3",
+          "index": 5,
+          "text": "Identity and access management strategy in architecture: federation, privileged access management, just-in-time access",
+          "sourceHash": "92ea98eafb4f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "secplus:3:6",
+          "unitId": "secplus:3",
+          "index": 6,
+          "text": "Endpoint, mobile, and embedded/IoT/ICS security considerations",
+          "sourceHash": "28c2c11caedf",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default",
+          "labPrompt": "Check how one IoT/embedded device you own receives firmware updates."
+        },
+        {
+          "id": "secplus:3:7",
+          "unitId": "secplus:3",
+          "index": 7,
+          "text": "High availability and resilience design: redundancy, failover, and capacity planning",
+          "sourceHash": "7dd099fac55c",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "design-01-position-ingest",
+            "coverage": "full"
+          },
+          "labPrompt": "Sketch a redundant architecture and identify the single point of failure it removes."
+        }
+      ]
+    },
+    {
+      "id": "secplus:4",
+      "index": 4,
+      "title": "Security Operations",
+      "weight": 28,
+      "gate": "Given an incident scenario, correctly sequence the response, prioritize a vulnerability, or reason about an RTO/RPO or forensics constraint -- not just name the vocabulary.",
+      "objectives": [
+        {
+          "id": "secplus:4:1",
+          "unitId": "secplus:4",
+          "index": 1,
+          "text": "Security monitoring, log analysis, and SIEM/SOAR fundamentals",
+          "sourceHash": "20169033a937",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default",
+          "labPrompt": "Try a free SIEM sandbox and run one basic search query against sample log data."
+        },
+        {
+          "id": "secplus:4:2",
+          "unitId": "secplus:4",
+          "index": 2,
+          "text": "Incident response process and the NIST incident response lifecycle",
+          "sourceHash": "95fe5133ff59",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "secplus:4:3",
+          "unitId": "secplus:4",
+          "index": 3,
+          "text": "Threat intelligence sources and threat hunting in practice",
+          "sourceHash": "9232a9f66a60",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "secplus:4:4",
+          "unitId": "secplus:4",
+          "index": 4,
+          "text": "Vulnerability management: scanning, CVSS scoring, and remediation prioritization",
+          "sourceHash": "6eec9e839423",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default",
+          "labPrompt": "Look up a recent published CVE for an app/OS you use (nvd.nist.gov) and note its CVSS score."
+        },
+        {
+          "id": "secplus:4:5",
+          "unitId": "secplus:4",
+          "index": 5,
+          "text": "Digital forensics basics: chain of custody, order of volatility, legal holds",
+          "sourceHash": "213b46fa12ae",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default",
+          "labPrompt": "Write a short chain-of-custody log template for a hypothetical piece of evidence."
+        },
+        {
+          "id": "secplus:4:6",
+          "unitId": "secplus:4",
+          "index": 6,
+          "text": "Change management and configuration management processes",
+          "sourceHash": "bf4ed5cf6a1c",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "devops-03-bad-release-rollback",
+            "coverage": "partial"
+          }
+        },
+        {
+          "id": "secplus:4:7",
+          "unitId": "secplus:4",
+          "index": 7,
+          "text": "Business continuity and disaster recovery: BIA, RTO/RPO, backup types, DR sites",
+          "sourceHash": "16ae2b4bf30d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default",
+          "labPrompt": "Draft a one-page BIA outline for a small hypothetical business."
+        },
+        {
+          "id": "secplus:4:8",
+          "unitId": "secplus:4",
+          "index": 8,
+          "text": "Security tools in operation: firewalls, IDS/IPS, EDR, and DLP",
+          "sourceHash": "6c51c35a6ab8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "secplus:5",
+      "index": 5,
+      "title": "Security Program Management and Oversight",
+      "weight": 20,
+      "gate": "Given a governance or compliance scenario, name the right instrument and correctly reason about risk math or third-party exposure.",
+      "objectives": [
+        {
+          "id": "secplus:5:1",
+          "unitId": "secplus:5",
+          "index": 1,
+          "text": "Governance frameworks and the policy/standard/procedure/guideline hierarchy",
+          "sourceHash": "7cbeaa056a73",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "secplus:5:2",
+          "unitId": "secplus:5",
+          "index": 2,
+          "text": "Risk assessment: qualitative vs quantitative analysis (ALE, SLE, ARO)",
+          "sourceHash": "9c47c2889a8c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "secplus:5:3",
+          "unitId": "secplus:5",
+          "index": 3,
+          "text": "Third-party and supply-chain risk management",
+          "sourceHash": "c39110b0fd52",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "secplus:5:4",
+          "unitId": "secplus:5",
+          "index": 4,
+          "text": "Security awareness training programs",
+          "sourceHash": "e6cfa740134a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "secplus:5:5",
+          "unitId": "secplus:5",
+          "index": 5,
+          "text": "Compliance, regulations, and audits (GDPR, HIPAA, PCI DSS)",
+          "sourceHash": "96e7b61fa2ac",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "secplus:5:6",
+          "unitId": "secplus:5",
+          "index": 6,
+          "text": "Security metrics, KPIs, and reporting to leadership",
+          "sourceHash": "e5b20eb1d177",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/data.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 5,
+    "objectives": 36,
+    "bookkeeping": 0,
+    "linked": 4
+  }
+}

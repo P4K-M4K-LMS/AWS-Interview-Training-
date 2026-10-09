@@ -1,0 +1,863 @@
+{
+  "id": "clf-c02",
+  "code": "AWSCLF",
+  "title": "AWS Cloud Practitioner",
+  "description": "AWS Certified Cloud Practitioner (CLF-C02): the whole AWS Cloud at a working vocabulary level -- value and economics, security and compliance, the core service catalog, and how billing and support actually work.",
+  "trackType": "certification",
+  "units": [
+    {
+      "id": "clf-c02:1",
+      "index": 1,
+      "title": "Cloud Concepts",
+      "weight": 24,
+      "gate": "Given a business situation, say what the AWS Cloud actually buys the customer -- naming the specific benefit and the cost that changes shape -- instead of reciting 'scalable and flexible'.",
+      "objectives": [
+        {
+          "id": "clf-c02:1:1",
+          "unitId": "clf-c02:1",
+          "index": 1,
+          "text": "The value proposition of the AWS Cloud: capital expense traded for variable expense",
+          "sourceHash": "4085599207fc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:1:2",
+          "unitId": "clf-c02:1",
+          "index": 2,
+          "text": "What global infrastructure buys you: deployment speed and reach into new geographies",
+          "sourceHash": "d20c423b232e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:1:3",
+          "unitId": "clf-c02:1",
+          "index": 3,
+          "text": "High availability, elasticity, and agility as three distinct advantages, not synonyms",
+          "sourceHash": "40e809354a38",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:1:4",
+          "unitId": "clf-c02:1",
+          "index": 4,
+          "text": "The six pillars of the AWS Well-Architected Framework",
+          "sourceHash": "708bd9258196",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:1:5",
+          "unitId": "clf-c02:1",
+          "index": 5,
+          "text": "Telling the pillars apart: which concern each one owns, and where two of them conflict",
+          "sourceHash": "f4f60a15e9c4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:1:6",
+          "unitId": "clf-c02:1",
+          "index": 6,
+          "text": "Cloud adoption strategies, and the AWS Cloud Adoption Framework (AWS CAF) as a framework for planning that adoption",
+          "sourceHash": "40b1803c9627",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:1:7",
+          "unitId": "clf-c02:1",
+          "index": 7,
+          "text": "Business outcomes AWS CAF targets: reduced risk, ESG performance, revenue, operational efficiency",
+          "sourceHash": "518bf56c9721",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:1:8",
+          "unitId": "clf-c02:1",
+          "index": 8,
+          "text": "Migration strategies and which one fits a given workload, including database replication",
+          "sourceHash": "0a0520fb696e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:1:9",
+          "unitId": "clf-c02:1",
+          "index": 9,
+          "text": "Resources that support a migration journey",
+          "sourceHash": "8bb63731740f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:1:10",
+          "unitId": "clf-c02:1",
+          "index": 10,
+          "text": "Fixed costs versus variable costs",
+          "sourceHash": "d1ca6ef116c8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:1:11",
+          "unitId": "clf-c02:1",
+          "index": 11,
+          "text": "The on-premises costs that a cloud migration is meant to remove",
+          "sourceHash": "606101582eaf",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:1:12",
+          "unitId": "clf-c02:1",
+          "index": 12,
+          "text": "Licensing strategies: bring your own license (BYOL) versus included licenses",
+          "sourceHash": "3db1e31091f7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:1:13",
+          "unitId": "clf-c02:1",
+          "index": 13,
+          "text": "Rightsizing, and why it is a recurring exercise rather than a one-time one",
+          "sourceHash": "87a7b054c98e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:1:14",
+          "unitId": "clf-c02:1",
+          "index": 14,
+          "text": "Benefits of automation",
+          "sourceHash": "2419cb8c9b99",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:1:15",
+          "unitId": "clf-c02:1",
+          "index": 15,
+          "text": "Economies of scale, and how AWS's scale reaches the customer as lower prices",
+          "sourceHash": "4e897db713c7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02:2",
+      "index": 2,
+      "title": "Security and Compliance",
+      "weight": 30,
+      "gate": "Given a service and a security task, say who owns it -- you or AWS -- and name the AWS service or control that does the work. This is the heaviest-weighted domain after services.",
+      "objectives": [
+        {
+          "id": "clf-c02:2:1",
+          "unitId": "clf-c02:2",
+          "index": 1,
+          "text": "The AWS shared responsibility model: security *of* the cloud versus security *in* the cloud",
+          "sourceHash": "fd54c116a5f2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:2:2",
+          "unitId": "clf-c02:2",
+          "index": 2,
+          "text": "Customer responsibilities, AWS responsibilities, and the controls the two share",
+          "sourceHash": "ede7951ddcea",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:2:3",
+          "unitId": "clf-c02:2",
+          "index": 3,
+          "text": "How the responsibility line shifts by service: Amazon EC2 versus Amazon RDS versus AWS Lambda",
+          "sourceHash": "a068dc864e33",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:2:4",
+          "unitId": "clf-c02:2",
+          "index": 4,
+          "text": "Where to find AWS compliance evidence: AWS Artifact",
+          "sourceHash": "936fc71056d6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:2:5",
+          "unitId": "clf-c02:2",
+          "index": 5,
+          "text": "Compliance obligations that vary by geography, by industry, and across individual AWS services",
+          "sourceHash": "2513b4b8e800",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:2:6",
+          "unitId": "clf-c02:2",
+          "index": 6,
+          "text": "Services that find and report security problems: Amazon Inspector, Amazon GuardDuty, AWS Security Hub, AWS Shield",
+          "sourceHash": "dfdc691403ad",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:2:7",
+          "unitId": "clf-c02:2",
+          "index": 7,
+          "text": "Encryption at rest and encryption in transit as two separate decisions",
+          "sourceHash": "ee2695776bd1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:2:8",
+          "unitId": "clf-c02:2",
+          "index": 8,
+          "text": "Governance and audit services: monitoring with Amazon CloudWatch, auditing with AWS CloudTrail, configuration history with AWS Config, and reporting with access reports",
+          "sourceHash": "25f1ab834752",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:2:9",
+          "unitId": "clf-c02:2",
+          "index": 9,
+          "text": "Where to capture and find logs associated with cloud security",
+          "sourceHash": "88b181c1a4cf",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:2:10",
+          "unitId": "clf-c02:2",
+          "index": 10,
+          "text": "AWS Identity and Access Management: users, groups, roles, and policies",
+          "sourceHash": "2427ca1f7293",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:2:11",
+          "unitId": "clf-c02:2",
+          "index": 11,
+          "text": "Managed policies versus custom policies, written to least privilege",
+          "sourceHash": "4e512c777327",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:2:12",
+          "unitId": "clf-c02:2",
+          "index": 12,
+          "text": "Protecting the root user, and the short list of tasks only the root user can perform",
+          "sourceHash": "e1d4102341af",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:2:13",
+          "unitId": "clf-c02:2",
+          "index": 13,
+          "text": "Authentication methods: MFA, AWS IAM Identity Center, cross-account IAM roles",
+          "sourceHash": "6603905472d4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:2:14",
+          "unitId": "clf-c02:2",
+          "index": 14,
+          "text": "Credential handling: access keys, password policies, AWS Secrets Manager, AWS Systems Manager",
+          "sourceHash": "16b2f2e7aa7b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:2:15",
+          "unitId": "clf-c02:2",
+          "index": 15,
+          "text": "Federated identity management",
+          "sourceHash": "aa47457ea6e9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:2:16",
+          "unitId": "clf-c02:2",
+          "index": 16,
+          "text": "Network protection services: AWS WAF, AWS Shield, AWS Firewall Manager",
+          "sourceHash": "aa9904ee5084",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:2:17",
+          "unitId": "clf-c02:2",
+          "index": 17,
+          "text": "Third-party security products available through AWS Marketplace",
+          "sourceHash": "c5ec5bb4e463",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:2:18",
+          "unitId": "clf-c02:2",
+          "index": 18,
+          "text": "Where AWS publishes security information: AWS Security Center, the AWS Security Blog, AWS Knowledge Center",
+          "sourceHash": "c6bb0025c1a7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:2:19",
+          "unitId": "clf-c02:2",
+          "index": 19,
+          "text": "AWS Trusted Advisor as a security check, not just a cost tool",
+          "sourceHash": "551c54c54788",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02:3",
+      "index": 3,
+      "title": "Cloud Technology and Services",
+      "weight": 34,
+      "gate": "Given a described need, name the AWS service that fits and say why the near-miss alternative is wrong. Breadth is the whole point of this domain -- it is the largest slice of the exam.",
+      "objectives": [
+        {
+          "id": "clf-c02:3:1",
+          "unitId": "clf-c02:3",
+          "index": 1,
+          "text": "Ways to provision and operate: the AWS Management Console, the CLI, SDKs and APIs, and infrastructure as code",
+          "sourceHash": "ea8650b01b26",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:3:2",
+          "unitId": "clf-c02:3",
+          "index": 2,
+          "text": "One-time operations versus repeatable processes, and which access method suits each",
+          "sourceHash": "fdafad04903d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:3:3",
+          "unitId": "clf-c02:3",
+          "index": 3,
+          "text": "Deployment models: cloud, hybrid, and on-premises",
+          "sourceHash": "650a574563a3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:3:4",
+          "unitId": "clf-c02:3",
+          "index": 4,
+          "text": "Regions, Availability Zones, and edge locations, and how the three relate",
+          "sourceHash": "39f10ffe2ee6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:3:5",
+          "unitId": "clf-c02:3",
+          "index": 5,
+          "text": "High availability built from multiple Availability Zones that share no single point of failure",
+          "sourceHash": "98027949824c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:3:6",
+          "unitId": "clf-c02:3",
+          "index": 6,
+          "text": "When a workload needs multiple Regions: disaster recovery, business continuity, latency, data sovereignty",
+          "sourceHash": "afac29f4c697",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:3:7",
+          "unitId": "clf-c02:3",
+          "index": 7,
+          "text": "Amazon EC2 instance families, and matching one to a workload's shape",
+          "sourceHash": "d52e26db812c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:3:8",
+          "unitId": "clf-c02:3",
+          "index": 8,
+          "text": "Container services: Amazon ECS and Amazon EKS",
+          "sourceHash": "de3284af6fa1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:3:9",
+          "unitId": "clf-c02:3",
+          "index": 9,
+          "text": "Serverless compute: AWS Lambda and AWS Fargate",
+          "sourceHash": "61b6bb99c245",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:3:10",
+          "unitId": "clf-c02:3",
+          "index": 10,
+          "text": "Auto scaling as the mechanism that delivers elasticity",
+          "sourceHash": "f625475f39cd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:3:11",
+          "unitId": "clf-c02:3",
+          "index": 11,
+          "text": "What a load balancer is for",
+          "sourceHash": "c2ac493f62ac",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:3:12",
+          "unitId": "clf-c02:3",
+          "index": 12,
+          "text": "Choosing between a database you host on EC2 and a managed AWS database",
+          "sourceHash": "d2b972419a29",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:3:13",
+          "unitId": "clf-c02:3",
+          "index": 13,
+          "text": "Relational databases: Amazon RDS and Amazon Aurora",
+          "sourceHash": "50e9d075d05d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:3:14",
+          "unitId": "clf-c02:3",
+          "index": 14,
+          "text": "NoSQL: Amazon DynamoDB",
+          "sourceHash": "c24e3a39196a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:3:15",
+          "unitId": "clf-c02:3",
+          "index": 15,
+          "text": "In-memory: Amazon ElastiCache",
+          "sourceHash": "aa2246eb9463",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:3:16",
+          "unitId": "clf-c02:3",
+          "index": 16,
+          "text": "Database migration tooling: AWS DMS and the AWS Schema Conversion Tool",
+          "sourceHash": "a1e38c9f7e23",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:3:17",
+          "unitId": "clf-c02:3",
+          "index": 17,
+          "text": "VPC components: subnets, route tables, internet gateways, NAT gateways",
+          "sourceHash": "f5092f576144",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:3:18",
+          "unitId": "clf-c02:3",
+          "index": 18,
+          "text": "Security inside a VPC: security groups versus network ACLs",
+          "sourceHash": "18c5559cde18",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:3:19",
+          "unitId": "clf-c02:3",
+          "index": 19,
+          "text": "What Amazon Route 53 does",
+          "sourceHash": "62b481a8980a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:3:20",
+          "unitId": "clf-c02:3",
+          "index": 20,
+          "text": "Connectivity into AWS: AWS Site-to-Site VPN and AWS Direct Connect",
+          "sourceHash": "61bb71587d0e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:3:21",
+          "unitId": "clf-c02:3",
+          "index": 21,
+          "text": "Object storage, and the differences between Amazon S3 storage classes",
+          "sourceHash": "652e5b4fecc4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:3:22",
+          "unitId": "clf-c02:3",
+          "index": 22,
+          "text": "Block storage: Amazon EBS versus instance store",
+          "sourceHash": "a8177fce8ca5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:3:23",
+          "unitId": "clf-c02:3",
+          "index": 23,
+          "text": "File storage: Amazon EFS and Amazon FSx",
+          "sourceHash": "ea0399a41974",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:3:24",
+          "unitId": "clf-c02:3",
+          "index": 24,
+          "text": "Cached and hybrid file storage: AWS Storage Gateway",
+          "sourceHash": "32155387288a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:3:25",
+          "unitId": "clf-c02:3",
+          "index": 25,
+          "text": "S3 lifecycle policies, and use cases for AWS Backup",
+          "sourceHash": "a3899f272826",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:3:26",
+          "unitId": "clf-c02:3",
+          "index": 26,
+          "text": "AI/ML services and the task each performs, including Amazon SageMaker AI and Amazon Lex",
+          "sourceHash": "7d547cdcf638",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:3:27",
+          "unitId": "clf-c02:3",
+          "index": 27,
+          "text": "Analytics services: Amazon Athena, Amazon Kinesis, AWS Glue, Amazon QuickSight",
+          "sourceHash": "2f6fe17f3bbf",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:3:28",
+          "unitId": "clf-c02:3",
+          "index": 28,
+          "text": "Application integration: Amazon SQS, Amazon SNS, Amazon EventBridge",
+          "sourceHash": "0bcf90699012",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:3:29",
+          "unitId": "clf-c02:3",
+          "index": 29,
+          "text": "Business applications: Amazon Connect and Amazon SES",
+          "sourceHash": "58935e3c5802",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:3:30",
+          "unitId": "clf-c02:3",
+          "index": 30,
+          "text": "Developer tools: AWS CodeBuild, AWS CodePipeline, AWS X-Ray",
+          "sourceHash": "d773effd561f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:3:31",
+          "unitId": "clf-c02:3",
+          "index": 31,
+          "text": "End-user computing: Amazon WorkSpaces, Amazon AppStream 2.0, WorkSpaces Secure Browser",
+          "sourceHash": "9f9a256383d7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:3:32",
+          "unitId": "clf-c02:3",
+          "index": 32,
+          "text": "Frontend, mobile, and IoT: AWS Amplify and AWS IoT Core",
+          "sourceHash": "2d107adb5a95",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02:4",
+      "index": 4,
+      "title": "Billing, Pricing, and Support",
+      "weight": 12,
+      "gate": "Given a workload's predictability and a budget problem, pick the purchasing option and the cost tool that address it, and name the support plan a given customer needs.",
+      "objectives": [
+        {
+          "id": "clf-c02:4:1",
+          "unitId": "clf-c02:4",
+          "index": 1,
+          "text": "Compute purchasing options: On-Demand, Reserved Instances, Spot Instances, Savings Plans, Dedicated Hosts, Dedicated Instances, Capacity Reservations",
+          "sourceHash": "cf028e7180d2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:4:2",
+          "unitId": "clf-c02:4",
+          "index": 2,
+          "text": "Matching a purchasing option to a workload's predictability and tolerance for interruption",
+          "sourceHash": "0bbed4efeae6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:4:3",
+          "unitId": "clf-c02:4",
+          "index": 3,
+          "text": "Reserved Instance flexibility, and how Reserved Instances behave inside AWS Organizations",
+          "sourceHash": "87998c992449",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:4:4",
+          "unitId": "clf-c02:4",
+          "index": 4,
+          "text": "Data transfer costs: inbound, outbound, Region to Region, and within a Region",
+          "sourceHash": "57af48ba5cd1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:4:5",
+          "unitId": "clf-c02:4",
+          "index": 5,
+          "text": "Pricing across storage options and tiers",
+          "sourceHash": "8a5a91fe4259",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:4:6",
+          "unitId": "clf-c02:4",
+          "index": 6,
+          "text": "AWS Budgets and AWS Cost Explorer, and which question each answers",
+          "sourceHash": "0b8cf40344bc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:4:7",
+          "unitId": "clf-c02:4",
+          "index": 7,
+          "text": "AWS Pricing Calculator for estimating before you spend",
+          "sourceHash": "8b843fdfac45",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:4:8",
+          "unitId": "clf-c02:4",
+          "index": 8,
+          "text": "AWS Organizations consolidated billing and cost allocation",
+          "sourceHash": "e84ea059801b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:4:9",
+          "unitId": "clf-c02:4",
+          "index": 9,
+          "text": "Cost allocation tags and the AWS Cost and Usage Report",
+          "sourceHash": "533fe4e408f9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:4:10",
+          "unitId": "clf-c02:4",
+          "index": 10,
+          "text": "AWS Support plans: free customer service and communities, Developer, Business, Enterprise On-Ramp, Enterprise",
+          "sourceHash": "129d3d141876",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:4:11",
+          "unitId": "clf-c02:4",
+          "index": 11,
+          "text": "Technical resources: whitepapers, blogs, AWS Prescriptive Guidance, AWS Knowledge Center, AWS re:Post",
+          "sourceHash": "82988a1c2b56",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:4:12",
+          "unitId": "clf-c02:4",
+          "index": 12,
+          "text": "AWS Trusted Advisor, the AWS Health Dashboard, and the AWS Health API",
+          "sourceHash": "cac0201eb4e5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:4:13",
+          "unitId": "clf-c02:4",
+          "index": 13,
+          "text": "The AWS Partner Network, AWS Marketplace, and AWS Professional Services",
+          "sourceHash": "0334ff978c7f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "clf-c02:4:14",
+          "unitId": "clf-c02:4",
+          "index": 14,
+          "text": "Reporting abuse of AWS resources to the AWS Trust and Safety team",
+          "sourceHash": "d847a9d20621",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/aws.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-18T00:00:00Z",
+    "officialObjectivesUrl": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02.html",
+    "providerName": "Amazon Web Services",
+    "credentialName": "AWS Certified Cloud Practitioner",
+    "examCode": "CLF-C02",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 4,
+    "objectives": 80,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

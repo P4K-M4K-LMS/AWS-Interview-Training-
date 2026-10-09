@@ -54,6 +54,10 @@ server/index.ts              Optional coaching proxy
 server/race.ts               Optional race-detector service (HTTP); server/race-core.ts runs `go build -race` and parses the report
 ```
 
+### Study (Ascendra catalog)
+
+A separate content namespace next to tracks and missions. `tools/ascendra-catalog/` holds two seed files copied from the Ascendra repository at a fixed commit (see its `PROVENANCE.md`). `scripts/study/catalog.mts` turns them into `StudyCourse` objects (ids `course:unit:objective`, a hash of each objective's text, a modality, optional mission link), and `scripts/generate-study.mts build-catalog` writes them as `public/study/index.json` and one JSON per course plus the generated `src/content/study/missionLinks.ts` (mission id → objective ids). The curated link table is `src/content/study/links.ts`, matched by objective text so a refresh fails loudly rather than silently dropping a link. `src/services/study/catalog.ts` fetches the JSON on demand under Vite's base path and memoises it; nothing generated enters a JavaScript chunk. Pages live in `src/pages/study/`. Objective status (planned) will live in its own Dexie tables and be credited from `completeMission` through `missionLinks.ts`; it never writes skill mastery.
+
 ## Data flow
 
 1. **Content** is static TypeScript. Missions contain pure validation functions that inspect simulator state, so content never needs to be stored.

@@ -1,0 +1,792 @@
+{
+  "id": "scs-c03",
+  "code": "AWSSCS",
+  "title": "AWS Security Specialty",
+  "description": "AWS Certified Security - Specialty (SCS-C03): securing AWS at depth -- detection and logging pipelines, incident response and forensics, infrastructure and network controls, identity and authorization at scale, data protection and key management, and multi-account governance.",
+  "trackType": "certification",
+  "units": [
+    {
+      "id": "scs-c03:1",
+      "index": 1,
+      "title": "Detection",
+      "weight": 16,
+      "gate": "Given an account or organization, design what gets logged, where it lands, and what fires an alert -- then explain why a missing log is itself a finding, and fix it.",
+      "objectives": [
+        {
+          "id": "scs-c03:1:1",
+          "unitId": "scs-c03:1",
+          "index": 1,
+          "text": "Analyzing workloads to determine what actually needs monitoring",
+          "sourceHash": "6c03604b7558",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:1:2",
+          "unitId": "scs-c03:1",
+          "index": 2,
+          "text": "Designing workload monitoring strategies, including resource health checks",
+          "sourceHash": "f92a4433a9d8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:1:3",
+          "unitId": "scs-c03:1",
+          "index": 3,
+          "text": "Aggregating security and monitoring events",
+          "sourceHash": "7ec7ee6856a2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:1:4",
+          "unitId": "scs-c03:1",
+          "index": 4,
+          "text": "Metrics, alerts, and dashboards that surface anomalies: Amazon GuardDuty, Amazon Security Lake, AWS Security Hub, Amazon Macie",
+          "sourceHash": "46b694bf271d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:1:5",
+          "unitId": "scs-c03:1",
+          "index": 5,
+          "text": "Automating regular assessments and investigations with AWS Config conformance packs, Security Hub, and Systems Manager State Manager",
+          "sourceHash": "e5489f606554",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:1:6",
+          "unitId": "scs-c03:1",
+          "index": 6,
+          "text": "Identifying log sources and storage against requirements",
+          "sourceHash": "33e7203fa6d6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:1:7",
+          "unitId": "scs-c03:1",
+          "index": 7,
+          "text": "Configuring logging for AWS services: an organization-wide CloudTrail trail, a dedicated CloudWatch logging account, the CloudWatch Logs agent",
+          "sourceHash": "c6109e557961",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:1:8",
+          "unitId": "scs-c03:1",
+          "index": 8,
+          "text": "Log storage and security data lakes with Amazon Security Lake, and integration with third-party security tools",
+          "sourceHash": "1c360dfa5dd7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:1:9",
+          "unitId": "scs-c03:1",
+          "index": 9,
+          "text": "Analyzing logs with CloudWatch Logs Insights, Amazon Athena, and Security Hub findings",
+          "sourceHash": "23b62f9abb9b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:1:10",
+          "unitId": "scs-c03:1",
+          "index": 10,
+          "text": "Normalizing, parsing, and correlating logs with Amazon OpenSearch Service, AWS Lambda, and Amazon Managed Grafana",
+          "sourceHash": "d7faacca98b5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:1:11",
+          "unitId": "scs-c03:1",
+          "index": 11,
+          "text": "Choosing network log sources for the threat: VPC flow logs, transit gateway flow logs, Amazon Route 53 Resolver logs",
+          "sourceHash": "b270ec506586",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:1:12",
+          "unitId": "scs-c03:1",
+          "index": 12,
+          "text": "Analyzing resource functionality, permissions, and configuration when logs are missing: Lambda, Amazon API Gateway, CloudFront",
+          "sourceHash": "61bf98580762",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:1:13",
+          "unitId": "scs-c03:1",
+          "index": 13,
+          "text": "Remediating misconfigured logging, including CloudWatch agent configuration",
+          "sourceHash": "389ef5bd0fc9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "scs-c03:2",
+      "index": 2,
+      "title": "Incident Response",
+      "weight": 14,
+      "gate": "Run an incident end to end: preserve the evidence, scope the blast radius from findings, contain and eradicate, recover, and name the root cause -- with the automation that would do most of it next time.",
+      "objectives": [
+        {
+          "id": "scs-c03:2:1",
+          "unitId": "scs-c03:2",
+          "index": 1,
+          "text": "Designing response plans and runbooks, including with Systems Manager OpsCenter",
+          "sourceHash": "7e8c634d6a90",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:2:2",
+          "unitId": "scs-c03:2",
+          "index": 2,
+          "text": "Preparing services for incidents: provisioning access ahead of time, deploying security tools, minimizing blast radius, configuring AWS Shield Advanced",
+          "sourceHash": "e1c0cbaaa473",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:2:3",
+          "unitId": "scs-c03:2",
+          "index": 3,
+          "text": "Testing and validating an incident response plan with AWS Fault Injection Service and AWS Resilience Hub",
+          "sourceHash": "630462947a31",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:2:4",
+          "unitId": "scs-c03:2",
+          "index": 4,
+          "text": "Automating remediation with Systems Manager, AWS Step Functions, Lambda, Automated Forensics Orchestrator for Amazon EC2, and Amazon Application Recovery Controller",
+          "sourceHash": "63ae257f12d1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:2:5",
+          "unitId": "scs-c03:2",
+          "index": 5,
+          "text": "Capturing and storing system and application logs as forensic artifacts",
+          "sourceHash": "4649350ee8d7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:2:6",
+          "unitId": "scs-c03:2",
+          "index": 6,
+          "text": "Searching and correlating logs for security events across applications and AWS services",
+          "sourceHash": "edee4917d581",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "netsec-01-brute-force",
+            "coverage": "full"
+          }
+        },
+        {
+          "id": "scs-c03:2:7",
+          "unitId": "scs-c03:2",
+          "index": 7,
+          "text": "Validating findings from AWS security services to assess scope and impact",
+          "sourceHash": "8b8d0834f645",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:2:8",
+          "unitId": "scs-c03:2",
+          "index": 8,
+          "text": "Containing and eradicating threats, then recovering: network containment controls and restoring backups",
+          "sourceHash": "dc4d21070b2b",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "netsec-02-suspicious-cron",
+            "coverage": "full"
+          }
+        },
+        {
+          "id": "scs-c03:2:9",
+          "unitId": "scs-c03:2",
+          "index": 9,
+          "text": "Conducting root cause analysis, including with Amazon Detective",
+          "sourceHash": "d2aae5937508",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "scs-c03:3",
+      "index": 3,
+      "title": "Infrastructure Security",
+      "weight": 18,
+      "gate": "Harden the edge, the compute, and the network path for one application -- and for each control, name the attack it stops and how you would prove it is working.",
+      "objectives": [
+        {
+          "id": "scs-c03:3:1",
+          "unitId": "scs-c03:3",
+          "index": 1,
+          "text": "Defining and selecting edge security strategies for the anticipated threats",
+          "sourceHash": "e92072643816",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:3:2",
+          "unitId": "scs-c03:3",
+          "index": 2,
+          "text": "Implementing network edge protection: AWS WAF, CloudFront headers, Shield Advanced, Amazon S3 CORS, AWS IoT policies, defenses for the OWASP Top 10",
+          "sourceHash": "4846b663b98e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:3:3",
+          "unitId": "scs-c03:3",
+          "index": 3,
+          "text": "Edge controls and rules by geography, geolocation, rate limiting, and client fingerprinting",
+          "sourceHash": "bfca3ffc01a9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:3:4",
+          "unitId": "scs-c03:3",
+          "index": 4,
+          "text": "Integrating AWS edge services with third-party services, including OCSF-format ingestion and third-party WAF rules",
+          "sourceHash": "2b1c22f21120",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:3:5",
+          "unitId": "scs-c03:3",
+          "index": 5,
+          "text": "Designing hardened EC2 AMIs and container images with Systems Manager and EC2 Image Builder",
+          "sourceHash": "d4b45e1d7a5e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:3:6",
+          "unitId": "scs-c03:3",
+          "index": 6,
+          "text": "Applying instance profiles, service roles, and execution roles to authorize compute workloads",
+          "sourceHash": "b28dfb142cb7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:3:7",
+          "unitId": "scs-c03:3",
+          "index": 7,
+          "text": "Scanning compute for known vulnerabilities: Amazon Inspector for container images and Lambda, GuardDuty runtime monitoring",
+          "sourceHash": "8bf7c1737a69",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:3:8",
+          "unitId": "scs-c03:3",
+          "index": 8,
+          "text": "Deploying patches across compute with Systems Manager Patch Manager and continuous validation",
+          "sourceHash": "6f306a3a8c05",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:3:9",
+          "unitId": "scs-c03:3",
+          "index": 9,
+          "text": "Configuring secure administrative access: Systems Manager Session Manager and EC2 Instance Connect",
+          "sourceHash": "fe712c3d891d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:3:10",
+          "unitId": "scs-c03:3",
+          "index": 10,
+          "text": "Finding and remediating vulnerabilities inside the pipeline with Amazon Q Developer and Amazon CodeGuru Security",
+          "sourceHash": "d7ab481f1c59",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:3:11",
+          "unitId": "scs-c03:3",
+          "index": 11,
+          "text": "Protections and guardrails for generative AI applications, including the OWASP Top 10 for LLM Applications",
+          "sourceHash": "88f9cf628589",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:3:12",
+          "unitId": "scs-c03:3",
+          "index": 12,
+          "text": "Designing and troubleshooting network controls that permit or prevent traffic: security groups, network ACLs, AWS Network Firewall",
+          "sourceHash": "cd6d89c6eaed",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:3:13",
+          "unitId": "scs-c03:3",
+          "index": 13,
+          "text": "Secure connectivity between hybrid and multi-cloud networks: AWS Site-to-Site VPN, AWS Direct Connect, MACsec",
+          "sourceHash": "f63b8b412e1f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:3:14",
+          "unitId": "scs-c03:3",
+          "index": 14,
+          "text": "Security requirements for communication between hybrid environments and AWS, including AWS Verified Access",
+          "sourceHash": "b0896f2ee9e7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:3:15",
+          "unitId": "scs-c03:3",
+          "index": 15,
+          "text": "Network segmentation from security requirements: north/south and east/west protection, isolated subnets",
+          "sourceHash": "f42bfc8ff9f1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:3:16",
+          "unitId": "scs-c03:3",
+          "index": 16,
+          "text": "Identifying unnecessary network access with AWS Verified Access, Network Access Analyzer, and Amazon Inspector network reachability findings",
+          "sourceHash": "51ba29a97ee7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "scs-c03:4",
+      "index": 4,
+      "title": "Identity and Access Management",
+      "weight": 20,
+      "gate": "Given an access that should not have worked, find the policy that allowed it -- identity, resource, boundary, session, or trust -- and close it without breaking what should still work. Heaviest domain on the exam.",
+      "gateEngine": "policy-eval",
+      "objectives": [
+        {
+          "id": "scs-c03:4:1",
+          "unitId": "scs-c03:4",
+          "index": 1,
+          "text": "Designing identity solutions for human, application, and system authentication: AWS IAM Identity Center, Amazon Cognito, MFA, external identity provider integration",
+          "sourceHash": "dd442e7d7e33",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:4:2",
+          "unitId": "scs-c03:4",
+          "index": 2,
+          "text": "Configuring mechanisms that issue temporary credentials: AWS STS and Amazon S3 presigned URLs",
+          "sourceHash": "15e92f0f1e42",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:4:3",
+          "unitId": "scs-c03:4",
+          "index": 3,
+          "text": "Troubleshooting authentication with CloudTrail, Amazon Cognito, IAM Identity Center permission sets, and AWS Directory Service",
+          "sourceHash": "488fab973bc3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:4:4",
+          "unitId": "scs-c03:4",
+          "index": 4,
+          "text": "Designing authorization controls: Amazon Verified Permissions, IAM paths, IAM Roles Anywhere, resource policies for cross-account access, IAM role trust policies",
+          "sourceHash": "f7082a7befc0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:4:5",
+          "unitId": "scs-c03:4",
+          "index": 5,
+          "text": "Designing attribute-based and role-based access control, including access driven by tags",
+          "sourceHash": "0baf9aee363c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:4:6",
+          "unitId": "scs-c03:4",
+          "index": 6,
+          "text": "Designing, reading, and implementing IAM policies to least privilege, including permissions boundaries and session policies",
+          "sourceHash": "f7ac48b71108",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:4:7",
+          "unitId": "scs-c03:4",
+          "index": 7,
+          "text": "Analyzing authorization failures with the IAM policy simulator and IAM Access Analyzer",
+          "sourceHash": "9af57bfad4a4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:4:8",
+          "unitId": "scs-c03:4",
+          "index": 8,
+          "text": "Investigating and correcting unintended permissions granted to a resource, service, or entity",
+          "sourceHash": "a06b8a951eb4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "scs-c03:5",
+      "index": 5,
+      "title": "Data Protection",
+      "weight": 18,
+      "gate": "For a dataset with a compliance obligation, specify encryption in transit, encryption at rest, key custody, retention, and integrity protection -- and say who could decrypt it and how you would know if they did.",
+      "objectives": [
+        {
+          "id": "scs-c03:5:1",
+          "unitId": "scs-c03:5",
+          "index": 1,
+          "text": "Requiring encryption on connection: Elastic Load Balancing security policies and enforced TLS configuration",
+          "sourceHash": "27f27ff8e209",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:5:2",
+          "unitId": "scs-c03:5",
+          "index": 2,
+          "text": "Secure and private access paths: AWS PrivateLink, VPC endpoints, AWS Client VPN, AWS Verified Access",
+          "sourceHash": "9c1ca55791e6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:5:3",
+          "unitId": "scs-c03:5",
+          "index": 3,
+          "text": "Inter-resource encryption in transit: inter-node encryption for Amazon EMR, Amazon EKS, and SageMaker AI, and Nitro encryption",
+          "sourceHash": "661c9aaf4b57",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:5:4",
+          "unitId": "scs-c03:5",
+          "index": 4,
+          "text": "Encryption at rest: choosing between AWS KMS and AWS CloudHSM, and client-side against server-side encryption",
+          "sourceHash": "b17e3d6f4df1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:5:5",
+          "unitId": "scs-c03:5",
+          "index": 5,
+          "text": "Protecting data integrity: S3 Object Lock, S3 Glacier Vault Lock, versioning, digital code signing, file validation",
+          "sourceHash": "8a6223231290",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:5:6",
+          "unitId": "scs-c03:5",
+          "index": 6,
+          "text": "Automatic lifecycle management and retention: S3 Lifecycle policies, Amazon EFS lifecycle policies, Amazon FSx for Lustre backup policies",
+          "sourceHash": "f3eefa556910",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:5:7",
+          "unitId": "scs-c03:5",
+          "index": 7,
+          "text": "Secure replication and backup, including ransomware protection, with AWS Backup, Amazon Data Lifecycle Manager, and AWS DataSync",
+          "sourceHash": "3d6a504c8fbb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:5:8",
+          "unitId": "scs-c03:5",
+          "index": 8,
+          "text": "Managing and rotating credentials and secrets with AWS Secrets Manager",
+          "sourceHash": "d3267402e1f0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:5:9",
+          "unitId": "scs-c03:5",
+          "index": 9,
+          "text": "Managing and rotating imported key material, and configuring external key stores",
+          "sourceHash": "46506391042c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:5:10",
+          "unitId": "scs-c03:5",
+          "index": 10,
+          "text": "How imported key material differs from AWS-generated key material",
+          "sourceHash": "06a329efccc4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:5:11",
+          "unitId": "scs-c03:5",
+          "index": 11,
+          "text": "Masking sensitive data with CloudWatch Logs data protection policies and Amazon SNS message data protection",
+          "sourceHash": "3cdaf03a5a5f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:5:12",
+          "unitId": "scs-c03:5",
+          "index": 12,
+          "text": "Creating and managing encryption keys and certificates across one or many Regions with KMS customer managed keys and AWS Private Certificate Authority",
+          "sourceHash": "bfc8c6607dd7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "scs-c03:6",
+      "index": 6,
+      "title": "Security Foundations and Governance",
+      "weight": 14,
+      "gate": "Set the organization up so a new account is secure the hour it is created -- controls, policies, root access, tagging, shared resources -- and produce the evidence an auditor would ask for.",
+      "objectives": [
+        {
+          "id": "scs-c03:6:1",
+          "unitId": "scs-c03:6",
+          "index": 1,
+          "text": "Deploying and configuring organizations with AWS Organizations",
+          "sourceHash": "687dc8a8d020",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:6:2",
+          "unitId": "scs-c03:6",
+          "index": 2,
+          "text": "Implementing and managing AWS Control Tower in new and existing environments, with optional and custom controls",
+          "sourceHash": "333ea654bccc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:6:3",
+          "unitId": "scs-c03:6",
+          "index": 3,
+          "text": "Organization policies that manage permissions: service control policies, resource control policies, AI service opt-out policies, declarative policies",
+          "sourceHash": "2e4294bdd639",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:6:4",
+          "unitId": "scs-c03:6",
+          "index": 4,
+          "text": "Centrally managing security services through delegated administrator accounts",
+          "sourceHash": "7b150cd0f4f0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:6:5",
+          "unitId": "scs-c03:6",
+          "index": 5,
+          "text": "Managing root user credentials: centralizing root access for member accounts, managing MFA, designing break-glass procedures",
+          "sourceHash": "6601db13a0d8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:6:6",
+          "unitId": "scs-c03:6",
+          "index": 6,
+          "text": "Deploying resources consistently and securely with infrastructure as code: CloudFormation StackSets, CloudFormation Guard, cfn-lint, third-party IaC tools",
+          "sourceHash": "0635a542120a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:6:7",
+          "unitId": "scs-c03:6",
+          "index": 7,
+          "text": "Using tags to group resources by department, cost center, and environment",
+          "sourceHash": "028efb02dc55",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:6:8",
+          "unitId": "scs-c03:6",
+          "index": 8,
+          "text": "Deploying and enforcing policies and configurations centrally with AWS Firewall Manager",
+          "sourceHash": "17b70de80809",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:6:9",
+          "unitId": "scs-c03:6",
+          "index": 9,
+          "text": "Sharing resources securely across accounts with AWS Service Catalog and AWS Resource Access Manager",
+          "sourceHash": "9506399d0c0d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:6:10",
+          "unitId": "scs-c03:6",
+          "index": 10,
+          "text": "Detecting and remediating noncompliant resources with AWS Config and AWS Security Hub, and sending notifications",
+          "sourceHash": "c24a9ff23396",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:6:11",
+          "unitId": "scs-c03:6",
+          "index": 11,
+          "text": "Collecting and organizing audit evidence with AWS Audit Manager and AWS Artifact",
+          "sourceHash": "fbc0ce03c261",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "scs-c03:6:12",
+          "unitId": "scs-c03:6",
+          "index": 12,
+          "text": "Evaluating architecture against AWS security best practices with the AWS Well-Architected Tool",
+          "sourceHash": "365d12f0f28d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/aws.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-18T00:00:00Z",
+    "officialObjectivesUrl": "https://docs.aws.amazon.com/aws-certification/latest/security-specialty-03/security-specialty-03.html",
+    "providerName": "Amazon Web Services",
+    "credentialName": "AWS Certified Security - Specialty",
+    "examCode": "SCS-C03",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 6,
+    "objectives": 70,
+    "bookkeeping": 0,
+    "linked": 2
+  }
+}

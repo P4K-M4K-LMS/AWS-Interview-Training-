@@ -1,0 +1,1194 @@
+{
+  "id": "sap-c02",
+  "code": "AWSSAP",
+  "title": "AWS Solutions Architect Professional",
+  "description": "AWS Certified Solutions Architect - Professional (SAP-C02): architecture at organizational scale -- multi-account governance and hybrid networking, designing new solutions across all five pillars, continuously improving what already runs, and migrating and modernizing existing workloads.",
+  "trackType": "certification",
+  "units": [
+    {
+      "id": "sap-c02:1",
+      "index": 1,
+      "title": "Design Solutions for Organizational Complexity",
+      "weight": 26,
+      "gate": "Given an enterprise with many accounts, an on-premises data center, and a compliance auditor, design the network, the identity model, the account structure, and the cost visibility -- and say which requirement each piece answers.",
+      "objectives": [
+        {
+          "id": "sap-c02:1:1",
+          "unitId": "sap-c02:1",
+          "index": 1,
+          "text": "Evaluating connectivity options among multiple VPCs",
+          "sourceHash": "9eb74c2eeced",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:1:2",
+          "unitId": "sap-c02:1",
+          "index": 2,
+          "text": "Connectivity for on-premises, co-location, and cloud integration: AWS Direct Connect and AWS VPN",
+          "sourceHash": "98989c13565b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:1:3",
+          "unitId": "sap-c02:1",
+          "index": 3,
+          "text": "Transitive routing, and the cases where it does not work the way people expect",
+          "sourceHash": "46c8a07b2836",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:1:4",
+          "unitId": "sap-c02:1",
+          "index": 4,
+          "text": "Hybrid DNS: Amazon Route 53 Resolver and on-premises DNS integration",
+          "sourceHash": "c9bc6895dcc5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:1:5",
+          "unitId": "sap-c02:1",
+          "index": 5,
+          "text": "Network segmentation: subnetting, IP addressing, connectivity among VPCs",
+          "sourceHash": "a9121441ffa6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:1:6",
+          "unitId": "sap-c02:1",
+          "index": 6,
+          "text": "Selecting AWS Regions and Availability Zones against network and latency requirements",
+          "sourceHash": "33fa7d6fe8d0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:1:7",
+          "unitId": "sap-c02:1",
+          "index": 7,
+          "text": "Troubleshooting traffic flows with AWS tools",
+          "sourceHash": "ade3d4ed1c02",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:1:8",
+          "unitId": "sap-c02:1",
+          "index": 8,
+          "text": "Using service endpoints for service integrations",
+          "sourceHash": "385be2b16f28",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:1:9",
+          "unitId": "sap-c02:1",
+          "index": 9,
+          "text": "Network traffic monitoring",
+          "sourceHash": "2722281cfbda",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:1:10",
+          "unitId": "sap-c02:1",
+          "index": 10,
+          "text": "Evaluating cross-account access management",
+          "sourceHash": "de734d1c370f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:1:11",
+          "unitId": "sap-c02:1",
+          "index": 11,
+          "text": "Integrating third-party identity providers with IAM and AWS IAM Identity Center",
+          "sourceHash": "3f71d7391e71",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:1:12",
+          "unitId": "sap-c02:1",
+          "index": 12,
+          "text": "Deploying encryption strategies for data at rest and in transit with AWS KMS and AWS Certificate Manager",
+          "sourceHash": "489f2a42e53b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:1:13",
+          "unitId": "sap-c02:1",
+          "index": 13,
+          "text": "A strategy for centralized security event notification and auditing with CloudTrail, IAM Access Analyzer, AWS Security Hub, and Amazon Inspector",
+          "sourceHash": "3aba42e29c66",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:1:14",
+          "unitId": "sap-c02:1",
+          "index": 14,
+          "text": "Route tables, security groups, and network ACLs as organization-wide controls",
+          "sourceHash": "b790221c6d50",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:1:15",
+          "unitId": "sap-c02:1",
+          "index": 15,
+          "text": "Designing disaster recovery to stated RTO and RPO, including AWS Elastic Disaster Recovery",
+          "sourceHash": "bc2a8318def9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:1:16",
+          "unitId": "sap-c02:1",
+          "index": 16,
+          "text": "Disaster recovery patterns at scale: pilot light, warm standby, multi-site",
+          "sourceHash": "802733074652",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:1:17",
+          "unitId": "sap-c02:1",
+          "index": 17,
+          "text": "Architectures that recover from failure automatically",
+          "sourceHash": "96ff6327460d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:1:18",
+          "unitId": "sap-c02:1",
+          "index": 18,
+          "text": "Scale-up against scale-out when choosing the optimal architecture",
+          "sourceHash": "341a8dd2dfe9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:1:19",
+          "unitId": "sap-c02:1",
+          "index": 19,
+          "text": "Designing an effective backup and restoration strategy",
+          "sourceHash": "7966bfe7fd98",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:1:20",
+          "unitId": "sap-c02:1",
+          "index": 20,
+          "text": "Choosing an account structure for organizational requirements with AWS Organizations and AWS Control Tower",
+          "sourceHash": "19760a7243ca",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:1:21",
+          "unitId": "sap-c02:1",
+          "index": 21,
+          "text": "A strategy for central logging and multi-account event notifications",
+          "sourceHash": "5590bb7e5f37",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:1:22",
+          "unitId": "sap-c02:1",
+          "index": 22,
+          "text": "Developing a multi-account governance model",
+          "sourceHash": "85f1dacaf11d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:1:23",
+          "unitId": "sap-c02:1",
+          "index": 23,
+          "text": "Sharing AWS resources across environments",
+          "sourceHash": "32e571f54f7f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:1:24",
+          "unitId": "sap-c02:1",
+          "index": 24,
+          "text": "Cost and usage monitoring: AWS Trusted Advisor, AWS Pricing Calculator, AWS Cost Explorer, AWS Budgets",
+          "sourceHash": "84d01bae7542",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:1:25",
+          "unitId": "sap-c02:1",
+          "index": 25,
+          "text": "Purchasing options and their effect on cost and performance: Reserved Instances, Savings Plans, Spot Instances",
+          "sourceHash": "9364eb836fd7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:1:26",
+          "unitId": "sap-c02:1",
+          "index": 26,
+          "text": "Rightsizing visibility with AWS Compute Optimizer and Amazon S3 Storage Lens",
+          "sourceHash": "80826a6cad6d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:1:27",
+          "unitId": "sap-c02:1",
+          "index": 27,
+          "text": "A tagging strategy that maps costs to business units",
+          "sourceHash": "942005dac28e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "sap-c02:2",
+      "index": 2,
+      "title": "Design for New Solutions",
+      "weight": 29,
+      "gate": "Take a green-field requirement with a deployment need, a continuity need, a security need, a reliability target, a performance objective, and a budget -- and design one architecture that satisfies all six without pretending they do not conflict. Heaviest domain on the exam.",
+      "objectives": [
+        {
+          "id": "sap-c02:2:1",
+          "unitId": "sap-c02:2",
+          "index": 1,
+          "text": "Infrastructure as code and change management with AWS CloudFormation",
+          "sourceHash": "e50182cc9574",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:2:2",
+          "unitId": "sap-c02:2",
+          "index": 2,
+          "text": "Continuous integration and delivery in a solution design",
+          "sourceHash": "bf6f7b952e13",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:2:3",
+          "unitId": "sap-c02:2",
+          "index": 3,
+          "text": "Configuration management with AWS Systems Manager",
+          "sourceHash": "d3f63ecd6bec",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:2:4",
+          "unitId": "sap-c02:2",
+          "index": 4,
+          "text": "Selecting services for deployment strategies and appropriate rollback mechanisms",
+          "sourceHash": "d7e2daaec461",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:2:5",
+          "unitId": "sap-c02:2",
+          "index": 5,
+          "text": "Determining an application or upgrade path for new services and features",
+          "sourceHash": "1e513e1eb474",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:2:6",
+          "unitId": "sap-c02:2",
+          "index": 6,
+          "text": "Adopting managed services to reduce provisioning and patching overhead",
+          "sourceHash": "be9142c7aaee",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:2:7",
+          "unitId": "sap-c02:2",
+          "index": 7,
+          "text": "Configuring disaster recovery solutions, including data and database replication",
+          "sourceHash": "9a727103450f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:2:8",
+          "unitId": "sap-c02:2",
+          "index": 8,
+          "text": "Performing disaster recovery testing rather than assuming it works",
+          "sourceHash": "f776062d0ec2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:2:9",
+          "unitId": "sap-c02:2",
+          "index": 9,
+          "text": "Architecting automated, cost-effective backup across Availability Zones and Regions",
+          "sourceHash": "95f36aee9676",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:2:10",
+          "unitId": "sap-c02:2",
+          "index": 10,
+          "text": "Designing for application and infrastructure availability through a disruption",
+          "sourceHash": "5b779b995f7c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:2:11",
+          "unitId": "sap-c02:2",
+          "index": 11,
+          "text": "Centralized monitoring that recovers proactively from system failures",
+          "sourceHash": "56ea9b856b16",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:2:12",
+          "unitId": "sap-c02:2",
+          "index": 12,
+          "text": "Specifying IAM users and roles that hold to least privilege",
+          "sourceHash": "e0bd420e9fea",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:2:13",
+          "unitId": "sap-c02:2",
+          "index": 13,
+          "text": "Specifying inbound and outbound network flows with security group and network ACL rules",
+          "sourceHash": "b489eb3e8e1b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:2:14",
+          "unitId": "sap-c02:2",
+          "index": 14,
+          "text": "Attack mitigation for large-scale web applications: AWS Shield, AWS WAF, Amazon GuardDuty, AWS Security Hub",
+          "sourceHash": "bd77749f6aaf",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:2:15",
+          "unitId": "sap-c02:2",
+          "index": 15,
+          "text": "Developing encryption strategies for data at rest and in transit",
+          "sourceHash": "4dbd3a50f986",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:2:16",
+          "unitId": "sap-c02:2",
+          "index": 16,
+          "text": "Specifying service endpoints for service integrations",
+          "sourceHash": "1878351e0d23",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:2:17",
+          "unitId": "sap-c02:2",
+          "index": 17,
+          "text": "Credential management services",
+          "sourceHash": "76b462c33cc8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:2:18",
+          "unitId": "sap-c02:2",
+          "index": 18,
+          "text": "Patch management that keeps the solution compliant with organizational standards",
+          "sourceHash": "5fd2879f9ff4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:2:19",
+          "unitId": "sap-c02:2",
+          "index": 19,
+          "text": "Designing highly available application environments from business requirements",
+          "sourceHash": "78fe395c13b3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:2:20",
+          "unitId": "sap-c02:2",
+          "index": 20,
+          "text": "Advanced techniques for designing for failure and seamless recoverability",
+          "sourceHash": "c7ee3d2881a5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:2:21",
+          "unitId": "sap-c02:2",
+          "index": 21,
+          "text": "Implementing loosely coupled dependencies with Amazon SNS, Amazon SQS, and AWS Step Functions",
+          "sourceHash": "d7e587840931",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:2:22",
+          "unitId": "sap-c02:2",
+          "index": 22,
+          "text": "Operating and maintaining high availability: application failover and database failover",
+          "sourceHash": "d66a3e152777",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:2:23",
+          "unitId": "sap-c02:2",
+          "index": 23,
+          "text": "Auto scaling policies and events",
+          "sourceHash": "00e68087fc32",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:2:24",
+          "unitId": "sap-c02:2",
+          "index": 24,
+          "text": "DNS routing policies: latency-based, geolocation, and simple routing",
+          "sourceHash": "fa4d22d26d43",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:2:25",
+          "unitId": "sap-c02:2",
+          "index": 25,
+          "text": "Multi-AZ and multi-Region architectures",
+          "sourceHash": "516f9435bc91",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:2:26",
+          "unitId": "sap-c02:2",
+          "index": 26,
+          "text": "Service quotas and limits as a design constraint",
+          "sourceHash": "b21d51f895b3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:2:27",
+          "unitId": "sap-c02:2",
+          "index": 27,
+          "text": "Designing large-scale architectures for a variety of access patterns",
+          "sourceHash": "52327a1ada9d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:2:28",
+          "unitId": "sap-c02:2",
+          "index": 28,
+          "text": "Designing an elastic architecture from business objectives",
+          "sourceHash": "ed7d29e56eb9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:2:29",
+          "unitId": "sap-c02:2",
+          "index": 29,
+          "text": "Caching, buffering, and replicas applied to performance objectives",
+          "sourceHash": "0f076e3af045",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:2:30",
+          "unitId": "sap-c02:2",
+          "index": 30,
+          "text": "A methodology for selecting purpose-built services",
+          "sourceHash": "338c58982428",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:2:31",
+          "unitId": "sap-c02:2",
+          "index": 31,
+          "text": "Instance families, storage options, and purpose-built databases chosen for performance",
+          "sourceHash": "2154b18f8bb8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:2:32",
+          "unitId": "sap-c02:2",
+          "index": 32,
+          "text": "Designing a rightsizing strategy",
+          "sourceHash": "2b9516881d35",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:2:33",
+          "unitId": "sap-c02:2",
+          "index": 33,
+          "text": "Identifying appropriate pricing models: Reserved Instances and AWS Savings Plans",
+          "sourceHash": "7b57412d647b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:2:34",
+          "unitId": "sap-c02:2",
+          "index": 34,
+          "text": "Storage tiering and data transfer modeling to reduce cost",
+          "sourceHash": "0b869a0fe598",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:2:35",
+          "unitId": "sap-c02:2",
+          "index": 35,
+          "text": "Implementing controls for expenditure and usage awareness",
+          "sourceHash": "1c422949d200",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "sap-c02:3",
+      "index": 3,
+      "title": "Continuous Improvement for Existing Solutions",
+      "weight": 25,
+      "gate": "Given an architecture already in production, find what is weakest across operations, security, performance, reliability, and cost -- and order the fixes by what the business would feel first.",
+      "objectives": [
+        {
+          "id": "sap-c02:3:1",
+          "unitId": "sap-c02:3",
+          "index": 1,
+          "text": "Determining the most appropriate logging and monitoring strategy with Amazon CloudWatch",
+          "sourceHash": "d96808ba102e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:3:2",
+          "unitId": "sap-c02:3",
+          "index": 2,
+          "text": "Alerting and automatic remediation strategies",
+          "sourceHash": "02122d2d7c38",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:3:3",
+          "unitId": "sap-c02:3",
+          "index": 3,
+          "text": "Evaluating current deployment processes for improvement opportunities",
+          "sourceHash": "9544819b680b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:3:4",
+          "unitId": "sap-c02:3",
+          "index": 4,
+          "text": "Prioritizing opportunities for automation within a solution stack",
+          "sourceHash": "ba879b3ee70a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:3:5",
+          "unitId": "sap-c02:3",
+          "index": 5,
+          "text": "Recommending AWS solutions for configuration management automation, such as AWS Systems Manager",
+          "sourceHash": "3d51e866b96e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:3:6",
+          "unitId": "sap-c02:3",
+          "index": 6,
+          "text": "Deployment strategies already in place: blue/green, all-at-once, rolling",
+          "sourceHash": "9e4c53c84b36",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:3:7",
+          "unitId": "sap-c02:3",
+          "index": 7,
+          "text": "Engineering failure scenarios to exercise recovery actions",
+          "sourceHash": "a6376217eafb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:3:8",
+          "unitId": "sap-c02:3",
+          "index": 8,
+          "text": "Evaluating secure management of secrets and credentials with Systems Manager and AWS Secrets Manager",
+          "sourceHash": "d29c3bba6c1f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:3:9",
+          "unitId": "sap-c02:3",
+          "index": 9,
+          "text": "Auditing an environment for least privilege access",
+          "sourceHash": "532cf6c6c72d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:3:10",
+          "unitId": "sap-c02:3",
+          "index": 10,
+          "text": "Reviewing implemented solutions for security at every layer",
+          "sourceHash": "b5aa1964481b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:3:11",
+          "unitId": "sap-c02:3",
+          "index": 11,
+          "text": "Reviewing comprehensive traceability of users and services",
+          "sourceHash": "0d7b0d867122",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:3:12",
+          "unitId": "sap-c02:3",
+          "index": 12,
+          "text": "Automated monitoring and remediation with AWS Config rules",
+          "sourceHash": "093fbdc6102c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:3:13",
+          "unitId": "sap-c02:3",
+          "index": 13,
+          "text": "Prioritizing automated responses to detected vulnerabilities",
+          "sourceHash": "386af0689fb0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:3:14",
+          "unitId": "sap-c02:3",
+          "index": 14,
+          "text": "Designing and implementing patch and update processes",
+          "sourceHash": "0bd356ca13a7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:3:15",
+          "unitId": "sap-c02:3",
+          "index": 15,
+          "text": "Designing and implementing a backup process against data retention, sensitivity, and regulatory requirements",
+          "sourceHash": "c35781736355",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:3:16",
+          "unitId": "sap-c02:3",
+          "index": 16,
+          "text": "Translating business requirements into measurable metrics, SLAs, and KPIs",
+          "sourceHash": "53b4d21fd0c1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:3:17",
+          "unitId": "sap-c02:3",
+          "index": 17,
+          "text": "High-performing systems architecture: auto scaling, instance fleets, placement groups",
+          "sourceHash": "2d9b54781f13",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:3:18",
+          "unitId": "sap-c02:3",
+          "index": 18,
+          "text": "Global and edge offerings: AWS Global Accelerator, Amazon CloudFront, edge computing services",
+          "sourceHash": "3e6f0ac0bbc1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:3:19",
+          "unitId": "sap-c02:3",
+          "index": 19,
+          "text": "Identifying and examining performance bottlenecks",
+          "sourceHash": "509ba9e181cf",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:3:20",
+          "unitId": "sap-c02:3",
+          "index": 20,
+          "text": "Testing potential remediation solutions and making a recommendation",
+          "sourceHash": "b2f785693b84",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:3:21",
+          "unitId": "sap-c02:3",
+          "index": 21,
+          "text": "Proposing adoption of new technologies and managed services",
+          "sourceHash": "20abaa1db356",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:3:22",
+          "unitId": "sap-c02:3",
+          "index": 22,
+          "text": "Assessing solutions and rightsizing against requirements",
+          "sourceHash": "44666c0e9f9b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:3:23",
+          "unitId": "sap-c02:3",
+          "index": 23,
+          "text": "Understanding application growth and usage trends",
+          "sourceHash": "a4c1ee4798cc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:3:24",
+          "unitId": "sap-c02:3",
+          "index": 24,
+          "text": "Evaluating an existing architecture for the parts that are not reliable enough",
+          "sourceHash": "ae4badff2c1a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:3:25",
+          "unitId": "sap-c02:3",
+          "index": 25,
+          "text": "Remediating single points of failure",
+          "sourceHash": "d36ef4847eec",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:3:26",
+          "unitId": "sap-c02:3",
+          "index": 26,
+          "text": "Enabling data replication, self-healing, and elastic features and services",
+          "sourceHash": "0a04ba0e1457",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:3:27",
+          "unitId": "sap-c02:3",
+          "index": 27,
+          "text": "Analyzing usage reports to find underutilized and overutilized resources",
+          "sourceHash": "53604dafdf3f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:3:28",
+          "unitId": "sap-c02:3",
+          "index": 28,
+          "text": "Using AWS solutions to identify unused resources",
+          "sourceHash": "2b330098ce2f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:3:29",
+          "unitId": "sap-c02:3",
+          "index": 29,
+          "text": "Designing billing alarms based on expected usage patterns",
+          "sourceHash": "0e67071d90cb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:3:30",
+          "unitId": "sap-c02:3",
+          "index": 30,
+          "text": "Investigating AWS Cost and Usage Reports at a granular level",
+          "sourceHash": "faf7cd7bf021",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:3:31",
+          "unitId": "sap-c02:3",
+          "index": 31,
+          "text": "Using tagging for cost allocation and reporting",
+          "sourceHash": "0550056f5b4f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "sap-c02:4",
+      "index": 4,
+      "title": "Accelerate Workload Migration and Modernization",
+      "weight": 20,
+      "gate": "Given a portfolio of legacy applications, classify each against the 7Rs, pick the transfer mechanism and target platform for the ones that move, and name the two worth modernizing rather than lifting.",
+      "objectives": [
+        {
+          "id": "sap-c02:4:1",
+          "unitId": "sap-c02:4",
+          "index": 1,
+          "text": "Completing an application migration assessment with AWS Migration Hub",
+          "sourceHash": "7cb87ce489aa",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:4:2",
+          "unitId": "sap-c02:4",
+          "index": 2,
+          "text": "Portfolio assessment and asset planning",
+          "sourceHash": "e8335df76bc6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:4:3",
+          "unitId": "sap-c02:4",
+          "index": 3,
+          "text": "Evaluating applications against the seven common migration strategies (7Rs)",
+          "sourceHash": "bca2d1935c5c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:4:4",
+          "unitId": "sap-c02:4",
+          "index": 4,
+          "text": "Evaluating total cost of ownership",
+          "sourceHash": "e0106af5b4d0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:4:5",
+          "unitId": "sap-c02:4",
+          "index": 5,
+          "text": "Prioritizing and sequencing workloads through wave planning",
+          "sourceHash": "42875db0e91c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:4:6",
+          "unitId": "sap-c02:4",
+          "index": 6,
+          "text": "Data migration options: AWS DataSync, AWS Transfer Family, AWS Snow Family, Amazon S3 Transfer Acceleration",
+          "sourceHash": "0c0d85318a8f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:4:7",
+          "unitId": "sap-c02:4",
+          "index": 7,
+          "text": "Application migration tools: AWS Application Discovery Service and AWS Application Migration Service",
+          "sourceHash": "4fbcb7d0749d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:4:8",
+          "unitId": "sap-c02:4",
+          "index": 8,
+          "text": "Database migration tools: AWS DMS and AWS SCT",
+          "sourceHash": "48d9739bb99b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:4:9",
+          "unitId": "sap-c02:4",
+          "index": 9,
+          "text": "Networking and DNS during a migration: AWS Direct Connect, AWS Site-to-Site VPN, Amazon Route 53",
+          "sourceHash": "01e4b45d7253",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:4:10",
+          "unitId": "sap-c02:4",
+          "index": 10,
+          "text": "Identity services during a migration: AWS IAM Identity Center and AWS Directory Service",
+          "sourceHash": "f15341132569",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:4:11",
+          "unitId": "sap-c02:4",
+          "index": 11,
+          "text": "Applying appropriate security methods to the migration tools themselves",
+          "sourceHash": "9b6ef8c18840",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:4:12",
+          "unitId": "sap-c02:4",
+          "index": 12,
+          "text": "Selecting a governance model with AWS Control Tower and AWS Organizations",
+          "sourceHash": "3fcb27664b9c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:4:13",
+          "unitId": "sap-c02:4",
+          "index": 13,
+          "text": "Selecting the compute platform for a migrated workload: Amazon EC2, AWS Elastic Beanstalk",
+          "sourceHash": "0a3ffca01d95",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:4:14",
+          "unitId": "sap-c02:4",
+          "index": 14,
+          "text": "Selecting a container hosting platform: Amazon ECS, Amazon EKS, AWS Fargate, Amazon ECR",
+          "sourceHash": "e948a0e4cfb9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:4:15",
+          "unitId": "sap-c02:4",
+          "index": 15,
+          "text": "Selecting storage: Amazon EBS, Amazon EFS, Amazon FSx, Amazon S3, Storage Gateway Volume Gateway",
+          "sourceHash": "d4051495ca95",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:4:16",
+          "unitId": "sap-c02:4",
+          "index": 16,
+          "text": "Selecting a database platform: Amazon RDS, Amazon DynamoDB, Amazon OpenSearch Service, or self-managed on EC2",
+          "sourceHash": "6af4d2debcdb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:4:17",
+          "unitId": "sap-c02:4",
+          "index": 17,
+          "text": "Identifying opportunities to decouple application components",
+          "sourceHash": "aab59684da55",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:4:18",
+          "unitId": "sap-c02:4",
+          "index": 18,
+          "text": "Identifying opportunities for serverless solutions with AWS Lambda",
+          "sourceHash": "7a3a9cd6c368",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:4:19",
+          "unitId": "sap-c02:4",
+          "index": 19,
+          "text": "Identifying opportunities for purpose-built databases: DynamoDB, Amazon Aurora Serverless, Amazon ElastiCache",
+          "sourceHash": "5ad13089fe10",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sap-c02:4:20",
+          "unitId": "sap-c02:4",
+          "index": 20,
+          "text": "Selecting the appropriate application integration service: Amazon SQS, Amazon SNS, Amazon EventBridge, AWS Step Functions",
+          "sourceHash": "5f703cdb969a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/aws.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-18T00:00:00Z",
+    "officialObjectivesUrl": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-professional-02/solutions-architect-professional-02.html",
+    "providerName": "Amazon Web Services",
+    "credentialName": "AWS Certified Solutions Architect - Professional",
+    "examCode": "SAP-C02",
+    "credentialStatus": "transitioning",
+    "retirementDate": "2026-11-17",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 4,
+    "objectives": 113,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

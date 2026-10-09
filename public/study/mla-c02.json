@@ -1,0 +1,1133 @@
+{
+  "id": "mla-c02",
+  "code": "AWSMLA",
+  "title": "AWS Machine Learning Engineer Associate",
+  "description": "AWS Certified Machine Learning Engineer - Associate (MLA-C02): building and running ML and generative AI systems on AWS -- data preparation, training and fine-tuning, deploying models, agents and RAG pipelines, and then monitoring, costing, and securing all of it in production.",
+  "trackType": "certification",
+  "units": [
+    {
+      "id": "mla-c02:1",
+      "index": 1,
+      "title": "Data Preparation for ML and AI",
+      "weight": 28,
+      "gate": "Take a raw, messy, multimodal dataset to something trainable: stored in the right format, features engineered, documents chunked for retrieval, PII masked, bias and class imbalance measured rather than assumed. Largest domain on the exam.",
+      "objectives": [
+        {
+          "id": "mla-c02:1:1",
+          "unitId": "mla-c02:1",
+          "index": 1,
+          "text": "Extracting data from sources: Amazon S3, Amazon EBS, Amazon EFS, Amazon RDS, Amazon DynamoDB, Amazon OpenSearch Service",
+          "sourceHash": "dc70cf279c45",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:1:2",
+          "unitId": "mla-c02:1",
+          "index": 2,
+          "text": "Making storage decisions on cost, performance, data structure, and compliance",
+          "sourceHash": "0b791ab139ab",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:1:3",
+          "unitId": "mla-c02:1",
+          "index": 3,
+          "text": "Troubleshooting ingestion and storage problems involving capacity and scalability",
+          "sourceHash": "b47e3037bf30",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:1:4",
+          "unitId": "mla-c02:1",
+          "index": 4,
+          "text": "Ingesting from AWS streaming sources: Amazon Kinesis, Apache Flink, Apache Kafka",
+          "sourceHash": "f2f04626d220",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:1:5",
+          "unitId": "mla-c02:1",
+          "index": 5,
+          "text": "Choosing data formats for the access pattern: Apache Parquet, JSON, CSV, ORC",
+          "sourceHash": "dd9618aab75d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:1:6",
+          "unitId": "mla-c02:1",
+          "index": 6,
+          "text": "Merging data from multiple sources with AWS Glue, Apache Spark, or code",
+          "sourceHash": "6c7de6024e56",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:1:7",
+          "unitId": "mla-c02:1",
+          "index": 7,
+          "text": "Configuring scalable vector databases for AI applications: OpenSearch Service, Amazon RDS with pgvector, Amazon S3",
+          "sourceHash": "ec05fa3ae4bc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:1:8",
+          "unitId": "mla-c02:1",
+          "index": 8,
+          "text": "Ingesting and storing diverse data types: text, images, audio",
+          "sourceHash": "4e2994fa0632",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:1:9",
+          "unitId": "mla-c02:1",
+          "index": 9,
+          "text": "Ingesting data into SageMaker Feature Store",
+          "sourceHash": "19e5b92ecc9a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:1:10",
+          "unitId": "mla-c02:1",
+          "index": 10,
+          "text": "Transforming data with AWS Glue, AWS Glue DataBrew, Spark on Amazon EMR, and SageMaker Data Wrangler",
+          "sourceHash": "4f368121da5b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:1:11",
+          "unitId": "mla-c02:1",
+          "index": 11,
+          "text": "Creating and managing features with SageMaker Feature Store",
+          "sourceHash": "f2c25488c66d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:1:12",
+          "unitId": "mla-c02:1",
+          "index": 12,
+          "text": "Transforming streaming data with AWS Lambda and Spark",
+          "sourceHash": "e111bd657ccc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:1:13",
+          "unitId": "mla-c02:1",
+          "index": 13,
+          "text": "Feature engineering: scaling, standardization, feature splitting, binning, log transformation, normalization",
+          "sourceHash": "d70805d717ba",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:1:14",
+          "unitId": "mla-c02:1",
+          "index": 14,
+          "text": "Configuring and using embedding models to turn text and images into numerical representations",
+          "sourceHash": "fc7189408736",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:1:15",
+          "unitId": "mla-c02:1",
+          "index": 15,
+          "text": "Advanced text pre-processing: tokenization and domain-specific augmentation",
+          "sourceHash": "c9ea73fb454a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:1:16",
+          "unitId": "mla-c02:1",
+          "index": 16,
+          "text": "Preparing documents for Retrieval Augmented Generation: chunking strategies and metadata extraction",
+          "sourceHash": "df0bb59e0dd7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:1:17",
+          "unitId": "mla-c02:1",
+          "index": 17,
+          "text": "Masking, redacting, and anonymizing data",
+          "sourceHash": "8ff7373e5047",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:1:18",
+          "unitId": "mla-c02:1",
+          "index": 18,
+          "text": "Preparing data for foundation-model fine-tuning, continuous pre-training, and distillation",
+          "sourceHash": "2ed743779978",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:1:19",
+          "unitId": "mla-c02:1",
+          "index": 19,
+          "text": "Validating data quality with DataBrew and AWS Glue Data Quality",
+          "sourceHash": "ecd48e34947d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:1:20",
+          "unitId": "mla-c02:1",
+          "index": 20,
+          "text": "Labeling and annotating data",
+          "sourceHash": "fb2139beb01a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:1:21",
+          "unitId": "mla-c02:1",
+          "index": 21,
+          "text": "Identifying and mitigating sources of bias: dataset splitting, shuffling, augmentation",
+          "sourceHash": "64f1fe54bfb9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:1:22",
+          "unitId": "mla-c02:1",
+          "index": 22,
+          "text": "Applying bias metrics across numeric, text, and image assets in multimodal data",
+          "sourceHash": "d7da99a95b2c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:1:23",
+          "unitId": "mla-c02:1",
+          "index": 23,
+          "text": "Resolving class imbalance in numeric, text, and image datasets",
+          "sourceHash": "d62f43a14c63",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:1:24",
+          "unitId": "mla-c02:1",
+          "index": 24,
+          "text": "Validating AI training data integrity: prompt-response pair validation, content safety screening",
+          "sourceHash": "ebbf4ab06866",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:1:25",
+          "unitId": "mla-c02:1",
+          "index": 25,
+          "text": "Cleaning data: detecting outliers, imputing missing values, deduplication",
+          "sourceHash": "730efde22e29",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "mla-c02:2",
+      "index": 2,
+      "title": "ML Model and Foundation Model Development",
+      "weight": 24,
+      "gate": "Given a business problem, choose between an AWS AI service, a built-in algorithm, a fine-tuned foundation model, and a RAG pipeline -- then prove the choice with an evaluation metric that actually matches the task.",
+      "objectives": [
+        {
+          "id": "mla-c02:2:1",
+          "unitId": "mla-c02:2",
+          "index": 1,
+          "text": "Evaluating and selecting foundation models in Amazon Bedrock against task requirements and performance criteria",
+          "sourceHash": "2211f5c386fb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:2:2",
+          "unitId": "mla-c02:2",
+          "index": 2,
+          "text": "Fine-tuning strategies for pre-trained foundation models",
+          "sourceHash": "9b7f001937a7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:2:3",
+          "unitId": "mla-c02:2",
+          "index": 3,
+          "text": "Comparing ML models, generative AI models, algorithms, and solution templates on interpretability, domain performance, and latency",
+          "sourceHash": "301f832a7a52",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:2:4",
+          "unitId": "mla-c02:2",
+          "index": 4,
+          "text": "Trade-offs between custom solutions, managed services, pre-trained models, and foundation models",
+          "sourceHash": "76a29be72344",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:2:5",
+          "unitId": "mla-c02:2",
+          "index": 5,
+          "text": "Selecting a Retrieval Augmented Generation architecture pattern for the use case",
+          "sourceHash": "2a9c733df36b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:2:6",
+          "unitId": "mla-c02:2",
+          "index": 6,
+          "text": "Trade-offs between ML model performance, training time, and cost",
+          "sourceHash": "fb24a92954e0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:2:7",
+          "unitId": "mla-c02:2",
+          "index": 7,
+          "text": "Trade-offs between AI model performance, latency, and cost",
+          "sourceHash": "a5533f41e32a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:2:8",
+          "unitId": "mla-c02:2",
+          "index": 8,
+          "text": "Applying AWS AI services to business problems: Amazon Textract, Amazon Rekognition, Amazon Comprehend, Amazon Transcribe",
+          "sourceHash": "4be202bc7374",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:2:9",
+          "unitId": "mla-c02:2",
+          "index": 9,
+          "text": "Using SageMaker AI built-in algorithms and common ML libraries",
+          "sourceHash": "ca4a617f3710",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:2:10",
+          "unitId": "mla-c02:2",
+          "index": 10,
+          "text": "Configuring SageMaker AI script mode with supported frameworks",
+          "sourceHash": "800b62b42263",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:2:11",
+          "unitId": "mla-c02:2",
+          "index": 11,
+          "text": "Hyperparameter optimization with SageMaker AI automatic model tuning",
+          "sourceHash": "232ac66250da",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:2:12",
+          "unitId": "mla-c02:2",
+          "index": 12,
+          "text": "Reducing training time with early stopping and distributed training",
+          "sourceHash": "1469b2a316d6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:2:13",
+          "unitId": "mla-c02:2",
+          "index": 13,
+          "text": "Preventing overfitting, underfitting, and catastrophic forgetting",
+          "sourceHash": "8a9a977004b5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:2:14",
+          "unitId": "mla-c02:2",
+          "index": 14,
+          "text": "Combining multiple ML models to improve performance or reduce cost",
+          "sourceHash": "78206af3a22e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:2:15",
+          "unitId": "mla-c02:2",
+          "index": 15,
+          "text": "Adjusting fundamental hyperparameters: epoch, steps, batch size",
+          "sourceHash": "3c37ee6069cc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:2:16",
+          "unitId": "mla-c02:2",
+          "index": 16,
+          "text": "Customizing AI solutions with task-specific prompt engineering and fine-tuning",
+          "sourceHash": "1ad11927dfac",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:2:17",
+          "unitId": "mla-c02:2",
+          "index": 17,
+          "text": "Optimizing retrieval components and embedding models",
+          "sourceHash": "2cb3be1fbcce",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:2:18",
+          "unitId": "mla-c02:2",
+          "index": 18,
+          "text": "Running reproducible experiments with MLflow on SageMaker AI, Amazon Bedrock evaluations, and Bedrock Prompt Management",
+          "sourceHash": "2dc531e68665",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:2:19",
+          "unitId": "mla-c02:2",
+          "index": 19,
+          "text": "Creating performance baselines and implementing drift detection",
+          "sourceHash": "c686aa081d18",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:2:20",
+          "unitId": "mla-c02:2",
+          "index": 20,
+          "text": "Comparing a shadow variant against the production variant",
+          "sourceHash": "d8c693809881",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:2:21",
+          "unitId": "mla-c02:2",
+          "index": 21,
+          "text": "Explaining model outputs",
+          "sourceHash": "25e1ebd62556",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:2:22",
+          "unitId": "mla-c02:2",
+          "index": 22,
+          "text": "Debugging model convergence issues",
+          "sourceHash": "c3d449bdaa9c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:2:23",
+          "unitId": "mla-c02:2",
+          "index": 23,
+          "text": "Model evaluation techniques for traditional ML and for generative models",
+          "sourceHash": "70a10ef051ee",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:2:24",
+          "unitId": "mla-c02:2",
+          "index": 24,
+          "text": "Human evaluation frameworks: human-in-the-loop workflows and text generation quality assessment",
+          "sourceHash": "576d738bd202",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:2:25",
+          "unitId": "mla-c02:2",
+          "index": 25,
+          "text": "NLP evaluation metrics: BLEU, ROUGE, BERTScore, semantic similarity",
+          "sourceHash": "9cd445507e42",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:2:26",
+          "unitId": "mla-c02:2",
+          "index": 26,
+          "text": "AI evaluation: model output assessment, content quality validation, bias detection, LLM-as-a-judge frameworks",
+          "sourceHash": "e5ee17a20e55",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:2:27",
+          "unitId": "mla-c02:2",
+          "index": 27,
+          "text": "Configuring RAG system monitoring, including retrieval accuracy assessment",
+          "sourceHash": "8e6476a823a8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "mla-c02:3",
+      "index": 3,
+      "title": "Deployment and Orchestration of ML and AI Workflows",
+      "weight": 24,
+      "gate": "Put a model, a knowledge base, and an agent into production behind a pipeline that can retrain, re-index, redeploy, and roll back without a human editing anything by hand.",
+      "objectives": [
+        {
+          "id": "mla-c02:3:1",
+          "unitId": "mla-c02:3",
+          "index": 1,
+          "text": "Selecting appropriate compute environments and deployment targets",
+          "sourceHash": "bd47c0fac164",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:3:2",
+          "unitId": "mla-c02:3",
+          "index": 2,
+          "text": "Selecting deployment orchestrators and multi-model or multi-container deployment strategies",
+          "sourceHash": "28d23267a8ca",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:3:3",
+          "unitId": "mla-c02:3",
+          "index": 3,
+          "text": "Selecting inference strategies: real-time versus batch",
+          "sourceHash": "774f173dcef8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:3:4",
+          "unitId": "mla-c02:3",
+          "index": 4,
+          "text": "Evaluating and selecting foundation-model deployment options",
+          "sourceHash": "c6caa072e165",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:3:5",
+          "unitId": "mla-c02:3",
+          "index": 5,
+          "text": "Bringing models built outside AWS into SageMaker AI or Amazon Bedrock Custom Model Import",
+          "sourceHash": "b5c450fac54c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:3:6",
+          "unitId": "mla-c02:3",
+          "index": 6,
+          "text": "Deploying and configuring agents: task scoping, tool and service integration, agent communication protocols",
+          "sourceHash": "c3279a4ef27a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:3:7",
+          "unitId": "mla-c02:3",
+          "index": 7,
+          "text": "Configuring foundation-model deployment, model hosting, and resource allocation",
+          "sourceHash": "36c193e93cc2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:3:8",
+          "unitId": "mla-c02:3",
+          "index": 8,
+          "text": "Applying RAG system configurations: retrieval strategies and reranking",
+          "sourceHash": "49e583f43d14",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:3:9",
+          "unitId": "mla-c02:3",
+          "index": 9,
+          "text": "Balancing on-demand against provisioned resources for performance and cost",
+          "sourceHash": "2c1ac14442fe",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:3:10",
+          "unitId": "mla-c02:3",
+          "index": 10,
+          "text": "Automating compute provisioning with communication between stacks and orchestration services",
+          "sourceHash": "4b1394cb3c7e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:3:11",
+          "unitId": "mla-c02:3",
+          "index": 11,
+          "text": "Building and maintaining containers for ML and AI workloads",
+          "sourceHash": "79d2ccae6dc8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:3:12",
+          "unitId": "mla-c02:3",
+          "index": 12,
+          "text": "Configuring SageMaker AI endpoints inside a VPC",
+          "sourceHash": "c1cc0051753c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:3:13",
+          "unitId": "mla-c02:3",
+          "index": 13,
+          "text": "Deploying and hosting models programmatically with the SageMaker AI SDK, the AWS CLI, and Boto3",
+          "sourceHash": "9b13632aa598",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:3:14",
+          "unitId": "mla-c02:3",
+          "index": 14,
+          "text": "Selecting the metrics that drive auto scaling",
+          "sourceHash": "d193f049c320",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:3:15",
+          "unitId": "mla-c02:3",
+          "index": 15,
+          "text": "Creating and managing Amazon Bedrock knowledge bases: vector database configuration, document indexing, retrieval optimization",
+          "sourceHash": "049d97c946c5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:3:16",
+          "unitId": "mla-c02:3",
+          "index": 16,
+          "text": "Implementing retrieval pipelines that meet the business need",
+          "sourceHash": "3b73a8ef3c5a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:3:17",
+          "unitId": "mla-c02:3",
+          "index": 17,
+          "text": "Implementing agent state management",
+          "sourceHash": "96f1ab68fe18",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:3:18",
+          "unitId": "mla-c02:3",
+          "index": 18,
+          "text": "Scaling GPU workloads for AI",
+          "sourceHash": "3a56456e4b6a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:3:19",
+          "unitId": "mla-c02:3",
+          "index": 19,
+          "text": "Deploying agentic workflow infrastructure",
+          "sourceHash": "e1493677f3b2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:3:20",
+          "unitId": "mla-c02:3",
+          "index": 20,
+          "text": "Automated deployment strategies and rollback actions",
+          "sourceHash": "6947a7eb1c3d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:3:21",
+          "unitId": "mla-c02:3",
+          "index": 21,
+          "text": "Configuring and troubleshooting AWS CodeBuild, CodeCommit, CodeDeploy, CodePipeline, and CodeConnections",
+          "sourceHash": "67a9ba736870",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:3:22",
+          "unitId": "mla-c02:3",
+          "index": 22,
+          "text": "Configuring training and inference jobs",
+          "sourceHash": "df31fa263ad8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:3:23",
+          "unitId": "mla-c02:3",
+          "index": 23,
+          "text": "Automated testing strategies inside CI/CD for ML and AI workloads",
+          "sourceHash": "da7958ca7847",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:3:24",
+          "unitId": "mla-c02:3",
+          "index": 24,
+          "text": "Building and integrating mechanisms to retrain models",
+          "sourceHash": "022c04729ca9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:3:25",
+          "unitId": "mla-c02:3",
+          "index": 25,
+          "text": "Managing model versions for repeatability and audit with SageMaker Model Registry and MLflow on SageMaker AI",
+          "sourceHash": "1af38377868f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:3:26",
+          "unitId": "mla-c02:3",
+          "index": 26,
+          "text": "Managing prompts with Amazon Bedrock Prompt Management",
+          "sourceHash": "42c0fe83c3ef",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:3:27",
+          "unitId": "mla-c02:3",
+          "index": 27,
+          "text": "Automated agent deployment pipelines and agent version management",
+          "sourceHash": "f7d3f656c230",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:3:28",
+          "unitId": "mla-c02:3",
+          "index": 28,
+          "text": "AI model testing frameworks, including prompt testing",
+          "sourceHash": "9d35b4c4a582",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:3:29",
+          "unitId": "mla-c02:3",
+          "index": 29,
+          "text": "Automating foundation-model deployment with fine-tuned model versioning",
+          "sourceHash": "89b4ec5efb04",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:3:30",
+          "unitId": "mla-c02:3",
+          "index": 30,
+          "text": "Pipeline orchestration for RAG updates and knowledge base refresh cycles",
+          "sourceHash": "063d6862188d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "mla-c02:4",
+      "index": 4,
+      "title": "Operating, Monitoring, and Securing ML and AI Solutions",
+      "weight": 24,
+      "gate": "Given a deployed AI system, say what you watch, what tells you the model has drifted or an agent is failing silently, what it costs per token, and which control stops it leaking customer data.",
+      "objectives": [
+        {
+          "id": "mla-c02:4:1",
+          "unitId": "mla-c02:4",
+          "index": 1,
+          "text": "Monitoring production model performance with Amazon CloudWatch generative AI observability, Amazon Bedrock Model Evaluation, and drift detection pipelines",
+          "sourceHash": "f1cb5ca1fc1b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:4:2",
+          "unitId": "mla-c02:4",
+          "index": 2,
+          "text": "Monitoring workflows for anomalies and errors in data processing or model inference",
+          "sourceHash": "5d44a49ebdbc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:4:3",
+          "unitId": "mla-c02:4",
+          "index": 3,
+          "text": "Detecting changes in data distribution that degrade model performance",
+          "sourceHash": "6d3be48835a7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:4:4",
+          "unitId": "mla-c02:4",
+          "index": 4,
+          "text": "Monitoring production performance with A/B testing",
+          "sourceHash": "0b9a0c2c4cac",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:4:5",
+          "unitId": "mla-c02:4",
+          "index": 5,
+          "text": "Monitoring and automating agent performance and coordination: coordination failure detection, truncated streaming, tool failures",
+          "sourceHash": "712109710c33",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:4:6",
+          "unitId": "mla-c02:4",
+          "index": 6,
+          "text": "Performance monitoring specific to foundation models, such as Amazon Bedrock evaluations",
+          "sourceHash": "6af5937e82cb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:4:7",
+          "unitId": "mla-c02:4",
+          "index": 7,
+          "text": "Selecting inference instance families for performance and cost",
+          "sourceHash": "635fdd8aa8bd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:4:8",
+          "unitId": "mla-c02:4",
+          "index": 8,
+          "text": "Troubleshooting resources with Amazon CloudWatch, Amazon Bedrock AgentCore Observability, and AWS X-Ray",
+          "sourceHash": "527261598410",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:4:9",
+          "unitId": "mla-c02:4",
+          "index": 9,
+          "text": "Setting up dashboards for performance metrics",
+          "sourceHash": "de9f244461ef",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:4:10",
+          "unitId": "mla-c02:4",
+          "index": 10,
+          "text": "Optimizing capacity for cost, performance, and reliability",
+          "sourceHash": "4aca6041faf6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:4:11",
+          "unitId": "mla-c02:4",
+          "index": 11,
+          "text": "Optimizing costs and setting cost quotas with AWS cost management tools",
+          "sourceHash": "ea198e13991f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:4:12",
+          "unitId": "mla-c02:4",
+          "index": 12,
+          "text": "Cutting infrastructure cost through purchasing options",
+          "sourceHash": "f01ae2fed7f1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:4:13",
+          "unitId": "mla-c02:4",
+          "index": 13,
+          "text": "Evaluating the cost of running foundation-model inference in production",
+          "sourceHash": "191a73d46f42",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:4:14",
+          "unitId": "mla-c02:4",
+          "index": 14,
+          "text": "Monitoring agent resource consumption patterns",
+          "sourceHash": "e2639a8136d5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:4:15",
+          "unitId": "mla-c02:4",
+          "index": 15,
+          "text": "Managing foundation-model inference cost through usage optimization",
+          "sourceHash": "9b663a663f38",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:4:16",
+          "unitId": "mla-c02:4",
+          "index": 16,
+          "text": "AI-specific cost patterns: token usage optimization, embedding computation cost, vector database storage",
+          "sourceHash": "e5f7aff742eb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:4:17",
+          "unitId": "mla-c02:4",
+          "index": 17,
+          "text": "Securing CI/CD pipelines against code and image vulnerabilities with Amazon CodeGuru and Amazon Inspector",
+          "sourceHash": "1051d02678e6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:4:18",
+          "unitId": "mla-c02:4",
+          "index": 18,
+          "text": "Configuring least-privilege access to ML and AI artifacts",
+          "sourceHash": "808bc8d80053",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:4:19",
+          "unitId": "mla-c02:4",
+          "index": 19,
+          "text": "Configuring IAM policies and roles for users and applications in ML and AI systems",
+          "sourceHash": "5f999887e5b7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:4:20",
+          "unitId": "mla-c02:4",
+          "index": 20,
+          "text": "Monitoring, auditing, compliance, and logging with AWS CloudTrail and AWS Config",
+          "sourceHash": "ef2ce98e7e59",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:4:21",
+          "unitId": "mla-c02:4",
+          "index": 21,
+          "text": "Troubleshooting and debugging security issues in ML and AI systems",
+          "sourceHash": "c4d483d820e6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:4:22",
+          "unitId": "mla-c02:4",
+          "index": 22,
+          "text": "Creating VPCs, subnets, and security groups that isolate ML and AI systems",
+          "sourceHash": "78395573809d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:4:23",
+          "unitId": "mla-c02:4",
+          "index": 23,
+          "text": "Identifying and mitigating security risks and vulnerabilities in ML and AI systems",
+          "sourceHash": "7d7ff2b55bdb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:4:24",
+          "unitId": "mla-c02:4",
+          "index": 24,
+          "text": "Choosing a credential type to reach foundation models: Amazon Bedrock API keys versus IAM credentials",
+          "sourceHash": "66d9bb964cbe",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "mla-c02:4:25",
+          "unitId": "mla-c02:4",
+          "index": 25,
+          "text": "Implementing safeguards and sensitive data protection with Amazon Bedrock Guardrails",
+          "sourceHash": "c36584f82cf6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/aws.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-18T00:00:00Z",
+    "officialObjectivesUrl": "https://docs.aws.amazon.com/aws-certification/latest/machine-learning-engineer-associate-02/machine-learning-engineer-associate-02.html",
+    "providerName": "Amazon Web Services",
+    "credentialName": "AWS Certified Machine Learning Engineer - Associate",
+    "examCode": "MLA-C02",
+    "credentialStatus": "beta",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 4,
+    "objectives": 107,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

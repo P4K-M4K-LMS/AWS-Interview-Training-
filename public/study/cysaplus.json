@@ -1,0 +1,300 @@
+{
+  "id": "cysaplus",
+  "code": "CYSAPLUS",
+  "title": "CySA+",
+  "description": "CompTIA CySA+ CS0-003 exam prep across 4 weighted domains, with SOC-analyst drilling.",
+  "trackType": "certification",
+  "units": [
+    {
+      "id": "cysaplus:1",
+      "index": 1,
+      "title": "Security Operations",
+      "weight": 33,
+      "gate": "Given a stream of SIEM alerts, triage them by priority, identify which are true positives, and explain the indicator that justifies each verdict.",
+      "objectives": [
+        {
+          "id": "cysaplus:1:1",
+          "unitId": "cysaplus:1",
+          "index": 1,
+          "text": "SIEM fundamentals: log aggregation, correlation rules, alert triage",
+          "sourceHash": "dbeeb700332c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default",
+          "labPrompt": "Search a free SIEM sandbox or sample dataset for a specific indicator of compromise and document your query."
+        },
+        {
+          "id": "cysaplus:1:2",
+          "unitId": "cysaplus:1",
+          "index": 2,
+          "text": "Network traffic analysis and identifying anomalous patterns",
+          "sourceHash": "f71b2b2d1283",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cysaplus:1:3",
+          "unitId": "cysaplus:1",
+          "index": 3,
+          "text": "Endpoint detection concepts: EDR telemetry, process/file/registry monitoring",
+          "sourceHash": "2889257f186c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cysaplus:1:4",
+          "unitId": "cysaplus:1",
+          "index": 4,
+          "text": "Threat intelligence: sources, indicators of compromise (IOCs), the intelligence lifecycle",
+          "sourceHash": "9b63be958e47",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "netsec-02-suspicious-cron",
+            "coverage": "partial"
+          }
+        },
+        {
+          "id": "cysaplus:1:5",
+          "unitId": "cysaplus:1",
+          "index": 5,
+          "text": "Threat hunting fundamentals: hypothesis-driven investigation",
+          "sourceHash": "36781c4b3b6f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cysaplus:1:6",
+          "unitId": "cysaplus:1",
+          "index": 6,
+          "text": "Cloud security monitoring considerations (shared responsibility, cloud-native logs)",
+          "sourceHash": "709483f75ab5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cysaplus:1:7",
+          "unitId": "cysaplus:1",
+          "index": 7,
+          "text": "Identity and access monitoring: detecting credential misuse and privilege escalation",
+          "sourceHash": "9de7a534061d",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "netsec-01-brute-force",
+            "coverage": "partial"
+          }
+        }
+      ]
+    },
+    {
+      "id": "cysaplus:2",
+      "index": 2,
+      "title": "Vulnerability Management",
+      "weight": 30,
+      "gate": "Given a vulnerability scan report, correctly prioritize remediation using CVSS and business context, and justify why the highest CVSS score isn't always fixed first.",
+      "objectives": [
+        {
+          "id": "cysaplus:2:1",
+          "unitId": "cysaplus:2",
+          "index": 1,
+          "text": "Vulnerability scanning: authenticated vs. unauthenticated, scan scoping",
+          "sourceHash": "7d350ebe7400",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default",
+          "labPrompt": "Look up a recent published CVE on nvd.nist.gov, read its CVSS vector string, and explain each component."
+        },
+        {
+          "id": "cysaplus:2:2",
+          "unitId": "cysaplus:2",
+          "index": 2,
+          "text": "CVSS scoring: base, temporal, and environmental metrics",
+          "sourceHash": "82a83ae48ac7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cysaplus:2:3",
+          "unitId": "cysaplus:2",
+          "index": 3,
+          "text": "Prioritizing remediation using risk, exploitability, and asset criticality",
+          "sourceHash": "806a6ed9a730",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cysaplus:2:4",
+          "unitId": "cysaplus:2",
+          "index": 4,
+          "text": "Web application vulnerability concepts (OWASP Top 10 awareness)",
+          "sourceHash": "3a5b1c088d4f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cysaplus:2:5",
+          "unitId": "cysaplus:2",
+          "index": 5,
+          "text": "Cloud and container vulnerability considerations",
+          "sourceHash": "492edd52384a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cysaplus:2:6",
+          "unitId": "cysaplus:2",
+          "index": 6,
+          "text": "Patch management and compensating controls when patching isn't immediately possible",
+          "sourceHash": "2ff556067c31",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "cysaplus:3",
+      "index": 3,
+      "title": "Incident Response and Management",
+      "weight": 20,
+      "gate": "Given an active incident scenario, correctly sequence containment, eradication, and recovery steps, and explain what evidence must be preserved and why.",
+      "objectives": [
+        {
+          "id": "cysaplus:3:1",
+          "unitId": "cysaplus:3",
+          "index": 1,
+          "text": "Incident response lifecycle: preparation, detection, containment, eradication, recovery, lessons learned",
+          "sourceHash": "0b04a92fbcee",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "netsec-02-suspicious-cron",
+            "coverage": "partial"
+          },
+          "labPrompt": "Draft a short incident response playbook outline for a phishing-triggered credential compromise."
+        },
+        {
+          "id": "cysaplus:3:2",
+          "unitId": "cysaplus:3",
+          "index": 2,
+          "text": "Digital forensics basics: chain of custody, order of volatility",
+          "sourceHash": "36da6cc431ac",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cysaplus:3:3",
+          "unitId": "cysaplus:3",
+          "index": 3,
+          "text": "Root cause analysis and post-incident reporting",
+          "sourceHash": "df464b4fdfcc",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "devops-03-bad-release-rollback",
+            "coverage": "partial"
+          }
+        },
+        {
+          "id": "cysaplus:3:4",
+          "unitId": "cysaplus:3",
+          "index": 4,
+          "text": "Playbooks and runbooks for common incident types",
+          "sourceHash": "5041e5b0dfbd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cysaplus:3:5",
+          "unitId": "cysaplus:3",
+          "index": 5,
+          "text": "Business impact considerations during containment decisions",
+          "sourceHash": "a83197c26db1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "cysaplus:4",
+      "index": 4,
+      "title": "Reporting and Communication",
+      "weight": 17,
+      "gate": "Translate a technical vulnerability finding into a one-paragraph summary appropriate for a non-technical executive, without losing the actual risk.",
+      "objectives": [
+        {
+          "id": "cysaplus:4:1",
+          "unitId": "cysaplus:4",
+          "index": 1,
+          "text": "Communicating findings to technical vs. non-technical audiences",
+          "sourceHash": "860a2166fcf5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cysaplus:4:2",
+          "unitId": "cysaplus:4",
+          "index": 2,
+          "text": "Metrics and KPIs for a security operations program",
+          "sourceHash": "b896555f9219",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cysaplus:4:3",
+          "unitId": "cysaplus:4",
+          "index": 3,
+          "text": "Stakeholder management during incidents",
+          "sourceHash": "c41150ed08bc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cysaplus:4:4",
+          "unitId": "cysaplus:4",
+          "index": 4,
+          "text": "Compliance and regulatory reporting considerations",
+          "sourceHash": "c87afb3dd0c5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/data.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 4,
+    "objectives": 22,
+    "bookkeeping": 0,
+    "linked": 4
+  }
+}

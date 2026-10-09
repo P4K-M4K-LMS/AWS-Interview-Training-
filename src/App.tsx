@@ -24,6 +24,9 @@ const StoryBankPage = lazy(() => import("./pages/interview/StoryBankPage").then(
 const PracticePage = lazy(() => import("./pages/interview/PracticePage").then((m) => ({ default: m.PracticePage })));
 const HistoryPage = lazy(() => import("./pages/interview/HistoryPage").then((m) => ({ default: m.HistoryPage })));
 const SkillProgressPage = lazy(() => import("./pages/SkillProgressPage").then((m) => ({ default: m.SkillProgressPage })));
+const StudyHomePage = lazy(() => import("./pages/study/StudyHomePage").then((m) => ({ default: m.StudyHomePage })));
+const StudyCoursePage = lazy(() => import("./pages/study/StudyCoursePage").then((m) => ({ default: m.StudyCoursePage })));
+const StudyUnitPage = lazy(() => import("./pages/study/StudyUnitPage").then((m) => ({ default: m.StudyUnitPage })));
 const SettingsPage = lazy(() => import("./pages/SettingsPage").then((m) => ({ default: m.SettingsPage })));
 
 export const routes: RouteObject[] = [
@@ -36,6 +39,9 @@ export const routes: RouteObject[] = [
       { path: "curriculum", element: <CurriculumPage /> },
       { path: "missions", element: <MissionControlPage /> },
       { path: "missions/:missionId", element: <MissionPage /> },
+      { path: "study", element: <StudyHomePage /> },
+      { path: "study/:courseId", element: <StudyCoursePage /> },
+      { path: "study/:courseId/:unitIndex", element: <StudyUnitPage /> },
       {
         path: "labs",
         element: <LabsPage />,

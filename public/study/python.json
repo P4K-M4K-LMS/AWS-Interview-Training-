@@ -1,0 +1,642 @@
+{
+  "id": "python",
+  "code": "PYTHON",
+  "title": "Python Programming",
+  "description": "9-week intro-to-advanced Python progression: syntax and control flow through OOP, the standard library, functional patterns, testing/typing, and concurrency.",
+  "trackType": "graduate",
+  "units": [
+    {
+      "id": "python:1",
+      "index": 1,
+      "title": "Syntax, variables & control flow",
+      "rangeLabel": "Week 1",
+      "gate": "Given an unfamiliar short Python script, trace its execution by hand and predict its output, including any conditional branches or loop iterations.",
+      "objectives": [
+        {
+          "id": "python:1:1",
+          "unitId": "python:1",
+          "index": 1,
+          "text": "Variables, dynamic typing, and Python's core built-in types (int, float, str, bool, None)",
+          "sourceHash": "1c32bfb40651",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "python-01-uptime-report",
+            "coverage": "partial"
+          }
+        },
+        {
+          "id": "python:1:2",
+          "unitId": "python:1",
+          "index": 2,
+          "text": "Operators: arithmetic, comparison, logical, and operator precedence",
+          "sourceHash": "fdd267e643e0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "python:1:3",
+          "unitId": "python:1",
+          "index": 3,
+          "text": "Input/output with input() and print(), including f-strings",
+          "sourceHash": "dd5a3307f86b",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "python-01-uptime-report",
+            "coverage": "partial"
+          }
+        },
+        {
+          "id": "python:1:4",
+          "unitId": "python:1",
+          "index": 4,
+          "text": "Conditional logic: if/elif/else and truthiness",
+          "sourceHash": "976b1ec539ec",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "python:1:5",
+          "unitId": "python:1",
+          "index": 5,
+          "text": "Loops: for, while, range(), break, continue, and the loop else clause",
+          "sourceHash": "1329258c7aab",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "python-02-log-parser",
+            "coverage": "partial"
+          }
+        },
+        {
+          "id": "python:1:6",
+          "unitId": "python:1",
+          "index": 6,
+          "text": "Writing and reading a simple script end-to-end",
+          "sourceHash": "a44d50743413",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "python:2",
+      "index": 2,
+      "title": "Functions & scope",
+      "rangeLabel": "Week 2",
+      "gate": "Write a function with default and keyword arguments, explain what its scope can and cannot see, and predict the behavior of a mutable-default-argument bug.",
+      "objectives": [
+        {
+          "id": "python:2:1",
+          "unitId": "python:2",
+          "index": 1,
+          "text": "Defining functions: positional, keyword, default, and *args/**kwargs parameters",
+          "sourceHash": "2f28437205fd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "python:2:2",
+          "unitId": "python:2",
+          "index": 2,
+          "text": "Return values vs. side effects; functions that implicitly return None",
+          "sourceHash": "13b3f027c2c9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "python:2:3",
+          "unitId": "python:2",
+          "index": 3,
+          "text": "Local, enclosing, and global scope (the LEGB rule)",
+          "sourceHash": "fd28a23112b2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "python:2:4",
+          "unitId": "python:2",
+          "index": 4,
+          "text": "Docstrings and basic function documentation conventions",
+          "sourceHash": "38fe659da310",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "python:2:5",
+          "unitId": "python:2",
+          "index": 5,
+          "text": "Recursion: base case, recursive case, and stack depth limits",
+          "sourceHash": "8e80fe40158e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "python:2:6",
+          "unitId": "python:2",
+          "index": 6,
+          "text": "The mutable-default-argument pitfall and how to avoid it",
+          "sourceHash": "ed96752a5aa2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "python:3",
+      "index": 3,
+      "title": "Core data structures",
+      "rangeLabel": "Week 3",
+      "gate": "Given a data-shape problem, choose the correct built-in container (list/tuple/dict/set), justify the choice, and write the comprehension that builds it in one line.",
+      "objectives": [
+        {
+          "id": "python:3:1",
+          "unitId": "python:3",
+          "index": 1,
+          "text": "Lists: indexing, slicing, mutation, and common methods",
+          "sourceHash": "c60c11cc5116",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "python:3:2",
+          "unitId": "python:3",
+          "index": 2,
+          "text": "Tuples and immutability; when to prefer a tuple over a list",
+          "sourceHash": "da0b850186bb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "python:3:3",
+          "unitId": "python:3",
+          "index": 3,
+          "text": "Dictionaries: keys, values, items, lookups, and default patterns",
+          "sourceHash": "23ca5d35bb70",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "python-02-log-parser",
+            "coverage": "full"
+          }
+        },
+        {
+          "id": "python:3:4",
+          "unitId": "python:3",
+          "index": 4,
+          "text": "Sets: membership testing and set operations (union, intersection, difference)",
+          "sourceHash": "0df124e4bb38",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "python:3:5",
+          "unitId": "python:3",
+          "index": 5,
+          "text": "List, dict, and set comprehensions",
+          "sourceHash": "52664f17febd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "python:3:6",
+          "unitId": "python:3",
+          "index": 6,
+          "text": "Nested data structures (lists of dicts, dicts of lists)",
+          "sourceHash": "045b48f924d9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "python:4",
+      "index": 4,
+      "title": "Strings, files & error handling",
+      "rangeLabel": "Week 4",
+      "gate": "Given a program that must read a file and may fail, write correct exception handling that fails safely, and explain which exception type it should catch and why.",
+      "objectives": [
+        {
+          "id": "python:4:1",
+          "unitId": "python:4",
+          "index": 1,
+          "text": "String methods: splitting, joining, formatting, searching",
+          "sourceHash": "4b0936ebf535",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "python-02-log-parser",
+            "coverage": "full"
+          }
+        },
+        {
+          "id": "python:4:2",
+          "unitId": "python:4",
+          "index": 2,
+          "text": "Reading and writing text files; the with statement and context managers",
+          "sourceHash": "6cd225a40aea",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "python:4:3",
+          "unitId": "python:4",
+          "index": 3,
+          "text": "Working with CSV and JSON data via the standard library",
+          "sourceHash": "4d8af6614fc7",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "python-04-fleet-report",
+            "coverage": "full"
+          }
+        },
+        {
+          "id": "python:4:4",
+          "unitId": "python:4",
+          "index": 4,
+          "text": "Exceptions: try/except/else/finally, raising exceptions, custom exception classes",
+          "sourceHash": "902fae890917",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "python-03-config-validator",
+            "coverage": "full"
+          }
+        },
+        {
+          "id": "python:4:5",
+          "unitId": "python:4",
+          "index": 5,
+          "text": "Catching specific exception types vs. a bare except",
+          "sourceHash": "a62a50cd619b",
+          "kind": "objective",
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "mission",
+            "missionId": "python-03-config-validator",
+            "coverage": "full"
+          }
+        }
+      ]
+    },
+    {
+      "id": "python:5",
+      "index": 5,
+      "title": "Object-oriented programming",
+      "rangeLabel": "Week 5",
+      "gate": "Design a small class hierarchy for a stated problem, correctly use inheritance vs. composition, and explain what each dunder method you used actually does.",
+      "objectives": [
+        {
+          "id": "python:5:1",
+          "unitId": "python:5",
+          "index": 1,
+          "text": "Classes, instances, attributes, and methods",
+          "sourceHash": "51f414295422",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "python:5:2",
+          "unitId": "python:5",
+          "index": 2,
+          "text": "__init__, self, and instance vs. class attributes",
+          "sourceHash": "6ab7c4d1ff0d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "python:5:3",
+          "unitId": "python:5",
+          "index": 3,
+          "text": "Inheritance, method overriding, and super()",
+          "sourceHash": "1ef8daada6ca",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "python:5:4",
+          "unitId": "python:5",
+          "index": 4,
+          "text": "Composition vs. inheritance -- when to prefer each",
+          "sourceHash": "ff184162c99d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "python:5:5",
+          "unitId": "python:5",
+          "index": 5,
+          "text": "Common dunder methods: __str__, __repr__, __eq__, __len__",
+          "sourceHash": "a8dece62b16a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "python:5:6",
+          "unitId": "python:5",
+          "index": 6,
+          "text": "Encapsulation conventions (single/double underscore) and properties",
+          "sourceHash": "85365ef38032",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "python:6",
+      "index": 6,
+      "title": "Modules, packages & the standard library",
+      "rangeLabel": "Week 6",
+      "gate": "Set up an isolated virtual environment for a project, install a real dependency, and explain the difference between a module, a package, and a distributed library.",
+      "objectives": [
+        {
+          "id": "python:6:1",
+          "unitId": "python:6",
+          "index": 1,
+          "text": "Importing modules and packages; relative vs. absolute imports",
+          "sourceHash": "decb19c74723",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "python:6:2",
+          "unitId": "python:6",
+          "index": 2,
+          "text": "Organizing a project into modules and packages with __init__.py",
+          "sourceHash": "c8a6636f6f2f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "python:6:3",
+          "unitId": "python:6",
+          "index": 3,
+          "text": "Virtual environments (venv) and dependency isolation",
+          "sourceHash": "3ae970ab3597",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "python:6:4",
+          "unitId": "python:6",
+          "index": 4,
+          "text": "Installing and pinning dependencies with pip and requirements.txt",
+          "sourceHash": "299d1e727916",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "python:6:5",
+          "unitId": "python:6",
+          "index": 5,
+          "text": "Useful standard library modules: os, sys, datetime, collections, itertools",
+          "sourceHash": "9c4737109c39",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "python:7",
+      "index": 7,
+      "title": "Functional patterns & iterators",
+      "rangeLabel": "Week 7",
+      "gate": "Given a data-processing task, write it as a generator pipeline instead of loading everything into memory, and explain why that matters at scale.",
+      "objectives": [
+        {
+          "id": "python:7:1",
+          "unitId": "python:7",
+          "index": 1,
+          "text": "Iterators and the iterator protocol (__iter__, __next__)",
+          "sourceHash": "9785df9bc10c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "python:7:2",
+          "unitId": "python:7",
+          "index": 2,
+          "text": "Generators and yield; generator expressions",
+          "sourceHash": "cee18432b2a6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "python:7:3",
+          "unitId": "python:7",
+          "index": 3,
+          "text": "First-class functions: passing functions as arguments, lambda expressions",
+          "sourceHash": "9dfa7cb1d8fd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "python:7:4",
+          "unitId": "python:7",
+          "index": 4,
+          "text": "map, filter, functools.reduce, and itertools essentials",
+          "sourceHash": "e0988d1dfe2c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "python:7:5",
+          "unitId": "python:7",
+          "index": 5,
+          "text": "Closures and what they actually capture",
+          "sourceHash": "b1e585c34914",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "python:7:6",
+          "unitId": "python:7",
+          "index": 6,
+          "text": "Decorators: what they are, how to write one, common built-in examples",
+          "sourceHash": "fdc8b719d18b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "python:8",
+      "index": 8,
+      "title": "Testing, debugging & typing",
+      "rangeLabel": "Week 8",
+      "gate": "Given a small buggy module, write a failing test that reproduces the bug, fix the bug, and add type hints that would have caught the class of error statically.",
+      "objectives": [
+        {
+          "id": "python:8:1",
+          "unitId": "python:8",
+          "index": 1,
+          "text": "Writing unit tests with pytest: assertions, fixtures, parametrization",
+          "sourceHash": "8e232e5bd4d6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "python:8:2",
+          "unitId": "python:8",
+          "index": 2,
+          "text": "Debugging techniques: reading tracebacks, using a debugger, print-driven debugging tradeoffs",
+          "sourceHash": "f922791bca1a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "python:8:3",
+          "unitId": "python:8",
+          "index": 3,
+          "text": "Type hints: basic annotations, Optional, List/Dict generics, and static checking with mypy",
+          "sourceHash": "47347ad61e00",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "python:8:4",
+          "unitId": "python:8",
+          "index": 4,
+          "text": "Code style and linting (PEP 8, flake8/ruff) and why consistency matters",
+          "sourceHash": "62b84e5defef",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "python:9",
+      "index": 9,
+      "title": "Concurrency, performance & a capstone project",
+      "rangeLabel": "Week 9",
+      "gate": "Explain when threading, multiprocessing, or asyncio is the right tool for a stated I/O-bound or CPU-bound problem, and justify your choice against the alternatives.",
+      "objectives": [
+        {
+          "id": "python:9:1",
+          "unitId": "python:9",
+          "index": 1,
+          "text": "The Global Interpreter Lock (GIL) and what it does and doesn't limit",
+          "sourceHash": "92757d425ee1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "python:9:2",
+          "unitId": "python:9",
+          "index": 2,
+          "text": "Threading for I/O-bound work vs. multiprocessing for CPU-bound work",
+          "sourceHash": "bf32b6175812",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "python:9:3",
+          "unitId": "python:9",
+          "index": 3,
+          "text": "Asynchronous programming with async/await and asyncio basics",
+          "sourceHash": "cccf9642c984",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "python:9:4",
+          "unitId": "python:9",
+          "index": 4,
+          "text": "Basic performance profiling (timeit, cProfile) before optimizing",
+          "sourceHash": "5ae55774d142",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "python:9:5",
+          "unitId": "python:9",
+          "index": 5,
+          "text": "Consuming a real HTTP API with the requests library and handling JSON responses",
+          "sourceHash": "95f59b0f8dbc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "python:9:6",
+          "unitId": "python:9",
+          "index": 6,
+          "text": "Integrating prior units into one small end-to-end project",
+          "sourceHash": "3718c60a98e4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/data.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 9,
+    "objectives": 50,
+    "bookkeeping": 0,
+    "linked": 8
+  }
+}
