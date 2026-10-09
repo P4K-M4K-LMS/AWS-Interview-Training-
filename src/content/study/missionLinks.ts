@@ -177,6 +177,35 @@ export const LAB_LINKS: Record<string, string[]> = {
     "sap-c02:2:11",
     "soa-c03:1:4"
   ],
+  "as-01-elastic": [
+    "clf-c02:3:10",
+    "mla-c02:4:10",
+    "saa-c03:4:11"
+  ],
+  "as-02-warmup": [
+    "dop-c02:3:9",
+    "soa-c03:2:1"
+  ],
+  "as-03-flash-sale": [
+    "dop-c02:4:21",
+    "sap-c02:2:28"
+  ],
+  "as-04-thrash": [
+    "dop-c02:3:10",
+    "sap-c02:2:23"
+  ],
+  "as-05-health": [
+    "ans-c01:1:17",
+    "dop-c02:4:26",
+    "dva-c02:4:15",
+    "scs-c03:1:2",
+    "soa-c03:2:4"
+  ],
+  "as-06-metric": [
+    "dop-c02:3:8",
+    "mla-c02:3:14",
+    "saa-c03:3:7"
+  ],
   "cost-01-rightsize": [
     "clf-c02:1:13",
     "saa-c03:4:10",

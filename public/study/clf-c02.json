@@ -499,8 +499,14 @@
           "text": "Auto scaling as the mechanism that delivers elasticity",
           "sourceHash": "f625475f39cd",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "autoscale",
+            "exerciseId": "as-01-elastic",
+            "coverage": "full"
+          }
         },
         {
           "id": "clf-c02:3:11",
@@ -941,6 +947,6 @@
     "units": 4,
     "objectives": 80,
     "bookkeeping": 0,
-    "linked": 13
+    "linked": 14
   }
 }

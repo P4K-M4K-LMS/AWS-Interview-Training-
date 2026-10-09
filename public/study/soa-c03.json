@@ -260,8 +260,14 @@
           "text": "Configuring and managing scaling mechanisms in compute environments",
           "sourceHash": "5e977dcd3f30",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "autoscale",
+            "exerciseId": "as-02-warmup",
+            "coverage": "full"
+          }
         },
         {
           "id": "soa-c03:2:2",
@@ -290,8 +296,14 @@
           "text": "Configuring and troubleshooting Elastic Load Balancing health checks",
           "sourceHash": "4e34e003b7e7",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "autoscale",
+            "exerciseId": "as-05-health",
+            "coverage": "full"
+          }
         },
         {
           "id": "soa-c03:2:5",
@@ -778,6 +790,6 @@
     "units": 5,
     "objectives": 59,
     "bookkeeping": 0,
-    "linked": 18
+    "linked": 20
   }
 }

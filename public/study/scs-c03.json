@@ -29,8 +29,15 @@
           "text": "Designing workload monitoring strategies, including resource health checks",
           "sourceHash": "f92a4433a9d8",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "autoscale",
+            "exerciseId": "as-05-health",
+            "coverage": "partial",
+            "note": "the health-check half"
+          }
         },
         {
           "id": "scs-c03:1:3",
@@ -856,6 +863,6 @@
     "units": 6,
     "objectives": 70,
     "bookkeeping": 0,
-    "linked": 13
+    "linked": 14
   }
 }

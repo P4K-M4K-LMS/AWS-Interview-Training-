@@ -281,7 +281,27 @@ export const MESSAGING_LAB_LINKS: StudyLabLink[] = [
   { course: "AWSCLF", text: "Application integration: Amazon SQS, Amazon SNS, Amazon EventBridge", lab: "messaging", exerciseId: "msg-01-decouple", coverage: "partial", note: "what a queue and a topic are for" },
 ];
 
-export const STUDY_LAB_LINKS: StudyLabLink[] = [...POLICY_LAB_LINKS, ...NETWORK_LAB_LINKS, ...DR_LAB_LINKS, ...ALARM_LAB_LINKS, ...COST_LAB_LINKS, ...DEPLOY_LAB_LINKS, ...CRYPTO_LAB_LINKS, ...MESSAGING_LAB_LINKS];
+export const AUTOSCALE_LAB_LINKS: StudyLabLink[] = [
+  { course: "AWSCLF", text: "Auto scaling as the mechanism that delivers elasticity", lab: "autoscale", exerciseId: "as-01-elastic", coverage: "full" },
+  { course: "AWSSAA", text: "the metrics and conditions that trigger scaling", lab: "autoscale", exerciseId: "as-06-metric", coverage: "full" },
+  { course: "AWSSAA", text: "Scaling methods that cut spend", lab: "autoscale", exerciseId: "as-01-elastic", coverage: "partial", note: "scaling in when demand falls; no hibernation" },
+  { course: "AWSDVA", text: "Configuring application health checks and readiness probes", lab: "autoscale", exerciseId: "as-05-health", coverage: "partial", note: "balancer health checks; readiness is the warm-up" },
+  { course: "AWSSOA", text: "Configuring and managing scaling mechanisms in compute environments", lab: "autoscale", exerciseId: "as-02-warmup", coverage: "full" },
+  { course: "AWSSOA", text: "Configuring and troubleshooting Elastic Load Balancing health checks", lab: "autoscale", exerciseId: "as-05-health", coverage: "full" },
+  { course: "AWSMLA", text: "Selecting the metrics that drive auto scaling", lab: "autoscale", exerciseId: "as-06-metric", coverage: "full" },
+  { course: "AWSMLA", text: "Optimizing capacity for cost, performance, and reliability", lab: "autoscale", exerciseId: "as-01-elastic", coverage: "partial" },
+  { course: "AWSSAP", text: "Auto scaling policies and events", lab: "autoscale", exerciseId: "as-04-thrash", coverage: "full" },
+  { course: "AWSSAP", text: "Designing an elastic architecture from business objectives", lab: "autoscale", exerciseId: "as-03-flash-sale", coverage: "partial", note: "a known surge scheduled ahead" },
+  { course: "AWSDOP", text: "Choosing the metrics that should drive scaling", lab: "autoscale", exerciseId: "as-06-metric", coverage: "full" },
+  { course: "AWSDOP", text: "Identifying and remediating scaling issues", lab: "autoscale", exerciseId: "as-02-warmup", coverage: "full" },
+  { course: "AWSDOP", text: "Selecting auto scaling, load balancing, and caching solutions for the workload", lab: "autoscale", exerciseId: "as-04-thrash", coverage: "partial", note: "the scaling policy half" },
+  { course: "AWSDOP", text: "Configuring health checks in Application Load Balancer target groups", lab: "autoscale", exerciseId: "as-05-health", coverage: "partial", note: "balancer health checks only" },
+  { course: "AWSDOP", text: "Auto scaling capabilities across services", lab: "autoscale", exerciseId: "as-03-flash-sale", coverage: "partial", note: "a compute fleet only" },
+  { course: "AWSANS", text: "Integrating auto scaling with load balancing", lab: "autoscale", exerciseId: "as-05-health", coverage: "partial" },
+  { course: "AWSSCS", text: "Designing workload monitoring strategies, including resource health checks", lab: "autoscale", exerciseId: "as-05-health", coverage: "partial", note: "the health-check half" },
+];
+
+export const STUDY_LAB_LINKS: StudyLabLink[] = [...POLICY_LAB_LINKS, ...NETWORK_LAB_LINKS, ...DR_LAB_LINKS, ...ALARM_LAB_LINKS, ...COST_LAB_LINKS, ...DEPLOY_LAB_LINKS, ...CRYPTO_LAB_LINKS, ...MESSAGING_LAB_LINKS, ...AUTOSCALE_LAB_LINKS];
 
 /**
  * Unit gates that a planned engine would make playable. The gate sentence

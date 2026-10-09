@@ -522,8 +522,14 @@
           "text": "Choosing the metrics that should drive scaling",
           "sourceHash": "22336fd9145f",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "autoscale",
+            "exerciseId": "as-06-metric",
+            "coverage": "full"
+          }
         },
         {
           "id": "dop-c02:3:9",
@@ -532,8 +538,14 @@
           "text": "Identifying and remediating scaling issues",
           "sourceHash": "86dca4bdecd3",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "autoscale",
+            "exerciseId": "as-02-warmup",
+            "coverage": "full"
+          }
         },
         {
           "id": "dop-c02:3:10",
@@ -542,8 +554,15 @@
           "text": "Selecting auto scaling, load balancing, and caching solutions for the workload",
           "sourceHash": "36e93a2a4964",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "autoscale",
+            "exerciseId": "as-04-thrash",
+            "coverage": "partial",
+            "note": "the scaling policy half"
+          }
         },
         {
           "id": "dop-c02:3:11",
@@ -862,8 +881,15 @@
           "text": "Auto scaling capabilities across services: EC2 Auto Scaling groups, RDS storage auto scaling, DynamoDB, ECS capacity providers, EKS autoscalers",
           "sourceHash": "8c99333ef98c",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "autoscale",
+            "exerciseId": "as-03-flash-sale",
+            "coverage": "partial",
+            "note": "a compute fleet only"
+          }
         },
         {
           "id": "dop-c02:4:22",
@@ -919,8 +945,15 @@
           "text": "Configuring health checks in Application Load Balancer target groups and Amazon Route 53",
           "sourceHash": "aad41b0b13f4",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "autoscale",
+            "exerciseId": "as-05-health",
+            "coverage": "partial",
+            "note": "balancer health checks only"
+          }
         }
       ]
     },
@@ -1330,6 +1363,6 @@
     "units": 6,
     "objectives": 114,
     "bookkeeping": 0,
-    "linked": 18
+    "linked": 23
   }
 }

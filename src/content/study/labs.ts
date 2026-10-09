@@ -10,6 +10,7 @@ export const LAB_LABELS: Record<string, string> = {
   deploy: "Deployment strategies lab",
   crypto: "Envelope encryption lab",
   messaging: "Messaging and events lab",
+  autoscale: "Autoscaling lab",
 };
 
 export function labExercisePath(link: Extract<StudyLink, { kind: "lab" }>, objectiveId: string): string {
