@@ -3,7 +3,9 @@ import type { CodeMission } from "../../domain/types";
 /**
  * Go missions. They run in the Yaegi interpreter compiled to WebAssembly:
  * real Go semantics for goroutines, channels, select, sync and context, in a
- * single-threaded runtime (no data races, no race detector).
+ * single-threaded runtime: goroutines switch only at blocking points, so
+ * check-then-act races around a blocking call reproduce, bare counter races
+ * do not (the optional local race-detector service covers those).
  */
 const COMPANY_INTRO = "Nimbus Freight (fictional) runs a small fleet-tracking platform. The team is adding Go services next to the Python tooling.";
 
@@ -461,6 +463,158 @@ func main() {
       { id: "t1", label: "succeeds on the third attempt with backoff 10ms, 20ms", code: `calls := 0\nvar waits []time.Duration\nerr := retry(5, 10*time.Millisecond, func(d time.Duration) { waits = append(waits, d) }, func() error { calls++; if calls < 3 { return errors.New("transient") }; return nil })\nif err != nil || calls != 3 { panic(fmt.Sprintf("err %v, calls %d", err, calls)) }\nif fmt.Sprint(waits) != fmt.Sprint([]time.Duration{10 * time.Millisecond, 20 * time.Millisecond}) { panic(fmt.Sprintf("waits %v", waits)) }` },
       { id: "t2", label: "returns the last error after exhausting attempts (no sleep after the last)", code: `calls := 0\nsleeps := 0\nerr := retry(4, time.Millisecond, func(time.Duration) { sleeps++ }, func() error { calls++; return fmt.Errorf("fail %d", calls) })\nif err == nil || err.Error() != "fail 4" || calls != 4 || sleeps != 3 { panic(fmt.Sprintf("err %v, calls %d, sleeps %d", err, calls, sleeps)) }` },
       { id: "t3", label: "chargeOnce charges a key only once", code: `done := map[string]bool{}\ncharged := 0\nfirst := chargeOnce(done, "inv-1", func() { charged++ })\nsecond := chargeOnce(done, "inv-1", func() { charged++ })\nother := chargeOnce(done, "inv-2", func() { charged++ })\nif !first || second || !other || charged != 2 { panic(fmt.Sprintf("first %v second %v other %v charged %d", first, second, other, charged)) }` },
+    ],
+    errorHelp: GO_ERROR_HELP,
+  },
+  {
+    id: "go-05-data-race",
+    kind: "go",
+    trackId: "distributed",
+    stage: 6,
+    title: "A double spend: data races, critical sections and the race detector",
+    summary: "Ten goroutines withdraw from one account and the balance goes negative. Make the check-and-withdraw atomic, then see what the race detector catches that the browser cannot.",
+    briefing: `${COMPANY_INTRO}\n\nThe prepaid fuel-card service lets drivers withdraw credit. A fleet with ten drivers sharing one card ended the day with a negative balance: ten withdrawals of 10 succeeded from a balance of 50. Each withdrawal checks the balance, writes an audit record (a slow call), then deducts. Find the race, make the withdrawal atomic, and keep an exact count of successful withdrawals.`,
+    objectives: [
+      "Withdraw returns an error when the balance is insufficient and never lets Balance go negative, even with concurrent callers",
+      "Concurrent withdrawals from one account succeed exactly as many times as the balance allows",
+      "Withdrawals returns the number of successful withdrawals, counted safely across goroutines",
+    ],
+    skills: ["distributed.concurrency", "distributed.resilience"],
+    prerequisites: ["go-04-retries-idempotency"],
+    estimatedMinutes: 30,
+    lesson: [
+      { title: "A race is a lost assumption", body: "`Withdraw` assumes that between *checking* the balance and *deducting* it nothing else changed. With one goroutine that holds. With ten, every goroutine passes the check while the balance is still 50, each waits on the audit call, and each then deducts: the classic check-then-act race, and in this case a double spend. The fix is to make check and deduct one indivisible step: a **critical section** guarded by a `sync.Mutex`, held across both." },
+      { title: "Counting across goroutines", body: "`count++` is a read, an add and a write. Two goroutines doing it at once can both read 5 and both write 6, losing an update. Protect the counter with the same mutex, a separate one, or `sync/atomic` (`atomic.AddInt64`). Share memory by communicating when you can; when you must share, lock." },
+      { title: "Why the browser shows one race and not the other", body: "OpsForge runs Go on a single thread: goroutines switch only at blocking points. The audit call sleeps, so the scheduler switches goroutines *inside* the critical section and the double spend reproduces here. The bare `count++` race does not: no goroutine is interrupted mid-increment on one thread. On a real multi-core machine it is. The **race detector** (`go build -race`) instruments every memory access and reports conflicting unsynchronised accesses it observes. Run this mission's code through the optional local service (Settings) and compare the starter with your fix: the report names the goroutines, the file and the line." },
+    ],
+    glossary: [
+      ...SHARED_GLOSSARY,
+      { term: "data race", definition: "Two goroutines access the same memory at the same time, at least one writes, and nothing orders the accesses. Undefined behaviour in Go." },
+      { term: "critical section", definition: "Code that must not run in two goroutines at once; guarded by a lock." },
+      { term: "sync.Mutex", definition: "A mutual-exclusion lock: Lock() before the critical section, Unlock() after (usually with defer)." },
+      { term: "race detector", definition: "Go's runtime instrumentation (-race) that reports unsynchronised conflicting memory accesses it observes while the program runs." },
+    ],
+    hints: [
+      { level: 1, title: "Where is the gap?", body: "Between `if a.Balance < amount` and `a.Balance -= amount` there is a slow call. Every goroutine can pass the check before any of them deducts." },
+      { level: 2, title: "One lock, held across check and deduct", body: "Add `mu sync.Mutex` to Account. In Withdraw: `a.mu.Lock(); defer a.mu.Unlock()` as the first statement, so the check, the audit record and the deduction happen as one unit." },
+      { level: 3, title: "The counter", body: "Withdrawals launches goroutines that each increment a shared count on success. Guard the increment with a mutex (or use `atomic.AddInt64`) and wait for all goroutines with a WaitGroup before returning." },
+      { level: 4, title: "Guided example", body: "```\ntype Account struct {\n\tmu      sync.Mutex\n\tBalance int\n}\n\nfunc (a *Account) Withdraw(amount int) error {\n\ta.mu.Lock()\n\tdefer a.mu.Unlock()\n\tif a.Balance < amount {\n\t\treturn errors.New(\"insufficient funds\")\n\t}\n\taudit(\"withdraw\")\n\ta.Balance -= amount\n\treturn nil\n}\n\nfunc Withdrawals(a *Account, drivers, amount int) int {\n\tvar wg sync.WaitGroup\n\tvar mu sync.Mutex\n\tok := 0\n\tfor i := 0; i < drivers; i++ {\n\t\twg.Add(1)\n\t\tgo func() {\n\t\t\tdefer wg.Done()\n\t\t\tif a.Withdraw(amount) == nil {\n\t\t\t\tmu.Lock()\n\t\t\t\tok++\n\t\t\t\tmu.Unlock()\n\t\t\t}\n\t\t}()\n\t}\n\twg.Wait()\n\treturn ok\n}\n```" },
+    ],
+    reflectionPrompts: ["Explain the double-spend race to a product manager in two sentences, then explain why your tests in the browser could catch one of the two races in this program but not the other, and what tool catches both."],
+    transferNote: "Check-then-act races, critical sections and the race detector are core concurrency interview material; being able to say which bugs a test can and cannot see is what separates a strong answer.",
+    starterCode: `package main
+
+import (
+	"errors"
+	"fmt"
+	"sync"
+	"time"
+)
+
+// Account is a prepaid fuel card shared by a fleet's drivers.
+type Account struct {
+	Balance int
+}
+
+// audit records the operation in the audit log (a slow remote call).
+func audit(op string) {
+	time.Sleep(time.Millisecond)
+}
+
+// Withdraw deducts amount if the balance allows it.
+// BUG: with concurrent callers the balance can go negative.
+func (a *Account) Withdraw(amount int) error {
+	if a.Balance < amount {
+		return errors.New("insufficient funds")
+	}
+	audit("withdraw")
+	a.Balance -= amount
+	return nil
+}
+
+// Withdrawals has 'drivers' goroutines each withdraw 'amount' once and
+// returns how many succeeded.
+// BUG: the success count is shared without synchronisation.
+func Withdrawals(a *Account, drivers, amount int) int {
+	var wg sync.WaitGroup
+	ok := 0
+	for i := 0; i < drivers; i++ {
+		wg.Add(1)
+		go func() {
+			defer wg.Done()
+			if a.Withdraw(amount) == nil {
+				ok++
+			}
+		}()
+	}
+	wg.Wait()
+	return ok
+}
+
+func main() {
+	card := &Account{Balance: 50}
+	n := Withdrawals(card, 10, 10)
+	fmt.Println("successful withdrawals:", n, "balance:", card.Balance)
+}
+`,
+    referenceSolution: `package main
+
+import (
+	"errors"
+	"fmt"
+	"sync"
+	"time"
+)
+
+type Account struct {
+	mu      sync.Mutex
+	Balance int
+}
+
+func audit(op string) {
+	time.Sleep(time.Millisecond)
+}
+
+func (a *Account) Withdraw(amount int) error {
+	a.mu.Lock()
+	defer a.mu.Unlock()
+	if a.Balance < amount {
+		return errors.New("insufficient funds")
+	}
+	audit("withdraw")
+	a.Balance -= amount
+	return nil
+}
+
+func Withdrawals(a *Account, drivers, amount int) int {
+	var wg sync.WaitGroup
+	var mu sync.Mutex
+	ok := 0
+	for i := 0; i < drivers; i++ {
+		wg.Add(1)
+		go func() {
+			defer wg.Done()
+			if a.Withdraw(amount) == nil {
+				mu.Lock()
+				ok++
+				mu.Unlock()
+			}
+		}()
+	}
+	wg.Wait()
+	return ok
+}
+
+func main() {
+	card := &Account{Balance: 50}
+	n := Withdrawals(card, 10, 10)
+	fmt.Println("successful withdrawals:", n, "balance:", card.Balance)
+}
+`,
+    tests: [
+      { id: "t1", label: "sequential withdrawals: succeeds while funds last, then errors, never negative", code: `a := &Account{Balance: 25}\nif err := a.Withdraw(10); err != nil { panic(fmt.Sprintf("first withdrawal failed: %v", err)) }\nif err := a.Withdraw(10); err != nil { panic(fmt.Sprintf("second withdrawal failed: %v", err)) }\nif err := a.Withdraw(10); err == nil { panic("third withdrawal should fail with insufficient funds") }\nif a.Balance != 5 { panic(fmt.Sprintf("balance %d, want 5", a.Balance)) }` },
+      { id: "t2", label: "10 concurrent drivers, balance 50, amount 10: exactly 5 succeed and the balance is 0", code: `card := &Account{Balance: 50}\nn := Withdrawals(card, 10, 10)\nif card.Balance < 0 { panic(fmt.Sprintf("double spend: balance went negative (%d)", card.Balance)) }\nif n != 5 || card.Balance != 0 { panic(fmt.Sprintf("%d withdrawals succeeded and balance is %d; want 5 and 0", n, card.Balance)) }` },
+      { id: "t3", label: "40 concurrent drivers, balance 95, amount 10: 9 succeed, balance 5", code: `card := &Account{Balance: 95}\nn := Withdrawals(card, 40, 10)\nif n != 9 || card.Balance != 5 { panic(fmt.Sprintf("%d succeeded, balance %d; want 9 and 5", n, card.Balance)) }` },
     ],
     errorHelp: GO_ERROR_HELP,
   },

@@ -18,6 +18,7 @@ From an empty repository to a deployed, tested web application: a Linux/Python/G
 | #6 | Go Laboratory: Yaegi interpreter compiled to WebAssembly, worker with timeout, Node + browser tests |
 | #7 | Code missions generalized by language; four Go missions (config parser, worker pool, timeouts/context, retries + idempotency) |
 | #8 | Replication-lag scenario: read replica on the shared engine, stale reads, blocked apply thread, failover data-loss trap; incident mission 4 |
+| #9 | Go race-detector service (`server/race.ts`, local, `go build -race`), race panel in the Go Lab and Go missions, data-race mission (double spend) |
 
 Feature branches still exist on GitHub (`ccr-221527a4-xf3zs7`, `lp-verified-interview-cues`, `retention-checks`, `phase7-incidents`, `cicd-failure-modes`, `go-runner-spike`); this environment cannot delete remote branches, so delete them from the Branches page.
 
@@ -26,25 +27,26 @@ Feature branches still exist on GitHub (`ccr-221527a4-xf3zs7`, `lp-verified-inte
 - Stack: React 19 + TypeScript + Vite 8 + Tailwind v4, Dexie/IndexedDB, CodeMirror 6, hash routing. Deployment: local dev + GitHub Pages. One draft PR per slice, merged on the owner's word.
 - Coaching: rule-based engine always on; optional Claude coaching via a local proxy (`server/index.ts`) with the API key server-side and explicit consent in Settings.
 - Job posting: only the qualifications in the master prompt are used; no title or responsibilities are invented.
-- Go: in-browser via Yaegi compiled to WebAssembly (chosen over a backend runner so the Pages site stays self-contained). Known limit: single-threaded WebAssembly, so no data races or race detector; a local `go test -race` service remains optional.
+- Go: in-browser via Yaegi compiled to WebAssembly (chosen over a backend runner so the Pages site stays self-contained). Known limit: single-threaded WebAssembly, so bare data races do not reproduce; the optional local race-detector service (`npm run race-server`, needs Go + a C compiler) fills that gap.
 - Mission availability depends only on prerequisite missions; skill mastery gates stage promotion (the earlier skill-gate rule could lock a mission behind the skill it teaches).
 
 ## How it works (where to look)
 
 - `src/domain/types.ts`: typed models. `src/data/db.ts`: IndexedDB schema, export/import/reset.
 - `src/engine/terminal/shell.ts`: virtual Linux (48 commands, pipes, redirection, permissions, sudo, services, journal, simulated network tools, mission programs via `world.programs`).
+- `server/race.ts` + `server/race-core.ts`: optional local race-detector service; `src/services/race` is its client; `src/components/RaceDetectorPanel.tsx` the UI.
 - `src/engine/python/*` + `src/workers/python.worker.ts`: Pyodide in a worker, 10 s kill switch. `src/engine/go/runner.ts` + `src/workers/go.worker.ts` + `go/runner/main.go`: Yaegi in a classic worker; built by `scripts/build-go-runner.mjs` into `public/go/` (gitignored; CI installs Go 1.24).
 - `src/engine/sim/*`: platform simulation (load, cache, database capacity, queue accumulation, logs) and the incident state machine. `src/engine/cicd/pipeline.ts`: pipeline runner and the `ci` program.
 - `src/engine/learner/*`: mastery, spaced repetition, retention checks, recommendations. `src/engine/missions/engine.ts`: status, attempts, hints, completion.
 - `src/engine/interview/*`: STAR analysis, gap detection, Dive Deeper follow-ups, rubric scoring. `src/content/leadershipPrinciples.ts`: 16 LPs (verified 2026-10-09).
 - `src/content/missions/*`: all missions; the level-4 hint of every terminal mission is a runnable guided example that the test suite executes.
 
-## Verification state (PR #8 head)
+## Verification state (PR #9 head)
 
 | Check | Result |
 |---|---|
 | `npm run typecheck` / `npm run lint` | 0 errors |
-| `npm run test` | 74 passed, 1 skipped placeholder |
+| `npm run test` | 80 passed, 1 skipped placeholder |
 | `npm run test:e2e` | 26 passed (13 scenarios, desktop + Pixel 5) |
 | `npm run build` | succeeds |
 
@@ -58,9 +60,8 @@ Unverified by automation: voice recognition/synthesis (browser-only), the Claude
 
 ## Open items, in order
 
-1. Merge PR #8 when CI is green.
-2. Optional local race-detector service for a data-race lesson.
-3. More missions per track (see `docs/CURRICULUM.md` planned list).
+1. Merge PR #9 when CI is green.
+2. More missions per track (see `docs/CURRICULUM.md` planned list).
 4. Accessibility audit; lazy-load CodeMirror and the interview pages to cut the 1.2 MB bundle.
 5. Manual checks the owner can do: voice in Chrome/Edge; the Claude proxy with `ANTHROPIC_API_KEY=... npm run coach-server`.
 

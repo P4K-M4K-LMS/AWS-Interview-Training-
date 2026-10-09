@@ -48,8 +48,10 @@ scripts/build-go-runner.mjs  Builds public/go/gorunner.wasm (skips with a warnin
   engine/interview/scoring.ts Rubric, feedback report, before/after comparison
   services/voice/*           Speech recognition / synthesis wrappers + capability detection
   services/coach/index.ts    Coach adapter: rules always, Claude proxy optionally
+  services/race/index.ts     Client for the optional local race-detector service
   components/, pages/        UI
 server/index.ts              Optional coaching proxy
+server/race.ts               Optional race-detector service (HTTP); server/race-core.ts runs `go build -race` and parses the report
 ```
 
 ## Data flow
@@ -62,7 +64,7 @@ server/index.ts              Optional coaching proxy
 ## Persistence and privacy
 
 - All data is local to the browser profile. Export/import produces a versioned JSON bundle; `validateBundle` rejects other apps or schema versions.
-- No network calls are made by default. The only outbound call is to the coaching proxy, and only when the learner selects Claude coaching, enters a URL and ticks consent. Audio is never sent anywhere by OpsForge; browser speech recognition may use the browser vendor's service, and Settings says so.
+- No network calls are made by default. The outbound calls are to the coaching proxy (only when the learner selects Claude coaching, enters a URL and ticks consent) and to the race-detector service (only when the learner enters its URL and presses the race-detector button; the program source is what is sent). Audio is never sent anywhere by OpsForge; browser speech recognition may use the browser vendor's service, and Settings says so.
 - Schema changes bump `SCHEMA_VERSION` and add a Dexie `version(n).upgrade()`.
 
 ## Safety
@@ -71,6 +73,7 @@ server/index.ts              Optional coaching proxy
 - Learner Python runs in a Web Worker inside WebAssembly. It has no access to the page, the filesystem or the network, and the main thread terminates the worker after 10 seconds.
 - The terminal is a simulation. Unsupported commands return `command not found` and say so; `help` documents the subset.
 - The proxy never embeds keys in the client; the client sends transcripts only, size-limited and CORS-restricted by `COACH_ALLOWED_ORIGIN`.
+- The race-detector service executes the Go code it receives, exactly as `go run` would. It binds to localhost by default, accepts one run at a time, limits program size and run time, and is documented as a run-on-your-own-machine tool.
 - Interview feedback discloses its limits in every report (`limitations`), never fabricates delivery metrics without a real recording, and never invents answer content.
 
 ## Extending

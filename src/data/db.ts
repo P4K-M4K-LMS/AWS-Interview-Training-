@@ -50,6 +50,7 @@ export const DEFAULT_SETTINGS: LearnerSettings = {
   coachMode: "rules",
   coachProxyUrl: "",
   coachConsent: false,
+  raceServiceUrl: "",
   dailyGoalMinutes: 30,
 };
 

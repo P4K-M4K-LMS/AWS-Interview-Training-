@@ -29,7 +29,9 @@ Real CPython runs in your browser. Press **Run** to execute and see real output 
 
 ### Go Laboratory
 
-Real Go runs in your browser through an interpreter compiled to WebAssembly. Goroutines, channels, select, WaitGroups, mutexes, generics and most of the standard library work; there is no network, filesystem or race detector, and goroutines interleave cooperatively because WebAssembly is single-threaded. Press Run for real output or a compiler error with a plain-language explanation. The runtime (about 8 MB compressed) downloads the first time you open the lab.
+Real Go runs in your browser through an interpreter compiled to WebAssembly. Goroutines, channels, select, WaitGroups, mutexes, generics and most of the standard library work; there is no network or filesystem, and goroutines interleave cooperatively because WebAssembly is single-threaded: races around a blocking call (a sleep, a channel, a lock) do reproduce, bare `counter++` races do not. Press Run for real output or a compiler error with a plain-language explanation. The runtime (about 8 MB compressed) downloads the first time you open the lab.
+
+**Race detector.** The lab and every Go mission have a *Run with the race detector* button. It sends the current program to an optional service on your own machine (`npm run race-server`, URL in Settings) that runs it with `go build -race` and shows the detector's report: each conflicting access with its goroutine, function and line. A clean run means no race was observed, not that none exists, and the panel says so.
 
 Go missions (on the Distributed track, unlocked after the Python config validator) work like Python missions: edit the program, Run to see output, Run tests to execute the mission's Go test snippets in the same interpreter. They cover a config parser with error values, a worker pool, timeouts with context and select, and retries with idempotency keys.
 
@@ -69,4 +71,4 @@ Mastery per skill (0 to 100) with evidence: completions, independent solves (no 
 
 ## Settings
 
-Theme, daily goal, voice consent and options, coaching engine (rules by default; optional Claude proxy with separate consent), export/import/reset of all data, and the live list of what is verified, partial, unverified or planned.
+Theme, daily goal, voice consent and options, coaching engine (rules by default; optional Claude proxy with separate consent), the optional Go race-detector service URL, export/import/reset of all data, and the live list of what is verified, partial, unverified or planned.

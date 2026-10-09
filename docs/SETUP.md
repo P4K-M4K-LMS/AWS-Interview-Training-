@@ -54,3 +54,13 @@ npm run coach-server                     # http://localhost:8787
 Then in the app: Settings → Coaching engine → select Claude, enter `http://localhost:8787`, click Test, and tick the consent box. Optional environment variables: `COACH_PORT`, `COACH_MODEL` (default `claude-opus-5-5`), `COACH_ALLOWED_ORIGIN` (default `*`; set it to your app origin in production).
 
 The proxy only ever receives transcripts (never audio) and only when consent is given. If it is unreachable, every report falls back to the rule-based engine and says so.
+
+## Optional: Go race-detector service
+
+The in-browser Go runtime is single-threaded and cannot reproduce data races. A second optional local service runs a program with `go build -race` on your machine and returns the detector's report to the Go Laboratory and the Go missions.
+
+```bash
+npm run race-server                      # http://127.0.0.1:8788
+```
+
+Requirements: Go 1.22+ on PATH and a C compiler (gcc or clang), because the race detector needs cgo. Then in the app: Settings → Go race detector → enter `http://localhost:8788`, click Test. The service executes the Go code it receives exactly as `go run` would, so run it only on your own machine and keep it bound to localhost (the default). Environment variables: `RACE_PORT`, `RACE_HOST` (default `127.0.0.1`), `RACE_TIMEOUT_MS` (default 60000), `RACE_ALLOWED_ORIGIN` (default `*`). The first run compiles the race runtime and takes a few seconds; later runs are cached.

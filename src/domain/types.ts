@@ -387,6 +387,8 @@ export interface LearnerSettings {
   coachProxyUrl: string;
   /** Explicit consent to send transcripts to the coaching proxy. */
   coachConsent: boolean;
+  /** Base URL of the optional local race-detector service, e.g. http://localhost:8788. Empty = off. */
+  raceServiceUrl?: string;
   dailyGoalMinutes: number;
 }
 
