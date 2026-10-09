@@ -17,7 +17,7 @@ import {
   SECURITYX_TRACK,
 } from "../../tools/ascendra-catalog/data.ts";
 import { AWS_TRACKS } from "../../tools/ascendra-catalog/tracks/aws.ts";
-import { BOOKKEEPING_UNITS, STUDY_LINKS, UNIT_ENGINE_GATES } from "../../src/content/study/links.ts";
+import { BOOKKEEPING_UNITS, STUDY_LAB_LINKS, STUDY_LINKS, UNIT_ENGINE_GATES } from "../../src/content/study/links.ts";
 import type { StudyCatalogIndex, StudyCourse, StudyCourseSummary, StudyModality, StudyObjective, StudyUnit } from "../../src/domain/types.ts";
 
 export const SOURCE_COMMIT = "e1ac219b22688230c330bed7dc3de1130b531b48";
@@ -49,6 +49,8 @@ export interface BuiltCatalog {
   missionLinks: Record<string, string[]>;
   /** engine id -> unit ids whose gate it would make playable */
   engineGates: Record<string, string[]>;
+  /** lab exercise id -> objective ids it credits */
+  labLinks: Record<string, string[]>;
 }
 
 function normaliseText(s: string): string {
@@ -66,13 +68,15 @@ function stripCoach(title: string): string {
   return title.replace(/\s+Coach$/, "");
 }
 
-export function buildCourse(track: SeedTrack, group: "aws" | "core", sourceFile: string): { course: StudyCourse; summary: Omit<StudyCourseSummary, "hash" | "file">; missionLinks: Record<string, string[]>; engineGates: Record<string, string[]> } {
+export function buildCourse(track: SeedTrack, group: "aws" | "core", sourceFile: string): { course: StudyCourse; summary: Omit<StudyCourseSummary, "hash" | "file">; missionLinks: Record<string, string[]>; engineGates: Record<string, string[]>; labLinks: Record<string, string[]> } {
   const courseId = courseIdFor(track);
   const bookkeepingUnits = new Set(BOOKKEEPING_UNITS.filter((b) => b.course === track.code).map((b) => b.unit));
   const links = STUDY_LINKS.filter((l) => l.course === track.code);
   const gates = UNIT_ENGINE_GATES.filter((g) => g.course === track.code);
   const missionLinks: Record<string, string[]> = {};
   const engineGates: Record<string, string[]> = {};
+  const labLinks: Record<string, string[]> = {};
+  const labs = STUDY_LAB_LINKS.filter((l) => l.course === track.code);
 
   // Resolve every curated entry up front so a stale fragment fails loudly.
   const allObjectives = track.units.flatMap((u, ui) => u.objectives.map((text, oi) => ({ text, ui, oi })));
@@ -82,6 +86,13 @@ export function buildCourse(track: SeedTrack, group: "aws" | "core", sourceFile:
     const key = `${hit.ui}:${hit.oi}`;
     if (linkByPos.has(key)) throw new Error(`${track.code}: objective "${hit.text}" is linked twice`);
     linkByPos.set(key, l);
+  }
+  const labByPos = new Map<string, (typeof labs)[number]>();
+  for (const l of labs) {
+    const hit = findOne(allObjectives, (o) => o.text, l.text, `${track.code} lab link to ${l.lab}/${l.exerciseId ?? ""}`);
+    const key = `${hit.ui}:${hit.oi}`;
+    if (linkByPos.has(key) || labByPos.has(key)) throw new Error(`${track.code}: objective "${hit.text}" is linked twice`);
+    labByPos.set(key, l);
   }
   const gateByUnit = new Map<number, string>();
   for (const g of gates) {
@@ -103,6 +114,7 @@ export function buildCourse(track: SeedTrack, group: "aws" | "core", sourceFile:
     const objectives: StudyObjective[] = u.objectives.map((text, oi) => {
       const id = `${unitId}:${oi + 1}`;
       const link = linkByPos.get(`${ui}:${oi}`);
+      const lab = labByPos.get(`${ui}:${oi}`);
       const labPrompt = u.labs?.[oi] ?? undefined;
       const o: StudyObjective = {
         id,
@@ -111,12 +123,15 @@ export function buildCourse(track: SeedTrack, group: "aws" | "core", sourceFile:
         text,
         sourceHash: sha256(text).slice(0, 12),
         kind: bookkeeping ? "bookkeeping" : "objective",
-        modality: link ? "do-existing" : "read",
-        modalitySource: link ? "curated" : "default",
+        modality: link || lab ? "do-existing" : "read",
+        modalitySource: link || lab ? "curated" : "default",
       };
       if (link) {
         o.link = { kind: "mission", missionId: link.mission, coverage: link.coverage, ...(link.note ? { note: link.note } : {}) };
         (missionLinks[link.mission] ??= []).push(id);
+      } else if (lab) {
+        o.link = { kind: "lab", labId: lab.lab, ...(lab.exerciseId ? { exerciseId: lab.exerciseId } : {}), coverage: lab.coverage, ...(lab.note ? { note: lab.note } : {}) };
+        if (lab.exerciseId) (labLinks[lab.exerciseId] ??= []).push(id);
       }
       if (labPrompt) o.labPrompt = labPrompt;
       return o;
@@ -136,7 +151,7 @@ export function buildCourse(track: SeedTrack, group: "aws" | "core", sourceFile:
     units: units.length,
     objectives: all.filter((o) => o.kind === "objective").length,
     bookkeeping: all.filter((o) => o.kind === "bookkeeping").length,
-    linked: all.filter((o) => o.link?.kind === "mission").length,
+    linked: all.filter((o) => o.link?.kind === "mission" || o.link?.kind === "lab").length,
   };
   const modalities: Record<StudyModality, number> = { "do-existing": 0, "do-new": 0, read: 0, combo: 0, explain: 0 };
   for (const o of all) if (o.kind === "objective") modalities[o.modality] += 1;
@@ -177,7 +192,7 @@ export function buildCourse(track: SeedTrack, group: "aws" | "core", sourceFile:
     counts,
     modalities,
   };
-  return { course, summary, missionLinks, engineGates };
+  return { course, summary, missionLinks, engineGates, labLinks };
 }
 
 export function buildCatalog(): BuiltCatalog {
@@ -185,6 +200,7 @@ export function buildCatalog(): BuiltCatalog {
   const summaries: StudyCourseSummary[] = [];
   const missionLinks: Record<string, string[]> = {};
   const engineGates: Record<string, string[]> = {};
+  const labLinks: Record<string, string[]> = {};
   const seenIds = new Set<string>();
   for (const { track, group, sourceFile } of SEED_TRACKS) {
     const built = buildCourse(track, group, sourceFile);
@@ -194,20 +210,24 @@ export function buildCatalog(): BuiltCatalog {
     summaries.push({ ...built.summary, file: `${built.course.id}.json`, hash: sha256(stableJson(built.course)).slice(0, 16) });
     for (const [m, ids] of Object.entries(built.missionLinks)) (missionLinks[m] ??= []).push(...ids);
     for (const [e, ids] of Object.entries(built.engineGates)) (engineGates[e] ??= []).push(...ids);
+    for (const [e, ids] of Object.entries(built.labLinks)) (labLinks[e] ??= []).push(...ids);
   }
   for (const k of Object.keys(missionLinks)) missionLinks[k].sort();
   const sortedLinks = Object.fromEntries(Object.keys(missionLinks).sort().map((k) => [k, missionLinks[k]]));
   const sortedGates = Object.fromEntries(Object.keys(engineGates).sort().map((k) => [k, engineGates[k].sort()]));
+  const sortedLabs = Object.fromEntries(Object.keys(labLinks).sort().map((k) => [k, labLinks[k].sort()]));
   // Every curated entry must have been consumed by some course.
   const known = new Set(SEED_TRACKS.map((s) => s.track.code));
   for (const l of STUDY_LINKS) if (!known.has(l.course)) throw new Error(`link for unknown course code ${l.course}`);
   for (const g of UNIT_ENGINE_GATES) if (!known.has(g.course)) throw new Error(`gate for unknown course code ${g.course}`);
+  for (const l of STUDY_LAB_LINKS) if (!known.has(l.course)) throw new Error(`lab link for unknown course code ${l.course}`);
   for (const b of BOOKKEEPING_UNITS) if (!known.has(b.course)) throw new Error(`bookkeeping unit for unknown course code ${b.course}`);
   return {
     index: { schemaVersion: 1, builtFrom: { sourceRepo: "ascendra", sourceCommit: SOURCE_COMMIT }, courses: summaries },
     courses,
     missionLinks: sortedLinks,
     engineGates: sortedGates,
+    labLinks: sortedLabs,
   };
 }
 
@@ -222,6 +242,9 @@ export function missionLinksModule(built: BuiltCatalog): string {
     "",
     "/** Planned engine id -> Study unit ids whose gate it would make playable. */",
     `export const ENGINE_GATES: Record<string, string[]> = ${JSON.stringify(built.engineGates, null, 2)};`,
+    "",
+    "/** Lab exercise id -> Study objective ids that passing it credits. */",
+    `export const LAB_LINKS: Record<string, string[]> = ${JSON.stringify(built.labLinks, null, 2)};`,
     "",
   ].join("\n");
 }

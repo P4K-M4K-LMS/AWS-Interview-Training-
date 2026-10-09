@@ -4,6 +4,7 @@ import { Callout, Markdown, Panel } from "../ui";
 import { MISSION_BY_ID } from "../../content/missions";
 import { STUDY_DISCLAIMER } from "../../content/study/disclaimer";
 import { ENGINE_BY_ID } from "../../content/study/engines";
+import { LAB_LABELS, labExercisePath } from "../../content/study/labs";
 import { nowIso } from "../../data/db";
 import { STUDY_STATUS_LABELS, statusCap } from "../../engine/study/mastery";
 import { pickQuestion, presentQuestion, type Presented } from "../../engine/study/select";
@@ -150,6 +151,11 @@ export function LessonLoopPlayer({ objective, lesson, state, level, review, gene
           {mission && (
             <Callout kind="info" title="Do it, not just read it">
               <Link to={`/missions/${mission.id}?from=${encodeURIComponent(objective.id)}`} className="underline">{mission.title}</Link> makes you do this; finishing it credits the objective.
+            </Callout>
+          )}
+          {objective.link?.kind === "lab" && (
+            <Callout kind="info" title="Do it, not just read it">
+              <Link to={labExercisePath(objective.link, objective.id)} className="underline">{LAB_LABELS[objective.link.labId] ?? objective.link.labId}</Link> has an exercise for this; passing it credits the objective.
             </Callout>
           )}
           {objective.modality === "do-new" && (

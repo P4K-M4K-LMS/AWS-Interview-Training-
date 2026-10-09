@@ -1051,8 +1051,14 @@
           "text": "Service control policies in AWS Organizations",
           "sourceHash": "1bea6f09b2af",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "policy",
+            "exerciseId": "policy-04-guardrail",
+            "coverage": "full"
+          }
         },
         {
           "id": "dop-c02:6:5",
@@ -1061,8 +1067,14 @@
           "text": "Designing policies that enforce least privilege access",
           "sourceHash": "69ab550d8bee",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "policy",
+            "exerciseId": "policy-03-boundary",
+            "coverage": "partial"
+          }
         },
         {
           "id": "dop-c02:6:6",
@@ -1233,6 +1245,6 @@
     "units": 6,
     "objectives": 114,
     "bookkeeping": 0,
-    "linked": 3
+    "linked": 5
   }
 }

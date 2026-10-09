@@ -29,8 +29,15 @@
           "text": "A flexible authorization model built from IAM users, groups, roles, and policies",
           "sourceHash": "35e30a73662e",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "policy",
+            "exerciseId": "policy-01-default-deny",
+            "coverage": "partial",
+            "note": "policies and the evaluation rules; no users, groups or roles"
+          }
         },
         {
           "id": "saa-c03:1:3",
@@ -49,8 +56,15 @@
           "text": "Security across many accounts: AWS Organizations, AWS Control Tower, service control policies",
           "sourceHash": "28c05abed051",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "policy",
+            "exerciseId": "policy-04-guardrail",
+            "coverage": "partial",
+            "note": "guardrail policies only"
+          }
         },
         {
           "id": "saa-c03:1:5",
@@ -59,8 +73,14 @@
           "text": "Resource-based policies, and when they beat an identity-based policy",
           "sourceHash": "93f041beec97",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "policy",
+            "exerciseId": "policy-05-cross-account",
+            "coverage": "full"
+          }
         },
         {
           "id": "saa-c03:1:6",
@@ -1081,6 +1101,6 @@
     "units": 4,
     "objectives": 99,
     "bookkeeping": 0,
-    "linked": 6
+    "linked": 9
   }
 }

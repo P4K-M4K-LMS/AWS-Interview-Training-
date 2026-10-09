@@ -45,6 +45,10 @@ Pick an algorithm and an input size, press Run. You get an **operation count** (
 
 Security investigations run on isolated fictional hosts. The monitoring page is a deterministic simulation: move the sliders, inject failures, and watch latency, error rate, queue depth, the logs and the architecture diagram respond coherently.
 
+### Policies lab
+
+A fictional platform's authorization policy language, one statement per line (`allow store:Read on store/orders/* when principal.tag.team = dispatch`). Each exercise gives you a few policies, lets you edit one, and lists requests that must come out a certain way; every request shows a trace naming the statement that decided it. The rules are the ones every cloud policy system shares, with no vendor's syntax: nothing is allowed until something allows it, an explicit deny beats every allow, a boundary or organisation guardrail is a ceiling that grants nothing by itself, a principal from another account needs both sides to allow, and tag conditions can compare the two sides. Passing an exercise credits the Study objectives linked to it.
+
 ### CI/CD missions
 
 Some missions ship their own command-line tools, listed at the end of `help`: `ci run` / `ci log` / `ci status` execute and inspect a simulated pipeline defined in `.ci/pipeline.yml`; `deployctl status` / `history` / `rollback VERSION` manage which release is live; `metrics errors` / `latency` query the live service. The pipeline runner reacts to the real repository state, and the checks reject shortcuts: a retry that happens to pass, a skipped test, a secret pasted into the pipeline file, or a rollback that is never verified.

@@ -146,3 +146,37 @@ export const ENGINE_GATES: Record<string, string[]> = {
     "soa-c03:4"
   ]
 };
+
+/** Lab exercise id -> Study objective ids that passing it credits. */
+export const LAB_LINKS: Record<string, string[]> = {
+  "policy-01-default-deny": [
+    "clf-c02:2:11",
+    "mla-c02:4:19",
+    "saa-c03:1:2",
+    "sap-c02:2:12"
+  ],
+  "policy-02-deny-wins": [
+    "dea-c01:4:13",
+    "scs-c03:4:7",
+    "soa-c03:4:2"
+  ],
+  "policy-03-boundary": [
+    "dop-c02:6:5",
+    "scs-c03:4:6",
+    "scs-c03:4:8"
+  ],
+  "policy-04-guardrail": [
+    "dop-c02:6:4",
+    "saa-c03:1:4",
+    "scs-c03:6:3",
+    "soa-c03:4:3"
+  ],
+  "policy-05-cross-account": [
+    "saa-c03:1:5",
+    "scs-c03:4:4"
+  ],
+  "policy-06-tags": [
+    "scs-c03:4:5",
+    "soa-c03:4:1"
+  ]
+};

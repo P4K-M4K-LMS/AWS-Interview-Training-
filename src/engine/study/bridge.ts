@@ -1,4 +1,4 @@
-import { MISSION_LINKS } from "../../content/study/missionLinks";
+import { LAB_LINKS, MISSION_LINKS } from "../../content/study/missionLinks";
 import type { StudyObjectiveState } from "../../domain/types";
 import { recordStudyAttempt } from "./store";
 
@@ -20,4 +20,18 @@ export async function creditLinkedObjectives(missionId: string, at: string): Pro
 /** Objective ids a mission credits (for the mission page's "also counts toward" note). */
 export function objectivesCreditedBy(missionId: string): string[] {
   return MISSION_LINKS[missionId] ?? [];
+}
+
+/** Passing a lab exercise credits its curated objectives the same way (Guided at most). */
+export async function creditLabExercise(exerciseId: string, at: string): Promise<StudyObjectiveState[]> {
+  const ids = LAB_LINKS[exerciseId] ?? [];
+  const out: StudyObjectiveState[] = [];
+  for (const objectiveId of ids) {
+    out.push(await recordStudyAttempt(objectiveId, { at, format: "lab", verdict: "correct", source: "mission", ref: exerciseId }));
+  }
+  return out;
+}
+
+export function objectivesCreditedByExercise(exerciseId: string): string[] {
+  return LAB_LINKS[exerciseId] ?? [];
 }

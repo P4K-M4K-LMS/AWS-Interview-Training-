@@ -675,7 +675,7 @@ test("study: browse the catalog from a course to a unit and into the mission tha
   await expect(page.getByTestId("study-objectives").getByRole("listitem")).toHaveCount(27);
   const replicas = page.getByTestId("study-objective-12");
   await expect(replicas).toContainText("Read replicas");
-  await expect(replicas.getByText("Do it: existing mission")).toBeVisible();
+  await expect(replicas.getByText("Do it: mission or lab")).toBeVisible();
   await replicas.getByTestId("study-practise-12").click();
   await expect(page).toHaveURL(/missions\/incident-04-replica-lag/);
   await page.getByTestId("study-back-link").click();
@@ -780,4 +780,40 @@ test("study lesson loop: guess, read, check, explain it back; status moves and t
   await expect(page.getByTestId("study-style-doing")).toBeChecked();
   await page.goto("/#/study/saa-c03/2");
   await expect(page.getByTestId("study-objectives").getByRole("listitem").first()).toContainText("Decoupling with queues");
+});
+
+test("policy lab: default deny, fix the policy, read the trace, pass and credit the Study objective", async ({ page }) => {
+  await onboard(page);
+  await page.goto("/#/study/saa-c03/1");
+  const objective = page.getByTestId("study-objective-2");
+  await expect(objective).toContainText("Do it: mission or lab");
+  await objective.getByTestId("study-practise-2").click();
+  await expect(page).toHaveURL(/#\/labs\/policy\?exercise=policy-01-default-deny/);
+  await expect(page.getByRole("heading", { name: "Authorization policies" })).toBeVisible();
+  await expect(page.getByTestId("policy-back-link")).toBeVisible();
+  // The update request is denied by default and the check button says so.
+  await expect(page.getByTestId("policy-decision-write-order")).toHaveText("deny");
+  await expect(page.getByTestId("policy-request-write-order")).toHaveAttribute("data-ok", "0");
+  await expect(page.getByTestId("policy-check")).toBeDisabled();
+  await page.getByTestId("policy-trace-toggle-write-order").click();
+  await expect(page.getByTestId("policy-trace")).toContainText("Default deny");
+  // A broad fix is caught: writing invoices must stay denied.
+  await page.getByTestId("policy-text-dispatch").fill("allow store:Read, store:List on store/orders/*\nallow store:Write on store/*");
+  await expect(page.getByTestId("policy-decision-write-order")).toHaveText("allow");
+  await expect(page.getByTestId("policy-request-write-invoice")).toHaveAttribute("data-ok", "0");
+  await expect(page.getByTestId("policy-check")).toBeDisabled();
+  // A bad line is reported by number.
+  await page.getByTestId("policy-text-dispatch").fill("allow store:Read on store/orders/*\nwrite please");
+  await expect(page.getByTestId("policy-errors-dispatch")).toContainText("line 2");
+  // The narrow fix passes and credits the objective.
+  await page.getByTestId("policy-text-dispatch").fill("allow store:Read, store:List on store/orders/*\nallow store:Write on store/orders/*");
+  await expect(page.getByTestId("policy-check")).toBeEnabled();
+  await page.getByTestId("policy-check").click();
+  await expect(page.getByTestId("policy-passed")).toContainText("Credited");
+  await page.getByTestId("policy-back-link").click();
+  await expect(page.getByTestId("study-status-2")).toHaveText("Guided");
+  // The labs hub has the new tab.
+  await page.goto("/#/labs");
+  await page.getByTestId("lab-tab-policies").click();
+  await expect(page.getByRole("heading", { name: "Authorization policies" })).toBeVisible();
 });

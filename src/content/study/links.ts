@@ -21,6 +21,16 @@ export interface StudyMissionLink {
   note?: string;
 }
 
+/** Objectives a lab exercise makes the learner do. Passing the exercise credits them (format "lab"). */
+export interface StudyLabLink {
+  course: string;
+  text: string;
+  lab: string; // lab id, e.g. "policy"
+  exerciseId?: string;
+  coverage: "full" | "partial";
+  note?: string;
+}
+
 export interface StudyEngineGate {
   course: string;
   gateText: string; // fragment of the unit's gate sentence
@@ -103,6 +113,28 @@ export const STUDY_LINKS: StudyMissionLink[] = [
   { course: "SECPLUS", text: "High availability and resilience design", mission: "design-01-position-ingest", coverage: "full" },
 ];
 
+export const STUDY_LAB_LINKS: StudyLabLink[] = [
+  // Authorization policy lab (/labs/policy)
+  { course: "AWSSAA", text: "A flexible authorization model built from IAM users, groups, roles, and policies", lab: "policy", exerciseId: "policy-01-default-deny", coverage: "partial", note: "policies and the evaluation rules; no users, groups or roles" },
+  { course: "AWSSAA", text: "Resource-based policies, and when they beat an identity-based policy", lab: "policy", exerciseId: "policy-05-cross-account", coverage: "full" },
+  { course: "AWSSAA", text: "Security across many accounts: AWS Organizations", lab: "policy", exerciseId: "policy-04-guardrail", coverage: "partial", note: "guardrail policies only" },
+  { course: "AWSCLF", text: "Managed policies versus custom policies, written to least privilege", lab: "policy", exerciseId: "policy-01-default-deny", coverage: "partial", note: "writing a narrow allow" },
+  { course: "AWSDEA", text: "Constructing custom policies that hold to least privilege", lab: "policy", exerciseId: "policy-02-deny-wins", coverage: "partial" },
+  { course: "AWSDOP", text: "Service control policies in AWS Organizations", lab: "policy", exerciseId: "policy-04-guardrail", coverage: "full" },
+  { course: "AWSDOP", text: "Designing policies that enforce least privilege access", lab: "policy", exerciseId: "policy-03-boundary", coverage: "partial" },
+  { course: "AWSSOA", text: "Implementing IAM features: password policies, MFA, roles, federated identity, resource policies, policy conditions", lab: "policy", exerciseId: "policy-06-tags", coverage: "partial", note: "resource policies and conditions" },
+  { course: "AWSSOA", text: "Troubleshooting and auditing access with CloudTrail, IAM Access Analyzer, and the IAM policy simulator", lab: "policy", exerciseId: "policy-02-deny-wins", coverage: "partial", note: "the decision trace plays the simulator's part" },
+  { course: "AWSSOA", text: "Implementing multi-account strategies securely", lab: "policy", exerciseId: "policy-04-guardrail", coverage: "partial", note: "guardrails only" },
+  { course: "AWSSCS", text: "Designing authorization controls", lab: "policy", exerciseId: "policy-05-cross-account", coverage: "partial", note: "resource policies for cross-account access" },
+  { course: "AWSSCS", text: "Designing attribute-based and role-based access control", lab: "policy", exerciseId: "policy-06-tags", coverage: "full" },
+  { course: "AWSSCS", text: "implementing IAM policies to least privilege, including permissions boundaries", lab: "policy", exerciseId: "policy-03-boundary", coverage: "full" },
+  { course: "AWSSCS", text: "Analyzing authorization failures with the IAM policy simulator", lab: "policy", exerciseId: "policy-02-deny-wins", coverage: "full" },
+  { course: "AWSSCS", text: "Investigating and correcting unintended permissions granted to a resource", lab: "policy", exerciseId: "policy-03-boundary", coverage: "partial" },
+  { course: "AWSSCS", text: "Organization policies that manage permissions: service control policies", lab: "policy", exerciseId: "policy-04-guardrail", coverage: "partial" },
+  { course: "AWSSAP", text: "Specifying IAM users and roles that hold to least privilege", lab: "policy", exerciseId: "policy-01-default-deny", coverage: "partial" },
+  { course: "AWSMLA", text: "Configuring IAM policies and roles for users and applications in ML", lab: "policy", exerciseId: "policy-01-default-deny", coverage: "partial" },
+];
+
 /**
  * Unit gates that a planned engine would make playable. The gate sentence
  * is Ascendra's; the engine id names the OpsForge lab that would answer it.
@@ -133,7 +165,7 @@ export const BOOKKEEPING_UNITS: Array<{ course: string; unit: string }> = [
 ];
 
 export const MODALITY_LABELS: Record<StudyModality, string> = {
-  "do-existing": "Do it: existing mission",
+  "do-existing": "Do it: mission or lab",
   "do-new": "Do it: lab planned",
   read: "Read and check",
   combo: "Read, then a scenario",
@@ -141,7 +173,7 @@ export const MODALITY_LABELS: Record<StudyModality, string> = {
 };
 
 export const MODALITY_HELP: Record<StudyModality, string> = {
-  "do-existing": "An OpsForge mission already makes you do this. Finish it and the objective is credited.",
+  "do-existing": "An OpsForge mission or lab exercise already makes you do this. Finish it and the objective is credited.",
   "do-new": "Best learned by doing, but the lab that would let you is not built yet. Lessons teach the idea; the hands-on part is planned.",
   read: "A plain-words explanation and a check question. Reading alone never counts as mastery here.",
   combo: "An explanation plus a situation to reason through, the way the exam asks it.",

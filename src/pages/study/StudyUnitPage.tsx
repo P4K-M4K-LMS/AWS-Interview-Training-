@@ -3,6 +3,7 @@ import { Callout, PageHeader, Panel } from "../../components/ui";
 import { MISSION_BY_ID } from "../../content/missions";
 import { STUDY_DISCLAIMER } from "../../content/study/disclaimer";
 import { ENGINE_BY_ID } from "../../content/study/engines";
+import { LAB_LABELS } from "../../content/study/labs";
 import { MODALITY_LABELS } from "../../content/study/links";
 import { useStudyCourse, useStudyLessons } from "../../services/study/catalog";
 import { orderObjectives } from "../../engine/study/select";
@@ -38,6 +39,17 @@ function ObjectiveRow({ o, state, courseId, unitIndex, hasLesson }: { o: StudyOb
           </span>
         </div>
       </div>
+      {o.link?.kind === "lab" && (
+        <div className="mt-2 text-sm flex flex-wrap items-center gap-x-3 gap-y-1">
+          <Link to={`/labs/${o.link.labId}${o.link.exerciseId ? `?exercise=${o.link.exerciseId}&from=${encodeURIComponent(o.id)}` : `?from=${encodeURIComponent(o.id)}`}`} className="btn-secondary text-xs" data-testid={`study-practise-${o.index}`}>
+            Practise in: {LAB_LABELS[o.link.labId] ?? o.link.labId}
+          </Link>
+          <span className="muted text-xs">
+            {o.link.coverage === "full" ? "Covers the objective." : "Covers part of it."}
+            {o.link.note ? ` ${o.link.note[0].toUpperCase()}${o.link.note.slice(1)}.` : ""}
+          </span>
+        </div>
+      )}
       {mission && o.link?.kind === "mission" && (
         <div className="mt-2 text-sm flex flex-wrap items-center gap-x-3 gap-y-1">
           <Link to={`/missions/${mission.id}?from=${encodeURIComponent(o.id)}`} className="btn-secondary text-xs" data-testid={`study-practise-${o.index}`}>
@@ -110,7 +122,12 @@ export function StudyUnitPage() {
       {unit.gate && learnable.length > 0 && (
         <Callout kind="info" title="What mastery of this unit means">
           <span data-testid="study-gate">{unit.gate}</span>
-          {engine && (
+          {engine && engine.status === "built" && engine.lab && (
+            <p className="mt-2 text-xs">
+              Lab: <Link to={engine.lab} className="underline"><strong>{engine.name}</strong></Link>. {engine.what}
+            </p>
+          )}
+          {engine && engine.status !== "built" && (
             <p className="mt-2 text-xs">
               Lab planned: <strong>{engine.name}</strong>. {engine.what} Until it exists, objectives in this unit stop at "Independent".
             </p>
