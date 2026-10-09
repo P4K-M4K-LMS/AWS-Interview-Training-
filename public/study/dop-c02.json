@@ -948,8 +948,14 @@
           "text": "Event-driven architectures: fan-out, event streaming, queuing",
           "sourceHash": "25ad4e05439f",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "messaging",
+            "exerciseId": "msg-05-fanout",
+            "coverage": "full"
+          }
         },
         {
           "id": "dop-c02:5:3",
@@ -1324,6 +1330,6 @@
     "units": 6,
     "objectives": 114,
     "bookkeeping": 0,
-    "linked": 17
+    "linked": 18
   }
 }

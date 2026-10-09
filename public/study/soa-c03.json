@@ -109,8 +109,15 @@
           "text": "Sending notifications to Amazon SNS from AWS services and from alarms",
           "sourceHash": "c3889495772f",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "messaging",
+            "exerciseId": "msg-05-fanout",
+            "coverage": "partial",
+            "note": "a topic with filtered subscriptions"
+          }
         },
         {
           "id": "soa-c03:1:9",
@@ -771,6 +778,6 @@
     "units": 5,
     "objectives": 59,
     "bookkeeping": 0,
-    "linked": 17
+    "linked": 18
   }
 }

@@ -19,8 +19,15 @@
           "text": "Architectural patterns in application code: event-driven, microservices, monolithic, choreography, orchestration, fanout",
           "sourceHash": "78fac5ffaaa3",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "messaging",
+            "exerciseId": "msg-05-fanout",
+            "coverage": "partial",
+            "note": "fan-out and event-driven"
+          }
         },
         {
           "id": "dva-c02:1:2",
@@ -39,8 +46,14 @@
           "text": "Tightly coupled versus loosely coupled components",
           "sourceHash": "18a6be6d0c35",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "messaging",
+            "exerciseId": "msg-01-decouple",
+            "coverage": "full"
+          }
         },
         {
           "id": "dva-c02:1:4",
@@ -124,8 +137,14 @@
           "text": "Handling streaming data with AWS services",
           "sourceHash": "996e1094e79f",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "messaging",
+            "exerciseId": "msg-06-stream",
+            "coverage": "partial"
+          }
         },
         {
           "id": "dva-c02:1:11",
@@ -1164,6 +1183,6 @@
     "units": 4,
     "objectives": 98,
     "bookkeeping": 0,
-    "linked": 22
+    "linked": 25
   }
 }

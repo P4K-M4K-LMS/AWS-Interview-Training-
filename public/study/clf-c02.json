@@ -691,8 +691,15 @@
           "text": "Application integration: Amazon SQS, Amazon SNS, Amazon EventBridge",
           "sourceHash": "0bcf90699012",
           "kind": "objective",
-          "modality": "read",
-          "modalitySource": "default"
+          "modality": "do-existing",
+          "modalitySource": "curated",
+          "link": {
+            "kind": "lab",
+            "labId": "messaging",
+            "exerciseId": "msg-01-decouple",
+            "coverage": "partial",
+            "note": "what a queue and a topic are for"
+          }
         },
         {
           "id": "clf-c02:3:29",
@@ -934,6 +941,6 @@
     "units": 4,
     "objectives": 80,
     "bookkeeping": 0,
-    "linked": 12
+    "linked": 13
   }
 }
