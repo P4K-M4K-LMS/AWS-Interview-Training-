@@ -1,0 +1,139 @@
+import { expect, test, type Page } from "@playwright/test";
+
+/**
+ * End-to-end acceptance checks (Part 20). Runs against the production build.
+ * Voice features cannot be exercised headlessly; the text fallback is used.
+ */
+
+async function onboard(page: Page, name = "Sam") {
+  await page.goto("/#/");
+  await expect(page).toHaveURL(/#\/onboarding/);
+  await page.getByLabel("What should we call you?").fill(name);
+  await page.getByRole("button", { name: "Continue" }).click();
+  // Answer the placement check (pick the first option each time; correctness does not matter).
+  for (let i = 1; i <= 6; i++) {
+    await page.locator(`input[name="q${i}"]`).first().check();
+  }
+  await page.getByRole("button", { name: "See results" }).click();
+  await page.getByRole("button", { name: "Start training" }).click();
+  await expect(page.getByText(`Welcome back, ${name}`)).toBeVisible();
+}
+
+test("1-2: opens in a browser and starts as a beginner with guidance", async ({ page }) => {
+  await onboard(page);
+  await expect(page.getByTestId("continue-learning")).toBeVisible();
+  await expect(page.getByText("Recommended next")).toBeVisible();
+});
+
+test("3, 7: completes a real Linux terminal mission and progress survives reload", async ({ page }) => {
+  await onboard(page);
+  await page.getByTestId("continue-learning").click();
+  await expect(page).toHaveURL(/missions\/linux-01-find-your-way/);
+  const input = page.getByTestId("terminal-input");
+  for (const cmd of ["pwd", "ls", "cd ops", "ls", "cd handover", "cat runbook.md", "echo READY > ~/ops/ack.txt"]) {
+    await input.fill(cmd);
+    await input.press("Enter");
+  }
+  await expect(page.getByText("Checks (3/3)")).toBeVisible();
+  await page.getByTestId("mission-complete").click();
+  await expect(page.getByText("Mission complete: explain what you did")).toBeVisible();
+  await page.reload();
+  await page.goto("/#/missions");
+  await expect(page.getByText("Completed").first()).toBeVisible();
+  await page.goto("/#/progress");
+  await expect(page.getByText("Terminal navigation").first()).toBeVisible();
+});
+
+test("4, 6: writes and runs real Python code with assessment feedback", async ({ page }) => {
+  test.setTimeout(180_000);
+  await onboard(page);
+  await page.goto("/#/missions/python-01-uptime-report");
+  await expect(page.getByText(/Python .*ready/)).toBeVisible({ timeout: 120_000 });
+  const editor = page.locator(".cm-content");
+  await editor.click();
+  await page.keyboard.press("Control+A");
+  await page.keyboard.insertText(
+    'def format_uptime(seconds):\n    days = seconds // 86400\n    hours = (seconds % 86400) // 3600\n    minutes = (seconds % 3600) // 60\n    return f"{days}d {hours}h {minutes}m"\n\ndef report(name, seconds):\n    return f"{name}: up {format_uptime(seconds)}"\n\nprint(report("fleet-api-02", 273900))\n',
+  );
+  await page.getByTestId("python-run").click();
+  await expect(page.getByTestId("python-stdout")).toContainText("fleet-api-02: up 3d 4h 5m", { timeout: 60_000 });
+  await page.getByTestId("python-run-tests").click();
+  await expect(page.getByText("Checks (4/4)")).toBeVisible({ timeout: 60_000 });
+  // Error feedback path
+  await editor.click();
+  await page.keyboard.press("Control+A");
+  await page.keyboard.insertText("print(undefined_name)\n");
+  await page.getByTestId("python-run").click();
+  await expect(page.getByTestId("python-error")).toContainText("NameError", { timeout: 60_000 });
+  await expect(page.getByText("About this NameError")).toBeVisible();
+});
+
+test("5: explores Big O interactively", async ({ page }) => {
+  await onboard(page);
+  await page.goto("/#/algorithms");
+  await page.getByLabel("Algorithm").selectOption("binary-search");
+  await page.getByLabel(/Input size n/).fill("16");
+  await page.getByTestId("bigo-run").click();
+  await expect(page.getByTestId("bigo-result")).toBeVisible();
+  await page.getByTestId("bigo-step").click();
+  await expect(page.getByText(/step 2 \//)).toBeVisible();
+});
+
+test("8-17: Interview Command Center, STAR, voice/text answer, Dive Deeper, feedback, stories", async ({ page }) => {
+  await onboard(page);
+  await page.goto("/#/interview");
+  await expect(page.getByRole("heading", { name: "Interview Command Center" })).toBeVisible();
+  await page.goto("/#/interview/principles/ownership");
+  await expect(page.getByText("Official description")).toBeVisible();
+
+  // Story bank
+  await page.goto("/#/interview/stories");
+  await page.getByTestId("story-new").click();
+  await page.getByTestId("story-title").fill("Recovered the capstone demo server");
+  await page.getByTestId("story-situation").fill("The night before our capstone demo the server went down.");
+  await page.getByTestId("story-action").fill("I checked the logs, found the disk was full, moved old logs and restarted the service.");
+  await page.getByTestId("story-save").click();
+  await expect(page.getByTestId("story-list")).toContainText("Recovered the capstone demo server");
+
+  // Practice with Dive Deeper (text fallback)
+  await page.goto("/#/interview/practice?mode=practice");
+  await page.getByTestId("mode-practice").click();
+  await page.getByTestId("start-session").click();
+  await expect(page).toHaveURL(/interview\/practice\/session_/);
+  await page.getByTestId("answer-input").fill("Our system stopped working, and we fixed it. Everything worked out.");
+  await page.getByTestId("answer-submit").click();
+  await expect(page.getByText(/Dive Deeper follow-up/)).toBeVisible();
+  await page.getByTestId("answer-input").fill("I was responsible for checking the server. I checked the logs first and saw database timeout errors, so I traced them to cache expiry.");
+  await page.getByTestId("answer-submit").click();
+  await page.getByTestId("stop-probing").click();
+  await expect(page.getByTestId("feedback")).toBeVisible();
+  await expect(page.getByText("Revised answer outline")).toBeVisible();
+  await expect(page.getByText(/cannot verify/)).toBeVisible();
+
+  // History
+  await page.goto("/#/interview/history");
+  await expect(page.getByTestId("history-list")).toContainText("practice");
+});
+
+test("18-20: progress history and feature status are visible; mobile layout renders", async ({ page }) => {
+  await onboard(page);
+  await page.goto("/#/settings");
+  await expect(page.getByText("About: what works today")).toBeVisible();
+  await expect(page.getByText("Terminal simulator")).toBeVisible();
+  await page.goto("/#/progress");
+  await expect(page.getByRole("heading", { name: "Skill Progress" })).toBeVisible();
+});
+
+test("keyboard navigation: skip link and nav are reachable", async ({ page }, testInfo) => {
+  await onboard(page);
+  const skip = page.getByText("Skip to content");
+  await skip.focus();
+  await expect(skip).toBeFocused();
+  await expect(skip).toBeVisible(); // visually hidden until focused
+  if (testInfo.project.name === "desktop") {
+    await page.keyboard.press("Tab");
+    await expect(page.getByRole("link", { name: "Dashboard" })).toBeFocused();
+  }
+  await page.keyboard.press("Enter");
+  await expect(page.locator("#main")).toBeVisible();
+});
