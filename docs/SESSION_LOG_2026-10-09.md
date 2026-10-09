@@ -4,7 +4,7 @@ Resume-from-here summary of the session that built OpsForge: Engineer in Trainin
 
 ## Outcome in one paragraph
 
-From an empty repository to a deployed, tested web application: a Linux/Python/Go/Big O engineering simulator with 20 verified-completable missions, an incident console on a shared platform simulation, a CI/CD pipeline runner, and an Amazon/AWS interview coach with STAR Academy, all 16 verified Leadership Principles, a story bank, voice input, Dive Deeper probing and transparent scoring. Live at https://paukennick.github.io/AWS-Interview-Training-/ (GitHub Pages, auto-deploys from `main`).
+From an empty repository to a deployed, tested web application: a Linux/Python/Go/Big O engineering simulator with 20 verified-completable missions, an incident console on a shared platform simulation, a CI/CD pipeline runner, and an Amazon/AWS interview coach with STAR Academy, all 16 verified Leadership Principles, a story bank, voice input, Dive Deeper probing and transparent scoring. Live at https://p4k-m4k-lms.github.io/AWS-Interview-Training-/ (GitHub Pages, auto-deploys from `main`).
 
 ## Pull requests (merged into `main` on the owner's word)
 
