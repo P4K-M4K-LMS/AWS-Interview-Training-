@@ -2,7 +2,7 @@
 
 Resume-from-here document for multi-session work. Update on every phase.
 
-**Last updated:** 2026-10-09 · branch `ccr-221527a4-xf3zs7`
+**Last updated:** 2026-10-09 · main (PR #1 merged, site live at https://paukennick.github.io/AWS-Interview-Training-/)
 
 ## Decisions (do not re-litigate without reason)
 
@@ -41,7 +41,7 @@ Legend: **verified** = automated tests pass in CI · **unverified** = implemente
 | Item | Status | Notes |
 |---|---|---|
 | STAR Academy | unverified | content page |
-| 16 Leadership Principles with explanations + ≥1 question each | partial | 3 questions each. **Official wording unverified**: amazon.jobs was unreachable from the build environment; header in `src/content/leadershipPrinciples.ts` and the UI say so. Action: compare against the live page and correct. |
+| 16 Leadership Principles with explanations + ≥1 question each | verified | 3 questions and an interview cue each. Official wording verified by the owner against amazon.jobs on 2026-10-09. |
 | Guided STAR answer builder | unverified | guided mode UI |
 | Personal Story Bank (CRUD, tags, export/import) | verified | e2e create + list |
 | Spoken questions (speech synthesis) | unverified | browser-dependent; cannot run in CI |
@@ -71,12 +71,10 @@ Legend: **verified** = automated tests pass in CI · **unverified** = implemente
 - The terminal is a simulation: no globbing, loops, functions or package managers.
 - The rule-based coach matches linguistic cues; it cannot judge truth or technical correctness and says so in every report.
 - Voice features depend on the browser and were only checked manually in design; CI cannot exercise microphones.
-- Leadership Principle wording needs a manual check against amazon.jobs.
 
 ## Next steps (in order)
 
-1. Verify LP wording against amazon.jobs; mark verified in the file header.
-2. Add retention-check mode to missions (`?retention=1` currently just opens the mission).
-3. Phase 7: incident console + monitoring tied to missions; distributed systems simulations.
-4. More missions per track (see CURRICULUM.md).
-5. Accessibility audit with a screen reader; reduce bundle size by lazy-loading CodeMirror and the interview pages.
+1. Add retention-check mode to missions (`?retention=1` currently just opens the mission).
+2. Phase 7: incident console + monitoring tied to missions; distributed systems simulations.
+3. More missions per track (see CURRICULUM.md).
+4. Accessibility audit with a screen reader; reduce bundle size by lazy-loading CodeMirror and the interview pages.

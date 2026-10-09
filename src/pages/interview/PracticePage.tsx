@@ -475,7 +475,7 @@ function GuidedBuilder({ step, setStep, values, setValues, onSubmit, principleId
     <div className="space-y-3">
       <ProgressBar value={((step + 1) / steps.length) * 100} label={`Step ${step + 1} of ${steps.length}: ${s.title}`} />
       <p className="text-sm">{s.hint}</p>
-      {lp && s.key === "action" && <Callout kind="info" title={`Show ${lp.name}`}>{lp.evidence[0]}</Callout>}
+      {lp && s.key === "action" && <Callout kind="info" title={`Show ${lp.name}`}>{lp.interviewCue}</Callout>}
       <details className="text-xs muted">
         <summary className="cursor-pointer">Show an example (fictional)</summary>
         <p className="mt-1">{s.example}</p>

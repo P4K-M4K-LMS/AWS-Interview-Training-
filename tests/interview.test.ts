@@ -117,6 +117,7 @@ describe("Leadership Principles content", () => {
       expect(p.official.length).toBeGreaterThan(40);
       expect(p.questions.length).toBeGreaterThanOrEqual(1);
       expect(p.followUps.length).toBeGreaterThan(0);
+      expect(p.interviewCue.length).toBeGreaterThan(20);
       expect(p.strongExample.length).toBeGreaterThan(p.weakExample.length);
     }
   });
