@@ -29,7 +29,7 @@ export function MonitoringPage() {
   }, [m, state, config]);
 
   const set = <K extends keyof SimConfig>(k: K, v: SimConfig[K]) => setConfig((c) => ({ ...c, [k]: v }));
-  const incidents = missionsForTrack("devops").concat(missionsForTrack("distributed")).filter((x) => x.kind === "incident");
+  const incidents = missionsForTrack("devops").concat(missionsForTrack("distributed"), missionsForTrack("serverless")).filter((x) => x.kind === "incident");
 
   return (
     <div className="space-y-4">

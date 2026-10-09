@@ -2,9 +2,10 @@ import { describe, expect, it } from "vitest";
 import { applyAction, BASELINE_CONFIG, computeMetrics, createState, failover, generateLogs, step } from "../src/engine/sim/model";
 import { actIncident, answerRootCause, createIncident, incidentChecks, inspect, tickIncident, writePostmortem, type IncidentState } from "../src/engine/sim/incident";
 import { incidentMissions } from "../src/content/missions/incidents";
+import { serverlessIncidents } from "../src/content/missions/serverless";
 import type { IncidentMission } from "../src/domain/types";
 
-const byId = (id: string) => incidentMissions.find((m) => m.id === id)!;
+const byId = (id: string) => [...incidentMissions, ...serverlessIncidents].find((m) => m.id === id)!;
 
 describe("simulation model", () => {
   it("is healthy at baseline and reacts coherently to each lever", () => {
@@ -44,6 +45,49 @@ describe("simulation model", () => {
     expect(failover(createState(BASELINE_CONFIG, 0, 0)).lostWritesSec).toBe(0);
   });
 
+  it("serverless: throttles above rate × duration, warms up after a limit increase, drains poison into a DLQ, duplicates or loses timed-out work", () => {
+    const sl = { durationMs: 120, reservedConcurrency: 10, provisionedConcurrency: 0, poisonRate: 0, maxReceiveCount: 3, dlqEnabled: true, timeoutRate: 0, asyncRetries: 2, handlerIdempotent: true };
+    let s = createState({ ...BASELINE_CONFIG, requestsPerSec: 300, workers: 8, cacheHitRate: 0.9, queueConsumers: 4, serverless: sl }, 0, 0, { warmEnvironments: 10 });
+    let m = computeMetrics(s);
+    expect(m.fn?.neededConcurrency).toBeCloseTo(36, 5);
+    expect(m.fn?.throttleRate).toBeCloseTo(0.72, 1);
+    expect(m.health).toBe("critical");
+    s = { ...s, config: applyAction(s.config, { type: "set-reserved-concurrency", concurrency: 40 }) };
+    m = computeMetrics(s);
+    expect(m.fn?.throttleRate).toBe(0);
+    expect(m.fn?.coldStartShare).toBeGreaterThan(0.5);
+    expect(m.health).not.toBe("healthy");
+    for (let i = 0; i < 14; i++) s = step(s);
+    m = computeMetrics(s);
+    expect(m.fn?.coldStartShare).toBe(0);
+    expect(m.health).toBe("healthy");
+    // Provisioned concurrency pre-warms immediately.
+    const warm = step(createState({ ...BASELINE_CONFIG, requestsPerSec: 300, workers: 8, cacheHitRate: 0.9, queueConsumers: 4, serverless: { ...sl, reservedConcurrency: 40, provisionedConcurrency: 36 } }));
+    expect(computeMetrics(warm).fn?.coldStartShare).toBe(0);
+    // Poison messages: without a DLQ they eat consumer capacity; with one they drain within seconds.
+    let p = createState({ ...BASELINE_CONFIG, requestsPerSec: 150, serverless: { ...sl, durationMs: 100, reservedConcurrency: 50, poisonRate: 0.02, maxReceiveCount: 10, dlqEnabled: false } }, 500, 0, { warmEnvironments: 15, poisonBacklog: 60 });
+    for (let i = 0; i < 10; i++) p = step(p);
+    expect(p.queueDepth).toBeGreaterThan(900);
+    expect(p.dlqDepth).toBe(0);
+    p = { ...p, config: applyAction(p.config, { type: "enable-dlq", maxReceiveCount: 3 }) };
+    for (let i = 0; i < 10; i++) p = step(p);
+    expect(p.poisonBacklog).toBeLessThan(5);
+    expect(p.dlqDepth).toBeGreaterThan(50);
+    // Timed-out async invocations duplicate side effects unless idempotent, or are lost with retries off.
+    let d = createState({ ...BASELINE_CONFIG, requestsPerSec: 100, serverless: { ...sl, durationMs: 100, reservedConcurrency: 50, timeoutRate: 0.15, handlerIdempotent: false } }, 10, 0, { warmEnvironments: 10 });
+    d = step(d);
+    expect(d.duplicateSideEffects).toBeCloseTo(4.5, 5);
+    expect(computeMetrics(d).health).toBe("degraded");
+    const noRetry = step({ ...d, config: applyAction(d.config, { type: "set-async-retries", retries: 0 }) });
+    expect(noRetry.duplicateSideEffects).toBeCloseTo(4.5, 5);
+    expect(noRetry.lostInvocations).toBeCloseTo(4.5, 5);
+    const fixed = step({ ...d, config: applyAction(d.config, { type: "make-handler-idempotent" }) });
+    expect(fixed.duplicateSideEffects).toBeCloseTo(4.5, 5);
+    expect(computeMetrics(fixed).health).toBe("healthy");
+    // Scenarios without a serverless part are untouched.
+    expect(computeMetrics(createState(BASELINE_CONFIG)).fn).toBeUndefined();
+  });
+
   it("produces evidence-bearing logs", () => {
     const s = createState({ ...BASELINE_CONFIG, cacheHitRate: 0.3, requestsPerSec: 200 }, 0);
     const lines = Array.from({ length: 8 }, (_, i) => generateLogs({ ...s, tick: i })).flat().join("\n");
@@ -70,7 +114,7 @@ function solve(mission: IncidentMission, remediate: (s: IncidentState) => Incide
 
 describe("incident missions are solvable and reject symptom-only fixes", () => {
   it("opens with evidence and unmet checks", () => {
-    for (const m of incidentMissions) {
+    for (const m of [...incidentMissions, ...serverlessIncidents]) {
       const s = createIncident(m);
       expect(s.logs.length).toBeGreaterThan(2);
       expect(computeMetrics(s.sim).health).not.toBe("healthy");
@@ -151,6 +195,53 @@ describe("incident missions are solvable and reject symptom-only fixes", () => {
     expect(failedOver.sim.lostWritesSec).toBeGreaterThanOrEqual(45);
     expect(failedOver.logs.join("\n")).toMatch(/data loss/);
     expect(incidentChecks(m, failedOver).find((c) => c.id === "remediate")?.detail).toMatch(/writes are lost/);
+  });
+
+  it("throttled function: raising the limit recovers (after warm-up); workers, shedding, or a limit below rate × duration do not", () => {
+    const m = byId("serverless-01-throttled-function");
+    const good = solve(m, (s) => actIncident(m, s, { type: "set-reserved-concurrency", concurrency: 40 }));
+    expect(good.recovered).toBe(true);
+    expect(good.sim.tick).toBeGreaterThan(15);
+    expect(incidentChecks(m, good).every((c) => c.passed)).toBe(true);
+    const warm = solve(m, (s) => actIncident(m, actIncident(m, s, { type: "set-reserved-concurrency", concurrency: 40 }), { type: "set-provisioned-concurrency", concurrency: 36 }));
+    expect(warm.recovered).toBe(true);
+    expect(warm.sim.tick).toBeLessThan(good.sim.tick);
+    const workers = solve(m, (s) => actIncident(m, s, { type: "scale-workers", workers: 16 }), 60);
+    expect(workers.recovered).toBe(false);
+    expect(incidentChecks(m, workers).find((c) => c.id === "remediate")?.detail).toMatch(/do not change the function's limit/);
+    const low = solve(m, (s) => actIncident(m, s, { type: "set-reserved-concurrency", concurrency: 20 }), 60);
+    expect(low.recovered).toBe(false);
+    const shed = solve(m, (s) => actIncident(m, s, { type: "set-traffic", requestsPerSec: 80 }), 60);
+    expect(shed.recovered).toBe(false);
+    expect(incidentChecks(m, shed).find((c) => c.id === "remediate")?.detail).toMatch(/legitimate partner traffic/);
+  });
+
+  it("poison messages: DLQ with a sane receive count plus consumers recovers; consumers alone or receive count 1 do not", () => {
+    const m = byId("serverless-02-poison-messages");
+    const good = solve(m, (s) => actIncident(m, actIncident(m, s, { type: "enable-dlq", maxReceiveCount: 3 }), { type: "set-consumers", consumers: 6 }));
+    expect(good.recovered).toBe(true);
+    expect(good.sim.dlqDepth).toBeGreaterThan(50);
+    expect(incidentChecks(m, good).every((c) => c.passed)).toBe(true);
+    const consumersOnly = solve(m, (s) => actIncident(m, s, { type: "set-consumers", consumers: 8 }), 60);
+    expect(consumersOnly.recovered).toBe(false);
+    expect(incidentChecks(m, consumersOnly).find((c) => c.id === "remediate")?.detail).toMatch(/hide the symptom/);
+    const one = solve(m, (s) => actIncident(m, actIncident(m, s, { type: "enable-dlq", maxReceiveCount: 1 }), { type: "set-consumers", consumers: 6 }), 60);
+    expect(one.recovered).toBe(false);
+    expect(incidentChecks(m, one).find((c) => c.id === "remediate")?.detail).toMatch(/transient failure/);
+  });
+
+  it("duplicate charges: the idempotent handler recovers; retries off or a longer timeout alone do not", () => {
+    const m = byId("serverless-03-duplicate-charges");
+    const good = solve(m, (s) => actIncident(m, actIncident(m, s, { type: "make-handler-idempotent" }), { type: "raise-function-timeout" }));
+    expect(good.recovered).toBe(true);
+    expect(incidentChecks(m, good).every((c) => c.passed)).toBe(true);
+    const noRetry = solve(m, (s) => actIncident(m, s, { type: "set-async-retries", retries: 0 }), 60);
+    expect(noRetry.recovered).toBe(false);
+    expect(noRetry.sim.lostInvocations).toBeGreaterThan(0);
+    expect(incidentChecks(m, noRetry).find((c) => c.id === "remediate")?.detail).toMatch(/lost/);
+    const timeoutOnly = solve(m, (s) => actIncident(m, s, { type: "raise-function-timeout" }), 60);
+    expect(timeoutOnly.recovered).toBe(false);
+    expect(incidentChecks(m, timeoutOnly).find((c) => c.id === "remediate")?.detail).toMatch(/still duplicates/);
   });
 
   it("ignores actions outside the runbook and resets the recovery timer on every action", () => {

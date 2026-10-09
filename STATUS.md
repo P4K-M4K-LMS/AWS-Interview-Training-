@@ -26,7 +26,7 @@ Legend: **verified** = automated tests pass in CI · **unverified** = implemente
 | Learner profile + onboarding assessment | verified | e2e; seeds max 20 mastery |
 | Persistent progress, save/resume/reset, export/import | verified | reload check in e2e; Dexie |
 | Five Linux missions (navigation, log detective, permissions/services, disk full, runaway process) | verified | `tests/missions.test.ts` executes each guided solution |
-| Four Python missions (uptime report, log parser, config validator, CSV→JSON report) | verified | reference solutions pass real Pyodide tests; starter code fails |
+| Five Python missions (uptime report, log parser, config validator, CSV→JSON report, idempotent event handler) | verified | reference solutions pass real Pyodide tests; starter code fails |
 | Three Big O missions (growth, search/sort, hash tables vs lists) | verified | content checks; visualizer e2e |
 | Two security investigations (SSH brute force, cron persistence / reverse shell) | verified | guided solutions executed; containment checks inspect processes, files and the socket table |
 | One networking/security mission | verified | SSH brute-force investigation |
@@ -62,7 +62,7 @@ Legend: **verified** = automated tests pass in CI · **unverified** = implemente
 | Item | Status |
 |---|---|
 | Monitoring dashboard (shared simulation engine) | verified (unit tests) |
-| Incident management console + 4 incident missions (cache stampede, traffic surge, dead consumers, replication lag) | verified (unit tests prove solvable and reject symptom-only fixes, including failover from a lagging replica; e2e on incidents 1 and 4) |
+| Incident management console + 7 incident missions (cache stampede, traffic surge, dead consumers, replication lag, throttled function, poison messages, duplicate charges) | verified (unit tests prove solvable and reject symptom-only fixes, including failover from a lagging replica; e2e on incidents 1 and 4) |
 | System architecture visualizer with live health | verified (e2e) |
 | CI/CD failure-mode missions: flaky test, bad release rollback, secret wiring (simulated pipeline runner, mission tools) | verified (unit tests prove solvable and reject shortcuts; e2e on the flaky-test mission) |
 | Go Laboratory: Yaegi-in-WebAssembly runtime, worker with timeout, free-play page | verified (Node runner tests + browser e2e) |
@@ -71,7 +71,8 @@ Legend: **verified** = automated tests pass in CI · **unverified** = implemente
 | Go race-detector service (optional, local): `npm run race-server`, panel in the Go Laboratory and Go missions | verified (unit tests run the real detector on the data-race mission; e2e covers the UI states) |
 | Remaining track content (see docs/CURRICULUM.md) | planned |
 | Target roles: two postings quoted as provided, role picker at onboarding and in Settings, qualification gap map on Learning Paths, weakest-qualification panel on the Dashboard | verified (unit tests on the mapping and the gap engine; e2e picks the serverless role and reads its map) |
-| Serverless track, design-exercise mission type, Agile/Scrum lesson (for the SDE II Serverless role) | planned |
+| Serverless track: simulated function platform on the shared engine (concurrency limit / throttling, cold starts / provisioned concurrency, poison messages / DLQ, retries / idempotency); 3 incidents + 1 Python handler mission | verified (unit tests prove each solvable and reject the symptom-only fixes; e2e on the throttled-function incident) |
+| Design-exercise mission type, Agile/Scrum lesson, role-specific interview questions (for the SDE II Serverless role) | planned |
 | Full accessibility audit | planned (skip link, labels, keyboard nav exist) |
 
 ## Known limitations
@@ -85,6 +86,6 @@ Legend: **verified** = automated tests pass in CI · **unverified** = implemente
 
 ## Next steps (in order)
 
-1. For the SDE II Serverless role: a simulated serverless track on the shared engine, then a design-exercise mission type, then the Agile/Scrum lesson and role-specific interview questions.
+1. For the SDE II Serverless role: a design-exercise mission type, then the Agile/Scrum lesson and role-specific interview questions.
 2. More missions per track (see the planned list in CURRICULUM.md: cron/backup script, regex extractor, API client, recursion, BFS, firewall triage, web-log hunt).
 3. Accessibility audit with a screen reader; reduce bundle size by lazy-loading CodeMirror and the interview pages.
