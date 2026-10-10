@@ -1,0 +1,1511 @@
+{
+  "courseId": "da0-002",
+  "generated": {
+    "scriptVersion": 1,
+    "promptVersion": 2,
+    "generatedAt": "2026-10-10T08:49:40.737Z",
+    "models": [
+      "claude-opus-5-5"
+    ]
+  },
+  "lessons": [
+    {
+      "objectiveId": "da0-002:1:1",
+      "sourceHash": "91c95f98c532",
+      "promptVersion": 2,
+      "model": "claude-opus-5-5",
+      "generatedAt": "2026-10-10T08:46:46.651Z",
+      "plain": "Data comes in different shapes, and each shape has a natural home. Tidy rows and columns, like a spreadsheet, are structured data and usually live in a relational database. Looser records, like a contact card where each person has different fields, are semi-structured and suit a non-relational database. Photos, audio and free text are unstructured. Inside every column, each value also has a data type, such as text, whole number or date, which decides what you can do with it. Think of a kitchen: dry goods go in labelled jars, leftovers in flexible tubs, and the jar's label tells you how to use what's inside.",
+      "guessPrompt": "A store keeps customer orders in neat tables, product reviews as free-form paragraphs, and app settings as nested name-and-value records. Which of these three would you call structured, semi-structured and unstructured, and why?",
+      "teach": "Data structure describes how organized data is. Structured data follows a fixed schema, a predefined set of columns with set types, like a table. Semi-structured data has labels but a flexible layout, such as JSON (JavaScript Object Notation, nested name-value pairs) or XML (Extensible Markup Language, data wrapped in tags). Unstructured data has no built-in model: images, video, emails, PDFs.\n\nDatabase types follow from this. A relational database (also called SQL, after Structured Query Language) stores tables linked by keys: a primary key uniquely identifies a row, and a foreign key points to another table's row. A non-relational (NoSQL) database drops the rigid table. Common kinds: document stores (whole JSON-like records), key-value stores (a lookup key returns a value, fast for caching), column-family or columnar stores (data grouped by column, fast for analytics across millions of rows) and graph databases (nodes and relationships, good for networks such as friends or routes).\n\nFile extensions hint at structure: .csv (comma-separated values) and .xlsx (Excel workbook) are tabular; .json and .xml are semi-structured; .parquet is a compressed columnar format for analytics; .txt, .jpg and .mp4 are typically unstructured.\n\nData types say what a value is: string (text), integer (whole number), float or decimal (numbers with fractions), boolean (true/false), date/datetime, and null (missing value).\n\nWorked example: you receive orders.csv. Step 1, the extension says tabular, so structured. Step 2, inspect columns: order_id is integer, customer is string, total is decimal, shipped is boolean, order_date is date. Step 3, it fits a relational table with order_id as the primary key.\n\nCommon mistake: storing ZIP codes or phone numbers as integers. A ZIP like 02134 loses its leading zero and becomes 2134. Nobody does arithmetic on a ZIP, so it should be a string. In a running system, wrong types break joins, sorting and filters, and dates stored as text sort alphabetically instead of chronologically, which silently corrupts reports.",
+      "questions": [
+        {
+          "id": "da0-002:1:1:q1",
+          "role": "fade",
+          "prompt": "A community theatre exports its show records as shows.json. Each record holds nested name-value pairs, and some records include fields that others lack (a matinee show has \"matinee_price\", a touring show has \"venue_city\"). The team wants to store and fetch each show as one whole record. Step 1: the .json extension signals semi-structured data, meaning it has labels but a flexible layout. Step 2: inspect the fields. show_id is integer, title is string, ticket_price is decimal, sold_out is boolean, and opening_night is date. Step 3: ? Which choice correctly completes Step 3?",
+          "choices": [
+            "Choose a document store, because it keeps whole JSON-like records even when their fields vary",
+            "Choose a relational database, because every record must fit the same fixed columns before it can be stored",
+            "Choose a columnar store, because grouping by column is required for any JSON file",
+            "Choose a graph database, because each show is a node that must link to other shows"
+          ],
+          "correctIndex": 0,
+          "why": "A document store holds whole JSON-like records with a flexible layout, which fits records whose fields differ from one to the next."
+        },
+        {
+          "id": "da0-002:1:1:q2",
+          "role": "solo",
+          "prompt": "A regional bus company wants to model which stations connect to which, and it needs to quickly find every route between two stations through intermediate stops. Which database type best fits this need?",
+          "choices": [
+            "Graph database, which stores nodes and the relationships between them",
+            "Relational database, which links tables through primary and foreign keys",
+            "Key-value store, which returns one value for each lookup key",
+            "Columnar store, which groups data by column for analytics"
+          ],
+          "correctIndex": 0,
+          "why": "Graph databases model nodes (stations) and relationships (connections), and they are built for network-style questions such as routes."
+        },
+        {
+          "id": "da0-002:1:1:q3",
+          "role": "solo",
+          "prompt": "An analyst at a clinic sorts an appointment column that holds values like \"11/02/2022\" and \"03/15/2023\". After sorting, 03/15/2023 appears before 11/02/2022, even though it is the later date. What is the most likely cause?",
+          "choices": [
+            "The column contains null values, which reverse the sort order",
+            "The dates are stored as booleans, so only true and false are compared",
+            "The dates are stored as a date type, which always sorts by month first",
+            "The dates are stored as strings, so they sort alphabetically instead of chronologically"
+          ],
+          "correctIndex": 3,
+          "why": "Dates stored as text are compared character by character, which is an alphabetical order rather than a time order, and this silently produces wrong report results."
+        },
+        {
+          "id": "da0-002:1:1:q4",
+          "role": "solo",
+          "prompt": "A grocery chain's analytics team keeps 300 million sales rows in a compressed format that groups data by column, so that totals across millions of rows run fast. Which file extension is that data most likely saved with?",
+          "choices": [
+            ".csv, plain comma-separated values",
+            ".txt, typically unstructured text",
+            ".xml, data wrapped in tags",
+            ".parquet, a compressed columnar format"
+          ],
+          "correctIndex": 3,
+          "why": ".parquet is the compressed columnar file format designed for analytics across very large numbers of rows."
+        }
+      ],
+      "explainPrompt": "Explain to a teammate how you would decide whether a new dataset belongs in a relational database or a non-relational one, and how you would pick column data types. Name at least one tradeoff or limit.",
+      "modelAnswer": "First I look at the structure. If every record has the same fields, like orders in a .csv, it is structured, so a relational database fits: tables, a primary key per row, and foreign keys to link related tables. If records vary or nest, like .json app events, it is semi-structured, so a document store is easier. For simple fast lookups I'd use key-value; for relationships like routes, a graph database; for big analytics scans, a columnar store or .parquet files. The tradeoff: relational enforces consistency through a fixed schema but is rigid to change, while NoSQL is flexible but lets messy data in. For types, I pick by meaning, not appearance: integers and decimals for things I calculate with, dates as real date types so they sort correctly, booleans for yes/no, and strings for identifiers like ZIP codes so leading zeros survive.",
+      "rubricPoints": [
+        "Distinguishes structured, semi-structured and unstructured data with an example of each.",
+        "Matches relational databases to fixed-schema tabular data and names at least one NoSQL type and its use.",
+        "Uses file extensions such as .csv, .json or .parquet as clues to structure.",
+        "Chooses data types by meaning, such as identifiers as strings and dates as date types.",
+        "Names a tradeoff, such as schema rigidity versus flexibility or the cost of a wrong type."
+      ],
+      "suggested": {
+        "modality": "do-existing",
+        "missionId": "python-04-fleet-report",
+        "rationale": "Converting a CSV into JSON forces the learner to handle tabular versus nested structure, file formats and per-field data types hands-on."
+      }
+    },
+    {
+      "objectiveId": "da0-002:1:2",
+      "sourceHash": "ba652c1aee74",
+      "promptVersion": 2,
+      "model": "claude-opus-5-5",
+      "generatedAt": "2026-10-10T08:46:47.732Z",
+      "plain": "A data source is simply the place your data comes from before you analyse it. Think of cooking: ingredients can come from your own fridge, a delivery service, a farmers' market, a recipe card, a kitchen diary or a shared pantry. Data works the same way. It might sit in a database, arrive through an API (a service that hands out data on request), be collected from websites, live in files like spreadsheets, be recorded in logs that systems write automatically, or be gathered into a central repository. Knowing the source tells you how fresh, trustworthy and easy to reach the data is.",
+      "guessPrompt": "An analyst needs to know exactly when a company's website started showing errors last night. Which source would you check first: the sales spreadsheet, the customer database, or the web server's log? Why?",
+      "teach": "A data source is the origin you pull data from. Six common kinds appear on the exam.\n\nA database is an organised store you ask for data with a query, which is a precise request such as \"all orders from March.\" It is usually the live system of record. An API (application programming interface) is a doorway another system offers. You send a request to an endpoint, meaning a specific address, and get structured data back. APIs often enforce a rate limit, a cap on requests per minute. Website data is collected from public pages, often by web scraping, which means a program reads a page's HTML (the code behind the page) and pulls out values. A file is a saved snapshot such as a CSV (comma-separated values, a plain table) or JSON (nested labelled values). A log is a time-ordered record a system writes on its own, with each line carrying a timestamp. A repository is a central collection point, such as a data warehouse that gathers cleaned data from many systems, or a public open-data portal.\n\nWorked example: online sales dropped on Tuesday. First, query the orders database for Tuesday's order counts. Second, call the payment provider's API to check failed payments. Third, review a scraped table of competitor prices. Fourth, open the marketing team's CSV listing which campaigns ran. Fifth, read the web server log and find errors timestamped from 14:00. Finally, compare against last year's Tuesdays in the warehouse repository. Each source answers a different part of the question.\n\nA common mistake is treating a file as live. A CSV exported last week is frozen at that moment, while the database keeps changing. In a running business, reports built on stale files show wrong numbers, and people make decisions on data that no longer matches reality. Always note when each source was captured.",
+      "questions": [
+        {
+          "id": "da0-002:1:2:q1",
+          "role": "fade",
+          "prompt": "A city library wants to know why e-book loans fell in October. The analyst works through the sources step by step. Step 1: query the loans database for October loan counts by week (a database, the live system of record). Step 2: send a request to the publisher's catalogue endpoint to see which titles were withdrawn (an API). Step 3: open a spreadsheet of library events exported in July, noting that it is frozen at July and may be missing later events (a file). Step 4 is missing. The library's e-reader app server automatically writes one line, with a timestamp, every time a book fails to open. Which choice correctly names this source and how the analyst should use it in Step 4?",
+          "choices": [
+            "Treat it as a log and filter its lines by October timestamps to find bursts of failures.",
+            "Treat it as a file, so it cannot show anything about October failures.",
+            "Treat it as a repository and compare its cleaned totals against previous Octobers.",
+            "Treat it as an API and send it a query asking for October's loan counts."
+          ],
+          "correctIndex": 0,
+          "why": "A record that a system writes on its own, line by line with timestamps, is a log, and its timestamps let the analyst pinpoint when the failures happened."
+        },
+        {
+          "id": "da0-002:1:2:q2",
+          "role": "solo",
+          "prompt": "An analyst's script requests bus arrival data from a transit agency's API. It works for the first 60 requests each minute, and then the agency refuses further requests until the next minute begins. What is the most likely explanation?",
+          "choices": [
+            "The API enforces a rate limit, a cap on how many requests are allowed per minute.",
+            "The transit agency's database has lost its timestamps.",
+            "The script is scraping HTML, which only works once per minute.",
+            "The script is reading a stale CSV file instead of live data."
+          ],
+          "correctIndex": 0,
+          "why": "A cap on the number of requests allowed per minute is the definition of a rate limit, which APIs often enforce."
+        },
+        {
+          "id": "da0-002:1:2:q3",
+          "role": "solo",
+          "prompt": "A housing nonprofit wants rental prices from several public property-listing websites. The sites offer no download and no API, so the team writes a program that reads each listing page's HTML and pulls out the price and the number of bedrooms. Which data source and collection method is this?",
+          "choices": [
+            "A repository, collected by querying a data warehouse",
+            "Website data, collected by web scraping",
+            "A file, collected by opening a saved JSON snapshot",
+            "A log, collected by reading time-ordered system records"
+          ],
+          "correctIndex": 1,
+          "why": "Reading a public page's HTML with a program and extracting values from it is web scraping, which is how website data is collected."
+        },
+        {
+          "id": "da0-002:1:2:q4",
+          "role": "solo",
+          "prompt": "A gym chain's weekly dashboard shows 4,200 active members. The live membership database currently shows 3,950. The dashboard is built on a CSV of members that was exported three weeks ago. What is the best explanation, and what should the team do?",
+          "choices": [
+            "The CSV is a log that keeps updating on its own, so the gap will close automatically.",
+            "The CSV is a frozen snapshot that is now stale; rebuild from the database or a fresh export, and record when each source was captured.",
+            "The database must be wrong, because files are more reliable than live systems, so trust the CSV.",
+            "The difference comes from an API rate limit, so the team should request members more slowly."
+          ],
+          "correctIndex": 1,
+          "why": "An exported file stays frozen at the moment it was exported while the database keeps changing, so a three-week-old CSV gives wrong numbers until it is refreshed and its capture date is noted."
+        }
+      ],
+      "explainPrompt": "Explain to a teammate the difference between pulling data from an API, scraping a website and using an exported file, including one limit or tradeoff of each.",
+      "modelAnswer": "All three get us data from outside our own analysis, but they behave differently. An API is a doorway the other system deliberately offers: we send a request to an endpoint and get structured data back, usually current. The tradeoff is that the provider controls it, so rate limits cap how much we can ask for and the format can change. Scraping a website means a program reads the page's HTML and pulls values out. It works when no API exists, but it is fragile, because a page redesign breaks it, and the data may not be permitted or reliable. An exported file like a CSV is simple and easy to share, but it is a frozen snapshot. If we forget when it was exported, our report can quietly use stale numbers. So I would pick the API for fresh data, scraping only as a last resort, and files for fixed, dated snapshots.",
+      "rubricPoints": [
+        "Defines an API as a requested, structured doorway that another system provides.",
+        "Names a limit of APIs such as rate limits or provider-controlled changes.",
+        "Describes scraping as extracting values from a page's HTML and notes its fragility or reliability concerns.",
+        "Identifies a file as a snapshot that can go stale.",
+        "Matches a source choice to a need such as freshness or simplicity."
+      ],
+      "suggested": {
+        "modality": "combo",
+        "rationale": "The exam skill is naming the right source for a given situation, so reasoning through realistic scenarios that mix databases, APIs, scraped pages, files, logs and repositories teaches it best."
+      }
+    },
+    {
+      "objectiveId": "da0-002:1:3",
+      "sourceHash": "3f1b6cef4b5c",
+      "promptVersion": 2,
+      "model": "claude-opus-5-5",
+      "generatedAt": "2026-10-10T08:46:44.964Z",
+      "plain": "Infrastructure is the equipment and setup that data lives on and runs through. On-premise means your organization owns the servers in its own building. Cloud means you rent computing and storage from a provider over the internet and pay for what you use. Storage is where the data rests, and it comes in a few shapes: raw disk blocks, shared folders of files, or a giant bucket of objects. Containerization packs an application with everything it needs so it runs the same anywhere. Think of housing: owning a house (on-premise), renting a flat (cloud), the cupboards you choose (storage), and a packed moving box (container).",
+      "guessPrompt": "A small analytics team must start a project next week, has no server room, and expects data volume to triple over the year. Would you guess they should buy their own servers or rent capacity from a cloud provider, and why?",
+      "teach": "On-premise infrastructure is hardware an organization buys, houses and maintains itself. It gives full control and keeps data physically in-house, which can help with strict rules about where data must stay, but it needs upfront spending and staff, and growing it means buying more machines. Cloud infrastructure is computing and storage rented from a provider and paid for by usage. It scales up or down quickly. A public cloud is shared by many customers; a private cloud is cloud-style infrastructure dedicated to one organization; a hybrid setup mixes on-premise and cloud.\n\nStorage has three main types. Block storage splits data into fixed-size chunks presented as a raw disk, which is fast and suits databases. File storage organizes data in folders and files that many users share over a network, like a network drive. Object storage keeps each item as an object with an ID and descriptive tags (metadata) in a flat bucket; it is cheap and almost endlessly scalable, so it suits large raw datasets, backups and images.\n\nContainerization bundles an application with its libraries and settings into a container, a lightweight isolated package that shares the host operating system. Docker is a common tool for building and running containers; Kubernetes is an orchestrator, software that starts, restarts and spreads many containers across machines.\n\nWorked example: a retailer stores ten years of sales CSV files and product photos. Step one, the volume is large and rarely changed, so object storage fits. Step two, demand spikes at year-end, so cloud elasticity helps. Step three, the cleaning script is put in a container so it runs identically on a laptop and in the cloud.\n\nCommon mistake: treating a container as a full virtual machine. A virtual machine carries its own complete operating system; a container does not, so it starts faster and is smaller. Choosing the wrong storage type in a running system means slow queries or runaway costs.",
+      "questions": [
+        {
+          "id": "da0-002:1:3:q1",
+          "role": "fade",
+          "prompt": "A regional water utility is planning where its data and tools will live. Step one: meter readings must legally stay on equipment the utility controls, and it already owns a server room, so it keeps that data on-premise. Step two: it also holds 40 TB of pipe-inspection video that is recorded once and rarely watched again, and it wants the cheapest storage that can keep growing. Which storage type fits this video archive? Step three: its leak-detection script is packaged in a container so it runs the same way on an analyst's laptop and on the utility's servers. Which choice completes step two?",
+          "choices": [
+            "File storage, because it organizes the videos into shared folders that staff open like a network drive",
+            "Object storage, because it keeps each video as an item with an ID and metadata in a flat bucket that is cheap and scales almost endlessly",
+            "A virtual machine, because it carries its own complete operating system to hold the videos",
+            "Block storage, because it splits data into fixed-size chunks on a raw disk and gives the fastest access"
+          ],
+          "correctIndex": 1,
+          "why": "Large, rarely changed items where low cost and near-unlimited growth matter are exactly what object storage is suited for."
+        },
+        {
+          "id": "da0-002:1:3:q2",
+          "role": "solo",
+          "prompt": "A logistics company runs hundreds of containers across many machines. Which tool type, such as Kubernetes, handles starting them, restarting them when they fail, and spreading them across those machines?",
+          "choices": [
+            "A build tool, such as Docker, used mainly to package a single application into a container",
+            "A virtual machine that gives each container its own complete operating system",
+            "A storage service that saves each container as an object with an ID and metadata",
+            "An orchestrator, which is software that starts, restarts and spreads many containers across machines"
+          ],
+          "correctIndex": 3,
+          "why": "Kubernetes is an orchestrator, software that manages many containers across machines, while Docker is mainly used to build and run them."
+        },
+        {
+          "id": "da0-002:1:3:q3",
+          "role": "solo",
+          "prompt": "An insurance firm runs a claims database that constantly reads and writes small records and needs fast performance. Which storage type best suits this database?",
+          "choices": [
+            "Any type, because the storage choice has no effect on query speed",
+            "Block storage, which presents data as fixed-size chunks on a raw disk",
+            "Object storage, which keeps items in a flat bucket with IDs and tags",
+            "File storage, which shares folders and files over a network"
+          ],
+          "correctIndex": 1,
+          "why": "Block storage is fast and suits databases, and picking the wrong type in a running system leads to slow queries or runaway costs."
+        },
+        {
+          "id": "da0-002:1:3:q4",
+          "role": "solo",
+          "prompt": "A new engineer plans server capacity assuming every container will boot and carry its own complete operating system, just like a virtual machine. What is wrong with this assumption?",
+          "choices": [
+            "Nothing is wrong, because containers and virtual machines are two names for the same thing",
+            "Containers carry two operating systems, so they need even more capacity than virtual machines",
+            "Containers need no host at all, because they run directly on the storage bucket",
+            "Containers share the host operating system, so they are smaller and start faster than virtual machines"
+          ],
+          "correctIndex": 3,
+          "why": "A container bundles only the application with its libraries and settings and shares the host operating system, unlike a virtual machine that carries a full one."
+        }
+      ],
+      "explainPrompt": "Explain to a teammate how you would choose between on-premise and cloud, which storage type you would pick for a large archive of raw files, and why you might containerize the processing script. Name at least one tradeoff.",
+      "modelAnswer": "On-premise means we own and run the servers ourselves: full control and data stays in our building, but it costs a lot upfront and scaling means buying hardware. Cloud means renting capacity from a provider and paying for use, so we can scale quickly, but costs keep running and we depend on the provider and its location rules. For a big archive of raw files that rarely change, I would pick object storage, because it stores each file as an object with metadata in a flat bucket and is cheap and scalable; the tradeoff is it is slower for constant small updates, where block storage serves a database better. I would containerize the processing script so it carries its own libraries and runs the same on my laptop and in the cloud. A container shares the host operating system, so it is lighter than a virtual machine but gives less isolation.",
+      "rubricPoints": [
+        "Defines on-premise as owned and self-managed and cloud as rented, usage-priced capacity.",
+        "States a tradeoff such as control and data location versus elasticity and ongoing cost.",
+        "Distinguishes block, file and object storage and matches object storage to large raw archives.",
+        "Explains a container as an app bundled with its dependencies that runs consistently anywhere.",
+        "Notes a container shares the host operating system, unlike a virtual machine."
+      ],
+      "suggested": {
+        "modality": "combo",
+        "rationale": "The exam tests matching a described scenario to the right deployment, storage type and container tooling, so reasoning through short situations builds that skill best."
+      }
+    },
+    {
+      "objectiveId": "da0-002:1:4",
+      "sourceHash": "51c19d14a4fd",
+      "promptVersion": 2,
+      "model": "claude-opus-5-5",
+      "generatedAt": "2026-10-10T08:46:57.170Z",
+      "plain": "Data tools are the software analysts use to turn raw data into answers. They fall into three rough families. Coding environments are places where you write and run code, such as Python or R, to clean and analyze data. BI (business intelligence) software lets you connect to data and build dashboards and reports, mostly by clicking and dragging. Analysis platforms are larger systems, from spreadsheets to cloud workspaces, that hold data and run analysis in one place. Think of a kitchen: the coding environment is your knife and cutting board, BI software is the plated dish served to guests, and the platform is the whole kitchen.",
+      "guessPrompt": "A sales manager with no programming skills wants a chart of weekly revenue that refreshes on its own every Monday and can be shared with the whole team. Would you reach for a code notebook, a dashboard tool, or a spreadsheet, and why?",
+      "teach": "A coding environment is software where you write, run and debug code. An IDE (integrated development environment), such as VS Code or RStudio, combines an editor, a way to run code, and error checking in one window. A notebook, such as Jupyter, mixes runnable code cells with text and charts in a single document. That makes notebooks good for exploring data and showing your reasoning step by step. Coding gives you the most flexibility and repeatability, because the steps are written down and can be rerun exactly.\n\nBI software, such as Power BI, Tableau, Looker or Qlik, connects to data sources and builds interactive dashboards. A dashboard is a page of charts that viewers can filter. BI tools are built for sharing, scheduled refreshes and audiences who do not write code. The tradeoff is that complex custom logic is harder to build in them than in code.\n\nAnalysis platforms cover the rest. Spreadsheets like Excel are quick and familiar but struggle with very large data and are easy to break by hand. Statistical packages like SAS or SPSS focus on formal statistics. Cloud workspaces like Databricks combine storage, computing power and notebooks so that very large datasets can be processed.\n\nHere is a worked example. A team has 40 million rows of sensor readings. First, the size rules out a spreadsheet. Second, an analyst cleans the data and models it in Python inside a notebook, running on a cloud platform that can handle the volume. Third, the summarized results feed a BI dashboard for managers. That is three tools, each picked for one job.\n\nA common mistake is treating one tool as the answer to everything, for example building a business-critical report in a hand-edited spreadsheet. Nobody can trace the steps, one bad paste silently corrupts the numbers, and the report breaks as the data grows. To match a tool to a task, look at the data size, the skills of the person using it, and whether the result must be shared and refreshed.",
+      "questions": [
+        {
+          "id": "da0-002:1:4:q1",
+          "role": "fade",
+          "prompt": "A city transport office surveyed 2,500 bus riders. Step 1: The data is small, so size does not rule out any tool. Step 2: An analyst cleans the responses and explores them in a Jupyter notebook, a document that mixes runnable code cells with text and charts, so the reasoning is recorded and can be rerun. Step 3: [missing] The results must reach city council members who do not write code, and they need the figures updated automatically every month when new surveys arrive. Which choice best completes Step 3?",
+          "choices": [
+            "Feed the summarized results into a BI tool such as Power BI and publish a filterable dashboard with a scheduled monthly refresh.",
+            "Rerun the analysis in a statistical package such as SPSS and print its output tables for the council.",
+            "Email the notebook file to each council member so they can rerun the code cells each month.",
+            "Paste the summary figures into a shared spreadsheet and update the cells by hand each month."
+          ],
+          "correctIndex": 0,
+          "why": "BI software is built for sharing, scheduled refreshes and viewers who do not write code, which is exactly what the council needs."
+        },
+        {
+          "id": "da0-002:1:4:q2",
+          "role": "solo",
+          "prompt": "An analyst wants one document that holds runnable code, written explanations and charts side by side, so a colleague can follow the exploration step by step. Which kind of tool fits this description?",
+          "choices": [
+            "A notebook such as Jupyter",
+            "A spreadsheet such as Excel",
+            "An IDE such as VS Code, which combines an editor, a way to run code and error checking",
+            "A BI dashboard such as Tableau"
+          ],
+          "correctIndex": 0,
+          "why": "A notebook mixes runnable code cells with text and charts in a single document, which suits exploring data and showing reasoning step by step."
+        },
+        {
+          "id": "da0-002:1:4:q3",
+          "role": "solo",
+          "prompt": "A logistics company stores 90 million delivery-scan records and wants to clean and process all of them with code. Which tool fits this processing job best?",
+          "choices": [
+            "Excel, because it is quick and familiar to most staff",
+            "Looker, because it builds interactive dashboards",
+            "SPSS, because it focuses on formal statistics",
+            "A cloud workspace such as Databricks, which combines storage, computing power and notebooks"
+          ],
+          "correctIndex": 3,
+          "why": "A cloud workspace combines storage, computing power and notebooks so that very large datasets can be processed, while a spreadsheet struggles with that size."
+        },
+        {
+          "id": "da0-002:1:4:q4",
+          "role": "solo",
+          "prompt": "A charity's finance team builds its monthly donor-income report for the board in a spreadsheet that staff edit and paste into by hand. What is the main risk of this setup?",
+          "choices": [
+            "The board will need to learn a programming language to read the report.",
+            "The spreadsheet will automatically refresh too often and overload the data source.",
+            "The report cannot contain any charts, because spreadsheets only hold numbers.",
+            "Nobody can trace the steps, one bad paste can silently corrupt the numbers, and the report may break as the data grows."
+          ],
+          "correctIndex": 3,
+          "why": "Hand-edited spreadsheets have no recorded, repeatable steps, so errors go unnoticed and the report becomes fragile as data volume increases."
+        }
+      ],
+      "explainPrompt": "Explain to a teammate how you would choose between a coding environment, a BI tool and a spreadsheet for a new analysis request, and name one tradeoff of each.",
+      "modelAnswer": "I start with three questions: how big is the data, who will use the result, and does it need to be shared and refreshed? A coding environment, like a Jupyter notebook or an IDE such as VS Code, is best for cleaning and modeling data with Python or R. It is flexible and repeatable because every step is written down, but it needs coding skill, and non-technical people can't easily use the output. A BI tool like Power BI or Tableau is best for interactive dashboards that refresh on a schedule and get shared widely. The tradeoff is that complex custom logic is awkward to build there. A spreadsheet is fastest for small, one-off questions. However, it slows down or fails with large data and invites manual errors. For large data I'd use a cloud platform. Often the right answer is a chain: code to prepare the data, then BI to present it.",
+      "rubricPoints": [
+        "Defines a coding environment, such as an IDE or notebook, as a place to write and run code for analysis.",
+        "Defines BI software as a tool for shareable, refreshable dashboards aimed at non-coders.",
+        "Notes that spreadsheets are quick but limited for large data and prone to manual error.",
+        "Chooses based on data size, user skills and sharing or refresh needs.",
+        "Names at least one real tradeoff, such as flexibility versus ease of use."
+      ],
+      "suggested": {
+        "modality": "combo",
+        "rationale": "The exam tests this as picking the right tool for a described situation, so reasoning through scenario questions after reading the definitions builds the most useful skill."
+      }
+    },
+    {
+      "objectiveId": "da0-002:1:5",
+      "sourceHash": "7765cb422691",
+      "promptVersion": 2,
+      "model": "claude-opus-5-5",
+      "generatedAt": "2026-10-10T08:46:51.180Z",
+      "plain": "Artificial intelligence (AI) is software that handles tasks we normally think need human judgment, like spotting patterns or understanding a sentence. A trained AI model learns from examples, the way a new hire learns to sort mail by seeing thousands of letters. Natural language processing (NLP) is the part of AI that works with human language, such as reading reviews to tell whether customers are happy. Robotic process automation (RPA) is not learning at all. It is a software robot that repeats the same clicks and copy-paste steps a person would do, exactly as recorded. For this exam, the key skill is telling which of these is in play.",
+      "guessPrompt": "A software bot logs into a website every night, copies invoice numbers from the same spot on the page, and pastes them into a spreadsheet. Do you think this bot learns anything? What would happen if the website moved the invoice number to a different place on the page?",
+      "teach": "Artificial intelligence (AI) is software that performs tasks associated with human judgment. Machine learning (ML) is the branch of AI where a model learns its rules from example data instead of having them hand-written. A model is the trained result. It takes new input and returns a prediction. Deep learning is ML built on neural networks with many layers, which suits messy input like images, audio and text. A foundational model is a very large model trained on broad data, which teams then adapt to specific jobs. A large language model (LLM) is a foundational model trained on huge amounts of text to predict likely next words. Generative AI means any model that creates new content, such as text, images or code, rather than only labeling or scoring input.\n\nNatural language processing (NLP) covers techniques that let computers work with human language. Examples include sentiment analysis (judging tone), entity extraction (pulling out names, dates and amounts), translation and summarization.\n\nRobotic process automation (RPA) is different. A software bot replays fixed, rule-based steps in user interfaces, such as clicking, typing and copying fields. It has no model and learns nothing.\n\nThe identifying test is simple: does it learn from data, or follow recorded rules?\n\nWorked example: a support team gets 5,000 emails a day. Step 1: a bot opens the mailbox and saves each email to a folder. That is fixed rules, so it is RPA. Step 2: a model tags each email as angry, neutral or happy. That is understanding language, so it is NLP (sentiment analysis) built with ML. Step 3: an LLM drafts a reply. That is generative AI. Step 4: the bot pastes the draft into the ticket system, which is RPA again.\n\nCommon mistake: calling RPA \"AI\" just because it automates work. It cannot adapt to input it was not scripted for.\n\nIn a running system, this matters in two ways. RPA bots fail silently or copy wrong fields when a screen layout changes, so they need monitoring. Generative models can produce fluent but false output, called hallucination, so anything feeding a report needs human review.",
+      "questions": [
+        {
+          "id": "da0-002:1:5:q1",
+          "role": "fade",
+          "prompt": "A regional insurer receives about 800 claim forms a day. Step 1: a software bot logs into a partner portal and downloads each claim PDF into a shared folder. It follows fixed, recorded steps, so it is RPA. Step 2: a trained model reads each claim and pulls out the policy number, incident date and claimed amount. That is working with human language, so it is NLP (entity extraction) built with ML. Step 3: a large language model writes a short plain-English summary of each claim for the adjuster. Step 4: the bot types that summary into the claims system field by field, which is RPA again. Which classification correctly completes Step 3?",
+          "choices": [
+            "Generative AI, because the model creates new text instead of only labeling the input",
+            "RPA, because the summary is produced automatically with no person involved",
+            "Entity extraction, because the summary includes the policy number and amount",
+            "Sentiment analysis, because the model has to read the tone of the claim text"
+          ],
+          "correctIndex": 0,
+          "why": "An LLM producing a new summary creates new content, which is the definition of generative AI, and automation alone does not make something RPA or AI."
+        },
+        {
+          "id": "da0-002:1:5:q2",
+          "role": "solo",
+          "prompt": "A bank's tool scores each card transaction for fraud risk. Nobody wrote its rules; it was trained on 2 million past transactions labeled as fraud or not fraud, and it returns a risk score for each new transaction. What is this tool?",
+          "choices": [
+            "An RPA bot, because it processes every transaction automatically",
+            "A machine learning model, because it learned its rules from example data",
+            "An NLP tool, because the transaction records contain text fields",
+            "A generative AI tool, because it outputs a new number for each transaction"
+          ],
+          "correctIndex": 1,
+          "why": "It learned from labeled examples and returns predictions on new input, which is ML; it only scores input rather than creating content, so it is not generative AI."
+        },
+        {
+          "id": "da0-002:1:5:q3",
+          "role": "solo",
+          "prompt": "An accounting firm uses a bot that copies invoice totals from a supplier's web portal into a spreadsheet by clicking and copying the same screen positions every night. The supplier redesigns the portal page. What is the most likely result?",
+          "choices": [
+            "The bot adapts to the new layout after a few runs, because it learns from its errors",
+            "The bot starts hallucinating invoice totals that look plausible but are invented",
+            "The bot switches to entity extraction to locate the totals on the new page",
+            "The bot may fail silently or copy the wrong field, because it only replays recorded steps"
+          ],
+          "correctIndex": 3,
+          "why": "RPA has no model and learns nothing, so a changed screen layout breaks its fixed steps, which is why such bots need monitoring."
+        },
+        {
+          "id": "da0-002:1:5:q4",
+          "role": "solo",
+          "prompt": "A city council uses a generative model to draft a monthly paragraph for its budget report. One draft confidently states a 12% rise in parks spending, but the source data shows no such figure. What is this called, and what is the right safeguard?",
+          "choices": [
+            "Overfitting; retrain the model on a larger set of budget files",
+            "Hallucination; have a person review the output before it goes into the report",
+            "Sentiment drift; switch the model to a neutral tone setting",
+            "A layout change; add monitoring to the bot that copies the figures"
+          ],
+          "correctIndex": 1,
+          "why": "Fluent but false output from a generative model is hallucination, and anything feeding a report needs human review."
+        }
+      ],
+      "explainPrompt": "Explain to a teammate how you would tell whether a tool in a data workflow is machine learning, NLP, generative AI or RPA. Include one limitation or tradeoff of each approach you mention.",
+      "modelAnswer": "The first question I ask is whether the tool learns from data or follows recorded steps. RPA follows steps: a bot clicks, copies and pastes the same way every time. That makes it cheap and predictable for repetitive work, but it breaks or grabs the wrong field when a screen changes. Machine learning trains a model on examples so it can predict things about new data. It adapts better, but it is only as good as its training data. NLP is ML applied to human language, like scoring sentiment or extracting dates from text. Generative AI, often a large language model built on a foundational model, creates new content such as summaries or replies. It can hallucinate, so its output needs human review before it lands in a report.",
+      "rubricPoints": [
+        "Distinguishes learning from data (ML) versus replaying fixed rules (RPA).",
+        "Defines NLP as working with human language and gives an example task.",
+        "Identifies generative AI and LLMs as creating new content, with foundational models as broad base models.",
+        "Names RPA's brittleness when interfaces change.",
+        "Names hallucination or data-quality dependence as a limit of AI models."
+      ],
+      "suggested": {
+        "modality": "combo",
+        "rationale": "This objective is about recognizing which AI or automation type a scenario describes, so reasoning through exam-style workflow situations builds the skill best, and no current mission or planned engine exercises it."
+      }
+    },
+    {
+      "objectiveId": "da0-002:2:1",
+      "sourceHash": "9722a5c56be5",
+      "promptVersion": 2,
+      "model": "claude-opus-5-5",
+      "generatedAt": "2026-10-10T08:46:46.649Z",
+      "plain": "Gathering data means getting it out of the places it lives, such as databases, spreadsheets, apps and websites, and bringing it together so you can study it as one picture. Data integration is that bringing-together step: copying data from many sources into one shared store in a consistent shape. Queries are the precise questions you ask a database to pull out just the rows you need and to combine related tables. Think of a cook collecting ingredients from several shops into one kitchen (integration), then reading a recipe that says exactly which items to take and how to pair them (queries).",
+      "guessPrompt": "You have a list of 3 orders and a list of customers, but one order belongs to a customer who is missing from the customer list. If you combine the two lists by matching customer numbers, should that orphan order appear in your result or vanish? What would each choice do to a total revenue figure?",
+      "teach": "Data integration is the process of pulling data from several sources into one place, in a consistent shape, so it can be analysed together. A query is a precise request for data, usually written in SQL (Structured Query Language), the standard language for asking relational databases (data stored as tables of rows and columns) for rows.\n\nTwo common integration patterns exist. ETL (extract, transform, load) pulls data out of sources, reshapes it in a staging area (a temporary holding space), then loads the finished result into the target, such as a data warehouse (a database built for analysis). ELT (extract, load, transform) loads raw data first and transforms it inside the target, which suits powerful cloud warehouses. A full load reloads everything each run; a delta load, also called incremental, copies only rows changed since the last run. Delta is faster but needs a reliable change marker, such as a last-updated timestamp. Data can also arrive through an API (application programming interface), a defined way for one program to request data from another.\n\nQueries combine data. A join matches rows from two tables using a key, a column whose values link them, such as customer_id. An inner join keeps only rows that match in both tables; a left join keeps every row from the first table and fills nulls (empty values) where no match exists. A union stacks rows from tables with the same columns, such as January and February sales.\n\nWorked example: Orders has 3 rows with customer_id 1, 2 and 9. Customers holds ids 1 and 2. Step 1: an inner join returns 2 rows, and order 9 disappears. Step 2: a left join from Orders returns 3 rows, with a null customer name for order 9. Step 3: if every order must count toward revenue, choose the left join.\n\nCommon mistake: joining on a key that is not unique. If customer 1 appears twice in Customers, its order is duplicated and revenue is overstated. In a scheduled reporting pipeline this silently inflates totals on every refresh, so compare row counts before and after each join.",
+      "questions": [
+        {
+          "id": "da0-002:2:1:q1",
+          "role": "fade",
+          "prompt": "A veterinary clinic has an Appointments table with 4 rows, for pet_id 21, 22, 23 and 40. Its Pets table holds only pet_id 21, 22 and 23. The manager wants every appointment counted toward monthly billing. Step 1: an inner join on pet_id returns 3 rows, and appointment 40 disappears because pet 40 has no match in Pets. Step 2: ______. Step 3: because every appointment must count toward billing, the analyst chooses the left join. Which statement correctly fills in Step 2?",
+          "choices": [
+            "A left join from Appointments returns 4 rows, with a null pet name for appointment 40",
+            "A left join from Appointments returns 7 rows, one for each row in both tables combined",
+            "A left join from Appointments returns 3 rows, because pet 40 still has no match in Pets",
+            "A left join from Appointments returns 4 rows, with pet 40 matched to the nearest pet_id"
+          ],
+          "correctIndex": 0,
+          "why": "A left join keeps every row from the first table (all 4 appointments) and fills a null where pet 40 has no matching row in Pets."
+        },
+        {
+          "id": "da0-002:2:1:q2",
+          "role": "solo",
+          "prompt": "A streaming company copies raw viewing logs straight into a powerful cloud data warehouse, and only afterward cleans and reshapes them using the warehouse's own processing. Which integration pattern is this?",
+          "choices": [
+            "ELT (extract, load, transform)",
+            "A full load through a staging area",
+            "A union of the raw logs",
+            "ETL (extract, transform, load)"
+          ],
+          "correctIndex": 0,
+          "why": "Loading raw data first and transforming it inside the target warehouse is ELT, while ETL reshapes data in a staging area before loading it."
+        },
+        {
+          "id": "da0-002:2:1:q3",
+          "role": "solo",
+          "prompt": "A library's Loans table has 500 rows. An analyst joins it to the Members table on member_id, and the result has 512 rows. Nobody added loans. What is the most likely cause?",
+          "choices": [
+            "The join was an inner join, which always adds extra rows for unmatched loans",
+            "The tables needed a union instead, which would have returned exactly 500 rows",
+            "Some member_id values appear more than once in Members, so their loans were duplicated",
+            "Some loans had no matching member, so the join filled them with nulls"
+          ],
+          "correctIndex": 2,
+          "why": "Joining on a key that is not unique repeats the matching rows, inflating the count, which is why row counts should be compared before and after each join."
+        },
+        {
+          "id": "da0-002:2:1:q4",
+          "role": "solo",
+          "prompt": "A retailer's nightly job copies its entire 3-million-row product table, even though only a few thousand rows change each day. The team wants to switch to a delta (incremental) load. What does the source table need for this to work reliably?",
+          "choices": [
+            "An API, because delta loads cannot read from relational databases",
+            "A dependable change marker, such as a last-updated timestamp on each row",
+            "A second copy of the table with the same columns to union against",
+            "A unique key so the rows can be inner joined to the warehouse"
+          ],
+          "correctIndex": 1,
+          "why": "A delta load copies only rows changed since the last run, so it needs a reliable marker like a last-updated timestamp to know which rows changed."
+        }
+      ],
+      "explainPrompt": "Explain to a teammate how you would gather order and customer data from two systems into one report: which integration pattern and load type you would pick, which join you would use, and one tradeoff or risk in your choices.",
+      "modelAnswer": "I would integrate both sources into our warehouse. If the warehouse is powerful, ELT works: load the raw tables first, then transform them there; otherwise ETL reshapes data in staging before loading. For daily refreshes I would use a delta load, copying only rows changed since the last run, because it is faster than a full load, but it depends on a trustworthy last-updated timestamp, or changes get missed. To combine the data I would join Orders to Customers on customer_id. I would use a left join from Orders so no order is dropped just because its customer record is missing; an inner join would silently lose those orders and understate revenue. The risk is a non-unique key: if a customer appears twice, orders get duplicated and totals inflate, so I check row counts before and after the join.",
+      "rubricPoints": [
+        "Defines data integration as combining multiple sources into one consistent store.",
+        "Distinguishes ETL (transform before loading) from ELT (transform inside the target).",
+        "Contrasts full and delta loads and notes delta needs a reliable change marker.",
+        "Explains that a join matches rows on a key and picks inner or left join deliberately.",
+        "Names a risk such as dropped unmatched rows or duplication from a non-unique key.",
+        "Mentions checking row counts to verify the combined result."
+      ],
+      "suggested": {
+        "modality": "do-new",
+        "engineId": "sql-lab",
+        "rationale": "Writing real joins and unions against small tables and watching row counts change is the fastest way to internalise how queries gather and combine data."
+      }
+    },
+    {
+      "objectiveId": "da0-002:2:2",
+      "sourceHash": "47b16d1dcfb9",
+      "promptVersion": 2,
+      "model": "claude-opus-5-5",
+      "generatedAt": "2026-10-10T08:47:08.637Z",
+      "plain": "Data exploration is the look-before-you-touch step. Before you clean, combine or analyze a raw dataset, you inspect it and count its problems. Four problems come up most often. Missing values are blanks where something should be. Duplication means the same record appears twice. Redundancy means the same fact is stored in two places. Outliers are values far from the rest. Think of a mechanic who checks a car before fixing it. If they skip the check, they may replace the wrong part. If you skip exploration, your totals and averages can quietly come out wrong.",
+      "guessPrompt": "A spreadsheet of 1,000 customer orders shows one order for 95,000 dollars, while every other order is under 500 dollars. Before deleting that row, what would you want to find out, and why?",
+      "teach": "Data exploration, also called profiling, means inspecting a raw dataset and measuring its problems before you change anything. Four problems matter here.\n\nA missing value is an empty cell or a null, a marker meaning no value was recorded. Watch for placeholders that hide missingness, such as 0, N/A or 9999. Duplication is the same real-world record appearing more than once. It can be an exact copy or a near copy, such as Ann Lee and ann lee. Redundancy is the same fact stored in more than one place, such as an age column next to a birth-date column. Redundant columns waste space and can drift out of agreement. An outlier is a value far from the rest. It may be an error or a genuine rare event.\n\nExploring first tells you which fix each problem needs. It also shows whether a later merge or analysis would be distorted. Typical checks are: count nulls in each column, group rows by a key and flag any key that appears more than once, compare columns that should agree, and look for values outside a fence. A common fence uses the IQR (interquartile range), which is the spread of the middle half of the data. The lower fence is the first quartile minus 1.5 times the IQR. The upper fence is the third quartile plus 1.5 times the IQR.\n\nWorked example: an orders file has 10 rows. Step 1, count nulls: 2 rows have no ship date. Step 2, group by order ID: ID 104 appears twice with identical values, so it is a duplicate. Step 3, compare columns: total always equals quantity times price, so total is redundant but consistent. Step 4, check amounts: the quartiles are 30 and 60, so the IQR is 30 and the upper fence is 60 + 45 = 105. One amount is 8,000, which makes it an outlier. Verify it against the source.\n\nA common mistake is deleting nulls or outliers automatically. A huge order may be real, and a null ship date may mean not shipped yet. In a running reporting system, silently dropped or double-counted rows produce wrong revenue figures that mislead decisions.",
+      "questions": [
+        {
+          "id": "da0-002:2:2:q1",
+          "role": "fade",
+          "prompt": "A city library profiles its daily book-loan counts for one year before building a dashboard. The first quartile (Q1) is 50 loans and the third quartile (Q3) is 70 loans. Step 1: the IQR (interquartile range, the spread of the middle half of the data) is 70 - 50 = 20. Step 2: 1.5 times the IQR is 1.5 x 20 = 30. Step 3: the upper fence is 70 + 30 = 100, so no day is high enough to flag. Step 4: ??? Step 5: one day shows only 4 loans. It falls below the lower fence, so it is flagged as an outlier and checked against the source (the branch may have been closed that day) rather than deleted. Which calculation belongs in Step 4?",
+          "choices": [
+            "Lower fence = 70 - 30 = 40",
+            "Lower fence = 20 - 1.5 = 18.5",
+            "Lower fence = 50 - 20 = 30",
+            "Lower fence = 50 - 30 = 20"
+          ],
+          "correctIndex": 3,
+          "why": "The lower fence is the first quartile minus 1.5 times the IQR, so it is 50 - 30 = 20, and 4 is below it."
+        },
+        {
+          "id": "da0-002:2:2:q2",
+          "role": "solo",
+          "prompt": "A warehouse temperature-sensor file has a reading column. A null count on that column returns 0. However, 37 readings are exactly -999, while every other reading is between 2 and 8 degrees. What is the best conclusion from this exploration?",
+          "choices": [
+            "The -999 values are duplicates and should be removed by grouping on the reading column.",
+            "The -999 values are genuine rare cold events and should be kept as normal data.",
+            "The column is complete because no nulls were found, so no missing-value handling is needed.",
+            "The -999 values are most likely placeholders hiding missing readings, so they should be counted as missing values."
+          ],
+          "correctIndex": 3,
+          "why": "Placeholders such as 9999 or -999 can hide missingness, so a zero null count does not prove that the column is complete."
+        },
+        {
+          "id": "da0-002:2:2:q3",
+          "role": "solo",
+          "prompt": "An HR table for a design firm stores, for every employee, both an annual salary column and a monthly salary column. The monthly column is meant to equal the annual column divided by 12. Which data problem does this describe?",
+          "choices": [
+            "A missing value, because one of the two columns is unnecessary",
+            "Redundancy, because the same fact is stored in two places and the columns can drift out of agreement",
+            "An outlier, because one salary column is far from the other",
+            "Duplication, because the same employee appears more than once"
+          ],
+          "correctIndex": 1,
+          "why": "Redundancy means the same fact is stored in more than one place, which wastes space and risks the copies disagreeing."
+        },
+        {
+          "id": "da0-002:2:2:q4",
+          "role": "solo",
+          "prompt": "A streaming service's subscriptions table has a cancellation date column. An analyst deletes every row where cancellation date is null, then reports the number of active subscribers from what remains. What is the most likely consequence?",
+          "choices": [
+            "The active-subscriber count is badly understated, because a null cancellation date probably means the subscription has not been cancelled.",
+            "The report becomes more accurate, because rows with nulls are always bad data.",
+            "Nothing changes, because null rows are excluded from counts anyway.",
+            "The count is overstated, because deleting nulls creates duplicate subscriptions."
+          ],
+          "correctIndex": 0,
+          "why": "Deleting nulls automatically is a common mistake: here a null carries meaning (still active), so dropping those rows silently removes real subscribers and misleads decisions."
+        }
+      ],
+      "explainPrompt": "Explain to a teammate, in your own words, what you check for during data exploration and why you do it before cleaning or analysis. Include one limit or tradeoff, such as when an outlier should not be removed.",
+      "modelAnswer": "Before I fix or analyze anything, I profile the data to see what is wrong with it. I count nulls in each column and watch for fake placeholders like 0 or 9999. I group by the record key to find duplicates, because they double-count totals. I look for redundant columns that store the same fact twice, since they can disagree. Then I flag outliers, for example with a 1.5 times IQR fence around the middle half of the data. Exploration only finds problems; it does not decide the fix. The tradeoff is that a flagged value is not automatically wrong. A huge order might be a real big customer, and a null might mean not shipped yet. So I check the source before deleting anything. Removing real data skews results just as badly as keeping bad data.",
+      "rubricPoints": [
+        "Defines exploration as measuring problems before changing or analyzing data.",
+        "Names and distinguishes missing values, duplicates, redundancy and outliers.",
+        "Gives a concrete check for at least one problem, such as counting nulls or grouping by key.",
+        "Notes that hidden placeholders like 0 or N/A can disguise missing values.",
+        "States that outliers and nulls may be legitimate, so they should be verified before removal.",
+        "Explains the consequence of skipping exploration, such as wrong totals or averages."
+      ],
+      "suggested": {
+        "modality": "do-new",
+        "engineId": "sql-lab",
+        "rationale": "Counting nulls, grouping by keys to find duplicates and filtering values beyond a fence are exactly the queries a SQL lab would have the learner run on a messy table."
+      }
+    },
+    {
+      "objectiveId": "da0-002:2:3",
+      "sourceHash": "1f80cfff2d47",
+      "promptVersion": 2,
+      "model": "claude-opus-5-5",
+      "generatedAt": "2026-10-10T08:46:58.970Z",
+      "plain": "Transformation means reshaping raw data so it is correct, consistent and usable before anyone analyzes it. It has four everyday jobs. Cleansing fixes or removes errors, such as stray spaces, misspellings and repeated rows. Merging combines two datasets into one. Parsing splits one messy field into useful parts. Formatting makes values look and behave the same way, such as every date written identically. Think of cooking: you wash the vegetables, combine ingredients, chop them into pieces and plate them neatly before serving. If you skip the washing, the whole dish suffers, no matter how good the recipe is.",
+      "guessPrompt": "You have a spreadsheet where one customer appears as \"ACME Corp\", \"acme corp \" and \"Acme Corp.\". If you count sales by customer name as it stands, what goes wrong, and what would you do first?",
+      "teach": "Data transformation is the set of steps that turns raw data into a clean, consistent and combined form ready for analysis. It covers four tasks.\n\nCleansing means correcting or removing bad values. Examples include trimming extra spaces, standardizing letter case, deciding what to do with nulls (empty values), and removing duplicate rows. Merging means combining datasets. A join links rows from two tables that share a key, which is a column identifying the same thing in both, such as a customer ID. An append, also called a union, stacks rows from tables that have the same columns. Parsing means breaking one field into parts, such as splitting \"2024-03-15 14:02\" into a date and a time, or \"Lee, Ana\" into a last name and a first name. Formatting means converting values to one consistent type and representation, such as storing all dates as YYYY-MM-DD or all prices as numbers with two decimals.\n\nWorked example. An orders file stores customer IDs like \" c-007\", and a customers file stores them like \"C-007\". First, cleanse: trim the spaces and convert to uppercase, so both become \"C-007\". Next, check the customers file for duplicate IDs and remove them. Then merge the two files with a join on the ID, and every order matches its customer. Next, parse the order timestamp into a date part. Finally, format the amounts as numbers instead of text, so they can be summed.\n\nA common mistake is merging before you cleanse. If the keys don't match exactly, orders silently fail to join. If the customer table has two rows for C-007, the join copies every one of that customer's orders twice. In a running reporting system, this shows up as revenue that is quietly inflated or missing on a dashboard. Fix the keys and duplicates first, then merge.",
+      "questions": [
+        {
+          "id": "da0-002:2:3:q1",
+          "role": "fade",
+          "prompt": "A dental clinic wants a report of visit fees per patient. The appointments file stores patient codes like \"p-104 \" (lowercase, trailing space). The patients file stores them like \"P-104\", and an analyst notices that P-104 appears on two separate rows in the patients file. Here is the plan. Step 1: trim the spaces and convert the codes to uppercase, so both files use \"P-104\". Step 2: (missing). Step 3: join the appointments file to the patients file on the patient code. Step 4: split the visit timestamp \"2025-01-09 08:30\" into a date part. Step 5: convert the fee column from text such as \"45.00\" into numbers so it can be summed. Which action belongs in Step 2?",
+          "choices": [
+            "Check the patients file for duplicate patient codes and remove the extra rows.",
+            "Replace every empty fee in the appointments file with zero before going further.",
+            "Join the files now and remove any duplicate rows from the joined result afterward.",
+            "Append the appointments rows underneath the patients rows so all codes sit in one column."
+          ],
+          "correctIndex": 0,
+          "why": "The duplicate P-104 row must be removed before the join; otherwise the join would copy each of that patient's appointments twice and inflate the fee totals."
+        },
+        {
+          "id": "da0-002:2:3:q2",
+          "role": "solo",
+          "prompt": "A bakery chain exports one sales file for January and one for February. Both files have exactly the same columns: store, product, quantity and price. The analyst wants a single table holding all the rows from both months. Which transformation does this describe?",
+          "choices": [
+            "An append (also called a union), stacking the February rows under the January rows",
+            "A join on the store column, linking January rows to matching February rows",
+            "Formatting, converting both files to one consistent date representation",
+            "Parsing, splitting each row into a January part and a February part"
+          ],
+          "correctIndex": 0,
+          "why": "An append, or union, stacks rows from tables that share the same columns, which is exactly what combining two months of identically structured files requires."
+        },
+        {
+          "id": "da0-002:2:3:q3",
+          "role": "solo",
+          "prompt": "A shipping company's delivery log records dates in mixed styles: some rows show \"7/4/2023\", others \"04-07-2023\", and others \"2023-07-04\". The analyst converts every value so that all dates are stored as YYYY-MM-DD. Which transformation task is this?",
+          "choices": [
+            "Merging, because the date values come from several different rows",
+            "Cleansing, because rows with unusual dates are removed as duplicates",
+            "Parsing, because each date is broken into separate day, month and year fields",
+            "Formatting, because the values are converted to one consistent type and representation"
+          ],
+          "correctIndex": 3,
+          "why": "Formatting means converting values to one consistent type and representation, such as storing every date as YYYY-MM-DD."
+        },
+        {
+          "id": "da0-002:2:3:q4",
+          "role": "solo",
+          "prompt": "A hardware warehouse joins its shipments table to its suppliers table on supplier ID. Supplier S-12 has three shipments of 100 units each, for 300 units in total. Nobody noticed that S-12 is listed on two rows in the suppliers table. After the join, what total will a report show for S-12?",
+          "choices": [
+            "0 units, because a duplicated key prevents those shipments from joining at all",
+            "300 units, because a join automatically ignores duplicate rows in the key table",
+            "900 units, because the three shipments are each multiplied by three supplier rows",
+            "600 units, because each S-12 shipment is copied once for every matching supplier row"
+          ],
+          "correctIndex": 3,
+          "why": "With two supplier rows for S-12, the join copies each of the three shipments twice, so the 300 units are quietly reported as 600; removing the duplicates before merging prevents this."
+        }
+      ],
+      "explainPrompt": "Explain to a teammate the four parts of data transformation, and why the order you do them in matters. Name one limit or tradeoff of cleansing.",
+      "modelAnswer": "Transformation gets raw data ready for analysis. Cleansing fixes bad values: it trims spaces, standardizes case, handles nulls and removes duplicates. Merging combines datasets, either by joining on a shared key or by appending rows that have the same columns. Parsing splits a field into parts, such as a timestamp into a date and a time. Formatting makes types and representations consistent, so every date is in one style and every amount is a real number. Order matters. If you merge before cleansing the keys, rows fail to match, and duplicate keys multiply rows, which inflates totals. So I cleanse and deduplicate the keys first, then merge, then parse and format. The tradeoff is that cleansing changes or drops data. Removing rows with nulls can shrink or bias the dataset, so you should record what you changed and why.",
+      "rubricPoints": [
+        "Defines cleansing as correcting or removing errors, nulls and duplicates.",
+        "Defines merging as joining on a shared key or appending rows with matching columns.",
+        "Defines parsing as splitting a field into parts and formatting as making types and representations consistent.",
+        "Explains that keys must be cleansed and deduplicated before merging, or rows go unmatched or multiply.",
+        "Names a tradeoff, such as dropping or altering data that can bias results."
+      ],
+      "suggested": {
+        "modality": "do-existing",
+        "missionId": "python-04-fleet-report",
+        "rationale": "Turning a CSV into a JSON report makes the learner parse raw fields and format values consistently, which is real transformation work."
+      }
+    },
+    {
+      "objectiveId": "da0-002:3:1",
+      "sourceHash": "ec1c85466d70",
+      "promptVersion": 2,
+      "model": "claude-opus-5-5",
+      "generatedAt": "2026-10-10T08:47:55.999Z",
+      "plain": "Choosing a communication method means deciding how to present the same findings so each listener can actually use them. An executive wants the answer and the decision it supports in a minute; an operations manager wants the numbers for their team; a fellow analyst wants the method and the caveats. Think of a doctor explaining a test result: to the patient, \"your cholesterol is a bit high, here is what to change\"; to another doctor, the exact values and reference ranges. The facts don't change. What changes is the level of detail, the vocabulary, the format and how much you ask of the listener.",
+      "guessPrompt": "You found that customer complaints rose 18% last quarter, mostly in one region. How would you tell this to the company's CEO differently from how you would tell a fellow data analyst?",
+      "teach": "Selecting a communication method means matching four choices to the audience: detail level (summary or full breakdown), vocabulary (business terms or statistical terms), format (a slide, a dashboard, a written report, an email or a live walkthrough) and the call to action (what you want them to do next).\n\nCommon audiences differ. Executives, meaning senior decision-makers, want the conclusion first, its business impact and a recommendation, usually a few key figures or one simple chart. Operational or functional managers run a team or process and want metrics tied to their area, often in a recurring dashboard, which is a screen of charts that refreshes as data updates. Technical peers, such as other analysts or engineers, want the method, data sources, assumptions and limitations, often in a detailed report or notebook. External or general audiences, such as customers, regulators or the public, need jargon-free language and must not receive sensitive internal data.\n\nThis works because people only act on information they can absorb in the time and context they have. Leading with the conclusion, sometimes called the bottom line up front, respects a busy reader's attention.\n\nWorked example: complaints rose 18%, driven by the North region after a carrier change. Step 1: for the CEO, a single slide that says \"Complaints up 18%, almost all from North since the carrier switch; recommend reviewing that contract,\" with one bar chart by region. Step 2: for the North operations manager, a dashboard showing weekly complaints by category and carrier. Step 3: for an analyst peer, a report that explains the comparison, the date range, the missing records excluded and the confidence in the trend.\n\nCommon mistake: giving everyone the same deck. Executives drown in p-values and methodology, and peers can't check the work because the details were stripped out.\n\nIn practice, mismatched communication means good analysis gets ignored or misused, so a correct finding can lead to no action or the wrong one.",
+      "questions": [
+        {
+          "id": "da0-002:3:1:q1",
+          "role": "fade",
+          "prompt": "A city water utility finds that average outage time fell 22% in its East district after new automatic valves were installed. The analyst prepares three versions. Step 1: for the utility's board, one slide that says \"Outage time down 22% in East since the new valves; recommend funding the same valves citywide,\" with one simple bar chart comparing districts. Step 2: for a fellow analyst, a written report covering the before-and-after date ranges, the data sources, the records that were excluded and how confident the team is in the drop. Step 3 is missing: a message for residents in the utility's public newsletter. Which version best completes Step 3?",
+          "choices": [
+            "The East operations dashboard showing weekly outage minutes per repair crew and the internal cost of each valve installation.",
+            "A short plain-language note saying outages in the East district are now noticeably shorter since new equipment went in, with no internal cost or staff data.",
+            "The board slide from Step 1, including the recommendation to fund citywide valves, since it is already short and leads with the conclusion.",
+            "The full analyst report from Step 2, so residents can see exactly how the 22% figure was calculated and how confident the team is in it."
+          ],
+          "correctIndex": 1,
+          "why": "A general public audience needs jargon-free language and must not receive sensitive internal data, which only the plain-language note satisfies."
+        },
+        {
+          "id": "da0-002:3:1:q2",
+          "role": "solo",
+          "prompt": "An analyst writes an email to a busy vice president. The first sentence reads: \"We should pause the spring promotion; it lost money in every region.\" The supporting figures come after that. What is this approach called, and why does it work?",
+          "choices": [
+            "Technical framing, because opening with a firm statement signals that the statistics are significant.",
+            "Bottom line up front, because a busy reader can grasp the conclusion and act on it in the limited time they have.",
+            "Full breakdown first, because executives need to check the method before they trust a recommendation.",
+            "A call to action only, because executives should not be shown any supporting figures at all."
+          ],
+          "correctIndex": 1,
+          "why": "Putting the conclusion first (bottom line up front) respects a busy decision-maker's attention, which is what makes them able to act on it."
+        },
+        {
+          "id": "da0-002:3:1:q3",
+          "role": "solo",
+          "prompt": "A warehouse shift supervisor runs a picking team and wants to keep an eye on her team's daily pick errors and late orders. Which communication method fits her best?",
+          "choices": [
+            "A recurring dashboard that refreshes as data updates, showing error and late-order metrics for her own team.",
+            "A one-time slide for senior leadership summarizing company-wide error trends with a single recommendation.",
+            "A detailed notebook explaining the sampling method, assumptions and limitations behind the error rate calculation.",
+            "A public-facing summary written in plain language with all internal figures removed."
+          ],
+          "correctIndex": 0,
+          "why": "An operational manager wants metrics tied to her own area, which a regularly refreshing dashboard delivers."
+        },
+        {
+          "id": "da0-002:3:1:q4",
+          "role": "solo",
+          "prompt": "An analyst at an online bookstore builds one presentation about a drop in repeat customers and sends the identical deck to the chief financial officer and to the data engineering team. What is the most likely result?",
+          "choices": [
+            "Either the CFO gets lost in statistical detail or the engineers lack the method and assumptions to check the work, so a correct finding may be ignored or misused.",
+            "Nothing changes, because the quality of the analysis matters more than how it is communicated.",
+            "Only the CFO is affected, because technical peers can always rebuild missing details from the conclusion alone.",
+            "Both audiences act quickly, because using one deck keeps everyone working from the same numbers."
+          ],
+          "correctIndex": 0,
+          "why": "Giving every audience the same deck mismatches detail and vocabulary for at least one group, and mismatched communication leads to good analysis being ignored or misused."
+        }
+      ],
+      "explainPrompt": "Explain to a teammate how you would decide the way to present one set of findings to an executive, an operations manager and a fellow analyst, and name one tradeoff of simplifying for executives.",
+      "modelAnswer": "I start by asking who the audience is and what decision they need to make, then I set four things to fit: detail, vocabulary, format and call to action. For an executive I put the conclusion first, give its business impact and a recommendation, and back it with one or two key numbers or a simple chart. For an operations manager I show metrics for their own area, usually as a dashboard they can check regularly. For a fellow analyst I write up the method, sources, assumptions and limitations so they can verify or reproduce the work. The tradeoff with simplifying for executives is that dropping caveats can make a result look more certain than it is. So I keep one plain sentence on confidence or limitations, and I have the detailed report ready if they ask for it.",
+      "rubricPoints": [
+        "Identifies the audience and the decision they need to make before choosing a format.",
+        "Adjusts detail level, vocabulary and format, such as a summary slide, a dashboard or a detailed report.",
+        "Executives get the conclusion first with a recommendation, and peers get the method and limitations.",
+        "Includes a clear call to action suited to the audience.",
+        "Names a tradeoff, such as simplification hiding uncertainty or caveats."
+      ],
+      "suggested": {
+        "modality": "explain",
+        "rationale": "The core skill is tailoring and justifying how a message changes for different audiences, which explaining it back practises directly, and no listed mission or planned engine covers audience-aware reporting."
+      }
+    },
+    {
+      "objectiveId": "da0-002:3:2",
+      "sourceHash": "916957742758",
+      "promptVersion": 2,
+      "model": "claude-opus-5-5",
+      "generatedAt": "2026-10-10T08:47:56.006Z",
+      "plain": "Basic statistics are a small toolkit for turning a pile of numbers into a few honest facts. Some tools describe the data you already have: what a typical value looks like and how spread out the values are. Others help you judge whether a pattern you spotted in a sample, such as one group scoring higher than another, is probably real or just luck. Think of a doctor's checkup. Your temperature and pulse describe you today. Comparing them to thousands of other patients tells the doctor whether something unusual is going on. Picking the right tool matters, because the wrong summary can quietly mislead.",
+      "guessPrompt": "Five deliveries took 20, 22, 23, 25 and 110 minutes. If you had to give your manager one number for a typical delivery time, which number would you pick, and why?",
+      "teach": "Descriptive statistics summarize the data you hold. Measures of central tendency describe a typical value. The mean is the sum of the values divided by how many there are. The median is the middle value once the values are sorted. The mode is the value that appears most often. Measures of spread describe how scattered the values are. The range is the largest value minus the smallest. The variance is the average squared distance of each value from the mean. The standard deviation is the square root of the variance, which puts it back in the original units. Percentiles show the value below which a given share of the data falls. For example, the 90th percentile marks the point that 90% of values sit below.\n\nInferential statistics use a sample, meaning a subset, to draw conclusions about a population, meaning the whole group. A hypothesis test starts from a null hypothesis, which assumes there is no difference or no effect. The p-value is the chance of seeing results at least this extreme if the null hypothesis were true. If it falls below a threshold chosen in advance, often 0.05, you reject the null hypothesis. A t-test compares the means of two groups. A chi-square test compares counts across categories. Correlation (r, from -1 to 1) measures how strongly two variables move together in a straight-line pattern. Regression fits a line that predicts one variable from another. A confidence interval is a range likely to contain the true population value.\n\nWorked example: delivery times of 20, 22, 23, 25 and 110 minutes. They add up to 200, so the mean is 200 / 5 = 40. Sorted, the middle value is 23, so the median is 23. The range is 110 - 20 = 90. One outlier, an extreme value, dragged the mean far above what most deliveries took. The median describes the typical delivery better.\n\nA common mistake is reporting the mean for skewed data like this. In a running operation, staffing planned around 40 minutes would overestimate a typical delivery and waste resources. A second mistake is treating correlation as proof that one thing causes another.",
+      "questions": [
+        {
+          "id": "da0-002:3:2:q1",
+          "role": "fade",
+          "prompt": "A clinic records how many minutes five patients waited, in the order they arrived: 6, 32, 3, 5, 4. The manager wants a typical wait for a staff briefing. Step 1: Add the values: 6 + 32 + 3 + 5 + 4 = 50. Step 2: Mean = 50 / 5 = 10 minutes. Step 3: (missing) Find the median. Step 4: Range = 32 - 3 = 29 minutes. Step 5: The 32-minute wait is an outlier, an extreme value, that pulls the mean up, so the median is the better typical value to report. What is the correct Step 3?",
+          "choices": [
+            "Take the middle value as recorded, 3 minutes, since it sits third of five in the list",
+            "Use the mean, 10 minutes, because the median and mean are the same for any five values",
+            "Take the point halfway between the smallest and largest values, (3 + 32) / 2 = 17.5 minutes",
+            "Sort the values to 3, 4, 5, 6, 32 and take the middle one, giving a median of 5 minutes"
+          ],
+          "correctIndex": 3,
+          "why": "The median is the middle value only after the values are sorted, and the sorted middle of 3, 4, 5, 6, 32 is 5."
+        },
+        {
+          "id": "da0-002:3:2:q2",
+          "role": "solo",
+          "prompt": "An analyst summarises the weights of parcels in kilograms and reports both the variance and the standard deviation. Why is the standard deviation usually easier for an audience to interpret?",
+          "choices": [
+            "It measures the typical value rather than how scattered the values are",
+            "It ignores outliers, so it always gives a smaller number than the variance",
+            "It is the largest value minus the smallest, so it is simple to calculate",
+            "It is the square root of the variance, which puts the spread back in kilograms, the original units"
+          ],
+          "correctIndex": 3,
+          "why": "Variance is in squared units, and taking its square root returns the spread to the same units as the data."
+        },
+        {
+          "id": "da0-002:3:2:q3",
+          "role": "solo",
+          "prompt": "A gym chain counts how many members in each of three regions chose a monthly, quarterly or annual plan. It wants to test whether plan choice differs by region. Which method fits?",
+          "choices": [
+            "Correlation, because it measures how strongly two variables move together",
+            "A t-test, because it compares the means of two groups",
+            "A chi-square test, because it compares counts across categories",
+            "Regression, because it fits a line to predict one variable from another"
+          ],
+          "correctIndex": 2,
+          "why": "The data are counts of members in categories (region and plan type), which is what a chi-square test compares."
+        },
+        {
+          "id": "da0-002:3:2:q4",
+          "role": "solo",
+          "prompt": "A software company finds a correlation of r = 0.85 between the number of user accounts a customer has and the number of support tickets that customer opens. A manager concludes that adding accounts causes more tickets and plans to cap accounts. What is the flaw in this reasoning?",
+          "choices": [
+            "Correlation can only be used when the p-value is above 0.05",
+            "Correlation shows the two variables move together, but it does not prove that one causes the other",
+            "The manager should have used the median instead of the correlation",
+            "An r of 0.85 is too close to 0 to show any relationship at all"
+          ],
+          "correctIndex": 1,
+          "why": "A strong correlation measures how closely two variables move together, and treating it as proof of cause is a common mistake."
+        }
+      ],
+      "explainPrompt": "A teammate asks why you reported the median instead of the average for customer order values, and whether a strong correlation between ad spend and sales proves the ads work. Explain your reasoning in your own words, including one limit of each statistic you mention.",
+      "modelAnswer": "Order values are skewed. Most orders are small, but a few huge ones exist. The mean adds everything up and divides by the count, so those few big orders pull it upward. It ends up describing almost nobody. The median is the middle value after sorting, so outliers barely move it. That makes it a fairer picture of a typical order. Its limit is that it ignores how big those large orders are. If total revenue matters, the mean or a sum still matters too. I would add the standard deviation or percentiles to show the spread. On ad spend, a correlation near 1 only says the two move together in a straight-line pattern. It does not prove cause. Both might rise in the holiday season. To argue the ads cause sales, we would need a controlled comparison, such as a hypothesis test between regions with and without ads.",
+      "rubricPoints": [
+        "Defines mean and median correctly and explains that outliers pull the mean but not the median.",
+        "Chooses the median for skewed data and gives a reason tied to the data's shape.",
+        "Names a limit of the chosen statistic, such as the median hiding the size of extreme values.",
+        "Mentions a measure of spread, like standard deviation or percentiles, to complete the summary.",
+        "States that correlation measures how two variables move together, not cause and effect.",
+        "Suggests a hypothesis test or controlled comparison as a way to test the causal claim."
+      ],
+      "suggested": {
+        "modality": "combo",
+        "rationale": "The core skill is matching a statistic to the shape of a given dataset and the question being asked, which is best practiced by reasoning through exam-style scenarios rather than through any current mission."
+      }
+    },
+    {
+      "objectiveId": "da0-002:3:3",
+      "sourceHash": "e5fabd3872de",
+      "promptVersion": 2,
+      "model": "claude-opus-5-5",
+      "generatedAt": "2026-10-10T08:47:56.453Z",
+      "plain": "Troubleshooting a data analysis problem means figuring out why a number, chart or query result is wrong, missing or surprising, and fixing the cause rather than the symptom. You lean on tools and resources: error messages and logs, row counts, documentation such as a data dictionary (a reference describing each field), version history, colleagues and online help. It is like a mechanic diagnosing a strange noise: listen, narrow down where it comes from, test one idea at a time, then confirm the car runs right before handing back the keys.",
+      "guessPrompt": "A sales report suddenly shows exactly double last month's revenue, but the business says sales were flat. Before touching any formula, what is the first thing you would check?",
+      "teach": "Troubleshooting is a repeatable loop: reproduce the problem, isolate where it starts, form one hypothesis, test it, fix it, then validate the result against something trusted. It works because changing one thing at a time tells you which change mattered.\n\nUseful tools and resources include error messages and logs (records of what a query or script did), row counts and profiling (quick summaries such as counts, nulls and minimum and maximum values), the data dictionary (a document defining each field, its type and its meaning), version control (a history of changes to code or queries, so you can see what changed and when), source systems for reconciliation (comparing your total to an independent, trusted total), and people: data owners, peers doing a review, vendor documentation, community forums and AI assistants.\n\nWorked example: revenue doubled overnight. Step one, reproduce: rerun the query and confirm the doubled total. Step two, check version history: yesterday someone added a join to a customer-address table. Step three, profile: orders has 10,000 rows, but the joined result has 20,000. Step four, consult the data dictionary: the address table allows two rows per customer, billing and shipping, so the customer key is not unique there. The join is fanning out, meaning each order matches two address rows and is counted twice. Step five, fix: filter to billing addresses only. Step six, validate: the result returns 10,000 rows and the total matches the finance system's figure.\n\nA common mistake is accepting a fix, including one suggested by a forum or AI tool, because the output now looks plausible, without reconciling it to a trusted source. Another is changing several things at once, so you never learn the real cause.\n\nIn a running system, an untraced error spreads: dashboards, forecasts and decisions inherit the wrong number. Documenting the cause and the fix prevents the same problem from returning.",
+      "questions": [
+        {
+          "id": "da0-002:3:3:q1",
+          "role": "fade",
+          "prompt": "A school district's attendance dashboard suddenly shows an average absence rate of 0.5%, down from about 6% last month. An analyst works through it. Step 1: She reruns the report and gets 0.5% again, so the problem is reproducible. Step 2: The version control history (the record of changes to the script) shows a teammate edited the data-cleaning script two days ago. Step 3: MISSING. Step 4: The data dictionary (the document defining each field) says absence codes are letters such as 'A' and 'U'. The edited script converts that column to whole numbers, which turns every letter into a null. Step 5: She removes that conversion. Step 6: The rate comes back at 6.1%, matching the figure the student information system reports on its own. Which action best fills Step 3?",
+          "choices": [
+            "Revert the script, widen the date range and change the school filter together, then rerun the report",
+            "Ask an AI assistant to rewrite the whole script, and keep its version if the absence rate looks reasonable",
+            "Publish the dashboard with a note that the absence rate may be low and come back to it next month",
+            "Profile the absence-code column and find it is now about 98% null, when last month it had almost no nulls"
+          ],
+          "correctIndex": 3,
+          "why": "Profiling gives a quick summary, here a count of nulls, that isolates where the problem starts and points to the hypothesis the data dictionary then confirms."
+        },
+        {
+          "id": "da0-002:3:3:q2",
+          "role": "solo",
+          "prompt": "An analyst at a regional bank compares the loan total from her report with the total held in the bank's core accounting system, which she treats as independent and trusted. What is this troubleshooting technique called?",
+          "choices": [
+            "Checking version control history",
+            "Reproducing the problem",
+            "Reconciliation against a source system",
+            "Profiling the dataset"
+          ],
+          "correctIndex": 2,
+          "why": "Reconciliation means comparing your own total to an independent, trusted total, such as one from a source system."
+        },
+        {
+          "id": "da0-002:3:3:q3",
+          "role": "solo",
+          "prompt": "A warehouse shipments table has 4,000 rows. After an analyst joins it to a product-supplier table on product ID, the result has 9,500 rows and the shipment totals jump. The data dictionary says one product can have several suppliers. What is the most likely cause?",
+          "choices": [
+            "An error message was hidden, so the logs must be deleted and the query rerun",
+            "The join should be replaced with a filter on shipment dates to cut the row count",
+            "Product ID is not unique in the supplier table, so the join fans out and repeats shipments",
+            "The shipments table has thousands of null values in the product ID column"
+          ],
+          "correctIndex": 2,
+          "why": "When the join key is not unique on one side, each shipment matches several supplier rows and is counted more than once. This is called a fan-out."
+        },
+        {
+          "id": "da0-002:3:3:q4",
+          "role": "solo",
+          "prompt": "A retail analyst's weekly sales figure is wrong. In one edit she changes the date filter, swaps the join type and rewrites a calculation. The total now matches the finance system. What is the main problem with how she troubleshot it?",
+          "choices": [
+            "She should have accepted the first plausible result without checking the finance system",
+            "Matching the finance system is not a useful form of validation for sales figures",
+            "Because she changed several things at once, she cannot tell which change fixed the real cause",
+            "She should have changed even more things at once to make the fix faster"
+          ],
+          "correctIndex": 2,
+          "why": "Changing one thing at a time is what shows which change mattered. When she changes several at once, the true cause stays unknown and can come back."
+        }
+      ],
+      "explainPrompt": "Explain to a teammate how you would troubleshoot a report whose totals suddenly look wrong, which tools and resources you would use, and one limit of relying on outside help such as forums or AI assistants.",
+      "modelAnswer": "I start by reproducing the problem so I know it is real and not a stale cache. Then I isolate where it begins: I check version history for recent changes, compare row counts at each step, and profile key columns for nulls or duplicates. The data dictionary tells me what each field means and whether a key should be unique, which often explains duplicated rows from a join. I test one hypothesis at a time so I know which change fixed it. Once fixed, I reconcile the total against a trusted source like the finance system, then document the cause. Forums, vendor docs and AI assistants are useful for error messages, but they do not know our data, so their suggestions can produce plausible-looking yet wrong results. Anything they suggest still has to be validated against our own data.",
+      "rubricPoints": [
+        "Follows a loop: reproduce, isolate, hypothesize, test, fix, validate.",
+        "Names concrete tools such as logs, row counts or profiling, data dictionary and version history.",
+        "Changes one thing at a time to identify the real cause.",
+        "Validates the fix by reconciling against a trusted source.",
+        "Notes that outside help like forums or AI lacks context and must be verified.",
+        "Documents the cause and fix so the problem does not recur."
+      ],
+      "suggested": {
+        "modality": "do-new",
+        "engineId": "sql-lab",
+        "rationale": "A SQL lab where the learner diagnoses a wrong result, such as a fanned-out join, by checking row counts and reconciling totals would practise this troubleshooting loop directly."
+      }
+    },
+    {
+      "objectiveId": "da0-002:4:1",
+      "sourceHash": "ce6d8bcd35ed",
+      "promptVersion": 2,
+      "model": "claude-opus-5-5",
+      "generatedAt": "2026-10-10T08:47:53.344Z",
+      "plain": "Choosing a visual means picking the picture that makes your numbers easiest to understand. Different questions need different shapes. A line shows change over time, bars compare sizes, a map shows where things happen, and a table works when someone needs exact values. Design elements such as titles, labels, legends and colour help the reader understand the picture. Think of it like giving directions. Sometimes a map is best, sometimes a numbered list of turns, and sometimes just the address. The right choice depends on what the person needs to do, not on what looks impressive.",
+      "guessPrompt": "You have monthly sales totals for the last 24 months and want to show whether sales are rising or falling. Would you use a pie chart, a line chart or a table, and why?",
+      "teach": "Choosing a visual means matching a chart type to the question the data answers. Start by naming that question, such as change over time, comparison, part of a whole, relationship, distribution or location. Then pick the shape built for it.\n\nA line chart joins points in order, so it suits trends over time. A bar chart uses bar length to compare categories, and our eyes judge length accurately. A pie chart shows parts of a whole, but it only reads well with a few slices that add up to 100 percent. A scatter plot puts one measure on each axis to reveal a relationship between two numeric variables. A histogram groups values into ranges called bins to show a distribution, meaning how values spread out. A map places data on geography. A choropleth map shades whole regions, and a heat map shows density with colour intensity. A table gives exact values for readers who need to look up numbers.\n\nDesign elements make any visual readable. A title states the point. Axis labels with units say what is measured. A legend explains colours or symbols. Colour should be consistent and readable by colour-blind viewers. Clutter, such as 3D effects and heavy gridlines, should be removed.\n\nHere is a worked example. A manager asks which of five stores had the highest revenue last quarter.\nStep 1: The question is a comparison across categories.\nStep 2: That points to a bar chart.\nStep 3: Sort the bars from highest to lowest so the winner is obvious.\nStep 4: Start the value axis at zero, label it \"Revenue (USD)\" and add the title \"Store 3 led Q2 revenue.\"\n\nA common mistake is truncating the axis, meaning starting a bar chart's value axis above zero. A 2 percent difference can then look like a doubling. Another mistake is a pie chart with twelve thin slices nobody can compare.\n\nIn a live report, a misleading or unclear visual leads readers to wrong decisions, such as moving budget to a store that only looked far ahead. A well-chosen visual lets them act correctly at a glance.",
+      "questions": [
+        {
+          "id": "da0-002:4:1:q1",
+          "role": "fade",
+          "prompt": "A city water utility wants to show how average daily water use per household changed across each of the last 24 months. Step 1: The question is change over time. Step 2: [missing]. Step 3: Put the months in order on the horizontal axis and label the vertical axis \"Water use (litres per household per day)\". Step 4: Add a title that states the point, such as \"Household water use fell 8% after the summer campaign.\" Which choice correctly completes Step 2?",
+          "choices": [
+            "That points to a pie chart, with one slice for each of the 24 months.",
+            "That points to a choropleth map, shading each district by its usage.",
+            "That points to a histogram, grouping the daily values into bins.",
+            "That points to a line chart, joining the monthly values in order."
+          ],
+          "correctIndex": 3,
+          "why": "A line chart joins points in time order, which is the shape built to show a trend over time."
+        },
+        {
+          "id": "da0-002:4:1:q2",
+          "role": "solo",
+          "prompt": "A courier company has recorded the delivery time, in hours, for 800 parcels and wants to see how those times spread out, for example whether most arrive within a day or many take much longer. Which visual best fits this question?",
+          "choices": [
+            "A line chart joining the 800 delivery times in the order recorded",
+            "A pie chart showing each parcel's share of the total hours",
+            "A table listing the exact delivery time of every parcel",
+            "A histogram that groups delivery times into ranges called bins"
+          ],
+          "correctIndex": 3,
+          "why": "The question is about distribution, and a histogram groups values into bins to show how they spread out."
+        },
+        {
+          "id": "da0-002:4:1:q3",
+          "role": "solo",
+          "prompt": "An analyst builds a bar chart comparing customer satisfaction scores for two help desks: 96 for Desk A and 98 for Desk B. The value axis starts at 95. What is the main problem with this chart?",
+          "choices": [
+            "The truncated axis makes a small 2-point gap look like Desk B is far ahead, which could push readers into a wrong decision.",
+            "The axis should start at 100 because the scores are percentages.",
+            "A bar chart cannot compare categories, so a scatter plot should have been used.",
+            "Bar charts are only valid when there are more than two categories."
+          ],
+          "correctIndex": 0,
+          "why": "Starting a bar chart's value axis above zero exaggerates small differences, so readers may act as if the gap is large."
+        },
+        {
+          "id": "da0-002:4:1:q4",
+          "role": "solo",
+          "prompt": "A regional health agency wants a visual that lets readers quickly see which counties have the highest and lowest flu vaccination rates, by shading each county according to its rate. Which visual matches this description?",
+          "choices": [
+            "A pie chart with one slice per county",
+            "A line chart joining the counties in alphabetical order",
+            "A choropleth map that shades whole regions by their value",
+            "A scatter plot with county on one axis and rate on the other"
+          ],
+          "correctIndex": 2,
+          "why": "The question is about location, and a choropleth map places data on geography by shading whole regions such as counties."
+        }
+      ],
+      "explainPrompt": "Explain to a teammate how you decide which chart to use for a set of results, and describe one tradeoff or limit, such as when a pie chart or a map is the wrong choice.",
+      "modelAnswer": "I start by asking what question the reader is trying to answer, then match the chart to it. For a trend over time I use a line chart. For comparing categories I use a bar chart, sorted, with the value axis starting at zero. Parts of a whole can be a pie chart, but only with a few slices. A relationship between two measures calls for a scatter plot, and how values spread out calls for a histogram. Location calls for a map. If people need exact numbers, I give them a table. Then I add a clear title, labelled axes with units, a legend and colour-blind-safe colours, and I remove clutter. The tradeoff is that the flashiest option is often worse. A pie chart with many slices or a map of data that has no real geographic pattern hides the message. A truncated axis makes small differences look huge.",
+      "rubricPoints": [
+        "Starts from the question the data answers, not from the chart's looks.",
+        "Matches common types correctly: line for trends, bar for comparison, scatter for relationships, histogram for distribution, map for location, table for exact values.",
+        "Names a limit, such as pie charts failing with many slices or maps being misused for non-geographic data.",
+        "Mentions design elements such as title, labelled axes, legend and accessible colour.",
+        "Warns about misleading choices such as a truncated axis or 3D clutter."
+      ],
+      "suggested": {
+        "modality": "combo",
+        "rationale": "No current mission or planned engine builds charts, so the most useful practice is reasoning through exam-style scenarios that pair a business question with the best visual and its design fixes."
+      }
+    },
+    {
+      "objectiveId": "da0-002:4:2",
+      "sourceHash": "e054995e6f9c",
+      "promptVersion": 2,
+      "model": "claude-opus-5-5",
+      "generatedAt": "2026-10-10T08:48:00.817Z",
+      "plain": "A report packages analysis results so a specific audience can act on them. A dashboard is a live screen of key numbers and charts that people check again and again, like a car's instrument panel. A summary is a short, fixed write-up that answers one question at one point in time, like a trip log you hand over at the end. Producing a report well means matching the format to the reader: who they are, how often they need it, how fresh the data must be, and whether they will explore it or just read the conclusion.",
+      "guessPrompt": "A store manager wants to watch today's sales against target several times a day, while the board wants a one-page explanation of last quarter's results. Would you give them the same kind of report? What would each one look like?",
+      "teach": "A report is any packaged output of analysis delivered to an audience. Two common forms are dashboards and summaries.\n\nA dashboard is a single screen of visuals tied to a data source that refreshes automatically. It usually tracks KPIs (key performance indicators, the few numbers that show whether a goal is being met). Dashboards are often interactive: filters let users narrow the data, and drill-down lets them click a total to see the detail behind it. A summary report, such as an executive summary (a short opening section that states findings and recommendations first), is usually static. Static means it is a snapshot that does not change after it is published.\n\nThe choice also depends on frequency and delivery. A recurring report runs on a schedule, such as weekly, often by automated email. An ad hoc report answers a one-off question. Self-service reporting means users build their own views from a prepared, trusted dataset. Real-time reporting refreshes continuously and is only worth its extra cost when decisions are made minute by minute.\n\nThese choices work because each audience has a different decision to make. Operational staff act often and need fresh, filterable detail. Executives decide rarely and need the conclusion with little detail.\n\nWorked example, traced step by step. The request is \"show regional sales.\" First, find the audience: regional managers who adjust staffing daily. Second, find the frequency: daily, so the report is recurring. Third, find the freshness need: last night's data is enough, so a scheduled overnight refresh is fine and real time is not needed. Fourth, find the interaction need: each manager wants their own region, so add a region filter. The result is a daily-refresh dashboard with a sales-versus-target KPI and drill-down to stores. Every version should show a data-as-of date and its source so readers know how fresh it is.\n\nA common mistake is giving executives the operational dashboard. They get dozens of charts and no stated conclusion, so the report is ignored or misread. The consequence is poor decisions made from a report that was technically correct.",
+      "questions": [
+        {
+          "id": "da0-002:4:2:q1",
+          "role": "fade",
+          "prompt": "A city transit agency asks for a report to \"show bus delays.\" An analyst works through it. Step 1, audience: control-room dispatchers who reroute buses the moment a breakdown or traffic jam occurs. Step 2, frequency: they watch it all shift long, every day, so it is recurring. Step 3, freshness: MISSING. Step 4, interaction: each dispatcher covers a set of routes, so add a route filter, plus drill-down from a route's average delay to individual buses. The result is a dashboard with an on-time-percentage KPI (key performance indicator, a number that shows whether a goal is being met), a data-as-of time, and its source. Which choice correctly completes Step 3?",
+          "choices": [
+            "Publish a static snapshot once a week, because a fixed record avoids confusion",
+            "Make it an ad hoc report, because each breakdown is a one-off question",
+            "Use real-time refresh, because dispatchers make decisions minute by minute and the extra cost is justified",
+            "Use a scheduled overnight refresh, because yesterday's delay data is enough for daily staffing"
+          ],
+          "correctIndex": 2,
+          "why": "Real-time reporting is worth its extra cost only when decisions are made minute by minute, which is exactly how dispatchers reroute buses."
+        },
+        {
+          "id": "da0-002:4:2:q2",
+          "role": "solo",
+          "prompt": "A retail chain's marketing analysts keep emailing the data team for slightly different cuts of campaign results. The data team wants the analysts to build their own views from a prepared, trusted dataset instead. Which reporting approach is this?",
+          "choices": [
+            "Recurring reporting by automated email",
+            "Self-service reporting",
+            "Real-time reporting",
+            "A static executive summary"
+          ],
+          "correctIndex": 1,
+          "why": "Self-service reporting means users build their own views from a prepared, trusted dataset, which removes the back-and-forth requests."
+        },
+        {
+          "id": "da0-002:4:2:q3",
+          "role": "solo",
+          "prompt": "A charity's board of directors meets four times a year to decide whether to continue funding its programs. They have little time and want to know the answer, not explore the data. Which report best fits them?",
+          "choices": [
+            "A static summary that opens with findings and recommendations first",
+            "An interactive dashboard with filters and drill-down on every program",
+            "A real-time dashboard that refreshes continuously",
+            "A self-service dataset so each board member can build views"
+          ],
+          "correctIndex": 0,
+          "why": "Executives who decide rarely need the conclusion with little detail, which a static executive summary delivers by stating findings and recommendations first."
+        },
+        {
+          "id": "da0-002:4:2:q4",
+          "role": "solo",
+          "prompt": "A logistics company sends its CEO the same 30-chart warehouse dashboard its shift supervisors use. Every number on it is accurate. What is the most likely result?",
+          "choices": [
+            "The CEO ignores or misreads it because there is no stated conclusion, leading to poor decisions",
+            "Nothing goes wrong, because a technically correct report is always a good report",
+            "The dashboard stops refreshing because executives lack access to filters",
+            "The CEO makes better decisions because more detail always improves understanding"
+          ],
+          "correctIndex": 0,
+          "why": "Giving executives an operational dashboard buries them in charts with no conclusion, so a technically correct report gets ignored or misread and drives poor decisions."
+        }
+      ],
+      "explainPrompt": "Explain to a teammate how you decide between building a dashboard and writing a summary report for a request, and name one tradeoff of choosing a real-time interactive dashboard.",
+      "modelAnswer": "I start with the audience and the decision they need to make. If people check the same numbers often and need to slice them, like managers watching daily KPIs, I build a dashboard. It refreshes on a schedule, has filters and drill-down, and shows the few KPIs that matter. If someone needs a conclusion at one point in time, like a board reviewing last quarter, I write a static summary. It leads with an executive summary of findings and recommendations. I also decide whether the report is recurring or ad hoc, and every report gets a data-as-of date and a source note. The tradeoff with a real-time interactive dashboard is cost and complexity. It needs constant data loads and more upkeep. Lots of interaction can also bury the main message, so it only pays off when decisions really happen minute by minute.",
+      "rubricPoints": [
+        "Matches the report type to the audience and the decision they make.",
+        "Distinguishes a dashboard (refreshing, interactive, KPI-focused) from a static summary or executive summary.",
+        "Considers frequency (recurring or ad hoc) and how fresh the data must be.",
+        "Mentions showing a data-as-of date or source so readers can judge freshness.",
+        "Names a tradeoff, such as the cost of real-time refresh or interactivity hiding the key message."
+      ],
+      "suggested": {
+        "modality": "combo",
+        "rationale": "Choosing the right report format is a judgment call best practised by reasoning through exam-style requests with different audiences, freshness needs and frequencies, and no existing mission builds dashboards."
+      }
+    },
+    {
+      "objectiveId": "da0-002:4:3",
+      "sourceHash": "9cb85c993f1b",
+      "promptVersion": 2,
+      "model": "claude-opus-5-5",
+      "generatedAt": "2026-10-10T08:48:00.817Z",
+      "plain": "Validating a report means checking it carefully before anyone else sees it, so the numbers, labels and charts actually tell the truth. It is like proofreading a letter and also re-adding the receipts before you send an expense claim. You compare the report's totals against the original data, make sure filters and dates are what you intended, check that charts are not misleading, and ask a second person to review it. Small mistakes in a report travel far: a wrong number on a dashboard can drive a bad business decision long before anyone notices.",
+      "guessPrompt": "Your sales dashboard says last month's revenue was 1.2 million, but the finance system says 1.5 million. Before touching any chart, what are two things you would check first?",
+      "teach": "Report validation is the set of checks you run on a finished report or dashboard to confirm it is accurate, complete and not misleading before you publish it. Review is the human side: someone other than the author looks at it with fresh eyes.\n\nThe core checks are these. Reconciliation means comparing a total in the report to the same total in the source system, the original database or application the data came from. Filter and scope checks confirm the date range, region or product filters are the intended ones. Freshness checks confirm when the data was last refreshed, meaning reloaded from the source. Calculation checks confirm formulas, such as a profit margin, are defined the way the business defines them. Visual checks look for misleading design, such as a bar chart whose axis does not start at zero, missing labels or units, or a legend that does not match the colors. Finally, peer review and stakeholder sign-off mean a colleague and the requester confirm it answers the real question.\n\nWhy it works: each check compares the report against something independent of it, so an error has to survive several separate tests to slip through.\n\nWorked example: a dashboard shows March revenue of 1.2 million; finance reports 1.5 million. Step one, reconcile: the gap is 0.3 million. Step two, check filters: the dashboard is filtered to two of three regions. Step three, remove the filter: total becomes 1.48 million. Step four, check freshness: the last refresh was 29 March, so two days are missing. Step five, refresh: total matches 1.5 million. Two separate issues caused one wrong number.\n\nA common mistake is checking only that the report looks right, meaning layout and colors, while never reconciling a single number to the source. The consequence is a polished dashboard that leadership trusts and acts on, while it quietly understates results every month until someone in finance notices.",
+      "questions": [
+        {
+          "id": "da0-002:4:3:q1",
+          "role": "fade",
+          "prompt": "A subscription streaming company's dashboard shows a June churn rate of 8%. The customer team's own report says 5%. An analyst works through validation. Step 1, reconcile a source total: the dashboard and the billing system both show 400 cancellations in June, so the raw count matches. Step 2, check filters: the dashboard covers all plans and the full month of June, as intended. Step 3, check freshness: the data was last refreshed on 1 July, after the month ended, so it is current. Step 4: ???. Step 5: after the fix, the dashboard shows 5%, matching the customer team. Which action is the missing Step 4?",
+          "choices": [
+            "Run a visual check and confirm the churn chart's axis starts at zero, because a cut-off axis can make 5% look like 8%.",
+            "Refresh the data again from the billing system, because a second reload often corrects small percentage differences.",
+            "Run a calculation check. The dashboard divides 400 by the 5,000 customers active at month end, but the business defines churn as cancellations divided by the 8,000 customers at the start of the month.",
+            "Get stakeholder sign-off on the 8% figure, because the dashboard is the newer source and should replace the team's report."
+          ],
+          "correctIndex": 2,
+          "why": "The count, filters and freshness all checked out, so the remaining gap comes from how the formula is defined: 400/5,000 is 8%, while the business definition, 400/8,000, gives 5%."
+        },
+        {
+          "id": "da0-002:4:3:q2",
+          "role": "solo",
+          "prompt": "An analyst at a regional utility company finishes a dashboard showing total customer complaints for the quarter. Before publishing, she performs reconciliation. What is she actually doing?",
+          "choices": [
+            "Reloading the dashboard's data from the source so it includes the most recent complaints",
+            "Confirming that the colors in the legend match the colors used in the chart",
+            "Comparing the dashboard's complaint total to the same total in the original complaint-tracking system the data came from",
+            "Asking a colleague who did not build the dashboard to look it over with fresh eyes"
+          ],
+          "correctIndex": 2,
+          "why": "Reconciliation means comparing a total in the report to the same total in the source system, the original database or application the data came from."
+        },
+        {
+          "id": "da0-002:4:3:q3",
+          "role": "solo",
+          "prompt": "A logistics firm's report compares picking error rates at two warehouses: 4.8% and 5.1%. The bar chart's vertical axis starts at 4.5%, so the second bar looks about twice as tall as the first. Every number in the report matches the source system. Which validation check is designed to catch this problem?",
+          "choices": [
+            "Filter and scope check, because one warehouse may be excluded",
+            "Visual check, because an axis that does not start at zero exaggerates a small difference",
+            "Reconciliation, because the totals must be compared to the warehouse system",
+            "Freshness check, because the error rates may be out of date"
+          ],
+          "correctIndex": 1,
+          "why": "The numbers are correct but the design misleads, and visual checks look for exactly this kind of issue, such as a bar chart whose axis does not start at zero."
+        },
+        {
+          "id": "da0-002:4:3:q4",
+          "role": "solo",
+          "prompt": "A hotel group's analytics team spends a week polishing a new occupancy dashboard. They review the layout, fonts, colors and labels, and a colleague approves how it looks. Nobody compares any occupancy figure to the booking system it draws from. What is the most likely consequence once it goes live?",
+          "choices": [
+            "The dashboard will refuse to publish until a reconciliation has been recorded against the booking system.",
+            "Leaders may trust and act on a dashboard that is consistently wrong, and nobody notices until someone checks the numbers against the source.",
+            "The only risk is cosmetic, because peer review of the design also confirms that the figures are accurate.",
+            "Any error in the figures will be obvious on screen, because a well-designed layout makes wrong numbers stand out."
+          ],
+          "correctIndex": 1,
+          "why": "Checking only that a report looks right, without reconciling any number to the source, can produce a polished dashboard that people trust while it quietly misstates results."
+        }
+      ],
+      "explainPrompt": "Explain to a teammate, in your own words, how you would validate a dashboard before publishing it, and name one limit or tradeoff of doing these checks.",
+      "modelAnswer": "Before publishing, I compare the report to something independent of it. First I reconcile a few key totals against the source system, so if the dashboard says 1.2 million and finance says 1.5 million, I know something is off. Then I check the filters and date range, confirm when the data was last refreshed, and verify that calculated fields like margin match the business definition. I also look at the visuals: axes starting at zero for bars, clear labels and units, a legend that matches. Last, a colleague reviews it and the requester signs off that it answers their question. The tradeoff is time: thorough validation delays delivery, and reconciling only a sample of totals can still miss errors in smaller segments, so I focus the deepest checks on the numbers people will act on.",
+      "rubricPoints": [
+        "Reconciles report totals against the original source data.",
+        "Checks filters, date ranges and data freshness.",
+        "Verifies calculations match agreed business definitions.",
+        "Checks visuals for misleading scales, missing labels or wrong legends.",
+        "Includes peer review or stakeholder sign-off.",
+        "Names a limit such as time cost or sampling missing errors."
+      ],
+      "suggested": {
+        "modality": "combo",
+        "rationale": "No current mission or planned engine has the learner validate a report, so reasoning through exam-style scenarios with a mismatched number and tracing the cause builds the skill best."
+      }
+    },
+    {
+      "objectiveId": "da0-002:5:1",
+      "sourceHash": "39b3a0095653",
+      "promptVersion": 2,
+      "model": "claude-opus-5-5",
+      "generatedAt": "2026-10-10T08:48:17.419Z",
+      "plain": "Managing data responsibly means keeping three kinds of records about it. Documentation explains what the data means: what each column holds, who owns it, and where it came from. Versioning keeps dated or numbered copies of a dataset, a report, or the code that builds it, so you can see what changed and go back if needed. Data lineage is a map of the route data travels, from the original system through every cleanup step to the final chart. Think of a family recipe book. The written recipe is the documentation. Each revised edition is a version. Knowing which farm each ingredient came from is the lineage.",
+      "guessPrompt": "A total in this month's report looks wrong, and you want to know which source table and which calculation produced it. What kind of record would you want someone to have kept?",
+      "teach": "Data management practices are the habits that let people trust and reuse data. Three of them appear on the exam.\n\nDocumentation is a written description of the data. A data dictionary is the most common form. It lists every field along with its meaning, its data type (text, number or date), its allowed values, and its owner. Metadata means \"data about data\": the source, the refresh schedule, the row count, and the date of the last update.\n\nVersioning means saving numbered or dated snapshots of a dataset, a report, or the script that builds it. A change log records what changed and why, so you can compare versions and roll back to an earlier one.\n\nData lineage is the recorded path data takes from its source system through each transformation to its final destination. A transformation is any step that changes the data, such as a join, a filter or a calculation. Lineage lets you trace any number backward to where it came from.\n\nThey work because each answers a different question. Documentation answers \"what does this mean?\" Versioning answers \"what changed, and when?\" Lineage answers \"where did this come from, and what depends on it?\"\n\nHere is a worked example. A sales dashboard shows revenue down 20% overnight. Step 1, check the lineage: the dashboard reads a summary table, and that table is built from an orders table and a currency table. Step 2, check the versions: the script that builds the summary moved from v3 to v4 yesterday. Step 3, compare the two: v4 filters out pending orders, but v3 kept them. Step 4, check the documentation: the data dictionary says revenue includes pending orders, so v4 is wrong. Roll back to v3, fix the filter, and note the change in the log.\n\nA common mistake is writing documentation once and never updating it. A stale data dictionary is worse than none, because people trust it.\n\nIn a running system, missing lineage means that renaming one source column can silently break every report downstream. Lineage lets you run impact analysis before you make a change, which means listing everything that depends on that column.",
+      "questions": [
+        {
+          "id": "da0-002:5:1:q1",
+          "role": "fade",
+          "prompt": "A city library's data team plans to rename the column member_zip to postal_code in its members table. Here is their plan, worked through. Step 1: Open the lineage record. It shows that a membership summary table is built from the members table, and that a branch-usage report reads the summary table. Step 2: (missing). Step 3: Update the data dictionary entry for the field so it gives the new name, meaning, data type and owner. Step 4: Save the script that builds the summary table as a new version, and write in the change log what changed and why. What belongs in Step 2?",
+          "choices": [
+            "Run impact analysis: list everything that depends on member_zip, including the summary table and the branch-usage report, so each one is updated along with the rename.",
+            "Update the metadata to show the new refresh schedule and row count of the members table.",
+            "Roll the members table back to its previous version so the rename can be tested against older data.",
+            "Rename the column now, then wait to see which reports fail before deciding what to fix."
+          ],
+          "correctIndex": 0,
+          "why": "Before changing a source column, impact analysis uses the lineage to list every downstream dependent, so nothing breaks silently when the rename happens."
+        },
+        {
+          "id": "da0-002:5:1:q2",
+          "role": "solo",
+          "prompt": "An analyst at a shipping company asks: \"This delivery-time figure in the weekly report came from which source system, and which other reports use the same table?\" Which data management practice is designed to answer this question?",
+          "choices": [
+            "Data lineage",
+            "Metadata",
+            "A data dictionary",
+            "A change log"
+          ],
+          "correctIndex": 0,
+          "why": "Data lineage records the path data takes from its source system through each transformation to its destination, so it answers where data came from and what depends on it."
+        },
+        {
+          "id": "da0-002:5:1:q3",
+          "role": "solo",
+          "prompt": "At a hardware retailer, two analysts disagree about what the inventory column qty_adj means. One thinks it counts returned items, and the other thinks it counts damaged stock. They also do not know whether the column can hold negative numbers. Which governance control most directly settles this?",
+          "choices": [
+            "A lineage diagram that shows which reports read the inventory table",
+            "A change log that records when the inventory script was last edited",
+            "A versioned snapshot of the inventory table taken each night",
+            "A data dictionary that lists the field's meaning, data type, allowed values and owner"
+          ],
+          "correctIndex": 3,
+          "why": "A data dictionary answers \"what does this mean?\" by recording each field's meaning, data type, allowed values and owner."
+        },
+        {
+          "id": "da0-002:5:1:q4",
+          "role": "solo",
+          "prompt": "A dental clinic wrote a data dictionary two years ago. It says the field visit_type allows only the values CLEAN and FILL. A year ago, staff began entering a third value, XRAY, but nobody updated the dictionary. Analysts still rely on it when they write filters. What is the main risk?",
+          "choices": [
+            "None. A data dictionary only has to be accurate on the day it is first written.",
+            "The visit_type data will be lost, because the dictionary controls what values the table can store.",
+            "Versioning stops working, because change logs cannot record new values.",
+            "Analysts trust the stale dictionary, so they may leave out XRAY visits without noticing. This makes an outdated dictionary worse than having none."
+          ],
+          "correctIndex": 3,
+          "why": "Documentation that is never updated misleads people precisely because they trust it, so a stale data dictionary leads to silent errors."
+        }
+      ],
+      "explainPrompt": "Explain to a teammate how documentation, versioning and data lineage differ, which question each one answers, and one limit or cost of relying on them.",
+      "modelAnswer": "These are three different records, and each answers its own question. Documentation, such as a data dictionary, says what each field means, what type it is, what values are allowed, and who owns it. Use it when the question is \"what does this column mean?\" Versioning keeps numbered snapshots of datasets, reports or build scripts, plus a change log. Use it to see what changed and to roll back. Lineage maps how data flows from the source through each join, filter and calculation to the report. Use it to trace a wrong number back to its cause, or to see what breaks downstream before you change a source. The limit is upkeep. All three cost effort to maintain, and they are only useful if they stay current. A stale data dictionary or an incomplete lineage map misleads people, because they trust it.",
+      "rubricPoints": [
+        "Defines documentation, such as a data dictionary or metadata, as describing what the data means.",
+        "Defines versioning as saved snapshots with a change log that allow comparison and rollback.",
+        "Defines lineage as the traced path from the source through each transformation to the output.",
+        "Matches each practice to the question it answers: meaning, change, or origin and impact.",
+        "Names a limit, such as maintenance effort or the danger of stale records."
+      ],
+      "suggested": {
+        "modality": "combo",
+        "rationale": "The exam tests choosing the right control for a scenario, so reasoning through situations like the broken dashboard builds that skill best, and no current mission covers data governance."
+      }
+    },
+    {
+      "objectiveId": "da0-002:5:2",
+      "sourceHash": "98530428d993",
+      "promptVersion": 2,
+      "model": "claude-opus-5-5",
+      "generatedAt": "2026-10-10T08:48:22.133Z",
+      "plain": "Compliance means proving that the way you keep, use, and delete data follows the rules that apply to you. Those rules come from laws and industry standards (regulations) and from your own company policies. Three ideas sit at the center. Retention is how long you keep each kind of data before you must delete it. An audit is a check, by your own team or an outsider, that compares what you actually did with what the rules say. Regulations set the requirements. Think of a library that keeps its borrowing records only as long as the rules allow, then shreds them, and keeps a logbook an inspector can read.",
+      "guessPrompt": "A company keeps every customer record forever, just in case it is useful someday. Why might that create a compliance problem instead of being the safe choice?",
+      "teach": "A retention policy is a written rule that says how long each category of data must be kept and what happens when that time ends. The retention period is the length of time itself. Disposal is the approved way to destroy data when the period ends, such as secure deletion. A legal hold is an order that pauses disposal for specific records because they may be needed in a lawsuit or investigation.\n\nRegulations set many of these rules. GDPR is the European Union privacy law. It says personal data should be kept no longer than its purpose needs, and people can ask for their data to be erased. HIPAA is the US law protecting health information. PCI DSS is the payment card industry standard for cardholder data. SOX is a US law on the accuracy of financial records at public companies. Data residency means some rules require data to be stored in a particular country or region.\n\nAn audit checks that you follow the rules. An audit trail, also called an audit log, is a time-stamped record of who accessed or changed data and when. Audits work because evidence beats claims. Without logs and written policies, you cannot prove you complied.\n\nWorked example: policy says keep invoices for seven years, then securely delete them. First, an invoice from 2017 reaches its seven-year date. Second, the system checks for a legal hold and finds none. Third, it deletes the invoice. Fourth, it writes an entry to the audit log showing what was deleted, when, and under which rule. Later, an auditor samples the log and confirms that disposal matched the policy.\n\nA common mistake is keeping everything forever. Extra data increases breach exposure and can directly break rules that limit how long data may be kept. The opposite mistake is deleting records that are under a legal hold. In a running system, either one can lead to fines, failed audits, and lost evidence. The correct control is to automate retention, honor holds, and log every action.",
+      "questions": [
+        {
+          "id": "da0-002:5:2:q1",
+          "role": "fade",
+          "prompt": "A regional bank keeps recordings of customer phone calls for 90 days, then securely deletes them. Here is how the system handles one recording. Step A: a call recorded on 1 March reaches its 90-day date. Step B: the system checks for holds and finds that this call is tied to a customer's lawsuit, so a legal hold is active. Step C: [missing]. Step D: months later, the lawyers lift the hold. The system then securely deletes the recording and logs the deletion, with the time and the rule that applied. Which action belongs in Step C?",
+          "choices": [
+            "Delete the recording on schedule, because the 90-day retention period has ended",
+            "Move the recording to cheaper storage and stop tracking it until someone asks for it",
+            "Skip deletion, and write an audit log entry showing it was kept because of the legal hold",
+            "Ask the customer whether they want the recording kept or erased"
+          ],
+          "correctIndex": 2,
+          "why": "A legal hold pauses disposal, and logging that decision gives auditors evidence of why the recording outlived its retention period."
+        },
+        {
+          "id": "da0-002:5:2:q2",
+          "role": "solo",
+          "prompt": "An auditor asks a dental clinic to prove exactly who opened a particular patient's record last June, and when. Which item gives the clinic that evidence?",
+          "choices": [
+            "The retention policy that says how long patient records are kept",
+            "The data residency setting that shows which country stores the records",
+            "A signed statement from staff saying they followed the rules",
+            "The audit trail, a time-stamped log of who accessed or changed data"
+          ],
+          "correctIndex": 3,
+          "why": "Only an audit trail records who accessed the data and when, and audits rely on evidence like this rather than claims."
+        },
+        {
+          "id": "da0-002:5:2:q3",
+          "role": "solo",
+          "prompt": "An online retailer takes credit card payments at checkout. The team wants to know which rule set is specifically about protecting the cardholder data it stores. Which one is it?",
+          "choices": [
+            "HIPAA",
+            "GDPR",
+            "PCI DSS",
+            "SOX"
+          ],
+          "correctIndex": 2,
+          "why": "PCI DSS is the payment card industry standard that covers cardholder data. HIPAA covers health information, SOX covers the accuracy of financial records at public companies, and GDPR is the EU privacy law."
+        },
+        {
+          "id": "da0-002:5:2:q4",
+          "role": "solo",
+          "prompt": "A marketing firm decides to keep every customer contact record forever, just in case it is useful someday. What is the main governance problem with this choice?",
+          "choices": [
+            "It increases breach exposure and can break rules that limit how long personal data may be kept",
+            "It breaks legal holds, because holds require records to be deleted quickly",
+            "Nothing, because keeping more data always makes it easier to pass an audit",
+            "It only becomes a problem once the storage bill gets too high"
+          ],
+          "correctIndex": 0,
+          "why": "Keeping data forever widens the damage a breach can cause and can violate rules such as GDPR, which says personal data should be kept no longer than its purpose needs."
+        }
+      ],
+      "explainPrompt": "Explain to a teammate how a retention policy, a legal hold, and an audit trail work together to keep a dataset compliant, and name one tradeoff or limit of that approach.",
+      "modelAnswer": "A retention policy tells us how long each kind of data is kept and how it is disposed of. The periods come from regulations like GDPR, HIPAA, PCI DSS, or SOX, plus our own business needs. When a record reaches the end of its period, we delete it securely. The exception is a legal hold, which pauses deletion for records that may be needed in a lawsuit or investigation. Every access, change, and deletion goes into an audit trail, a time-stamped log, so an auditor can see what actually happened and compare it with the rules. The tradeoff is that short retention lowers breach risk and satisfies privacy rules, but it can destroy data that analysts later want. Long retention keeps that data but adds storage cost, raises exposure, and can violate data-minimization rules. The audit log itself also has to be protected and retained.",
+      "rubricPoints": [
+        "Defines retention as how long data is kept and how it is disposed of afterward.",
+        "Links retention periods to regulations or policy, such as GDPR, HIPAA, PCI DSS, or SOX.",
+        "Explains that a legal hold overrides normal deletion.",
+        "Describes the audit trail as evidence of who did what and when, which an audit checks.",
+        "Names a tradeoff, such as keeping data too long versus deleting data still needed."
+      ],
+      "suggested": {
+        "modality": "combo",
+        "rationale": "No current mission or planned engine practices retention or audits, so reasoning through exam-style scenarios is the best way to learn to pick the right compliance control."
+      }
+    },
+    {
+      "objectiveId": "da0-002:5:3",
+      "sourceHash": "cdcc39837d1c",
+      "promptVersion": 2,
+      "model": "claude-opus-5-5",
+      "generatedAt": "2026-10-10T08:48:46.121Z",
+      "plain": "Privacy strategies are the ways a team keeps sensitive data, such as names, card numbers or health details, from being seen by the wrong people. There are three main tools. Access control decides who is allowed in at all. Encryption scrambles data so that it is unreadable without a secret key. Masking hides part or all of a value, for example showing only the last four digits of a card. Think of a hotel. Room keys decide who enters which room (access control). A locked safe protects valuables even if someone gets in (encryption). A receipt that prints only part of your card number is masking.",
+      "guessPrompt": "An analyst needs to report total sales by region, but the sales table also holds each customer's full credit card number. What could you do so the analyst gets the report without ever seeing card numbers?",
+      "teach": "Personally identifiable information (PII) is any data that can identify a person, such as a name, email address or national ID number. Privacy strategies limit who can see it and how much of it they see.\n\nAccess control is the set of rules deciding who may read or change data. Role-based access control (RBAC) grants permissions to a role, such as \"analyst\" or \"support agent\", instead of to each individual person. Least privilege means each role gets only the access its work requires. Encryption converts readable data into ciphertext, which is scrambled text that only a holder of the right key can turn back into readable data. Encryption at rest protects stored data, such as data on disks and in backups. Encryption in transit protects data moving across a network. Masking replaces part or all of a value with substitute characters, for example ****-1234. Static masking permanently alters a copy of the data, such as a test database. Dynamic masking hides values only when they are shown, based on the viewer's role.\n\nWorked example: a customer table holds name, email, card number, region and purchase total. Step 1: the analyst role is granted access only to region and total, so least privilege removes the need to see PII. Step 2: support agents must confirm a caller's card, so dynamic masking shows them only the last four digits. Step 3: the database files and backups are encrypted at rest, so a stolen disk is unreadable. Step 4: connections to the database use encryption in transit. Step 5: developers receive a statically masked copy for testing.\n\nA common mistake is assuming that encryption at rest hides data from users. It does not. Anyone with query access sees decrypted values. Encryption defends against stolen media or intercepted traffic, while access control and masking defend against over-exposed users. If a team relies on encryption alone, every account that can log in can read every card number, and one compromised account can leak the whole table.",
+      "questions": [
+        {
+          "id": "da0-002:5:3:q1",
+          "role": "fade",
+          "prompt": "A university stores student records with these columns: full name, student ID number, home address, grade average and degree program. Step 1: the enrollment-planning team only needs grade averages by program, so their role is granted read access to just the program and grade average columns (least privilege). Step 2: academic advisors talk to students on the phone and must confirm who they are speaking to, so they need to check the last three digits of the student ID, but they never need the full ID. The same live table is also used by the registrar's office, which needs full IDs. Step 3: the database server drives and backup files are encrypted at rest, so a stolen drive is unreadable. Which control completes Step 2?",
+          "choices": [
+            "Rely on the encryption at rest from Step 3, since it already scrambles the student ID column",
+            "Apply dynamic masking so advisors see only the last three digits of the ID while the registrar's role still sees the full value",
+            "Give advisors the same full-access role as the registrar, since they are trusted staff",
+            "Permanently overwrite the student ID column in the live table with ****** plus the last three digits, so nobody ever sees full IDs"
+          ],
+          "correctIndex": 1,
+          "why": "Dynamic masking hides values at display time based on the viewer's role, so advisors get only the digits they need while the stored data, and the registrar's view of it, stays complete."
+        },
+        {
+          "id": "da0-002:5:3:q2",
+          "role": "solo",
+          "prompt": "An online pharmacy encrypts its customer database at rest and encrypts every connection to it. An attacker steals the login of one sales representative whose account can query every column, then downloads all 80,000 customers' phone numbers and prescriptions as readable text. Why didn't encryption stop this?",
+          "choices": [
+            "Encryption in transit only works for backups, so the live database was left unprotected",
+            "Anyone with query access sees decrypted values; limiting that account's access or masking those columns was needed",
+            "The encryption keys must have been weak; strong encryption would have kept the downloaded data scrambled",
+            "Encryption at rest only protects data once it has been deleted, not data that is still in the table"
+          ],
+          "correctIndex": 1,
+          "why": "Encryption defends against stolen media and intercepted traffic, but a logged-in user with query access sees decrypted values, so access control and masking are what limit an over-exposed account."
+        },
+        {
+          "id": "da0-002:5:3:q3",
+          "role": "solo",
+          "prompt": "A hospital has 300 nurses who all need the same read access to patient charts. It uses role-based access control (RBAC). A new nurse is hired. What is the RBAC way to give her the right access?",
+          "choices": [
+            "Assign her account to the existing nurse role, which already holds the needed permissions",
+            "Copy the individual permissions of an existing nurse onto her account one by one",
+            "Grant her access to every table so she is never blocked during a shift",
+            "Encrypt the patient charts with a personal key issued only to her"
+          ],
+          "correctIndex": 0,
+          "why": "RBAC grants permissions to a role rather than to each person, so adding the new nurse to the nurse role gives her exactly that role's access."
+        },
+        {
+          "id": "da0-002:5:3:q4",
+          "role": "solo",
+          "prompt": "A delivery company's drivers use a phone app that sends each customer's name and home address to the company server over public Wi-Fi. The team worries someone on the same network could capture that data as it travels. Which control addresses this specific risk?",
+          "choices": [
+            "Encryption in transit, so captured network traffic is unreadable ciphertext",
+            "Dynamic masking so drivers only see part of each address",
+            "Static masking of the addresses in a test copy of the database",
+            "Encryption at rest on the server's disks and backups"
+          ],
+          "correctIndex": 0,
+          "why": "Encryption in transit protects data moving across a network, so anyone intercepting the traffic captures only ciphertext they cannot read without the key."
+        }
+      ],
+      "explainPrompt": "Explain to a teammate how access control, encryption and masking each protect a sensitive dataset differently, and name one limit of each.",
+      "modelAnswer": "The three tools stop different threats, so we usually layer them. Access control, ideally role-based and following least privilege, decides who can query the data at all. Its limit is that anyone who does have access sees whatever that role allows, and a compromised account inherits those rights. Encryption scrambles data with a key, both at rest on disks and backups and in transit over the network. It protects us if a disk is stolen or traffic is intercepted. It does nothing against an authorized user, because the data is decrypted for them, and losing the key means losing the data. Masking hides part of a value, like showing only the last four card digits. It can be dynamic per role or static in a test copy. Its limit is that masked data may be useless for tasks that need the real value, and weak masking can sometimes be reversed. For a card table, I'd combine all three.",
+      "rubricPoints": [
+        "Access control decides who may see or change data, ideally by role with least privilege.",
+        "Encryption makes data unreadable without a key, at rest and in transit.",
+        "Encryption does not hide data from users who already have authorized access.",
+        "Masking hides part or all of a value, either dynamically per viewer or statically in a copy.",
+        "The controls address different threats and are best layered together.",
+        "At least one concrete limit or tradeoff is named for a control."
+      ],
+      "suggested": {
+        "modality": "combo",
+        "rationale": "The exam tests picking the right control for a described dataset and audience, so reasoning through scenario-style situations builds that skill best."
+      }
+    },
+    {
+      "objectiveId": "da0-002:5:4",
+      "sourceHash": "622b5268b500",
+      "promptVersion": 2,
+      "model": "claude-opus-5-5",
+      "generatedAt": "2026-10-10T08:48:48.960Z",
+      "plain": "Data quality assurance is the habit of checking that data is fit to use before and while people rely on it. It has three parts. Profiling means taking a first close look at a dataset to learn what is really in it. Testing means writing specific rules the data must pass, such as 'every order has an ID.' Monitoring means re-running those checks on a schedule so you notice when something breaks later. Think of a restaurant kitchen: you inspect a new supplier's delivery (profiling), you have rules like 'fridge below 5 degrees' (testing), and you check the thermometer every shift (monitoring).",
+      "guessPrompt": "A sales table loaded fine last month, but this week a dashboard total looks too low. What could you have set up in advance that would have warned you before anyone saw the wrong number?",
+      "teach": "Data quality is how well data meets its intended use. It is usually judged on dimensions: completeness (are required values present), accuracy (do values match reality), consistency (does the same fact agree across places), validity (do values follow the expected format or range), uniqueness (no unwanted duplicates), and timeliness (is the data current enough).\n\nProfiling is a summary scan of a dataset: row counts, null (empty) counts per column, distinct values, minimum and maximum, and value distributions. It works because surprises show up in summaries faster than in raw rows. Testing turns expectations into explicit pass-or-fail rules, often called validation rules or assertions. Monitoring runs those tests repeatedly, compares results to a threshold (an acceptable limit), and alerts someone when a threshold is crossed.\n\nWorked example. You receive an orders table. Step one, profile it: 10,000 rows, the email column is 4 percent null, order_total ranges from -50 to 9,800, and order_id has 12 duplicate values. Step two, decide which findings are problems: a negative total is invalid, duplicate IDs break uniqueness, and missing emails may be acceptable if email is optional. Step three, write tests: order_id must be unique, order_total must be zero or greater, order_date must not be in the future. Step four, monitor: run the tests after every daily load and alert if any test fails or if the null rate for email rises above 10 percent, or if row count drops sharply versus yesterday.\n\nA common mistake is profiling once, cleaning the data, and assuming it stays clean. Sources change: a new app version may stop sending a field. Without monitoring, the broken data flows into reports, decisions get made on wrong numbers, and trust in the dashboards erodes. Quality assurance is therefore a repeating control, not a one-time cleanup.",
+      "questions": [
+        {
+          "id": "da0-002:5:4:q1",
+          "role": "fade",
+          "prompt": "A hospital pharmacy loads a medication-dispensing table every night. An analyst works through quality assurance on it. Profile: 3,200 rows; patient_id is 0 percent null; dispense_id has no duplicates; pharmacist_note is 60 percent null; dose_mg ranges from 0.5 to 50,000. Decide: notes are optional, so the nulls are acceptable, but no drug this pharmacy stocks is dispensed above 2,000 mg, so 50,000 is an invalid value. Tests: (1) dispense_id must be unique; (2) patient_id must not be null; (3) [MISSING]. Monitor: run all tests after each nightly load and alert the data team if any test fails. Which rule belongs in the missing slot?",
+          "choices": [
+            "pharmacist_note must not be null",
+            "Delete the 50,000 mg rows once and drop the dose check",
+            "dose_mg must be between 0.5 and 2,000",
+            "dose_mg must be unique across all rows"
+          ],
+          "correctIndex": 2,
+          "why": "The profile flagged an out-of-range dose, so the matching test is a validity rule that enforces the allowed dose range on every load."
+        },
+        {
+          "id": "da0-002:5:4:q2",
+          "role": "solo",
+          "prompt": "A logistics company stores a customer's delivery address in its sales system and also in its billing system. For the same customer, the sales system says \"12 Harbor Rd\" and the billing system says \"48 Mill Lane.\" Which data quality dimension does this mismatch most directly violate?",
+          "choices": [
+            "Completeness",
+            "Consistency",
+            "Uniqueness",
+            "Timeliness"
+          ],
+          "correctIndex": 1,
+          "why": "Consistency asks whether the same fact agrees across places, and here one customer's address disagrees between two systems."
+        },
+        {
+          "id": "da0-002:5:4:q3",
+          "role": "solo",
+          "prompt": "A ride-sharing firm has a rule that no more than 5 percent of trip records may be missing a pickup location. Every hour, a job checks the latest trip records against that limit and sends an alert to the on-call analyst if the missing rate goes above 5 percent. Which quality assurance activity is this?",
+          "choices": [
+            "Defining a new data quality dimension",
+            "A one-time cleanup of the trip table",
+            "Profiling, because it scans counts of null values",
+            "Monitoring, because a test runs repeatedly against a threshold and alerts"
+          ],
+          "correctIndex": 3,
+          "why": "Monitoring means running tests over and over, comparing results to a threshold (an acceptable limit), and alerting someone when it is crossed."
+        },
+        {
+          "id": "da0-002:5:4:q4",
+          "role": "solo",
+          "prompt": "In January, an online furniture retailer profiled its product catalog, fixed every problem it found, and declared the data clean. In March, a supplier changed its export format and stopped sending product weight. Shipping-cost reports were wrong for weeks before anyone noticed. What was the main gap in the retailer's quality assurance?",
+          "choices": [
+            "No tests were run repeatedly on new loads to alert when weight went missing",
+            "The catalog should have been cleaned a second time in January",
+            "Weight should have been made an optional field",
+            "The January profile should have included more columns"
+          ],
+          "correctIndex": 0,
+          "why": "Quality assurance is a repeating control; without ongoing monitoring of new data, a source change let broken data flow into reports unnoticed."
+        }
+      ],
+      "explainPrompt": "Explain to a teammate the difference between profiling, testing, and monitoring data quality, and name one limit or tradeoff of relying on automated quality checks.",
+      "modelAnswer": "Profiling is the discovery step: you summarize a dataset with counts, nulls, ranges, and duplicates to learn what is actually there. Testing turns what you expect into explicit rules, like 'order_id is unique' or 'total is not negative,' that pass or fail. Monitoring runs those tests on a schedule, compares results to thresholds, and alerts when something drifts, such as a null rate jumping or the row count dropping. Together they cover completeness, validity, uniqueness, and timeliness. The limit is that tests only catch what you thought to write rules for; a value can be valid in format but still wrong, so accuracy problems can slip through. There is also a tradeoff in thresholds: set them too tight and people get alert fatigue, too loose and real problems go unnoticed.",
+      "rubricPoints": [
+        "Profiling is a summary scan to discover what the data contains.",
+        "Testing expresses expectations as explicit pass-or-fail rules.",
+        "Monitoring re-runs checks over time with thresholds and alerts.",
+        "Links checks to quality dimensions such as completeness, validity, or uniqueness.",
+        "Names a limit, such as tests missing unanticipated errors or threshold tuning causing alert fatigue."
+      ],
+      "suggested": {
+        "modality": "do-new",
+        "engineId": "sql-lab",
+        "rationale": "Writing profiling queries for nulls, ranges, and duplicates and then turning findings into pass-or-fail checks is best learned by doing it against a real table."
+      }
+    }
+  ],
+  "scenarios": [
+    {
+      "unitId": "da0-002:1",
+      "promptVersion": 2,
+      "model": "claude-opus-5-5",
+      "generatedAt": "2026-10-10T08:49:22.732Z",
+      "title": "Sorting Out the Data at Tidewell Outdoor Supply",
+      "scenario": "You have just joined Tidewell Outdoor Supply, a fictional online shop that sells camping gear, as a junior data analyst. Your manager wants a one-page inventory of the company's data before anyone builds new reports. Here is what you find.\n\nCustomer orders are stored in a database (an organized system for storing and retrieving data) running on a server in Tidewell's own office building. The orders are kept in tables (grids of rows and columns), and each order row points to a customer row through a shared customer ID number.\n\nProduct reviews arrive from a partner review website through an API (application programming interface, a defined way for one program to request data from another). Each review comes back as a text file ending in .json (JavaScript Object Notation, a text format of labeled name-and-value pairs that can be nested). Some reviews have a photo field and some do not. The reviews are saved in a second database that stores each review as its own flexible document instead of as a fixed table row.\n\nThe web server writes a log (a time-stamped record of events, one line per event) for every page visit. These logs are copied each night to cloud object storage, meaning storage space rented from an outside provider over the internet that holds whole files as objects. Finance also emails a weekly spreadsheet export ending in .csv (comma-separated values, plain text where commas split each row into columns).\n\nThe review-loading program runs inside a container (a lightweight package that bundles a program with everything it needs so it runs the same on any machine). An analyst writes Python code in Jupyter Notebook (a browser-based coding environment that mixes code, results, and notes) to clean the data, and the sales team views charts in Power BI (business intelligence software, meaning a tool for building interactive dashboards and reports).\n\nTwo automation projects are also running. The first is a program that reads the text of each review and labels it positive, negative, or neutral. The second is a software bot that opens the supplier's web portal each morning, copies invoice numbers, and types them into the accounting system exactly as a person would, following fixed steps.\n\n1. For the orders data and the reviews data, name the database type of each (relational or non-relational) and the data structure of each (structured, semi-structured, or unstructured), and give the reason for each choice.\n2. Name the data source type for the reviews, the web visits, and the finance figures, and name the infrastructure where the orders and the logs live. Also say what the container is doing for the review loader.\n3. Classify Jupyter Notebook and Power BI by tool category and say which one a sales manager is more likely to use, and why.\n4. Identify which AI-related concept each automation project represents and explain the difference between them.",
+      "subParts": [
+        "Database types and data structures",
+        "Data sources and infrastructure",
+        "Data tools",
+        "AI concepts"
+      ],
+      "modelAnswer": [
+        "The orders database is a relational database. A relational database stores data in tables with fixed columns and links tables together through shared key values. Here, the customer ID in each order row points to a row in the customer table. The orders data is structured data, meaning every record follows the same predefined set of columns and types. The reviews database is a non-relational database, also called NoSQL. More specifically it is a document database, which stores each record as a self-contained document whose fields can vary. The review data is semi-structured. The JSON has labels and nesting, so it has some organization, but the fields are not fixed: some reviews have a photo field and others do not. A common mistake is to call JSON 'unstructured' just because it is not in a table. Unstructured data has no labeled fields at all, such as raw images or free audio.",
+        "The reviews come from an API source, because a program requests them from the partner website through a defined interface. The web visits come from logs, which are time-stamped event records written automatically by the web server. The finance figures come from a file source: a .csv flat file exported and emailed each week. The orders database sits on on-premise infrastructure, meaning hardware the company owns and runs in its own building. The logs live in cloud storage, specifically object storage rented from an outside provider over the internet. The container packages the review loader together with its required libraries and settings, so it runs the same way on any machine. This is called containerization, and it avoids 'it worked on my laptop' failures when the program is moved to a different server.",
+        "Jupyter Notebook is a coding environment. It is a place where an analyst writes and runs code, here Python, to clean, reshape, and analyze data, with the results shown next to the code. Power BI is BI (business intelligence) software. It is used to build and share interactive dashboards and reports. A sales manager is far more likely to use Power BI, because it shows ready-made visuals that can be filtered by clicking and requires no programming. Jupyter is aimed at analysts who are comfortable writing code.",
+        "The review-labeling program uses natural language processing (NLP). NLP is a branch of AI that lets software interpret human language. Labeling text as positive, negative, or neutral is a specific NLP task called sentiment analysis. The invoice bot is robotic process automation (RPA). RPA is software that imitates a person's clicks and keystrokes to carry out a repetitive, rule-based task across existing applications. The key difference is that NLP has to understand meaning in varied, unpredictable language, while RPA follows fixed steps and does not interpret anything. If the supplier changes its portal layout, the RPA bot will likely break until someone updates its steps. A common mistake is to label every automation 'AI'. RPA can run with no learning model at all."
+      ]
+    },
+    {
+      "unitId": "da0-002:2",
+      "promptVersion": 2,
+      "model": "claude-opus-5-5",
+      "generatedAt": "2026-10-10T08:49:40.737Z",
+      "title": "Cleaning and Combining Order Data at Brightwell Pantry",
+      "scenario": "Brightwell Pantry is a small, fictional online grocery shop. Ingrid, a new junior data analyst, has been asked for a weekly report showing revenue by sales region. Revenue means the money customers paid. The data she needs lives in two separate places, so she must first gather and combine it. Combining data from more than one source into one usable set is called data integration.\n\nSource A is an orders file exported from the web store. Each row is one order. The OrderID column is meant to be the primary key, which is a column whose value should be unique for every row so that each row can be told apart. The rows are:\n1001 | C07 | 2024-03-02 | $45.10 | 3\n1002 | C11 | 03/04/2024 | $38.00 | 2\n1002 | C11 | 03/04/2024 | $38.00 | 2\n1003 | C15 | 2024-03-05 | (blank) | 1\n1004 | C07 | 2024-03-06 | $41.75 | 9999\n1005 | C22 | 2024-03-06 | $52.30 | 4\nThe columns are OrderID, CustomerID, OrderDate, Amount and Quantity. The store's older checkout page wrote dates as month/day/year, and the newer page writes year-month-day. The Amount column was exported as text, with a dollar sign and sometimes a comma, rather than as a number. On a normal week, Brightwell orders contain between 1 and 8 items.\n\nSource B is the customer table in the company's customer database. Ingrid pulls it with a query, which is a written request that asks a database to return specific rows and columns. Its columns are CustomerID, FullName, Region and RegionCode:\nC07 | Okafor, Ada | North | N\nC11 | Brandt, Leo | (blank) | (blank)\nC15 | Silva, Marta | South | S\nCustomer C22 does not appear in this table at all.\n\nA few terms will help. A missing value, sometimes called a null, is an empty cell where a value should be. A duplicate is a row that repeats another row that describes the same real thing. Redundancy means the same piece of information is stored more than once in different columns, which wastes space and can drift out of step. An outlier is a value far outside the normal range, which may be a real event or an error. Cleansing means fixing or flagging bad values. Parsing means splitting or reading text into the separate parts or the type of value you need. Formatting means making values follow one consistent pattern. Merging, also called a join, combines two tables by matching a shared column. An inner join keeps only the rows that match in both tables. A left join keeps every row from the first (left) table and fills in blanks where the second table has no match.\n\nIngrid's lead reminds her to explore the data before she changes or analyses it.\n\n1. Exploration: list each data quality problem you can find in Source A and Source B, and name the type of problem (missing value, duplicate, redundancy, outlier or inconsistent format).\n2. Transformation: for each problem, describe the cleansing, parsing or formatting step you would apply. Include how you would handle the 9999 quantity, the blank amount, the dates, the Amount text and the FullName column.\n3. Merging: say which column you would join the two tables on, whether you would use an inner join or a left join, and what happens to orders 1002 and 1005 under your choice. Also explain why the duplicate must be removed before the merge rather than after the analysis.\n4. Impact: Ingrid's manager wants the week's total revenue. Give the total you would get by simply adding every amount in Source A after stripping the dollar signs, give the total after your cleaning, and explain the difference.",
+      "subParts": [
+        "Find the problems",
+        "Plan the transformations",
+        "Merge the tables",
+        "Compare the revenue totals"
+      ],
+      "modelAnswer": [
+        "Source A problems: Order 1002 appears twice with identical values, which is a duplicate. This is easy to spot because OrderID is supposed to be a unique primary key. Order 1003 has a blank Amount, which is a missing value. Order 1004 has a Quantity of 9999 when normal orders hold 1 to 8 items, which is an outlier. OrderDate is inconsistently formatted, with some rows using year-month-day and some using month/day/year. Amount is stored as text with a dollar sign and possibly commas, which is a formatting or type problem: it cannot be added up as a number.\n\nSource B problems: customer C11 has a blank Region and RegionCode, which are missing values. Region and RegionCode hold the same information twice, which is redundancy. Customer C22 is referenced by an order but is missing from the customer table entirely, so it has no matching record.",
+        "Remove the duplicate row so that order 1002 appears once, keeping one copy based on the unique OrderID.\n\nFor order 1003's blank Amount, do not fill in zero, because zero would claim the order was free. Instead, flag it as missing and try to recover the true value from the source system. Report it as excluded or unknown until it is fixed.\n\nFor the 9999 quantity on order 1004, do not silently delete the row. Flag it and check it against its $41.75 amount. A $41.75 order cannot plausibly hold 9999 items, so it is very likely an entry error. Correct it from the source if possible, otherwise mark the quantity as unknown. The amount itself still looks valid and can stay.\n\nFormat every OrderDate into one pattern, such as year-month-day. Read the old rows as month/day/year, so 03/04/2024 becomes 2024-03-04 (4 March), not 3 April.\n\nParse Amount by stripping the dollar sign and any commas, then convert it to a numeric type.\n\nParse FullName by splitting it at the comma into LastName and FirstName, for example Okafor and Ada.\n\nResolve the redundancy by keeping one region column, or by deriving the code from the name, so the two cannot disagree. Flag C11's missing region and C22's missing customer record for follow-up rather than guessing.",
+        "Join on CustomerID, because it is the column the two tables share.\n\nUse a left join with the orders table on the left. That way every order is kept even if its customer details are incomplete.\n\nUnder the left join, order 1002 (customer C11) stays, with a blank region, so it can be reported as 'region unknown'. Order 1005 (customer C22) also stays, with blank customer fields. An inner join would drop order 1005 entirely, because C22 has no match, and the report would silently lose $52.30 of revenue.\n\nThe duplicate must be removed before the merge for two reasons. First, the duplicated 1002 row would be carried into the joined table and counted twice in every total built on it. Second, any duplicate key in either table can multiply rows during a join. If you only noticed it after the analysis, every figure already produced would be wrong and would have to be redone. This is why you explore and cleanse first, then merge, then analyse.",
+        "Naive total: adding every amount after stripping the dollar signs gives 45.10 + 38.00 + 38.00 + 41.75 + 52.30 = $215.15. Order 1003 is skipped because it is blank.\n\nCleaned total: with the duplicate removed, the total is 45.10 + 38.00 + 41.75 + 52.30 = $177.15. This comes with a note that order 1003 has a missing amount and is not included yet.\n\nThe $38.00 difference is the duplicated order 1002, which the naive total counted twice, overstating revenue. The note about order 1003 tells the reader that the true total may be higher once that value is recovered. The 9999 quantity does not change revenue, but it would badly distort any average items-per-order figure if it were left uncorrected."
+      ]
+    },
+    {
+      "unitId": "da0-002:3",
+      "promptVersion": 2,
+      "model": "claude-opus-5-5",
+      "generatedAt": "2026-10-10T08:49:27.619Z",
+      "title": "Delivery times at Brightwater Home Goods",
+      "scenario": "You are a junior data analyst at Brightwater Home Goods, a fictional online shop that sells kitchen and garden products. The Vice President (VP) of Operations, a senior manager who runs the warehouses and shipping, asks one question: \"How long does it usually take for an order to reach a customer?\"\n\nA colleague exports a sample of 12 recent orders from the order system. The column delivery_days holds the number of days between the order being placed and the parcel arriving. The values are: 2, 3, 3, 4, 4, 4, 5, 5, 6, 0, 0, 41.\n\nTwo useful facts. First, the order system writes a 0 in delivery_days when a parcel has not been delivered yet. That 0 is a placeholder, meaning a stand-in value that holds a spot but is not a real measurement. Second, the warehouse confirms that the order taking 41 days really happened: a pallet was misplaced and found weeks later.\n\nSome terms you will need. The mean (often called the average) is the total of all values divided by how many values there are. The median is the middle value once the values are sorted from smallest to largest. When there is an even number of values, it is the mean of the two middle ones. An outlier is a value far away from most of the others. Data is skewed when a few extreme values sit on one side and stretch the data in that direction. A null is a database's way of saying \"no value recorded here,\" which is different from the number zero.\n\n1. Before calculating anything, identify the data problem in this sample. Explain how it would distort a summary, and say how you would fix it.\n2. Using the corrected data, calculate both the mean and the median. Say which one you would report as the \"usual\" delivery time, and why.\n3. Describe how you would communicate the result to two different audiences: the VP of Operations, and a fellow analyst on the data team who will repeat your work next month.",
+      "subParts": [
+        "Troubleshoot the placeholder zeros",
+        "Calculate mean and median and choose one",
+        "Tailor the message to two audiences"
+      ],
+      "modelAnswer": [
+        "The problem is the two 0 values. They are placeholders for orders that have not arrived yet, not real delivery times of zero days. No parcel arrives the moment it is ordered, so a 0 here is impossible as a measurement, and that is the clue that something is wrong.\n\nIf you leave the zeros in, they are treated as genuine, super-fast deliveries and drag the summary down. With all 12 values the total is 77, so the mean is 77 ÷ 12 ≈ 6.4 days. That understates the true mean. A good way to catch this kind of issue is to check the minimum value or sort the column before summarizing, then confirm with whoever owns the system what a 0 means.\n\nThe fix is to treat these rows as missing, not as zero. Either convert the 0s to null or filter out the undelivered orders, which leaves 10 delivered orders. Record that 2 orders were excluded and why, so the count is transparent. Do not delete the 41-day order. It is a real, confirmed value, so it is an outlier to handle carefully, not an error to remove.",
+        "The corrected data is 10 values: 2, 3, 3, 4, 4, 4, 5, 5, 6, 41.\n\nMean: the values add up to 77, and 77 ÷ 10 = 7.7 days.\n\nMedian: the values are already sorted, and there are 10 of them, so the middle two are the 5th and 6th values, which are 4 and 4. Their mean is 4, so the median is 4 days.\n\nReport the median (4 days) as the usual delivery time. The data is skewed by one outlier, the 41-day order, and that single value pulls the mean up to 7.7. Nine of the ten orders arrived in 6 days or fewer, so 7.7 does not describe a typical order. The median depends only on the middle of the sorted data, so one extreme value barely moves it.\n\nThe outlier should still be mentioned, not hidden. It reveals a real operational failure. A good answer may also note the range (2 to 41 days) or that 4 days was also the most common value.",
+        "For the VP of Operations, keep the message short and lead with the answer. For example: \"A typical order arrives in about 4 days. Nine of ten delivered orders took 6 days or less. One order took 41 days because a pallet was misplaced, which is worth looking into.\" Give one headline number and one clear issue. Avoid jargon like median or outlier, or explain it in a phrase. If a visual helps, use a simple chart that shows most orders clustered at 2 to 6 days and the one late order standing apart. The VP needs a decision-ready summary, not the calculation steps.\n\nFor the fellow analyst, give the technical detail needed to reproduce the result. Include the data source and sample size, the fact that 0 in delivery_days is a placeholder for undelivered orders, and that 2 such rows were set to null or excluded, leaving 10. Report both statistics (mean 7.7, median 4), explain that the median was chosen because one confirmed 41-day outlier skews the data, and confirm the outlier was kept on purpose.\n\nThe key idea is that the same finding is packaged differently. Executives get the conclusion and its business meaning. Technical peers get the method, assumptions, and data-cleaning steps."
+      ]
+    },
+    {
+      "unitId": "da0-002:4",
+      "promptVersion": 2,
+      "model": "claude-opus-5-5",
+      "generatedAt": "2026-10-10T08:49:32.105Z",
+      "title": "Monthly Sales Dashboard at Brightleaf Grocers",
+      "scenario": "Brightleaf Grocers is a fictional chain of 12 grocery stores split across three regions: North, Central, and Coastal. You are a junior data analyst. The operations director, Dana, has asked for a monthly sales report that the leadership team will open on their laptops before a Monday meeting. They have about five minutes to read it, so it must be quick to understand.\n\nYou have three sets of analysis results ready. The first is total monthly revenue for each of the three regions over the last 18 months. Revenue is the money taken in from sales. The second is this month's revenue for each of the 12 stores, along with each store's city. The third is this month's overall company revenue compared with the monthly target of $3.9 million.\n\nDana wants a dashboard. A dashboard is a single screen that brings several visuals and headline numbers together so a reader can see the overall picture at a glance, usually with filters. A filter is a control, such as a drop-down list, that narrows what the visuals show, for example to one region. She also wants at least one KPI. A KPI, or key performance indicator, is one headline number that shows how the business is doing against a goal, such as revenue versus target.\n\nA colleague built a first draft of the dashboard before going on leave, and you must review it before it ships. Reviewing a report before release is called validation: you check that the numbers match the source data and that the visuals do not mislead. A source system is the original place the data came from, here the store sales database. While reviewing, you notice three things. The KPI card shows company revenue for the month as $4.4 million, but a direct total from the sales database for that month gives $3.8 million. The bar chart of store revenue has its vertical axis, the y-axis, starting at $280,000 instead of zero, which makes a store with $300,000 look about a third the size of a store with $340,000. The date filter at the top of the page is set to \"Last 13 months\" by default instead of the current month.\n\n1. Choose the best visual for the first result, monthly revenue for three regions over 18 months, and explain why it fits better than a pie chart.\n2. Choose a suitable visual for the second result, this month's revenue for each of the 12 stores, and say how you would arrange it so leadership can compare stores quickly. Mention when a map would or would not add value.\n3. Describe how you would lay out the dashboard for this leadership audience, including where the KPI goes and what short summary text you would add.\n4. Using the three problems found in the draft, explain what each issue is, what likely caused the revenue mismatch, how you would confirm it, and what could happen if the report shipped unchanged.",
+      "subParts": [
+        "Visual for revenue trend over time",
+        "Visual for comparing 12 stores",
+        "Dashboard layout and summary for leadership",
+        "Validation of the draft dashboard"
+      ],
+      "modelAnswer": [
+        "Use a line chart with time (the 18 months) on the horizontal axis, the x-axis, and revenue on the vertical axis, the y-axis. Draw one line per region, three lines in total, each in a distinct color with a clear label or legend. A legend is the key that tells the reader which color means which region. A line chart works because the eye naturally follows a line from left to right, so rises, dips, and seasonal patterns over time are easy to spot, and three lines can be compared without clutter. A pie chart shows only parts of a single whole at one moment in time. It cannot show change across 18 months, and splitting the data into 18 separate pies would make comparison almost impossible. Credit any answer that picks a line chart, or an equally time-based visual such as an area chart used with care, and explains that the goal is showing a trend over time.",
+        "Use a bar chart, ideally horizontal bars, with one bar per store, sorted from highest to lowest revenue. Bar length is easy for people to compare, sorting lets a reader instantly see the top and bottom performers, and horizontal bars leave room for full store names. The y-axis on a bar chart should start at zero so bar lengths stay honest. Coloring bars by region, or adding a region filter, helps link stores back to the regional view. A map would add value only if location itself mattered to the question, for example asking whether coastal stores perform differently because of where they are. With just 12 stores and a question about which store sold the most, a map makes exact comparison harder than a sorted bar chart, so the bar chart should be the main visual and a map is optional at most. Credit sorted bar or column charts with a reasonable explanation. Do not credit a pie chart with 12 slices, because small differences between slices are hard to judge.",
+        "Put the most important information in the top-left area, because readers usually scan from the top left first. Place the KPI card there, showing this month's revenue against the $3.9 million target, for example the actual figure, the target, and the gap shown as a dollar amount or percentage. A simple green or red indicator can help, as long as a text label or symbol also states whether the target was met, so readers with color-vision differences are not left out. Below the KPI, put the regional trend line chart, then the sorted store bar chart. Add a small set of filters, such as region and month, with the default set to the current month. Keep the page uncluttered by using a consistent color for each region, clear titles that state the point, and labeled axes with units. Add a short written summary of two or three sentences at the top or beside the KPI that states the key takeaways in plain words, for example whether the company hit its target, which region is trending up or down, and the strongest and weakest stores. Also include the data's as-of date and source so leadership knows how current the figures are. Credit answers that put the KPI prominently at the top, order visuals from most to least important, keep the design simple, and include a brief plain-language summary.",
+        "Issue one is the revenue mismatch: the KPI shows $4.4 million but the source database totals $3.8 million for the month. The most likely cause is the incorrect default date filter. If the KPI is set to \"Last 13 months\" it may be adding more than one month, or picking up the wrong month, instead of showing only the current month. Other possible causes are duplicate rows that get counted twice, or a calculation mistake. To confirm, set the filter to the current month only and compare the KPI with the database total. Then check a few individual stores against the source and look for duplicated records. The check passes only when the dashboard total matches the source total. Issue two is the truncated y-axis on the bar chart. Because the axis starts at $280,000, small differences between stores look huge, which is misleading. The fix is to start the y-axis at zero, as bar charts should. Issue three is the wrong default filter. It should default to the current month so every visual reflects the period the report is about, and the filter setting should be clearly visible. If the report shipped unchanged, leadership would believe the company beat its $3.9 million target when it actually missed it by about $100,000. They might skip corrective action, or praise and plan on false numbers. They could also wrongly judge some stores as badly underperforming because of the distorted chart, and trust in the reporting team would suffer once the error came to light. Credit answers that identify all three issues, link the mismatch to the filter or a similar cause, describe comparing against the source to confirm, and state a realistic business consequence."
+      ]
+    },
+    {
+      "unitId": "da0-002:5",
+      "promptVersion": 2,
+      "model": "claude-opus-5-5",
+      "generatedAt": "2026-10-10T08:49:36.292Z",
+      "title": "Governing the Customer Visits Table at Larkspur Pet Clinics",
+      "scenario": "Larkspur Pet Clinics is a fictional chain of 12 veterinary clinics. You have just joined as a junior data analyst. Your manager, Priya, hands you the company's most-used dataset: a table called customer_visits. Each row is one appointment and holds the owner's full name, phone number, email, the last four digits of their payment card, the pet's name, the visit date, the treatment given, and the amount charged. The table is loaded every night from the clinics' booking system, passes through a cleaning script, and feeds the monthly revenue dashboard that the directors use.\n\nPriya explains a few terms the team uses. Data governance means the agreed rules and controls for how data is described, kept, protected, and checked, so it stays trustworthy and lawful. A data dictionary is a document that lists every column in a table with its meaning, data type, allowed values, and owner. Versioning means saving each change to a dataset, script, or document as a numbered, dated copy so you can see what changed and roll back. Data lineage is the recorded path data takes from its source, through each transformation, to where it is used. A retention policy is a written rule for how long a type of data is kept and what happens to it afterwards. An audit is a formal review that checks whether the company actually follows its rules, using evidence such as logs. Access control is the set of rules deciding who can see or change data; role-based access control gives permissions to job roles rather than to individuals, and least privilege means each role gets only the access its work needs. Masking replaces sensitive values with hidden or fake ones, for example showing a phone number as ***-***-4471. Encryption scrambles data with a key so it is unreadable without that key. Data profiling is examining a dataset to summarise its contents, such as counts of blanks, duplicates, and value ranges. Data quality monitoring is running checks automatically on every load and alerting someone when a result breaks a set threshold.\n\nThis week four problems landed on your desk. First, last month's dashboard revenue dropped 18 percent overnight. Someone had edited the cleaning script to drop rows with a blank treatment field, but nobody wrote the change down, and nobody could say which step caused the drop. Second, the table holds visits back to 2011, but Larkspur's written policy, based on its local privacy law, says customer contact details must be kept no longer than 7 years after a customer's last visit, and an external audit is scheduled in two months. Third, the 6-person marketing team wants direct access to customer_visits to study which treatments are popular by region; they do not need to contact anyone. Fourth, you profiled the table and found that 9 percent of rows have a blank visit date and about 300 appointments appear twice with identical details.\n\n1. Name the specific management practices that would have prevented or quickly explained the unexplained 18 percent revenue drop, and say what each one would record.\n2. Describe the specific compliance actions Larkspur should take on the old records before the audit, and what evidence it should have ready.\n3. Explain how you would give the marketing team what they need while protecting customer privacy. Name the specific controls.\n4. Describe the quality assurance steps you would set up for the blank dates and duplicate visits so the problem is caught on future loads, not just fixed once.",
+      "subParts": [
+        "Documentation, versioning, and lineage for the revenue drop",
+        "Retention and audit readiness for old records",
+        "Access control, masking, and encryption for marketing",
+        "Profiling, monitoring, and testing data quality"
+      ],
+      "modelAnswer": [
+        "Three practices apply. Versioning: the cleaning script should be kept under version control so every edit is saved as a numbered, dated change showing who made it, what lines changed, and why. The analyst could compare the version before and after the drop, see the new rule that removes blank-treatment rows, and roll back if needed. Data lineage: a recorded map showing the path booking system to nightly load to cleaning script to customer_visits to revenue dashboard, ideally with row counts at each step. It would show rows going in versus rows coming out of the cleaning step, pointing straight to where the 18 percent vanished. Documentation: a data dictionary entry for the treatment column (meaning, whether blanks are allowed, owner) plus a change log or note for the transformation rules, so the decision to drop blank rows is written down and approved by the data owner. A strong answer names these specific controls rather than saying 'be more careful'. The consequence for a running system is that without them the directors made decisions on a wrong number and nobody could trace or reverse the cause.",
+        "Apply the written retention policy: identify customers whose last visit was more than 7 years ago and remove or anonymise their contact details (name, phone, email, card digits) according to the policy, keeping only non-identifying fields if the business still needs totals. Turn this into a scheduled, repeating job, not a one-time cleanup, so records are handled as they pass the 7-year mark; check that copies and backups follow the same rule. For the audit, keep evidence: the written retention policy, logs showing when the deletion or anonymisation job ran and how many records it affected, and records of who approved it. The key point is that a policy only counts if the company can prove it follows it; keeping data back to 2011 breaks the company's own rule and the related law, and could lead to an audit finding or penalties.",
+        "Use role-based access control with least privilege: create a marketing role that can read only the columns needed for treatment trends (treatment, visit date, clinic or region, possibly amount) and cannot change data. Do not give direct access to the full table. Apply masking to sensitive fields: hide or replace owner name, phone, email, and card digits, for example through a masked view or extract, since marketing does not need to contact anyone. Better still, simply exclude those columns. Make sure the underlying table is encrypted at rest (stored) and in transit (when moving over the network) so that even if files or connections are intercepted, the data is unreadable without the key. A common mistake is giving the whole team full table access 'because they are internal staff'; this exposes contact and payment data to people who do not need it and widens the damage of any leak or misuse.",
+        "Start with profiling to measure the baseline: count blank visit dates per clinic and per load date and count duplicate rows (same customer, pet, date, treatment, amount) to find where they come from, for example one clinic's system or a load that ran twice. Fix the current data: remove true duplicates and investigate blank dates with the source rather than guessing values. Then add testing: rules run on every nightly load, such as 'visit date must not be blank' and 'no two rows may share the same appointment details', which fail or quarantine bad rows before they reach the dashboard. Add monitoring: track the blank-date rate and duplicate count each night against a threshold, such as alert if blanks exceed 1 percent or any duplicate appears, and send alerts to a named owner. Record the rules in the data dictionary. The consequence of skipping this is that duplicates inflate revenue and blank dates drop visits from monthly totals, so the dashboard silently misleads decision makers again."
+      ]
+    }
+  ]
+}

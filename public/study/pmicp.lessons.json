@@ -1,0 +1,1308 @@
+{
+  "courseId": "pmicp",
+  "generated": {
+    "scriptVersion": 1,
+    "promptVersion": 2,
+    "generatedAt": "2026-10-10T09:11:40.768Z",
+    "models": [
+      "claude-haiku-5-5"
+    ]
+  },
+  "lessons": [
+    {
+      "objectiveId": "pmicp:1:1",
+      "sourceHash": "ab5946eca748",
+      "promptVersion": 2,
+      "model": "claude-haiku-5-5",
+      "generatedAt": "2026-10-10T09:10:39.343Z",
+      "plain": "Risk on a construction project is anything uncertain that could change the cost, schedule, or quality of the work. Most people think of risk only as bad news, but an uncertain event can also help the project, such as a supplier offering earlier delivery. This objective covers three habits. First, notice both the harmful and the helpful possibilities. Second, sort each risk into a category so the right person owns it. Third, rank the risks early, while the front end of the project is still being shaped, so the team spends its attention where it matters most. It is like deciding which weather warnings to act on before you pour the foundation.",
+      "guessPrompt": "A contractor is offered a cheaper steel supplier who might deliver two weeks early but might also deliver late. Before any teaching, how would you decide whether this uncertainty belongs on the risk list, and where it should rank against a risk that the soil on the site might be contaminated?",
+      "teach": "A risk is an uncertain event that, if it happens, would affect the project's objectives. A threat is a risk with a harmful effect. A positive risk, also called an opportunity, is an uncertain event with a helpful effect, such as earlier delivery or a cheaper method becoming available. A risk classification is a label that groups a risk by its source, such as external market conditions, technical design, or contract terms, and by who is best placed to own it. Front end planning (FEP) is the early stage of a capital project, when scope, budget, and delivery approach are being set and before major commitments are signed. Probability is the chance the event occurs. Impact is the size of its effect if it does. Priority is usually probability multiplied by impact, and it tells the team which risks deserve a response first.\n\nThe reason to do this in FEP is that decisions are cheapest to change early. Risks shaped now become clauses, allowances, and schedule buffers later.\n\nWorked example. The steel supplier offer has two uncertain outcomes. Step 1: name both events. Early delivery is an opportunity; late delivery is a threat. Step 2: classify both as external supply-market risks owned by procurement. Step 3: score them. Assume early delivery has a 30 percent chance and saves two weeks, and late delivery has a 20 percent chance and adds three weeks of delay. Step 4: rank the threat at 0.20 times three weeks, and the opportunity at 0.30 times two weeks. The opportunity is worth pursuing, for example by agreeing a delivery incentive with the supplier.\n\nCommon mistake: listing only threats. When teams skip opportunities, no one plans to capture them, and the schedule keeps its old date even when the gain is already likely.\n\nIn a running project, an unrecorded opportunity means the early delivery, if it happens, is absorbed without credit, and the team never learns that a cheaper path was available. Recording both sides keeps the risk register honest about gains as well as losses.",
+      "questions": [
+        {
+          "id": "pmicp:1:1:q1",
+          "role": "fade",
+          "prompt": "A water utility is replacing a pump station. Two uncertain outcomes are on the table for the pump delivery. Step 1: name both events. An early delivery slot one week sooner than planned is an opportunity with a 40 percent chance. A regulatory permit review that runs four weeks late is a threat with a 25 percent chance. Step 2: classify both as external regulatory and supply risks owned by the project's permitting lead. Step 3: score them as probability times impact. The opportunity scores 0.40 times one week, and the threat scores 0.25 times four weeks. Step 4 is missing. The team must rank the two by priority and state which one gets a response first.",
+          "choices": [
+            "The early slot, since an opportunity is always ranked above a threat in the risk register.",
+            "The permit delay, at 0.25 times four weeks (1.0) against 0.40 for the early slot, so it gets the first response.",
+            "The early slot, because a higher chance of occurring always makes a risk the top priority.",
+            "Both score the same, so neither needs a response until the permit review date is known."
+          ],
+          "correctIndex": 1,
+          "why": "Priority is probability times impact, so the permit delay scores 1.0 and the early slot scores 0.4, which puts the permit delay first while the opportunity still gets its own recorded response."
+        },
+        {
+          "id": "pmicp:1:1:q2",
+          "role": "solo",
+          "prompt": "A site team learns that a crane rental would cost less if booked in a different month, but the change is not yet confirmed. Which description best fits this situation?",
+          "choices": [
+            "A positive risk, meaning an uncertain event with a helpful effect on the project.",
+            "A threat, because any change to the plan is harmful to the project.",
+            "A contract terms classification that the contractor must own.",
+            "A certain cost saving that does not need to be recorded as a risk."
+          ],
+          "correctIndex": 0,
+          "why": "The cheaper crane rental is uncertain and helpful, which is the definition of a positive risk or opportunity."
+        },
+        {
+          "id": "pmicp:1:1:q3",
+          "role": "solo",
+          "prompt": "A design consultant on a school extension notes that a new energy code, published by the local authority, might take effect after foundations are poured. The design lead is best placed to track it. Which risk classification fits best?",
+          "choices": [
+            "A threat only, because codes never create opportunities.",
+            "An external source risk, owned by the design lead who is best placed to track it.",
+            "A contract terms risk owned by the contractor.",
+            "No classification is needed in front end planning because the risk is not yet certain."
+          ],
+          "correctIndex": 1,
+          "why": "The code comes from outside the project, so its source is external, and the design lead is best placed to own tracking it."
+        },
+        {
+          "id": "pmicp:1:1:q4",
+          "role": "solo",
+          "prompt": "During front end planning for a bridge refurbishment, one risk has a probability of 0.5 and an impact of 2 days. A second risk has a probability of 0.1 and an impact of 20 days. Which should be addressed first, and why?",
+          "choices": [
+            "Both are equal, since probability and impact cancel each other out in the score.",
+            "Neither, because prioritization waits until construction starts.",
+            "The first risk, because higher probability alone sets priority and impact can be ignored.",
+            "The second risk, at 0.1 times 20 days (2.0), against 1.0 for the first, so it ranks higher."
+          ],
+          "correctIndex": 3,
+          "why": "Priority is probability multiplied by impact, and 0.1 times 20 days gives 2.0, which is higher than 0.5 times 2 days at 1.0."
+        }
+      ],
+      "explainPrompt": "Explain to a teammate how you would identify, classify, and rank risks at the front end of a capital project, including at least one positive risk, and name one limit or tradeoff of the ranking method you chose.",
+      "modelAnswer": "I would start by listing every uncertain event I can find from the scope, the site, the market, and the contract terms, and I would mark each one as a threat or an opportunity, because leaving out opportunities hides possible savings. Next I would classify each item by source and by owner so that someone is accountable for it. For ranking, I would estimate probability and impact for each risk and multiply them, which lets me compare a rare but severe event with a common, small one. An early-delivery offer from a supplier would rank as a real opportunity worth a plan to secure it. The main limit is that my probability and impact numbers are estimates made early, when information is thin, so the ranking can shift. I would revisit it as the design firms up.",
+      "rubricPoints": [
+        "Defines risk, threat, and opportunity (positive risk) and states that both must be identified",
+        "Explains classification by source and by owner, not just by label",
+        "Ranks risks by probability and impact, and explains why this is done during front end planning",
+        "Names a limit, such as early estimates being uncertain, and says the ranking should be revisited"
+      ],
+      "suggested": {
+        "modality": "combo",
+        "rationale": "No listed mission or planned engine covers construction risk, so an exam-style scenario to reason through is the best fit."
+      }
+    },
+    {
+      "objectiveId": "pmicp:1:2",
+      "sourceHash": "1b8eeadad199",
+      "promptVersion": 2,
+      "model": "claude-haiku-5-5",
+      "generatedAt": "2026-10-10T09:10:45.726Z",
+      "plain": "Risk tools help a project team see the bad things that might happen before they happen, and decide how much money and time to hold back for them. A risk register is a shared list of each possible problem, how likely it is, how bad it would be, and who owns it. Monte Carlo simulation takes the uncertain numbers, such as a cost that could land anywhere between a low and a high figure, and runs thousands of random trials to show the range of likely totals. Integrated risk assessment looks at cost, schedule and scope together. Together these tools turn a vague feeling of worry into numbers a sponsor can act on.",
+      "guessPrompt": "A builder estimates a job at 150 thousand, assuming each uncertain item lands at its most likely figure. Do you think the real average final cost will be above, below, or exactly 150 thousand, and why?",
+      "teach": "A risk register is the project's working list of uncertain events. For each entry it records a cause, the effect if it happens, a probability (how likely, from 0 to 1), an impact (the cost, time or scope effect), an owner who watches it, and a response such as avoid, reduce, transfer or accept. Expected monetary value (EMV) is probability multiplied by impact, so a 0.3 chance of a 50 thousand overrun has an EMV of 15 thousand. Decision trees and sensitivity analysis (ranking which inputs move the result most) are other probabilistic techniques. Integrated Project Risk Assessment (IPRA) is a whole-project approach that runs the register, the quantitative model and the cost and schedule views together, so one risk is not counted twice or missed between disciplines.\n\nMonte Carlo simulation replaces single-point guesses with ranges. Each uncertain input gets an optimistic, most likely and pessimistic value. The computer draws a random value from each range, adds them up, records the total, and repeats thousands of times. The collected totals form a distribution, and the team reads figures from it, such as the value that 80 percent of runs stay under, which is a common basis for contingency.\n\nWorked example. Excavation is estimated at 100, 120 and 140 thousand (low, likely, high). Dewatering is estimated at 20, 30 and 60 thousand. Step 1: add the most likely values, 120 + 30 = 150. Step 2: the average of a three-point range is (low + likely + high) divided by 3. Excavation averages 120; dewatering averages 36.7. Step 3: the expected total is about 156.7 thousand. The gap comes from dewatering's long high tail, which pulls the average up while the most likely value ignores it.\n\nCommon mistake: budgeting at the sum of most-likely values. High outcomes are often further from the likely value than low outcomes are, so the true average and the high percentiles sit above that sum.\n\nConsequence: a contingency sized to the most-likely total runs out on the first serious dewatering problem, and the project must seek extra funding mid-construction. Probabilistic tools exist so that the reserve is sized to a stated confidence level, not to one hopeful number.",
+      "questions": [
+        {
+          "id": "pmicp:1:2:q1",
+          "role": "fade",
+          "prompt": "A warehouse roof-membrane crew at a logistics firm has two uncertain events. Event A is rain stopping work, with a probability of 0.4 and an impact of 25 thousand. Event B is a crane being unavailable, with a probability of 0.2 and an impact of 40 thousand. Step 1: EMV for rain is 0.4 times 25, which is 10 thousand. Step 2: EMV for the crane is 0.2 times 40, which is 8 thousand. Step 3 (the missing step): the combined expected exposure for the two events is the sum of the two EMVs, which is what value?",
+          "choices": [
+            "18 thousand, which is the sum of the two EMVs",
+            "4 thousand, which is the average of the two probabilities times the smaller impact",
+            "65 thousand, which is the sum of the two impacts",
+            "10 thousand, which is just the larger single EMV"
+          ],
+          "correctIndex": 0,
+          "why": "Expected monetary value is probability times impact for each event, and the combined expected exposure across independent register entries is the sum of those EMVs, giving 18 thousand."
+        },
+        {
+          "id": "pmicp:1:2:q2",
+          "role": "solo",
+          "prompt": "A utility-plant upgrade team has entered optimistic, most likely and pessimistic values for each cost input and then run a Monte Carlo simulation. What does the team actually get from the run?",
+          "choices": [
+            "A single total equal to the sum of the most-likely values",
+            "A distribution of many simulated totals, from which a figure such as the value that 80 percent of runs stay under can be read",
+            "The average of only the optimistic values across all inputs",
+            "The highest pessimistic value entered, confirmed as the final budget"
+          ],
+          "correctIndex": 1,
+          "why": "Monte Carlo draws values from each input's range, adds them, repeats many times, and the collected totals form a distribution from which confidence levels are read."
+        },
+        {
+          "id": "pmicp:1:2:q3",
+          "role": "solo",
+          "prompt": "A pumping-station project sets its budget at the sum of the most-likely values for three work packages. One package has a long high tail that is far above its likely value. What is the most likely consequence?",
+          "choices": [
+            "The true average and high percentiles sit above that sum, so the reserve is likely to run short on a serious outcome",
+            "The budget is exact, because the sum of most-likely values is always the true average",
+            "Nothing changes, because only the optimistic values affect the reserve",
+            "The budget is too high, because the low values pull the total down"
+          ],
+          "correctIndex": 0,
+          "why": "When high outcomes lie further from the likely value than low outcomes do, the true average and high percentiles exceed the sum of most-likely values, so a reserve sized to that sum is exhausted by a serious problem."
+        },
+        {
+          "id": "pmicp:1:2:q4",
+          "role": "solo",
+          "prompt": "A school-extension team has two register entries. Risk X has a probability of 0.15 and an impact of 80 thousand. Risk Y has a probability of 0.6 and an impact of 5 thousand. Which should be ranked higher for expected-value priority, and why?",
+          "choices": [
+            "Risk X, because its EMV of 12 thousand is larger than Y's EMV of 3 thousand",
+            "Both are equal, because their probabilities and impacts multiplied together give different units",
+            "Risk Y, because a higher probability always outranks a larger impact",
+            "Risk Y, because its EMV is 3 thousand against 12 thousand for X, so it is the bigger exposure"
+          ],
+          "correctIndex": 0,
+          "why": "Ranking by EMV means multiplying probability by impact for each entry, and X's 12 thousand exceeds Y's 3 thousand even though Y is more likely."
+        }
+      ],
+      "explainPrompt": "Explain to a teammate how a risk register and a Monte Carlo simulation differ and work together, and name one limit of the simulation.",
+      "modelAnswer": "A risk register is the qualitative list: each uncertain event with its cause, effect, probability, impact, owner and response. It tells us what could go wrong and who watches it. Monte Carlo simulation is quantitative: it takes uncertain cost or duration inputs as ranges, runs thousands of random trials and produces a distribution of totals, so we can say what contingency gives 80 percent confidence. They work together because register entries with quantified ranges feed the model, and the model's sensitivity output tells us which register items deserve more attention. A key limit is that the output is only as good as the ranges entered. If the team underestimates a range or misses a risk entirely, the simulation will look precise and still be wrong. It also assumes inputs are independent unless correlation is modelled, so a rain delay that hits several activities at once can be understated.",
+      "rubricPoints": [
+        "A risk register lists each risk with cause, effect, probability, impact, owner and response",
+        "Monte Carlo simulation uses ranges for inputs and repeated random trials to produce a distribution of totals",
+        "The two work together: register items feed the model and the model prioritises register items",
+        "A limit is named, such as poor input ranges, missed risks, or ignored correlation between inputs"
+      ],
+      "suggested": {
+        "modality": "do-new",
+        "engineId": "cost-model",
+        "rationale": "A cost model with uncertain line items would let the learner run a simulation and see the gap between most-likely and expected totals directly."
+      }
+    },
+    {
+      "objectiveId": "pmicp:1:3",
+      "sourceHash": "bf6a4c6b2e15",
+      "promptVersion": 2,
+      "model": "claude-haiku-5-5",
+      "generatedAt": "2026-10-10T09:10:54.652Z",
+      "plain": "When a building or plant project changes after the contract is signed, two different things can happen. A change order, also called a variation order, is a planned and agreed adjustment: both sides sign that the work, price or schedule is changing. A claim is what happens when one side believes it is owed extra time or money and the other side has not agreed. Knowing which one you are dealing with decides how you respond, what paperwork you need, and how a disagreement gets settled if talks fail.",
+      "guessPrompt": "An owner asks the contractor to add a second loading dock that was not in the drawings, and both sides agree the price and the extra days in writing. Separately, a subcontractor hits unexpected rock and asks for extra money, but nobody has agreed anything yet. Before any teaching, which of these is a change order and which is a claim, and what single difference makes you think so?",
+      "teach": "A change order, also called a variation order, is a written instruction that modifies the contracted work under the contract's change clause, meaning the section that says how changes are made. It records an agreed change to scope, price or completion date, and both parties sign it, even if the final price is still being negotiated when work begins.\n\nA claim is a formal request by one party, usually the contractor, for extra money, extra time, or other relief, because it believes the contract entitles it to them. The other party has not accepted that entitlement. The defining feature is disagreement. Claims commonly arise from unforeseen site conditions, late owner decisions, design errors, or delays caused by others. Most contracts require written notice within a set period, and a party that misses that deadline can lose the right to compensation even if the cause was real.\n\nWhy it works: a change order flows through normal payment, while a claim needs proof of entitlement, cost records, and a schedule analysis showing what caused the delay.\n\nWorked example: on day 20 a subcontractor hits unmarked pipe. Step 1: it stops work in that area and gives written notice on day 21. Step 2: the owner agrees to a reroute and signs a change order for the new work and 5 extra days. Step 3: the owner refuses to pay for 12 days of standby crew. That standby cost is now a claim, supported by daily logs and a delay analysis.\n\nCommon mistake: treating every cost increase as a change order, and waiting for approval before tracking costs, which lets notice deadlines pass unnoticed.\n\nDispute resolution usually escalates in steps: direct negotiation between project managers, then executives, then a neutral mediator who helps the parties agree but cannot decide, then a binding decision by a dispute board, arbitration, or litigation. Lessons learned records help spot problems early. When several claims share a cause, such as late drawings from one design package, the pattern signals a process problem to fix before the next contract.\n\nConsequence: unsigned claims left open for months distort cash flow and schedule forecasts, and disputes harden into formal proceedings.",
+      "questions": [
+        {
+          "id": "pmicp:1:3:q1",
+          "role": "fade",
+          "prompt": "A school extension contractor hits an uncharted electrical duct on day 40 and halts work in that bay. Step 1: it gives written notice on day 41, inside the contract's 5-day window. Step 2: the architect issues a revised detail, and the client signs a change order covering the redesign and 3 extra days. Step 3 is missing: the client refuses to pay for 6 days of idle crane hire. Which action completes the example?",
+          "choices": [
+            "Invoice the crane hire as a change order and wait for the client to sign it",
+            "Record the crane hire as a claim, backed by daily cost logs and a delay analysis",
+            "Absorb the crane hire as ordinary site cost",
+            "Add the crane hire to the next progress invoice as normal payment"
+          ],
+          "correctIndex": 1,
+          "why": "A cost the other party has refused to accept becomes a claim, which needs proof of entitlement, cost records, and a schedule analysis, so the contractor must document it that way."
+        },
+        {
+          "id": "pmicp:1:3:q2",
+          "role": "solo",
+          "prompt": "Which statement best defines a claim as opposed to a change order?",
+          "choices": [
+            "A formal request for money or time that the other party has not accepted",
+            "Any cost increase the contractor records during the job",
+            "A payment released after the owner approves a schedule update",
+            "A signed instruction that changes scope, price or completion date under the change clause"
+          ],
+          "correctIndex": 0,
+          "why": "A claim is defined by disagreement: one party asks for money, time or relief it believes it is entitled to, and the other party has not accepted that entitlement, whereas a change order is agreed and signed."
+        },
+        {
+          "id": "pmicp:1:3:q3",
+          "role": "solo",
+          "prompt": "A steel fabricator on a warehouse job waits 45 days before giving notice of an owner-caused delay to door approvals. The contract requires written notice within 21 days. The delay was real and well documented. What is the most likely consequence?",
+          "choices": [
+            "The claim stays valid because the owner's delay is documented in full",
+            "The fabricator may lose its right to compensation even though the delay was real",
+            "Only the time extension is lost, and the cost remains payable",
+            "The contractor can still convert the delay into a change order later"
+          ],
+          "correctIndex": 1,
+          "why": "Missing a notice deadline can cost the right to compensation even when the underlying cause is genuine, which is why the timing of notice matters as much as the facts."
+        },
+        {
+          "id": "pmicp:1:3:q4",
+          "role": "solo",
+          "prompt": "On a hospital fit-out, the owner and contractor have met twice at project-manager level over a disputed claim without agreement. Following the usual escalation order, what should happen next?",
+          "choices": [
+            "Escalate the dispute to executives from both sides",
+            "Refer the dispute straight to litigation to get a binding answer",
+            "Stop tracking costs until the dispute is settled",
+            "Ask a neutral mediator to issue a binding ruling"
+          ],
+          "correctIndex": 0,
+          "why": "Dispute resolution normally escalates from project-manager negotiation to executive negotiation before a mediator, and a mediator helps parties agree but cannot decide, so executives are the next step."
+        }
+      ],
+      "explainPrompt": "Explain to a teammate who is new to construction contracts how a change order differs from a claim, and name one limit or risk in handling claims that a project manager must watch for.",
+      "modelAnswer": "A change order is an agreed modification: both parties sign that scope, price or time is changing under the change clause, so it moves through normal administration. A claim is a request for money or time that one party believes it is entitled to but the other has not accepted. The limit I would flag is that the label depends on agreement, not on who wrote the letter. A contractor's letter asking for extra money stays a claim until the owner signs a change order. The practical risk is notice. If the contractor waits for approval before recording costs and giving written notice within the contract's window, it can lose entitlement even when the cause was genuine. So I would tell the team to log costs and send notice the same week, and to treat any disputed change as a claim until a signed change order exists.",
+      "rubricPoints": [
+        "Defines a change order as an agreed, signed modification to scope, price or time.",
+        "Defines a claim as a disputed request for money or time based on asserted entitlement.",
+        "Names the notice requirement and the risk of losing entitlement when notice is late.",
+        "Notes that the label depends on whether the other party has accepted, not on the paperwork used."
+      ],
+      "suggested": {
+        "modality": "explain",
+        "rationale": "No listed mission or planned engine covers construction contract claims, so explaining the distinction and its notice risk to a teammate is the core skill to practise."
+      }
+    },
+    {
+      "objectiveId": "pmicp:1:4",
+      "sourceHash": "40ed0b96a412",
+      "promptVersion": 2,
+      "model": "claude-haiku-5-5",
+      "generatedAt": "2026-10-10T09:10:38.354Z",
+      "plain": "When a building or infrastructure project is set up, the owner and the builders agree on how the work is bought (the delivery method) and how price and risk are shared (the contract type). Those choices change how often people argue about extra cost and delay, which the industry calls claims. This objective is about spotting which setup invites the most arguments and stepping in early, while problems are still small, so they are settled as ordinary adjustments instead of formal disputes. It is like agreeing on the rules of a shared kitchen before cooking starts, rather than arguing over the mess after dinner.",
+      "guessPrompt": "On a building job, which is more likely to produce arguments about extra cost: a fixed price for a design the owner has not finished, or a payment based on the real cost of the work plus a fee? Why?",
+      "teach": "Delivery method is the way a project is organized: who designs, who builds, and in what order. Design-bid-build means the owner finishes the design first, then hires a builder to construct it. Design-build means one team both designs and builds. Construction management at risk means a construction manager advises during design and then commits to build within a guaranteed maximum price. Contract type is how money and risk are split. A lump-sum contract is a fixed price for a defined scope, so the contractor carries most cost risk. A cost-reimbursable contract pays actual cost plus a fee, so the owner carries that risk. A unit-price contract pays per measured quantity, so disputes center on counted quantities.\n\nA claim is a formal request for more money or more time, usually because something changed or was unclear. Claims become more frequent where the party carrying the risk has little control over what goes wrong. Design-bid-build with a lump-sum price often produces claims about gaps between drawings and specifications, because the builder priced what the documents showed. Design-build reduces that gap but moves design-quality disputes onto the contractor and makes the owner's scope description critical.\n\nWorked example: a lump-sum clinic project. Day 30, the installer finds that the drawings and the door-hardware specification disagree. Step 1: the contractor raises a request for information (RFI), a written question to the designer, the same day. Step 2: the project manager holds a short meeting within three days and agrees on a fix. Step 3: the owner issues a written change order, an approved adjustment to scope and price, before the doors are installed. Result: a small, agreed cost adjustment and no claim.\n\nCommon mistake: treating the notice clause, the contract rule that says how soon and in what form a problem must be reported, as paperwork. If the contract allows 21 days to give notice of a delay, a late notice can forfeit the right to recover time, even when the delay was real.\n\nConsequence: in a running schedule, a forfeited time claim turns a recoverable delay into cost the contractor absorbs, and that cost usually returns later as a dispute. Early intervention is cheapest at the first signal.",
+      "questions": [
+        {
+          "id": "pmicp:1:4:q1",
+          "role": "fade",
+          "prompt": "A city library extension uses a unit-price contract for trench excavation, meaning the contractor is paid per measured cubic metre. On Day 12 the crew hits bedrock in a utility trench, which the bid documents did not show. Step 1: the contractor sends a written notice with a sketch to the owner's engineer the same day. Step 2: the engineer and contractor jointly measure the rock volume the next morning. Step 3: [missing]. Which step completes the sequence so the contractor is paid for the rock?",
+          "choices": [
+            "The engineer orders the rock removed and agrees to pay the cost plus a fee later.",
+            "The contractor bills the full lump-sum price for the whole excavation package.",
+            "The owner records the agreed rock quantity and pays it at the contract's unit rate through a written change order.",
+            "The contractor starts a claim for lost profit before the rock is measured."
+          ],
+          "correctIndex": 2,
+          "why": "A written change order, an approved adjustment to scope and price, turns the jointly measured quantity into payment at the contract's unit rate, which is how a unit-price contract settles this kind of change."
+        },
+        {
+          "id": "pmicp:1:4:q2",
+          "role": "solo",
+          "prompt": "In plain terms, what is a notice clause in a construction contract?",
+          "choices": [
+            "A clause that sets the owner's maximum price before design starts.",
+            "A contract rule that says how soon and in what form a problem must be reported.",
+            "A clause that lists the drawings the builder must follow.",
+            "A clause that splits cost risk between the owner and a fee-based builder."
+          ],
+          "correctIndex": 1,
+          "why": "The teaching text defines a notice clause as the rule specifying how soon and in what form a problem must be reported, which matches the third choice."
+        },
+        {
+          "id": "pmicp:1:4:q3",
+          "role": "solo",
+          "prompt": "A health authority hires one team to both design and build a laboratory wing, giving only a short written description of what the lab must do. Which kind of dispute is most likely to grow, and why?",
+          "choices": [
+            "Disputes over a gap between drawings and specifications, because the builder priced only what the documents showed.",
+            "Disputes over design quality and whether the result meets the owner's intent, because the team carries design risk and the owner's scope description is critical.",
+            "Disputes over cost overruns the owner pays, because the owner carries all cost risk under any delivery method.",
+            "Disputes over counted quantities, because the work is paid per measured unit."
+          ],
+          "correctIndex": 1,
+          "why": "Design-build moves design-quality disputes onto the contractor and makes the owner's scope description critical, so a brief description raises the chance of disputes about whether the design meets intent."
+        },
+        {
+          "id": "pmicp:1:4:q4",
+          "role": "solo",
+          "prompt": "On a lump-sum road project, a contractor discovers on Day 40 that a culvert is undersized for the site, which delays work. The contract's notice clause allows 14 days to report a delay. The contractor has not yet reported it. What is the most accurate assessment?",
+          "choices": [
+            "The claim is unaffected, because notice clauses are only paperwork and can be filed at final payment.",
+            "The time claim is valid, because a real delay always qualifies regardless of when it is reported.",
+            "The time claim is at risk, because the notice clause can forfeit the right to recover time even though the delay is real.",
+            "Only the cost of the culvert is at risk, because delay costs are never subject to the notice clause."
+          ],
+          "correctIndex": 2,
+          "why": "The teaching text warns that late notice under a notice clause can forfeit the right to recover time even when the delay was real, which makes the time claim at risk here."
+        }
+      ],
+      "explainPrompt": "Explain to a teammate why a design-build team and a lump-sum design-bid-build team face different claims risks, and name one limit of your reasoning or one tradeoff the owner accepts with each approach.",
+      "modelAnswer": "In design-bid-build with a lump-sum price, the owner finishes the design and the builder prices what the drawings show. Any gap between drawings and specifications becomes the builder's cost unless it is handled as a change, so claims cluster around documents. In design-build, one team owns both design and construction, so many gaps are resolved internally, but the owner gives up direct control of design choices and must write a clear scope up front, since a vague scope creates disputes about what was promised. My reasoning has a limit: the actual claim rate depends on how well the notice and change processes are run, not only on the delivery method. So the practical move is to set early-warning meetings and written notice rules at the start, whichever method is chosen.",
+      "rubricPoints": [
+        "Explains that design-bid-build with lump-sum pricing tends to create claims from gaps between documents and the builder's priced scope.",
+        "Explains that design-build shifts design-quality risk to one team and depends on a clear owner scope definition.",
+        "Shows that early-warning meetings, written notice, and prompt change orders reduce claims regardless of method.",
+        "Names a real limit or tradeoff, such as owner loss of design control or dependence on process quality."
+      ],
+      "suggested": {
+        "modality": "combo",
+        "rationale": "Reasoning through an exam-style scenario about delivery method, contract type, and notice timing adds the most, and no listed mission or planned engine covers construction contracts, so this is taught as a standalone scenario."
+      }
+    },
+    {
+      "objectiveId": "pmicp:1:5",
+      "sourceHash": "9f1833667885",
+      "promptVersion": 2,
+      "model": "claude-haiku-5-5",
+      "generatedAt": "2026-10-10T09:10:42.748Z",
+      "plain": "A construction project moves through a chain of steps, from the first idea to the final handover. The contract is the written deal that says who builds what, for how much, and under which rules. Managing the full contract lifecycle means keeping that deal healthy at every step: choosing how the work will be delivered, setting up the agreement, watching changes and payments, and closing the job out properly. Delivery method is the arrangement of who designs, who builds, and who carries which risk. Lean Integrated Project Delivery is one arrangement where the owner, designer, and builder share goals and outcomes under one agreement, instead of working in separate sealed contracts. Advising senior people on which arrangement fits is a core project manager task, done before money is committed.",
+      "guessPrompt": "A city wants a new library. The team could hire a designer first, then bid the build out to the lowest-price builder, or have the designer and builder work together from the start under one shared agreement. Which setup do you think would surface cost problems earliest, and why?",
+      "teach": "Contract lifecycle means the stages a contract passes through: discovery (understanding needs, uncertainty and risk before commitment), procurement (choosing how to buy the work), award (signing), administration (running the work, handling changes, payments and claims), and closeout (final acceptance, final payment and records). Delivery method is the arrangement that sets who designs, who builds, how they are paid, and who carries which risk. Design-bid-build separates design from construction and awards the build mainly on price. Design-build gives one party both design and construction. Integrated Project Delivery (IPD) puts the owner, designer, builder and key trade partners under one multiparty agreement, often the Integrated Form of Agreement (IFOA), where part of the profit is put at risk and paid out on shared results. Lean principles here mean removing waste such as rework and waiting, and planning work in short cycles with the people who will do it.\n\nWhy it works: when parties share outcomes, they have a reason to find design problems before construction starts, which tends to reduce change orders and claims that come from late discovery. It fits projects where scope is uncertain, the owner values speed and trust, and early builder input adds value.\n\nWorked example: a hospital wing with an unclear layout. Step 1: in discovery, list the uncertainties (layout, schedule pressure, budget limits). Step 2: test fit, because a fixed-price bid on an unfinished design invites claims. Step 3: if the owner will commit to shared risk and the builder can join early, IPD is a candidate; otherwise choose a method that keeps risk clearly assigned. Step 4: write the advice with the tradeoff stated.\n\nCommon mistake: recommending a method on the lowest first price alone, or treating IPD as a paperwork change rather than a change in behaviour and trust. Consequence: in a running project, a mismatch shows up later as a stream of claims and disputes, not in the first invoice.\n\nDelivery method is a risk allocation decision, and a project manager's job is to match that allocation to the project's real uncertainty before the contract is signed.",
+      "questions": [
+        {
+          "id": "pmicp:1:5:q1",
+          "role": "fade",
+          "prompt": "A regional water utility wants a new pump station built on a site where the underground pipe routes are only partly surveyed. Discovery (the early stage where needs, uncertainty and risk are understood before commitment) lists three uncertainties: unknown pipe routes, a tight shutdown window, and a fixed capital budget. Step 1: the project manager lists those uncertainties. Step 2: she tests fit, noting that a lump-sum bid (one fixed price for the whole job) on a partly surveyed site invites claims (formal requests for extra money or time under the contract). Step 3 is missing. Step 4: she writes the advice with the tradeoff stated. Which completion of Step 3 best fits the logic of the method?",
+          "choices": [
+            "Award a lump-sum contract now, because a fixed price on the whole job removes the unknown-route uncertainty from the owner's budget.",
+            "Price the excavation items per measured unit, so the quantity risk from unknown routes sits visibly with the owner and is written into the contract.",
+            "Move to integrated project delivery at once, because a shared-outcome agreement is always the most trusting option regardless of the utility's appetite for shared risk.",
+            "Require the contractor to fund its own ground surveys inside a fixed price, then accept any later route differences as the contractor's risk."
+          ],
+          "correctIndex": 1,
+          "why": "Pricing uncertain quantities per measured unit makes the owner carry the quantity variance openly, which matches the risk to the real uncertainty before signing."
+        },
+        {
+          "id": "pmicp:1:5:q2",
+          "role": "solo",
+          "prompt": "A transit authority wants one firm to be responsible for both the design and the construction of a new footbridge, so that the same party answers for design choices and build problems. Which delivery method is this?",
+          "choices": [
+            "Design-build, because one party holds both the design and the construction responsibility.",
+            "Construction management at risk, because the builder is paid a fee for managing trade packages.",
+            "Design-bid-build, because the design and construction are kept in separate contracts.",
+            "Lean integrated project delivery under a multiparty agreement, because the owner and designer must share profit at risk."
+          ],
+          "correctIndex": 0,
+          "why": "Design-build gives a single party both design and construction, which is exactly the arrangement described; the other options split those roles or add shared-profit terms not stated here."
+        },
+        {
+          "id": "pmicp:1:5:q3",
+          "role": "solo",
+          "prompt": "A hospital owner signs an integrated project delivery agreement with a designer, a builder and three trade partners, and calls it done. Six months later, the trades still bid each change order (a written change to scope, price or schedule) separately and hide their cost data from one another, and design problems are found during construction. What is the most accurate explanation?",
+          "choices": [
+            "The owner chose the wrong method, because integrated project delivery only suits small projects with a single trade partner.",
+            "The paperwork is correct, but the parties kept adversarial behaviour, so the shared-outcome incentive that would surface design problems early never took hold.",
+            "The lump-sum price was too low, so the trades were right to protect themselves by hiding cost data.",
+            "Integrated project delivery cannot be used with more than one trade partner, so the agreement was invalid from the start."
+          ],
+          "correctIndex": 3,
+          "why": "Integrated project delivery is a change in behaviour and trust as well as a contract, so a signed agreement without shared working habits does not produce the early problem-finding it is meant to deliver."
+        },
+        {
+          "id": "pmicp:1:5:q4",
+          "role": "solo",
+          "prompt": "A developer awards a fit-out of an office block with an unfinished design to the lowest bidder on a fixed price. The first progress invoice is paid on time and looks normal. In month nine, the contractor files several claims (formal requests for extra money or time) for design gaps. Why did the mismatch not show up in the first invoice?",
+          "choices": [
+            "Delivery-method mismatches tend to surface later as claims and disputes, because the cost of late-discovered design gaps is not visible in early payments.",
+            "Lowest-bid awards eliminate claims entirely, so the nine-month claims must have been filed for an unrelated reason.",
+            "The developer should have expected the claims in the first invoice, which means the invoice was incorrectly approved.",
+            "Invoices in construction always reflect the true state of risk, so the claims must come from a separate fraud."
+          ],
+          "correctIndex": 0,
+          "why": "A method that does not match the project's real uncertainty tends to show its cost later, through claims and disputes, rather than in the first invoice."
+        }
+      ],
+      "explainPrompt": "Explain to a teammate who has only run fixed-price bid projects why an owner might choose IPD over design-bid-build for a complex, uncertain project, and name one limit or tradeoff of IPD.",
+      "modelAnswer": "Under design-bid-build, the design is finished first and builders bid a fixed price on it. If the design is still uncertain, the bids carry big contingencies or the work generates change orders and claims once problems surface during construction. IPD brings the owner, designer and key builders together early under one agreement, where a shared pool of profit is at risk and paid out on joint results. That gives everyone a reason to solve problems in design before they become costly site changes. The tradeoff is that IPD needs strong trust, an owner willing to commit to shared risk, and real early involvement from the builders, which takes time and effort to set up. If those conditions are missing, IPD can become a paperwork exercise, and the project may be worse off than under a method that keeps risk clearly assigned.",
+      "rubricPoints": [
+        "Explains that IPD shares risk and reward among owner, designer and builder under one agreement",
+        "Connects early collaboration to fewer late changes and claims in uncertain projects",
+        "Names a real limit, such as the need for trust, commitment and early builder involvement",
+        "Notes that delivery method should match the project's actual uncertainty, not just the lowest price"
+      ],
+      "suggested": {
+        "modality": "combo",
+        "rationale": "Choosing a delivery method for a given scenario and justifying it to senior stakeholders is best practised through exam-style reasoning, which no current mission covers directly."
+      }
+    },
+    {
+      "objectiveId": "pmicp:1:6",
+      "sourceHash": "e60e168c6145",
+      "promptVersion": 2,
+      "model": "claude-haiku-5-5",
+      "generatedAt": "2026-10-10T09:10:34.004Z",
+      "plain": "Large building and plant projects are split into many pieces, called packages, and each package is usually run by a different company. An interface is any place where two packages have to fit or work together, such as a pipe meeting a valve, or one crew handing a finished floor to the next. Interface management is the job of finding those meeting places early, writing down who owns each one, and checking that the handover really happens. It matters most on mega projects, where dozens of packages can collide at the same spot. Interfaces nobody planned for are a common cause of delay, rework and disputes, so finding them during planning is far cheaper than fixing them on site.",
+      "guessPrompt": "A building has a structural steel contractor and a separate mechanical contractor working on the same floors. Before any work starts, what could go wrong where their work meets, and who should be responsible for checking that point?",
+      "teach": "An interface is a point where the scope, information, or timing of one package meets another. An interface point (IP) is one specific, named place or handover within that meeting, such as a particular set of anchor bolts or a specific date when a floor is released. A package is a bundle of work let under one contract. An interface matrix is a grid that lists packages against each other so you can see which pairs share interfaces. Interfaces can be classified by type: physical (dimensions and fit), functional (systems that must work together), information (drawings, models, and data), schedule (one trade waiting on another), and contractual or organizational (who decides, who pays, who signs off). Classifying them shows which ones need the most attention.\n\nWhy it works: most rework happens at boundaries that no single package owns. Naming each IP and assigning one owner turns a vague risk into a task with a date.\n\nWorked example: Package A is structure and Package B is the cladding. Step 1, list both packages in the matrix. Step 2, mark their meeting point and record one IP: the steel edge where cladding brackets attach. Step 3, classify it as physical and schedule, since the fit matters and the cladding cannot start until the brackets are cast. Step 4, assign an owner for the bracket location and a due date before the slab is poured. Step 5, log it in the interface register and check it at each weekly coordination meeting.\n\nCommon mistake: assuming the main contractor will sort out every boundary. When nobody is named, each side assumes the other is checking.\n\nConsequence: on a mega project, a bracket location missed in planning is often found after the concrete is poured. Cutting out and recasting the edge can delay the cladding by weeks and trigger a claim.\n\nInterface management is planning, not paperwork: the earlier each IP is named, classified, and owned, the fewer surprises the project meets during construction.",
+      "questions": [
+        {
+          "id": "pmicp:1:6:q1",
+          "role": "fade",
+          "prompt": "A hospital fit-out has two packages: Package M is the mechanical contractor installing the chilled-water pumps, and Package E is the electrical contractor wiring the pump control panels. Both packages meet at one named place: the 50 mm conduit stub-up in the pump plinth that carries the control cable from the panel to the pump motor isolator. Step 1: list Packages M and E in the interface matrix and mark where they meet. Step 2: record the IP as the conduit stub-up position and diameter in the plinth. Step 3: classify the IP by type. The stub must sit within 10 mm of the isolator position (fit), and the panel cannot be wired until the plinth concrete has cured and the isolator is fixed (timing). Step 4: assign one owner for the stub position and set a due date before the plinth is poured. Step 5: log it in the interface register and check it at the weekly coordination meeting. Which completion correctly finishes Step 3?",
+          "choices": [
+            "Classify it as physical and schedule, because the stub position must fit the isolator and the wiring waits on the cured plinth.",
+            "Classify it as functional only, because the pumps must run, and that alone decides the type.",
+            "Classify it as information only, because the conduit position appears on the drawings and needs no field check.",
+            "Classify it as contractual only, because the client must approve any change to a hospital plinth."
+          ],
+          "correctIndex": 0,
+          "why": "The stub position is a fit question (physical) and the panel wiring cannot start until the plinth is ready (schedule), so both types apply, which matches the classification step."
+        },
+        {
+          "id": "pmicp:1:6:q2",
+          "role": "solo",
+          "prompt": "In interface management, which description best defines an interface point (IP)?",
+          "choices": [
+            "The grid that shows which packages share a boundary with each other.",
+            "A single, named location or handover where the scope, information, or timing of two packages meets.",
+            "The full list of every contract on a project, grouped by trade and value.",
+            "The meeting in which the project team reviews all open defects at the end of the month."
+          ],
+          "correctIndex": 1,
+          "why": "An IP is one specific named point of meeting between packages, while the matrix is the grid that shows which pairs share interfaces."
+        },
+        {
+          "id": "pmicp:1:6:q3",
+          "role": "solo",
+          "prompt": "On a retail fit-out, the fire engineer must sign off the sprinkler layout before the ceiling package can close the ceiling. Which interface type best describes this sign-off boundary?",
+          "choices": [
+            "Schedule, because the ceiling has to wait for the sprinklers to be installed first.",
+            "Physical, because the sprinkler heads have a fixed position in the ceiling.",
+            "Functional, because the sprinklers and the ceiling must work together as a system.",
+            "Contractual or organizational, because the question is who decides and who signs off."
+          ],
+          "correctIndex": 3,
+          "why": "A sign-off that determines who decides and approves the boundary is a contractual or organizational interface, even though a schedule link also exists."
+        },
+        {
+          "id": "pmicp:1:6:q4",
+          "role": "solo",
+          "prompt": "A team on a 12-package project classifies every interface as physical and reviews only fit and dimensions. Later, a curtain wall package is delayed because a crane lift date was never recorded as a boundary. What is the most accurate explanation of what went wrong?",
+          "choices": [
+            "The matrix was drawn with too few packages, so the crane lift was outside it.",
+            "The team should have named the crane owner as a contractual interface, which would have prevented the delay on its own.",
+            "The interface register was logged correctly, so the delay must have come from a supplier issue unrelated to interfaces.",
+            "Classifying only by physical fit hid schedule-type interfaces, so a timing dependency got no attention or owner."
+          ],
+          "correctIndex": 3,
+          "why": "Classification shows which interfaces need attention, and omitting the schedule type meant the timing dependency was never named, owned, or checked."
+        }
+      ],
+      "explainPrompt": "Explain to a teammate how you would identify and classify interfaces on a large multi-package project before construction starts, and name one limit or tradeoff of doing this planning early.",
+      "modelAnswer": "I would start by listing every package and building an interface matrix, so each pair that shares space, information, or timing is visible. For each pair I would record the specific interface points, then classify them by type: physical fit, functional performance, information flow, schedule dependency, or contractual responsibility. The high-consequence ones get a named owner, a due date, and a place in the interface register that we review each week. The main limit is that early planning relies on design information that is still changing, so the IPs I name now may move as the design develops. That means the register has to be treated as a living document, with updates tied to design changes. There is also a tradeoff: detailed matrices take time to build, so I focus the deepest effort on the interfaces that would cause the most delay or dispute if missed.",
+      "rubricPoints": [
+        "Defines interfaces and interface points as specific places or handovers between packages",
+        "Describes building an interface matrix to find every package pair that interacts",
+        "Explains classifying interfaces by type such as physical, functional, information, schedule, or contractual",
+        "Names an owner and a due date for high-consequence interfaces and tracks them in a register",
+        "Notes a limit or tradeoff, such as changing design information or the effort of detailed planning"
+      ],
+      "suggested": {
+        "modality": "combo",
+        "rationale": "Applying interface classification to a scenario with several packages is best practised through reasoning, and no current OpsForge mission or planned engine covers this topic directly."
+      }
+    },
+    {
+      "objectiveId": "pmicp:2:1",
+      "sourceHash": "016d83c70355",
+      "promptVersion": 2,
+      "model": "claude-haiku-5-5",
+      "generatedAt": "2026-10-10T09:10:45.724Z",
+      "plain": "A project communication tool is a shared place or routine that keeps the right people informed and lets them act on the same facts. This objective covers four. A project management information system, called a PMIS, stores plans, schedules, document versions and status records in one controlled place. A central communication platform holds messages and discussions so they do not get scattered across inboxes. Obeya, also called a Big Room, is a regular session where people from different functions meet at a visible board of plans and problems and decide together. Commitment-based Management, or CbM, is a practice where people make specific, dated promises to each other and track whether they keep them. Each tool fits a different kind of breakdown.",
+      "guessPrompt": "A designer issues a revised structural detail, but the site crew builds from last week's copy because it sat in someone's email. Which single tool would most directly stop this from repeating, and why would a chat thread alone not be enough?",
+      "teach": "A PMIS is a system of record. It holds the baseline plan, approved document versions, change logs and status data, and everyone is expected to read the current approved version from it. A central communication platform is a shared workspace for messages, threads and linked files. It keeps conversation history, but a file posted there is not automatically the approved version. Obeya, or Big Room, is a recurring session where leaders from several functions stand around visible boards of constraints and issues and make decisions on the spot. CbM is a practice in which each owner states a specific commitment with a deliverable and a date, and the team measures the share of commitments kept and the reasons for any misses.\n\nThe tools work because they separate four jobs: keeping the record, carrying conversation, coordinating decisions in real time, and tracking follow-through. A breakdown usually belongs to one of these jobs.\n\nWorked example. A structural detail is revised. Step 1: the designer uploads the new drawing to the PMIS as the controlled version and marks the old one superseded. Step 2: the platform announcement links to the PMIS record instead of attaching a copy. Step 3: at the next Big Room session, the site lead and designer look at the board, where the affected work package is flagged, and the site lead commits to re-sequencing that work by Thursday. Step 4: the commitment is logged under CbM, and on Thursday the team records whether it was kept and, if not, why.\n\nCommon mistake: treating a chat channel or a Big Room as the record, so the revision exists only in conversation. A related mistake is running Big Room as a status readout with no recorded decisions, or using CbM as a to-do list with no owner or date.\n\nIn a live project, building from a superseded drawing means rework, schedule loss and possible safety defects, and nobody can later show who approved what. Choosing the tool that matches the breakdown is what prevents that.",
+      "questions": [
+        {
+          "id": "pmicp:2:1:q1",
+          "role": "fade",
+          "prompt": "A water treatment plant commissioning team finds two technicians running test sheets from an emailed copy of procedure version 6, while the PMIS (the project information management system, the system of record that holds approved document versions) shows version 7 as approved. Step 1: The commissioning lead confirms version 7 in the PMIS and marks version 6 superseded. Step 2: The lead posts a message in the team's central platform (a shared workspace for messages and linked files) that links to the version 7 record in the PMIS, not to a copy. Step 3 is missing and must be filled in. Step 4: The commitment is logged under CbM (Commitment-based Management, where each owner states a deliverable and a date), and on the agreed date the team records whether it was kept and, if not, why. Which action fills step 3?",
+          "choices": [
+            "The team archives the chat thread, since the conversation is the record of the change.",
+            "The lead tells the technicians to stop using emailed copies, with no owner or date attached.",
+            "At the next Big Room session (a recurring meeting where leaders decide on the spot at visible boards), the test supervisor commits to reissuing the affected sheets from version 7 by a stated date.",
+            "The lead emails version 7 to all technicians as an attachment so each person holds a copy on their own device."
+          ],
+          "correctIndex": 2,
+          "why": "Step 3 is where the affected work is put on a visible board and an owner makes a dated commitment, which is what step 4 then logs and checks under CbM."
+        },
+        {
+          "id": "pmicp:2:1:q2",
+          "role": "solo",
+          "prompt": "On a school build, a roofing subcontractor asks which copy of the flashing detail to use. The design team posted a PDF of the detail in the team chat. The PMIS holds revision C marked approved and revision B marked superseded. Which source governs the work?",
+          "choices": [
+            "Whichever copy the foreman printed last week and kept on site.",
+            "The PMIS record of revision C, marked approved.",
+            "The PDF in the team chat, because it was posted most recently.",
+            "A photo of the detail taken from the Big Room board during the last session."
+          ],
+          "correctIndex": 1,
+          "why": "The PMIS is the system of record, and the approved, non-superseded version there is the one everyone must read, while chat posts and printed or photographed copies are not automatically the approved version."
+        },
+        {
+          "id": "pmicp:2:1:q3",
+          "role": "solo",
+          "prompt": "A hospital fit-out runs a weekly Big Room. Leaders walk the boards and each reports percent complete, but no decision is made, no action is recorded, and no owner is named. Which pitfall is this, and what is the correct fix?",
+          "choices": [
+            "It has become a status readout, so the fix is to decide on the spot against visible constraints and record each decision with an owner.",
+            "Too many people attend, so the fix is to cut attendance to two or three leaders.",
+            "The session works, because shared status is the purpose, so no change is needed.",
+            "Decisions are not made in the room, so the fix is to move all decisions into the chat platform."
+          ],
+          "correctIndex": 0,
+          "why": "A Big Room is meant to make decisions in real time, and when it only reports status with no recorded decisions it fails at that job; the fix is to decide and record owners in the session."
+        },
+        {
+          "id": "pmicp:2:1:q4",
+          "role": "solo",
+          "prompt": "A civil team logs 'coordinate the drainage run' in its CbM log with no named owner and no date. Which statement correctly describes the problem?",
+          "choices": [
+            "It is effectively a to-do list: without a named owner, a deliverable and a date, the team cannot measure whether the commitment was kept or why it was missed.",
+            "CbM applies only to design deliverables, so coordination items should be removed from the log.",
+            "Nothing is wrong, because a commitment can be loosely stated as long as the team agrees with it.",
+            "It belongs in the PMIS change log, because every CbM item must be a formal change."
+          ],
+          "correctIndex": 0,
+          "why": "CbM depends on each owner stating a specific commitment with a deliverable and a date, so that kept and missed commitments can be measured and the reasons recorded."
+        }
+      ],
+      "explainPrompt": "Explain to a teammate the difference between a PMIS and a central communication platform, and name one limit of Big Room sessions they should watch for.",
+      "modelAnswer": "A PMIS is the controlled record. It holds the current baseline, approved revisions and status data, and we treat its version as the one that counts. A central communication platform is where conversation happens: threads, questions and decisions made in discussion. It keeps history, but a file there is not guaranteed to be the approved version, so it should link to the PMIS rather than hold the only copy. A Big Room session brings cross-functional leads together around a visible board to make decisions quickly. Its limit is that it only works if decisions are written back to the record and owners follow through. Otherwise it becomes a status meeting with no traceable outcome. CbM covers that follow-through, because each owner states a dated, specific promise and we track whether it was kept and why not. Choosing the tool depends on the breakdown: a record problem, a conversation problem, a coordination problem, or a follow-through problem.",
+      "rubricPoints": [
+        "A PMIS is the controlled system of record holding approved versions and baseline data.",
+        "A central communication platform carries conversation and history but does not by itself guarantee the approved version.",
+        "Big Room sessions coordinate cross-functional decisions, but decisions must be recorded and followed up.",
+        "CbM tracks specific, dated commitments and the reasons for misses, which addresses follow-through."
+      ],
+      "suggested": {
+        "modality": "combo",
+        "rationale": "A scenario in which the learner must pick the right tool for a given communication breakdown suits this objective better than any listed mission or engine."
+      }
+    },
+    {
+      "objectiveId": "pmicp:2:2",
+      "sourceHash": "976f0281f27e",
+      "promptVersion": 2,
+      "model": "claude-haiku-5-5",
+      "generatedAt": "2026-10-10T09:10:38.665Z",
+      "plain": "Some communication problems are cheap to prevent and expensive to fix later. This objective covers two early habits. The first is buy-in: getting the people who fund, use, or are affected by a building or infrastructure project to agree, early on, to its goals, roles and rules, so they do not object to them later. The second is audience-tailored messaging: deciding what each group needs to know, how often, and in what form, instead of sending one update to everyone. Think of a site kickoff where the client wants cost certainty, the crew wants a safe schedule, and the city wants permit dates. Each group hears the same project in a different way.",
+      "guessPrompt": "A residential developer's client signs off the scope on day one, then objects loudly three months later to a change in finishes that everyone else treats as routine. Before any teaching, what do you think the project manager should have done at the start to prevent that objection, and why might a signature on a document alone not be enough?",
+      "teach": "A stakeholder is any person or group who can affect a project or is affected by it, such as a client, a funder, a site crew, a regulator, or neighbours. Buy-in is active agreement to the plan, which is different from passive acceptance: a stakeholder who has bought in understands the plan, knows how decisions will be made, and is willing to defend it. A stakeholder register is a living list of stakeholders with their interests, their influence on the project, and what they need to hear. Audience-tailored messaging means matching the content, detail, frequency and channel of each message to the group receiving it.\n\nBuy-in works because people object most strongly when they are surprised. If the project's goals, decision rights and change thresholds are agreed at the start, a later change becomes a known process rather than a shock.\n\nWorked example: a hospital wing renovation. Step 1: list stakeholders, including the hospital operations director, infection control, nursing leads, the city inspector and the funder. Step 2: for each, note what they must decide or fear. Infection control needs dust and ventilation controls; the funder needs cost to date; the inspector needs permit milestones. Step 3: at kickoff, agree which changes need whose sign-off and at what cost or schedule threshold. Step 4: set a message for each group, such as a weekly containment checklist for infection control and a monthly cost-to-complete report for the funder. Step 5: when a ceiling-height change appears, the agreed path already names the approver, so it is handled as routine.\n\nA common mistake is treating buy-in as a signature on a charter, or sending the same detailed status report to everyone. Unmet expectations then surface as late change requests, escalations and disputes over stopped work. On a running project, this shows up as change requests arriving after the baseline has been frozen.",
+      "questions": [
+        {
+          "id": "pmicp:2:2:q1",
+          "role": "fade",
+          "prompt": "A utility is upgrading a rural substation for a new regional grid. The stakeholders are the grid operator, a landowner whose field gives site access, the county planner, and the local outage-scheduling team. Steps 1, 2 and 4 are already done. Step 1: the list of stakeholders is complete. Step 2: each group's decision or fear is noted, so the grid operator needs outage windows, the landowner needs access dates and noise limits, and the planner needs noise-hour compliance. Step 4: each group has a message, so the grid operator gets a daily outage notice and the planner gets a monthly noise log. Step 3 is missing. It is the step that happens at kickoff, before any change arrives. Which choice correctly completes Step 3?",
+          "choices": [
+            "Send the same detailed weekly report to every group so that nobody is surprised later.",
+            "Agree at kickoff which changes need whose sign-off and at what cost or schedule threshold.",
+            "Wait until the first outage conflict appears, then ask the planner who should decide.",
+            "Collect signatures on the project charter and treat the plan as approved for all parties."
+          ],
+          "correctIndex": 1,
+          "why": "Step 3 sets the agreed approval path and thresholds at kickoff, so a later change is handled as a known process rather than a shock."
+        },
+        {
+          "id": "pmicp:2:2:q2",
+          "role": "solo",
+          "prompt": "In stakeholder engagement, which description best fits buy-in?",
+          "choices": [
+            "Silence from a stakeholder who has not yet raised an objection.",
+            "Active agreement: the stakeholder understands the plan, knows how decisions are made, and is willing to defend it.",
+            "A signature on the project charter that is filed and not revisited.",
+            "A single vote taken at one meeting and never discussed again."
+          ],
+          "correctIndex": 1,
+          "why": "Buy-in is active agreement that includes understanding the decision process and a willingness to defend the plan, which distinguishes it from passive acceptance or a signature alone."
+        },
+        {
+          "id": "pmicp:2:2:q3",
+          "role": "solo",
+          "prompt": "A road-widening project sends the same detailed monthly status pack to its funder, its crew foremen and the city inspector. By month four the foremen have stopped reading it, and the funder asks for a rebaseline after several late change requests. Which is the most likely underlying problem?",
+          "choices": [
+            "The funder's budget was set too low for the scope of work.",
+            "Messages were not tailored to each audience's content, detail, frequency and channel.",
+            "The project did not keep a risk register for the road works.",
+            "The foremen needed more training on how to read schedules."
+          ],
+          "correctIndex": 1,
+          "why": "Audience-tailored messaging matches each group's content, detail, frequency and channel, and sending one identical pack to all groups is the mistake that leads to unmet expectations and late change requests."
+        },
+        {
+          "id": "pmicp:2:2:q4",
+          "role": "solo",
+          "prompt": "Partway through a crane-lift project, the team learns that a residents' group next to the site has not been engaged. What should the team do first?",
+          "choices": [
+            "Send the residents the full contract file so they have all the information.",
+            "Leave the residents to be informed by the funder, who will handle neighbours.",
+            "Record the group's interests, influence and information needs in the stakeholder register, then set a message for them.",
+            "Wait for the residents to object before making any contact."
+          ],
+          "correctIndex": 2,
+          "why": "The stakeholder register is a living list that records each stakeholder's interests, influence and what they need to hear, and the tailored message follows from that entry."
+        }
+      ],
+      "explainPrompt": "Explain to a teammate who is new to project work why getting buy-in at the start of a project matters more than a good status report later, and name one limit or tradeoff of tailoring messages to each audience.",
+      "modelAnswer": "Buy-in at the start sets the rules before anyone has a stake in a particular outcome. If the client, funder and site leads agree on goals, decision rights and change thresholds on day one, a later change follows a path they already accepted, so it is handled calmly. A status report can only report a surprise after it has happened, so it cannot create that agreement. Tailoring messages makes each group's updates more useful, but it has a limit: each group sees only its own slice, so the project manager must keep the core facts identical across every version and check that no group is left with a picture that contradicts what another group was told.",
+      "rubricPoints": [
+        "Buy-in is active agreement to goals, roles and decision rules, set before problems arise.",
+        "Early agreement turns later changes into known, pre-approved processes rather than surprises.",
+        "Tailored messages match content, detail, frequency and channel to each stakeholder group.",
+        "A tradeoff of tailoring is the risk of inconsistent facts, so core information must stay the same across audiences."
+      ],
+      "suggested": {
+        "modality": "explain",
+        "rationale": "The core skill is explaining why early agreement and tailored messages prevent problems, which the explanation prompt tests directly, and no listed mission or engine covers construction stakeholder management."
+      }
+    },
+    {
+      "objectiveId": "pmicp:2:3",
+      "sourceHash": "a49977ee8d2d",
+      "promptVersion": 2,
+      "model": "claude-haiku-5-5",
+      "generatedAt": "2026-10-10T09:11:03.113Z",
+      "plain": "A feedback loop is a repeating check where information flows back from the people who received a message, so the sender can confirm it was understood and acted on. On a construction project, sending an email or saying something in a meeting does not prove anyone heard it. A loop catches that gap early. When a gap is found, an action plan is a short written set of steps that closes it, with one named owner, a due date, and a way to confirm the fix worked. Together they turn 'we think we are fine' into something you can check.",
+      "guessPrompt": "A subcontractor says at a site meeting that they received the latest drawing revision, but three days later they are still building to the old one. What would you change so you find out sooner?",
+      "teach": "A feedback loop is a repeating cycle in which information returns from the people who received a message, so the sender can check whether it was understood and acted on. A communication gap is the difference between what was meant or agreed and what is actually happening on the ground. An action plan is a short written set of steps that closes one specific gap. Each step names one owner, one due date, and one way to confirm it worked.\n\nFeedback loops work because a message sent is not the same as a message received. Without a return signal, the sender assumes success. A useful loop has three parts: a measure (such as how many open requests are past their response date), a regular review point, and a named person accountable for acting on what the measure shows.\n\nWorked example. A design team sends a revised drawing and says the contractor has it. At the weekly coordination meeting, the document register shows that 9 of 14 open requests for information are still routed to an old distribution list. Step one: name the gap. The contractor's team is working from superseded answers. Step two: write the action plan. The document controller updates the distribution list by Thursday, and the design lead confirms in writing that the new list is live. Step three: check it. The following week's aging report must show zero requests routed to the old list, and the average response time must fall. Only then is the gap closed.\n\nCommon mistake: holding a status meeting, hearing that everyone is fine, and calling that a feedback loop. Nothing was measured, so the gap stays hidden until rework appears.\n\nConsequence: an unresolved gap on a capital project usually surfaces later as rework, idle crews or a schedule slip, and every week it stays open adds cost. The loop makes the gap visible, and the action plan is what makes it close.",
+      "questions": [
+        {
+          "id": "pmicp:2:3:q1",
+          "role": "fade",
+          "prompt": "A municipal water-treatment upgrade has 22 open submittals in its PMIS (project management information system, the shared database that tracks documents and requests). At Tuesday's review, the team names the gap: the plant operator is installing pumps against superseded data sheets because the approved sheets went to an old vendor contact address. The action plan is set. Submittal coordinator Maria Osei corrects the vendor contact in the PMIS by Wednesday 14 May, and the commissioning lead confirms in writing that the operator has the current sheets. One element of the plan is still missing: how the team will confirm the fix worked. Which addition completes the plan?",
+          "choices": [
+            "Hold another weekly status meeting where each person reports they are on track",
+            "Ask the pump vendor to move the delivery date to a later week",
+            "Set a measure that the next PMIS export shows the three pump submittals with the new vendor contact and a recorded response date, reviewed by Maria Osei at the next meeting",
+            "Add the plant operator's foreman as a second owner so two people share the confirmation step"
+          ],
+          "correctIndex": 2,
+          "why": "A plan step needs a way to confirm it worked, and a specific measure reviewed at a set point by the named owner provides that, while the other options either repeat a status meeting, break the one-owner rule, or do not confirm the gap closed."
+        },
+        {
+          "id": "pmicp:2:3:q2",
+          "role": "solo",
+          "prompt": "In a construction project's communication controls, what best describes an action plan?",
+          "choices": [
+            "A general commitment from the project team to communicate more clearly over the next phase",
+            "A schedule of recurring meetings in which stakeholders review their open risks and concerns",
+            "A short written set of steps that closes one specific gap, with each step naming one owner, one due date and one way to confirm it worked",
+            "A running list of every decision made at the weekly coordination meeting, grouped by discipline"
+          ],
+          "correctIndex": 2,
+          "why": "The teaching text defines an action plan as a short written set of steps closing one specific gap, with one owner, one due date and one confirmation method per step, which is exactly the first option."
+        },
+        {
+          "id": "pmicp:2:3:q3",
+          "role": "solo",
+          "prompt": "A site superintendent holds a status meeting every Monday. Each foreman says their trade is on track, and the superintendent records this as a feedback loop. Two weeks later, the electrical rough-in crew is idle because the inspection requests were never sent. What is the main failure?",
+          "choices": [
+            "The superintendent assumed the messages had been received and acted on, because no measure was tracked and no one was accountable for acting on a result",
+            "The superintendent should have sent the inspection requests in writing rather than relying on verbal updates",
+            "The foremen were not qualified to report on their own trades' progress and should have been replaced",
+            "The meetings were too short to cover all trades, so the superintendent should have added a second meeting each week"
+          ],
+          "correctIndex": 1,
+          "why": "A status meeting that only hears reassurance measures nothing, so a feedback loop was never really in place; the missing elements are a measure, a regular review point and an accountable person, which the first option does not address, and the question's correct answer names the lack of measurement and accountability."
+        },
+        {
+          "id": "pmicp:2:3:q4",
+          "role": "solo",
+          "prompt": "A concrete pour on a hospital wing is scheduled for three days ahead, but the pump truck booking has been missed twice. The project manager wants a feedback loop that will catch this kind of gap early. Which set of three parts does a useful loop need?",
+          "choices": [
+            "A weekly meeting, a shared email inbox and a rule that all decisions are minuted",
+            "A list of all trades on site, a tool-box talk and a signed copy of the programme",
+            "A cost report, a safety walk and a rule that any delay over one day is escalated to the client",
+            "A measure such as the number of bookings past their confirmation date, a regular review point, and a named person accountable for acting on what the measure shows"
+          ],
+          "correctIndex": 2,
+          "why": "The teaching text says a useful feedback loop has a measure, a regular review point and a named accountable person, and the second option is the one that contains a measure of the booking problem with those three parts, while the other options are activities or reports without a loop."
+        }
+      ],
+      "explainPrompt": "Explain to a teammate how you would use a feedback loop and an action plan when a communication gap has already started to affect the schedule. Name one limit or tradeoff of this approach.",
+      "modelAnswer": "I would start by picking a measure that shows whether the message is landing, such as how many open requests are past their response date or how many field questions repeat. I would review that measure at a fixed point each week, so a gap shows up before it becomes rework. Once a gap is confirmed, I write a short action plan: what is wrong, one step to fix it, one owner, one due date, and a check that the next report shows the change. The main limit is that the loop only sees what you choose to measure. If the measure is wrong, the team can close the tracked gaps and still miss the real problem. There is also a cost in time, because a weekly review and written plans take effort that a small team may resent. I would keep the measure small and tie it directly to the schedule impact.",
+      "rubricPoints": [
+        "A feedback loop returns information from receivers so the sender can confirm understanding and action.",
+        "A good loop needs a measure, a regular review point, and an accountable person.",
+        "An action plan names the gap, one step, one owner, one due date, and a confirmation check.",
+        "A limit: the loop only reveals what is measured, so the measure must match the real risk."
+      ],
+      "suggested": {
+        "modality": "explain",
+        "rationale": "Explaining the loop and action plan back, including a limit, is the core skill here, and none of the listed missions or planned engines cover project communication."
+      }
+    },
+    {
+      "objectiveId": "pmicp:2:4",
+      "sourceHash": "577db6b93167",
+      "promptVersion": 2,
+      "model": "claude-haiku-5-5",
+      "generatedAt": "2026-10-10T09:11:10.155Z",
+      "plain": "A stakeholder is anyone who can affect a building project or be affected by it: the owner paying for it, the crew building it, the inspector approving it, and the neighbours who hear the drilling. Identifying stakeholders means listing all of them, including the quiet ones. Assessing them means judging how much power each person has over the project, how much interest each takes in it, and how each prefers to receive news. Culture shapes that last part: some people want a direct written answer, while others want a relationship first and bad news delivered privately. Good assessment decides who needs what information, how often, and in which form, before problems arrive.",
+      "guessPrompt": "On a new office build, the city inspector rarely visits the site but can stop work with one signature, while the site foreman talks to the crew all day. Which of them should get more of the project manager's attention, and what would you base that choice on?",
+      "teach": "A stakeholder is any person or group that can influence a project or is affected by its outcome. Stakeholder identification is the step of building a complete list of them, usually recorded in a stakeholder register, which is the project's working record of each stakeholder's role, needs and communication preferences. Stakeholder assessment is the step of judging each one, most often by two measures: power (how much they can stop, change or approve) and interest (how much they care about the outcome or are affected by it). A power/interest grid places each stakeholder in one of four quadrants, and the quadrant suggests the level of effort: high power and high interest call for close, frequent engagement; high power and low interest need enough information to stay satisfied; high interest and low power need regular updates so they do not escalate; low on both need only occasional notice. Why it works: a project manager has limited time, so effort should follow influence. Silent stakeholders are the usual source of late surprises, so identification has to look beyond the obvious names. Worked example: on a hospital wing renovation, step one lists the owner, architect, general contractor, nurses on the affected floor, the fire marshal, the adjacent clinic and the lender. Step two scores the fire marshal as high power (can halt occupancy) and moderate interest (engaged mainly at inspections), so the plan uses scheduled milestone notices rather than weekly meetings. The nurses score low power but high interest, so they get a regular walk-through and a clear schedule for noise and access changes. Culture is the other factor. Some stakeholders expect a direct, detailed, written answer; others expect a relationship first, with bad news delivered in person before it appears in a report. Assessment records these preferences in the register so messages match how each group reads them. Common mistake: assessing once at kickoff and never again. Power and interest shift when a permit is refused or a budget is cut. Consequence: a missed stakeholder, such as the neighbouring clinic that depends on a shared loading dock, can stop deliveries after work has already started and lead to a claim.",
+      "questions": [
+        {
+          "id": "pmicp:2:4:q1",
+          "role": "fade",
+          "prompt": "A municipal water utility is upgrading a pumping station in a coastal town of 12,000 residents. Step 1: the team lists the utility operator, the state environmental regulator, the pump supplier, the contractor, and the residents of a row of houses 40 metres from the site, who will hear night-time concrete pours. Step 2: the regulator is scored as high power (can suspend the work order) and high interest (reviews each discharge plan). The residents are scored as low power (they cannot stop the work directly) and high interest (they bear the night noise). Step 3 is missing from the plan. Once a stakeholder's quadrant is known, what effort level should the residents receive?",
+          "choices": [
+            "Only a notice at project closeout, since they have no power over the work",
+            "Regular updates, such as a noise schedule and a clear contact point, so they do not escalate",
+            "Close, frequent engagement at the same level as the regulator",
+            "A formal approval step before each night pour"
+          ],
+          "correctIndex": 1,
+          "why": "A group that is high interest but low power falls in the quadrant that calls for regular updates, which keeps them from escalating while not spending top-level effort on them."
+        },
+        {
+          "id": "pmicp:2:4:q2",
+          "role": "solo",
+          "prompt": "Which statement best defines stakeholder assessment as the term is used in a project's stakeholder register?",
+          "choices": [
+            "Judging each identified stakeholder by how much power they hold and how much interest they have in the outcome",
+            "Recording the contractual terms that bind each stakeholder to the project",
+            "Measuring how satisfied each stakeholder is with the schedule at monthly reviews",
+            "Writing down every person who might attend a project meeting"
+          ],
+          "correctIndex": 0,
+          "why": "Assessment is the step of judging each stakeholder by power and interest, which is distinct from identification (building the list) and from contract or satisfaction tracking."
+        },
+        {
+          "id": "pmicp:2:4:q3",
+          "role": "solo",
+          "prompt": "A rail extension project assessed its stakeholders once at kickoff, scoring a land-use board as low power. Six months later the board gained the right to refuse a crossing permit after a rule change. What is the most accurate description of the problem?",
+          "choices": [
+            "The team identified too many stakeholders, which diluted their effort",
+            "Power and interest shift over time, so the assessment must be repeated; the single kickoff score became out of date",
+            "The board's interest was overstated, so the team wasted effort on it",
+            "The team should have placed the board in the low-interest, low-power quadrant from the start"
+          ],
+          "correctIndex": 1,
+          "why": "The teaching text warns that power and interest change when conditions change, such as a permit refusal, so a one-time assessment becomes stale."
+        },
+        {
+          "id": "pmicp:2:4:q4",
+          "role": "solo",
+          "prompt": "On a port terminal expansion, a sponsor's team in one region expects bad news to be delivered in person before it appears in any written report, while a second team expects a detailed written answer first. What should the project manager do with this difference?",
+          "choices": [
+            "Send all bad news in writing only, since written records are always safest",
+            "Pick one style for all stakeholders so the reporting stays consistent",
+            "Record each group's communication preference in the stakeholder register and match the message to how that group reads it",
+            "Skip the in-person delivery because relationship habits do not belong in project records"
+          ],
+          "correctIndex": 2,
+          "why": "The teaching text says culture-based communication preferences are recorded in the register so messages match how each group reads them."
+        }
+      ],
+      "explainPrompt": "Explain to a teammate how you would decide which stakeholders get the most of your time on a construction project, and name one limit of the power/interest method that you would watch for.",
+      "modelAnswer": "I would start from a full stakeholder register so nobody is left off, then score each person on power and interest and place them on a power/interest grid. High power and high interest people get close, frequent contact, such as the owner's representative and the general contractor's superintendent. High power but lower interest, like a building inspector, get scheduled milestone notices so they are never surprised. High interest but low power, such as neighbours affected by noise, get regular updates so they do not escalate. The limit is that the grid is a snapshot: power and interest shift when a permit is delayed or a complaint lands, so I would rescore at each milestone. The grid also ignores culture, so I would note how each person prefers to receive news and adjust the form of the message, not just the frequency.",
+      "rubricPoints": [
+        "Defines a stakeholder as anyone who can affect or is affected by the project, and says identification comes before assessment",
+        "Explains power and interest as the two assessment measures and how they map to engagement effort",
+        "Names at least one limit, such as the grid being a snapshot that goes stale or ignoring cultural preferences",
+        "Shows that the register records communication preferences so messages match how each stakeholder reads them"
+      ],
+      "suggested": {
+        "modality": "explain",
+        "rationale": "Choosing and justifying who gets attention is best learned by explaining the reasoning back, since no listed mission or planned engine covers stakeholder assessment."
+      }
+    },
+    {
+      "objectiveId": "pmicp:3:1",
+      "sourceHash": "2ffe326c636e",
+      "promptVersion": 2,
+      "model": "claude-haiku-5-5",
+      "generatedAt": "2026-10-10T09:11:17.052Z",
+      "plain": "Scope is the set of work a project must do to produce what it promised. Defining scope around outcomes and mission means starting from the result the project exists to achieve, such as a clinic that can see more patients by a set date, and then deciding which items are truly needed to reach it. Maturing scope means the early, rough description is sharpened into a detailed, agreed version as the team learns more, and every revision is checked against that original purpose before it is accepted. The skill is keeping the project honest about what it is for, not only about what it builds.",
+      "guessPrompt": "A school board asks for a new gym. Before anyone draws anything, what should the project team agree on first, and why might a list of gym features alone be risky?",
+      "teach": "Scope is the total work a project must perform to deliver what it promises. Product scope is the features and qualities of the thing built. Project scope is the work and steps needed to build it. Defining scope well starts with the outcome, meaning the benefit the owner needs once the work is finished, and the mission, meaning the reason the owner is investing at all. Those two anchors tell the team which features are essential and which are nice to have. Scope matures in stages: a broad early statement becomes a detailed scope baseline, which is the agreed version that later work is measured against. Each revision to that baseline should be tested against the outcome and recorded with approval, so the team knows what changed and why.\n\nWorked example. A rural clinic plans a new treatment room so that 30 patients a day can be seen by September. The first scope says build one room with two beds. A survey then shows the room must also meet an accessibility requirement, so a level entrance is added. Step one: check the outcome. Thirty patients a day still needs a waiting area sized for them, which the first scope never included. Step two: add the waiting area to the scope, record the revision with its reason, and get the owner's sign-off. Step three: update the baseline so the contractor prices from current drawings.\n\nCommon mistake: listing deliverables without the outcome, so a complete-looking scope still fails the clinic. Consequence: the room is built on time but cannot handle the patient load, and the owner pays again.\n\nA scope is accurate only when every item traces back to an outcome the owner has agreed to.",
+      "questions": [
+        {
+          "id": "pmicp:3:1:q1",
+          "role": "fade",
+          "prompt": "A regional sports federation needs a new indoor hall that can host 200-spectator tournaments by March. The first scope includes one indoor court only. A fire-safety review then requires seating for 200 people and a second exit. Step one: check the outcome. Seating and a second exit are needed for the tournaments to go ahead legally, so both belong in scope. Step two: [missing]. Step three: update the scope baseline so the contractor prices from current drawings. Which action correctly fills the missing step two?",
+          "choices": [
+            "Price the added seating from the original one-court estimate and start work before sign-off.",
+            "Remove the seating from scope because the first scope never mentioned it.",
+            "Add the seating and second exit to the scope, record the revision with its reason, and get the owner's sign-off.",
+            "Ask the contractor to build the seating as an optional extra after the hall opens."
+          ],
+          "correctIndex": 2,
+          "why": "Step two is where each revision is added to the scope, recorded with its reason, and approved by the owner, which is what keeps the scope traceable to the outcome."
+        },
+        {
+          "id": "pmicp:3:1:q2",
+          "role": "solo",
+          "prompt": "A water utility's team has a list of pipes, valves and pumps for a pumping station, but no statement of the service the station must provide. What is the main risk of this scope?",
+          "choices": [
+            "Items may be built on time, but the service need is unverified, so scope is inaccurate.",
+            "Later revisions can add the missing outcome when asked, so no check is needed now.",
+            "The items count as product scope, so project scope is automatically correct for the owner.",
+            "The team can skip recording changes since the list already looks complete and finished."
+          ],
+          "correctIndex": 0,
+          "why": "A scope is accurate only when every item traces back to an outcome the owner has agreed to, and a list with no outcome can be fully built yet still fail the owner's need."
+        },
+        {
+          "id": "pmicp:3:1:q3",
+          "role": "solo",
+          "prompt": "A hospital car park expansion's first scope adds 120 spaces. A later review shows the outcome needs 40 of those spaces reserved for staff with mobility needs, placed near the entrance. Which action best fits the scope-revision approach?",
+          "choices": [
+            "Add the reserved spaces, get owner approval, then update the baseline.",
+            "Keep 120 and let the contractor pick the reserved layout during construction.",
+            "Cut the total to 80 so the baseline does not change at all.",
+            "Note the reserved spaces on the drawing only, leaving the scope and baseline unchanged."
+          ],
+          "correctIndex": 0,
+          "why": "The reserved spaces are a new requirement that the outcome depends on, so they must be added to scope, approved by the owner, and then reflected in the baseline."
+        },
+        {
+          "id": "pmicp:3:1:q4",
+          "role": "solo",
+          "prompt": "A team adds a feature to a school kitchen project but never records the reason for the change or who approved it. Six months later, nobody can explain a cost rise. What is the core failure?",
+          "choices": [
+            "Any feature added later becomes part of the outcome automatically, so no approval is needed at all.",
+            "Revisions lacked a recorded reason and approval, so changes cannot be traced to an agreed outcome.",
+            "The baseline should have stayed as the early broad statement so later changes would be easier to hide from the owner.",
+            "The contractor must have priced the work wrongly, so this is a pricing failure rather than a scope failure."
+          ],
+          "correctIndex": 1,
+          "why": "Each revision must be tested against the outcome and recorded with approval, and without that record the team cannot show what changed or why."
+        }
+      ],
+      "explainPrompt": "Explain to a teammate how you would define a project's scope from its outcome and mission, and how you would revise that scope as the design matures. Name one limit or tradeoff of your approach.",
+      "modelAnswer": "I would start by asking the owner what result they need once the work is done and why the project matters to them. That outcome and mission become the test for every feature on the list. Then I would write a broad first scope and refine it into a detailed baseline as surveys and designs come in. When something changes, I check whether the revised scope still delivers the agreed outcome, record the reason for the change, and get approval before the baseline is updated. The main limit is that outcomes can be vague, so the team has to pin them down with measurable targets early, or the test becomes a matter of opinion. Also, a tight outcome test can make the team reject useful additions that the owner would have wanted, so the review needs the owner present.",
+      "rubricPoints": [
+        "Scope starts from the owner's outcome and mission, not only from a list of deliverables.",
+        "Scope matures from a broad statement into an agreed baseline through stages.",
+        "Each revision is tested against the outcome and recorded with a reason and approval.",
+        "Names a real limit, such as vague outcomes or the risk of rejecting useful additions."
+      ],
+      "suggested": {
+        "modality": "explain",
+        "rationale": "Defining and revising scope against outcomes is a reasoning skill best shown by explaining the approach back to a teammate, and no listed mission or planned engine covers construction scope."
+      }
+    },
+    {
+      "objectiveId": "pmicp:3:2",
+      "sourceHash": "d74b9bc9bf5b",
+      "promptVersion": 2,
+      "model": "claude-haiku-5-5",
+      "generatedAt": "2026-10-10T09:11:09.666Z",
+      "plain": "A change order is a formal, written approval to alter what a construction or capital project will deliver, its cost, or its schedule after the work was agreed. Timing it means deciding when in the project a change is raised and approved, because a change made early costs little while one made late can mean tearing out finished work. Designing the process means deciding who can approve what, how fast, and how the change is recorded, so that a small fix does not wait weeks for a committee while the crew stands idle. Think of it like a permit for a modification: the rules decide when you ask and how quickly you get a yes.",
+      "guessPrompt": "On a building site, a wall needs to move 1.5 metres. The crew could make the request during framing, or after the drywall, wiring and inspections are finished. Which is cheaper to change, and why do you think so?",
+      "teach": "A change order is a formal written instruction that alters the agreed scope, cost or schedule of a project after a baseline has been approved. The baseline is the agreed version of scope, cost and schedule that everyone measures progress against. A change control process is the set of steps for raising, assessing, approving and recording a change. The cost of a change rises as work progresses, because each completed stage adds rework, demolition and delay to the change itself. Timing matters for this reason: the earlier a change is raised, the more options remain open and the cheaper it is.\n\nA fast process separates changes by size and risk. Minor changes that fit inside an approved contingency can be approved by the project manager within a set time, such as one working day. Larger changes that affect the critical path, safety or contract value go to a change control board, a small group with authority to approve, reject or defer changes. Agile approaches add short review cycles, such as a weekly board, plus pre-approved limits so routine adjustments do not queue.\n\nWorked example: during framing, the client asks to move a partition wall 1.5 metres. Step one, the project manager logs the request and its reason. Step two, the designer estimates impact: two hours of rework, no effect on the critical path, cost within contingency. Step three, because it is under the threshold, the manager approves it that day and updates the baseline record. Had the same request arrived after drywall, the estimate would include demolition, rewiring and re-inspection, so it would go to the board.\n\nCommon mistake: allowing verbal instructions on site to proceed without a written change order. The baseline and cost record then no longer match the work, and the contractor may later dispute payment.\n\nConsequence: an unrecorded change makes schedule and budget reports describe a project that no longer exists, so every later decision is made on wrong information.",
+      "questions": [
+        {
+          "id": "pmicp:3:2:q1",
+          "role": "fade",
+          "prompt": "A school extension team is replacing a planned set of aluminium windows with timber-framed windows after the roof is already on. The baseline is the approved version of scope, cost and schedule that progress is measured against, and the contingency is the reserved budget set aside for small unplanned changes. Step 1: the project manager logs the client's request and its reason. Step 2: the architect estimates impact at 1.5 days of rework to remove and refit the frames, a one-day delay to the roof-closure milestone, which sits on the critical path (the chain of tasks that sets the earliest finish date), and a cost of 4% of the contingency. Step 3 is missing: state what happens next and which route the change takes.",
+          "choices": [
+            "The change goes to the change control board because it affects the critical path.",
+            "The project manager approves it the same day because the cost is under 5% of the contingency.",
+            "The change waits until the final invoice so the cost can be checked against the whole budget.",
+            "The architect starts the timber windows on a verbal request and the order is written up at handover."
+          ],
+          "correctIndex": 0,
+          "why": "A change that moves the critical path is a larger change that goes to the change control board, regardless of how small its cost is."
+        },
+        {
+          "id": "pmicp:3:2:q2",
+          "role": "solo",
+          "prompt": "A bridge project's client asks for a new handrail design during the earthworks stage, before any concrete is poured. Another team proposes waiting until the deck is finished. Why is raising the change early generally the better choice?",
+          "choices": [
+            "Because the earlier a change is raised, the more options remain open and the cheaper it tends to be.",
+            "Because the change control board meets only during earthworks and is unavailable later.",
+            "Because a change raised early costs nothing, so there is no reason to estimate it.",
+            "Because the baseline is only approved after the deck is complete, so earlier requests are not yet valid."
+          ],
+          "correctIndex": 0,
+          "why": "The teaching text says cost rises as work progresses since each completed stage adds rework, demolition and delay, so early raising keeps options open and lowers cost."
+        },
+        {
+          "id": "pmicp:3:2:q3",
+          "role": "solo",
+          "prompt": "A warehouse fit-out has a contingency of 10,000 currency units. A tenant requests a relocated light switch that costs 4,000, adds no time to the critical path, has no safety effect, and does not change the contract value. Under a fast change process, which route fits best?",
+          "choices": [
+            "The tenant decides alone, since tenants can approve changes to their own space.",
+            "The project manager approves it within the set time, because it is a minor change that fits inside the approved contingency.",
+            "The site foreman approves it verbally and the written order is raised at month end.",
+            "The change goes to a weekly board and waits for the next meeting before any work starts."
+          ],
+          "correctIndex": 1,
+          "why": "A minor change that fits inside an approved contingency and does not touch the critical path, safety or contract value is approved by the project manager within the set time."
+        },
+        {
+          "id": "pmicp:3:2:q4",
+          "role": "solo",
+          "prompt": "On a hospital wing, a site engineer agrees a change to ceiling heights with a subcontractor by phone and tells them to start. The written change order is not raised until two weeks later. What is the most likely consequence for the project records?",
+          "choices": [
+            "The schedule is automatically corrected by the critical path software, so no record is needed.",
+            "The change control board will approve the change retroactively with no further cost impact.",
+            "The baseline and cost record no longer match the work actually done, and the contractor may later dispute payment.",
+            "The project has no problem, because the verbal instruction was given by a qualified engineer."
+          ],
+          "correctIndex": 2,
+          "why": "Work proceeding without a written change order leaves the baseline and cost record out of step with the work, which can lead to a payment dispute with the contractor."
+        }
+      ],
+      "explainPrompt": "Explain to a teammate why a change order should be raised as early as possible, and name one tradeoff of making the approval process faster.",
+      "modelAnswer": "Raising a change early is cheaper because little work has been built on the old design, so there is less rework, demolition and delay to pay for, and more alternatives remain open. A late change can force us to undo finished stages. The tradeoff of speeding up approval is control: if a site manager can approve small changes in a day, several small changes can add up to a large cost or schedule shift that nobody with budget authority has reviewed. So I would set a value and schedule threshold, keep a weekly board for anything larger, and require a written record for every change, even fast ones, so the baseline stays accurate.",
+      "rubricPoints": [
+        "Explains that change cost rises as construction progresses, so earlier raising is cheaper",
+        "Describes tiering: small changes approved quickly within limits, larger ones to a board",
+        "Names a real tradeoff of faster approval, such as cumulative unreviewed impact",
+        "Notes that every change, fast or slow, must be recorded against the baseline"
+      ],
+      "suggested": {
+        "modality": "combo",
+        "rationale": "Timing and tiering a change process is best learned by reasoning through an exam-style scenario about when and how to approve a change, and no listed mission covers construction change orders."
+      }
+    },
+    {
+      "objectiveId": "pmicp:3:3",
+      "sourceHash": "4af91d6a928e",
+      "promptVersion": 2,
+      "model": "claude-haiku-5-5",
+      "generatedAt": "2026-10-10T09:11:16.201Z",
+      "plain": "A scope change is any addition, removal or alteration to what a project will deliver. Evaluating a scope change against core project outcomes means asking a plain question before saying yes: does this change still help the project achieve what it was built to achieve? Those outcomes usually include the facility's purpose, its budget limit, its completion date, and its quality and safety standards. Technology-assisted change management uses shared software to log requests, route them for approval, track costs and keep one record of decisions. That speeds things up and reduces lost paperwork, but the software only records decisions. It cannot decide whether a change is worth making, and a tidy approval workflow can hide weak thinking.",
+      "guessPrompt": "A client asks to add a second loading dock to a warehouse midway through construction. The schedule has two weeks of spare time before the finish date, and the budget has a small reserve. What would you check before approving it, and why would a completed approval in the software not be enough on its own?",
+      "teach": "Scope is the set of work and deliverables a project commits to. Core outcomes are the reasons the project exists, such as its purpose, cost, completion date, quality and safety. A change request is a formal proposal to alter scope. A change order is the approved, written record that changes the scope, cost or time. An impact assessment is the analysis of what a proposed change does to cost, schedule, risk and quality. Float is spare time in the schedule before a delay moves the finish date. Contingency is a reserve of money set aside for unknowns. A technology-assisted process is a shared tool that routes requests for approval, keeps an audit trail and links to cost and schedule data.\n\nWhy evaluate against outcomes? Every change is judged by what it does to the reason the project exists, not only by whether someone wants it. Worked example: the dock adds 48,000 in cost against a 60,000 reserve, and takes 9 working days of work that fits inside the 10 days of float. Step 1: restate the outcome, which is that the warehouse opens on time at its target throughput. Step 2: check cost, which fits the reserve. Step 3: check schedule, which holds only if the dock work sits in float. Step 4: check the benefit, which is the throughput the client needs. Step 5: check hidden effects, such as whether the crane booking that the dock work needs is already committed elsewhere. The software will show the estimate and approval, but not the crane conflict unless someone enters it.\n\nCommon mistake: treating a complete workflow as proof of a sound evaluation, or approving each small change against the reserve without adding up their combined effect. In a running project, that leads to the reserve being spent while the record still shows green, and the outcome drifts without anyone seeing it.\n\nA change is sound only when its effect on the project's outcomes has been assessed, and the tool records that assessment rather than replacing it.",
+      "questions": [
+        {
+          "id": "pmicp:3:3:q1",
+          "role": "fade",
+          "prompt": "A school extension team is assessing change request CR-7, which adds an acoustic wall upgrade costing 35,000. A change request is a formal proposal to alter scope. The project's contingency, a reserve of money set aside for unknowns, holds 40,000. The upgrade takes 6 working days, and the schedule has 4 days of float, meaning spare time before a delay moves the finish date. The core outcome is that classrooms open for the September term at the agreed acoustic standard. Worked so far: Step 1, restate the outcome as classrooms open for September at the agreed acoustic standard. Step 2, check cost: 35,000 fits within the 40,000 contingency. Step 4, check benefit: the acoustic standard is a stated requirement of the school. Step 3, check schedule, is the missing step. Which completion of Step 3 is correct?",
+          "choices": [
+            "The work fits, because 6 days is close to 4 days and small overruns are normally absorbed.",
+            "The schedule check is unnecessary, because an upgrade is not new scope.",
+            "The 6 days exceed the 4 days of float by 2 days, so the finish date is at risk unless the work is resequenced or float is recovered.",
+            "The schedule check is passed because the cost is within the contingency."
+          ],
+          "correctIndex": 2,
+          "why": "Float covers only 4 days, so 6 days of work pushes the finish date unless the work is reorganised, and cost fitting the contingency says nothing about time."
+        },
+        {
+          "id": "pmicp:3:3:q2",
+          "role": "solo",
+          "prompt": "A project team needs a written analysis of what a proposed change does to cost, schedule, risk and quality before deciding whether to approve it. Which term names that analysis?",
+          "choices": [
+            "Contingency",
+            "Change order",
+            "Impact assessment",
+            "Change request"
+          ],
+          "correctIndex": 2,
+          "why": "An impact assessment is the analysis of a change's effect on cost, schedule, risk and quality; a change request is the proposal, a change order is the approved record, and contingency is a money reserve."
+        },
+        {
+          "id": "pmicp:3:3:q3",
+          "role": "solo",
+          "prompt": "A clinic renovation has 14 small changes, each approved after being checked alone against the remaining 50,000 contingency. Each one fit on its own, but together they total 62,000, and the approval tool shows every item as green. What is the core failure?",
+          "choices": [
+            "The tool logged the approvals, so the outcome is protected.",
+            "The contingency is the wrong size for a clinic project.",
+            "The tool did not show the changes at all.",
+            "Each change was checked alone, and the combined total against the reserve was never added up."
+          ],
+          "correctIndex": 3,
+          "why": "Approving each change against the reserve separately hides their combined effect, so the 62,000 total overspends the 50,000 reserve while the record still looks clean."
+        },
+        {
+          "id": "pmicp:3:3:q4",
+          "role": "solo",
+          "prompt": "A shared approval tool shows a change order as approved, with a full audit trail and linked cost data. The change needs a concrete pump truck that is already booked for another job, and nobody entered that booking in the tool. What does the approved status tell you?",
+          "choices": [
+            "That the workflow was completed, but the hidden resource conflict was not captured.",
+            "That the change has no effect on the schedule.",
+            "That the audit trail is incomplete and the change should be reversed.",
+            "That the effects on the project's outcomes, including the pump truck conflict, were assessed."
+          ],
+          "correctIndex": 0,
+          "why": "A tool records the workflow and the data entered into it, but it does not detect a conflict unless someone enters it, so approval alone does not prove the outcome assessment was sound."
+        }
+      ],
+      "explainPrompt": "Explain to a teammate how you would decide whether a scope change should go ahead, and name one limit of relying on a shared change-order tool to make that decision.",
+      "modelAnswer": "I start by restating the project outcomes the change could affect: purpose, cost, completion date, quality and safety. Then I assess the change against each one. I estimate its cost and check it against the contingency, check whether its work fits in the float or pushes the finish date, and confirm that the benefit is real. I also look for hidden effects, such as shared resources like cranes or inspectors that other work depends on. The tool is useful because it routes approvals, keeps a record and shows totals. Its limit is that it only holds what people enter. If nobody records the crane conflict or the effect of several small changes added together, the workflow can show an approved, under-budget change while the outcomes quietly drift. So I treat the approval as the end of a judgment I have made, not as the judgment itself.",
+      "rubricPoints": [
+        "Restates the core project outcomes before judging the change",
+        "Assesses cost against the contingency, and schedule against float or the finish date",
+        "Looks for hidden effects on shared resources or cumulative changes",
+        "Names a real limit of the tool, such as it only recording what people enter",
+        "Treats an approved workflow as a record of a judgment, not a replacement for it"
+      ],
+      "suggested": {
+        "modality": "combo",
+        "rationale": "Evaluating a scope change is best learned by reasoning through an exam-style scenario, and no listed mission or planned engine covers construction scope changes."
+      }
+    },
+    {
+      "objectiveId": "pmicp:3:4",
+      "sourceHash": "8adb09603c29",
+      "promptVersion": 2,
+      "model": "claude-haiku-5-5",
+      "generatedAt": "2026-10-10T09:11:14.384Z",
+      "plain": "Scope is the agreed set of work a project will deliver. A scope gap is needed work that nobody has planned for, or a requirement the project's outcome depends on but the plan leaves out. Value engineering is a structured review of a design or method that looks for ways to deliver the same needed function at lower cost or with less risk, without dropping what the owner actually needs. Cost-benefit analysis compares what an option costs against the value it returns, so you can decide whether it is worth adding, changing or dropping. Together these tools help a project manager find missing work and decide, with evidence, which gaps to close and how.",
+      "guessPrompt": "A building owner says the new clinic must be usable by wheelchair users, but the drawings only show standard doors and a step at the entrance. Before reading anything, how would you decide whether fixing this is worth the extra cost, and what would you need to know first?",
+      "teach": "A scope gap is the distance between what the project must deliver to meet its purpose and what the current scope documents actually cover. Gaps usually appear as requirements stated in the owner's brief that never reached the drawings or specifications, or as functions the design meets only by accident. Value engineering (VE) is a structured review, usually held at a defined design stage, in which the team asks what each element is for and whether the same function can be delivered at lower total cost or lower risk. It is not simply cutting items. A VE idea that removes a required function is a scope reduction and must be handled as one. Cost-benefit analysis (CBA) puts numbers on an option: the cost to add or change it, set against the measurable and non-measurable benefits it returns over the asset's life, such as reduced maintenance, compliance, or avoided rework.\n\nWhy it works: the two tools answer different questions. VE asks how to achieve a required function more efficiently. CBA asks whether a proposed addition is justified at all. Used together, a gap is first confirmed against the project purpose, then options are generated, then each is priced and compared.\n\nWorked example: the clinic brief requires wheelchair access. Step 1: confirm the requirement in the brief and the accessibility rules that apply. Step 2: the drawings show a step at the entrance, so the gap is a missing accessible route. Step 3: list options, such as a ramp, a lift, or regrading the entrance approach. Step 4: estimate each option's cost and its benefits, including compliance and avoided redesign. Step 5: choose the option whose benefit justifies its cost, then record the decision as a scope change.\n\nCommon mistake: pricing the cheapest option without checking that it still meets the requirement, so the gap reopens later as rework.\n\nConsequence: an unrecorded scope change means the cost estimate, schedule and contract no longer match the work being built, and the mismatch surfaces as disputes at handover.",
+      "questions": [
+        {
+          "id": "pmicp:3:4:q1",
+          "role": "fade",
+          "prompt": "A regional food bank's brief requires its cold store to hold 4 degrees C through a 12-hour grid outage. The drawings show a cold room but no backup power connected to it, so the gap is missing standby power for the cold room. Options listed: connect the cold room to the building's existing generator circuit, install a dedicated standby unit, or add thermal storage panels. The next step is to estimate the cost of each option and the benefits it returns over the store's life, including avoided spoilage losses, then compare them. Which action completes this step?",
+          "choices": [
+            "Estimate each option's cost and the benefits it returns, then compare them against each other",
+            "Record the generator connection as a scope change before pricing any of the three options",
+            "Reduce the outage requirement to 4 hours so the cheapest option qualifies without owner approval",
+            "Adopt the cheapest option immediately, since any option that meets the brief will do"
+          ],
+          "correctIndex": 0,
+          "why": "Once options are listed, the cost-benefit step prices each one and sets its measurable and non-measurable benefits against that cost, which is what allows a justified choice to be made."
+        },
+        {
+          "id": "pmicp:3:4:q2",
+          "role": "solo",
+          "prompt": "A value engineering proposal for a warehouse replaces a 150 mm structural slab with a 100 mm slab to save cost. The brief requires the floor to carry forklift loads of 5 kN/m2. What is the correct way to handle the proposal?",
+          "choices": [
+            "Accept it, because a thinner slab is cheaper and VE is meant to reduce cost",
+            "Treat it as a scope reduction if the load-carrying function is lost, and check it against the brief before accepting",
+            "Accept it and note the change in the cost log only, since the drawings still show a slab",
+            "Reject all VE on the floor because any change to structure is out of scope"
+          ],
+          "correctIndex": 1,
+          "why": "The teaching text says a VE idea that removes a required function is a scope reduction and must be handled as one, so the load requirement must be checked before the proposal is accepted."
+        },
+        {
+          "id": "pmicp:3:4:q3",
+          "role": "solo",
+          "prompt": "A school is comparing two options to fix a recurring roof leak. Option A costs 40,000 and is expected to save 6,000 per year in repairs over the 10-year life of the roof. Option B costs 25,000 and is expected to save 2,000 per year in repairs over the same life. Ignoring any non-measurable benefits, which option is justified by cost-benefit analysis, and why?",
+          "choices": [
+            "Option B, because a lower upfront cost always means the benefit exceeds the cost",
+            "Option A, because its total 10-year savings of 60,000 exceed its cost of 40,000, while Option B saves only 20,000 against 25,000",
+            "Option B, because its upfront cost is lower and it is the cheaper choice",
+            "Neither, because both options cost more than they save in the first year"
+          ],
+          "correctIndex": 1,
+          "why": "Cost-benefit analysis compares the total benefit over the asset's life with the cost, and Option A returns 60,000 against a 40,000 cost while Option B returns 20,000 against 25,000."
+        },
+        {
+          "id": "pmicp:3:4:q4",
+          "role": "solo",
+          "prompt": "Which statement correctly describes the difference between value engineering and cost-benefit analysis in a scope-gap review?",
+          "choices": [
+            "Value engineering asks whether a proposed addition is justified at all, while cost-benefit analysis asks how to deliver a required function more cheaply",
+            "Value engineering asks how to deliver a required function more efficiently, while cost-benefit analysis asks whether a proposed addition is justified at all",
+            "Value engineering is used only after the contract is signed, while cost-benefit analysis is used only before tender",
+            "Value engineering and cost-benefit analysis both answer only whether the cheapest option should be chosen"
+          ],
+          "correctIndex": 0,
+          "why": "The teaching text states that VE asks how to achieve a required function more efficiently and CBA asks whether a proposed addition is justified, so the correct pairing is the one matching those questions."
+        }
+      ],
+      "explainPrompt": "Explain to a teammate how you would use value engineering and cost-benefit analysis to find and close a scope gap on a capital project, and name one limit or tradeoff of relying on the numbers.",
+      "modelAnswer": "I would start by confirming the gap against the project purpose and the owner's brief, because a missing item is only a gap if the outcome depends on it. Then I would run value engineering on the options that could deliver that function, asking whether each can meet the requirement more cheaply or with less risk. For the shortlisted options I would run a cost-benefit analysis, comparing the cost of each addition or change against measurable benefits such as avoided rework and compliance, plus harder-to-price benefits such as user experience. The main limit is that the result is only as good as the benefit estimates. Benefits that are hard to quantify tend to be undervalued, so I would state those assumptions openly. I would then record the chosen option as a formal scope change so the cost, schedule and contract reflect what is actually being built.",
+      "rubricPoints": [
+        "Confirm the gap against the project purpose or owner brief before pricing anything",
+        "Use value engineering to find cheaper or lower-risk ways to deliver the same required function",
+        "Use cost-benefit analysis to compare the cost of each option against its measurable and non-measurable benefits",
+        "Name a limit, such as benefit estimates being uncertain or hard-to-quantify benefits being undervalued",
+        "Record the chosen option as a formal scope change so cost, schedule and contract match the work"
+      ],
+      "suggested": {
+        "modality": "do-new",
+        "engineId": "cost-model",
+        "rationale": "A fictional-credits cost model would let the learner price options against benefits and see how the comparison changes with the assumptions."
+      }
+    },
+    {
+      "objectiveId": "pmicp:4:1",
+      "sourceHash": "47bc7cfb0f52",
+      "promptVersion": 2,
+      "model": "claude-haiku-5-5",
+      "generatedAt": "2026-10-10T09:11:13.430Z",
+      "plain": "A governance model is the agreed set of rules that says who makes which decisions on a project, how those decisions get made, and where they are checked. On a building, road or plant project, many parties (the owner, designers, contractors, funders and regulators) each have a stake, and without clear rules, decisions drift to whoever is loudest or nearest the problem. A good model sets up forums such as steering committees and review gates, gives each approver limits on money and scope, and keeps a written record. Implementing one means turning those rules into working meetings, approval thresholds and paperwork that people actually use, so the project's outcomes improve and not just its documents.",
+      "guessPrompt": "A contractor finds that the ground under a planned foundation is much weaker than the survey showed. Before any teaching, who do you think should decide whether to change the design and pay for it, and what would you want written down first?",
+      "teach": "A governance model is the set of rules that defines decision rights: who can approve what, in which forum, under which limits, and with what record kept. Its job is to make sure important choices on a project are made by people with the authority and information to make them, and that the choices are visible afterwards. It works because construction projects spread money and risk across many parties, so unclear authority causes disputes and rework. A governance model usually combines three parts. Forums are standing meetings such as a steering committee. Gates are formal review points where work may not proceed until approval is given, for example before construction starts after design review. Thresholds are limits, often in money or schedule days, that decide which level of person must approve a change. Worked example: a road rehabilitation project has a thresholds rule. Step 1: the site engineer sees the weak ground. Step 2: the change is estimated at 40,000 units of cost, which is under the engineer's limit of 25,000 only if split, so it is logged as one item. Step 3: the item is above the limit, so it goes to the steering committee. Step 4: the committee approves the design change at the gate, and the decision is recorded with its reason. A common mistake is writing a governance model down and never using it, so approvals happen informally and the record shows nothing. In a running project this causes unapproved changes, cost overruns and owner disputes that surface months later. A governance model is only real when its thresholds, forums and records are used on every significant decision.",
+      "questions": [
+        {
+          "id": "pmicp:4:1:q1",
+          "role": "fade",
+          "prompt": "A hospital wing fit-out has a thresholds rule. Step 1: the site foreman finds an unmarked drainage pipe under the slab where the new theatre is to go. Step 2: rerouting it is estimated to add 12 days to the programme, but the project manager's limit for schedule changes is 5 days. Step 3: because 12 days is above the project manager's limit, the change is not the project manager's to approve alone. Step 4 (missing): what must happen to the change at the board's review point, and what must be kept on record?",
+          "choices": [
+            "The project manager approves it after the next weekly progress meeting, because the limit only applies to cost changes.",
+            "The foreman records the 12 days in the site diary and proceeds, since the delay is only programme time and the owner can be told at handover.",
+            "The change goes to the project board at its review point, which approves or rejects it and records the decision with its reason.",
+            "The change is split into two 6-day items so each falls under the project manager's limit, and both are approved informally by email."
+          ],
+          "correctIndex": 2,
+          "why": "The thresholds rule sends any change above the lower person's limit to the forum at that level, and the decision must be made and recorded with its reason, so the board's approval with a written reason is the required final step."
+        },
+        {
+          "id": "pmicp:4:1:q2",
+          "role": "solo",
+          "prompt": "In a construction governance model, what is a gate?",
+          "choices": [
+            "A formal review point where work may not proceed until approval is given.",
+            "A written list of who holds decision rights for each type of change on the project.",
+            "A standing meeting, such as a monthly steering committee, where all project decisions are discussed.",
+            "A limit, usually in money or schedule days, that decides which level of person must approve a change."
+          ],
+          "correctIndex": 2,
+          "why": "A gate is defined in the teaching text as a formal review point where work may not proceed until approval is given, which is different from a forum (a standing meeting) or a threshold (a limit)."
+        },
+        {
+          "id": "pmicp:4:1:q3",
+          "role": "solo",
+          "prompt": "A warehouse fit-out company wrote a governance model with forums, gates and thresholds, but the site team has been agreeing crane lift changes by phone and never logging them. What is the most likely consequence on the running project?",
+          "choices": [
+            "Unapproved changes, cost overruns and owner disputes that surface months later, because nothing shows who approved what.",
+            "The thresholds automatically escalate every phone agreement to the steering committee without anyone needing to record it.",
+            "The owner is protected because the written model still counts as evidence of approval.",
+            "The governance model becomes more effective because the team is working faster without formal delays."
+          ],
+          "correctIndex": 0,
+          "why": "The teaching text says a written model that is never used leads to informal approvals with no record, which causes unapproved changes, overruns and disputes that appear months later; the model only counts when it is actually used."
+        },
+        {
+          "id": "pmicp:4:1:q4",
+          "role": "solo",
+          "prompt": "A three-storey clinic project gives the project manager authority over schedule changes up to 15 days, and gives the project board authority over changes above 15 days. A structural change is estimated to add 22 days. Which level must approve it?",
+          "choices": [
+            "The project manager, because schedule changes are always the project manager's responsibility.",
+            "The contractor's commercial director, because the change affects the contract programme.",
+            "The site engineer, because the design change was first identified on site.",
+            "The project board, because 22 days is above the project manager's 15-day limit."
+          ],
+          "correctIndex": 3,
+          "why": "A threshold decides the level of person who must approve a change, and since 22 days exceeds the project manager's 15-day limit, the change must go up to the board."
+        }
+      ],
+      "explainPrompt": "Explain to a teammate what a governance model on a construction project is, using one concrete decision as an example, and name one limit or tradeoff of the approach you would use.",
+      "modelAnswer": "A governance model on a construction project is the agreed set of rules for who decides what, in which forum, and how the decision is recorded. For example, if a supplier wants to substitute a steel grade, the model might say the site manager can approve substitutions up to a set cost, the steering committee approves anything above it, and the owner's representative signs off anything that changes the scope or the building's performance requirements. Each decision goes into a decision log with its reason and approver. The main tradeoff is speed against control. Tight thresholds and several approval layers reduce surprise costs, but they slow the site, and people may route around them when a delay is costly. So I would set the thresholds with the owner up front, review them at each gate, and check the log at each steering meeting to see whether the rules are actually being followed.",
+      "rubricPoints": [
+        "Defines governance model as decision rights, forums, gates or thresholds, and records",
+        "Gives a concrete construction decision and names who approves it and where",
+        "Names a real limit or tradeoff, such as speed versus control or paper governance",
+        "Explains that the model only works if it is used and the decision log is checked"
+      ],
+      "suggested": {
+        "modality": "explain",
+        "rationale": "No listed mission or planned engine practises construction governance, and explaining who decides what and why is the core skill here."
+      }
+    },
+    {
+      "objectiveId": "pmicp:4:2",
+      "sourceHash": "f18a33073773",
+      "promptVersion": 2,
+      "model": "claude-haiku-5-5",
+      "generatedAt": "2026-10-10T09:11:23.960Z",
+      "plain": "Scope governance is the set of rules, meetings and records a construction project uses to decide what work is included and to control any change to that work. A building job has a planned list of what gets built, drawn in documents and agreed in a contract. Without a process, a client asks for one extra room, a crew builds it, and nobody agrees on the price or the schedule impact. Scope governance decides who may approve a change, how the change is written down, and when the agreed scope is frozen. Think of it as the gatekeeping system that keeps what gets built matched to what was promised.",
+      "guessPrompt": "A subcontractor on a hospital wing says a wall they were asked to build differs from the drawing, and they start building the revised version today to keep the schedule. What is the first governance problem you would see, and what would you want in place before anyone builds it?",
+      "teach": "Scope governance is the structure that decides what belongs in the project's work and how changes to that work get approved. Three terms matter. The scope baseline is the approved, frozen description of the work: the drawings, specifications, and the work breakdown structure, which is a tree that splits the total work into packages. A change request is a written proposal to alter that baseline. The change control board, often shortened to CCB, is the group with authority to approve, reject or defer change requests. On construction jobs it usually includes the owner's representative, the design lead and the contractor's project manager.\n\nWhy it works: construction scope is expensive to alter after work starts, because materials are ordered, crews are scheduled and inspections are booked. A written baseline gives everyone one reference, and a single approval path stops a verbal request from quietly becoming site work.\n\nWorked example: a client asks to move a kitchen door on level 2. Step 1: the site lead logs a change request with the drawing reference and the reason. Step 2: the design lead estimates the impact, which here means a structural check, a revised electrical layout, and two extra days. Step 3: the CCB reviews the estimate and approves it through a change order that adjusts the cost and the completion date. Step 4: only then does the crew move the door, and the baseline is updated with the new drawing revision.\n\nCommon mistake: treating a site instruction as approval. A foreman saying 'just do it' bypasses the board, so the cost and schedule never reach the record, and at closeout nobody can show what was paid for and why.\n\nConsequence: if the baseline drifts without being recorded, the final inspection tests the building against drawings that no longer match it, and the owner can refuse acceptance.",
+      "questions": [
+        {
+          "id": "pmicp:4:2:q1",
+          "role": "fade",
+          "prompt": "A school extension team wants to swap a classroom window from single to double glazing. Step 1: the site engineer logs a change request with the drawing reference and the reason, which is improved insulation. Step 2: the design lead estimates the impact: a revised glazing schedule, a heavier lintel check, and three extra days. Step 3 is missing from this trace. Step 4: only after that step does the crew install the new windows, and the baseline is updated with the new drawing revision. What belongs in the missing Step 3?",
+          "choices": [
+            "The change control board reviews the estimate and approves it through a change order that adjusts cost and completion date.",
+            "The contractor's project manager alone signs off, since the change is small and inside the same trade.",
+            "The site engineer and the foreman agree the swap verbally so the crew can start the next morning.",
+            "The crew installs the windows first and the cost is recorded at the end of the month."
+          ],
+          "correctIndex": 0,
+          "why": "The change control board is the group with authority to approve changes, and approval through a change order is what records the cost and date impact before the work proceeds."
+        },
+        {
+          "id": "pmicp:4:2:q2",
+          "role": "solo",
+          "prompt": "In construction scope governance, what is the scope baseline?",
+          "choices": [
+            "The approved, frozen description of the work, including drawings, specifications and the work breakdown structure.",
+            "The monthly cost forecast that the owner's finance team reviews.",
+            "The list of subcontractor bids received before the contract was signed.",
+            "A running daily log of site progress and weather delays kept by the superintendent."
+          ],
+          "correctIndex": 0,
+          "why": "The baseline is defined in the teaching text as the approved, frozen description of the work, made up of drawings, specifications and the work breakdown structure."
+        },
+        {
+          "id": "pmicp:4:2:q3",
+          "role": "solo",
+          "prompt": "On a warehouse job, a superintendent agreed by phone with the owner's representative to move a loading dock three metres. No change request was logged and the change control board never saw it. What is the governance gap, and what risk does it create?",
+          "choices": [
+            "The phone call is valid because the owner's representative approved it, so the only gap is missing paperwork for the crew.",
+            "The change is fine as long as the drawings are redrawn later, since the baseline is updated after the work.",
+            "The change bypassed the board, so its cost and schedule never reach the record, and at closeout nobody can show what was paid for and why.",
+            "The gap is only that the foreman lacked a permit, which the inspector will catch before closeout."
+          ],
+          "correctIndex": 2,
+          "why": "A verbal instruction that skips the single approval path keeps cost and schedule impacts out of the record, which is the consequence the teaching text describes for site instructions treated as approval."
+        },
+        {
+          "id": "pmicp:4:2:q4",
+          "role": "solo",
+          "prompt": "A hospital renovation has a pending request to defer a change until after the next inspection. Which group has the authority to make that decision?",
+          "choices": [
+            "The contractor's accounts team, because deferral affects the payment schedule.",
+            "The structural engineer of record working alone, because the change touches a load-bearing element.",
+            "The change control board, which typically includes the owner's representative, the design lead and the contractor's project manager.",
+            "The site foreman, because deferral is a scheduling matter on the ground."
+          ],
+          "correctIndex": 2,
+          "why": "The teaching text defines the change control board as the group with authority to approve, reject or defer change requests, and names its usual membership."
+        }
+      ],
+      "explainPrompt": "Explain to a teammate who is new to construction how a scope change should be handled on a live job. Name the structure that approves it and at least one limit or tradeoff of the process.",
+      "modelAnswer": "I'd tell them the baseline is the frozen set of drawings, specs and the work breakdown structure that the contract refers to, and any change to it goes through the change control board, not the site. The site lead raises a change request with the drawing reference and reason. The design lead and cost estimator assess the impact on design, cost and schedule. The board decides to approve, reject or defer, and an approved change becomes a change order that updates price and completion date before any work starts. The tradeoff is speed: the process adds days to small fixes, so teams sometimes batch minor changes or set a dollar threshold for quicker approval. That threshold has to be written down, or the process erodes back into verbal instructions. Changes the board never sees are the main risk.",
+      "rubricPoints": [
+        "Names the scope baseline as the reference that every change is measured against.",
+        "Names the change control board as the approving body and the change request as its input.",
+        "Explains that an approved change becomes a change order that adjusts cost and schedule before work starts.",
+        "Names a limit or tradeoff, such as approval delay or the risk of informal site changes."
+      ],
+      "suggested": {
+        "modality": "combo",
+        "rationale": "Reasoning through a live change request on a construction site adds the most, because exam questions ask which structure applies at a specific decision point."
+      }
+    }
+  ],
+  "scenarios": [
+    {
+      "unitId": "pmicp:1",
+      "promptVersion": 2,
+      "model": "claude-haiku-5-5",
+      "generatedAt": "2026-10-10T09:11:40.768Z",
+      "title": "Ferncliff Outpatient Wing: Change, Claim, and Interface Points",
+      "scenario": "Brightwater Civil Works is a fictional mid-sized general contractor. It is building a three-storey outpatient wing for a fictional client, Ferncliff Health, under a design-build contract. In design-build, one party (here Brightwater) takes responsibility for both the design and the construction, so the contractor and designer share one set of obligations. You are the newly appointed project manager, and you are reviewing three items in the project log before the monthly owner meeting.\n\nItem A: Ferncliff's facilities director asked, in an email, for the level 2 treatment rooms to be moved two metres east to suit new equipment. The design team has sized the change and Brightwater has priced it. A change order is a written instruction that changes scope, price, or time within the existing contract, and both parties sign it. A claim is a formal demand by one party for money or time that it believes the contract entitles it to, usually raised when the parties disagree.\n\nItem B: Brightwater's subcontractor for finishes says it lost 14 days because Ferncliff took three weeks to approve a tile selection. The subcontractor has sent a notice saying it intends to claim the time and cost. A notice is a formal written warning that a right may be pursued, and it usually starts a time limit under the contract.\n\nItem C: A supplier has offered to deliver structural steel for level 3 about four weeks early if the order is placed this week, at a small premium. This is a positive risk, meaning an uncertain event that would help the project if it happened. The team had not logged it. Your team also ran a Monte Carlo simulation earlier, which means running thousands of random trials using a range of likely durations for each activity, to estimate how likely the project is to finish by its target date. Its result showed a 58 percent chance of finishing on time. A risk register is the living list of risks, with an owner, a likelihood, an impact, and a planned response for each.\n\nThe owner meeting is in two days. Complete the three tasks below.\n\n1. For Item A and Item B, decide whether each is a change order or a claim, and state the first step you would take on each to keep the project moving and protect the contract position.\n\n2. For Item C, explain how you would record this opportunity in the risk register and whether you would recommend acting on it, referring to what the Monte Carlo result tells you.\n\n3. Level 2 has ductwork from the mechanical package running through the same ceiling zone as the structural steel beams, so the two packages must agree where they meet. Explain what an interface point is and describe how you would plan the one for this ceiling zone, including who must agree and when.",
+      "subParts": [
+        "Classify Items A and B as change order or claim and state the first step for each",
+        "Record the positive risk in Item C and recommend action using the Monte Carlo result",
+        "Plan the interface point between the mechanical ductwork and structural steel at level 2"
+      ],
+      "modelAnswer": [
+        "Item A is a change order. It is a scope change the owner is requesting, it has been designed and priced, and both parties can sign it. The first step is to issue a written change order request that states the revised scope, the price, and any time impact, then obtain both signatures before the work is done. Item B is a claim, because the subcontractor is asserting entitlement to time and money for a delay it blames on the owner, and the parties have not yet agreed. The first step is to acknowledge the notice in writing within the contract time limit, without admitting liability, and to ask for the supporting records such as the approval request dates and the impacted activity. Acknowledging in time protects the contract position, because a missed notice deadline can weaken or lose a claim.",
+        "Log the steel early delivery as a positive risk in the register, with a description (supplier can deliver level 3 steel about four weeks early for a small premium), an owner (procurement lead), a likelihood estimate, a benefit estimate in time and money, and a response such as accept and pursue or enhance. Recommend action by comparing the premium cost against the value of the time gained. The Monte Carlo result shows only a 58 percent chance of finishing on time, so the schedule has real exposure. Because the four-week gain would move the probability of meeting the target upward, the recommendation is to place the order this week, provided the premium is small compared with the expected value of reduced delay, and to rerun the simulation with the new durations to confirm the improvement.",
+        "An interface point is a defined place or boundary where two work packages must physically or functionally connect, and where each side's responsibility must be agreed. Here, the mechanical ductwork and the structural beams share a ceiling zone, so the mechanical and structural packages must agree on clearances, beam penetrations, and who supports the duct hangers. The plan should name the owner of the interface (the design-build lead, with both package managers as contributors), set a date before the steel is erected, and require coordinated drawings or a clash check showing the duct and beam positions. Sign-off happens when both packages confirm the agreed clearances in writing. The common mistake is to leave this to the site crews, who then discover clashes during installation and create rework and delay."
+      ]
+    },
+    {
+      "unitId": "pmicp:2",
+      "promptVersion": 2,
+      "model": "claude-haiku-5-5",
+      "generatedAt": "2026-10-10T09:11:34.423Z",
+      "title": "Harbor Line Parking Structure: Conflicting Schedule Updates",
+      "scenario": "Harbor Line Builders is a fictional general contractor building a four-level parking structure for a city transit authority. Three weeks ago, the electrical subcontractor moved its conduit rough-in from week 12 to week 16 because of a late switchgear delivery. The change was made in a spreadsheet kept by the subcontractor's project engineer and was mentioned in a phone call to the site superintendent. The owner's representative, the structural engineer, and the design team were never told. Last week the owner's representative sent an email asking why the concrete pour schedule still assumed electrical work in week 12, and the superintendent had to admit he did not know the date had changed. Two inspection bookings were made on the wrong dates, and the owner now doubts the team's control of the schedule. Harbor Line's project manager, Ana Ruiz, must respond. Using the unit's tools, answer the following:\n\n1. Identify which tool should hold the single current version of the schedule and related dated commitments, define it in plain terms, and explain why it is better here than the spreadsheet and phone call.\n\n2. Propose a short recurring cross-team meeting in the style of an Obeya or Big Room, where the visual wall shows all trades and the owner's team. Name one pitfall of that practice that Ana should avoid in this project.\n\n3. Explain how Commitment-based Management (CbM), where each subcontractor makes a dated promise each week and the team tracks whether promises are kept, would catch a problem like this earlier, and state what the reliability measure would show.",
+      "subParts": [
+        "Identify the tool, define it, and justify it over the spreadsheet and phone call",
+        "Propose an Obeya or Big Room session and name one pitfall to avoid",
+        "Explain how CbM would catch the problem earlier and what reliability shows"
+      ],
+      "modelAnswer": [
+        "The correct tool is the project management information system (PMIS), which is a shared software record that stores project data such as schedules, document logs, and dated commitments in one place that everyone with permission can see. It holds a single version of the truth, so when the electrical date changes, the change is entered once and the owner, design team, and superintendent see the same date. A spreadsheet on one engineer's computer and a phone call leave no shared record, no change history, and no notice to people who depend on the date. A good answer names a PMIS, explains it as a shared, versioned record, and contrasts it with the local spreadsheet and verbal update.",
+        "A reasonable proposal is a weekly 45-minute session at a visual wall or shared board, held in a room with the superintendent, the electrical and concrete leads, inspection coordination, and an owner representative. Each trade posts its look-ahead dates, and the wall shows the schedule in one view so conflicts appear as physical gaps. A common pitfall is treating the wall as a status report to be read rather than a decision forum, so the room fills with updates and nobody resolves the switchgear and pour conflict. Another valid pitfall is inviting people who cannot make decisions, or letting the owner's team attend without authority to accept changes. The answer should name one pitfall and tie it to this project.",
+        "CbM is a method where each subcontractor makes specific, dated weekly commitments, such as I will have conduit rough-in complete by Friday, and the team records whether each promise was kept. In this case, the electrical subcontractor would have had to commit to a date every week, so the slip from week 12 to week 16 would have appeared as a broken or revised promise in the first week it became real, not three weeks later. The reliability measure is the percentage of commitments kept each week, for example 6 of 8 kept is 75 percent. A low or falling reliability score signals hidden constraints, such as the switchgear delay, before the owner finds them. The answer should explain the weekly promise and the reliability percentage, and note that the early signal lets the team act sooner."
+      ]
+    },
+    {
+      "unitId": "pmicp:3",
+      "promptVersion": 2,
+      "model": "claude-haiku-5-5",
+      "generatedAt": "2026-10-10T09:11:40.738Z",
+      "title": "Shielding request mid-fit-out at a medical office building",
+      "scenario": "Ostrander Build Co. is a fictional general contractor building a three-storey medical office building for Calder Health Partners, also fictional. The structure is finished and fit-out (interior walls, ceilings, and equipment rooms) has started. Eight weeks in, the owner's operations lead asks for radiation shielding in one room so it can house a digital X-ray unit. The contract's scope document, called the scope baseline (the agreed description of what the project will deliver, against which every later change is measured), lists a standard exam room with ordinary gypsum board walls and no shielding. Shielding means dense lining in walls, floor, or ceiling that blocks radiation. A change order is the formal written record that changes scope, cost, or schedule, and it should be approved before the extra work is done. Value engineering means reviewing a design for a way to deliver the same needed function at lower cost or risk. Cost-benefit analysis compares the expected gains of a choice against its total cost. Two options are on the table. Lead-lined gypsum board is estimated at 42,000 with a two-week lead time. A steel-plate and concrete option is estimated at 61,000 with a five-week lead time. The fit-out subcontractor's schedule locks in three days, and the company logs requests, estimates, and approvals in a shared online change-order platform. As the project manager, respond to the owner with a plan, not a simple yes or no. 1. Decide whether this request is a scope change or a scope gap, restate the outcome the owner needs, and explain how the scope baseline should be revised. 2. Propose when the change order should be raised and a fast approval process that fits the three-day window, stating what must be signed off before work starts and what can proceed in the meantime. 3. Compare the two shielding options using cost-benefit analysis and value engineering, recommend one, and name one benefit and one downside of recording this change on the shared platform.",
+      "subParts": [
+        "Scope change or gap, outcome, and baseline revision",
+        "Change-order timing and rapid approval process",
+        "Option comparison, recommendation, and platform trade-off"
+      ],
+      "modelAnswer": [
+        "This is a scope change, not a gap in the design: the owner has added a requirement after the baseline was agreed, so the design team did not miss it, it was never in scope. Restate the outcome as a room that can safely house and operate a digital X-ray unit and meets radiation safety requirements, not as 'add lead lining'. The scope baseline should be revised by formally adding the shielded exam room, its performance requirement, the chosen material, and the resulting cost and schedule impact, with the owner's approval recorded. The original baseline should be kept unchanged so the history of the change stays visible.",
+        "Raise the change order now, before the subcontractor's schedule locks, rather than waiting for the full estimate or the owner's final decision on material. Use a fast track: send the draft change order with both options and their estimates to the owner's representative and design lead within the first day, request sign-off on the outcome and budget envelope within the second day, and confirm the chosen option in writing by the third. Before any shielding work starts, the signed change order, the revised drawings for the room, and the radiation consultant's confirmation must be on file. Non-affected work in other rooms can proceed in the meantime, and the subcontractor should be told the room's start date is provisional.",
+        "Compare the options on total cost, schedule effect, and whether they meet the performance need. Lead-lined board costs less and finishes two weeks sooner, but it may need a specialist check for coverage and joins. Steel-plate and concrete costs about 19,000 more and adds three extra weeks, but it may be simpler to verify. Recommend the option that meets the radiation requirement at the lower total cost and schedule effect, and show the calculation, for example: the cheaper option saves 19,000 and two weeks, provided the consultant confirms it meets the requirement. A proper value engineering review asks whether the cheaper option delivers the same function, not merely whether it is cheaper. On the platform, a benefit is a single traceable record of who requested what, when it was estimated, and who approved it. A downside is that a platform makes the record look authoritative, so a wrong estimate or an unsigned draft can be treated as approved if users do not check the status field."
+      ]
+    },
+    {
+      "unitId": "pmicp:4",
+      "promptVersion": 2,
+      "model": "claude-haiku-5-5",
+      "generatedAt": "2026-10-10T09:11:32.494Z",
+      "title": "Mid-build scope request at a medical office project",
+      "scenario": "Harrow Ridge Builders, a fictional general contractor, is six months into building a four-storey medical office for a client called Lakeview Health. The project manager, Dana, is new to the role. A Lakeview facilities manager emails the site foreman asking for a larger rooftop mechanical screen so it hides new air-handling units, and says the change is 'small and should be quick.' The foreman has started ordering materials based on that email. Dana has to decide how the request should be handled. Terms used here: a scope baseline is the approved, agreed description of what the project will deliver, including its approved drawings and specifications, and a change control board (CCB) is a standing group with authority to approve, reject, or defer changes to that baseline. A decision log is a dated record of each governance decision, who made it, and why. Answer the following: 1. Name the governance structure that should receive this request, and state what it is responsible for doing with it. 2. Name the document the request must be checked against, and explain what that check establishes before any work proceeds. 3. Describe the practice that should record the outcome and link it to the contract, including what must happen if the change is approved.",
+      "subParts": [
+        "Name the governance structure that should receive the request and its responsibility",
+        "Name the baseline document to check against and what the check establishes",
+        "Describe the recording practice and contract link if the change is approved"
+      ],
+      "modelAnswer": [
+        "The request should go to the change control board (CCB), a standing group with authority to approve, reject, or defer changes to the scope baseline. Its responsibility is to review the request formally, assess its effect on scope, cost, and schedule, and decide before any work on the change starts. A single email to a foreman does not count as a governance decision, so the foreman should pause ordering and route the request to the CCB.",
+        "The request must be checked against the approved scope baseline, meaning the signed-off drawings, specifications, and scope statement for the rooftop screen. The check establishes whether the request is actually a change (it departs from what was approved) and how large the departure is in terms of area, materials, structure, and schedule. Without this comparison, the team cannot judge whether the request is small or whether it affects the building's structural or mechanical design.",
+        "The outcome should be recorded in the decision log with the date, the requester, the CCB members who decided, the reasons, and the approved cost and schedule impact. If approved, the change should be issued as a formal change order or change directive under the construction contract, so the price, time, and responsibility for the extra work are agreed in writing before construction. The updated drawings should then be issued and the scope baseline revised under version control, so everyone builds from the same approved documents."
+      ]
+    }
+  ]
+}
