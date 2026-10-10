@@ -1273,3 +1273,36 @@ test("lab layout: a long line in the editor wraps or scrolls inside its column, 
   await expect(page.getByTestId("js-console")).toContainText(long);
   await expect.poll(overflow).toBe(0);
 });
+
+test("labs fit a narrow phone: no lab page scrolls sideways at 320 px with an exercise open", async ({ page }) => {
+  await onboard(page);
+  await page.setViewportSize({ width: 320, height: 720 });
+  const labs: [string, string][] = [
+    ["terminal", "terminal-input"],
+    ["policy?exercise=policy-01-default-deny", "policy-check"],
+    ["network?exercise=net-main", "network-check"],
+    ["dr?exercise=dr-01-match-the-need", "dr-check"],
+    ["alarms?exercise=alarm-01-threshold", "alarm-check"],
+    ["cost?exercise=cost-01-rightsize", "cost-check"],
+    ["deploy?exercise=deploy-01-all-at-once", "deploy-check"],
+    ["crypto?exercise=key-admin", "crypto-check"],
+    ["messaging?exercise=msg-01-decouple", "messaging-check"],
+    ["autoscale?exercise=as-01-elastic", "autoscale-check"],
+    ["sql?exercise=sql-01-join", "sql-check"],
+    ["python-drills?exercise=py-01-truthiness", "pydrill-check"],
+    ["javascript?exercise=js-01-hoisting", "js-check"],
+  ];
+  for (const [lab, ready] of labs) {
+    await page.goto(`/#/labs/${lab}`);
+    await expect(page.getByTestId(ready)).toBeVisible();
+    // Code editors scroll inside their own box; only the page itself must fit.
+    const width = await page.evaluate<{ scroll: number; client: number }>(
+      "({ scroll: document.documentElement.scrollWidth, client: document.documentElement.clientWidth })",
+    );
+    expect(width.scroll, `${lab} scrolls sideways`).toBeLessThanOrEqual(width.client);
+  }
+  // The terminal's command line is clipped rather than scrolled, so check the input box itself.
+  await page.goto("/#/labs/terminal");
+  const input = await page.getByTestId("terminal-input").boundingBox();
+  expect(input!.x + input!.width).toBeLessThanOrEqual(320);
+});
