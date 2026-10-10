@@ -33,7 +33,7 @@ export async function loadCourse(courseId: string): Promise<StudyCourse> {
   return fetchJson<StudyCourse>(`${courseId}.json`);
 }
 
-/** Generated lessons for a course; null when none have been generated yet (404). */
+/** Generated lessons for a course; null when none have been generated yet (404, or the dev server's HTML fallback). */
 export async function loadLessons(courseId: string): Promise<StudyLessonsFile | null> {
   if (!/^[a-z0-9-]+$/.test(courseId)) throw new Error("Study catalog: bad course id");
   const key = `${courseId}.lessons.json`;
@@ -42,6 +42,8 @@ export async function loadLessons(courseId: string): Promise<StudyLessonsFile | 
     p = fetch(`${base}${key}`).then(async (r) => {
       if (r.status === 404) return null;
       if (!r.ok) throw new Error(`Study lessons: ${key} returned ${r.status}`);
+      // Vite's dev server answers a missing file with the app's HTML page and a 200, not a 404.
+      if (!(r.headers.get("content-type") ?? "").includes("json")) return null;
       return (await r.json()) as StudyLessonsFile;
     });
     cache.set(key, p);
