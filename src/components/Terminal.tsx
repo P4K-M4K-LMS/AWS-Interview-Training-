@@ -93,7 +93,7 @@ export function Terminal({ shell, onCommand, onEdit, height = "22rem", initialLi
         </span>
         <input
           ref={inputRef}
-          className="flex-1 bg-transparent outline-none text-slate-100 font-mono"
+          className="flex-1 min-w-0 bg-transparent outline-none text-slate-100 font-mono"
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={onKey}
