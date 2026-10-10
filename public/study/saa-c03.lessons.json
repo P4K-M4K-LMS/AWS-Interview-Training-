@@ -1,0 +1,407 @@
+{
+  "courseId": "saa-c03",
+  "generated": {
+    "scriptVersion": 1,
+    "promptVersion": 1,
+    "generatedAt": "2026-10-10T04:45:02.646Z",
+    "models": [
+      "claude-opus-5-5"
+    ]
+  },
+  "lessons": [
+    {
+      "objectiveId": "saa-c03:1:1",
+      "sourceHash": "f7220b8f38ae",
+      "promptVersion": 1,
+      "model": "claude-opus-5-5",
+      "generatedAt": "2026-10-10T04:44:27.205Z",
+      "plain": "Every AWS account starts with one all-powerful login called the root user, created with the email address that opened the account. It can do anything, including closing the account or changing billing. Good practice is to lock it away like a master key in a safe and do daily work with separate, limited logins called IAM users, each belonging to one person. Multi-factor authentication (MFA) adds a second proof of identity on top of a password, usually a code from a phone app or a physical security key. A thief who steals only the password still cannot get in.",
+      "guessPrompt": "If someone stole the password to the one login that controls an entire cloud account, what single extra protection would most likely stop them from logging in, and why?",
+      "teach": "The root user is the identity created with the account's sign-up email. It has unrestricted access, and ordinary IAM permission policies (documents that allow or deny actions) cannot limit it. An IAM user is a named identity you create inside the account with its own password or access keys and only the permissions you grant. Access keys are a long-lived key ID and secret that let programs call AWS without a console login. MFA, or multi-factor authentication, requires something you know (a password) plus something you have (a code from a virtual authenticator app, or a hardware security key).\n\nThis works by shrinking blast radius, meaning how much damage one stolen credential can do. If daily work uses a limited IAM user, a leaked password exposes only that user's permissions. Adding MFA means a password alone is useless. Least privilege, which means granting only the permissions a task needs, keeps each user's reach small.\n\nWorked example: a startup opens a new account. Step one, sign in as root and enable MFA on it with a hardware key. Step two, confirm root has no access keys, and delete any that exist. Step three, set an account password policy, meaning rules for length, complexity and rotation. Step four, create an individual IAM user for each administrator, never a shared one, and require MFA for each. A policy condition can deny sensitive actions unless the request was MFA-authenticated. Step five, sign out of root and store its credentials securely, using it only for the few tasks that truly need it, such as changing account-level settings. A credential report, which is a downloadable list of users and the status of their passwords, keys and MFA, lets you check this regularly.\n\nThe common mistake is using root for everyday administration, or creating root access keys for a script. If those keys leak into a code repository, an attacker gets full control of the account, including billing and deletion, and no permission policy can stop them.",
+      "questions": [
+        {
+          "id": "saa-c03:1:1:q1",
+          "role": "fade",
+          "prompt": "A small design agency opens a new AWS account and follows the secure setup from the lesson. Step one: sign in as the root user (the identity created with the sign-up email) and enable MFA (multi-factor authentication) on it with a hardware security key. Step two: ______. Step three: set an account password policy with rules for length, complexity and rotation. Step four: create an individual IAM user (a named identity with only the permissions you grant) for each administrator, and require MFA for each one. Step five: sign out of root and store its credentials securely. Which action belongs in step two?",
+          "choices": [
+            "Confirm the root user has no access keys, and delete any that exist",
+            "Create one shared IAM admin user that the whole team signs in with",
+            "Create root access keys so the deployment script can run with full access",
+            "Attach a permission policy to the root user that restricts it to billing actions only"
+          ],
+          "correctIndex": 0,
+          "why": "Root access keys are long-lived credentials with unrestricted power that no permission policy can limit, so the setup removes them rather than creating or trying to restrict them."
+        },
+        {
+          "id": "saa-c03:1:1:q2",
+          "role": "solo",
+          "prompt": "In the lesson, IAM practices are said to work by shrinking the \"blast radius.\" What does blast radius mean here?",
+          "choices": [
+            "The number of AWS Regions an account is allowed to use",
+            "How much damage one stolen credential can do",
+            "The number of IAM users an account can create",
+            "How long an access key stays valid before it must be rotated"
+          ],
+          "correctIndex": 1,
+          "why": "Blast radius is how much damage a single stolen credential can cause, which limited IAM users, MFA and least privilege all reduce."
+        },
+        {
+          "id": "saa-c03:1:1:q3",
+          "role": "solo",
+          "prompt": "A developer created access keys for the root user so a backup script could run, and the keys were accidentally pushed to a public code repository. What is the consequence?",
+          "choices": [
+            "The attacker gets only the permissions the backup script was granted in its IAM policy",
+            "AWS limits the keys automatically, because root access keys can only read data",
+            "Nothing serious, because root access keys still require an MFA code for every call",
+            "An attacker gains full control of the account, including billing and deletion, and no permission policy can stop them"
+          ],
+          "correctIndex": 3,
+          "why": "Root has unrestricted access that ordinary IAM permission policies cannot limit, so leaked root keys give an attacker complete control of the account."
+        },
+        {
+          "id": "saa-c03:1:1:q4",
+          "role": "solo",
+          "prompt": "A security lead wants to check regularly which IAM users have MFA enabled and what the status of their passwords and access keys is. Which tool from the lesson does this?",
+          "choices": [
+            "Signing in as root to inspect each user one by one",
+            "A policy condition that denies actions unless MFA was used",
+            "An account password policy",
+            "A credential report"
+          ],
+          "correctIndex": 3,
+          "why": "A credential report is a downloadable list of users showing the status of their passwords, access keys and MFA, so it supports regular checks."
+        }
+      ],
+      "explainPrompt": "Explain to a teammate why we lock away the root user and require MFA on IAM users, and name one limit or tradeoff of these practices.",
+      "modelAnswer": "The root user can do anything in the account, and normal permission policies cannot restrict it, so a stolen root credential means losing the whole account, billing included. That is why we enable MFA on root, make sure it has no access keys, and only sign in as root for the rare tasks that need it. Day to day, each person gets their own IAM user with least-privilege permissions, so a leak only exposes what that user could do, and we can see who did what. MFA means a stolen password alone is not enough. The tradeoff is friction and recovery risk: people must carry a device or key, and if the root MFA device is lost, getting back in takes time. MFA also does not protect long-lived access keys used by programs, so those still need tight scoping and rotation.",
+      "rubricPoints": [
+        "States that the root user has unrestricted access that permission policies cannot limit.",
+        "Says root should have MFA, no access keys, and be used only for rare tasks.",
+        "Recommends individual IAM users with least privilege instead of shared or root logins.",
+        "Explains that MFA adds a second factor so a stolen password alone fails.",
+        "Names a limit such as user friction, device loss recovery, or MFA not covering access keys."
+      ],
+      "suggested": {
+        "modality": "combo",
+        "rationale": "Exam questions present an account with a credential weakness, such as root access keys or shared logins without MFA, and reasoning through which practice fixes it builds the skill better than a hands-on mission, since none here covers it."
+      }
+    },
+    {
+      "objectiveId": "saa-c03:1:2",
+      "sourceHash": "35e30a73662e",
+      "promptVersion": 1,
+      "model": "claude-opus-5-5",
+      "generatedAt": "2026-10-10T04:44:37.217Z",
+      "plain": "Authorization in AWS answers one question: is this person or program allowed to do this action on that thing? AWS Identity and Access Management (IAM) answers it with four pieces. Users are named identities. Groups are bundles of users who share a job. Roles are hats anyone trusted can put on for a while. Policies are written rules saying what is allowed or denied. Think of an office building. Users are employees. Groups are departments. Roles are visitor badges that expire at the end of the day. Policies are the rules about which doors each badge opens. Because the rules attach to departments and badges, not to individual people, access is easy to change.",
+      "guessPrompt": "An office gives door access by department, not person by person. A new hire joins Finance and later moves to Sales. What has to change for her access to follow her, and why is that easier than editing each door's list of names?",
+      "teach": "IAM (Identity and Access Management) is the AWS service that decides who may do what to which resource. It has four building blocks.\n\nAn IAM user is a long-lived identity for one person or program. It can have a password, access keys, or both. Access keys are a key ID plus a secret, used to sign API calls. An IAM group is a named collection of users. A group cannot sign in. It exists only to pass its policies to its members. An IAM role is an identity with no permanent credentials. A trusted person, service, or program assumes the role and receives temporary credentials that expire. A policy is a JSON document made of statements. Each statement has an Effect (Allow or Deny), Actions (API calls such as s3:GetObject), Resources (the items affected, named by ARN, the Amazon Resource Name), and optional Conditions.\n\nThe model is flexible because permissions live in policies, not in people. You attach a policy once to a group or role. After that you change who belongs, not the rules. AWS evaluates every request with three rules. Everything starts denied, which is called implicit deny. An Allow in any applicable policy grants access. An explicit Deny anywhere overrides every Allow.\n\nHere is a worked example. Priya is a user in the Analysts group. Analysts has a policy allowing s3:GetObject on the reports bucket. A policy on her user denies all S3 actions when the request was not made with MFA (multi-factor authentication). She requests a report without MFA. First, the request starts denied. Second, the group's Allow matches. Third, the user's Deny also matches. The explicit Deny wins, so the request is refused. If she signs in with MFA, the Deny's condition no longer matches, the Allow stands, and she gets the report.\n\nA common mistake is creating a user with access keys and copying them onto an EC2 virtual server so an app can reach S3. Those keys never expire, so a leaked key gives an attacker standing access until someone notices. Attach a role to the instance instead. The app then gets short-lived credentials that rotate automatically. In every case, grant least privilege: only the actions and resources the job needs.",
+      "questions": [
+        {
+          "id": "saa-c03:1:2:q1",
+          "role": "fade",
+          "prompt": "Marco is an IAM user (a long-lived identity for one person) in the Developers group. The Developers group has a policy that allows ec2:StartInstances on all instances. A policy attached directly to Marco's user has Effect Deny for ec2:StartInstances on the production instance's ARN (its Amazon Resource Name). Marco asks to start the production instance. Step 1: the request starts denied (implicit deny). Step 2: the group's Allow matches the request. Step 3 is missing. Which choice correctly completes the evaluation?",
+          "choices": [
+            "The user's Deny also matches, and an explicit Deny overrides every Allow, so the request is refused.",
+            "Group policies outrank policies on a single user, so the Allow wins and the request is granted.",
+            "The group's Allow was found first, so evaluation stops there and the request is granted.",
+            "No policy on Marco's own user allows the action, so implicit deny still applies and the request is refused."
+          ],
+          "correctIndex": 0,
+          "why": "Both the Allow and the explicit Deny apply to this request, and an explicit Deny anywhere always overrides any Allow."
+        },
+        {
+          "id": "saa-c03:1:2:q2",
+          "role": "solo",
+          "prompt": "A team lead plans to give new hires the sign-in details for the Engineers IAM group so they can all log in with one shared identity. Why will this plan fail?",
+          "choices": [
+            "An IAM group can sign in, but only with access keys, never with a password.",
+            "An IAM group can sign in only when every member has multi-factor authentication (MFA) turned on.",
+            "An IAM group signs in using temporary credentials that expire too quickly to be shared.",
+            "An IAM group cannot sign in. It only passes its policies to the users who are its members."
+          ],
+          "correctIndex": 3,
+          "why": "A group is just a named collection of users with no credentials of its own, so each person needs their own user, and the group passes its policies to them."
+        },
+        {
+          "id": "saa-c03:1:2:q3",
+          "role": "solo",
+          "prompt": "An application running on an EC2 instance (a virtual server) must read objects from one S3 bucket. Which setup best follows the guidance on credentials and least privilege?",
+          "choices": [
+            "Create an IAM user with access keys and copy the keys onto the instance.",
+            "Attach a role to the instance with a policy allowing s3:GetObject on only that bucket.",
+            "Attach a role to the instance with a policy allowing every S3 action on every bucket.",
+            "Create an IAM user, add it to a group with full S3 access, and store its keys on the instance."
+          ],
+          "correctIndex": 1,
+          "why": "A role gives the app short-lived credentials that rotate automatically, and limiting the policy to s3:GetObject on one bucket grants only what the job needs."
+        },
+        {
+          "id": "saa-c03:1:2:q4",
+          "role": "solo",
+          "prompt": "A new IAM user has no policies attached and does not belong to any group. The user tries to list the contents of an S3 bucket. What happens, and why?",
+          "choices": [
+            "Refused, because AWS attaches an explicit Deny policy to every new user by default.",
+            "Allowed, because no policy contains a Deny for that action.",
+            "Refused, because everything starts denied and no Allow applies to the request.",
+            "Allowed, because any user that exists in the account can read its buckets by default."
+          ],
+          "correctIndex": 2,
+          "why": "Every request starts out denied (implicit deny), and access is granted only when some applicable policy contains a matching Allow, which this user lacks."
+        }
+      ],
+      "explainPrompt": "A teammate asks why you used a group and a role instead of attaching permissions straight to each user. Explain how users, groups, roles, and policies fit together and how a request is decided. Name one limit or tradeoff of the model.",
+      "modelAnswer": "Policies hold the rules. Each statement says Allow or Deny for certain actions on certain resources, sometimes under a condition. Users are long-lived identities for people or programs. Groups bundle users so one policy covers a whole team, and moving someone between teams is a membership change, not a rewrite. Roles have no permanent credentials. Something trusted assumes a role and gets temporary keys that expire, so an app on a server should use a role rather than stored access keys. A request starts denied, any matching Allow grants it, and any matching explicit Deny beats every Allow. There is a tradeoff. Spreading permissions across many group, user, and role policies makes it harder to answer exactly what one person can do. Also, groups cannot be nested and cannot be named as a principal, so they only organise users. They are not an identity in their own right.",
+      "rubricPoints": [
+        "Policies define permissions as Allow or Deny on actions and resources, optionally with conditions.",
+        "Groups attach shared policies to many users, so access changes by changing membership.",
+        "Roles give temporary credentials and are preferred over long-term access keys for applications.",
+        "Evaluation starts with implicit deny, an Allow grants access, and an explicit Deny always wins.",
+        "Least privilege: grant only the actions and resources the job needs.",
+        "Names a real limit, such as audit complexity across many policies or groups not being identities."
+      ],
+      "suggested": {
+        "modality": "do-new",
+        "engineId": "policy-eval",
+        "rationale": "An authorization policy evaluator would let the learner attach policies to users, groups, and roles and trace implicit deny, Allow, and explicit Deny on real requests."
+      }
+    },
+    {
+      "objectiveId": "saa-c03:1:3",
+      "sourceHash": "2cf012390d7a",
+      "promptVersion": 1,
+      "model": "claude-opus-5-5",
+      "generatedAt": "2026-10-10T04:44:30.819Z",
+      "plain": "A cross-account role lets a person or program in one AWS account do work in another account without getting a separate login there. Think of a hotel key card: instead of handing a contractor a permanent master key, the front desk issues a card that opens only certain doors and stops working at checkout. In AWS, the account that owns the resources creates a role saying who may borrow it and what it allows. A trusted caller asks AWS STS, the Security Token Service, for that role, and receives short-lived credentials that expire on their own, so nothing permanent is shared.",
+      "guessPrompt": "A developer in your company's development account needs to read logs stored in the production account once a week. Would you rather create a second username and permanent password for them inside production, or give them a way to borrow limited production access for an hour at a time? Why?",
+      "teach": "A role is an AWS identity with permissions but no password or long-term keys of its own; someone has to assume it. AWS STS (Security Token Service) is the service that hands out temporary credentials for a role: an access key, a secret key, a session token, and an expiry time, usually one hour by default. A cross-account role is a role in one account that principals in another account are allowed to assume.\n\nTwo policies make it work, and both are required. The trust policy sits on the role and names who may assume it, for example another account or a specific role in it. The permissions policy, also on the role, says what the role can do once assumed. Separately, the caller's own account must let the caller perform sts:AssumeRole on that role. Access works only when both accounts agree.\n\nWorked example. Alice is in the dev account, 111111111111. Production, 222222222222, holds a log bucket. Step one: in production, create role LogReader with a trust policy allowing account 111111111111, and a permissions policy allowing read on the log bucket only. Step two: in dev, attach a policy to Alice allowing sts:AssumeRole on the LogReader role in 222222222222. Step three: Alice switches role in the console (or calls AssumeRole from the CLI). STS checks both sides and returns temporary credentials. Step four: Alice reads logs; after the session expires, she must assume the role again. For a third-party vendor, the trust policy can also require an external ID, a shared value that stops the vendor being tricked into using your role on someone else's behalf.\n\nCommon mistake: configuring only one side, such as the trust policy without granting Alice sts:AssumeRole, which yields Access Denied. The worse mistake is skipping roles and copying long-lived access keys into each account; a leaked key keeps working until someone notices, whereas a leaked session expires on its own. This is an identity control, not a network or data one.",
+      "questions": [
+        {
+          "id": "saa-c03:1:3:q1",
+          "role": "fade",
+          "prompt": "A data analyst named Bob works in the analytics account, 333333333333. The production account, 444444444444, holds a reports bucket that Bob needs to read. Bob will get access through a cross-account role, which is a role in one account that principals in another account are allowed to assume. Step one: in production, create a role named ReportReader. Give it a trust policy (the policy on the role that names who may assume it) allowing account 333333333333. Give it a permissions policy (the policy on the role that says what it can do once assumed) allowing read on the reports bucket only. Step two: MISSING. Step three: Bob switches role in the console. STS (Security Token Service, the service that hands out temporary credentials for a role) checks both accounts and returns temporary credentials. Step four: Bob reads the reports. When the session expires, he must assume the role again. Which action belongs in step two?",
+          "choices": [
+            "In analytics, attach a policy to Bob allowing sts:AssumeRole on ReportReader in 444444444444",
+            "In production, add Bob's name to the permissions policy of ReportReader",
+            "In analytics, create a matching role also named ReportReader",
+            "In production, create a long-lived access key for ReportReader and send it to Bob"
+          ],
+          "correctIndex": 0,
+          "why": "The caller's own account must also let him perform sts:AssumeRole on the role, because access works only when both accounts agree."
+        },
+        {
+          "id": "saa-c03:1:3:q2",
+          "role": "solo",
+          "prompt": "A role is an AWS identity with permissions but no password or long-term keys of its own. When a principal assumes a role, what does AWS STS (Security Token Service) hand back?",
+          "choices": [
+            "A username and password for the role, valid until someone changes them",
+            "A copy of the role's trust policy, which the caller presents on each request",
+            "A permanent access key pair stored in the caller's account",
+            "An access key, a secret key, a session token, and an expiry time"
+          ],
+          "correctIndex": 3,
+          "why": "STS issues temporary credentials made of an access key, a secret key, a session token, and an expiry time, usually one hour by default."
+        },
+        {
+          "id": "saa-c03:1:3:q3",
+          "role": "solo",
+          "prompt": "An administrator in the production account creates a role. The role has a trust policy allowing the dev account, and a permissions policy allowing read on a log bucket. A developer in the dev account tries to switch to the role. Nobody in dev has granted her sts:AssumeRole, the permission to assume a role. What happens?",
+          "choices": [
+            "She gets in, because the trust policy alone is enough",
+            "She gets Access Denied, because her own account has not let her assume the role",
+            "She gets in, but the session expires after one minute instead of one hour",
+            "She gets in, but only with read access to her own dev account"
+          ],
+          "correctIndex": 1,
+          "why": "Both sides are required: the role's trust policy and the caller's own permission to perform sts:AssumeRole. Configuring only one side yields Access Denied."
+        },
+        {
+          "id": "saa-c03:1:3:q4",
+          "role": "solo",
+          "prompt": "A company gives engineers access to several AWS accounts by copying long-lived access keys into each account. A security review flags this design. Which fix matches the teaching? Your answer should name the fix, the failure it limits, and the layer it belongs to.",
+          "choices": [
+            "Use cross-account roles with STS so a leaked session expires on its own; an identity control",
+            "Add an external ID to each access key so it works only once; a data control",
+            "Put the accounts behind a network firewall so leaked keys cannot reach AWS; a network control",
+            "Encrypt the stored access keys so they cannot be read; a data control"
+          ],
+          "correctIndex": 0,
+          "why": "Roles assumed through STS give temporary credentials that expire on their own. A leaked long-lived key keeps working until someone notices. This is an identity control, not a network or data one."
+        }
+      ],
+      "explainPrompt": "Explain to a teammate how a person in one AWS account gets access to resources in another account using a cross-account role and STS, and name one limit or tradeoff of this approach compared with simply creating IAM users in every account.",
+      "modelAnswer": "The account that owns the resources creates a role. Its trust policy says which outside account or role may assume it, and its permissions policy says what the role can do, ideally just the minimum. In the caller's own account, the user or role also needs permission to call sts:AssumeRole on that role. When they switch role, STS checks both sides and returns temporary credentials with a session token that expire, often after an hour. Nothing long-lived is shared, so a leaked session stops working by itself, and you manage one set of identities centrally instead of duplicate users everywhere. The tradeoff is setup and friction: you must get two policies in two accounts right, and a mismatch gives Access Denied that can be confusing to debug. Sessions also expire, so long-running jobs must refresh credentials. For third parties, add an external ID to the trust policy.",
+      "rubricPoints": [
+        "The role lives in the account that owns the resources and has no long-term credentials.",
+        "A trust policy says who may assume the role and a permissions policy says what it can do.",
+        "The caller's own account must also allow sts:AssumeRole, so both sides must agree.",
+        "STS returns temporary credentials that expire automatically.",
+        "Names a tradeoff such as two-sided setup complexity, debugging Access Denied, or needing to refresh expiring sessions.",
+        "Contrasts with the risk of sharing long-lived access keys or duplicating users across accounts."
+      ],
+      "suggested": {
+        "modality": "do-new",
+        "engineId": "policy-eval",
+        "rationale": "An authorization policy evaluator would let the learner toggle the trust policy, permissions policy, and caller's AssumeRole permission and see exactly which missing side produces Access Denied."
+      }
+    },
+    {
+      "objectiveId": "saa-c03:1:4",
+      "sourceHash": "28c05abed051",
+      "promptVersion": 1,
+      "model": "claude-opus-5-5",
+      "generatedAt": "2026-10-10T04:44:31.805Z",
+      "plain": "When a company runs dozens of AWS accounts, it needs one place to group them, pay for them, and set rules that every account must obey. AWS Organizations is that grouping and billing layer. Service control policies are its rule sheets: they set the outer limit of what anyone inside an account can ever do. AWS Control Tower is a setup service that builds a well-organized collection of accounts for you, with sensible rules switched on. Think of a building owner who fixes which floors any tenant may enter, whatever keys a tenant hands its own staff.",
+      "guessPrompt": "An account-wide rule says nobody in an account may switch off audit logging, but a developer in that account has personal permissions that say they may do anything. When the developer tries to switch off logging, what do you expect to happen, and why?",
+      "teach": "AWS Organizations is a service that groups many AWS accounts under one management account. The management account is the account that created the organization and pays the combined bill. Every other account is a member account. You arrange accounts into organizational units (OUs), which are folders such as Production or Sandbox, so one rule can cover many accounts at once.\n\nA service control policy (SCP) is a policy attached to the organization root, an OU, or an account. It never grants permission. It only sets the ceiling: the most that any identity in a member account may do, including that account's root user. An action succeeds only if the SCP allows it AND the identity's own IAM policy allows it. An explicit deny anywhere wins. This works because the rule is held outside the account, so an account administrator cannot remove it.\n\nWorked example: an SCP on the Production OU denies cloudtrail:StopLogging, the action that turns off the audit trail. A developer in a Production account holds an IAM policy allowing all actions. Step one, the IAM policy allows StopLogging. Step two, the SCP explicitly denies it. Result: denied. The same developer calls s3:PutObject. The default SCP named FullAWSAccess allows it, and IAM allows it, so it succeeds.\n\nAWS Control Tower is a service that builds a landing zone, meaning a ready-made multi-account environment on top of Organizations. It creates shared accounts for collecting logs and for auditing, provisions new accounts through Account Factory, and applies controls (also called guardrails). Preventive controls block actions and are SCPs underneath. Detective controls watch for drift using AWS Config rules, a service that records resource settings and checks them against rules.\n\nCommon mistake: treating an SCP as a grant, or expecting it to restrict the management account. SCPs never apply to the management account. A running system with workloads in the management account therefore sits outside every guardrail. Likewise, an account whose SCP allows S3 but whose users have no IAM policy still cannot touch S3.",
+      "questions": [
+        {
+          "id": "saa-c03:1:4:q1",
+          "role": "fade",
+          "prompt": "A company uses AWS Organizations, a service that groups many AWS accounts under one management account. A Sandbox account sits in the Sandbox organizational unit (OU), a folder of accounts that share rules. The Sandbox OU has only the default service control policy (SCP) named FullAWSAccess. An SCP is a policy that sets the most any identity in a member account may do. A new user in that account has no IAM policy attached at all. An IAM policy is the account's own permission document for a user or role. The user calls s3:GetObject to read a file. Step one: the SCP FullAWSAccess allows s3:GetObject. Step two: ? Result: the request is denied. Which choice correctly fills in step two?",
+          "choices": [
+            "The FullAWSAccess SCP grants the action directly, so the request should succeed, and the denial must come from a network error.",
+            "The account root user's permissions are inherited by every user, so the denial must come from the root user.",
+            "The user has no IAM policy, so nothing in the account allows the action, and both the SCP and IAM must allow it.",
+            "An explicit deny in the SCP blocks s3:GetObject, and an explicit deny anywhere wins."
+          ],
+          "correctIndex": 2,
+          "why": "An SCP only sets the upper limit and never grants anything, so without an IAM policy that allows the call, the request has no permission and is denied."
+        },
+        {
+          "id": "saa-c03:1:4:q2",
+          "role": "solo",
+          "prompt": "In AWS Organizations, what does a service control policy (SCP) attached to an organizational unit (OU) actually do for the member accounts inside it? An OU is a folder that groups accounts.",
+          "choices": [
+            "It replaces each account's IAM policies, so the account administrator no longer controls permissions.",
+            "It sets the maximum actions any identity in those accounts may perform, including the root user, but it does not grant any permission.",
+            "It grants the listed permissions to every user in those accounts, so no IAM policy is needed.",
+            "It applies only to IAM users and roles, and the root user of each member account is exempt from it."
+          ],
+          "correctIndex": 1,
+          "why": "An SCP is a ceiling held outside the account: an action needs both the SCP and the identity's IAM policy to allow it, and the limit covers the member account's root user too."
+        },
+        {
+          "id": "saa-c03:1:4:q3",
+          "role": "solo",
+          "prompt": "A company attaches an SCP to the organization root that denies cloudtrail:StopLogging, the action that turns off the audit trail. Some production workloads still run in the management account, which is the account that created the organization and pays the bill. An administrator in the management account, whose IAM policy allows all actions, calls StopLogging. What happens?",
+          "choices": [
+            "Allowed only after the request is approved by the audit account that Control Tower creates.",
+            "Denied, because an explicit deny in any policy always wins, even in the management account.",
+            "Denied, because an SCP attached to the root covers every account in the organization.",
+            "Allowed, because SCPs never apply to the management account, so its workloads sit outside every guardrail."
+          ],
+          "correctIndex": 3,
+          "why": "SCPs do not restrict the management account, so its IAM policy alone decides, and that policy allows StopLogging."
+        },
+        {
+          "id": "saa-c03:1:4:q4",
+          "role": "solo",
+          "prompt": "A team uses AWS Control Tower, a service that builds a ready-made multi-account environment called a landing zone. They want to be told when a resource's settings drift from the approved configuration in an account, rather than having the change blocked. Which kind of Control Tower control (also called a guardrail) fits this need, and what does it run on?",
+          "choices": [
+            "A detective control, which uses AWS Config rules to record resource settings and flag drift.",
+            "Account Factory, which provisions a new account to replace the drifted one.",
+            "A preventive control, which uses AWS Config rules to undo the change.",
+            "A preventive control, which uses an SCP to stop the change before it happens."
+          ],
+          "correctIndex": 0,
+          "why": "Detective controls watch for drift using AWS Config rules, while preventive controls block actions and are built on SCPs."
+        }
+      ],
+      "explainPrompt": "Explain to a teammate how AWS Organizations, service control policies, and AWS Control Tower fit together to secure many accounts, and name one limit of SCPs they must design around.",
+      "modelAnswer": "Organizations is the container. It puts all our accounts under one management account, sorts them into OUs, and gives us one bill. SCPs are guardrails attached to the root, an OU, or an account. They set the maximum permissions for everyone in a member account, even its root user. They never grant anything, so a user still needs an IAM policy, and an action only works if both allow it. An explicit deny wins, which is how we stop anyone from disabling CloudTrail in Production. Control Tower automates all of this. It builds a landing zone with log-archive and audit accounts, creates new accounts through Account Factory, and turns on preventive controls, which are SCPs, and detective controls, which are Config rules. The key limit is that SCPs do not apply to the management account. So we keep workloads out of it and lock it down tightly.",
+      "rubricPoints": [
+        "Organizations groups accounts under a management account into OUs with consolidated billing.",
+        "SCPs set a permission ceiling and never grant permissions on their own.",
+        "Effective access requires both the SCP and the IAM policy to allow it, and an explicit deny wins.",
+        "SCPs bind member-account root users but never the management account.",
+        "Control Tower builds a landing zone on Organizations, with preventive controls (SCPs) and detective controls (Config rules).",
+        "The fix belongs in identity governance, applied above individual accounts."
+      ],
+      "suggested": {
+        "modality": "do-new",
+        "engineId": "policy-eval",
+        "rationale": "Tracing how an SCP ceiling intersects with IAM allows and explicit denies is best learned by evaluating requests in an authorization policy evaluator."
+      }
+    },
+    {
+      "objectiveId": "saa-c03:1:5",
+      "sourceHash": "93f041beec97",
+      "promptVersion": 1,
+      "model": "claude-opus-5-5",
+      "generatedAt": "2026-10-10T04:45:02.642Z",
+      "plain": "A resource-based policy is a permission rule attached to the thing being accessed, such as a storage bucket or a message queue, rather than to the person or program doing the accessing. Think of an office building. An identity-based policy is like the badge you carry, which lists the doors you may open. A resource-based policy is like a guest list taped to one door, naming who may come in, including visitors from other companies. Both can let you through. The guest list is handy when the visitor's company issues its own badges, or when the visitor is a delivery service rather than a person.",
+      "guessPrompt": "A partner company needs to read files from your storage bucket, but you cannot create logins in their account. Would you put the permission on their people, or on your bucket? Why?",
+      "teach": "An identity-based policy is a permission document attached to an IAM identity: a user, group, or role. It says what that identity may do. A resource-based policy is attached to a resource itself, such as an Amazon S3 bucket policy (rules on a file store), an Amazon SQS queue policy (a managed queue), an SNS topic policy (a notification channel), an AWS Lambda function policy (serverless code), or an AWS KMS key policy (an encryption key). It has an extra field called Principal, which names who the rule applies to: another account, a role, an AWS service, or even everyone.\n\nHow they combine: inside one account, an allow from either kind is enough, unless something explicitly denies. An explicit deny anywhere always wins. Across accounts, both sides must agree: the resource's policy must allow the outside principal, and that principal's own account must also grant it permission through an identity-based policy.\n\nResource-based policies beat identity-based ones in four situations: granting another account access without making it switch into a role (it keeps its own permissions while acting); letting an AWS service act on your resource, such as S3 sending event messages into a queue; putting one central guard on a sensitive resource, such as a bucket policy that denies any request not using encryption in transit; and, for KMS keys, where the key policy must allow access or nothing else works.\n\nWorked example. Account 111 owns bucket reports. A role named Analytics in account 222 needs to read it. Step one: account 111 adds a bucket policy with Principal set to the Analytics role, allowing GetObject on reports. Step two: account 222 attaches an identity policy to Analytics allowing GetObject on reports. Step three: Analytics reads a file. Both checks pass, so the read succeeds.\n\nCommon mistake: writing only the bucket policy and expecting the partner to get in. Without step two, every request returns Access Denied, and the integration fails silently until someone traces both accounts.",
+      "questions": [
+        {
+          "id": "saa-c03:1:5:q1",
+          "role": "fade",
+          "prompt": "Account 333 owns an Amazon SQS queue (a managed queue) named orders. A role named Producer in account 444 needs to send messages to it. Step one: account 333 adds a queue policy (a resource-based policy attached to the queue) with Principal set to the Producer role, allowing SendMessage on orders. Step two: ______. Step three: Producer sends a message. Both checks pass, so the send succeeds. Which action fills step two?",
+          "choices": [
+            "Account 333 attaches an identity-based policy to Producer allowing SendMessage on orders.",
+            "Nothing more is needed, because the queue policy already names Producer as the Principal.",
+            "Producer switches into a role inside account 333 before it sends the message.",
+            "Account 444 attaches an identity-based policy to Producer allowing SendMessage on orders."
+          ],
+          "correctIndex": 3,
+          "why": "Across accounts both sides must agree, so the principal's own account (444) must also grant SendMessage through an identity-based policy on Producer."
+        },
+        {
+          "id": "saa-c03:1:5:q2",
+          "role": "solo",
+          "prompt": "A resource-based policy, such as an S3 bucket policy or a KMS key policy, contains an extra field that an identity-based policy does not need. What is that field, and what does it do?",
+          "choices": [
+            "Effect, which says whether the rule allows or denies.",
+            "Principal, which names who the rule applies to, such as another account, a role, a service, or everyone.",
+            "Action, which lists the operations the policy allows or denies.",
+            "Resource, which names the bucket, queue, or key being protected."
+          ],
+          "correctIndex": 1,
+          "why": "Because the policy is attached to the resource rather than to an identity, it needs a Principal field to say who the rule applies to."
+        },
+        {
+          "id": "saa-c03:1:5:q3",
+          "role": "solo",
+          "prompt": "A security team needs one central guard on a sensitive Amazon S3 bucket (a file store): every request that does not use encryption in transit must be refused, no matter which user or role makes it. Which design fits best?",
+          "choices": [
+            "Add a bucket policy that explicitly denies any request not using encryption in transit.",
+            "Add a bucket policy that only allows requests that use encryption in transit, with no deny.",
+            "Write a KMS key policy that refuses unencrypted connections to the bucket.",
+            "Attach an identity-based policy to every user and role that requires encryption in transit."
+          ],
+          "correctIndex": 0,
+          "why": "A bucket policy sits on the resource itself as a single central guard, and an explicit deny always wins over any allow elsewhere."
+        },
+        {
+          "id": "saa-c03:1:5:q4",
+          "role": "solo",
+          "prompt": "Inside one account, a user has an identity-based policy that allows GetObject on bucket reports. The bucket policy on reports contains an explicit deny for that user on GetObject. What happens when the user tries to read a file?",
+          "choices": [
+            "The read is denied, because an explicit deny anywhere always wins.",
+            "The read succeeds, because the identity-based policy is checked first and stops evaluation.",
+            "The read succeeds, because inside one account an allow from either kind of policy is enough.",
+            "The read is denied only if the user is from another account."
+          ],
+          "correctIndex": 0,
+          "why": "An allow from either policy is normally enough in one account, but only when nothing explicitly denies, and an explicit deny always wins."
+        }
+      ],
+      "explainPrompt": "Explain to a teammate what a resource-based policy is, give two situations where you would choose one over an identity-based policy, and name one limit or tradeoff of relying on it.",
+      "modelAnswer": "A resource-based policy sits on the resource itself, like an S3 bucket policy, SQS queue policy, or KMS key policy, and uses a Principal field to say who may act on it. An identity-based policy sits on a user, group, or role and says what that identity may do. I'd pick a resource-based policy to share a bucket with another account without making them assume a role, or to let an AWS service like S3 write events into our queue. It's also a good central guard, for example denying unencrypted uploads no matter who asks. The limit is that across accounts it isn't enough alone: the other account must also allow its role in an identity policy, and an explicit deny anywhere still wins. Another tradeoff is that not every service supports resource policies, and rules spread across many resources are harder to audit than permissions kept on roles.",
+      "rubricPoints": [
+        "States that a resource-based policy attaches to the resource and names a Principal.",
+        "Contrasts it with identity-based policies attached to users, groups, or roles.",
+        "Gives cross-account sharing without role switching as a use case.",
+        "Gives granting an AWS service access, or a central guard on a sensitive resource, as a use case.",
+        "Notes that cross-account access needs both the resource policy and the caller's identity policy to allow.",
+        "Mentions that an explicit deny always wins or that not all services support resource policies."
+      ],
+      "suggested": {
+        "modality": "do-new",
+        "engineId": "policy-eval",
+        "rationale": "Evaluating identity and resource policies together, including cross-account cases where both sides must allow, is exactly what an authorization policy evaluator lets the learner practise."
+      }
+    }
+  ],
+  "scenarios": []
+}
