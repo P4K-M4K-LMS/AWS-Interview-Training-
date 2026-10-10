@@ -66,6 +66,35 @@ export function needsScenario(existing: StudyScenario | undefined, force: boolea
   return force || !existing || existing.promptVersion !== PROMPT_VERSION;
 }
 
+/**
+ * The schema as structured outputs accepts it. The API rejects numeric and
+ * string bounds and any minItems above 1, so those are dropped here and
+ * restated in the field description; validateLesson/validateScenario still
+ * enforce them on what comes back.
+ */
+export function apiSchema(schema: unknown): unknown {
+  if (Array.isArray(schema)) return schema.map(apiSchema);
+  if (!schema || typeof schema !== "object") return schema;
+  const src = schema as Record<string, unknown>;
+  const out: Record<string, unknown> = {};
+  for (const [k, v] of Object.entries(src)) {
+    if (["minimum", "maximum", "exclusiveMinimum", "exclusiveMaximum", "multipleOf", "minLength", "maxLength", "maxItems"].includes(k)) continue;
+    if (k === "minItems" && typeof v === "number" && v > 1) continue;
+    out[k] = apiSchema(v);
+  }
+  const min = src.minItems as number | undefined;
+  const max = src.maxItems as number | undefined;
+  const lo = src.minimum as number | undefined;
+  const hi = src.maximum as number | undefined;
+  const bound =
+    min !== undefined && min === max ? `Exactly ${min} items.`
+    : min !== undefined || max !== undefined ? `Between ${min ?? 0} and ${max ?? "any number of"} items.`
+    : lo !== undefined || hi !== undefined ? `From ${lo ?? "any"} to ${hi ?? "any"}.`
+    : "";
+  if (bound) out.description = typeof src.description === "string" ? `${src.description} ${bound}` : bound;
+  return out;
+}
+
 type Client = InstanceType<typeof Anthropic>;
 
 async function structured<T>(client: Client, model: string, system: string, user: string, schema: object, maxTokens: number): Promise<{ data: T; model: string }> {
@@ -76,7 +105,7 @@ async function structured<T>(client: Client, model: string, system: string, user
         model,
         max_tokens: maxTokens,
         system,
-        output_config: { effort: "medium", format: { type: "json_schema", schema } },
+        output_config: { effort: "medium", format: { type: "json_schema", schema: apiSchema(schema) } },
         messages: [{ role: "user", content: user }],
       } as never);
       const msg = response as unknown as { stop_reason: string; content: Array<{ type: string; text?: string }>; model: string };
