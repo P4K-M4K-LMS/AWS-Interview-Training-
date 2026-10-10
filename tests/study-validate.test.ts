@@ -69,6 +69,9 @@ describe("Study lessons validator", () => {
     expect(validateLessonsFile(file([threeChoices]), course).map((p) => p.message)).toContain("need 4 non-empty choices");
     const repeated = { ...l, questions: l.questions.map((q, i) => (i === 2 ? { ...q, choices: ["x", "x", "y", "z"] } : q)) };
     expect(validateLessonsFile(file([repeated]), course).map((p) => p.message)).toContain("choices repeat");
+    // Command flags are case-sensitive: usermod -G and usermod -g are different answers.
+    const caseOnly = { ...l, questions: l.questions.map((q, i) => (i === 2 ? { ...q, choices: ["usermod -G", "usermod -g", "y", "z"] } : q)) };
+    expect(validateLessonsFile(file([caseOnly]), course).map((p) => p.message)).not.toContain("choices repeat");
     const badIndex = { ...l, questions: l.questions.map((q, i) => (i === 3 ? { ...q, correctIndex: 4 } : q)) };
     expect(validateLessonsFile(file([badIndex]), course).map((p) => p.message)).toContain("correctIndex out of range");
     const badId = { ...l, questions: l.questions.map((q, i) => (i === 0 ? { ...q, id: "nope" } : q)) };
@@ -131,6 +134,8 @@ describe("generation helpers", () => {
     expect(a.system).toMatch(/never copy/i);
     const b = bankPrompt(ctx, "TEACH TEXT");
     expect(b.user).toContain("TEACH TEXT");
+    // The fade question used to be the lesson's own worked example with one step blanked out.
+    expect(b.user).toContain("does not appear in the teaching text");
     const c = scenarioPrompt(course, unit);
     expect(c.user).toContain("fictional company");
     expect(c.user).toContain("Read replicas");

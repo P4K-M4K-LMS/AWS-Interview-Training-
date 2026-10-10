@@ -1,0 +1,84 @@
+{
+  "courseId": "linuxplus",
+  "imported": {
+    "source": "ascendra",
+    "importedAt": "2026-10-10",
+    "models": [
+      "claude-sonnet-5"
+    ]
+  },
+  "lessons": [
+    {
+      "objectiveId": "linuxplus:1:1",
+      "sourceHash": "d340cc981c8d",
+      "model": "claude-sonnet-5",
+      "generatedAt": "2026-09-16T00:52:02.630Z",
+      "guessPrompt": "When you power on a Linux computer, walk through what you think happens between pressing the power button and reaching a usable login prompt. What are the major stages, and what do you think GRUB and 'systemd targets' each do in that sequence?",
+      "teach": "The Linux boot process has four major stages, each handing off control to the next.\n\n1. **Firmware (BIOS or UEFI)**: BIOS (Basic Input/Output System) and UEFI (Unified Extensible Firmware Interface) are the two types of firmware — permanent low-level software built into the motherboard — that run first. Their job is to initialize hardware (check RAM, detect disks) and then find a bootloader to hand off to. BIOS reads the first sector of a disk (the Master Boot Record, or MBR); UEFI reads a special disk partition called the EFI System Partition and can boot more flexibly (larger disks, faster, supports Secure Boot, a signature-check feature).\n\n2. **Bootloader — GRUB**: GRUB (GRand Unified Bootloader) is the program that loads the actual Linux kernel into memory and starts it. It shows the menu you sometimes see at startup letting you pick a kernel version or OS. GRUB's config file is normally generated at /boot/grub2/grub.cfg (don't hand-edit it) from settings in /etc/default/grub, then applying `grub2-mkconfig` (or `update-grub` on Debian-based systems) to regenerate it.\n\n3. **Kernel initialization**: The kernel — the core program that manages hardware, memory, and processes — loads into RAM, mounts the root filesystem (often via an initramfs, a small temporary filesystem loaded into RAM that contains just enough drivers to mount the real root disk), and then starts the very first process, PID 1.\n\n4. **Init system — systemd and targets**: On most modern Linux distributions, PID 1 is systemd, the init system responsible for starting and managing all other services and processes. systemd organizes what to start using targets — named groups of services that represent a system state, replacing the older 'runlevels' concept from SysV init. Key targets: `multi-user.target` (full multi-user system, text-mode, no GUI — roughly equivalent to old runlevel 3), `graphical.target` (multi-user plus a graphical login — roughly runlevel 5), `rescue.target` (single-user maintenance mode with minimal services), and `emergency.target` (bare minimal shell, even less than rescue, used when the system is badly broken). Targets can depend on other targets — `graphical.target` actually wants `multi-user.target` plus display-related services.\n\nWhy this layered design works: each stage only needs to know how to start the next one, not the whole chain — firmware doesn't need to know about services, GRUB doesn't need to know about hardware drivers beyond loading a kernel, and systemd doesn't need to know about GRUB. This separation makes each layer replaceable (you can swap GRUB for another bootloader, or swap systemd for another init system) without rewriting the others.\n\n**Worked example, traced step by step**: You boot a server and it comes up to a text login prompt with no GUI. Trace it: (1) UEFI firmware powers on, runs self-checks, reads the EFI partition. (2) UEFI finds and runs GRUB. (3) GRUB shows its menu (or times out) and loads the selected Linux kernel plus initramfs into memory, then hands off control. (4) The kernel initializes hardware, mounts the real root filesystem, and starts PID 1 — systemd. (5) systemd looks at its default target (set via a symlink `/etc/systemd/system/default.target` pointing at, say, `multi-user.target`), and starts every service that target requires — networking, logging, cron, etc. — but skips display-manager/GUI services. Result: text login prompt, matching `multi-user.target`.\n\n**Common mistake**: Thinking 'runlevels' and 'targets' are totally different systems you must memorize separately. In reality systemd targets are a superset design that keeps the old runlevel numbers as aliases (e.g., `runlevel3.target` is a symlink to `multi-user.target`) purely for backward compatibility — the real, current mechanism is targets.\n\n**Systems implication**: Because targets are just symlinked units, you can check or change the boot target with commands like `systemctl get-default` and `systemctl set-default graphical.target`, and you can temporarily boot to a different target (like `rescue.target`) by editing the GRUB boot entry at startup — useful for recovering a broken system without needing removable media.",
+      "questions": [
+        {
+          "id": "linuxplus:1:1:q1",
+          "role": "fade",
+          "prompt": "A coworker's server was set to boot into a graphical desktop by default, but now they want it to always boot to a plain text multi-user prompt (no GUI) instead, permanently, without touching GRUB.\n\nStep 1: Identify which systemd target represents a plain text, multi-user, non-graphical login state — that's `multi-user.target`.\nStep 2: Recognize that the default boot target is controlled by a symlink at `/etc/systemd/system/default.target`, and that systemd provides a command to change this cleanly rather than hand-editing the symlink.\n\nYour task: state the exact single command you would run to make `multi-user.target` the permanent default target.",
+          "choices": [
+            "systemctl set-default multi-user.target",
+            "systemctl isolate multi-user.target",
+            "grub2-mkconfig -o /boot/grub2/grub.cfg multi-user",
+            "systemctl enable multi-user.target --now"
+          ],
+          "correctIndex": 0,
+          "why": "`systemctl set-default` is the command specifically designed to change which target the symlink /etc/systemd/system/default.target points to, making the choice persist across reboots."
+        },
+        {
+          "id": "linuxplus:1:1:q2",
+          "role": "solo",
+          "prompt": "A Linux system fails to boot normally — it drops you into a minimal shell with almost no services running, not even full filesystem mounts, and systemd reports it reached emergency.target. Explain: (1) what emergency.target is and how it differs from rescue.target, and (2) name one plausible cause that would make systemd fall back to emergency.target instead of continuing to multi-user.target or graphical.target.",
+          "choices": [
+            "emergency.target is a bare minimal shell with even fewer services than rescue.target, used when something critical (like a corrupt fstab entry or failed root filesystem mount) prevents normal boot; rescue.target still mounts filesystems and starts basic services.",
+            "emergency.target and rescue.target are two names for the exact same state, and the fallback happens only when GRUB itself fails to find a kernel.",
+            "emergency.target is what systemd uses for graphical login failures specifically, while rescue.target is used only for network failures.",
+            "emergency.target is an older SysV runlevel alias with no real function in modern systemd, kept only for compatibility."
+          ],
+          "correctIndex": 0,
+          "why": "emergency.target is deliberately more minimal than rescue.target (skips even normal filesystem mounts), and it's typically triggered by boot-blocking failures like a bad /etc/fstab line or an unmountable root filesystem."
+        }
+      ]
+    },
+    {
+      "objectiveId": "linuxplus:2:1",
+      "sourceHash": "f90db4e1d9f6",
+      "model": "claude-sonnet-5",
+      "generatedAt": "2026-09-16T00:55:59.943Z",
+      "guessPrompt": "On a Linux system, what command(s) do you think would create a brand-new user account, and what would you type to check which groups that user belongs to?",
+      "teach": "Key terms: **useradd** is the command that creates a new user account (adds an entry to /etc/passwd, the file that lists all user accounts, and optionally to /etc/shadow for the password). **usermod** modifies an existing user account (changes group membership, home directory, shell, etc.). **groupadd** creates a new group (an entry in /etc/group, the file listing groups and their members). **groups** (no 'add') is a command that shows which groups a given user belongs to. Every user has a **UID** (User ID, a number identifying the account) and belongs to exactly one **primary group** (identified by a **GID**, Group ID) plus zero or more **secondary groups** (extra groups for shared permissions, e.g. a 'printer' group that can use a shared printer). Key flags: `-m` on useradd creates the user's home directory; `-g GROUP` sets the primary group; `-G GROUP1,GROUP2` sets secondary groups; on usermod, `-aG GROUP` means 'append to secondary groups' — critically, plain `-G` without `-a` REPLACES the whole secondary group list, wiping out any groups not listed. Why this matters: group membership is how Linux grants shared access to files/devices without changing per-file permissions for every user — a file owned by group 'devteam' becomes accessible to everyone in that group. Worked example: you want to create user 'jsmith' with a home directory, primary group 'jsmith' (the default), and secondary membership in 'devteam'. Step 1: `useradd -m -G devteam jsmith` creates the account, makes /home/jsmith, and adds jsmith to devteam as a secondary group. Step 2: `passwd jsmith` sets the password (useradd alone doesn't set one). Step 3: `groups jsmith` confirms output like `jsmith : jsmith devteam`, showing primary group jsmith and secondary group devteam. Common mistake: later, someone wants to ALSO add jsmith to 'admins' and runs `usermod -G admins jsmith` — this silently removes jsmith from devteam because plain -G replaces the entire secondary group list. The correct command is `usermod -aG admins jsmith`, which appends without disturbing existing memberships. Systems implication: because group membership controls real access to files and devices, an accidental plain `-G` can quietly break someone's access to shared resources until someone notices and checks with `groups`.",
+      "questions": [
+        {
+          "id": "linuxplus:2:1:q1",
+          "role": "fade",
+          "prompt": "User 'amiller' already exists and is currently a secondary member of the 'editors' group (confirmed by running `groups amiller`, which shows `amiller : amiller editors`). You need to ALSO add her to the existing 'backup' group WITHOUT removing her from 'editors'. Fill in the exact usermod command that does this correctly.",
+          "choices": [
+            "usermod -aG backup amiller",
+            "usermod -G backup amiller",
+            "usermod -g backup amiller",
+            "groupadd -aG backup amiller"
+          ],
+          "correctIndex": 0,
+          "why": "-aG appends the new group to the existing secondary group list instead of replacing it, so 'editors' membership is preserved."
+        },
+        {
+          "id": "linuxplus:2:1:q2",
+          "role": "solo",
+          "prompt": "You need to create a brand-new user 'tuser' that: has a home directory, has 'staff' (an already-existing group) as its primary group, and is also a secondary member of the already-existing 'printer' group. Write the single useradd command that accomplishes all of this at creation time.",
+          "choices": [
+            "useradd -m -g staff -G printer tuser",
+            "useradd -m -G staff -G printer tuser",
+            "useradd -m -g staff -a printer tuser",
+            "usermod -m -g staff -G printer tuser"
+          ],
+          "correctIndex": 0,
+          "why": "-m creates the home directory, -g sets the primary group, and -G sets secondary group(s) — this is the correct useradd syntax for creating a new account with both group types set in one step."
+        }
+      ]
+    }
+  ]
+}

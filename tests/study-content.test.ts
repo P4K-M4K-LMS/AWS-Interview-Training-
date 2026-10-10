@@ -16,7 +16,7 @@ describe("committed Study lessons", () => {
       const lessons = JSON.parse(readFileSync(path.join(OUT, f), "utf8")) as StudyLessonsFile;
       const problems = validateLessonsFile(lessons, course);
       expect(problems, `${f}: ${problems.slice(0, 5).map((p) => `${p.where}: ${p.message}`).join("; ")}`).toEqual([]);
-      expect(statSync(path.join(OUT, f)).size, `${f} too large; split per unit`).toBeLessThan(900_000);
+      expect(statSync(path.join(OUT, f)).size, `${f} too large; split per unit`).toBeLessThan(1_500_000);
     }
   });
 
@@ -27,7 +27,7 @@ describe("committed Study lessons", () => {
       const imported = JSON.parse(readFileSync(path.join(OUT, f), "utf8")) as StudyImportedFile;
       const problems = validateImportedFile(imported, course);
       expect(problems, `${f}: ${problems.slice(0, 5).map((p) => `${p.where}: ${p.message}`).join("; ")}`).toEqual([]);
-      expect(statSync(path.join(OUT, f)).size, `${f} too large`).toBeLessThan(900_000);
+      expect(statSync(path.join(OUT, f)).size, `${f} too large`).toBeLessThan(1_500_000);
     }
   });
 

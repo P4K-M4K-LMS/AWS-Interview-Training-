@@ -1,0 +1,84 @@
+{
+  "courseId": "mscs",
+  "imported": {
+    "source": "ascendra",
+    "importedAt": "2026-10-10",
+    "models": [
+      "claude-sonnet-5"
+    ]
+  },
+  "lessons": [
+    {
+      "objectiveId": "mscs:1:1",
+      "sourceHash": "37b86567bd36",
+      "model": "claude-sonnet-5",
+      "generatedAt": "2026-09-16T05:21:16.286Z",
+      "guessPrompt": "Before any teaching: in your own words, what is an 'algorithm'? And when someone talks about the 'input size' of a problem (usually called n), what do you think that phrase is actually measuring?",
+      "teach": "An algorithm is a finite, unambiguous, step-by-step procedure that takes some input and is guaranteed to produce an output after a limited number of steps. Break that down: 'finite' means the list of steps has a definite end and doesn't run forever unless the problem itself is unsolvable for that case; 'unambiguous' (well-defined) means each step is precise enough that anyone or any machine following it would do exactly the same thing, with no guessing; 'terminates' means it actually stops and hands back an answer; 'input' is the data you feed the procedure; 'output' is the result it produces. A vague instruction like 'stir until it tastes right' is not an algorithm because 'right' isn't precisely defined and there's no guaranteed stopping point. Input size, usually written n, is a single number that measures how big a particular input is — it is NOT the input's value, it's a count of how much data there is. For a list, n is typically the number of elements. For a number, n is often the number of digits or bits (not the number's magnitude). For a graph, n might be the number of vertices or edges. We need input size because an algorithm's running time depends on how much data it has to process, and expressing that running time as a function of n (like n steps, or n squared steps) lets us compare algorithms independent of any specific computer's speed. Worked example: consider the algorithm 'linear search' — to find a target value in a list, check each element in order, left to right, until you find a match or run out of elements. Trace it on the list [4, 2, 7, 9, 1] searching for 7: step 1, compare index 0 (value 4) to 7 — no match; step 2, compare index 1 (value 2) to 7 — no match; step 3, compare index 2 (value 7) to 7 — match, stop and report position 2. This is finite (at most 5 comparisons), unambiguous (compare and move on, or stop, are precise actions), and it terminates with an answer. The input size here is n = 5, because there are 5 elements in the list — that's the quantity that matters for counting how many steps the algorithm might take, not the values 4, 2, 7, 9, or 1 themselves. Common mistake: people often confuse input size with the input's value or the output. For example, thinking the input size of the number 1000 is 1000, when really — if we're measuring by digits — its input size is about 3 or 4 (the number of digits), since that's what determines how much work is needed to read or process it. This distinction matters a lot in complexity analysis: an algorithm that takes 'n steps' where n is the number of digits behaves very differently from one that takes 'n steps' where n is the number itself — these are exponentially different growth rates in disguise, which is exactly why algorithms like primality testing are analyzed carefully with respect to what n actually measures.",
+      "questions": [
+        {
+          "id": "mscs:1:1:q1",
+          "role": "fade",
+          "prompt": "Here is an algorithm for summing a list: (1) set running total to 0; (2) for each number in the list, add it to the running total; (3) after the last number, output the running total. This is an algorithm because it's finite, each step is precise, and it terminates with an output. Trace it on the list [12, 45, 7, 30, 9]: total=0 → add 12 → 12 → add 45 → 57 → add 7 → 64 → add 30 → 94 → add 9 → 103 → output 103. Now finish this: state the input size n for this run, and in one sentence say exactly what quantity n is measuring.",
+          "choices": [
+            "n = 5, the number of elements in the list.",
+            "n = 103, the final sum the algorithm outputs.",
+            "n = 12, the value of the first element in the list.",
+            "n equals the list itself, meaning the actual array of numbers."
+          ],
+          "correctIndex": 0,
+          "why": "Input size counts how many items the algorithm has to process, not the output value, an individual element's value, or the data structure itself."
+        },
+        {
+          "id": "mscs:1:1:q2",
+          "role": "solo",
+          "prompt": "A librarian follows this procedure on a shelf of 400 books: starting at the first book, check each book's title one at a time in order; stop and report its position as soon as you find the title you're looking for. State briefly why this procedure qualifies as an algorithm, and give the input size n for this shelf along with what n is measuring.",
+          "choices": [
+            "It qualifies because it's a finite, unambiguous sequence of steps that is guaranteed to terminate; n = 400, the number of books on the shelf.",
+            "It qualifies because it involves books; n = 400, the position where the matching title is found.",
+            "It qualifies only if the librarian actually finds the book; n is undefined until a match occurs.",
+            "It qualifies because a librarian performs it; n equals the number of letters in the title being searched for."
+          ],
+          "correctIndex": 0,
+          "why": "The procedure has precise, finite, terminating steps (making it an algorithm), and n counts the quantity of items to process — the number of books — not the search outcome or an unrelated measurement."
+        }
+      ]
+    },
+    {
+      "objectiveId": "mscs:2:1",
+      "sourceHash": "504ca5005266",
+      "model": "claude-sonnet-5",
+      "generatedAt": "2026-09-16T05:20:52.581Z",
+      "guessPrompt": "In your own words: what do you think is different about how you add and remove items in an array versus a linked list, and in a stack versus a queue? Also, what do you think a hash table, a set, a tree, and a heap are each used for?",
+      "teach": "Definitions first. An array is a block of memory holding elements of the same type laid out one after another, each reachable by an integer index (starting at 0). Because the computer can jump straight to any slot with simple arithmetic (start address + index × element size), reading or writing by index is O(1) (constant time). Inserting or deleting in the middle is O(n) (time grows with the number of elements) because everything after that spot must shift over. A linked list is a chain of nodes, where each node stores a value plus a pointer/reference to the next node (a 'singly' linked list) or to both next and previous nodes ('doubly' linked list). Nodes don't need to sit next to each other in memory. If you already hold a pointer to the right spot, insertion/deletion there is O(1), but reaching a position by number requires walking node by node from the head, which is O(n). A stack is a LIFO (last-in, first-out) collection: you can only push (add) to the 'top' and pop (remove) from the top; both are O(1). A queue is FIFO (first-in, first-out): you enqueue (add) at the back and dequeue (remove) from the front; both O(1) with a good implementation (e.g., linked list, or an array used circularly). A deque (double-ended queue) generalizes both: O(1) insertion and removal at BOTH ends. A hash table (hash map) stores key-value pairs. A hash function turns a key into an array index ('bucket'); this gives average-case O(1) insert, lookup, and delete. Two different keys can hash to the same bucket — a collision — commonly resolved by chaining (each bucket holds a small linked list of entries) or open addressing (probe for another slot). A set is a collection with no duplicate elements; it's usually built on a hash table (hash set, O(1) average membership test) or a balanced tree (tree set, O(log n) membership test, but kept in sorted order). A tree is a hierarchy of nodes: one root, each non-root node has exactly one parent, zero or more children, and no cycles. A binary tree limits each node to at most 2 children. A binary search tree (BST) keeps left-subtree values < node < right-subtree values, giving O(log n) search/insert/delete IF the tree stays roughly balanced (an unbalanced BST degrades toward O(n), like a linked list). A heap is a tree-shaped structure obeying a heap property — in a min-heap, every parent is ≤ its children (so the minimum is always at the root); in a max-heap, every parent is ≥ its children. Heaps are normally stored as a plain array representing a 'complete' binary tree (filled level by level, left to right), so a node at index i has children at 2i+1, 2i+2 and parent at floor((i-1)/2) — no pointers needed. This gives O(1) peek at the min/max and O(log n) insert or remove-min/max. WHY THIS ALL WORKS: each structure trades away some operation's speed to buy speed on another; you pick the structure whose fast operations match what your program actually needs to do often (index lookup? order of arrival? priority? uniqueness? hierarchy?). WORKED EXAMPLE (hash table with chaining): table size 5, hash(k) = k mod 5. Insert 10 → 10 mod 5 = 0 → bucket 0: [10]. Insert 15 → 15 mod 5 = 0 → COLLISION with 10 → bucket 0 becomes a chain: [10, 15]. Insert 3 → 3 mod 5 = 3 → bucket 3: [3]. Insert 7 → 7 mod 5 = 2 → bucket 2: [7]. Now look up 15: compute hash → 0 → walk bucket 0's chain: compare 10 (no match) → compare 15 (match) → found. That walk through a chain is why hash table lookup is only average-case O(1) — worst case (many collisions, e.g., a bad hash function or table too small for how many items you store) it degrades to O(n). COMMON MISTAKE: assuming hash tables are ALWAYS O(1) no matter what — it's an average, not a guarantee; also mixing up stack (LIFO, like a stack of plates) with queue (FIFO, like a line at a store) is a frequent slip. SYSTEMS NOTE: arrays are contiguous in memory, so they're cache-friendly (fast in practice from hardware prefetching); linked lists scatter nodes in memory, causing 'pointer chasing' that's slower in practice even when Big-O looks similar; hash tables must periodically resize/rehash as they fill up (load factor grows) to keep O(1) average performance; heaps stay O(log n) because the array-as-complete-tree trick keeps them perfectly balanced by construction, unlike a BST which needs explicit rebalancing (e.g., AVL/red-black trees) to guarantee O(log n).",
+      "questions": [
+        {
+          "id": "mscs:2:1:q1",
+          "role": "fade",
+          "prompt": "Build a min-heap (parent ≤ children) by inserting values one at a time into an array, using the standard rule: append the new value at the end, then 'bubble up' by repeatedly swapping it with its parent (parent index = floor((i-1)/2)) as long as it's smaller than that parent. Trace: Insert 5 → array = [5]. Insert 3 → append at index 1 → [5,3]; parent is index 0 (value 5); 3 < 5, so swap → [3,5]. Insert 8 → append at index 2 → [3,5,8]; parent is index 0 (value 3); 8 < 3 is false, so stop → [3,5,8]. Insert 1 → append at index 3 → [3,5,8,1]; parent is index 1 (value 5); 1 < 5, so swap → array becomes [3,1,8,5]; now 1 is at index 1. One bubble-up step remains: compare index 1's value (1) against its NEW parent at index 0 (value 3), and finish the process. What is the final array after this last comparison/swap completes, and at what index does the value 1 end up?",
+          "choices": [
+            "Final array [1,3,8,5], with 1 at index 0",
+            "Final array [3,1,8,5], with 1 at index 1 (stop here, no more swaps needed)",
+            "Final array [1,3,5,8], with 1 at index 0",
+            "Final array [5,3,8,1], with 1 at index 3"
+          ],
+          "correctIndex": 0,
+          "why": "Since 1 < 3 (the value at the parent index 0), they swap one more time, so 1 rises all the way to the root, giving [1,3,8,5]."
+        },
+        {
+          "id": "mscs:2:1:q2",
+          "role": "solo",
+          "prompt": "You're building a task scheduler: tasks arrive at unpredictable times, each has a priority number, and the scheduler must always be able to grab and remove the task with the smallest priority number next. Which data structure from this lesson best fits this job, and what are the time complexities for (a) adding a new task and (b) removing the next task to run?",
+          "choices": [
+            "A min-heap: adding a task is O(log n), removing the smallest-priority task is O(log n)",
+            "A plain array with tasks appended in arrival order: adding is O(1), but removing the smallest requires scanning all tasks, so O(n)",
+            "A queue (FIFO): adding and removing are both O(1), since it processes tasks in the order they arrived",
+            "A hash table keyed by task ID: adding and looking up a specific task are O(1) average, but it has no built-in way to track which task has the smallest priority"
+          ],
+          "correctIndex": 0,
+          "why": "A min-heap keeps the smallest-priority item at the root and maintains that property in O(log n) per insert or removal, directly matching 'always get the smallest next' with arbitrary arrival times."
+        }
+      ]
+    }
+  ]
+}

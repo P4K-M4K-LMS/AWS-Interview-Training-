@@ -66,6 +66,35 @@ export function needsScenario(existing: StudyScenario | undefined, force: boolea
   return force || !existing || existing.promptVersion !== PROMPT_VERSION;
 }
 
+/**
+ * The schema as structured outputs accepts it. The API rejects numeric and
+ * string bounds and any minItems above 1, so those are dropped here and
+ * restated in the field description; validateLesson/validateScenario still
+ * enforce them on what comes back.
+ */
+export function apiSchema(schema: unknown): unknown {
+  if (Array.isArray(schema)) return schema.map(apiSchema);
+  if (!schema || typeof schema !== "object") return schema;
+  const src = schema as Record<string, unknown>;
+  const out: Record<string, unknown> = {};
+  for (const [k, v] of Object.entries(src)) {
+    if (["minimum", "maximum", "exclusiveMinimum", "exclusiveMaximum", "multipleOf", "minLength", "maxLength", "maxItems"].includes(k)) continue;
+    if (k === "minItems" && typeof v === "number" && v > 1) continue;
+    out[k] = apiSchema(v);
+  }
+  const min = src.minItems as number | undefined;
+  const max = src.maxItems as number | undefined;
+  const lo = src.minimum as number | undefined;
+  const hi = src.maximum as number | undefined;
+  const bound =
+    min !== undefined && min === max ? `Exactly ${min} items.`
+    : min !== undefined || max !== undefined ? `Between ${min ?? 0} and ${max ?? "any number of"} items.`
+    : lo !== undefined || hi !== undefined ? `From ${lo ?? "any"} to ${hi ?? "any"}.`
+    : "";
+  if (bound) out.description = typeof src.description === "string" ? `${src.description} ${bound}` : bound;
+  return out;
+}
+
 type Client = InstanceType<typeof Anthropic>;
 
 async function structured<T>(client: Client, model: string, system: string, user: string, schema: object, maxTokens: number): Promise<{ data: T; model: string }> {
@@ -76,11 +105,13 @@ async function structured<T>(client: Client, model: string, system: string, user
         model,
         max_tokens: maxTokens,
         system,
-        output_config: { effort: "medium", format: { type: "json_schema", schema } },
+        output_config: { effort: "medium", format: { type: "json_schema", schema: apiSchema(schema) } },
         messages: [{ role: "user", content: user }],
       } as never);
       const msg = response as unknown as { stop_reason: string; content: Array<{ type: string; text?: string }>; model: string };
       if (msg.stop_reason === "refusal") throw new Error("the model declined this request");
+      // Thinking counts against max_tokens, so a low cap cuts the JSON off mid-string.
+      if (msg.stop_reason === "max_tokens") throw new Error(`reply cut off at max_tokens (${maxTokens}); raise the limit for this call`);
       const text = msg.content.find((b) => b.type === "text")?.text ?? "";
       return { data: JSON.parse(text) as T, model: msg.model };
     } catch (e) {
@@ -156,9 +187,9 @@ export async function generateCourse(opts: GenerateOptions): Promise<{ generated
     const ctx: LessonContext = { course, unit, objective, missions: opts.missions, engines: opts.engines };
     try {
       const a = lessonPrompt(ctx);
-      const lessonPart = await structured<{ plain: string; guessPrompt: string; teach: string; explainPrompt: string; modelAnswer: string; rubricPoints: string[]; suggested: StudyLesson["suggested"] }>(client, opts.model, a.system, a.user, LESSON_SCHEMA, 4000);
+      const lessonPart = await structured<{ plain: string; guessPrompt: string; teach: string; explainPrompt: string; modelAnswer: string; rubricPoints: string[]; suggested: StudyLesson["suggested"] }>(client, opts.model, a.system, a.user, LESSON_SCHEMA, 16000);
       const b = bankPrompt(ctx, lessonPart.data.teach);
-      const bank = await structured<{ fade: { prompt: string; choices: string[]; correctIndex: number; why: string }; solo: Array<{ prompt: string; choices: string[]; correctIndex: number; why: string }> }>(client, opts.model, b.system, b.user, BANK_SCHEMA, 4000);
+      const bank = await structured<{ fade: { prompt: string; choices: string[]; correctIndex: number; why: string }; solo: Array<{ prompt: string; choices: string[]; correctIndex: number; why: string }> }>(client, opts.model, b.system, b.user, BANK_SCHEMA, 16000);
       const lesson: StudyLesson = {
         objectiveId: objective.id,
         sourceHash: objective.sourceHash,
@@ -196,7 +227,7 @@ export async function generateCourse(opts: GenerateOptions): Promise<{ generated
     await mapLimit(scenarioTodo, opts.concurrency, async (unit: StudyUnit) => {
       try {
         const c = scenarioPrompt(course, unit);
-        const r = await structured<{ title: string; scenario: string; subParts: string[]; modelAnswer: string[] }>(client, opts.model, c.system, c.user, SCENARIO_SCHEMA, 3000);
+        const r = await structured<{ title: string; scenario: string; subParts: string[]; modelAnswer: string[] }>(client, opts.model, c.system, c.user, SCENARIO_SCHEMA, 16000);
         const sc: StudyScenario = { unitId: unit.id, promptVersion: PROMPT_VERSION, model: r.model, generatedAt: new Date().toISOString(), ...r.data };
         const problems: Problem[] = [];
         validateScenario(sc, course, problems);
