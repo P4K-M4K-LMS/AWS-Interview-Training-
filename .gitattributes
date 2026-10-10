@@ -1,0 +1,16 @@
+# The OmniEngineering workspace is run from WSL and its health check compares
+# generated files byte for byte, so these paths stay LF on every checkout.
+.ai/** text eol=lf
+omni text eol=lf
+make_ai.py text eol=lf
+omni_graph.py text eol=lf
+omni_mcp.py text eol=lf
+AGENTS.md text eol=lf
+CLAUDE.md text eol=lf
+LLM_CONTEXT.md text eol=lf
+CHANGELOG.md text eol=lf
+.cursorrules text eol=lf
+.cursorignore text eol=lf
+.kiro/** text eol=lf
+.github/copilot-instructions.md text eol=lf
+.ai/graph-viewer/*.min.js -text
