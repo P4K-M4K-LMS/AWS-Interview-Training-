@@ -1,0 +1,304 @@
+{
+  "id": "pk0-005",
+  "code": "PROJECTPLUS",
+  "title": "Project+",
+  "description": "CompTIA Project+ (PK0-005) exam prep across 4 weighted domains -- project management concepts, project life cycle phases, tools and documentation, and the basics of IT governance.",
+  "trackType": "certification",
+  "field": "pm",
+  "units": [
+    {
+      "id": "pk0-005:1",
+      "index": 1,
+      "title": "Project Management Concepts",
+      "weight": 33,
+      "gate": "Given a project scenario, apply the specific concept it calls for -- agile vs. waterfall, a change-control step, a risk response -- rather than generic project-management advice.",
+      "objectives": [
+        {
+          "id": "pk0-005:1:1",
+          "unitId": "pk0-005:1",
+          "index": 1,
+          "text": "Project characteristics and methodologies",
+          "sourceHash": "b8555c7251f4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pk0-005:1:2",
+          "unitId": "pk0-005:1",
+          "index": 2,
+          "text": "Agile vs. waterfall approaches",
+          "sourceHash": "dca38eff81e1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pk0-005:1:3",
+          "unitId": "pk0-005:1",
+          "index": 3,
+          "text": "Change control processes",
+          "sourceHash": "331247b57e05",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pk0-005:1:4",
+          "unitId": "pk0-005:1",
+          "index": 4,
+          "text": "Risk management",
+          "sourceHash": "31fecaec3b8d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pk0-005:1:5",
+          "unitId": "pk0-005:1",
+          "index": 5,
+          "text": "Issue management",
+          "sourceHash": "295d27bd1f7b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pk0-005:1:6",
+          "unitId": "pk0-005:1",
+          "index": 6,
+          "text": "Schedule management",
+          "sourceHash": "dff3011d5285",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pk0-005:1:7",
+          "unitId": "pk0-005:1",
+          "index": 7,
+          "text": "Quality and performance management",
+          "sourceHash": "33c2d84682de",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pk0-005:1:8",
+          "unitId": "pk0-005:1",
+          "index": 8,
+          "text": "Communication management",
+          "sourceHash": "d725be12fc85",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pk0-005:1:9",
+          "unitId": "pk0-005:1",
+          "index": 9,
+          "text": "Meeting management",
+          "sourceHash": "52b0358294ed",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pk0-005:1:10",
+          "unitId": "pk0-005:1",
+          "index": 10,
+          "text": "Team and resource management",
+          "sourceHash": "fc92df46938c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pk0-005:1:11",
+          "unitId": "pk0-005:1",
+          "index": 11,
+          "text": "Procurement and vendor selection",
+          "sourceHash": "a779b389ebbf",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "pk0-005:2",
+      "index": 2,
+      "title": "Project Life Cycle Phases",
+      "weight": 30,
+      "gate": "Given a project at a given stage, name the phase it's in and the artifact that phase produces -- from discovery through closing -- not a generic 'plan then execute' answer.",
+      "objectives": [
+        {
+          "id": "pk0-005:2:1",
+          "unitId": "pk0-005:2",
+          "index": 1,
+          "text": "Discovery phase artifacts",
+          "sourceHash": "77d96f5aa7f6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pk0-005:2:2",
+          "unitId": "pk0-005:2",
+          "index": 2,
+          "text": "Project initiation",
+          "sourceHash": "9cc88c33f646",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pk0-005:2:3",
+          "unitId": "pk0-005:2",
+          "index": 3,
+          "text": "Project planning",
+          "sourceHash": "2e91660fbb60",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pk0-005:2:4",
+          "unitId": "pk0-005:2",
+          "index": 4,
+          "text": "Project execution",
+          "sourceHash": "f11db879b3bb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pk0-005:2:5",
+          "unitId": "pk0-005:2",
+          "index": 5,
+          "text": "Project closing",
+          "sourceHash": "1812f96b388e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "pk0-005:3",
+      "index": 3,
+      "title": "Tools and Documentation",
+      "weight": 19,
+      "gate": "Given a project status to communicate, pick the specific tool or chart that fits -- a quality chart, a productivity tool -- rather than defaulting to a status email.",
+      "objectives": [
+        {
+          "id": "pk0-005:3:1",
+          "unitId": "pk0-005:3",
+          "index": 1,
+          "text": "Common project management tools",
+          "sourceHash": "0cfce3dfe7c9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pk0-005:3:2",
+          "unitId": "pk0-005:3",
+          "index": 2,
+          "text": "Productivity tools",
+          "sourceHash": "457a5df95f00",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pk0-005:3:3",
+          "unitId": "pk0-005:3",
+          "index": 3,
+          "text": "Quality and performance charts",
+          "sourceHash": "f3452eb9d7a7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "pk0-005:4",
+      "index": 4,
+      "title": "Basics of IT Governance",
+      "weight": 18,
+      "gate": "Given an IT project with compliance or ESG implications, apply the specific governance concept -- information security, privacy compliance, or IT-specific change control -- that applies.",
+      "objectives": [
+        {
+          "id": "pk0-005:4:1",
+          "unitId": "pk0-005:4",
+          "index": 1,
+          "text": "Environmental, social, and governance (ESG) considerations",
+          "sourceHash": "89d9d8a0ef1f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pk0-005:4:2",
+          "unitId": "pk0-005:4",
+          "index": 2,
+          "text": "Information security basics for project managers",
+          "sourceHash": "d4bf9b99c233",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pk0-005:4:3",
+          "unitId": "pk0-005:4",
+          "index": 3,
+          "text": "Compliance and privacy requirements",
+          "sourceHash": "be89490bc2a6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pk0-005:4:4",
+          "unitId": "pk0-005:4",
+          "index": 4,
+          "text": "IT concepts relevant to project management",
+          "sourceHash": "ed420a461ee7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pk0-005:4:5",
+          "unitId": "pk0-005:4",
+          "index": 5,
+          "text": "Change control specific to IT and software projects",
+          "sourceHash": "926b285dd945",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/comptia.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-24T00:00:00Z",
+    "officialObjectivesUrl": "https://www.comptia.org/en-us/certifications/project/",
+    "providerName": "CompTIA",
+    "credentialName": "CompTIA Project+",
+    "examCode": "PK0-005",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 4,
+    "objectives": 24,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

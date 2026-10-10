@@ -4,6 +4,7 @@
   "title": "AWS Security Specialty",
   "description": "AWS Certified Security - Specialty (SCS-C03): securing AWS at depth -- detection and logging pipelines, incident response and forensics, infrastructure and network controls, identity and authorization at scale, data protection and key management, and multi-account governance.",
   "trackType": "certification",
+  "field": "aws",
   "units": [
     {
       "id": "scs-c03:1",

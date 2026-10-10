@@ -4,6 +4,7 @@
   "title": "AWS Developer Associate",
   "description": "AWS Certified Developer - Associate (DVA-C02): writing, securing, deploying, and debugging applications on AWS -- Lambda and event-driven code, DynamoDB access patterns, encryption and secrets, CI/CD deployment strategies, and observability when it breaks.",
   "trackType": "certification",
+  "field": "aws",
   "units": [
     {
       "id": "dva-c02:1",

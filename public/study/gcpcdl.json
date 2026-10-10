@@ -1,0 +1,731 @@
+{
+  "id": "gcpcdl",
+  "code": "GCPCDL",
+  "title": "Google Cloud Digital Leader",
+  "description": "Google Cloud Digital Leader: a working, non-technical fluency in Google Cloud -- digital and data transformation, AI, modern infrastructure, trust and security, and how organizations actually run and pay for cloud operations.",
+  "trackType": "certification",
+  "field": "gcp",
+  "units": [
+    {
+      "id": "gcpcdl:1",
+      "index": 1,
+      "title": "Digital Transformation with Google Cloud",
+      "weight": 18,
+      "gate": "Given a claimed cloud benefit, say specifically what changed for the business -- not a repeated buzzword -- and name the Google Cloud differentiator that actually applies, if any.",
+      "objectives": [
+        {
+          "id": "gcpcdl:1:1",
+          "unitId": "gcpcdl:1",
+          "index": 1,
+          "text": "\"Cloud,\" \"agentic AI,\" \"infrastructure,\" \"digital transformation,\" \"open source,\" and \"open standard\" as distinct terms, not interchangeable buzzwords",
+          "sourceHash": "77e52a1a0484",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpcdl:1:2",
+          "unitId": "gcpcdl:1",
+          "index": 2,
+          "text": "Business benefits cloud technology delivers during a digital transformation: scalability, cost-effectiveness, agility, speed, flexibility, security, global reach, high availability, data-driven insight, and strategic focus",
+          "sourceHash": "f79c7dc12ddd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpcdl:1:3",
+          "unitId": "gcpcdl:1",
+          "index": 3,
+          "text": "What drives organizations toward digital transformation, and the common hurdles that slow it down",
+          "sourceHash": "50481af6052d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpcdl:1:4",
+          "unitId": "gcpcdl:1",
+          "index": 4,
+          "text": "The risk and cost of staying on-premises rather than adopting cloud",
+          "sourceHash": "00af029b9a7a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpcdl:1:5",
+          "unitId": "gcpcdl:1",
+          "index": 5,
+          "text": "Google Cloud's stated differentiators: AI leadership, openness and interoperability, AI Hypercomputer, an AI-ready data platform, security, and its global network",
+          "sourceHash": "5eb93d436655",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpcdl:1:6",
+          "unitId": "gcpcdl:1",
+          "index": 6,
+          "text": "Business use cases and benefits distinguishing private cloud, hybrid cloud, and multicloud architectures",
+          "sourceHash": "8a7d54c06ae1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpcdl:1:7",
+          "unitId": "gcpcdl:1",
+          "index": 7,
+          "text": "Core networking vocabulary: IP address, DNS, latency, bandwidth",
+          "sourceHash": "a79c05be0f75",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpcdl:1:8",
+          "unitId": "gcpcdl:1",
+          "index": 8,
+          "text": "How Google Cloud's global network -- regions, zones, and edge locations -- supports a digital transformation, and how the three relate",
+          "sourceHash": "d27aae7e8bdc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpcdl:1:9",
+          "unitId": "gcpcdl:1",
+          "index": 9,
+          "text": "Benefits and tradeoffs across IaaS, PaaS, and SaaS",
+          "sourceHash": "77484afb48eb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "gcpcdl:2",
+      "index": 2,
+      "title": "Exploring Data Transformation with Google Cloud",
+      "weight": 18,
+      "gate": "Given a business need, name the Google Cloud data product that actually fits it -- not just any product that could technically hold the data.",
+      "objectives": [
+        {
+          "id": "gcpcdl:2:1",
+          "unitId": "gcpcdl:2",
+          "index": 1,
+          "text": "Why data has business value: real-time insight, trend detection, informing strategy, fueling AI",
+          "sourceHash": "a8d28e0402ca",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpcdl:2:2",
+          "unitId": "gcpcdl:2",
+          "index": 2,
+          "text": "Databases versus data warehouses versus data lakes, and what each is for",
+          "sourceHash": "e35d6b925194",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpcdl:2:3",
+          "unitId": "gcpcdl:2",
+          "index": 3,
+          "text": "Types of data: first-party, second-party, third-party; structured, unstructured, semi-structured",
+          "sourceHash": "739b5623d265",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpcdl:2:4",
+          "unitId": "gcpcdl:2",
+          "index": 4,
+          "text": "An organization's data supply chain: genesis, collection, processing, storage, analysis, activation",
+          "sourceHash": "4280f8fb7474",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpcdl:2:5",
+          "unitId": "gcpcdl:2",
+          "index": 5,
+          "text": "Data governance, and why it matters beyond compliance",
+          "sourceHash": "842a53da4a4f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpcdl:2:6",
+          "unitId": "gcpcdl:2",
+          "index": 6,
+          "text": "Why openness and interoperability in a data platform matter for avoiding silos and vendor lock-in",
+          "sourceHash": "66fb445a367f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpcdl:2:7",
+          "unitId": "gcpcdl:2",
+          "index": 7,
+          "text": "Matching a business use case to the right Google Cloud data product: Cloud Storage, Spanner, Cloud SQL, AlloyDB, Bigtable, BigQuery, Firestore",
+          "sourceHash": "f4acf4a6e42c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpcdl:2:8",
+          "unitId": "gcpcdl:2",
+          "index": 8,
+          "text": "Core data-management vocabulary: relational versus non-relational, object storage, SQL versus NoSQL",
+          "sourceHash": "8381db382e5c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpcdl:2:9",
+          "unitId": "gcpcdl:2",
+          "index": 9,
+          "text": "Cloud Storage classes by cost and access frequency: Standard, Nearline, Coldline, Archive, Autoclass",
+          "sourceHash": "7b06578b4895",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpcdl:2:10",
+          "unitId": "gcpcdl:2",
+          "index": 10,
+          "text": "Ways an organization can migrate or modernize an existing database into the cloud",
+          "sourceHash": "83a1a248072a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpcdl:2:11",
+          "unitId": "gcpcdl:2",
+          "index": 11,
+          "text": "How Looker and BigQuery together turn stored data into real-time reports, dashboards, and embedded insight",
+          "sourceHash": "6a12a033d594",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpcdl:2:12",
+          "unitId": "gcpcdl:2",
+          "index": 12,
+          "text": "Why real-time streaming analytics matters for a modern business",
+          "sourceHash": "a741040d87ed",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpcdl:2:13",
+          "unitId": "gcpcdl:2",
+          "index": 13,
+          "text": "Google Cloud products that modernize a data pipeline: Pub/Sub, Dataflow, and Managed Service for Apache Spark",
+          "sourceHash": "cc51dd6f4824",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "gcpcdl:3",
+      "index": 3,
+      "title": "Innovating with Google Cloud Artificial Intelligence",
+      "weight": 18,
+      "gate": "Given a business AI use case, name the Google Cloud product or concept that actually applies -- and say why data quality matters as much as model choice.",
+      "objectives": [
+        {
+          "id": "gcpcdl:3:1",
+          "unitId": "gcpcdl:3",
+          "index": 1,
+          "text": "AI, ML, generative AI, data analytics, and business intelligence as distinct, related terms",
+          "sourceHash": "96b077ef904e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpcdl:3:2",
+          "unitId": "gcpcdl:3",
+          "index": 2,
+          "text": "How agentic AI is reshaping specific functions: workforce productivity, customer support, sales, product innovation, operations, research",
+          "sourceHash": "e783bc863686",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpcdl:3:3",
+          "unitId": "gcpcdl:3",
+          "index": 3,
+          "text": "Google Cloud's stated AI advantages: infrastructure built for AI, an AI-ready data cloud, first-party models, an all-in-one developer platform, pre-built agents and applications",
+          "sourceHash": "36e0a48d1bc5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpcdl:3:4",
+          "unitId": "gcpcdl:3",
+          "index": 4,
+          "text": "Business problems ML actually solves: replacing rule-based systems, deriving insight from large structured or unstructured datasets, scaling decisions",
+          "sourceHash": "10bef9c79d46",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpcdl:3:5",
+          "unitId": "gcpcdl:3",
+          "index": 5,
+          "text": "Why high-quality, accurate data is a prerequisite for a working AI model, and the dimensions that make data \"high quality\": completeness, uniqueness, timeliness, validity, accuracy, consistency",
+          "sourceHash": "362c97cffaab",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpcdl:3:6",
+          "unitId": "gcpcdl:3",
+          "index": 6,
+          "text": "The business case for explainable and responsible AI",
+          "sourceHash": "da487f748478",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpcdl:3:7",
+          "unitId": "gcpcdl:3",
+          "index": 7,
+          "text": "Strategic considerations when choosing a Google Cloud AI approach: implementation speed, development effort, differentiation potential, required technical expertise, flexibility",
+          "sourceHash": "622e40dc5c51",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpcdl:3:8",
+          "unitId": "gcpcdl:3",
+          "index": 8,
+          "text": "What the Gemini Enterprise Agent Platform does and where it fits a business use case",
+          "sourceHash": "467b65a700b8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpcdl:3:9",
+          "unitId": "gcpcdl:3",
+          "index": 9,
+          "text": "Matching a Google Cloud pre-trained API or model to a use case, including Vision, Translation, and Speech-to-Text APIs, and Gemini itself",
+          "sourceHash": "5fb6a0cb72e6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpcdl:3:10",
+          "unitId": "gcpcdl:3",
+          "index": 10,
+          "text": "Building a custom model on an organization's own data with Agent Studio or AutoML on the Agent Platform",
+          "sourceHash": "627317532c2e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpcdl:3:11",
+          "unitId": "gcpcdl:3",
+          "index": 11,
+          "text": "AI Hypercomputer's core components -- GPUs, TPUs, open software and standards, flexible consumption -- and the performance/efficiency case for it",
+          "sourceHash": "bced9cdcafae",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpcdl:3:12",
+          "unitId": "gcpcdl:3",
+          "index": 12,
+          "text": "Running machine learning directly inside BigQuery with standard SQL, using BigQuery ML",
+          "sourceHash": "c5e07b011d1e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "gcpcdl:4",
+      "index": 4,
+      "title": "Modernize Infrastructure and Applications with Google Cloud",
+      "weight": 18,
+      "gate": "Given a workload, name the Google Cloud compute or migration approach that fits it -- and say why the near-miss alternative doesn't.",
+      "objectives": [
+        {
+          "id": "gcpcdl:4:1",
+          "unitId": "gcpcdl:4",
+          "index": 1,
+          "text": "Cloud migration vocabulary: workload, discovery and assessment, retire, retain, rehost, replatform, refactor, reimagine",
+          "sourceHash": "3ed363efc3ef",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpcdl:4:2",
+          "unitId": "gcpcdl:4",
+          "index": 2,
+          "text": "Core compute vocabulary: virtual machines, containers and containerization, microservices, serverless computing, Spot VMs, Kubernetes, autoscaling, load balancing, managed services",
+          "sourceHash": "1ac95ad6d3e6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpcdl:4:3",
+          "unitId": "gcpcdl:4",
+          "index": 3,
+          "text": "The business case for running virtual machines on Compute Engine",
+          "sourceHash": "a938c01847d0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpcdl:4:4",
+          "unitId": "gcpcdl:4",
+          "index": 4,
+          "text": "What makes modern application development valuable: flexible architectures, faster managed-service deployment, cost optimization, scalability, resilience, operational efficiency",
+          "sourceHash": "8db0b6e395e5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpcdl:4:5",
+          "unitId": "gcpcdl:4",
+          "index": 5,
+          "text": "The business case for deploying and managing containers with Google Kubernetes Engine",
+          "sourceHash": "de830dcfafb3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpcdl:4:6",
+          "unitId": "gcpcdl:4",
+          "index": 6,
+          "text": "The business case for serverless compute on Cloud Run and Cloud Run functions",
+          "sourceHash": "7aa6a4b68c79",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpcdl:4:7",
+          "unitId": "gcpcdl:4",
+          "index": 7,
+          "text": "Google Cloud products built for multicloud and hybrid environments: AlloyDB Omni, BigQuery Omni, GKE Enterprise, Cloud SQL, Looker",
+          "sourceHash": "3b6718e0fc52",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpcdl:4:8",
+          "unitId": "gcpcdl:4",
+          "index": 8,
+          "text": "What an API is, and the business case for exposing or monetizing public-facing APIs",
+          "sourceHash": "94e9e792fa06",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpcdl:4:9",
+          "unitId": "gcpcdl:4",
+          "index": 9,
+          "text": "The business case for managing APIs with Apigee",
+          "sourceHash": "c266f795eec7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "gcpcdl:5",
+      "index": 5,
+      "title": "Trust and Security with Google Cloud",
+      "weight": 18,
+      "gate": "Given a described threat or control, say which part of cloud security it belongs to, and whether that's Google's job or the customer's.",
+      "objectives": [
+        {
+          "id": "gcpcdl:5:1",
+          "unitId": "gcpcdl:5",
+          "index": 1,
+          "text": "Common cybersecurity threats and their business impact: DDoS, ransomware, cryptomining, malware, phishing, misconfiguration, unsecured third-party systems, physical damage, LLM attacks",
+          "sourceHash": "b9217ea0d391",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpcdl:5:2",
+          "unitId": "gcpcdl:5",
+          "index": 2,
+          "text": "How cloud security differs from on-premises security",
+          "sourceHash": "9b2008e46e10",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpcdl:5:3",
+          "unitId": "gcpcdl:5",
+          "index": 3,
+          "text": "Why control, compliance, confidentiality, integrity, and availability all matter to a cloud security model",
+          "sourceHash": "a95d2773d194",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpcdl:5:4",
+          "unitId": "gcpcdl:5",
+          "index": 4,
+          "text": "Core security vocabulary: data loss prevention, privileged access, least privilege, zero-trust architecture, security by default, security posture, cyber resilience, firewall, encryption, decryption",
+          "sourceHash": "59828eeae8bc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpcdl:5:5",
+          "unitId": "gcpcdl:5",
+          "index": 5,
+          "text": "How encryption protects data in each usage state: in use, in transit, at rest",
+          "sourceHash": "e3f5f4bc4e0e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpcdl:5:6",
+          "unitId": "gcpcdl:5",
+          "index": 6,
+          "text": "Authentication versus authorization versus auditing, including MFA/2SV and IAM",
+          "sourceHash": "cbebf9af782c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpcdl:5:7",
+          "unitId": "gcpcdl:5",
+          "index": 7,
+          "text": "Core SecOps vocabulary: security posture, threat intelligence, threat response",
+          "sourceHash": "c3594cf0bff4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpcdl:5:8",
+          "unitId": "gcpcdl:5",
+          "index": 8,
+          "text": "How Google secures every layer of its AI stack: infrastructure, data, models, platform, agents",
+          "sourceHash": "461cd94b35fb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpcdl:5:9",
+          "unitId": "gcpcdl:5",
+          "index": 9,
+          "text": "What Google Threat Intelligence draws on: Google's own global visibility, Mandiant's incident-response expertise, VirusTotal's crowdsourced threat detection",
+          "sourceHash": "edd58900406b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpcdl:5:10",
+          "unitId": "gcpcdl:5",
+          "index": 10,
+          "text": "What \"secure by design\" means for Google's own infrastructure: proprietary data centers, purpose-built hardware, custom security hardware and software",
+          "sourceHash": "23094a23b8a8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpcdl:5:11",
+          "unitId": "gcpcdl:5",
+          "index": 11,
+          "text": "Google's AI-focused security offerings: Gemini in Google Security Operations, AI Protection, Model Armor",
+          "sourceHash": "9b17f952cf92",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpcdl:5:12",
+          "unitId": "gcpcdl:5",
+          "index": 12,
+          "text": "Google's other security offerings and what each is for: Cloud VPC, Cloud VPN, Cloud Interconnect, firewalls, Cloud Armor, Cloud Logging, IAM, Sensitive Data Protection, Confidential Computing, Certificate Manager, Identity-Aware Proxy",
+          "sourceHash": "5dc30e909f79",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpcdl:5:13",
+          "unitId": "gcpcdl:5",
+          "index": 13,
+          "text": "How Google earns and maintains customer trust: transparency reports, third-party audits, digital sovereignty, data residency, compliance resource manager",
+          "sourceHash": "86a15889d445",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "gcpcdl:6",
+      "index": 6,
+      "title": "Scaling with Google Cloud Operations",
+      "weight": 10,
+      "gate": "Given a cost or reliability problem, name the Google Cloud practice or tool that addresses it specifically.",
+      "objectives": [
+        {
+          "id": "gcpcdl:6:1",
+          "unitId": "gcpcdl:6",
+          "index": 1,
+          "text": "How moving from on-premises to cloud shifts CapEx to OpEx, and what that does to total cost of ownership",
+          "sourceHash": "dd4efabdb57a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpcdl:6:2",
+          "unitId": "gcpcdl:6",
+          "index": 2,
+          "text": "Google-recommended practices for cloud financial governance, including who owns cost management",
+          "sourceHash": "df6ce5cbced2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpcdl:6:3",
+          "unitId": "gcpcdl:6",
+          "index": 3,
+          "text": "The role people, process, and technology each play in controlling cloud cost",
+          "sourceHash": "f6da7b918a51",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpcdl:6:4",
+          "unitId": "gcpcdl:6",
+          "index": 4,
+          "text": "Google Cloud's resource hierarchy -- resources, projects, folders, organization node -- and what it buys: access control, inheritance, security/compliance, visibility",
+          "sourceHash": "d5177cade9f8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpcdl:6:5",
+          "unitId": "gcpcdl:6",
+          "index": 5,
+          "text": "Controlling cloud consumption: resource quota policies, budget threshold rules, Cloud Billing reports, Dynamic Workload Scheduler, Spot VMs",
+          "sourceHash": "fd5c1e334c57",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpcdl:6:6",
+          "unitId": "gcpcdl:6",
+          "index": 6,
+          "text": "Core operations vocabulary: operational excellence, reliability, high availability",
+          "sourceHash": "78461133347d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpcdl:6:7",
+          "unitId": "gcpcdl:6",
+          "index": 7,
+          "text": "Designing for resilience: redundancy, replication, scalable infrastructure, backups",
+          "sourceHash": "7734b1b58dd7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpcdl:6:8",
+          "unitId": "gcpcdl:6",
+          "index": 8,
+          "text": "The four signals used to measure system performance and reliability: latency, traffic, saturation, errors",
+          "sourceHash": "ab0e6045e05d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpcdl:6:9",
+          "unitId": "gcpcdl:6",
+          "index": 9,
+          "text": "Core DevOps/SRE vocabulary: service level indicators, service level objectives, service level agreements",
+          "sourceHash": "dcc5620b40c0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/gcp.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-23T00:00:00Z",
+    "officialObjectivesUrl": "https://cloud.google.com/learn/certification/guides/cloud-digital-leader",
+    "providerName": "Google Cloud",
+    "credentialName": "Google Cloud Digital Leader",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 6,
+    "objectives": 65,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

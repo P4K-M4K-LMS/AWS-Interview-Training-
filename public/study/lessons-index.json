@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "courses": {
+    "aif-c01": {
+      "generated": 0,
+      "imported": 3,
+      "scenarios": 0
+    },
+    "cmpcbs": {
+      "generated": 0,
+      "imported": 3,
+      "scenarios": 0
+    },
+    "linuxplus": {
+      "generated": 0,
+      "imported": 2,
+      "scenarios": 0
+    },
+    "mscs": {
+      "generated": 0,
+      "imported": 2,
+      "scenarios": 0
+    },
+    "pentestplus": {
+      "generated": 0,
+      "imported": 1,
+      "scenarios": 0
+    },
+    "saa-c03": {
+      "generated": 99,
+      "imported": 2,
+      "scenarios": 4
+    },
+    "secplus": {
+      "generated": 0,
+      "imported": 2,
+      "scenarios": 0
+    }
+  }
+}

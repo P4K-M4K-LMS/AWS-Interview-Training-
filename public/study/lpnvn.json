@@ -1,0 +1,1062 @@
+{
+  "id": "lpnvn",
+  "code": "LPNVN",
+  "title": "Practical Nursing (LPN/LVN)",
+  "description": "The practical nursing program from the beginning: foundations, the skills you are licensed to perform, the medical-surgical body of knowledge, and the scope question that sits under all of it -- what the PN does, and what the PN reports.",
+  "trackType": "certification",
+  "field": "nursing",
+  "requiresAcknowledgement": true,
+  "units": [
+    {
+      "id": "lpnvn:1",
+      "index": 1,
+      "title": "Foundations of practical nursing",
+      "weight": 16,
+      "gate": "Say what the practical nurse licence authorises, and route a situation correctly when it sits outside that line.",
+      "objectives": [
+        {
+          "id": "lpnvn:1:1",
+          "unitId": "lpnvn:1",
+          "index": 1,
+          "text": "The practical nurse role within the healthcare team",
+          "sourceHash": "c43ef6c1a11e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:1:2",
+          "unitId": "lpnvn:1",
+          "index": 2,
+          "text": "Scope of practice, and why it is set by your state's nurse practice act",
+          "sourceHash": "49121d00f4e2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:1:3",
+          "unitId": "lpnvn:1",
+          "index": 3,
+          "text": "Data collection versus assessment, and why the distinction is legal, not semantic",
+          "sourceHash": "2e0dc5f9ff6b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:1:4",
+          "unitId": "lpnvn:1",
+          "index": 4,
+          "text": "Working under the direction of an RN or provider",
+          "sourceHash": "063ea4a7ea73",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:1:5",
+          "unitId": "lpnvn:1",
+          "index": 5,
+          "text": "Accepting, refusing and clarifying an assignment",
+          "sourceHash": "29a2c25eccd2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:1:6",
+          "unitId": "lpnvn:1",
+          "index": 6,
+          "text": "The nursing process and the PN's contribution to each stage",
+          "sourceHash": "8a1e4974f369",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:1:7",
+          "unitId": "lpnvn:1",
+          "index": 7,
+          "text": "Documentation standards and legal record-keeping",
+          "sourceHash": "5caa2ae8eb7e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:1:8",
+          "unitId": "lpnvn:1",
+          "index": 8,
+          "text": "Confidentiality and privacy obligations",
+          "sourceHash": "5e21b6177113",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:1:9",
+          "unitId": "lpnvn:1",
+          "index": 9,
+          "text": "Professional boundaries with residents, patients and families",
+          "sourceHash": "55c89243b7de",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:1:10",
+          "unitId": "lpnvn:1",
+          "index": 10,
+          "text": "Ethical principles applied to everyday practice",
+          "sourceHash": "62a88672dffe",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:1:11",
+          "unitId": "lpnvn:1",
+          "index": 11,
+          "text": "Delegation to unlicensed assistive personnel",
+          "sourceHash": "3b898beab55c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:1:12",
+          "unitId": "lpnvn:1",
+          "index": 12,
+          "text": "Communication with the interdisciplinary team",
+          "sourceHash": "973a66300811",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:1:13",
+          "unitId": "lpnvn:1",
+          "index": 13,
+          "text": "Therapeutic communication with patients and families",
+          "sourceHash": "fcea6a8a9453",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:1:14",
+          "unitId": "lpnvn:1",
+          "index": 14,
+          "text": "Cultural humility in care delivery",
+          "sourceHash": "03f19f67b59e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "lpnvn:2",
+      "index": 2,
+      "title": "Anatomy, physiology and basic pathophysiology",
+      "weight": 18,
+      "gate": "Connect a body system's normal function to the findings that appear when it fails.",
+      "objectives": [
+        {
+          "id": "lpnvn:2:1",
+          "unitId": "lpnvn:2",
+          "index": 1,
+          "text": "Cell structure, tissue types and homeostasis",
+          "sourceHash": "049b1faa9a1c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:2:2",
+          "unitId": "lpnvn:2",
+          "index": 2,
+          "text": "Integumentary system: structure, function and common alterations",
+          "sourceHash": "0e5b66a82ed7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:2:3",
+          "unitId": "lpnvn:2",
+          "index": 3,
+          "text": "Musculoskeletal system and common injuries and conditions",
+          "sourceHash": "3ff53bb01c31",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:2:4",
+          "unitId": "lpnvn:2",
+          "index": 4,
+          "text": "Cardiovascular system: circulation, perfusion and common disease",
+          "sourceHash": "a98dceb85c6c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:2:5",
+          "unitId": "lpnvn:2",
+          "index": 5,
+          "text": "Respiratory system: ventilation, oxygenation and common disease",
+          "sourceHash": "4ffe9395d1f7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:2:6",
+          "unitId": "lpnvn:2",
+          "index": 6,
+          "text": "Gastrointestinal system: digestion, absorption and elimination",
+          "sourceHash": "914eb32ce96f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:2:7",
+          "unitId": "lpnvn:2",
+          "index": 7,
+          "text": "Renal and urinary systems, and fluid balance",
+          "sourceHash": "091ff38727d1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:2:8",
+          "unitId": "lpnvn:2",
+          "index": 8,
+          "text": "Endocrine system and the conditions that follow its disruption",
+          "sourceHash": "fbbf452c4532",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:2:9",
+          "unitId": "lpnvn:2",
+          "index": 9,
+          "text": "Nervous system: central, peripheral and autonomic",
+          "sourceHash": "d470f374c027",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:2:10",
+          "unitId": "lpnvn:2",
+          "index": 10,
+          "text": "Immune system, inflammation and the response to infection",
+          "sourceHash": "d25e3152b5d5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:2:11",
+          "unitId": "lpnvn:2",
+          "index": 11,
+          "text": "Reproductive systems across the lifespan",
+          "sourceHash": "03df5dd691a3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:2:12",
+          "unitId": "lpnvn:2",
+          "index": 12,
+          "text": "Fluid, electrolyte and acid-base balance in plain terms",
+          "sourceHash": "43966c87caed",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:2:13",
+          "unitId": "lpnvn:2",
+          "index": 13,
+          "text": "How an acute illness differs from an exacerbation of a chronic one",
+          "sourceHash": "0af006af7244",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:2:14",
+          "unitId": "lpnvn:2",
+          "index": 14,
+          "text": "Medical terminology: roots, prefixes and suffixes",
+          "sourceHash": "e0e1789627d9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "lpnvn:3",
+      "index": 3,
+      "title": "Fundamental nursing skills",
+      "weight": 20,
+      "gate": "Perform the core skills safely, in order, and know the observation each one is meant to produce.",
+      "objectives": [
+        {
+          "id": "lpnvn:3:1",
+          "unitId": "lpnvn:3",
+          "index": 1,
+          "text": "Hand hygiene, standard precautions and isolation technique",
+          "sourceHash": "d80a58dadb7b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:3:2",
+          "unitId": "lpnvn:3",
+          "index": 2,
+          "text": "Sterile technique and maintaining a sterile field",
+          "sourceHash": "89671863ce54",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:3:3",
+          "unitId": "lpnvn:3",
+          "index": 3,
+          "text": "Vital signs: taking them, and interpreting a change",
+          "sourceHash": "8e0bea0c4c34",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:3:4",
+          "unitId": "lpnvn:3",
+          "index": 4,
+          "text": "Height, weight and intake and output measurement",
+          "sourceHash": "9c6e5a5beb13",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:3:5",
+          "unitId": "lpnvn:3",
+          "index": 5,
+          "text": "Head-to-toe data collection",
+          "sourceHash": "ae1cbe9da44d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:3:6",
+          "unitId": "lpnvn:3",
+          "index": 6,
+          "text": "Positioning, transferring and safe patient handling",
+          "sourceHash": "e2df2634bb26",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:3:7",
+          "unitId": "lpnvn:3",
+          "index": 7,
+          "text": "Range of motion and mobility assistance",
+          "sourceHash": "6a6d07f66df0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:3:8",
+          "unitId": "lpnvn:3",
+          "index": 8,
+          "text": "Personal hygiene and skin care",
+          "sourceHash": "d3bf28b02d36",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:3:9",
+          "unitId": "lpnvn:3",
+          "index": 9,
+          "text": "Pressure injury prevention and staging awareness",
+          "sourceHash": "a47af8e49be8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:3:10",
+          "unitId": "lpnvn:3",
+          "index": 10,
+          "text": "Wound care and dressing changes",
+          "sourceHash": "340406c02651",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:3:11",
+          "unitId": "lpnvn:3",
+          "index": 11,
+          "text": "Specimen collection: urine, stool, sputum and blood",
+          "sourceHash": "27f8dd430bf8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:3:12",
+          "unitId": "lpnvn:3",
+          "index": 12,
+          "text": "Urinary catheter insertion and care",
+          "sourceHash": "d1d85b7dbb8c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:3:13",
+          "unitId": "lpnvn:3",
+          "index": 13,
+          "text": "Enteral feeding and tube care",
+          "sourceHash": "940c0fed079f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:3:14",
+          "unitId": "lpnvn:3",
+          "index": 14,
+          "text": "Ostomy care",
+          "sourceHash": "a527d0541f19",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:3:15",
+          "unitId": "lpnvn:3",
+          "index": 15,
+          "text": "Oxygen delivery devices and airway care",
+          "sourceHash": "746b4be3ea87",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:3:16",
+          "unitId": "lpnvn:3",
+          "index": 16,
+          "text": "Suctioning technique",
+          "sourceHash": "9f6219f881d7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:3:17",
+          "unitId": "lpnvn:3",
+          "index": 17,
+          "text": "Intravenous site monitoring and maintenance within scope",
+          "sourceHash": "c7dacd973603",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:3:18",
+          "unitId": "lpnvn:3",
+          "index": 18,
+          "text": "Nutrition, diet types and assisting with meals",
+          "sourceHash": "fef6d2e032f8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:3:19",
+          "unitId": "lpnvn:3",
+          "index": 19,
+          "text": "Pain data collection and nonpharmacological comfort measures",
+          "sourceHash": "e41fd3af5840",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:3:20",
+          "unitId": "lpnvn:3",
+          "index": 20,
+          "text": "End-of-life and postmortem care",
+          "sourceHash": "a1bc5ec8a713",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "lpnvn:4",
+      "index": 4,
+      "title": "Pharmacology and medication administration",
+      "weight": 18,
+      "gate": "Give a medication safely: right checks, right calculation, right route, and a clear reason to stop if anything does not line up.",
+      "objectives": [
+        {
+          "id": "lpnvn:4:1",
+          "unitId": "lpnvn:4",
+          "index": 1,
+          "text": "Drug classifications and how a class predicts an effect",
+          "sourceHash": "3fc9720a60f3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:4:2",
+          "unitId": "lpnvn:4",
+          "index": 2,
+          "text": "Generic and trade names, and why the generic is safer to learn",
+          "sourceHash": "2ef99fc1438c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:4:3",
+          "unitId": "lpnvn:4",
+          "index": 3,
+          "text": "Pharmacokinetics in practical terms: absorption to excretion",
+          "sourceHash": "52feb0b4db7b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:4:4",
+          "unitId": "lpnvn:4",
+          "index": 4,
+          "text": "The rights of medication administration",
+          "sourceHash": "7dd22233315c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:4:5",
+          "unitId": "lpnvn:4",
+          "index": 5,
+          "text": "Dosage calculation and unit conversion",
+          "sourceHash": "b5e2f6366b75",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:4:6",
+          "unitId": "lpnvn:4",
+          "index": 6,
+          "text": "Calculating pediatric and weight-based doses",
+          "sourceHash": "f44213a40fb7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:4:7",
+          "unitId": "lpnvn:4",
+          "index": 7,
+          "text": "Oral, topical and transdermal administration",
+          "sourceHash": "2957f9f268fb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:4:8",
+          "unitId": "lpnvn:4",
+          "index": 8,
+          "text": "Intramuscular, subcutaneous and intradermal injection technique",
+          "sourceHash": "4131f035bec7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:4:9",
+          "unitId": "lpnvn:4",
+          "index": 9,
+          "text": "Site selection and rotation",
+          "sourceHash": "ddbdba3baa5e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:4:10",
+          "unitId": "lpnvn:4",
+          "index": 10,
+          "text": "Insulin administration and sliding scale orders",
+          "sourceHash": "6fe74c4c1d50",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:4:11",
+          "unitId": "lpnvn:4",
+          "index": 11,
+          "text": "Routes outside the PN scope in most jurisdictions",
+          "sourceHash": "24342d307c50",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:4:12",
+          "unitId": "lpnvn:4",
+          "index": 12,
+          "text": "Controlled substances: handling, counting and documentation",
+          "sourceHash": "082b70982694",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:4:13",
+          "unitId": "lpnvn:4",
+          "index": 13,
+          "text": "Recognising side effects and adverse reactions",
+          "sourceHash": "46f18ae2a2dc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:4:14",
+          "unitId": "lpnvn:4",
+          "index": 14,
+          "text": "Allergic and anaphylactic reactions",
+          "sourceHash": "cd3004cf2060",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:4:15",
+          "unitId": "lpnvn:4",
+          "index": 15,
+          "text": "Drug interactions, including food and herbal products",
+          "sourceHash": "5dffbc0bbce3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:4:16",
+          "unitId": "lpnvn:4",
+          "index": 16,
+          "text": "High-alert medications and the extra checks they need",
+          "sourceHash": "8d677766ced5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:4:17",
+          "unitId": "lpnvn:4",
+          "index": 17,
+          "text": "Medication reconciliation and reinforcing medication teaching",
+          "sourceHash": "ba8e34a18b9b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:4:18",
+          "unitId": "lpnvn:4",
+          "index": 18,
+          "text": "Documenting administration and refusal",
+          "sourceHash": "bc1d4ba5e29c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "lpnvn:5",
+      "index": 5,
+      "title": "Medical-surgical nursing across the lifespan",
+      "weight": 18,
+      "gate": "Care for an adult with a common chronic or acute condition, and notice the complication before it announces itself.",
+      "objectives": [
+        {
+          "id": "lpnvn:5:1",
+          "unitId": "lpnvn:5",
+          "index": 1,
+          "text": "Caring for the patient with hypertension and heart failure",
+          "sourceHash": "360d845c85fe",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:5:2",
+          "unitId": "lpnvn:5",
+          "index": 2,
+          "text": "Angina, myocardial infarction and post-event care",
+          "sourceHash": "ec298321f28e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:5:3",
+          "unitId": "lpnvn:5",
+          "index": 3,
+          "text": "Peripheral vascular disease and venous insufficiency",
+          "sourceHash": "07dce7721af9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:5:4",
+          "unitId": "lpnvn:5",
+          "index": 4,
+          "text": "COPD and asthma management",
+          "sourceHash": "9cb882a5be6e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:5:5",
+          "unitId": "lpnvn:5",
+          "index": 5,
+          "text": "Pneumonia, influenza and tuberculosis precautions",
+          "sourceHash": "a25fc4f36677",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:5:6",
+          "unitId": "lpnvn:5",
+          "index": 6,
+          "text": "Diabetes mellitus: monitoring, hypo- and hyperglycemia",
+          "sourceHash": "8664a3b057e6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:5:7",
+          "unitId": "lpnvn:5",
+          "index": 7,
+          "text": "Diabetic foot care and long-term complications",
+          "sourceHash": "33408ab8703e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:5:8",
+          "unitId": "lpnvn:5",
+          "index": 8,
+          "text": "Thyroid disorders",
+          "sourceHash": "76dcbfd17742",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:5:9",
+          "unitId": "lpnvn:5",
+          "index": 9,
+          "text": "Stroke care and rehabilitation support",
+          "sourceHash": "dd0246a8c8ae",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:5:10",
+          "unitId": "lpnvn:5",
+          "index": 10,
+          "text": "Seizure care and precautions",
+          "sourceHash": "392a4149eaa1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:5:11",
+          "unitId": "lpnvn:5",
+          "index": 11,
+          "text": "Dementia and delirium distinguished",
+          "sourceHash": "88de7a416c32",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:5:12",
+          "unitId": "lpnvn:5",
+          "index": 12,
+          "text": "Arthritis, osteoporosis and fracture care",
+          "sourceHash": "0870d58cd421",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:5:13",
+          "unitId": "lpnvn:5",
+          "index": 13,
+          "text": "Post-surgical care and complication watch",
+          "sourceHash": "7c732b1c7dee",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:5:14",
+          "unitId": "lpnvn:5",
+          "index": 14,
+          "text": "Cancer care, chemotherapy and radiation side effects",
+          "sourceHash": "9623c65b02f0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:5:15",
+          "unitId": "lpnvn:5",
+          "index": 15,
+          "text": "Renal failure and dialysis support",
+          "sourceHash": "364b45eeff74",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:5:16",
+          "unitId": "lpnvn:5",
+          "index": 16,
+          "text": "Gastrointestinal disorders and ostomy patients",
+          "sourceHash": "a636eabd7fc2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:5:17",
+          "unitId": "lpnvn:5",
+          "index": 17,
+          "text": "Infection, sepsis and recognising early deterioration",
+          "sourceHash": "2e0351a2750a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:5:18",
+          "unitId": "lpnvn:5",
+          "index": 18,
+          "text": "Care of the older adult and polypharmacy",
+          "sourceHash": "5e5c319dc9f7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "lpnvn:6",
+      "index": 6,
+      "title": "Maternal, newborn, pediatric and mental health nursing",
+      "weight": 10,
+      "gate": "Adjust care to the patient in front of you -- a labouring mother, a toddler, an adolescent in crisis -- rather than applying the adult default.",
+      "objectives": [
+        {
+          "id": "lpnvn:6:1",
+          "unitId": "lpnvn:6",
+          "index": 1,
+          "text": "Antepartum care and common discomforts of pregnancy",
+          "sourceHash": "7d1eb37b1ca9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:6:2",
+          "unitId": "lpnvn:6",
+          "index": 2,
+          "text": "Danger signs in pregnancy that must be reported",
+          "sourceHash": "a8d83ca71c43",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:6:3",
+          "unitId": "lpnvn:6",
+          "index": 3,
+          "text": "Care of the client in labor and delivery",
+          "sourceHash": "2c49edeaf312",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:6:4",
+          "unitId": "lpnvn:6",
+          "index": 4,
+          "text": "Postpartum care and hemorrhage recognition",
+          "sourceHash": "9031aa8f3cff",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:6:5",
+          "unitId": "lpnvn:6",
+          "index": 5,
+          "text": "Newborn care, feeding and normal findings",
+          "sourceHash": "a18cd38246c6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:6:6",
+          "unitId": "lpnvn:6",
+          "index": 6,
+          "text": "Growth and development milestones by age",
+          "sourceHash": "3091b4270b0e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:6:7",
+          "unitId": "lpnvn:6",
+          "index": 7,
+          "text": "Pediatric vital sign and dosage differences",
+          "sourceHash": "570ccdb56584",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:6:8",
+          "unitId": "lpnvn:6",
+          "index": 8,
+          "text": "Common childhood illnesses and immunisation schedules",
+          "sourceHash": "a0ef18d198ae",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:6:9",
+          "unitId": "lpnvn:6",
+          "index": 9,
+          "text": "Communicating with a child and with the parent",
+          "sourceHash": "f7176736f447",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:6:10",
+          "unitId": "lpnvn:6",
+          "index": 10,
+          "text": "Child abuse recognition and mandatory reporting",
+          "sourceHash": "aabaec3d27cc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:6:11",
+          "unitId": "lpnvn:6",
+          "index": 11,
+          "text": "Mental health conditions commonly encountered",
+          "sourceHash": "d79c794567b4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:6:12",
+          "unitId": "lpnvn:6",
+          "index": 12,
+          "text": "Anxiety, depression and suicide risk recognition",
+          "sourceHash": "6f837230bc16",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:6:13",
+          "unitId": "lpnvn:6",
+          "index": 13,
+          "text": "Substance use, withdrawal and overdose recognition",
+          "sourceHash": "ff15d2160775",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "lpnvn:6:14",
+          "unitId": "lpnvn:6",
+          "index": 14,
+          "text": "De-escalation and therapeutic environment",
+          "sourceHash": "7a6b28b6e4be",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/nursing.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-18T00:00:00Z",
+    "officialObjectivesUrl": "https://www.ncsbn.org/public-files/2026_PN_Test%20Plan-F.pdf",
+    "providerName": "National Council of State Boards of Nursing",
+    "credentialName": "Licensed Practical / Vocational Nurse",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 6,
+    "objectives": 98,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

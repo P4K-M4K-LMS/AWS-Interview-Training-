@@ -97,6 +97,21 @@ export function apiSchema(schema: unknown): unknown {
 
 type Client = InstanceType<typeof Anthropic>;
 
+/** Tokens billed by this process, failed replies included, so a run can report what it actually spent. */
+export const usage = { calls: 0, input: 0, output: 0, cacheRead: 0, cacheWrite: 0 };
+
+/** Dollars per million tokens. Only models listed here get a cost line; check the Console for the bill itself. */
+export const PRICES: Record<string, { input: number; output: number }> = {
+  "claude-opus-5-5": { input: 4, output: 20 },
+  "claude-sonnet-5-5": { input: 2, output: 10 },
+};
+
+export function usageCost(model: string): number | undefined {
+  const p = PRICES[model];
+  if (!p) return undefined;
+  return (usage.input * p.input + usage.cacheWrite * p.input * 1.25 + usage.cacheRead * p.input * 0.1 + usage.output * p.output) / 1e6;
+}
+
 async function structured<T>(client: Client, model: string, system: string, user: string, schema: object, maxTokens: number): Promise<{ data: T; model: string }> {
   let attempt = 0;
   for (;;) {
@@ -108,7 +123,12 @@ async function structured<T>(client: Client, model: string, system: string, user
         output_config: { effort: "medium", format: { type: "json_schema", schema: apiSchema(schema) } },
         messages: [{ role: "user", content: user }],
       } as never);
-      const msg = response as unknown as { stop_reason: string; content: Array<{ type: string; text?: string }>; model: string };
+      const msg = response as unknown as { stop_reason: string; content: Array<{ type: string; text?: string }>; model: string; usage?: { input_tokens?: number; output_tokens?: number; cache_read_input_tokens?: number | null; cache_creation_input_tokens?: number | null } };
+      usage.calls += 1;
+      usage.input += msg.usage?.input_tokens ?? 0;
+      usage.output += msg.usage?.output_tokens ?? 0;
+      usage.cacheRead += msg.usage?.cache_read_input_tokens ?? 0;
+      usage.cacheWrite += msg.usage?.cache_creation_input_tokens ?? 0;
       if (msg.stop_reason === "refusal") throw new Error("the model declined this request");
       // Thinking counts against max_tokens, so a low cap cuts the JSON off mid-string.
       if (msg.stop_reason === "max_tokens") throw new Error(`reply cut off at max_tokens (${maxTokens}); raise the limit for this call`);

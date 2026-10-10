@@ -4,6 +4,7 @@
   "title": "AWS Advanced Networking Specialty",
   "description": "AWS Certified Advanced Networking - Specialty (ANS-C01): hybrid and cloud networking at scale -- designing edge, DNS, load balancing and hybrid routing, implementing it across accounts and Regions, operating and troubleshooting it, and securing it. Note that this exam retires 2026-12-31.",
   "trackType": "certification",
+  "field": "aws",
   "units": [
     {
       "id": "ans-c01:1",

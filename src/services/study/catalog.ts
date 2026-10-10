@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import type { PlayableLesson, StudyCatalogIndex, StudyCourse, StudyImportedFile, StudyLessonsFile } from "../../domain/types";
+import type { PlayableLesson, StudyCatalogIndex, StudyCourse, StudyImportedFile, StudyLessonsFile, StudyLessonsIndex, StudySearchIndex } from "../../domain/types";
 
 /**
  * Loads the Study catalog JSON from public/study on demand and memoises it
@@ -26,6 +26,16 @@ async function fetchJson<T>(file: string): Promise<T> {
 
 export function loadIndex(): Promise<StudyCatalogIndex> {
   return fetchJson<StudyCatalogIndex>("index.json");
+}
+
+/** Lesson counts per course; an empty index when the file is missing (a deploy before it existed). */
+export async function loadLessonsIndex(): Promise<StudyLessonsIndex> {
+  return (await fetchOptional<StudyLessonsIndex>("lessons-index.json")) ?? { schemaVersion: 1, courses: {} };
+}
+
+/** Every objective's text. About 450 KB, so only fetched once the learner types a search. */
+export function loadSearchIndex(): Promise<StudySearchIndex> {
+  return fetchJson<StudySearchIndex>("search.json");
 }
 
 export async function loadCourse(courseId: string): Promise<StudyCourse> {
@@ -104,6 +114,15 @@ function useLoaded<T>(load: (() => Promise<T>) | null, key: string): Loaded<T> {
 
 export function useStudyIndex(): Loaded<StudyCatalogIndex> {
   return useLoaded(loadIndex, "index");
+}
+
+export function useLessonsIndex(): Loaded<StudyLessonsIndex> {
+  return useLoaded(loadLessonsIndex, "lessons-index");
+}
+
+/** Null until `enabled`, so the search file is not fetched for learners who never search. */
+export function useSearchIndex(enabled: boolean): Loaded<StudySearchIndex> {
+  return useLoaded(enabled ? loadSearchIndex : null, enabled ? "search" : "");
 }
 
 export function useStudyCourse(courseId: string | undefined): Loaded<StudyCourse> {

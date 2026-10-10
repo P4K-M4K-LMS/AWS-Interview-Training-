@@ -1,0 +1,311 @@
+{
+  "id": "pmipmocp",
+  "code": "PMIPMOCP",
+  "title": "PMI-PMOCP",
+  "description": "PMI PMO Certified Professional (PMI-PMOCP) exam prep across 6 weighted domains -- organizational alignment, PMO strategy, design, operations, enhancement, and the people skills a PMO practitioner needs.",
+  "trackType": "certification",
+  "field": "pm",
+  "units": [
+    {
+      "id": "pmipmocp:1",
+      "index": 1,
+      "title": "Organizational Development and Alignment",
+      "weight": 16,
+      "gate": "Given an organization's project-management maturity gap, name the specific competency-development or culture-shaping step it calls for -- not a generic 'improve PM practices' answer.",
+      "objectives": [
+        {
+          "id": "pmipmocp:1:1",
+          "unitId": "pmipmocp:1",
+          "index": 1,
+          "text": "Elevating organizational project management (OPM): assessing current competencies, building a tailored competency framework, and pairing mentoring with performance-management integration",
+          "sourceHash": "f463caa764a3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmipmocp:1:2",
+          "unitId": "pmipmocp:1",
+          "index": 2,
+          "text": "Shaping OPM culture: assessing current culture's alignment to OPM principles and engaging leadership to champion the shift",
+          "sourceHash": "ee74c680388a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmipmocp:1:3",
+          "unitId": "pmipmocp:1",
+          "index": 3,
+          "text": "Driving OPM maturity: running a maturity assessment against an established model, building a roadmap, and using KPIs to track progress",
+          "sourceHash": "0411cfbdc734",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmipmocp:1:4",
+          "unitId": "pmipmocp:1",
+          "index": 4,
+          "text": "Cultivating OPM capabilities: identifying and prioritizing the capabilities the organization actually needs, then closing people/process/technology gaps",
+          "sourceHash": "dd8996361568",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "pmipmocp:2",
+      "index": 2,
+      "title": "PMO Strategic Elements",
+      "weight": 18,
+      "gate": "Given a PMO's founding or mandate question, name the specific strategic or governance artifact it calls for -- a charter, a governance framework -- not a generic 'set up the PMO' answer.",
+      "objectives": [
+        {
+          "id": "pmipmocp:2:1",
+          "unitId": "pmipmocp:2",
+          "index": 1,
+          "text": "Architecting PMO strategy: assessing current state, defining vision/mission/objectives, and building an implementation roadmap with milestones",
+          "sourceHash": "1a1cb0eb013a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmipmocp:2:2",
+          "unitId": "pmipmocp:2",
+          "index": 2,
+          "text": "Stewarding the PMO mandate: defining scope and authority, drafting a PMO charter, and securing executive sponsorship",
+          "sourceHash": "098880063762",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmipmocp:2:3",
+          "unitId": "pmipmocp:2",
+          "index": 3,
+          "text": "Establishing and maintaining PMO governance: building a governance framework, reporting structures, and communication channels that adapt as needs change",
+          "sourceHash": "d785b925cc02",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "pmipmocp:3",
+      "index": 3,
+      "title": "PMO Design and Structuring",
+      "weight": 18,
+      "gate": "Given a PMO customer or service question, name the specific design step it calls for -- a customer persona, a service catalog entry -- not a generic 'serve stakeholders better' answer.",
+      "objectives": [
+        {
+          "id": "pmipmocp:3:1",
+          "unitId": "pmipmocp:3",
+          "index": 1,
+          "text": "Managing potential and current PMO customers: identifying and categorizing them, and building personas for their differing needs",
+          "sourceHash": "f4dce444301c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmipmocp:3:2",
+          "unitId": "pmipmocp:3",
+          "index": 2,
+          "text": "Orchestrating solutions to customer needs: systematically capturing requirements and prioritizing them by strategic importance",
+          "sourceHash": "7ccdfbb7dfce",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmipmocp:3:3",
+          "unitId": "pmipmocp:3",
+          "index": 3,
+          "text": "Articulating and evolving the PMO's value proposition: case studies, quantified impact, and messaging tailored per customer group",
+          "sourceHash": "8dbdcf33d641",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmipmocp:3:4",
+          "unitId": "pmipmocp:3",
+          "index": 4,
+          "text": "Designing and implementing PMO services: a needs assessment, a service catalog, and an SLA framework for each offering",
+          "sourceHash": "eaa7d310f1b9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "pmipmocp:4",
+      "index": 4,
+      "title": "PMO Operation and Performance",
+      "weight": 15,
+      "gate": "Given a PMO service in operation, name the specific delivery or resourcing step it calls for -- an onboarding process, a capacity-planning step -- not a generic 'run the PMO' answer.",
+      "objectives": [
+        {
+          "id": "pmipmocp:4:1",
+          "unitId": "pmipmocp:4",
+          "index": 1,
+          "text": "Onboarding new PMO service customers: a structured onboarding process, documentation, and a support system during ramp-up",
+          "sourceHash": "056fe9408feb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmipmocp:4:2",
+          "unitId": "pmipmocp:4",
+          "index": 2,
+          "text": "Managing PMO services in production: phased rollout for high-impact services, clear delivery workflows, and escalation procedures",
+          "sourceHash": "0e00a795a11b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmipmocp:4:3",
+          "unitId": "pmipmocp:4",
+          "index": 3,
+          "text": "Managing PMO resources: a resource management plan, a skills matrix, and capacity planning for both internal staff and external contractors",
+          "sourceHash": "483bdf1dec87",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "pmipmocp:5",
+      "index": 5,
+      "title": "PMO Enhancement and Effectiveness",
+      "weight": 18,
+      "gate": "Given a PMO performance question, name the specific measurement or improvement step it calls for -- a KPI dashboard, a maturity roadmap -- not a generic 'get better' answer.",
+      "objectives": [
+        {
+          "id": "pmipmocp:5:1",
+          "unitId": "pmipmocp:5",
+          "index": 1,
+          "text": "Optimizing PMO service performance: KPIs, a performance measurement system, and a real-time dashboard",
+          "sourceHash": "f08593b54a4b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmipmocp:5:2",
+          "unitId": "pmipmocp:5",
+          "index": 2,
+          "text": "Assessing and improving PMO services maturity: adopting a maturity model, running assessments, and building an advancement roadmap",
+          "sourceHash": "29394772cf5c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmipmocp:5:3",
+          "unitId": "pmipmocp:5",
+          "index": 3,
+          "text": "Assessing and improving PMO team competencies: a role-specific competency framework, individual development plans, and mentoring initiatives",
+          "sourceHash": "fd3eee586d39",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmipmocp:5:4",
+          "unitId": "pmipmocp:5",
+          "index": 4,
+          "text": "Optimizing PMO value: metrics that quantify contribution to organizational success, and benchmarking against industry standards",
+          "sourceHash": "0128ce165a66",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "pmipmocp:6",
+      "index": 6,
+      "title": "People",
+      "weight": 15,
+      "gate": "Given a PMO practitioner's interpersonal or leadership scenario, name the specific skill it calls for -- negotiating, building resilience, applying business acumen -- not a generic 'be a good leader' answer.",
+      "objectives": [
+        {
+          "id": "pmipmocp:6:1",
+          "unitId": "pmipmocp:6",
+          "index": 1,
+          "text": "Enabling a value-driven mindset: data-informed decision-making, strategic thinking, and driving innovation",
+          "sourceHash": "23c1683a6db4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmipmocp:6:2",
+          "unitId": "pmipmocp:6",
+          "index": 2,
+          "text": "Fostering customer-centricity and interpersonal relationships: collaboration, effective communication, negotiation, and stakeholder management",
+          "sourceHash": "34dac53dded5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmipmocp:6:3",
+          "unitId": "pmipmocp:6",
+          "index": 3,
+          "text": "Elevating personal impact and effectiveness: accuracy, adaptability, integrity, objectivity, and time management",
+          "sourceHash": "3943df5f9196",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmipmocp:6:4",
+          "unitId": "pmipmocp:6",
+          "index": 4,
+          "text": "Leveraging technical skills to deliver results: process optimization, project management, and risk response",
+          "sourceHash": "c589ca7294d0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmipmocp:6:5",
+          "unitId": "pmipmocp:6",
+          "index": 5,
+          "text": "Shaping organizational direction: business acumen, cultural awareness, and influencing strategic direction",
+          "sourceHash": "cc2932293324",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/pm.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-27T00:00:00Z",
+    "officialObjectivesUrl": "https://www.pmi.org/-/media/pmi/documents/public/pdf/certifications/pmi-pmocp-exam-content-outline_2025-1.pdf",
+    "providerName": "Project Management Institute (PMI)",
+    "credentialName": "PMI PMO Certified Professional (PMI-PMOCP)",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 6,
+    "objectives": 23,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

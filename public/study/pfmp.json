@@ -1,0 +1,412 @@
+{
+  "id": "pfmp",
+  "code": "PFMP",
+  "title": "PfMP",
+  "description": "PMI Portfolio Management Professional (PfMP) exam prep across 5 weighted domains -- strategic alignment, governance, portfolio performance, portfolio risk management, and communications management.",
+  "trackType": "certification",
+  "field": "pm",
+  "units": [
+    {
+      "id": "pfmp:1",
+      "index": 1,
+      "title": "Strategic Alignment",
+      "weight": 25,
+      "gate": "Given a portfolio decision, tie it back to a specific organizational strategic goal or prioritization criterion -- not a generic 'align with strategy' answer.",
+      "objectives": [
+        {
+          "id": "pfmp:1:1",
+          "unitId": "pfmp:1",
+          "index": 1,
+          "text": "Evaluating organizational strategic goals and objectives through document review, interviews, and information gathering",
+          "sourceHash": "c13057ca98e7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pfmp:1:2",
+          "unitId": "pfmp:1",
+          "index": 2,
+          "text": "Identifying prioritization criteria (legislative, dependencies, ROI, stakeholder expectations, strategic fit) as a decision-making basis",
+          "sourceHash": "81e0c06df106",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pfmp:1:3",
+          "unitId": "pfmp:1",
+          "index": 3,
+          "text": "Ranking strategic priorities with key stakeholders using qualitative and quantitative analysis",
+          "sourceHash": "1a02798c1f2f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pfmp:1:4",
+          "unitId": "pfmp:1",
+          "index": 4,
+          "text": "Identifying existing and potential portfolio components from business plans/proposals to build portfolio scenarios",
+          "sourceHash": "2cd6e238c9de",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pfmp:1:5",
+          "unitId": "pfmp:1",
+          "index": 5,
+          "text": "Creating and evaluating what-if portfolio scenarios (options analysis, risk analysis, SWOT, financial analysis)",
+          "sourceHash": "6a7cdfca971d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pfmp:1:6",
+          "unitId": "pfmp:1",
+          "index": 6,
+          "text": "Recommending a portfolio scenario and its components, with rationale, for governance decision-making",
+          "sourceHash": "26f8d730b860",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pfmp:1:7",
+          "unitId": "pfmp:1",
+          "index": 7,
+          "text": "Determining how a change in strategic goals impacts the portfolio and its components",
+          "sourceHash": "87d3ff038d47",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pfmp:1:8",
+          "unitId": "pfmp:1",
+          "index": 8,
+          "text": "Building a high-level portfolio roadmap with key stakeholders that reflects sequencing, dependencies, and strategic alignment",
+          "sourceHash": "bc063d57012d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "pfmp:2",
+      "index": 2,
+      "title": "Governance",
+      "weight": 20,
+      "gate": "Given a portfolio decision point, name the specific governance mechanism it calls for -- a steering-committee approval, an escalation threshold -- not a generic 'get sign-off' answer.",
+      "objectives": [
+        {
+          "id": "pfmp:2:1",
+          "unitId": "pfmp:2",
+          "index": 1,
+          "text": "Defining a governance model: structure (steering committees, governance boards), policies, decision rights, and responsibilities",
+          "sourceHash": "9dfcce40313f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pfmp:2:2",
+          "unitId": "pfmp:2",
+          "index": 2,
+          "text": "Establishing portfolio management standards and protocols using organizational assets and industry standards",
+          "sourceHash": "32598f380fe0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pfmp:2:3",
+          "unitId": "pfmp:2",
+          "index": 3,
+          "text": "Defining or modifying portfolio processes: benefits realization, information management, risk, stakeholder engagement, and change management",
+          "sourceHash": "fdf54d471e7f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pfmp:2:4",
+          "unitId": "pfmp:2",
+          "index": 4,
+          "text": "Building a portfolio management plan covering roles, escalation procedures, risk tolerances, thresholds, and prioritization model",
+          "sourceHash": "96ab2a3aea11",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pfmp:2:5",
+          "unitId": "pfmp:2",
+          "index": 5,
+          "text": "Making and obtaining approval for portfolio decisions (components, plans, budget, roadmap) through the defined governance model",
+          "sourceHash": "2aac5ca07b3a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "pfmp:3",
+      "index": 3,
+      "title": "Portfolio Performance",
+      "weight": 25,
+      "gate": "Given portfolio performance data, apply the specific monitoring, balancing, or escalation step it calls for -- a resource-reallocation decision, an issue escalation -- not a generic 'track performance' answer.",
+      "objectives": [
+        {
+          "id": "pfmp:3:1",
+          "unitId": "pfmp:3",
+          "index": 1,
+          "text": "Authorizing portfolio structure and activating components against supporting artifacts",
+          "sourceHash": "fa0584e49df8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pfmp:3:2",
+          "unitId": "pfmp:3",
+          "index": 2,
+          "text": "Collecting and consolidating key performance metrics defined by the portfolio governance model",
+          "sourceHash": "929ad67c93d5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pfmp:3:3",
+          "unitId": "pfmp:3",
+          "index": 3,
+          "text": "Monitoring portfolio performance on an ongoing basis via reports, dashboards, and auditing techniques",
+          "sourceHash": "d620d742ad5e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pfmp:3:4",
+          "unitId": "pfmp:3",
+          "index": 4,
+          "text": "Managing and escalating issues to appropriate decision-makers for timely resolution",
+          "sourceHash": "3d6214aea579",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pfmp:3:5",
+          "unitId": "pfmp:3",
+          "index": 5,
+          "text": "Managing portfolio changes with change-management techniques to protect strategic alignment",
+          "sourceHash": "bebe00c3beac",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pfmp:3:6",
+          "unitId": "pfmp:3",
+          "index": 6,
+          "text": "Balancing and prioritizing portfolio components to optimize resource utilization against strategic objectives",
+          "sourceHash": "bdbbff6148f3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pfmp:3:7",
+          "unitId": "pfmp:3",
+          "index": 7,
+          "text": "Analyzing and optimizing resource allocation/reallocation (people, tools, technology, finance) via supply/demand analysis",
+          "sourceHash": "83e423e58ed7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pfmp:3:8",
+          "unitId": "pfmp:3",
+          "index": 8,
+          "text": "Updating portfolio roadmaps and measuring aggregated performance against business/strategic goals",
+          "sourceHash": "461bb87db741",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pfmp:3:9",
+          "unitId": "pfmp:3",
+          "index": 9,
+          "text": "Maintaining portfolio records (artifacts, approvals, prioritizations) for compliance with organizational and regulatory requirements",
+          "sourceHash": "f0a4c51209c3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "pfmp:4",
+      "index": 4,
+      "title": "Portfolio Risk Management",
+      "weight": 15,
+      "gate": "Given a portfolio-level risk scenario, apply the specific risk-response or reserve decision it calls for -- not a generic 'manage the risk' answer.",
+      "objectives": [
+        {
+          "id": "pfmp:4:1",
+          "unitId": "pfmp:4",
+          "index": 1,
+          "text": "Determining acceptable portfolio risk levels based on organizational and stakeholder risk tolerance",
+          "sourceHash": "e33118cf332a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pfmp:4:2",
+          "unitId": "pfmp:4",
+          "index": 2,
+          "text": "Developing a portfolio risk management plan aligned to governance risk guidelines",
+          "sourceHash": "0800838a33a9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pfmp:4:3",
+          "unitId": "pfmp:4",
+          "index": 3,
+          "text": "Performing dependency analysis to identify and monitor risks across interdependent portfolio components",
+          "sourceHash": "fb822174c869",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pfmp:4:4",
+          "unitId": "pfmp:4",
+          "index": 4,
+          "text": "Maintaining a portfolio-level risk register tied to strategic goals and escalated component risks",
+          "sourceHash": "77deddb132bb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pfmp:4:5",
+          "unitId": "pfmp:4",
+          "index": 5,
+          "text": "Building stakeholder understanding and ownership of portfolio risks through communication",
+          "sourceHash": "642f65ad0a73",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pfmp:4:6",
+          "unitId": "pfmp:4",
+          "index": 6,
+          "text": "Recommending and obtaining approval for a portfolio management reserve based on aggregate risk exposure",
+          "sourceHash": "8380c356f69d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "pfmp:5",
+      "index": 5,
+      "title": "Communications Management",
+      "weight": 15,
+      "gate": "Given a stakeholder communication scenario, apply the specific plan or verification step it calls for -- a communication-gap fix, an accuracy check -- not a generic 'communicate more' answer.",
+      "objectives": [
+        {
+          "id": "pfmp:5:1",
+          "unitId": "pfmp:5",
+          "index": 1,
+          "text": "Analyzing internal and external stakeholders (meetings, interviews, surveys) to identify expectations and influence",
+          "sourceHash": "090b02bb6834",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pfmp:5:2",
+          "unitId": "pfmp:5",
+          "index": 2,
+          "text": "Creating an aggregate communication strategy and plan: methods, recipients, vehicles, timelines, and frequency",
+          "sourceHash": "8668b7b8a88f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pfmp:5:3",
+          "unitId": "pfmp:5",
+          "index": 3,
+          "text": "Engaging stakeholders through oral and written communication to build awareness of the portfolio roadmap",
+          "sourceHash": "2fccd87333d3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pfmp:5:4",
+          "unitId": "pfmp:5",
+          "index": 4,
+          "text": "Maintaining the communication plan by evaluating capabilities and closing identified gaps",
+          "sourceHash": "f9b263753c7e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pfmp:5:5",
+          "unitId": "pfmp:5",
+          "index": 5,
+          "text": "Facilitating stakeholder understanding of portfolio management processes and protocols",
+          "sourceHash": "606edeac85b4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pfmp:5:6",
+          "unitId": "pfmp:5",
+          "index": 6,
+          "text": "Verifying the accuracy, consistency, and completeness of portfolio communications against governance guidelines",
+          "sourceHash": "dd62f3ebb5a1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/pm.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-26T00:00:00Z",
+    "officialObjectivesUrl": "https://www.pmi.org/-/media/pmi/documents/public/pdf/certifications/portfolio-management-professional-exam-outline.pdf",
+    "providerName": "Project Management Institute (PMI)",
+    "credentialName": "PMI Portfolio Management Professional (PfMP)",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 5,
+    "objectives": 34,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

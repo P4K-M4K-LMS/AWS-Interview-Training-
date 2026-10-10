@@ -1,0 +1,263 @@
+{
+  "id": "acsmcpt",
+  "code": "ACSMCPT",
+  "title": "ACSM Certified Personal Trainer (ACSM-CPT)",
+  "description": "ACSM's NCCA-accredited personal trainer exam on the outline effective July 10, 2025: initial client consultation and assessment (25%), exercise programming and implementation (43%), exercise leadership and client education (22%), and legal and professional responsibilities (10%).",
+  "trackType": "certification",
+  "field": "fitness",
+  "units": [
+    {
+      "id": "acsmcpt:1",
+      "index": 1,
+      "title": "Initial client consultation and assessment",
+      "weight": 25,
+      "gate": "Work through a preparticipation case: identify risk factors, decide on clearance, pick the assessments, and set behavioral goals.",
+      "objectives": [
+        {
+          "id": "acsmcpt:1:1",
+          "unitId": "acsmcpt:1",
+          "index": 1,
+          "text": "Preparing the client for the initial consultation: paperwork, health history, informed consent and trainer-client agreement",
+          "sourceHash": "1342840faee6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "acsmcpt:1:2",
+          "unitId": "acsmcpt:1",
+          "index": 2,
+          "text": "Interviewing to gather health, medical and exercise history and establish trust",
+          "sourceHash": "b03797854aba",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "acsmcpt:1:3",
+          "unitId": "acsmcpt:1",
+          "index": 3,
+          "text": "Identifying cardiovascular, metabolic and renal risk factors, signs and symptoms, and the need for medical clearance",
+          "sourceHash": "b6c644920924",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "acsmcpt:1:4",
+          "unitId": "acsmcpt:1",
+          "index": 4,
+          "text": "Relative and absolute contraindications to exercise testing and participation",
+          "sourceHash": "1af2e551014b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "acsmcpt:1:5",
+          "unitId": "acsmcpt:1",
+          "index": 5,
+          "text": "Behavior-change theories and strategies: setting S.M.A.R.T.S. goals and supporting adherence",
+          "sourceHash": "be1ddaf54bdb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "acsmcpt:1:6",
+          "unitId": "acsmcpt:1",
+          "index": 6,
+          "text": "Assessing health- and skill-related fitness components to establish baselines, with the anatomy and terminology behind them",
+          "sourceHash": "e7322faddf6f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "acsmcpt:2",
+      "index": 2,
+      "title": "Exercise programming and implementation",
+      "weight": 43,
+      "gate": "Write an initial FITT prescription for a described client, demonstrate the exercises, and state how you'll monitor and progress it.",
+      "objectives": [
+        {
+          "id": "acsmcpt:2:1",
+          "unitId": "acsmcpt:2",
+          "index": 1,
+          "text": "Risks and benefits of exercise for healthy adults, older adults, youth, pregnant clients and medically cleared chronic-disease clients",
+          "sourceHash": "c82d6e50ba79",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "acsmcpt:2:2",
+          "unitId": "acsmcpt:2",
+          "index": 2,
+          "text": "Selecting exercises and modalities by training age, goals and functional capacity, applying specificity and progression",
+          "sourceHash": "8eacacb041c9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "acsmcpt:2:3",
+          "unitId": "acsmcpt:2",
+          "index": 3,
+          "text": "Interval, continuous and circuit cardiorespiratory programming and the recommendations for health versus performance",
+          "sourceHash": "aed996f33a20",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "acsmcpt:2:4",
+          "unitId": "acsmcpt:2",
+          "index": 4,
+          "text": "Resistance training methods: periodization, repetition maximum testing, sets, loads and rest",
+          "sourceHash": "0700003583d0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "acsmcpt:2:5",
+          "unitId": "acsmcpt:2",
+          "index": 5,
+          "text": "Determining initial Frequency, Intensity, Time and Type, including target heart rate by heart-rate reserve and RPE",
+          "sourceHash": "98b4d3e7b9db",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "acsmcpt:2:6",
+          "unitId": "acsmcpt:2",
+          "index": 6,
+          "text": "Demonstrating and teaching exercises safely: biomechanics, Valsalva risk, spotting and learning styles",
+          "sourceHash": "de1c9b496162",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "acsmcpt:2:7",
+          "unitId": "acsmcpt:2",
+          "index": 7,
+          "text": "Monitoring technique and response, recognizing abnormal responses and criteria for stopping exercise",
+          "sourceHash": "ddbeda185168",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "acsmcpt:2:8",
+          "unitId": "acsmcpt:2",
+          "index": 8,
+          "text": "Recommending progressions and modifications for special populations and stable medical conditions",
+          "sourceHash": "7c4efba699a6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "acsmcpt:3",
+      "index": 3,
+      "title": "Exercise leadership, client education and engagement",
+      "weight": 22,
+      "gate": "Show how you'd keep a specific client adherent and educated through a plateau, using communication rather than more volume.",
+      "objectives": [
+        {
+          "id": "acsmcpt:3:1",
+          "unitId": "acsmcpt:3",
+          "index": 1,
+          "text": "Optimizing adherence through effective communication, feedback and motivational strategies",
+          "sourceHash": "6dc03cbe2ad4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "acsmcpt:3:2",
+          "unitId": "acsmcpt:3",
+          "index": 2,
+          "text": "Educating clients on physical activity guidelines, healthy eating basics and self-monitoring within scope",
+          "sourceHash": "b182bcaeb79e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "acsmcpt:3:3",
+          "unitId": "acsmcpt:3",
+          "index": 3,
+          "text": "Building engagement across in-person and virtual delivery",
+          "sourceHash": "7d3af5344d0a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "acsmcpt:4",
+      "index": 4,
+      "title": "Legal and professional responsibilities",
+      "weight": 10,
+      "gate": "Name the professional obligation at stake in a scenario -- scope, referral, confidentiality or emergency response -- and act on it.",
+      "objectives": [
+        {
+          "id": "acsmcpt:4:1",
+          "unitId": "acsmcpt:4",
+          "index": 1,
+          "text": "Collaborating and referring with health care and allied health professionals",
+          "sourceHash": "cdb1f0add0a3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "acsmcpt:4:2",
+          "unitId": "acsmcpt:4",
+          "index": 2,
+          "text": "Scope of practice, ACSM's code of ethics and confidentiality",
+          "sourceHash": "bcb59b9c2988",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "acsmcpt:4:3",
+          "unitId": "acsmcpt:4",
+          "index": 3,
+          "text": "Risk management, emergency procedures and documentation in the training setting",
+          "sourceHash": "c3405bee9a3a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/fitness.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-10-08T00:00:00Z",
+    "officialObjectivesUrl": "https://acsm.org/wp-content/uploads/2024/12/ACSM-Certified-Personal-Trainer-Exam-Content-Outline.pdf",
+    "providerName": "American College of Sports Medicine",
+    "credentialName": "ACSM Certified Personal Trainer (ACSM-CPT)",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 4,
+    "objectives": 20,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

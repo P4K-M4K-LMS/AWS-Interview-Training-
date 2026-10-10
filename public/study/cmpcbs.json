@@ -4,6 +4,7 @@
   "title": "Computational Math: CS Degree",
   "description": "Liberty University's 2026-2027 BS in Computational Mathematics: Computer Science degree completion plan (120 credits) -- gen ed, Christianity core, and the full math/CS major sequence, mirrored from the official plan.",
   "trackType": "graduate",
+  "field": "cs",
   "units": [
     {
       "id": "cmpcbs:1",

@@ -1,0 +1,344 @@
+{
+  "id": "220-1202",
+  "code": "APLUS_CORE2",
+  "title": "A+ Core 2",
+  "description": "CompTIA A+ Core 2 (220-1202) exam prep across 4 weighted domains -- operating systems, security, software troubleshooting, and operational procedures.",
+  "trackType": "certification",
+  "field": "it",
+  "units": [
+    {
+      "id": "220-1202:1",
+      "index": 1,
+      "title": "Operating Systems",
+      "weight": 28,
+      "gate": "Given a Windows, macOS, or Linux system, use the correct native tool to diagnose or change system state -- not just click around a GUI hoping to find the setting.",
+      "objectives": [
+        {
+          "id": "220-1202:1:1",
+          "unitId": "220-1202:1",
+          "index": 1,
+          "text": "Common OS types and their purposes: Windows, macOS, Linux, ChromeOS, iOS/iPadOS, and Android",
+          "sourceHash": "b295ce540813",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "220-1202:1:2",
+          "unitId": "220-1202:1",
+          "index": 2,
+          "text": "Windows administrative tools: Task Manager, Disk Management, Control Panel, Settings app, and MMC snap-ins",
+          "sourceHash": "0ee23a87210a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "220-1202:1:3",
+          "unitId": "220-1202:1",
+          "index": 3,
+          "text": "Using the Windows command line and PowerShell for common administrative tasks",
+          "sourceHash": "09c294412021",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "220-1202:1:4",
+          "unitId": "220-1202:1",
+          "index": 4,
+          "text": "Configuring Windows networking: workgroup vs. domain membership, network shares, and printer sharing",
+          "sourceHash": "68aa20fe4068",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "220-1202:1:5",
+          "unitId": "220-1202:1",
+          "index": 5,
+          "text": "Comparing Windows editions and performing OS installations or upgrades, in-place vs. clean",
+          "sourceHash": "61eb01852385",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "220-1202:1:6",
+          "unitId": "220-1202:1",
+          "index": 6,
+          "text": "Configuring and troubleshooting Windows Update, backup, and system restore",
+          "sourceHash": "c0baf60cc7c7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "220-1202:1:7",
+          "unitId": "220-1202:1",
+          "index": 7,
+          "text": "Identifying macOS and Linux features, file systems, best practices, and common commands",
+          "sourceHash": "67f4db7cdeb8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "220-1202:2",
+      "index": 2,
+      "title": "Security",
+      "weight": 28,
+      "gate": "Given a workstation or SOHO network to harden, apply the specific physical, logical, and OS-level controls that actually address the threat model -- not a generic 'enable security' pass.",
+      "objectives": [
+        {
+          "id": "220-1202:2:1",
+          "unitId": "220-1202:2",
+          "index": 1,
+          "text": "Physical security controls: badge readers, biometrics, mantraps, and cable locks",
+          "sourceHash": "fe903f8233c9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "220-1202:2:2",
+          "unitId": "220-1202:2",
+          "index": 2,
+          "text": "Logical security concepts: least privilege, multifactor authentication, ACLs, and encryption",
+          "sourceHash": "61effdbc1473",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "220-1202:2:3",
+          "unitId": "220-1202:2",
+          "index": 3,
+          "text": "Wireless security protocols and authentication: WPA2, WPA3, RADIUS, and 802.1X",
+          "sourceHash": "80aee2d0e4a9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "220-1202:2:4",
+          "unitId": "220-1202:2",
+          "index": 4,
+          "text": "Detecting, removing, and preventing malware: viruses, ransomware, trojans, keyloggers, and rootkits",
+          "sourceHash": "27082043a7e7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "220-1202:2:5",
+          "unitId": "220-1202:2",
+          "index": 5,
+          "text": "Common social-engineering attacks: phishing, shoulder surfing, tailgating, and impersonation",
+          "sourceHash": "fe6821737e1c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "220-1202:2:6",
+          "unitId": "220-1202:2",
+          "index": 6,
+          "text": "SOHO network and workstation security best practices: password policies, account management, and firewall rules",
+          "sourceHash": "a9a444af444f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "220-1202:2:7",
+          "unitId": "220-1202:2",
+          "index": 7,
+          "text": "Securing mobile and embedded devices: screen locks, remote wipe, and full-device encryption",
+          "sourceHash": "08705739781c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "220-1202:2:8",
+          "unitId": "220-1202:2",
+          "index": 8,
+          "text": "Configuring Windows security settings: Windows Defender/Firewall, BitLocker, and User Account Control",
+          "sourceHash": "1f52a34ec7c7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "220-1202:3",
+      "index": 3,
+      "title": "Software Troubleshooting",
+      "weight": 23,
+      "gate": "Given a compromised or malfunctioning system, follow the correct malware-removal sequence and OS troubleshooting steps in order, not just delete the first suspicious file found.",
+      "objectives": [
+        {
+          "id": "220-1202:3:1",
+          "unitId": "220-1202:3",
+          "index": 1,
+          "text": "Troubleshooting common Windows problems: slow performance, application crashes, boot failures, and blue screen errors",
+          "sourceHash": "15a73fc0c6dc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "220-1202:3:2",
+          "unitId": "220-1202:3",
+          "index": 2,
+          "text": "Troubleshooting common PC security symptoms: browser redirection, unwanted pop-ups, and rogue antivirus",
+          "sourceHash": "d2c23fd81798",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "220-1202:3:3",
+          "unitId": "220-1202:3",
+          "index": 3,
+          "text": "Best-practice malware removal procedure: quarantine, disable System Restore, remediate, re-enable, and educate the user",
+          "sourceHash": "800219414518",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "220-1202:3:4",
+          "unitId": "220-1202:3",
+          "index": 4,
+          "text": "Troubleshooting common mobile OS and app issues: signal loss, failed app loads, and failed synchronization",
+          "sourceHash": "bfa20831ea71",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "220-1202:3:5",
+          "unitId": "220-1202:3",
+          "index": 5,
+          "text": "Troubleshooting common mobile security issues: unauthorized data access, unexpected data usage, and unauthorized location tracking",
+          "sourceHash": "82d719d5d75b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "220-1202:4",
+      "index": 4,
+      "title": "Operational Procedures",
+      "weight": 21,
+      "gate": "Given a change to make on a live system, follow documentation, change-management, and safety procedure correctly -- explaining why skipping any one step is a real risk, not paperwork.",
+      "objectives": [
+        {
+          "id": "220-1202:4:1",
+          "unitId": "220-1202:4",
+          "index": 1,
+          "text": "Documentation best practices: knowledge base articles, ticketing systems, and asset management",
+          "sourceHash": "d68005a9ba04",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "220-1202:4:2",
+          "unitId": "220-1202:4",
+          "index": 2,
+          "text": "Change-management best practices: purpose and scope of change, risk analysis, and a backout plan",
+          "sourceHash": "11c1ef5b1495",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "220-1202:4:3",
+          "unitId": "220-1202:4",
+          "index": 3,
+          "text": "Workstation backup and recovery: full, incremental, and differential backups, and testing restores",
+          "sourceHash": "7b18a149a5f1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "220-1202:4:4",
+          "unitId": "220-1202:4",
+          "index": 4,
+          "text": "Safety procedures: ESD mats and straps, proper equipment grounding, and safe disposal",
+          "sourceHash": "b5418afcbb25",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "220-1202:4:5",
+          "unitId": "220-1202:4",
+          "index": 5,
+          "text": "Environmental controls and disposal: SDS handling and battery/toner disposal",
+          "sourceHash": "361be10b2740",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "220-1202:4:6",
+          "unitId": "220-1202:4",
+          "index": 6,
+          "text": "Privacy, licensing, and policy concepts: chain of custody, software licensing, and handling PII/PHI",
+          "sourceHash": "d5dcb11ba943",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "220-1202:4:7",
+          "unitId": "220-1202:4",
+          "index": 7,
+          "text": "Professional communication techniques when dealing with customers and coworkers",
+          "sourceHash": "8e65e09196c2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "220-1202:4:8",
+          "unitId": "220-1202:4",
+          "index": 8,
+          "text": "Basic scripting concepts and use cases: batch files, Python, PowerShell, and remote-access technologies",
+          "sourceHash": "72c5c816b6a4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/comptia.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-24T00:00:00Z",
+    "officialObjectivesUrl": "https://www.comptia.org/en-us/certifications/a/core-2-v15/",
+    "providerName": "CompTIA",
+    "credentialName": "CompTIA A+",
+    "examCode": "220-1202",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 4,
+    "objectives": 28,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

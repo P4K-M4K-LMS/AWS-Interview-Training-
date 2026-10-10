@@ -4,6 +4,7 @@
   "title": "Python Programming",
   "description": "9-week intro-to-advanced Python progression: syntax and control flow through OOP, the standard library, functional patterns, testing/typing, and concurrency.",
   "trackType": "graduate",
+  "field": "cs",
   "units": [
     {
       "id": "python:1",

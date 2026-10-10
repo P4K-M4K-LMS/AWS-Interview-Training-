@@ -4,6 +4,7 @@
   "title": "AWS Cloud Practitioner",
   "description": "AWS Certified Cloud Practitioner (CLF-C02): the whole AWS Cloud at a working vocabulary level -- value and economics, security and compliance, the core service catalog, and how billing and support actually work.",
   "trackType": "certification",
+  "field": "aws",
   "units": [
     {
       "id": "clf-c02:1",

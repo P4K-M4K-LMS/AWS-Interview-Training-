@@ -4,6 +4,7 @@
   "title": "AWS Solutions Architect Professional",
   "description": "AWS Certified Solutions Architect - Professional (SAP-C02): architecture at organizational scale -- multi-account governance and hybrid networking, designing new solutions across all five pillars, continuously improving what already runs, and migrating and modernizing existing workloads.",
   "trackType": "certification",
+  "field": "aws",
   "units": [
     {
       "id": "sap-c02:1",

@@ -4,6 +4,7 @@
   "title": "CySA+",
   "description": "CompTIA CySA+ CS0-003 exam prep across 4 weighted domains, with SOC-analyst drilling.",
   "trackType": "certification",
+  "field": "security",
   "units": [
     {
       "id": "cysaplus:1",

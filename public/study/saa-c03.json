@@ -4,6 +4,7 @@
   "title": "AWS Solutions Architect Associate",
   "description": "AWS Certified Solutions Architect - Associate (SAA-C03): designing solutions against the Well-Architected Framework -- secure, resilient, high-performing, and cost-optimized architectures, and knowing which trade-off a requirement is really asking for.",
   "trackType": "certification",
+  "field": "aws",
   "units": [
     {
       "id": "saa-c03:1",

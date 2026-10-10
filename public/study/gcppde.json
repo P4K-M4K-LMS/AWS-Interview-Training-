@@ -1,0 +1,772 @@
+{
+  "id": "gcppde",
+  "code": "GCPPDE",
+  "title": "Google Cloud Professional Data Engineer",
+  "description": "Google Cloud Professional Data Engineer: designing, building, and securing data processing systems on Google Cloud -- ingestion pipelines, storage system selection, data warehouses and lakes, preparing data for analysis and AI/ML, and keeping data workloads running reliably.",
+  "trackType": "certification",
+  "field": "gcp",
+  "units": [
+    {
+      "id": "gcppde:1",
+      "index": 1,
+      "title": "Designing Data Processing Systems",
+      "weight": 22,
+      "gate": "Given a data-governance or compliance requirement, name the specific Google Cloud control that satisfies it, and where in the architecture it has to live.",
+      "objectives": [
+        {
+          "id": "gcppde:1:1",
+          "unitId": "gcppde:1",
+          "index": 1,
+          "text": "Designing IAM and organization policy for data access",
+          "sourceHash": "13fc44d9699e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:1:2",
+          "unitId": "gcppde:1",
+          "index": 2,
+          "text": "Designing data security: encryption and key management",
+          "sourceHash": "8c26b7767abe",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:1:3",
+          "unitId": "gcppde:1",
+          "index": 3,
+          "text": "Designing privacy strategies to handle personally identifiable information",
+          "sourceHash": "7232273f52e9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:1:4",
+          "unitId": "gcppde:1",
+          "index": 4,
+          "text": "Designing for regional data sovereignty in access and storage",
+          "sourceHash": "8b0bf7c38b8f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:1:5",
+          "unitId": "gcppde:1",
+          "index": 5,
+          "text": "Designing for legal and regulatory compliance",
+          "sourceHash": "d840bba3a2a0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:1:6",
+          "unitId": "gcppde:1",
+          "index": 6,
+          "text": "Designing project, dataset, and table architecture for proper data governance",
+          "sourceHash": "4ba80ceeb561",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:1:7",
+          "unitId": "gcppde:1",
+          "index": 7,
+          "text": "Designing for multi-environment use cases: development versus production",
+          "sourceHash": "9dc1f4a839c8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:1:8",
+          "unitId": "gcppde:1",
+          "index": 8,
+          "text": "Preparing and cleaning data with Dataform, Dataflow, Cloud Data Fusion, or LLM-prompted query generation",
+          "sourceHash": "139535671400",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:1:9",
+          "unitId": "gcppde:1",
+          "index": 9,
+          "text": "Monitoring and orchestrating data pipelines",
+          "sourceHash": "4159422fd6b4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:1:10",
+          "unitId": "gcppde:1",
+          "index": 10,
+          "text": "Designing for disaster recovery and fault tolerance",
+          "sourceHash": "5ba2d1a5ee11",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:1:11",
+          "unitId": "gcppde:1",
+          "index": 11,
+          "text": "Deciding ACID compliance and availability trade-offs",
+          "sourceHash": "6772f9e14557",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:1:12",
+          "unitId": "gcppde:1",
+          "index": 12,
+          "text": "Designing data validation into a pipeline",
+          "sourceHash": "5c790eb0a21c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:1:13",
+          "unitId": "gcppde:1",
+          "index": 13,
+          "text": "Mapping current and future business requirements to a data architecture",
+          "sourceHash": "b11e460f3dd2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:1:14",
+          "unitId": "gcppde:1",
+          "index": 14,
+          "text": "Designing for data and application portability: multicloud and data residency requirements",
+          "sourceHash": "d2b0a28603cb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:1:15",
+          "unitId": "gcppde:1",
+          "index": 15,
+          "text": "Designing data staging, cataloging, profiling, and discovery for governance",
+          "sourceHash": "64a3c4c0176b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:1:16",
+          "unitId": "gcppde:1",
+          "index": 16,
+          "text": "Analyzing stakeholder needs, users, processes, and technology to plan a migration's desired end state",
+          "sourceHash": "72ad5430d53d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:1:17",
+          "unitId": "gcppde:1",
+          "index": 17,
+          "text": "Planning migration and validation to Google Cloud: BigQuery Data Transfer Service, Database Migration Service, Transfer Appliance, Google Cloud networking, Datastream",
+          "sourceHash": "2c34f2d3f353",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "gcppde:2",
+      "index": 2,
+      "title": "Ingesting and Processing the Data",
+      "weight": 25,
+      "gate": "Given a data source and a latency requirement, choose the specific Google Cloud ingestion/processing service that fits -- and say whether the transformation is batch or streaming.",
+      "objectives": [
+        {
+          "id": "gcppde:2:1",
+          "unitId": "gcppde:2",
+          "index": 1,
+          "text": "Defining data sources and sinks for a pipeline",
+          "sourceHash": "4c55e5a3ac32",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:2:2",
+          "unitId": "gcppde:2",
+          "index": 2,
+          "text": "Defining data transformation and orchestration logic",
+          "sourceHash": "56bbaaa4b567",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:2:3",
+          "unitId": "gcppde:2",
+          "index": 3,
+          "text": "Applying networking fundamentals to a data pipeline",
+          "sourceHash": "7773eafa2de5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:2:4",
+          "unitId": "gcppde:2",
+          "index": 4,
+          "text": "Designing data encryption into a pipeline",
+          "sourceHash": "9835553806fe",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:2:5",
+          "unitId": "gcppde:2",
+          "index": 5,
+          "text": "Cleansing data as part of pipeline design",
+          "sourceHash": "03e739051c3b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:2:6",
+          "unitId": "gcppde:2",
+          "index": 6,
+          "text": "Choosing the right data processing service: Dataflow, Apache Beam, Dataproc, Cloud Data Fusion, BigQuery, Pub/Sub, Apache Spark, the Hadoop ecosystem, Apache Kafka",
+          "sourceHash": "9f0bed1aeea1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:2:7",
+          "unitId": "gcppde:2",
+          "index": 7,
+          "text": "Designing batch transformations",
+          "sourceHash": "bad2788be55c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:2:8",
+          "unitId": "gcppde:2",
+          "index": 8,
+          "text": "Designing streaming transformations: windowing, late-arriving data",
+          "sourceHash": "f625db3d0999",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:2:9",
+          "unitId": "gcppde:2",
+          "index": 9,
+          "text": "Designing a pipeline's processing logic",
+          "sourceHash": "2857aa4c5cbf",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:2:10",
+          "unitId": "gcppde:2",
+          "index": 10,
+          "text": "Using AI for data enrichment in a pipeline",
+          "sourceHash": "db0d3877d725",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:2:11",
+          "unitId": "gcppde:2",
+          "index": 11,
+          "text": "Designing data acquisition and import",
+          "sourceHash": "60277c5923f0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:2:12",
+          "unitId": "gcppde:2",
+          "index": 12,
+          "text": "Integrating a pipeline with new data sources",
+          "sourceHash": "3e76405140b0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:2:13",
+          "unitId": "gcppde:2",
+          "index": 13,
+          "text": "Automating and orchestrating jobs with Cloud Composer and Workflows",
+          "sourceHash": "f0e3605a0563",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:2:14",
+          "unitId": "gcppde:2",
+          "index": 14,
+          "text": "Applying CI/CD to data pipelines",
+          "sourceHash": "f0bc628fea9f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "gcppde:3",
+      "index": 3,
+      "title": "Storing the Data",
+      "weight": 20,
+      "gate": "Given a data-access pattern, choose the specific Google Cloud storage or warehouse product that fits it -- and justify why a near-miss alternative doesn't.",
+      "objectives": [
+        {
+          "id": "gcppde:3:1",
+          "unitId": "gcppde:3",
+          "index": 1,
+          "text": "Analyzing data access patterns to choose a storage system",
+          "sourceHash": "f5719122ebf2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:3:2",
+          "unitId": "gcppde:3",
+          "index": 2,
+          "text": "Choosing a managed storage service: BigQuery, BigLake, AlloyDB, Bigtable, Spanner, Cloud SQL, Cloud Storage, Firestore, Memorystore",
+          "sourceHash": "5279ad53e918",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:3:3",
+          "unitId": "gcppde:3",
+          "index": 3,
+          "text": "Planning for storage cost and performance",
+          "sourceHash": "aba6ce7a44b9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:3:4",
+          "unitId": "gcppde:3",
+          "index": 4,
+          "text": "Managing the lifecycle of stored data",
+          "sourceHash": "16b4bd080254",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:3:5",
+          "unitId": "gcppde:3",
+          "index": 5,
+          "text": "Designing a data warehouse's data model",
+          "sourceHash": "f1c613a601d7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:3:6",
+          "unitId": "gcppde:3",
+          "index": 6,
+          "text": "Deciding the degree of data normalization",
+          "sourceHash": "739c63072b86",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:3:7",
+          "unitId": "gcppde:3",
+          "index": 7,
+          "text": "Mapping business requirements to a warehouse design",
+          "sourceHash": "181cf0e666cd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:3:8",
+          "unitId": "gcppde:3",
+          "index": 8,
+          "text": "Defining an architecture that supports the warehouse's real access patterns",
+          "sourceHash": "a3ce396e9c8b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:3:9",
+          "unitId": "gcppde:3",
+          "index": 9,
+          "text": "Managing a data lake: configuring discovery, access, and cost controls",
+          "sourceHash": "5b267320fb6f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:3:10",
+          "unitId": "gcppde:3",
+          "index": 10,
+          "text": "Processing data within a data lake",
+          "sourceHash": "c31b196de7f6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:3:11",
+          "unitId": "gcppde:3",
+          "index": 11,
+          "text": "Monitoring a data lake",
+          "sourceHash": "48be7ac266f3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:3:12",
+          "unitId": "gcppde:3",
+          "index": 12,
+          "text": "Building a data platform with Dataplex, Dataplex Catalog, BigQuery, and Cloud Storage",
+          "sourceHash": "325912404376",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:3:13",
+          "unitId": "gcppde:3",
+          "index": 13,
+          "text": "Building a federated governance model for distributed data systems",
+          "sourceHash": "f11d1556450a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "gcppde:4",
+      "index": 4,
+      "title": "Preparing and Using Data for Analysis",
+      "weight": 15,
+      "gate": "Given a downstream consumer of data -- a dashboard, an ML model, another team -- name what has to happen to the data before it's usable, and by whom.",
+      "objectives": [
+        {
+          "id": "gcppde:4:1",
+          "unitId": "gcppde:4",
+          "index": 1,
+          "text": "Connecting data to visualization tools",
+          "sourceHash": "9e96555ee1ac",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:4:2",
+          "unitId": "gcppde:4",
+          "index": 2,
+          "text": "Precalculating fields for reporting performance",
+          "sourceHash": "e405bdc16491",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:4:3",
+          "unitId": "gcppde:4",
+          "index": 3,
+          "text": "Using BigQuery's BI features: BI Engine, materialized views",
+          "sourceHash": "3bee78b0150f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:4:4",
+          "unitId": "gcppde:4",
+          "index": 4,
+          "text": "Troubleshooting a poorly performing query",
+          "sourceHash": "6181de36c9ec",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:4:5",
+          "unitId": "gcppde:4",
+          "index": 5,
+          "text": "Applying security, data masking, IAM, and Cloud DLP to data prepared for analysis",
+          "sourceHash": "3b98f53dbbb3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:4:6",
+          "unitId": "gcppde:4",
+          "index": 6,
+          "text": "Preparing data for ML feature engineering, training, and serving with BigQuery ML",
+          "sourceHash": "38a8038d7e87",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:4:7",
+          "unitId": "gcppde:4",
+          "index": 7,
+          "text": "Preparing unstructured data for embeddings and retrieval-augmented generation (RAG)",
+          "sourceHash": "4e292b68940d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:4:8",
+          "unitId": "gcppde:4",
+          "index": 8,
+          "text": "Defining rules for sharing data",
+          "sourceHash": "62b840c57296",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:4:9",
+          "unitId": "gcppde:4",
+          "index": 9,
+          "text": "Publishing datasets",
+          "sourceHash": "ff13aa78f0bc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:4:10",
+          "unitId": "gcppde:4",
+          "index": 10,
+          "text": "Publishing reports and visualizations",
+          "sourceHash": "6ee99166bd44",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:4:11",
+          "unitId": "gcppde:4",
+          "index": 11,
+          "text": "Sharing data through BigQuery Analytics Hub",
+          "sourceHash": "f877e5ec7fb6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "gcppde:5",
+      "index": 5,
+      "title": "Maintaining and Automating Data Workloads",
+      "weight": 18,
+      "gate": "Given a running data platform, say what specifically keeps it within cost and reliability targets -- not a generic 'monitor it' answer.",
+      "objectives": [
+        {
+          "id": "gcppde:5:1",
+          "unitId": "gcppde:5",
+          "index": 1,
+          "text": "Minimizing cost against actual business need for data",
+          "sourceHash": "fbe2ded0837c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:5:2",
+          "unitId": "gcppde:5",
+          "index": 2,
+          "text": "Ensuring enough resources are available for business-critical data processes",
+          "sourceHash": "3e5465135ee8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:5:3",
+          "unitId": "gcppde:5",
+          "index": 3,
+          "text": "Choosing between persistent and job-based clusters in Dataproc",
+          "sourceHash": "e428f3e97584",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:5:4",
+          "unitId": "gcppde:5",
+          "index": 4,
+          "text": "Creating directed acyclic graphs (DAGs) for Cloud Composer",
+          "sourceHash": "cb0ef300221e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:5:5",
+          "unitId": "gcppde:5",
+          "index": 5,
+          "text": "Scheduling and orchestrating jobs repeatably",
+          "sourceHash": "968807edc835",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:5:6",
+          "unitId": "gcppde:5",
+          "index": 6,
+          "text": "Managing capacity: BigQuery Editions and reservations",
+          "sourceHash": "85d606ff67bf",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:5:7",
+          "unitId": "gcppde:5",
+          "index": 7,
+          "text": "Choosing between interactive and batch query jobs",
+          "sourceHash": "1ea0456b53a8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:5:8",
+          "unitId": "gcppde:5",
+          "index": 8,
+          "text": "Observing data processes with Cloud Monitoring, Cloud Logging, and the BigQuery admin panel",
+          "sourceHash": "edb4d4d955e8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:5:9",
+          "unitId": "gcppde:5",
+          "index": 9,
+          "text": "Monitoring planned usage against budget",
+          "sourceHash": "c7f0af641179",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:5:10",
+          "unitId": "gcppde:5",
+          "index": 10,
+          "text": "Troubleshooting error messages, billing issues, and quotas",
+          "sourceHash": "f80c2649f175",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:5:11",
+          "unitId": "gcppde:5",
+          "index": 11,
+          "text": "Managing workloads: jobs, queries, compute capacity, reservations",
+          "sourceHash": "02f4da3bba98",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:5:12",
+          "unitId": "gcppde:5",
+          "index": 12,
+          "text": "Designing for fault tolerance and managing restarts",
+          "sourceHash": "6f5b673ad7a8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:5:13",
+          "unitId": "gcppde:5",
+          "index": 13,
+          "text": "Running jobs across multiple regions or zones",
+          "sourceHash": "1a710abb7cfb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:5:14",
+          "unitId": "gcppde:5",
+          "index": 14,
+          "text": "Preparing for data corruption and missing data",
+          "sourceHash": "b0bbb9ff98f2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppde:5:15",
+          "unitId": "gcppde:5",
+          "index": 15,
+          "text": "Designing data replication and failover: Cloud SQL, Redis clusters",
+          "sourceHash": "e41f6b1f3721",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/gcp.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-24T00:00:00Z",
+    "officialObjectivesUrl": "https://cloud.google.com/learn/certification/guides/data-engineer",
+    "providerName": "Google Cloud",
+    "credentialName": "Google Cloud Professional Data Engineer",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 5,
+    "objectives": 70,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

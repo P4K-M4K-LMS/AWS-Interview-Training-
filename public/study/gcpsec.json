@@ -1,0 +1,772 @@
+{
+  "id": "gcpsec",
+  "code": "GCPSEC",
+  "title": "Google Cloud Professional Cloud Security Engineer",
+  "description": "Google Cloud Professional Cloud Security Engineer: configuring identity and access, securing communications and network boundaries, protecting data at rest/in transit/in use, automating security operations, and supporting regulatory compliance on Google Cloud.",
+  "trackType": "certification",
+  "field": "gcp",
+  "units": [
+    {
+      "id": "gcpsec:1",
+      "index": 1,
+      "title": "Configuring Access",
+      "weight": 25,
+      "gate": "Given an identity or access requirement, say whether it belongs on Cloud Identity, a service account, authentication policy, or IAM authorization -- and the exact least-privilege mechanism to apply.",
+      "objectives": [
+        {
+          "id": "gcpsec:1:1",
+          "unitId": "gcpsec:1",
+          "index": 1,
+          "text": "Configuring Google Cloud Directory Sync and third-party SSO",
+          "sourceHash": "5aeb401a483f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:1:2",
+          "unitId": "gcpsec:1",
+          "index": 2,
+          "text": "Managing a super administrator account",
+          "sourceHash": "074c89fb918a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:1:3",
+          "unitId": "gcpsec:1",
+          "index": 3,
+          "text": "Automating user lifecycle management",
+          "sourceHash": "000bfebc9808",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:1:4",
+          "unitId": "gcpsec:1",
+          "index": 4,
+          "text": "Administering user accounts and groups programmatically",
+          "sourceHash": "b784270961c7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:1:5",
+          "unitId": "gcpsec:1",
+          "index": 5,
+          "text": "Configuring Workforce Identity Federation",
+          "sourceHash": "27a5d877222d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:1:6",
+          "unitId": "gcpsec:1",
+          "index": 6,
+          "text": "Securing and protecting service accounts, including default ones",
+          "sourceHash": "b785b7dda863",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:1:7",
+          "unitId": "gcpsec:1",
+          "index": 7,
+          "text": "Identifying scenarios that require a service account",
+          "sourceHash": "16db403856d6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:1:8",
+          "unitId": "gcpsec:1",
+          "index": 8,
+          "text": "Creating, disabling, and authorizing service accounts",
+          "sourceHash": "7a93a613ce8f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:1:9",
+          "unitId": "gcpsec:1",
+          "index": 9,
+          "text": "Securing, auditing, and mitigating service account key usage",
+          "sourceHash": "24495463bd61",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:1:10",
+          "unitId": "gcpsec:1",
+          "index": 10,
+          "text": "Managing and creating short-lived credentials",
+          "sourceHash": "6cb9d46fbe26",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:1:11",
+          "unitId": "gcpsec:1",
+          "index": 11,
+          "text": "Configuring Workload Identity Federation",
+          "sourceHash": "3143bdd24d00",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:1:12",
+          "unitId": "gcpsec:1",
+          "index": 12,
+          "text": "Managing service account impersonation",
+          "sourceHash": "fce9b84b395d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:1:13",
+          "unitId": "gcpsec:1",
+          "index": 13,
+          "text": "Creating a password and session management policy for user accounts",
+          "sourceHash": "96d3ed601e95",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:1:14",
+          "unitId": "gcpsec:1",
+          "index": 14,
+          "text": "Setting up SAML and OAuth",
+          "sourceHash": "256cc8ae1d30",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:1:15",
+          "unitId": "gcpsec:1",
+          "index": 15,
+          "text": "Configuring and enforcing 2-step verification",
+          "sourceHash": "1c97a368a711",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:1:16",
+          "unitId": "gcpsec:1",
+          "index": 16,
+          "text": "Managing privileged roles and separation of duties with IAM",
+          "sourceHash": "52d3488618e9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:1:17",
+          "unitId": "gcpsec:1",
+          "index": 17,
+          "text": "Managing IAM and ACL permissions",
+          "sourceHash": "4326906f3862",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:1:18",
+          "unitId": "gcpsec:1",
+          "index": 18,
+          "text": "Granting permissions to identities using IAM conditions and IAM deny policies",
+          "sourceHash": "f7d5276cdc55",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:1:19",
+          "unitId": "gcpsec:1",
+          "index": 19,
+          "text": "Defining least-privilege access at the organization, folder, project, and resource level",
+          "sourceHash": "14876c8e7c91",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:1:20",
+          "unitId": "gcpsec:1",
+          "index": 20,
+          "text": "Configuring Access Context Manager",
+          "sourceHash": "f1f703b3c2e5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:1:21",
+          "unitId": "gcpsec:1",
+          "index": 21,
+          "text": "Applying Policy Intelligence",
+          "sourceHash": "495fa5aabafc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:1:22",
+          "unitId": "gcpsec:1",
+          "index": 22,
+          "text": "Managing permissions through groups",
+          "sourceHash": "f5f6b0f4875e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:1:23",
+          "unitId": "gcpsec:1",
+          "index": 23,
+          "text": "Identifying use cases for, and configuring, Privileged Access Manager",
+          "sourceHash": "79e318549145",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:1:24",
+          "unitId": "gcpsec:1",
+          "index": 24,
+          "text": "Managing folders and projects at scale",
+          "sourceHash": "666ed2d1e1aa",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:1:25",
+          "unitId": "gcpsec:1",
+          "index": 25,
+          "text": "Managing pre-built and custom organization policies across the resource hierarchy",
+          "sourceHash": "6f25aaaa3004",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:1:26",
+          "unitId": "gcpsec:1",
+          "index": 26,
+          "text": "Using the resource hierarchy for access control and permission inheritance",
+          "sourceHash": "a7c50633451c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "gcpsec:2",
+      "index": 2,
+      "title": "Securing Communications and Establishing Boundary Protection",
+      "weight": 22,
+      "gate": "Given a network boundary requirement, name the specific Google Cloud perimeter, segmentation, or private-connectivity mechanism that enforces it.",
+      "objectives": [
+        {
+          "id": "gcpsec:2:1",
+          "unitId": "gcpsec:2",
+          "index": 1,
+          "text": "Configuring network perimeter controls: Cloud NGFW rules/policies, Identity-Aware Proxy, load balancers, Certificate Authority Service",
+          "sourceHash": "0be780e65d9c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:2:2",
+          "unitId": "gcpsec:2",
+          "index": 2,
+          "text": "Setting up application-layer (layer 7) inspection on Cloud NGFW",
+          "sourceHash": "8fcf544a6d63",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:2:3",
+          "unitId": "gcpsec:2",
+          "index": 3,
+          "text": "Differentiating private versus public IP addressing",
+          "sourceHash": "170ab8150cbe",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:2:4",
+          "unitId": "gcpsec:2",
+          "index": 4,
+          "text": "Configuring Google Cloud Armor as a web application firewall",
+          "sourceHash": "081d93070411",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:2:5",
+          "unitId": "gcpsec:2",
+          "index": 5,
+          "text": "Deploying Secure Web Proxy",
+          "sourceHash": "dd95fb7f63b9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:2:6",
+          "unitId": "gcpsec:2",
+          "index": 6,
+          "text": "Configuring Cloud DNS security settings",
+          "sourceHash": "111b653bd091",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:2:7",
+          "unitId": "gcpsec:2",
+          "index": 7,
+          "text": "Continually monitoring and restricting configured APIs",
+          "sourceHash": "20226ebc2855",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:2:8",
+          "unitId": "gcpsec:2",
+          "index": 8,
+          "text": "Configuring security properties of a VPC network, VPC peering, Shared VPC, and firewall rules",
+          "sourceHash": "7bfe61023f53",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:2:9",
+          "unitId": "gcpsec:2",
+          "index": 9,
+          "text": "Configuring network isolation and data encapsulation for N-tier applications",
+          "sourceHash": "d77ffe19344f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:2:10",
+          "unitId": "gcpsec:2",
+          "index": 10,
+          "text": "Identifying use cases for, and configuring, VPC Service Controls",
+          "sourceHash": "7ffccbeddf9a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:2:11",
+          "unitId": "gcpsec:2",
+          "index": 11,
+          "text": "Designing private connectivity between VPC networks and projects: Shared VPC, VPC peering, Private Google Access",
+          "sourceHash": "92a42a3906dc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:2:12",
+          "unitId": "gcpsec:2",
+          "index": 12,
+          "text": "Designing private connectivity and encryption between data centers and a VPC: HA VPN, Cloud Interconnect",
+          "sourceHash": "6b9a30d2c1d0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:2:13",
+          "unitId": "gcpsec:2",
+          "index": 13,
+          "text": "Establishing private connectivity to Google APIs: Private Google Access, restricted Google access, Private Service Connect",
+          "sourceHash": "78647a8250b5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:2:14",
+          "unitId": "gcpsec:2",
+          "index": 14,
+          "text": "Using Cloud NAT to enable outbound traffic",
+          "sourceHash": "8e8662969a98",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "gcpsec:3",
+      "index": 3,
+      "title": "Ensuring Data Protection",
+      "weight": 23,
+      "gate": "Given data in a particular state -- at rest, in transit, in use -- name the specific Google Cloud control that protects it there.",
+      "objectives": [
+        {
+          "id": "gcpsec:3:1",
+          "unitId": "gcpsec:3",
+          "index": 1,
+          "text": "Configuring Sensitive Data Protection: discovering/redacting PII, pseudonymization, format-preserving encryption",
+          "sourceHash": "319193b7572e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:3:2",
+          "unitId": "gcpsec:3",
+          "index": 2,
+          "text": "Restricting access to Google Cloud data services: BigQuery, Cloud Storage, Cloud SQL",
+          "sourceHash": "2b2c7e8fce5c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:3:3",
+          "unitId": "gcpsec:3",
+          "index": 3,
+          "text": "Securing secrets with Secret Manager",
+          "sourceHash": "4ecfb6308dfa",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:3:4",
+          "unitId": "gcpsec:3",
+          "index": 4,
+          "text": "Protecting and managing compute instance metadata",
+          "sourceHash": "bfd710529d24",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:3:5",
+          "unitId": "gcpsec:3",
+          "index": 5,
+          "text": "Choosing between Google default encryption, customer-managed encryption keys (CMEK), and Cloud External Key Manager (EKM)",
+          "sourceHash": "796aa1d46dd9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:3:6",
+          "unitId": "gcpsec:3",
+          "index": 6,
+          "text": "Determining when to use software versus hardware keys",
+          "sourceHash": "68aee020e511",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:3:7",
+          "unitId": "gcpsec:3",
+          "index": 7,
+          "text": "Managing encryption keys for CMEK and EKM: rotation, revocation, import",
+          "sourceHash": "29f2860f7b79",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:3:8",
+          "unitId": "gcpsec:3",
+          "index": 8,
+          "text": "Applying encryption methods to specific use cases",
+          "sourceHash": "91cf7edb8301",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:3:9",
+          "unitId": "gcpsec:3",
+          "index": 9,
+          "text": "Configuring object lifecycle policies for Cloud Storage",
+          "sourceHash": "d3609731d57c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:3:10",
+          "unitId": "gcpsec:3",
+          "index": 10,
+          "text": "Enabling Confidential Computing",
+          "sourceHash": "d3e8172e0b97",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:3:11",
+          "unitId": "gcpsec:3",
+          "index": 11,
+          "text": "Implementing security and privacy controls for AI/ML systems against unintentional exploitation of data or models",
+          "sourceHash": "55e10bf879e7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:3:12",
+          "unitId": "gcpsec:3",
+          "index": 12,
+          "text": "Determining security requirements for IaaS-hosted versus PaaS-hosted training models",
+          "sourceHash": "59441089032f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:3:13",
+          "unitId": "gcpsec:3",
+          "index": 13,
+          "text": "Implementing security controls for the Gemini Enterprise Agent Platform",
+          "sourceHash": "1e4813d51d2c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "gcpsec:4",
+      "index": 4,
+      "title": "Managing Operations",
+      "weight": 19,
+      "gate": "Given a security operations task, say whether it's automation (prevent it from happening) or detection (notice it happened) -- and the specific tool for that half.",
+      "objectives": [
+        {
+          "id": "gcpsec:4:1",
+          "unitId": "gcpsec:4",
+          "index": 1,
+          "text": "Automating CVE security scanning through a CI/CD pipeline",
+          "sourceHash": "effafd18ee6a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:4:2",
+          "unitId": "gcpsec:4",
+          "index": 2,
+          "text": "Configuring Binary Authorization to secure GKE clusters or Cloud Run",
+          "sourceHash": "addebc76ead7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:4:3",
+          "unitId": "gcpsec:4",
+          "index": 3,
+          "text": "Automating VM and container image hardening, maintenance, and patch management",
+          "sourceHash": "9e34a223fd1c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:4:4",
+          "unitId": "gcpsec:4",
+          "index": 4,
+          "text": "Managing policy and drift detection at scale: cloud security posture management, custom organization policies, custom Security Health Analytics modules",
+          "sourceHash": "23321480ce50",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:4:5",
+          "unitId": "gcpsec:4",
+          "index": 5,
+          "text": "Configuring and analyzing network logs: Cloud NGFW, VPC flow logs, Packet Mirroring, Cloud IDS, Log Analytics",
+          "sourceHash": "4098c9061918",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:4:6",
+          "unitId": "gcpsec:4",
+          "index": 6,
+          "text": "Designing an effective logging strategy",
+          "sourceHash": "b6148217389e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:4:7",
+          "unitId": "gcpsec:4",
+          "index": 7,
+          "text": "Logging, monitoring, responding to, and remediating security incidents",
+          "sourceHash": "80713f7ebdf7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:4:8",
+          "unitId": "gcpsec:4",
+          "index": 8,
+          "text": "Designing secure access to logs",
+          "sourceHash": "c4b14749b6c5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:4:9",
+          "unitId": "gcpsec:4",
+          "index": 9,
+          "text": "Exporting logs to external security systems",
+          "sourceHash": "4c1359a6f27f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:4:10",
+          "unitId": "gcpsec:4",
+          "index": 10,
+          "text": "Configuring and analyzing Cloud Audit Logs and data access logs",
+          "sourceHash": "b73508828c96",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:4:11",
+          "unitId": "gcpsec:4",
+          "index": 11,
+          "text": "Configuring log exports: log sinks and aggregated sinks",
+          "sourceHash": "0606406eae1e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:4:12",
+          "unitId": "gcpsec:4",
+          "index": 12,
+          "text": "Configuring and monitoring Security Command Center",
+          "sourceHash": "9b6f20a31379",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "gcpsec:5",
+      "index": 5,
+      "title": "Supporting Compliance Requirements",
+      "weight": 11,
+      "gate": "Given a regulatory requirement, map it to the specific Google Cloud control that satisfies it, and say what's in scope versus out of scope.",
+      "objectives": [
+        {
+          "id": "gcpsec:5:1",
+          "unitId": "gcpsec:5",
+          "index": 1,
+          "text": "Determining technical compliance needs across compute, data, network, and storage",
+          "sourceHash": "39c57abaf115",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:5:2",
+          "unitId": "gcpsec:5",
+          "index": 2,
+          "text": "Evaluating the shared responsibility model",
+          "sourceHash": "44bbb8814452",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:5:3",
+          "unitId": "gcpsec:5",
+          "index": 3,
+          "text": "Configuring compliance-supporting controls: Assured Workloads, organization policies, Access Transparency, Access Approval, data/service regionalization",
+          "sourceHash": "6fd6b2deefe3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:5:4",
+          "unitId": "gcpsec:5",
+          "index": 4,
+          "text": "Determining which Google Cloud environment is in scope for regulatory compliance",
+          "sourceHash": "e8581762ff95",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpsec:5:5",
+          "unitId": "gcpsec:5",
+          "index": 5,
+          "text": "Mapping compliance requirements to Google Cloud services and controls: network/access segmentation, audit log coverage",
+          "sourceHash": "6877fd8c7f98",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/gcp.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-24T00:00:00Z",
+    "officialObjectivesUrl": "https://cloud.google.com/learn/certification/guides/cloud-security-engineer",
+    "providerName": "Google Cloud",
+    "credentialName": "Google Cloud Professional Cloud Security Engineer",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 5,
+    "objectives": 70,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

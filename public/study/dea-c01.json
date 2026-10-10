@@ -4,6 +4,7 @@
   "title": "AWS Data Engineer Associate",
   "description": "AWS Certified Data Engineer - Associate (DEA-C01): building data pipelines that survive production -- ingestion and transformation, choosing and cataloging data stores, operating and monitoring pipelines, and the security and governance around the data itself.",
   "trackType": "certification",
+  "field": "aws",
   "units": [
     {
       "id": "dea-c01:1",

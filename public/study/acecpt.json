@@ -1,0 +1,273 @@
+{
+  "id": "acecpt",
+  "code": "ACECPT",
+  "title": "ACE Certified Personal Trainer",
+  "description": "ACE's NCCA-accredited personal trainer exam on its 2022 role delineation study: client onboarding and assessments (23%), program design and implementation (31%), program modification and progression (27%), and risk management, professional conduct and ethical business practices (19%).",
+  "trackType": "certification",
+  "field": "fitness",
+  "units": [
+    {
+      "id": "acecpt:1",
+      "index": 1,
+      "title": "Client onboarding and assessments",
+      "weight": 23,
+      "gate": "From an intake interview and screening, decide whether the client needs medical clearance, what to assess first, and why.",
+      "objectives": [
+        {
+          "id": "acecpt:1:1",
+          "unitId": "acecpt:1",
+          "index": 1,
+          "text": "Gathering health, medical, exercise and lifestyle information through questionnaires and interviews, in person or virtually",
+          "sourceHash": "870577504c22",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "acecpt:1:2",
+          "unitId": "acecpt:1",
+          "index": 2,
+          "text": "Identifying the need for medical clearance or referral using PAR-Q+ and ACSM preparticipation guidelines",
+          "sourceHash": "bbd218afab57",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "acecpt:1:3",
+          "unitId": "acecpt:1",
+          "index": 3,
+          "text": "Assessing readiness for behavior change and exercise attitudes, and setting goals with SMART and GROW frameworks",
+          "sourceHash": "47f4da3b561b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "acecpt:1:4",
+          "unitId": "acecpt:1",
+          "index": 4,
+          "text": "Evaluating foundational movement patterns (bend-and-lift, single-leg, push, pull, rotation) through observation",
+          "sourceHash": "071ab9ec1306",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "acecpt:1:5",
+          "unitId": "acecpt:1",
+          "index": 5,
+          "text": "Selecting and conducting baseline fitness assessments matched to the client's goals and health status",
+          "sourceHash": "0e73a1ec43c8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "acecpt:1:6",
+          "unitId": "acecpt:1",
+          "index": 6,
+          "text": "Dietary preferences, population-specific and condition-specific exercise considerations, and common medication effects",
+          "sourceHash": "25748d7dbd31",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "acecpt:2",
+      "index": 2,
+      "title": "Program design and implementation",
+      "weight": 31,
+      "gate": "Design a personalized program from a stated assessment and goal, and show the exercise selection and instruction that implements it.",
+      "objectives": [
+        {
+          "id": "acecpt:2:1",
+          "unitId": "acecpt:2",
+          "index": 1,
+          "text": "Establishing functional, health, fitness and performance goals from interview and assessment data",
+          "sourceHash": "02b62956a5f0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "acecpt:2:2",
+          "unitId": "acecpt:2",
+          "index": 2,
+          "text": "Applying exercise principles (specificity, overload, progression) to design personalized cardiorespiratory, muscular and movement programs",
+          "sourceHash": "01133ef738d0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "acecpt:2:3",
+          "unitId": "acecpt:2",
+          "index": 3,
+          "text": "ACE's Integrated Fitness Training model: functional, movement and load/speed training and cardiorespiratory training by intensity zones",
+          "sourceHash": "466e547d3ebb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "acecpt:2:4",
+          "unitId": "acecpt:2",
+          "index": 4,
+          "text": "Selecting exercises and equipment and integrating them across settings: virtual, in-home, in-club and public spaces",
+          "sourceHash": "7d98d6d15678",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "acecpt:2:5",
+          "unitId": "acecpt:2",
+          "index": 5,
+          "text": "Instructing safe technique and equipment use with verbal, visual and kinesthetic cues",
+          "sourceHash": "eb635b092daa",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "acecpt:2:6",
+          "unitId": "acecpt:2",
+          "index": 6,
+          "text": "Leveraging technology in program implementation and monitoring",
+          "sourceHash": "d2b1fdcfbf46",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "acecpt:3",
+      "index": 3,
+      "title": "Program modification and progression",
+      "weight": 27,
+      "gate": "Given a client who has stalled or lapsed, name the cause, the conversation, and the specific program change.",
+      "objectives": [
+        {
+          "id": "acecpt:3:1",
+          "unitId": "acecpt:3",
+          "index": 1,
+          "text": "Facilitating adherence through positive experiences, self-efficacy and rapport",
+          "sourceHash": "00dbf74b2fdd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "acecpt:3:2",
+          "unitId": "acecpt:3",
+          "index": 2,
+          "text": "Recognizing and responding to lapses: barriers, social determinants of health and behavior-change models",
+          "sourceHash": "6e1009f44179",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "acecpt:3:3",
+          "unitId": "acecpt:3",
+          "index": 3,
+          "text": "Routinely evaluating program effectiveness through observation, feedback and reassessment",
+          "sourceHash": "9ae179399c3a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "acecpt:3:4",
+          "unitId": "acecpt:3",
+          "index": 4,
+          "text": "Progressing and regressing exercises and acute variables in response to results and client status",
+          "sourceHash": "3a2b2c5a5919",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "acecpt:3:5",
+          "unitId": "acecpt:3",
+          "index": 5,
+          "text": "Modifying programs for special populations and changing health conditions",
+          "sourceHash": "cd18d1846639",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "acecpt:4",
+      "index": 4,
+      "title": "Risk management, professional conduct and ethical business practices",
+      "weight": 19,
+      "gate": "Identify the liability or ethical issue in a training scenario and the standard, law or practice that governs it.",
+      "objectives": [
+        {
+          "id": "acecpt:4:1",
+          "unitId": "acecpt:4",
+          "index": 1,
+          "text": "Risk-management strategies across settings in line with recognized standards, guidelines, laws and regulations (CDC, ACSM, OSHA, HIPAA and others)",
+          "sourceHash": "8198f06cbbf9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "acecpt:4:2",
+          "unitId": "acecpt:4",
+          "index": 2,
+          "text": "Emergency response within scope of practice, incident documentation and facility safety",
+          "sourceHash": "2b6a4b46df6d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "acecpt:4:3",
+          "unitId": "acecpt:4",
+          "index": 3,
+          "text": "Staying current with industry standards, scope of practice and continuing education",
+          "sourceHash": "9085b339eda8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "acecpt:4:4",
+          "unitId": "acecpt:4",
+          "index": 4,
+          "text": "Ethical business practices: contracts, pricing, marketing, confidentiality and professional boundaries",
+          "sourceHash": "0d09485c513c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/fitness.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-10-08T00:00:00Z",
+    "officialObjectivesUrl": "https://contentcdn.eacefitness.com/assets/certification/pdfs/CPT-Exam-Content-Outline.pdf",
+    "providerName": "American Council on Exercise",
+    "credentialName": "ACE Certified Personal Trainer",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 4,
+    "objectives": 21,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

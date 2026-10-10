@@ -1,0 +1,822 @@
+{
+  "id": "gcpdevops",
+  "code": "GCPDEVOPS",
+  "title": "Google Cloud Professional Cloud DevOps Engineer",
+  "description": "Google Cloud Professional Cloud DevOps Engineer: bootstrapping a Google Cloud organization, building CI/CD pipelines for applications/infrastructure/ML workloads, applying SRE practices, implementing observability, and optimizing performance and cost.",
+  "trackType": "certification",
+  "field": "gcp",
+  "units": [
+    {
+      "id": "gcpdevops:1",
+      "index": 1,
+      "title": "Bootstrapping and Maintaining a Google Cloud Organization",
+      "weight": 20,
+      "gate": "Given a new organization to stand up, say which layer a decision belongs to -- resource hierarchy, infrastructure tooling, CI/CD, environment management, or dev environment -- and the specific Google Cloud mechanism for it.",
+      "objectives": [
+        {
+          "id": "gcpdevops:1:1",
+          "unitId": "gcpdevops:1",
+          "index": 1,
+          "text": "Organizing resources: application-centric structure, projects, folders",
+          "sourceHash": "eb3ae4aa53c6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:1:2",
+          "unitId": "gcpdevops:1",
+          "index": 2,
+          "text": "Designing shared networking: Shared VPC, VPC Network Peering, Private Service Connect",
+          "sourceHash": "740a3dd8c3fb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:1:3",
+          "unitId": "gcpdevops:1",
+          "index": 3,
+          "text": "Designing multi-project monitoring and logging",
+          "sourceHash": "22f3b14fbceb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:1:4",
+          "unitId": "gcpdevops:1",
+          "index": 4,
+          "text": "Designing IAM roles and organization-level policies",
+          "sourceHash": "fd53c45283e3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:1:5",
+          "unitId": "gcpdevops:1",
+          "index": 5,
+          "text": "Creating and managing service accounts",
+          "sourceHash": "13bf53546d34",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:1:6",
+          "unitId": "gcpdevops:1",
+          "index": 6,
+          "text": "Designing for data residency",
+          "sourceHash": "dce964ddf8c5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:1:7",
+          "unitId": "gcpdevops:1",
+          "index": 7,
+          "text": "Choosing infrastructure-as-code tooling: Infrastructure Manager, Cloud Foundation Toolkit, Config Connector, GitOps, Terraform, Helm",
+          "sourceHash": "5c5f8fde2c01",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:1:8",
+          "unitId": "gcpdevops:1",
+          "index": 8,
+          "text": "Making infrastructure changes using Google-recommended practices and blueprints",
+          "sourceHash": "5dc6823b6030",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:1:9",
+          "unitId": "gcpdevops:1",
+          "index": 9,
+          "text": "Automating infrastructure tasks with scripting: Python, Go",
+          "sourceHash": "981f0e289702",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:1:10",
+          "unitId": "gcpdevops:1",
+          "index": 10,
+          "text": "Designing continuous integration with Cloud Build",
+          "sourceHash": "f55683287559",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:1:11",
+          "unitId": "gcpdevops:1",
+          "index": 11,
+          "text": "Designing continuous delivery with Cloud Deploy, including Kustomize and Skaffold",
+          "sourceHash": "cf529bac69d6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:1:12",
+          "unitId": "gcpdevops:1",
+          "index": 12,
+          "text": "Configuring Artifact Registry",
+          "sourceHash": "d5123899cd47",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:1:13",
+          "unitId": "gcpdevops:1",
+          "index": 13,
+          "text": "Choosing third-party CI/CD tooling: Git, Jenkins, Argo CD, Packer, kpt",
+          "sourceHash": "39f1d77ae32e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:1:14",
+          "unitId": "gcpdevops:1",
+          "index": 14,
+          "text": "Securing CI/CD tooling",
+          "sourceHash": "11bbb172bb3c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:1:15",
+          "unitId": "gcpdevops:1",
+          "index": 15,
+          "text": "Managing ephemeral environments",
+          "sourceHash": "372f3f76f6be",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:1:16",
+          "unitId": "gcpdevops:1",
+          "index": 16,
+          "text": "Managing configuration and policy across environments",
+          "sourceHash": "58acc2881cf5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:1:17",
+          "unitId": "gcpdevops:1",
+          "index": 17,
+          "text": "Managing GKE clusters across an enterprise: fleets",
+          "sourceHash": "a291b66349c6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:1:18",
+          "unitId": "gcpdevops:1",
+          "index": 18,
+          "text": "Applying safe and secure patching and upgrading practices",
+          "sourceHash": "572f54f24b61",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:1:19",
+          "unitId": "gcpdevops:1",
+          "index": 19,
+          "text": "Configuring and managing cloud development environments: Cloud Workstations, Cloud Shell",
+          "sourceHash": "dbdadc73796c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:1:20",
+          "unitId": "gcpdevops:1",
+          "index": 20,
+          "text": "Bootstrapping a development environment with required tooling: custom images, IDE, Cloud SDK",
+          "sourceHash": "09530f50d0a1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:1:21",
+          "unitId": "gcpdevops:1",
+          "index": 21,
+          "text": "Using AI to assist development and operations: Gemini Code Assist, Gemini Cloud Assist, Gemini CLI",
+          "sourceHash": "5e2ebfb4a616",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "gcpdevops:2",
+      "index": 2,
+      "title": "Building and Implementing CI/CD Pipelines",
+      "weight": 25,
+      "gate": "Given a deployment scenario, name the specific pipeline mechanism -- trigger, approval flow, deployment strategy, or secret-management approach -- that governs it.",
+      "objectives": [
+        {
+          "id": "gcpdevops:2:1",
+          "unitId": "gcpdevops:2",
+          "index": 1,
+          "text": "Designing CI/CD for applications and infrastructure",
+          "sourceHash": "ba7735d7678f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:2:2",
+          "unitId": "gcpdevops:2",
+          "index": 2,
+          "text": "Managing artifacts with Artifact Registry",
+          "sourceHash": "a0e29565fad8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:2:3",
+          "unitId": "gcpdevops:2",
+          "index": 3,
+          "text": "Designing deployment to hybrid and multicloud environments, including GKE",
+          "sourceHash": "feca6a017283",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:2:4",
+          "unitId": "gcpdevops:2",
+          "index": 4,
+          "text": "Designing CI/CD pipeline triggers",
+          "sourceHash": "0038b1903293",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:2:5",
+          "unitId": "gcpdevops:2",
+          "index": 5,
+          "text": "Configuring deployment approval flows",
+          "sourceHash": "9703d7bce0c5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:2:6",
+          "unitId": "gcpdevops:2",
+          "index": 6,
+          "text": "Auditing and tracking deployments: Artifact Registry, Cloud Build, Cloud Deploy, Cloud Audit Logs",
+          "sourceHash": "8068a64a46e7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:2:7",
+          "unitId": "gcpdevops:2",
+          "index": 7,
+          "text": "Choosing a deployment strategy -- canary, blue/green, rolling, traffic splitting, feature flags -- and defining success metrics from application or ML pipeline telemetry",
+          "sourceHash": "e05015590b73",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:2:8",
+          "unitId": "gcpdevops:2",
+          "index": 8,
+          "text": "Troubleshooting and mitigating deployment issues",
+          "sourceHash": "2b088ad08a8c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:2:9",
+          "unitId": "gcpdevops:2",
+          "index": 9,
+          "text": "Managing keys with Cloud Key Management Service",
+          "sourceHash": "e7de38729aa6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:2:10",
+          "unitId": "gcpdevops:2",
+          "index": 10,
+          "text": "Managing configuration and secrets: Secret Manager, Certificate Manager, Parameter Manager, Workload Identity Federation",
+          "sourceHash": "37ea1cc87115",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:2:11",
+          "unitId": "gcpdevops:2",
+          "index": 11,
+          "text": "Choosing build-time versus runtime secret injection",
+          "sourceHash": "aea62bd78018",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:2:12",
+          "unitId": "gcpdevops:2",
+          "index": 12,
+          "text": "Applying artifact analysis and vulnerability scanning",
+          "sourceHash": "737672769f0a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:2:13",
+          "unitId": "gcpdevops:2",
+          "index": 13,
+          "text": "Applying software supply chain security: Binary Authorization, the SLSA framework",
+          "sourceHash": "0f5d3a5761e4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:2:14",
+          "unitId": "gcpdevops:2",
+          "index": 14,
+          "text": "Scoping IAM policy by environment for pipeline security",
+          "sourceHash": "923ed098f882",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "gcpdevops:3",
+      "index": 3,
+      "title": "Applying Site Reliability Engineering Practices",
+      "weight": 18,
+      "gate": "Given a reliability-versus-velocity trade-off, name the specific SRE mechanism -- SLI, SLO, error budget -- that governs the decision, not just 'be more careful.'",
+      "objectives": [
+        {
+          "id": "gcpdevops:3:1",
+          "unitId": "gcpdevops:3",
+          "index": 1,
+          "text": "Defining SLIs (availability, latency), SLOs, and SLAs",
+          "sourceHash": "71c06216a3cf",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:3:2",
+          "unitId": "gcpdevops:3",
+          "index": 2,
+          "text": "Defining error budgets, including Cloud Service Mesh's own definitions",
+          "sourceHash": "e04aeb91ac99",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:3:3",
+          "unitId": "gcpdevops:3",
+          "index": 3,
+          "text": "Weighing the opportunity cost of risk against reliability, including the concept of \"nines\"",
+          "sourceHash": "d19cae0ffabd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:3:4",
+          "unitId": "gcpdevops:3",
+          "index": 4,
+          "text": "Managing a service's lifecycle: planning, deployment, maintenance, retirement",
+          "sourceHash": "32f0a96ccd34",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:3:5",
+          "unitId": "gcpdevops:3",
+          "index": 5,
+          "text": "Planning capacity: quotas, limits, reservations, Dynamic Workload Scheduler",
+          "sourceHash": "7dff0d6a8e4b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:3:6",
+          "unitId": "gcpdevops:3",
+          "index": 6,
+          "text": "Designing autoscaling: managed instance groups, Cloud Run, GKE",
+          "sourceHash": "8bbee31dd21e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:3:7",
+          "unitId": "gcpdevops:3",
+          "index": 7,
+          "text": "Draining or redirecting traffic to mitigate an incident",
+          "sourceHash": "9c5118505733",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:3:8",
+          "unitId": "gcpdevops:3",
+          "index": 8,
+          "text": "Adding capacity to mitigate an incident",
+          "sourceHash": "7480530efafc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:3:9",
+          "unitId": "gcpdevops:3",
+          "index": 9,
+          "text": "Choosing a rollback strategy during an incident",
+          "sourceHash": "397fb4075198",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "gcpdevops:4",
+      "index": 4,
+      "title": "Implementing Observability Practices and Troubleshooting Issues",
+      "weight": 25,
+      "gate": "Given a production issue, say which observability signal -- log, metric, or trace -- actually answers the question being asked, and the specific tool that surfaces it.",
+      "objectives": [
+        {
+          "id": "gcpdevops:4:1",
+          "unitId": "gcpdevops:4",
+          "index": 1,
+          "text": "Collecting and importing logs: Ops Agent, OpenTelemetry, Cloud Audit Logs, VPC Flow Logs, Cloud Service Mesh",
+          "sourceHash": "d4cb7add8f82",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:4:2",
+          "unitId": "gcpdevops:4",
+          "index": 2,
+          "text": "Optimizing logs: filtering, sampling, exclusions, cost management, source considerations",
+          "sourceHash": "287441590253",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:4:3",
+          "unitId": "gcpdevops:4",
+          "index": 3,
+          "text": "Collecting metrics from applications, platforms, networking, Cloud Service Mesh, Managed Service for Prometheus, and hybrid/multicloud environments",
+          "sourceHash": "6b6375616e73",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:4:4",
+          "unitId": "gcpdevops:4",
+          "index": 4,
+          "text": "Creating synthetic monitors to proactively probe application endpoints and workflows",
+          "sourceHash": "ad59f8d27fab",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:4:5",
+          "unitId": "gcpdevops:4",
+          "index": 5,
+          "text": "Creating custom metrics, including log-based metrics",
+          "sourceHash": "4cb48725b5a4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:4:6",
+          "unitId": "gcpdevops:4",
+          "index": 6,
+          "text": "Analyzing logs with the Logs Explorer and the logging query language",
+          "sourceHash": "662a1e422eb7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:4:7",
+          "unitId": "gcpdevops:4",
+          "index": 7,
+          "text": "Exporting and retaining logs: routing to BigQuery, Pub/Sub, Cloud Storage",
+          "sourceHash": "2c7c253ef2ee",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:4:8",
+          "unitId": "gcpdevops:4",
+          "index": 8,
+          "text": "Redacting sensitive data (PII, PHI) from logs with log processors",
+          "sourceHash": "b21356c45602",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:4:9",
+          "unitId": "gcpdevops:4",
+          "index": 9,
+          "text": "Using Gemini Cloud Assist for AI-powered log analysis",
+          "sourceHash": "702dbffbca3d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:4:10",
+          "unitId": "gcpdevops:4",
+          "index": 10,
+          "text": "Analyzing metrics with the Metrics Explorer",
+          "sourceHash": "53b269abf455",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:4:11",
+          "unitId": "gcpdevops:4",
+          "index": 11,
+          "text": "Managing dashboards: creating, filtering, sharing, playbooks, PromQL",
+          "sourceHash": "3988c3beeea9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:4:12",
+          "unitId": "gcpdevops:4",
+          "index": 12,
+          "text": "Configuring alerting policies: SLIs, SLOs, cost control",
+          "sourceHash": "322d29a2808f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:4:13",
+          "unitId": "gcpdevops:4",
+          "index": 13,
+          "text": "Integrating third-party alerting tools: webhooks, PagerDuty, Rootly",
+          "sourceHash": "613e41009070",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:4:14",
+          "unitId": "gcpdevops:4",
+          "index": 14,
+          "text": "Using Gemini Cloud Assist for metrics interpretation",
+          "sourceHash": "39a98a209197",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:4:15",
+          "unitId": "gcpdevops:4",
+          "index": 15,
+          "text": "Using tracing frameworks such as OpenTelemetry",
+          "sourceHash": "345daa244c9e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:4:16",
+          "unitId": "gcpdevops:4",
+          "index": 16,
+          "text": "Analyzing trace waterfalls and spans",
+          "sourceHash": "8b3bb22fb737",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:4:17",
+          "unitId": "gcpdevops:4",
+          "index": 17,
+          "text": "Correlating trace IDs with structured logs",
+          "sourceHash": "dff29bdc2051",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:4:18",
+          "unitId": "gcpdevops:4",
+          "index": 18,
+          "text": "Using Gemini Cloud Assist for trace analysis",
+          "sourceHash": "405af1ab2629",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:4:19",
+          "unitId": "gcpdevops:4",
+          "index": 19,
+          "text": "Troubleshooting infrastructure issues",
+          "sourceHash": "f6becd65d16d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:4:20",
+          "unitId": "gcpdevops:4",
+          "index": 20,
+          "text": "Troubleshooting CI/CD pipeline issues",
+          "sourceHash": "97e04ca7d1b4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:4:21",
+          "unitId": "gcpdevops:4",
+          "index": 21,
+          "text": "Troubleshooting application issues",
+          "sourceHash": "ab8b3eac806b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:4:22",
+          "unitId": "gcpdevops:4",
+          "index": 22,
+          "text": "Troubleshooting observability issues themselves",
+          "sourceHash": "ad7b5bcefd4b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:4:23",
+          "unitId": "gcpdevops:4",
+          "index": 23,
+          "text": "Troubleshooting performance and latency issues",
+          "sourceHash": "880db085f5b7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "gcpdevops:5",
+      "index": 5,
+      "title": "Optimizing Performance and Cost",
+      "weight": 12,
+      "gate": "Given a cost or performance problem, name the specific Google Cloud tool or practice that addresses it -- not a generic 'right-size it' answer.",
+      "objectives": [
+        {
+          "id": "gcpdevops:5:1",
+          "unitId": "gcpdevops:5",
+          "index": 1,
+          "text": "Collecting application performance monitoring data",
+          "sourceHash": "531d76d9c673",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:5:2",
+          "unitId": "gcpdevops:5",
+          "index": 2,
+          "text": "Using Active Assist insights and recommendations",
+          "sourceHash": "526ccca8ba1c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:5:3",
+          "unitId": "gcpdevops:5",
+          "index": 3,
+          "text": "Accounting for observability costs",
+          "sourceHash": "5e4400a41dd8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:5:4",
+          "unitId": "gcpdevops:5",
+          "index": 4,
+          "text": "Using Spot VMs to reduce cost",
+          "sourceHash": "00b276a3e9a7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:5:5",
+          "unitId": "gcpdevops:5",
+          "index": 5,
+          "text": "Optimizing resource usage for cost and efficiency",
+          "sourceHash": "c6c275da7863",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:5:6",
+          "unitId": "gcpdevops:5",
+          "index": 6,
+          "text": "Planning infrastructure cost: committed-use discounts, sustained-use discounts, network tiers",
+          "sourceHash": "617b82b7c313",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:5:7",
+          "unitId": "gcpdevops:5",
+          "index": 7,
+          "text": "Using Google Cloud recommenders: cost, security, performance, manageability, reliability",
+          "sourceHash": "2787b387d942",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdevops:5:8",
+          "unitId": "gcpdevops:5",
+          "index": 8,
+          "text": "Optimizing individual workload costs: GKE, Cloud Run, Compute Engine",
+          "sourceHash": "bb310b99226d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/gcp.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-24T00:00:00Z",
+    "officialObjectivesUrl": "https://cloud.google.com/learn/certification/guides/cloud-devops-engineer",
+    "providerName": "Google Cloud",
+    "credentialName": "Google Cloud Professional Cloud DevOps Engineer",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 5,
+    "objectives": 75,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

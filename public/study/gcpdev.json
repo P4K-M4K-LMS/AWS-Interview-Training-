@@ -1,0 +1,633 @@
+{
+  "id": "gcpdev",
+  "code": "GCPDEV",
+  "title": "Google Cloud Professional Cloud Developer",
+  "description": "Google Cloud Professional Cloud Developer: designing scalable, secure cloud-native applications, building and testing them with Google-recommended tools, configuring deployment to Cloud Run/GKE, and integrating applications with Google Cloud data and API services.",
+  "trackType": "certification",
+  "field": "gcp",
+  "units": [
+    {
+      "id": "gcpdev:1",
+      "index": 1,
+      "title": "Designing Highly Scalable, Secure, and Reliable Cloud-Native Applications",
+      "weight": 32,
+      "gate": "Given an application requirement, choose the specific Google Cloud compute, security, or data mechanism that fits -- and say why a near-miss alternative doesn't.",
+      "objectives": [
+        {
+          "id": "gcpdev:1:1",
+          "unitId": "gcpdev:1",
+          "index": 1,
+          "text": "Choosing an application platform for a use case: Compute Engine, GKE, Cloud Run",
+          "sourceHash": "304b70396140",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdev:1:2",
+          "unitId": "gcpdev:1",
+          "index": 2,
+          "text": "Building, refactoring, and deploying application containers to Cloud Run and GKE",
+          "sourceHash": "c662b1205e32",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdev:1:3",
+          "unitId": "gcpdev:1",
+          "index": 3,
+          "text": "Understanding how Google Cloud services are geographically distributed: latency, regional services, zonal services",
+          "sourceHash": "4afac671c319",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdev:1:4",
+          "unitId": "gcpdev:1",
+          "index": 4,
+          "text": "Understanding load balancer use cases",
+          "sourceHash": "e0a62db4c8d6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdev:1:5",
+          "unitId": "gcpdev:1",
+          "index": 5,
+          "text": "Enabling session affinity for performant content delivery",
+          "sourceHash": "f68c65b62f81",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdev:1:6",
+          "unitId": "gcpdev:1",
+          "index": 6,
+          "text": "Implementing caching solutions: Memorystore",
+          "sourceHash": "37b5d29ac3ad",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdev:1:7",
+          "unitId": "gcpdev:1",
+          "index": 7,
+          "text": "Creating and deploying APIs: HTTP REST, gRPC",
+          "sourceHash": "73f8eee6b38a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdev:1:8",
+          "unitId": "gcpdev:1",
+          "index": 8,
+          "text": "Applying rate limiting, authentication, and observability to APIs: Apigee, Cloud API Gateway",
+          "sourceHash": "c72c2df09516",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdev:1:9",
+          "unitId": "gcpdev:1",
+          "index": 9,
+          "text": "Integrating applications asynchronously or via events: Eventarc, Pub/Sub",
+          "sourceHash": "af949121de3d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdev:1:10",
+          "unitId": "gcpdev:1",
+          "index": 10,
+          "text": "Defining resource requirements for workloads",
+          "sourceHash": "2d70db005fc9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdev:1:11",
+          "unitId": "gcpdev:1",
+          "index": 11,
+          "text": "Optimizing an application for cost and resource usage",
+          "sourceHash": "7f0ee9d694de",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdev:1:12",
+          "unitId": "gcpdev:1",
+          "index": 12,
+          "text": "Understanding data replication for zonal and regional failover models",
+          "sourceHash": "03283bccf58c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdev:1:13",
+          "unitId": "gcpdev:1",
+          "index": 13,
+          "text": "Using traffic-splitting strategies on Cloud Run or GKE: gradual rollouts, rollbacks, A/B testing",
+          "sourceHash": "0b95c23592aa",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdev:1:14",
+          "unitId": "gcpdev:1",
+          "index": 14,
+          "text": "Orchestrating application services: Workflows, Eventarc, Cloud Tasks, Cloud Scheduler",
+          "sourceHash": "c7e15368bbae",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdev:1:15",
+          "unitId": "gcpdev:1",
+          "index": 15,
+          "text": "Implementing data retention and organization policies: Cloud Storage Object Lifecycle Management, retention lock",
+          "sourceHash": "33f110901666",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdev:1:16",
+          "unitId": "gcpdev:1",
+          "index": 16,
+          "text": "Using vulnerability-identifying security mechanisms: Identity-Aware Proxy, Web Security Scanner",
+          "sourceHash": "da513951c1f0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdev:1:17",
+          "unitId": "gcpdev:1",
+          "index": 17,
+          "text": "Responding to and resolving vulnerabilities found by Artifact Analysis and Security Command Center",
+          "sourceHash": "631d3f45dc77",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdev:1:18",
+          "unitId": "gcpdev:1",
+          "index": 18,
+          "text": "Storing, accessing, and rotating secrets, credentials, and encryption keys: Secret Manager, Cloud KMS, Workload Identity Federation",
+          "sourceHash": "707e6313dcc2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdev:1:19",
+          "unitId": "gcpdev:1",
+          "index": 19,
+          "text": "Authenticating to Google Cloud services: Application Default Credentials, JWT, OAuth 2.0, Cloud SQL/AlloyDB Auth Proxy, Identity Platform, Workload Identity Federation",
+          "sourceHash": "f8f2380580c2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdev:1:20",
+          "unitId": "gcpdev:1",
+          "index": 20,
+          "text": "Securing cloud resources with IAM roles for service accounts",
+          "sourceHash": "02f487ae7013",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdev:1:21",
+          "unitId": "gcpdev:1",
+          "index": 21,
+          "text": "Incorporating secure service-to-service communication: Cloud Service Mesh, Kubernetes network policies, Direct VPC egress, private service connectivity",
+          "sourceHash": "7e4b7fb44910",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdev:1:22",
+          "unitId": "gcpdev:1",
+          "index": 22,
+          "text": "Running services with least-privileged access",
+          "sourceHash": "6fbf6ae1acb4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdev:1:23",
+          "unitId": "gcpdev:1",
+          "index": 23,
+          "text": "Securing application artifacts with Binary Authorization",
+          "sourceHash": "3de23dc513aa",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdev:1:24",
+          "unitId": "gcpdev:1",
+          "index": 24,
+          "text": "Choosing a storage system by data volume and performance requirements",
+          "sourceHash": "e9f628cd6d90",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdev:1:25",
+          "unitId": "gcpdev:1",
+          "index": 25,
+          "text": "Designing schemas for structured databases (AlloyDB, Spanner) and unstructured databases (Bigtable, Firestore)",
+          "sourceHash": "580ecdca05cc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdev:1:26",
+          "unitId": "gcpdev:1",
+          "index": 26,
+          "text": "Understanding eventual versus strongly consistent replication across AlloyDB, Bigtable, Cloud SQL, Spanner, and Cloud Storage",
+          "sourceHash": "5b0804617c11",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdev:1:27",
+          "unitId": "gcpdev:1",
+          "index": 27,
+          "text": "Creating signed URLs to grant access to Cloud Storage objects",
+          "sourceHash": "758347a2f631",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdev:1:28",
+          "unitId": "gcpdev:1",
+          "index": 28,
+          "text": "Writing data to BigQuery for analytics and AI/ML workloads",
+          "sourceHash": "79b43e0643df",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "gcpdev:2",
+      "index": 2,
+      "title": "Building and Testing Applications",
+      "weight": 23,
+      "gate": "Given a development-environment or testing task, name the specific Google Cloud tool that fits it, including where AI coding assistance is actually meant to be used.",
+      "objectives": [
+        {
+          "id": "gcpdev:2:1",
+          "unitId": "gcpdev:2",
+          "index": 1,
+          "text": "Emulating Google Cloud services locally with the Google Cloud CLI for development and unit testing",
+          "sourceHash": "0ceefb661d2e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdev:2:2",
+          "unitId": "gcpdev:2",
+          "index": 2,
+          "text": "Using the Google Cloud console, Cloud SDK, Cloud Code, Gemini Cloud Assist, Cloud Shell, and Cloud Workstations",
+          "sourceHash": "a214f8cd43dc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdev:2:3",
+          "unitId": "gcpdev:2",
+          "index": 3,
+          "text": "Configuring an IDE with Cloud SDK and AI tooling integrations: coding assistants, MCP servers",
+          "sourceHash": "3bf9f995bbe6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdev:2:4",
+          "unitId": "gcpdev:2",
+          "index": 4,
+          "text": "Building and storing containers from source code with Cloud Build and Artifact Registry",
+          "sourceHash": "59d99a82e05a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdev:2:5",
+          "unitId": "gcpdev:2",
+          "index": 5,
+          "text": "Configuring build provenance in Cloud Build: Binary Authorization",
+          "sourceHash": "afb9faaf5279",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdev:2:6",
+          "unitId": "gcpdev:2",
+          "index": 6,
+          "text": "Writing unit tests with the help of AI coding assistants",
+          "sourceHash": "0b19ee538465",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdev:2:7",
+          "unitId": "gcpdev:2",
+          "index": 7,
+          "text": "Executing automated integration tests in Cloud Build",
+          "sourceHash": "ba6aed272635",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "gcpdev:3",
+      "index": 3,
+      "title": "Configuring Cloud-Native Applications for Deployment",
+      "weight": 24,
+      "gate": "Given a deployment target -- Cloud Run or GKE -- name the specific configuration that makes the deployment actually trigger, scale, or stay available.",
+      "objectives": [
+        {
+          "id": "gcpdev:3:1",
+          "unitId": "gcpdev:3",
+          "index": 1,
+          "text": "Deploying an application to Cloud Run from source code",
+          "sourceHash": "3c1ec024a234",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdev:3:2",
+          "unitId": "gcpdev:3",
+          "index": 2,
+          "text": "Invoking Cloud Run services with triggers: Eventarc, Pub/Sub",
+          "sourceHash": "0175d6dc9d1c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdev:3:3",
+          "unitId": "gcpdev:3",
+          "index": 3,
+          "text": "Configuring event receivers: Eventarc, Pub/Sub",
+          "sourceHash": "0ecc7fa490d4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdev:3:4",
+          "unitId": "gcpdev:3",
+          "index": 4,
+          "text": "Versioning, exposing, and securing APIs in an application: Apigee",
+          "sourceHash": "c0ff5a8b3f90",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdev:3:5",
+          "unitId": "gcpdev:3",
+          "index": 5,
+          "text": "Deploying containerized applications to GKE",
+          "sourceHash": "ce9e90dd8d6f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdev:3:6",
+          "unitId": "gcpdev:3",
+          "index": 6,
+          "text": "Implementing Kubernetes health checks to increase application availability",
+          "sourceHash": "b81d1446469b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdev:3:7",
+          "unitId": "gcpdev:3",
+          "index": 7,
+          "text": "Incorporating Horizontal Pod Autoscaler attributes: scaling behavior, metrics",
+          "sourceHash": "dc1f93b94017",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "gcpdev:4",
+      "index": 4,
+      "title": "Integrating Applications with Google Cloud Services",
+      "weight": 21,
+      "gate": "Given an application calling a Google Cloud API, name the specific consideration -- batching, pagination, caching, backoff -- that keeps the call efficient and reliable.",
+      "objectives": [
+        {
+          "id": "gcpdev:4:1",
+          "unitId": "gcpdev:4",
+          "index": 1,
+          "text": "Managing connections to Google Cloud datastores: Cloud SQL, Firestore, Cloud Storage",
+          "sourceHash": "7e3226fb2a6e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdev:4:2",
+          "unitId": "gcpdev:4",
+          "index": 2,
+          "text": "Reading and writing data across Google Cloud data sources",
+          "sourceHash": "73a5f74752db",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdev:4:3",
+          "unitId": "gcpdev:4",
+          "index": 3,
+          "text": "Writing applications that publish and consume data through messaging services",
+          "sourceHash": "13f5dc0941ae",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdev:4:4",
+          "unitId": "gcpdev:4",
+          "index": 4,
+          "text": "Enabling Google Cloud services for an application",
+          "sourceHash": "40bb2f5ab8cf",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdev:4:5",
+          "unitId": "gcpdev:4",
+          "index": 5,
+          "text": "Making API calls with Cloud Client Libraries, REST, gRPC, or API Explorer",
+          "sourceHash": "43b9f0efb838",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdev:4:6",
+          "unitId": "gcpdev:4",
+          "index": 6,
+          "text": "Batching API requests",
+          "sourceHash": "269fc12a1931",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdev:4:7",
+          "unitId": "gcpdev:4",
+          "index": 7,
+          "text": "Restricting returned data and paginating results",
+          "sourceHash": "e68da71f28f1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdev:4:8",
+          "unitId": "gcpdev:4",
+          "index": 8,
+          "text": "Caching API results",
+          "sourceHash": "10938447bfaa",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdev:4:9",
+          "unitId": "gcpdev:4",
+          "index": 9,
+          "text": "Handling API errors with exponential backoff",
+          "sourceHash": "b27dcb0f7399",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdev:4:10",
+          "unitId": "gcpdev:4",
+          "index": 10,
+          "text": "Using service accounts to make Cloud API calls",
+          "sourceHash": "99d9f1a43183",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdev:4:11",
+          "unitId": "gcpdev:4",
+          "index": 11,
+          "text": "Instrumenting code with metrics, logs, and traces in Google Cloud Observability",
+          "sourceHash": "a30681c90f55",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdev:4:12",
+          "unitId": "gcpdev:4",
+          "index": 12,
+          "text": "Identifying and resolving issues using Google Cloud Observability",
+          "sourceHash": "3085b477595c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdev:4:13",
+          "unitId": "gcpdev:4",
+          "index": 13,
+          "text": "Managing application issues with Error Reporting",
+          "sourceHash": "f7588c8ec945",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdev:4:14",
+          "unitId": "gcpdev:4",
+          "index": 14,
+          "text": "Using trace IDs to correlate trace spans across services",
+          "sourceHash": "be458d90046b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdev:4:15",
+          "unitId": "gcpdev:4",
+          "index": 15,
+          "text": "Using AI-assisted observability",
+          "sourceHash": "be25bea09871",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/gcp.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-24T00:00:00Z",
+    "officialObjectivesUrl": "https://cloud.google.com/learn/certification/guides/cloud-developer",
+    "providerName": "Google Cloud",
+    "credentialName": "Google Cloud Professional Cloud Developer",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 4,
+    "objectives": 57,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

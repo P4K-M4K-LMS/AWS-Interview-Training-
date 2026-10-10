@@ -1,0 +1,331 @@
+{
+  "id": "abptswms",
+  "code": "ABPTSWMS",
+  "title": "Wound Management Clinical Specialist",
+  "description": "ABPTS board certification in wound management physical therapy: wound clinical sciences, examination, evaluation and diagnosis (12-13% each) and interventions (14%) for pressure, vascular, neuropathic, surgical and burn wounds.",
+  "trackType": "certification",
+  "field": "pt",
+  "requiresAcknowledgement": true,
+  "units": [
+    {
+      "id": "abptswms:1",
+      "index": 1,
+      "title": "Foundation sciences: biological and physical",
+      "weight": 10,
+      "gate": "Explain the phase of healing a wound is in from its appearance, and the physical or biological factor stalling it.",
+      "objectives": [
+        {
+          "id": "abptswms:1:1",
+          "unitId": "abptswms:1",
+          "index": 1,
+          "text": "Skin anatomy and the phases of wound healing",
+          "sourceHash": "d36f155a2acf",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptswms:1:2",
+          "unitId": "abptswms:1",
+          "index": 2,
+          "text": "Physiology of perfusion, oxygenation, edema and infection as they govern healing",
+          "sourceHash": "bf26a98ad3e7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptswms:1:3",
+          "unitId": "abptswms:1",
+          "index": 3,
+          "text": "Physical agents in wound care: electrical stimulation, ultrasound, negative-pressure wound therapy and their mechanisms",
+          "sourceHash": "44b78873136c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "abptswms:2",
+      "index": 2,
+      "title": "Behavioral sciences",
+      "weight": 5,
+      "gate": "Identify the behavioral or social factor most likely to decide whether this wound heals, and what to do about it.",
+      "objectives": [
+        {
+          "id": "abptswms:2:1",
+          "unitId": "abptswms:2",
+          "index": 1,
+          "text": "Adherence, self-management and caregiver capacity in wound care",
+          "sourceHash": "55b5ae33220d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptswms:2:2",
+          "unitId": "abptswms:2",
+          "index": 2,
+          "text": "Nutrition, smoking, mental health and social determinants affecting healing",
+          "sourceHash": "9399a2345110",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "abptswms:3",
+      "index": 3,
+      "title": "Wound management clinical sciences",
+      "weight": 12,
+      "gate": "Differentiate the etiology of a wound from its history, location and appearance, and name the comorbidity driving it.",
+      "objectives": [
+        {
+          "id": "abptswms:3:1",
+          "unitId": "abptswms:3",
+          "index": 1,
+          "text": "Pressure injuries: etiology, staging and risk assessment",
+          "sourceHash": "e0590e735eac",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptswms:3:2",
+          "unitId": "abptswms:3",
+          "index": 2,
+          "text": "Arterial, venous and mixed vascular wounds and lymphedema-related skin change",
+          "sourceHash": "da138d6fc204",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptswms:3:3",
+          "unitId": "abptswms:3",
+          "index": 3,
+          "text": "Neuropathic and diabetic foot wounds, including offloading principles",
+          "sourceHash": "ff0562f82f93",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptswms:3:4",
+          "unitId": "abptswms:3",
+          "index": 4,
+          "text": "Surgical, traumatic and burn wounds and atypical wounds requiring referral",
+          "sourceHash": "9d7c4abc27bd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptswms:3:5",
+          "unitId": "abptswms:3",
+          "index": 5,
+          "text": "Infection, biofilm, osteomyelitis and the laboratory and imaging findings that identify them",
+          "sourceHash": "98fe4f37e5ca",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "abptswms:4",
+      "index": 4,
+      "title": "Clinical inquiry for evidence-based practice and professional roles",
+      "weight": 10,
+      "gate": "Appraise wound-care evidence and describe the specialist's role in the interprofessional wound team.",
+      "objectives": [
+        {
+          "id": "abptswms:4:1",
+          "unitId": "abptswms:4",
+          "index": 1,
+          "text": "Critical appraisal of wound-care evidence and guidelines",
+          "sourceHash": "066b650f7f56",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptswms:4:2",
+          "unitId": "abptswms:4",
+          "index": 2,
+          "text": "Professional roles: consultation, documentation, regulatory requirements and interprofessional wound care",
+          "sourceHash": "c25c2724ea2c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "abptswms:5",
+      "index": 5,
+      "title": "Examination and evaluation",
+      "weight": 25,
+      "gate": "Measure and describe a wound completely, examine the perfusion and sensation around it, and interpret what the findings mean for healing potential.",
+      "objectives": [
+        {
+          "id": "abptswms:5:1",
+          "unitId": "abptswms:5",
+          "index": 1,
+          "text": "Wound measurement, tissue type, exudate, periwound and photography standards",
+          "sourceHash": "1ea537944a56",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptswms:5:2",
+          "unitId": "abptswms:5",
+          "index": 2,
+          "text": "Vascular examination: pulses, ankle-brachial index, toe pressures and capillary refill",
+          "sourceHash": "77087fd18043",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptswms:5:3",
+          "unitId": "abptswms:5",
+          "index": 3,
+          "text": "Sensory, pressure-mapping, nutritional and mobility examination relevant to wound risk",
+          "sourceHash": "2fd1cf687f45",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptswms:5:4",
+          "unitId": "abptswms:5",
+          "index": 4,
+          "text": "Evaluating healing trajectory and the factors predicting non-healing",
+          "sourceHash": "72458b45c6b3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "abptswms:6",
+      "index": 6,
+      "title": "Diagnosis and prognosis",
+      "weight": 18,
+      "gate": "State the wound diagnosis and a realistic healing prognosis with timeline, and what would change it.",
+      "objectives": [
+        {
+          "id": "abptswms:6:1",
+          "unitId": "abptswms:6",
+          "index": 1,
+          "text": "Diagnosis by etiology and the differential among vascular, pressure, neuropathic and atypical wounds",
+          "sourceHash": "c913112b1c4d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptswms:6:2",
+          "unitId": "abptswms:6",
+          "index": 2,
+          "text": "Prognosis and expected healing timelines by wound type and comorbidity",
+          "sourceHash": "ead27802f63a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptswms:6:3",
+          "unitId": "abptswms:6",
+          "index": 3,
+          "text": "Recognizing wounds requiring surgical, vascular or oncologic referral",
+          "sourceHash": "c9577b2944b4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "abptswms:7",
+      "index": 7,
+      "title": "Interventions and outcomes",
+      "weight": 20,
+      "gate": "Select the debridement method, dressing, offloading and adjunct for a specific wound, and the outcome measure that will show it is healing.",
+      "objectives": [
+        {
+          "id": "abptswms:7:1",
+          "unitId": "abptswms:7",
+          "index": 1,
+          "text": "Debridement methods: selective and non-selective, indications and contraindications",
+          "sourceHash": "dc975f183009",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptswms:7:2",
+          "unitId": "abptswms:7",
+          "index": 2,
+          "text": "Dressing selection matched to wound characteristics and moisture balance",
+          "sourceHash": "177c0d5f2f34",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptswms:7:3",
+          "unitId": "abptswms:7",
+          "index": 3,
+          "text": "Compression therapy, offloading, positioning and support surfaces",
+          "sourceHash": "ef170017810f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptswms:7:4",
+          "unitId": "abptswms:7",
+          "index": 4,
+          "text": "Adjunctive modalities and when the evidence supports them",
+          "sourceHash": "87017e93f9af",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptswms:7:5",
+          "unitId": "abptswms:7",
+          "index": 5,
+          "text": "Outcome measurement: healing rate, wound area reduction and patient-reported outcomes",
+          "sourceHash": "d0edb0462c3e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/pt.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-10-08T00:00:00Z",
+    "officialObjectivesUrl": "https://specialization.apta.org/become-a-specialist/wound-management/specialist-certification-examination-outline-wound-management",
+    "providerName": "American Board of Physical Therapy Specialties",
+    "credentialName": "Board-Certified Wound Management Clinical Specialist",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 7,
+    "objectives": 24,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

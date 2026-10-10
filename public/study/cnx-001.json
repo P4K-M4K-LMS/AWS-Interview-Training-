@@ -1,0 +1,314 @@
+{
+  "id": "cnx-001",
+  "code": "CLOUDNETX",
+  "title": "CloudNetX",
+  "description": "CompTIA CloudNetX (CNX-001) exam prep across 4 weighted domains -- hybrid network architecture design, network security, operations/monitoring/performance, and troubleshooting.",
+  "trackType": "certification",
+  "field": "it",
+  "units": [
+    {
+      "id": "cnx-001:1",
+      "index": 1,
+      "title": "Network Architecture Design",
+      "weight": 31,
+      "gate": "Given a hybrid on-prem/cloud design requirement, select the specific topology, connectivity method, or availability technology it calls for -- not a generic 'use redundancy' answer.",
+      "objectives": [
+        {
+          "id": "cnx-001:1:1",
+          "unitId": "cnx-001:1",
+          "index": 1,
+          "text": "Core networking concepts applied to design: the OSI model, IPv4/IPv6 addressing and subnetting, NAT, routing and DNS protocols, and container networking",
+          "sourceHash": "e56b694a08f1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cnx-001:1:2",
+          "unitId": "cnx-001:1",
+          "index": 2,
+          "text": "Network architectures and topologies: mesh, star, hub-and-spoke, spine-and-leaf, trust zones, traffic-flow direction, and VLAN/VXLAN/GENEVE segmentation",
+          "sourceHash": "a87150736c7b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cnx-001:1:3",
+          "unitId": "cnx-001:1",
+          "index": 3,
+          "text": "Hybrid connectivity solutions: MPLS, SD-WAN, cellular, satellite, dark fiber, public-cloud interconnects (ExpressRoute, Direct Connect), and site-to-site/point-to-site VPNs",
+          "sourceHash": "a0a3437390a4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cnx-001:1:4",
+          "unitId": "cnx-001:1",
+          "index": 4,
+          "text": "Availability technologies: load-balancing methods, active-active/active-passive high availability, link aggregation, autoscaling, regions/availability zones, and CDNs",
+          "sourceHash": "ed4310913d4c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cnx-001:1:5",
+          "unitId": "cnx-001:1",
+          "index": 5,
+          "text": "Physical campus installation factors: power distribution and backup, environmental controls, fire suppression, and physical access controls",
+          "sourceHash": "b156739e41da",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cnx-001:1:6",
+          "unitId": "cnx-001:1",
+          "index": 6,
+          "text": "Campus wired network components: Layer 2 vs. Layer 3 devices, PoE, the three-tier hierarchy, IDF/MDF cabling, and spanning tree",
+          "sourceHash": "b6528a90dba1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cnx-001:1:7",
+          "unitId": "cnx-001:1",
+          "index": 7,
+          "text": "Campus wireless network components: access-point placement and antenna types, Wi-Fi standards and frequencies, SSIDs, and BLE/NFC/LoRaWAN",
+          "sourceHash": "ef648b695aa2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cnx-001:1:8",
+          "unitId": "cnx-001:1",
+          "index": 8,
+          "text": "Architecture documentation artifacts: requirements analysis, network diagrams, runbooks, baselines, reference architectures, and the CMDB",
+          "sourceHash": "3d52e86caf81",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "cnx-001:2",
+      "index": 2,
+      "title": "Network Security",
+      "weight": 28,
+      "gate": "Given a described threat, vulnerability, or access requirement, apply the specific control, Zero Trust principle, or IAM mechanism that closes it -- not a generic 'add a firewall rule' answer.",
+      "objectives": [
+        {
+          "id": "cnx-001:2:1",
+          "unitId": "cnx-001:2",
+          "index": 1,
+          "text": "Common cloud and network threats, vulnerabilities, and mitigations: DDoS, on-path attacks, BGP hijacking, zero-days, and patch/vulnerability management programs",
+          "sourceHash": "a9609bd8f1ff",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cnx-001:2:2",
+          "unitId": "cnx-001:2",
+          "index": 2,
+          "text": "Security technologies: next-gen and cloud-native firewalls, WAFs, IPS/IDS, TLS inspection, and network access control",
+          "sourceHash": "401bf9233f40",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cnx-001:2:3",
+          "unitId": "cnx-001:2",
+          "index": 3,
+          "text": "Access control configuration: firewall and NACL rules, security-group inbound/outbound rules, geolocation and URL filtering, and DLP",
+          "sourceHash": "5d39bb0ca6f6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cnx-001:2:4",
+          "unitId": "cnx-001:2",
+          "index": 4,
+          "text": "Zero Trust architecture principles: microsegmentation, SASE/SSE, CASB, identity as the perimeter, device trust, and least privilege",
+          "sourceHash": "af92ebfa25b0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cnx-001:2:5",
+          "unitId": "cnx-001:2",
+          "index": 5,
+          "text": "Identity and access management: SSO/federation (SAML, OAuth 2.0, OIDC), MFA, PAM, RBAC/ABAC, PKI, and just-in-time provisioning",
+          "sourceHash": "c06146d6cc65",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cnx-001:2:6",
+          "unitId": "cnx-001:2",
+          "index": 6,
+          "text": "Wireless security methods: WPA2/WPA3 encryption, PSK/PSK-enterprise authentication, captive portals, and MAC filtering",
+          "sourceHash": "645c8f496a91",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cnx-001:2:7",
+          "unitId": "cnx-001:2",
+          "index": 7,
+          "text": "Appliance-hardening techniques: patch management, default-credential management, disabling unneeded services and ports, and log management",
+          "sourceHash": "ce84c4d3e0f5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "cnx-001:3",
+      "index": 3,
+      "title": "Network Operations, Monitoring, and Performance",
+      "weight": 16,
+      "gate": "Given an operational or monitoring requirement, name the specific risk-management, telemetry, or automation practice it calls for -- not a generic 'keep an eye on it' answer.",
+      "objectives": [
+        {
+          "id": "cnx-001:3:1",
+          "unitId": "cnx-001:3",
+          "index": 1,
+          "text": "Operating and maintaining a network environment: risk management, business-continuity metrics (MTTR, MTBF, RPO/RTO), disaster recovery, SLAs/SLOs, and network cost management",
+          "sourceHash": "02b018a331a7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cnx-001:3:2",
+          "unitId": "cnx-001:3",
+          "index": 2,
+          "text": "Monitoring and performance tools: traffic analysis, centralized log collection and SIEM, SNMP, QoS, alerting, telemetry, and dashboards",
+          "sourceHash": "c7bd19638309",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cnx-001:3:3",
+          "unitId": "cnx-001:3",
+          "index": 3,
+          "text": "Automation and scripting to administer a hybrid cloud environment: infrastructure as code, version control, CI/CD and GitOps pipelines, and desired-state configuration",
+          "sourceHash": "14675c011e3f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "cnx-001:4",
+      "index": 4,
+      "title": "Network Troubleshooting",
+      "weight": 25,
+      "gate": "Given symptoms and tool output, walk the CompTIA troubleshooting methodology to the specific connectivity, performance, or security root cause -- not a guess at the fix.",
+      "objectives": [
+        {
+          "id": "cnx-001:4:1",
+          "unitId": "cnx-001:4",
+          "index": 1,
+          "text": "The network troubleshooting methodology: identify the problem, establish and test a theory, plan and implement a solution, verify, and document",
+          "sourceHash": "e12b9b061f4c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cnx-001:4:2",
+          "unitId": "cnx-001:4",
+          "index": 2,
+          "text": "Appropriate tools and commands for diagnosis: Wireshark, Nmap, Iperf, tcpdump, dig, mtr, and traceroute",
+          "sourceHash": "5b6172762fb1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cnx-001:4:3",
+          "unitId": "cnx-001:4",
+          "index": 3,
+          "text": "Analyzing tool and command output to resolve issues",
+          "sourceHash": "77c89ea5a3cd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cnx-001:4:4",
+          "unitId": "cnx-001:4",
+          "index": 4,
+          "text": "Troubleshooting connectivity issues: DNS failures, asymmetric routing, duplicate IP/MAC addresses, DHCP issues, IPSec and BGP problems, and routing loops",
+          "sourceHash": "061446391527",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cnx-001:4:5",
+          "unitId": "cnx-001:4",
+          "index": 5,
+          "text": "Troubleshooting network performance issues: latency, packet loss, MTU/fragmentation, hairpinning, broadcast storms, and bandwidth bottlenecks",
+          "sourceHash": "6f29ef22ab7e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cnx-001:4:6",
+          "unitId": "cnx-001:4",
+          "index": 6,
+          "text": "Troubleshooting Wi-Fi performance issues: signal interference and loss, band-steering, channel overlap, and roaming/sticky-client problems",
+          "sourceHash": "3a690478278d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cnx-001:4:7",
+          "unitId": "cnx-001:4",
+          "index": 7,
+          "text": "Troubleshooting access and security issues: misconfigured rules, DoS conditions, authentication failures, and certificate problems",
+          "sourceHash": "538467153942",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/comptia.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-26T00:00:00Z",
+    "officialObjectivesUrl": "https://www.comptia.org/en-us/certifications/cloudnetx/",
+    "providerName": "CompTIA",
+    "credentialName": "CompTIA CloudNetX",
+    "examCode": "CNX-001",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 4,
+    "objectives": 25,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

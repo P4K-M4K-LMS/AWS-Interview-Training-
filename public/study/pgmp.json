@@ -1,0 +1,422 @@
+{
+  "id": "pgmp",
+  "code": "PGMP",
+  "title": "PgMP",
+  "description": "PMI Program Management Professional (PgMP) exam prep across 5 weighted domains -- strategic alignment, program life cycle management, benefits management, stakeholder engagement, and governance.",
+  "trackType": "certification",
+  "field": "pm",
+  "units": [
+    {
+      "id": "pgmp:1",
+      "index": 1,
+      "title": "Strategic Program Alignment",
+      "weight": 15,
+      "gate": "Given a program's business case, judge whether it's actually aligned to the organization's strategic plan and objectives -- not just whether it's well-documented.",
+      "objectives": [
+        {
+          "id": "pgmp:1:1",
+          "unitId": "pgmp:1",
+          "index": 1,
+          "text": "Assessing initial program objectives, requirements, and risks against the organization's strategic plan, vision, and mission",
+          "sourceHash": "0e7d33408090",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pgmp:1:2",
+          "unitId": "pgmp:1",
+          "index": 2,
+          "text": "Building a high-level roadmap and preliminary estimates, then obtaining executive sponsor validation",
+          "sourceHash": "4234579f8b17",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pgmp:1:3",
+          "unitId": "pgmp:1",
+          "index": 3,
+          "text": "Developing and evaluating the program's business case: feasibility, readiness, and strategic alignment",
+          "sourceHash": "8a68468848f1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pgmp:1:4",
+          "unitId": "pgmp:1",
+          "index": 4,
+          "text": "Quantifying expected benefits using market analysis and high-level cost-benefit analysis to define scope",
+          "sourceHash": "ce8c1b502c0b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pgmp:1:5",
+          "unitId": "pgmp:1",
+          "index": 5,
+          "text": "Weighing program objectives against regulatory, legal, and ethical constraints for stakeholder alignment",
+          "sourceHash": "ca337b6ce7b6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pgmp:1:6",
+          "unitId": "pgmp:1",
+          "index": 6,
+          "text": "Obtaining organizational leadership approval via a program charter (high-level costs, milestones, benefits)",
+          "sourceHash": "17be10639ed4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pgmp:1:7",
+          "unitId": "pgmp:1",
+          "index": 7,
+          "text": "Identifying integration opportunities (human capital, facilities, finance, systems) across program and operational activities",
+          "sourceHash": "cbd2c33e511b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "pgmp:2",
+      "index": 2,
+      "title": "Program Life Cycle Management",
+      "weight": 44,
+      "gate": "Given a program in a specific life-cycle stage, name the artifact or control action it calls for -- a charter element, a WBS decomposition, a variance analysis -- not a generic 'manage the program' answer.",
+      "objectives": [
+        {
+          "id": "pgmp:2:1",
+          "unitId": "pgmp:2",
+          "index": 1,
+          "text": "Developing a program charter (scope, assumptions, constraints, stakeholders, resource allocation) tied to the business case",
+          "sourceHash": "b6d8477e03a9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pgmp:2:2",
+          "unitId": "pgmp:2",
+          "index": 2,
+          "text": "Translating strategic objectives into a program scope statement and roadmap, using historical data and a benefits realization plan",
+          "sourceHash": "a6d39ab17df1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pgmp:2:3",
+          "unitId": "pgmp:2",
+          "index": 3,
+          "text": "Building a responsibility assignment matrix and a program WBS to assign roles, tasks, and deliverables",
+          "sourceHash": "cf9f74a874ee",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pgmp:2:4",
+          "unitId": "pgmp:2",
+          "index": 4,
+          "text": "Establishing an integrated program management plan (schedule, quality, risk, communication, resources) across constituent projects",
+          "sourceHash": "af78e7a3b814",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pgmp:2:5",
+          "unitId": "pgmp:2",
+          "index": 5,
+          "text": "Setting standard measurement criteria (KPIs, success review points) to monitor and control the program",
+          "sourceHash": "01e42f2ebb6b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pgmp:2:6",
+          "unitId": "pgmp:2",
+          "index": 6,
+          "text": "Running a program kickoff and ongoing communication/feedback processes to capture lessons learned",
+          "sourceHash": "c523782e9bf7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pgmp:2:7",
+          "unitId": "pgmp:2",
+          "index": 7,
+          "text": "Executing program management plans and consolidating project-level data to monitor performance and communicate status",
+          "sourceHash": "be2ac66970af",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pgmp:2:8",
+          "unitId": "pgmp:2",
+          "index": 8,
+          "text": "Analyzing cost/schedule/quality/risk variances against planned values and updating plans with corrective actions",
+          "sourceHash": "917f26b29695",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pgmp:2:9",
+          "unitId": "pgmp:2",
+          "index": 9,
+          "text": "Managing program-level issues and risk per the risk management plan to protect benefits realization",
+          "sourceHash": "78169f4a1a12",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pgmp:2:10",
+          "unitId": "pgmp:2",
+          "index": 10,
+          "text": "Conducting program closure: approving constituent-project closeout, transition to operations, and archiving lessons learned",
+          "sourceHash": "e58ea6ed827c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "pgmp:3",
+      "index": 3,
+      "title": "Benefits Management",
+      "weight": 11,
+      "gate": "Given a program's benefits data, apply the specific realization or sustainment step it calls for -- updating the benefits register, running a corrective action -- not a generic 'track the benefits' answer.",
+      "objectives": [
+        {
+          "id": "pgmp:3:1",
+          "unitId": "pgmp:3",
+          "index": 1,
+          "text": "Developing a benefits realization plan and its measurement criteria, then baselining and communicating it to sponsors",
+          "sourceHash": "a471dfcbd570",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pgmp:3:2",
+          "unitId": "pgmp:3",
+          "index": 2,
+          "text": "Identifying synergies and efficiencies across the program life cycle and updating the benefits realization plan accordingly",
+          "sourceHash": "c3fbb6ac0b24",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pgmp:3:3",
+          "unitId": "pgmp:3",
+          "index": 3,
+          "text": "Building a sustainment plan (processes, metrics, tools) so benefits continue past program completion",
+          "sourceHash": "a4243e64b6a3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pgmp:3:4",
+          "unitId": "pgmp:3",
+          "index": 4,
+          "text": "Monitoring benefit metrics (forecasting, variance analysis, what-if scenarios) and taking corrective action to protect realization",
+          "sourceHash": "08f01c4d1dbd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pgmp:3:5",
+          "unitId": "pgmp:3",
+          "index": 5,
+          "text": "Verifying constituent-project closure and transition meet or exceed benefit-realization criteria",
+          "sourceHash": "f719f448fab4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pgmp:3:6",
+          "unitId": "pgmp:3",
+          "index": 6,
+          "text": "Maintaining a benefits register and developing an operations transition plan to guarantee sustainment",
+          "sourceHash": "2d68f65aa84c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "pgmp:4",
+      "index": 4,
+      "title": "Stakeholder Engagement",
+      "weight": 16,
+      "gate": "Given a stakeholder scenario, apply the specific engagement or negotiation technique it calls for -- a stakeholder analysis method, a risk incorporated from a stakeholder concern -- not generic 'communicate more' advice.",
+      "objectives": [
+        {
+          "id": "pgmp:4:1",
+          "unitId": "pgmp:4",
+          "index": 1,
+          "text": "Identifying sponsors/steering committee members and building a stakeholder matrix documenting each one's position on the program",
+          "sourceHash": "d8e7e5a0df3c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pgmp:4:2",
+          "unitId": "pgmp:4",
+          "index": 2,
+          "text": "Performing stakeholder analysis (historical data, interviews, formal agreements) to build a stakeholder engagement plan",
+          "sourceHash": "af8dcdbddbb2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pgmp:4:3",
+          "unitId": "pgmp:4",
+          "index": 3,
+          "text": "Negotiating stakeholder support and setting clear expectations and acceptance criteria (e.g., KPIs) for program benefits",
+          "sourceHash": "896adac02767",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pgmp:4:4",
+          "unitId": "pgmp:4",
+          "index": 4,
+          "text": "Evaluating stakeholder-identified risks and incorporating them into the program risk management plan",
+          "sourceHash": "3b08586cbc35",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pgmp:4:5",
+          "unitId": "pgmp:4",
+          "index": 5,
+          "text": "Developing and fostering stakeholder relationships to improve communication and sustain support for the program",
+          "sourceHash": "e8035f625ce2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "pgmp:5",
+      "index": 5,
+      "title": "Governance",
+      "weight": 14,
+      "gate": "Given a program decision point, name the specific governance mechanism it calls for -- a stage-gate review, an escalation policy -- not a generic 'get approval' answer.",
+      "objectives": [
+        {
+          "id": "pgmp:5:1",
+          "unitId": "pgmp:5",
+          "index": 1,
+          "text": "Developing program management standards and structure (governance, tools, finance, reporting) using industry best practices",
+          "sourceHash": "dc6d185f2728",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pgmp:5:2",
+          "unitId": "pgmp:5",
+          "index": 2,
+          "text": "Selecting a governance framework that conforms to organizational governance requirements",
+          "sourceHash": "7a3fa8844851",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pgmp:5:3",
+          "unitId": "pgmp:5",
+          "index": 3,
+          "text": "Obtaining authorization through stage-gate reviews to proceed to the next program phase",
+          "sourceHash": "c613abfb0080",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pgmp:5:4",
+          "unitId": "pgmp:5",
+          "index": 4,
+          "text": "Regularly evaluating new and existing risks against strategic objectives and presenting updates to the governance board",
+          "sourceHash": "0f90ad55fd56",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pgmp:5:5",
+          "unitId": "pgmp:5",
+          "index": 5,
+          "text": "Establishing escalation policies so risks are handled at the appropriate organizational level",
+          "sourceHash": "52a40bb05c51",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pgmp:5:6",
+          "unitId": "pgmp:5",
+          "index": 6,
+          "text": "Capturing and applying lessons learned to influence existing and future programs",
+          "sourceHash": "2ac980d0519f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pgmp:5:7",
+          "unitId": "pgmp:5",
+          "index": 7,
+          "text": "Monitoring the business environment and program functionality to keep benefits realization on track",
+          "sourceHash": "c2f2f52cbe6b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/pm.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-26T00:00:00Z",
+    "officialObjectivesUrl": "https://www.pmi.org/-/media/pmi/documents/public/pdf/certifications/pgmp-exam-content-outline.pdf",
+    "providerName": "Project Management Institute (PMI)",
+    "credentialName": "PMI Program Management Professional (PgMP)",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 5,
+    "objectives": 35,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

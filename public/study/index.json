@@ -12,6 +12,7 @@
       "description": "AWS Certified Cloud Practitioner (CLF-C02): the whole AWS Cloud at a working vocabulary level -- value and economics, security and compliance, the core service catalog, and how billing and support actually work.",
       "trackType": "certification",
       "group": "aws",
+      "level": "fundamentals",
       "examCode": "CLF-C02",
       "credentialStatus": "active",
       "counts": {
@@ -28,7 +29,7 @@
         "explain": 0
       },
       "file": "clf-c02.json",
-      "hash": "5cd64f914b9f74dc"
+      "hash": "3146d0fb9c21bd87"
     },
     {
       "id": "aif-c01",
@@ -37,6 +38,7 @@
       "description": "AWS Certified AI Practitioner (AIF-C01): AI, ML, and generative AI on AWS for the person who uses these systems rather than builds them -- foundation models, prompt engineering, RAG and agents, responsible AI, and the security and governance around it all.",
       "trackType": "certification",
       "group": "aws",
+      "level": "fundamentals",
       "examCode": "AIF-C01",
       "credentialStatus": "active",
       "counts": {
@@ -53,7 +55,7 @@
         "explain": 0
       },
       "file": "aif-c01.json",
-      "hash": "cd86522d3ff1e983"
+      "hash": "4a00d97a420b061c"
     },
     {
       "id": "saa-c03",
@@ -62,6 +64,7 @@
       "description": "AWS Certified Solutions Architect - Associate (SAA-C03): designing solutions against the Well-Architected Framework -- secure, resilient, high-performing, and cost-optimized architectures, and knowing which trade-off a requirement is really asking for.",
       "trackType": "certification",
       "group": "aws",
+      "level": "associate",
       "examCode": "SAA-C03",
       "credentialStatus": "active",
       "counts": {
@@ -78,7 +81,7 @@
         "explain": 0
       },
       "file": "saa-c03.json",
-      "hash": "c6bb76ed0a08a094"
+      "hash": "6ace8563c100835b"
     },
     {
       "id": "dva-c02",
@@ -87,6 +90,7 @@
       "description": "AWS Certified Developer - Associate (DVA-C02): writing, securing, deploying, and debugging applications on AWS -- Lambda and event-driven code, DynamoDB access patterns, encryption and secrets, CI/CD deployment strategies, and observability when it breaks.",
       "trackType": "certification",
       "group": "aws",
+      "level": "associate",
       "examCode": "DVA-C02",
       "credentialStatus": "transitioning",
       "retirementDate": "2026-12-01",
@@ -104,7 +108,7 @@
         "explain": 0
       },
       "file": "dva-c02.json",
-      "hash": "5d7648e6e0739b1f"
+      "hash": "23e63f70fbf7a8f9"
     },
     {
       "id": "soa-c03",
@@ -113,6 +117,7 @@
       "description": "AWS Certified CloudOps Engineer - Associate (SOA-C03), formerly SysOps Administrator - Associate: running workloads day to day -- monitoring and remediation, reliability and backups, provisioning and automation, security and compliance, and networking when the packets do not arrive.",
       "trackType": "certification",
       "group": "aws",
+      "level": "associate",
       "examCode": "SOA-C03",
       "credentialStatus": "active",
       "counts": {
@@ -129,7 +134,7 @@
         "explain": 0
       },
       "file": "soa-c03.json",
-      "hash": "0b1c61367399ac98"
+      "hash": "892cfd1429a86af4"
     },
     {
       "id": "dea-c01",
@@ -138,6 +143,7 @@
       "description": "AWS Certified Data Engineer - Associate (DEA-C01): building data pipelines that survive production -- ingestion and transformation, choosing and cataloging data stores, operating and monitoring pipelines, and the security and governance around the data itself.",
       "trackType": "certification",
       "group": "aws",
+      "level": "associate",
       "examCode": "DEA-C01",
       "credentialStatus": "active",
       "counts": {
@@ -154,7 +160,7 @@
         "explain": 0
       },
       "file": "dea-c01.json",
-      "hash": "f9ff0bce7747807c"
+      "hash": "83ce36f4c6e999eb"
     },
     {
       "id": "mla-c02",
@@ -163,6 +169,7 @@
       "description": "AWS Certified Machine Learning Engineer - Associate (MLA-C02): building and running ML and generative AI systems on AWS -- data preparation, training and fine-tuning, deploying models, agents and RAG pipelines, and then monitoring, costing, and securing all of it in production.",
       "trackType": "certification",
       "group": "aws",
+      "level": "associate",
       "examCode": "MLA-C02",
       "credentialStatus": "beta",
       "counts": {
@@ -179,7 +186,7 @@
         "explain": 0
       },
       "file": "mla-c02.json",
-      "hash": "c8d1c375e4eae789"
+      "hash": "dcf1a4db5773a203"
     },
     {
       "id": "sap-c02",
@@ -188,6 +195,7 @@
       "description": "AWS Certified Solutions Architect - Professional (SAP-C02): architecture at organizational scale -- multi-account governance and hybrid networking, designing new solutions across all five pillars, continuously improving what already runs, and migrating and modernizing existing workloads.",
       "trackType": "certification",
       "group": "aws",
+      "level": "professional",
       "examCode": "SAP-C02",
       "credentialStatus": "transitioning",
       "retirementDate": "2026-11-17",
@@ -205,7 +213,7 @@
         "explain": 0
       },
       "file": "sap-c02.json",
-      "hash": "adef195abee057e2"
+      "hash": "195f7c325d1e84ef"
     },
     {
       "id": "dop-c02",
@@ -214,6 +222,7 @@
       "description": "AWS Certified DevOps Engineer - Professional (DOP-C02): automating the whole delivery path -- CI/CD pipelines and artifacts, infrastructure as code across many accounts, resilient and scalable systems, monitoring and logging, incident response, and security controls applied by machine rather than by hand.",
       "trackType": "certification",
       "group": "aws",
+      "level": "professional",
       "examCode": "DOP-C02",
       "credentialStatus": "active",
       "counts": {
@@ -230,7 +239,7 @@
         "explain": 0
       },
       "file": "dop-c02.json",
-      "hash": "e6795db0763e3705"
+      "hash": "6651022cf855c15f"
     },
     {
       "id": "scs-c03",
@@ -239,6 +248,7 @@
       "description": "AWS Certified Security - Specialty (SCS-C03): securing AWS at depth -- detection and logging pipelines, incident response and forensics, infrastructure and network controls, identity and authorization at scale, data protection and key management, and multi-account governance.",
       "trackType": "certification",
       "group": "aws",
+      "level": "specialty",
       "examCode": "SCS-C03",
       "credentialStatus": "active",
       "counts": {
@@ -255,7 +265,7 @@
         "explain": 0
       },
       "file": "scs-c03.json",
-      "hash": "fc060e83eed75821"
+      "hash": "dc4c66407dffff3e"
     },
     {
       "id": "ans-c01",
@@ -264,6 +274,7 @@
       "description": "AWS Certified Advanced Networking - Specialty (ANS-C01): hybrid and cloud networking at scale -- designing edge, DNS, load balancing and hybrid routing, implementing it across accounts and Regions, operating and troubleshooting it, and securing it. Note that this exam retires 2026-12-31.",
       "trackType": "certification",
       "group": "aws",
+      "level": "specialty",
       "examCode": "ANS-C01",
       "credentialStatus": "transitioning",
       "retirementDate": "2026-12-31",
@@ -281,7 +292,542 @@
         "explain": 0
       },
       "file": "ans-c01.json",
-      "hash": "1431effcc3dfa933"
+      "hash": "f0ee551e271d7b94"
+    },
+    {
+      "id": "az-900",
+      "code": "AZ900",
+      "title": "Azure Fundamentals",
+      "description": "Microsoft Certified: Azure Fundamentals (AZ-900): core cloud concepts, Azure's architecture and core services, and how cost, compliance, and governance work day to day in Azure.",
+      "trackType": "certification",
+      "group": "azure",
+      "level": "fundamentals",
+      "examCode": "AZ-900",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 3,
+        "objectives": 52,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 52,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "az-900.json",
+      "hash": "4ccade73768c34ad"
+    },
+    {
+      "id": "az-104",
+      "code": "AZ104",
+      "title": "Azure Administrator Associate",
+      "description": "Microsoft Certified: Azure Administrator Associate (AZ-104): implementing, managing, and monitoring an Azure environment -- identities and governance, storage, compute, virtual networking, and day-to-day monitoring and recovery.",
+      "trackType": "certification",
+      "group": "azure",
+      "level": "associate",
+      "examCode": "AZ-104",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 5,
+        "objectives": 82,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 82,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "az-104.json",
+      "hash": "ede28e1fd49af6bf"
+    },
+    {
+      "id": "az-305",
+      "code": "AZ305",
+      "title": "Azure Solutions Architect Expert",
+      "description": "Microsoft Certified: Azure Solutions Architect Expert (AZ-305): translating business requirements into Azure designs across identity/governance/monitoring, data storage, business continuity, and infrastructure -- aligned to the Well-Architected Framework and Cloud Adoption Framework. Requires the Azure Administrator Associate certification first.",
+      "trackType": "certification",
+      "group": "azure",
+      "level": "professional",
+      "examCode": "AZ-305",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 4,
+        "objectives": 49,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 49,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "az-305.json",
+      "hash": "57d40739d4ed497b"
+    },
+    {
+      "id": "ai-901",
+      "code": "AI901",
+      "title": "Azure AI Fundamentals",
+      "description": "Microsoft Certified: Azure AI Fundamentals (AI-901): core AI/ML concepts and responsible AI principles, then building generative AI, vision, speech, and information-extraction solutions with Microsoft Foundry.",
+      "trackType": "certification",
+      "group": "azure",
+      "level": "fundamentals",
+      "examCode": "AI-901",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 2,
+        "objectives": 29,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 29,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "ai-901.json",
+      "hash": "eb4154c06042a204"
+    },
+    {
+      "id": "dp-900",
+      "code": "DP900",
+      "title": "Azure Data Fundamentals",
+      "description": "Microsoft Certified: Azure Data Fundamentals (DP-900): core relational and non-relational data concepts, Azure's data services for each, and the building blocks of an analytics workload -- ingestion, analytical stores, real-time analytics, and Power BI visualization.",
+      "trackType": "certification",
+      "group": "azure",
+      "level": "fundamentals",
+      "examCode": "DP-900",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 4,
+        "objectives": 30,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 30,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "dp-900.json",
+      "hash": "8ccad764e6d80c6e"
+    },
+    {
+      "id": "az-700",
+      "code": "AZ700",
+      "title": "Azure Network Engineer Associate",
+      "description": "Microsoft Certified: Azure Network Engineer Associate (AZ-700): designing and implementing Azure networking end to end -- IP addressing and DNS, VNet routing and monitoring, VPN/ExpressRoute/Virtual WAN connectivity, load balancing and Front Door, private access, and network security (NSGs, Azure Firewall, WAF).",
+      "trackType": "certification",
+      "group": "azure",
+      "level": "associate",
+      "examCode": "AZ-700",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 5,
+        "objectives": 131,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 131,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "az-700.json",
+      "hash": "504f5d8f7270c138"
+    },
+    {
+      "id": "az-140",
+      "code": "AZ140",
+      "title": "Azure Virtual Desktop Specialty",
+      "description": "Microsoft Certified: Azure Virtual Desktop Specialty (AZ-140): planning and implementing an Azure Virtual Desktop infrastructure -- networking, storage, host pools, and session host images -- plus identity and security, user environments and app delivery (FSLogix, App attach), and ongoing monitoring, backup, and disaster recovery.",
+      "trackType": "certification",
+      "group": "azure",
+      "level": "specialty",
+      "examCode": "AZ-140",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 4,
+        "objectives": 78,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 78,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "az-140.json",
+      "hash": "a37b114a051b8f22"
+    },
+    {
+      "id": "dp-300",
+      "code": "DP300",
+      "title": "Azure Database Administrator Associate",
+      "description": "Microsoft Certified: Azure Database Administrator Associate (DP-300): administering Azure SQL Database, Azure SQL Managed Instance, and SQL Server on Azure VMs -- deployment and migration, authentication and data protection, performance monitoring and tuning, task automation, and high availability/disaster recovery.",
+      "trackType": "certification",
+      "group": "azure",
+      "level": "associate",
+      "examCode": "DP-300",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 5,
+        "objectives": 94,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 94,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "dp-300.json",
+      "hash": "c0dc4a21dc16c106"
+    },
+    {
+      "id": "az-400",
+      "code": "AZ400",
+      "title": "Azure DevOps Engineer Expert",
+      "description": "Microsoft Certified: DevOps Engineer Expert (AZ-400): designing and implementing Microsoft DevOps solutions across GitHub and Azure DevOps -- work-item flow and metrics, source control strategy, build/release pipelines, deployment strategies, infrastructure as code, security and compliance scanning, and instrumentation. Requires the Azure Administrator Associate certification.",
+      "trackType": "certification",
+      "group": "azure",
+      "level": "professional",
+      "examCode": "AZ-400",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 5,
+        "objectives": 86,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 86,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "az-400.json",
+      "hash": "bdcfa6e9b00c24b9"
+    },
+    {
+      "id": "az-120",
+      "code": "AZ120",
+      "title": "Azure for SAP Workloads Specialty",
+      "description": "Microsoft Certified: Azure for SAP Workloads Specialty (AZ-120): planning, migrating, and administering SAP landscapes on Azure -- migration strategy and SAP RISE integration, compute/networking/storage infrastructure for SAP virtual machines, high availability and disaster recovery (clustering, Pacemaker, Site Recovery), and ongoing performance optimization and monitoring.",
+      "trackType": "certification",
+      "group": "azure",
+      "level": "specialty",
+      "examCode": "AZ-120",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 4,
+        "objectives": 78,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 78,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "az-120.json",
+      "hash": "60d548928b64dc7e"
+    },
+    {
+      "id": "gcpcdl",
+      "code": "GCPCDL",
+      "title": "Google Cloud Digital Leader",
+      "description": "Google Cloud Digital Leader: a working, non-technical fluency in Google Cloud -- digital and data transformation, AI, modern infrastructure, trust and security, and how organizations actually run and pay for cloud operations.",
+      "trackType": "certification",
+      "group": "gcp",
+      "level": "fundamentals",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 6,
+        "objectives": 65,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 65,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "gcpcdl.json",
+      "hash": "3b9bc08660cd7537"
+    },
+    {
+      "id": "gcpace",
+      "code": "GCPACE",
+      "title": "Google Cloud Associate Cloud Engineer",
+      "description": "Google Cloud Associate Cloud Engineer: deploying, securing, and operating applications and infrastructure on Google Cloud -- environment setup, compute/storage/networking implementation, day-2 operations, and access/security configuration.",
+      "trackType": "certification",
+      "group": "gcp",
+      "level": "associate",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 4,
+        "objectives": 86,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 86,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "gcpace.json",
+      "hash": "1e767d111f7d0797"
+    },
+    {
+      "id": "gcppca",
+      "code": "GCPPCA",
+      "title": "Google Cloud Professional Cloud Architect",
+      "description": "Google Cloud Professional Cloud Architect: designing, building, and managing secure, scalable, cost-effective solutions on Google Cloud, anchored in the Well-Architected Framework's six pillars, plus the exam's own recurring case studies (Altostrat Media, Cymbal Retail, EHR Healthcare, KnightMotives Automotive).",
+      "trackType": "certification",
+      "group": "gcp",
+      "level": "professional",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 6,
+        "objectives": 101,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 101,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "gcppca.json",
+      "hash": "1598be2e5293c603"
+    },
+    {
+      "id": "gcppde",
+      "code": "GCPPDE",
+      "title": "Google Cloud Professional Data Engineer",
+      "description": "Google Cloud Professional Data Engineer: designing, building, and securing data processing systems on Google Cloud -- ingestion pipelines, storage system selection, data warehouses and lakes, preparing data for analysis and AI/ML, and keeping data workloads running reliably.",
+      "trackType": "certification",
+      "group": "gcp",
+      "level": "professional",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 5,
+        "objectives": 70,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 70,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "gcppde.json",
+      "hash": "68b33da944757ce6"
+    },
+    {
+      "id": "gcpdevops",
+      "code": "GCPDEVOPS",
+      "title": "Google Cloud Professional Cloud DevOps Engineer",
+      "description": "Google Cloud Professional Cloud DevOps Engineer: bootstrapping a Google Cloud organization, building CI/CD pipelines for applications/infrastructure/ML workloads, applying SRE practices, implementing observability, and optimizing performance and cost.",
+      "trackType": "certification",
+      "group": "gcp",
+      "level": "professional",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 5,
+        "objectives": 75,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 75,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "gcpdevops.json",
+      "hash": "52e086480b9c33ad"
+    },
+    {
+      "id": "gcpsec",
+      "code": "GCPSEC",
+      "title": "Google Cloud Professional Cloud Security Engineer",
+      "description": "Google Cloud Professional Cloud Security Engineer: configuring identity and access, securing communications and network boundaries, protecting data at rest/in transit/in use, automating security operations, and supporting regulatory compliance on Google Cloud.",
+      "trackType": "certification",
+      "group": "gcp",
+      "level": "professional",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 5,
+        "objectives": 70,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 70,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "gcpsec.json",
+      "hash": "159026a788693c3e"
+    },
+    {
+      "id": "gcpnet",
+      "code": "GCPNET",
+      "title": "Google Cloud Professional Cloud Network Engineer",
+      "description": "Google Cloud Professional Cloud Network Engineer: designing, implementing, and troubleshooting VPC networks, hybrid/multicloud interconnectivity, managed network services, and cloud network security on Google Cloud.",
+      "trackType": "certification",
+      "group": "gcp",
+      "level": "professional",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 6,
+        "objectives": 130,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 130,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "gcpnet.json",
+      "hash": "62ac9e7841cc62b3"
+    },
+    {
+      "id": "gcpdbe",
+      "code": "GCPDBE",
+      "title": "Google Cloud Professional Cloud Database Engineer",
+      "description": "Google Cloud Professional Cloud Database Engineer: designing scalable, highly available database solutions, managing solutions across multiple database technologies, migrating data into Google Cloud, and deploying and scaling databases in production.",
+      "trackType": "certification",
+      "group": "gcp",
+      "level": "professional",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 4,
+        "objectives": 46,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 46,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "gcpdbe.json",
+      "hash": "17b77c800d74f064"
+    },
+    {
+      "id": "gcpdev",
+      "code": "GCPDEV",
+      "title": "Google Cloud Professional Cloud Developer",
+      "description": "Google Cloud Professional Cloud Developer: designing scalable, secure cloud-native applications, building and testing them with Google-recommended tools, configuring deployment to Cloud Run/GKE, and integrating applications with Google Cloud data and API services.",
+      "trackType": "certification",
+      "group": "gcp",
+      "level": "professional",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 4,
+        "objectives": 57,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 57,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "gcpdev.json",
+      "hash": "3a3c32a2707a9d35"
+    },
+    {
+      "id": "gcpmle",
+      "code": "GCPMLE",
+      "title": "Google Cloud Professional Machine Learning Engineer",
+      "description": "Google Cloud Professional Machine Learning Engineer: architecting low-code AI solutions, managing data and models with a team, scaling prototypes into production ML models, serving and scaling models, automating ML pipelines, and monitoring AI solutions.",
+      "trackType": "certification",
+      "group": "gcp",
+      "level": "professional",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 6,
+        "objectives": 53,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 53,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "gcpmle.json",
+      "hash": "a46a3f79eb90b67a"
+    },
+    {
+      "id": "gcpgail",
+      "code": "GCPGAIL",
+      "title": "Google Cloud Generative AI Leader",
+      "description": "Google Cloud Generative AI Leader: a business-level, no-code fluency in generative AI -- core concepts, Google Cloud's gen AI product landscape, techniques that improve model output, and the business strategy and security/responsible-AI considerations behind a successful gen AI initiative.",
+      "trackType": "certification",
+      "group": "gcp",
+      "level": "fundamentals",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 4,
+        "objectives": 50,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 50,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "gcpgail.json",
+      "hash": "012642e7929d6b69"
     },
     {
       "id": "mscs",
@@ -289,7 +835,8 @@
       "title": "MSCS Foundations",
       "description": "15-week graduate-CS bridge covering algorithms, data structures, discrete math, OS, computer architecture, database theory, ML math, cybersecurity, HCI/UX, and big data.",
       "trackType": "graduate",
-      "group": "core",
+      "group": "cs",
+      "level": "degree",
       "counts": {
         "units": 15,
         "objectives": 113,
@@ -304,7 +851,7 @@
         "explain": 0
       },
       "file": "mscs.json",
-      "hash": "60e7a9c6d82a13a6"
+      "hash": "3b72d82894ea4330"
     },
     {
       "id": "python",
@@ -312,7 +859,8 @@
       "title": "Python Programming",
       "description": "9-week intro-to-advanced Python progression: syntax and control flow through OOP, the standard library, functional patterns, testing/typing, and concurrency.",
       "trackType": "graduate",
-      "group": "core",
+      "group": "cs",
+      "level": "fundamentals",
       "counts": {
         "units": 9,
         "objectives": 50,
@@ -327,7 +875,7 @@
         "explain": 0
       },
       "file": "python.json",
-      "hash": "5e7aaad06e5a75ae"
+      "hash": "644353c1a32b7aa7"
     },
     {
       "id": "javascript",
@@ -335,7 +883,8 @@
       "title": "JavaScript Programming",
       "description": "9-week intro-to-advanced JavaScript progression: syntax and the DOM through async patterns, ES6+, prototypes, testing/tooling, and Node.js.",
       "trackType": "graduate",
-      "group": "core",
+      "group": "cs",
+      "level": "fundamentals",
       "counts": {
         "units": 9,
         "objectives": 45,
@@ -350,7 +899,7 @@
         "explain": 0
       },
       "file": "javascript.json",
-      "hash": "a383df202ff2c7ac"
+      "hash": "c2f15116e2eb3e59"
     },
     {
       "id": "secplus",
@@ -358,7 +907,8 @@
       "title": "Security+",
       "description": "CompTIA Security+ SY0-701 exam prep across 5 weighted domains, with PBQ scenario drilling.",
       "trackType": "certification",
-      "group": "core",
+      "group": "security",
+      "level": "associate",
       "counts": {
         "units": 5,
         "objectives": 36,
@@ -373,7 +923,7 @@
         "explain": 0
       },
       "file": "secplus.json",
-      "hash": "e1343adabbe379f8"
+      "hash": "900507a00d2aa9f8"
     },
     {
       "id": "linuxplus",
@@ -381,7 +931,8 @@
       "title": "Linux+",
       "description": "CompTIA Linux+ XK0-006 exam prep across 5 weighted domains, with hands-on shell labs.",
       "trackType": "certification",
-      "group": "core",
+      "group": "it",
+      "level": "associate",
       "counts": {
         "units": 5,
         "objectives": 31,
@@ -396,7 +947,7 @@
         "explain": 0
       },
       "file": "linuxplus.json",
-      "hash": "d64e24b50f940f02"
+      "hash": "069387b1ba61f96e"
     },
     {
       "id": "cysaplus",
@@ -404,7 +955,8 @@
       "title": "CySA+",
       "description": "CompTIA CySA+ CS0-003 exam prep across 4 weighted domains, with SOC-analyst drilling.",
       "trackType": "certification",
-      "group": "core",
+      "group": "security",
+      "level": "professional",
       "counts": {
         "units": 4,
         "objectives": 22,
@@ -419,7 +971,7 @@
         "explain": 0
       },
       "file": "cysaplus.json",
-      "hash": "d77952d8f5f79a7c"
+      "hash": "0059ce6996c6ee9f"
     },
     {
       "id": "pentestplus",
@@ -427,7 +979,8 @@
       "title": "PenTest+",
       "description": "CompTIA PenTest+ PT0-003 exam prep across 5 weighted domains, with authorized lab-environment drilling.",
       "trackType": "certification",
-      "group": "core",
+      "group": "security",
+      "level": "professional",
       "counts": {
         "units": 5,
         "objectives": 22,
@@ -442,7 +995,7 @@
         "explain": 0
       },
       "file": "pentestplus.json",
-      "hash": "ca66c8286b1af6df"
+      "hash": "b617723bd6b51b2a"
     },
     {
       "id": "securityx",
@@ -450,7 +1003,8 @@
       "title": "SecurityX",
       "description": "CompTIA SecurityX CAS-005 exam prep across 4 weighted domains for enterprise security architecture and engineering.",
       "trackType": "certification",
-      "group": "core",
+      "group": "security",
+      "level": "specialty",
       "counts": {
         "units": 4,
         "objectives": 19,
@@ -465,7 +1019,7 @@
         "explain": 0
       },
       "file": "securityx.json",
-      "hash": "edee45edff5ca3b4"
+      "hash": "8e39bfc181d5c1b8"
     },
     {
       "id": "cmpcbs",
@@ -473,7 +1027,8 @@
       "title": "Computational Math: CS Degree",
       "description": "Liberty University's 2026-2027 BS in Computational Mathematics: Computer Science degree completion plan (120 credits) -- gen ed, Christianity core, and the full math/CS major sequence, mirrored from the official plan.",
       "trackType": "graduate",
-      "group": "core",
+      "group": "cs",
+      "level": "degree",
       "counts": {
         "units": 28,
         "objectives": 102,
@@ -488,7 +1043,1269 @@
         "explain": 0
       },
       "file": "cmpcbs.json",
-      "hash": "525f7204637255be"
+      "hash": "84413681fecce06b"
+    },
+    {
+      "id": "220-1201",
+      "code": "APLUS_CORE1",
+      "title": "A+ Core 1",
+      "description": "CompTIA A+ Core 1 (220-1201) exam prep across 5 weighted domains -- mobile devices, networking, hardware, virtualization/cloud, and hardware/network troubleshooting.",
+      "trackType": "certification",
+      "group": "it",
+      "level": "fundamentals",
+      "examCode": "220-1201",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 5,
+        "objectives": 34,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 34,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "220-1201.json",
+      "hash": "36768a94a09bf8a2"
+    },
+    {
+      "id": "220-1202",
+      "code": "APLUS_CORE2",
+      "title": "A+ Core 2",
+      "description": "CompTIA A+ Core 2 (220-1202) exam prep across 4 weighted domains -- operating systems, security, software troubleshooting, and operational procedures.",
+      "trackType": "certification",
+      "group": "it",
+      "level": "fundamentals",
+      "examCode": "220-1202",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 4,
+        "objectives": 28,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 28,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "220-1202.json",
+      "hash": "1469ce3948ff0616"
+    },
+    {
+      "id": "n10-009",
+      "code": "NETWORKPLUS",
+      "title": "Network+",
+      "description": "CompTIA Network+ (N10-009) exam prep across 5 weighted domains -- networking concepts, implementation, operations, security, and troubleshooting.",
+      "trackType": "certification",
+      "group": "it",
+      "level": "associate",
+      "examCode": "N10-009",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 5,
+        "objectives": 33,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 33,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "n10-009.json",
+      "hash": "0b30c6db07d92d8e"
+    },
+    {
+      "id": "cv0-004",
+      "code": "CLOUDPLUS",
+      "title": "Cloud+",
+      "description": "CompTIA Cloud+ (CV0-004) exam prep across 6 weighted domains -- cloud architecture, deployment, security, operations, troubleshooting, and DevOps fundamentals.",
+      "trackType": "certification",
+      "group": "it",
+      "level": "associate",
+      "examCode": "CV0-004",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 6,
+        "objectives": 31,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 31,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "cv0-004.json",
+      "hash": "dd91ff8c963f231e"
+    },
+    {
+      "id": "da0-002",
+      "code": "DATAPLUS",
+      "title": "Data+",
+      "description": "CompTIA Data+ (DA0-002) exam prep across 5 weighted domains -- data concepts and environments, acquisition and preparation, analysis, visualization and reporting, and governance.",
+      "trackType": "certification",
+      "group": "it",
+      "level": "associate",
+      "examCode": "DA0-002",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 5,
+        "objectives": 18,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 18,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "da0-002.json",
+      "hash": "3a2e72826e701189"
+    },
+    {
+      "id": "sk0-005",
+      "code": "SERVERPLUS",
+      "title": "Server+",
+      "description": "CompTIA Server+ (SK0-005) exam prep across 4 weighted domains -- server hardware installation and management, server administration, security and disaster recovery, and troubleshooting.",
+      "trackType": "certification",
+      "group": "it",
+      "level": "associate",
+      "examCode": "SK0-005",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 4,
+        "objectives": 20,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 20,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "sk0-005.json",
+      "hash": "fc6c3e745e4d39ac"
+    },
+    {
+      "id": "pk0-005",
+      "code": "PROJECTPLUS",
+      "title": "Project+",
+      "description": "CompTIA Project+ (PK0-005) exam prep across 4 weighted domains -- project management concepts, project life cycle phases, tools and documentation, and the basics of IT governance.",
+      "trackType": "certification",
+      "group": "pm",
+      "level": "fundamentals",
+      "examCode": "PK0-005",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 4,
+        "objectives": 24,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 24,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "pk0-005.json",
+      "hash": "4bba92300bf5e6a3"
+    },
+    {
+      "id": "fc0-u71",
+      "code": "TECHPLUS",
+      "title": "Tech+",
+      "description": "CompTIA Tech+ (FC0-U71) exam prep across 6 weighted domains -- tech concepts and terminology, infrastructure, applications software, software development concepts, data and database fundamentals, and security. Tech+ is CompTIA's 2024 relaunch of ITF+ (IT Fundamentals+).",
+      "trackType": "certification",
+      "group": "it",
+      "level": "fundamentals",
+      "examCode": "FC0-U71",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 6,
+        "objectives": 29,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 29,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "fc0-u71.json",
+      "hash": "4fd4afd838ea09d1"
+    },
+    {
+      "id": "at0-001",
+      "code": "AUTOOPSPLUS",
+      "title": "AutoOps+",
+      "description": "CompTIA AutoOps+ (AT0-001) exam prep across 4 weighted domains -- automation coding concepts, system configuration, continuous integration, and continuous delivery.",
+      "trackType": "certification",
+      "group": "it",
+      "level": "associate",
+      "examCode": "AT0-001",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 4,
+        "objectives": 14,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 14,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "at0-001.json",
+      "hash": "c511e61ec884a8ac"
+    },
+    {
+      "id": "cnx-001",
+      "code": "CLOUDNETX",
+      "title": "CloudNetX",
+      "description": "CompTIA CloudNetX (CNX-001) exam prep across 4 weighted domains -- hybrid network architecture design, network security, operations/monitoring/performance, and troubleshooting.",
+      "trackType": "certification",
+      "group": "it",
+      "level": "specialty",
+      "examCode": "CNX-001",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 4,
+        "objectives": 25,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 25,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "cnx-001.json",
+      "hash": "ffb2a192d53625e7"
+    },
+    {
+      "id": "cy0-001",
+      "code": "SECAIPLUS",
+      "title": "SecAI+",
+      "description": "CompTIA SecAI+ (CY0-001) exam prep across 4 weighted domains -- basic AI concepts for cybersecurity, securing AI systems, AI-assisted security, and AI governance/risk/compliance.",
+      "trackType": "certification",
+      "group": "security",
+      "level": "professional",
+      "examCode": "CY0-001",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 4,
+        "objectives": 15,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 15,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "cy0-001.json",
+      "hash": "7b2884acc959a779"
+    },
+    {
+      "id": "dy0-001",
+      "code": "DATAAI",
+      "title": "DataAI",
+      "description": "CompTIA DataAI (DY0-001, formerly DataX) exam prep across 5 weighted domains -- mathematics and statistics, modeling/analysis/outcomes, machine learning, operations and processes, and specialized data-science applications.",
+      "trackType": "certification",
+      "group": "it",
+      "level": "professional",
+      "examCode": "DY0-001",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 5,
+        "objectives": 26,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 26,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "dy0-001.json",
+      "hash": "0f40518a3f0b4871"
+    },
+    {
+      "id": "capm",
+      "code": "CAPM",
+      "title": "CAPM",
+      "description": "PMI Certified Associate in Project Management (CAPM) exam prep across 4 weighted domains -- PM fundamentals, predictive/plan-based methods, agile methods, and business analysis frameworks.",
+      "trackType": "certification",
+      "group": "pm",
+      "level": "fundamentals",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 4,
+        "objectives": 30,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 30,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "capm.json",
+      "hash": "5cd76affda5fca2b"
+    },
+    {
+      "id": "pmp",
+      "code": "PMP",
+      "title": "PMP",
+      "description": "PMI Project Management Professional (PMP) exam prep across 3 weighted domains -- people, process, and business environment -- spanning predictive, agile, and hybrid ways of working.",
+      "trackType": "certification",
+      "group": "pm",
+      "level": "professional",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 3,
+        "objectives": 23,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 23,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "pmp.json",
+      "hash": "7154e664f789fce4"
+    },
+    {
+      "id": "pmiacp",
+      "code": "PMIACP",
+      "title": "PMI-ACP",
+      "description": "PMI Agile Certified Practitioner (PMI-ACP) exam prep across 4 weighted domains -- agile mindset, leadership, product, and delivery -- reframed by PMI's 2026 update around Enterprise Agility.",
+      "trackType": "certification",
+      "group": "pm",
+      "level": "professional",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 4,
+        "objectives": 24,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 24,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "pmiacp.json",
+      "hash": "198da0fd4fa34b5f"
+    },
+    {
+      "id": "pgmp",
+      "code": "PGMP",
+      "title": "PgMP",
+      "description": "PMI Program Management Professional (PgMP) exam prep across 5 weighted domains -- strategic alignment, program life cycle management, benefits management, stakeholder engagement, and governance.",
+      "trackType": "certification",
+      "group": "pm",
+      "level": "professional",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 5,
+        "objectives": 35,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 35,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "pgmp.json",
+      "hash": "0b03929088d1b919"
+    },
+    {
+      "id": "pfmp",
+      "code": "PFMP",
+      "title": "PfMP",
+      "description": "PMI Portfolio Management Professional (PfMP) exam prep across 5 weighted domains -- strategic alignment, governance, portfolio performance, portfolio risk management, and communications management.",
+      "trackType": "certification",
+      "group": "pm",
+      "level": "professional",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 5,
+        "objectives": 34,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 34,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "pfmp.json",
+      "hash": "2ac344adc81da587"
+    },
+    {
+      "id": "pmirmp",
+      "code": "PMIRMP",
+      "title": "PMI-RMP",
+      "description": "PMI Risk Management Professional (PMI-RMP) exam prep across 5 weighted domains -- risk strategy and planning, identification, analysis, response, and monitoring/closing risks.",
+      "trackType": "certification",
+      "group": "pm",
+      "level": "specialty",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 5,
+        "objectives": 20,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 20,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "pmirmp.json",
+      "hash": "0c5a68b06a23fc63"
+    },
+    {
+      "id": "pmisp",
+      "code": "PMISP",
+      "title": "PMI-SP",
+      "description": "PMI Scheduling Professional (PMI-SP) exam prep across 5 weighted domains -- schedule strategy, planning/development, monitoring/controlling, closeout, and stakeholder communications.",
+      "trackType": "certification",
+      "group": "pm",
+      "level": "specialty",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 5,
+        "objectives": 27,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 27,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "pmisp.json",
+      "hash": "9b503d2c2d889c6f"
+    },
+    {
+      "id": "pmicp",
+      "code": "PMICP",
+      "title": "PMI-CP",
+      "description": "PMI Construction Professional (PMI-CP) exam prep across 4 weighted domains -- contracts management, stakeholder engagement, strategy/scope management, and project governance for built-environment and capital projects.",
+      "trackType": "certification",
+      "group": "pm",
+      "level": "specialty",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 4,
+        "objectives": 16,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 16,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "pmicp.json",
+      "hash": "a2faf0414d154b79"
+    },
+    {
+      "id": "pmipmocp",
+      "code": "PMIPMOCP",
+      "title": "PMI-PMOCP",
+      "description": "PMI PMO Certified Professional (PMI-PMOCP) exam prep across 6 weighted domains -- organizational alignment, PMO strategy, design, operations, enhancement, and the people skills a PMO practitioner needs.",
+      "trackType": "certification",
+      "group": "pm",
+      "level": "specialty",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 6,
+        "objectives": 23,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 23,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "pmipmocp.json",
+      "hash": "75b42673205cbf3f"
+    },
+    {
+      "id": "pmipba",
+      "code": "PMIPBA",
+      "title": "PMI-PBA",
+      "description": "PMI Professional in Business Analysis (PMI-PBA) exam prep across 5 weighted domains -- needs assessment, planning, analysis, traceability/monitoring, and evaluation.",
+      "trackType": "certification",
+      "group": "pm",
+      "level": "specialty",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 5,
+        "objectives": 28,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 28,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "pmipba.json",
+      "hash": "7ee3b67d188478ca"
+    },
+    {
+      "id": "pmicpmai",
+      "code": "PMICPMAI",
+      "title": "PMI-CPMAI",
+      "description": "PMI Certified Professional in Managing AI (PMI-CPMAI) exam prep across 5 weighted domains -- responsible AI, identifying business and data needs, model development/evaluation, and operationalizing AI solutions.",
+      "trackType": "certification",
+      "group": "pm",
+      "level": "specialty",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 5,
+        "objectives": 31,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 31,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "pmicpmai.json",
+      "hash": "77b36f79d4f147c6"
+    },
+    {
+      "id": "cspp",
+      "code": "CSPP",
+      "title": "CSPP",
+      "description": "PMI & GPM Certified Sustainable Project Professional (CSPP) exam prep across 5 weighted domains -- sustainability foundations, the PRiSM life cycle, P5 impact analysis, sustainability management planning, and ESG reporting/governance. Modeled on the Certified Practitioner pathway (for candidates who already hold a qualifying PM credential); the Non-Certified Practitioner pathway adds a sixth domain and different weights for candidates without one.",
+      "trackType": "certification",
+      "group": "pm",
+      "level": "specialty",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 5,
+        "objectives": 21,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 21,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "cspp.json",
+      "hash": "96ce3e4494698231"
+    },
+    {
+      "id": "nclex-rn",
+      "code": "NCLEXRN",
+      "title": "NCLEX-RN",
+      "description": "The registered nurse licensure examination, built on the 2026 NCSBN test plan: the four Client Needs categories and their eight subcategories, weighted as the exam weights them, with clinical judgment treated as the thing being tested rather than a topic to revise.",
+      "trackType": "certification",
+      "group": "nursing",
+      "level": "licensure",
+      "requiresAcknowledgement": true,
+      "examCode": "NCLEX-RN",
+      "credentialStatus": "active",
+      "retirementDate": "2029-03-31",
+      "counts": {
+        "units": 8,
+        "objectives": 259,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 259,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "nclex-rn.json",
+      "hash": "6b03b0c6c459a5ea"
+    },
+    {
+      "id": "nclex-pn",
+      "code": "NCLEXPN",
+      "title": "NCLEX-PN",
+      "description": "The practical and vocational nurse licensure examination, built on the 2026 NCSBN test plan. Weighted as the exam weights it, and scoped as the licence is scoped -- what the PN collects, reports and contributes, rather than what the RN decides.",
+      "trackType": "certification",
+      "group": "nursing",
+      "level": "licensure",
+      "requiresAcknowledgement": true,
+      "examCode": "NCLEX-PN",
+      "credentialStatus": "active",
+      "retirementDate": "2029-03-31",
+      "counts": {
+        "units": 8,
+        "objectives": 180,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 180,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "nclex-pn.json",
+      "hash": "fa36c213f2ff0639"
+    },
+    {
+      "id": "cna",
+      "code": "CNA",
+      "title": "Certified Nursing Assistant",
+      "description": "Nurse aide training built on the federal requirements at 42 CFR 483.152 -- the sixteen hours that must come before you ever touch a resident, then basic nursing and personal care skills, cognition, restorative services and residents' rights.",
+      "trackType": "certification",
+      "group": "nursing",
+      "level": "fundamentals",
+      "requiresAcknowledgement": true,
+      "credentialStatus": "active",
+      "counts": {
+        "units": 7,
+        "objectives": 70,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 70,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "cna.json",
+      "hash": "f2a34cf637afbfb1"
+    },
+    {
+      "id": "lpnvn",
+      "code": "LPNVN",
+      "title": "Practical Nursing (LPN/LVN)",
+      "description": "The practical nursing program from the beginning: foundations, the skills you are licensed to perform, the medical-surgical body of knowledge, and the scope question that sits under all of it -- what the PN does, and what the PN reports.",
+      "trackType": "certification",
+      "group": "nursing",
+      "level": "degree",
+      "requiresAcknowledgement": true,
+      "credentialStatus": "active",
+      "counts": {
+        "units": 6,
+        "objectives": 98,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 98,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "lpnvn.json",
+      "hash": "da603a981119a27c"
+    },
+    {
+      "id": "adnrn",
+      "code": "ADNRN",
+      "title": "Associate Degree Nursing (RN)",
+      "description": "The prelicensure RN program: the sciences underneath practice, the full nursing process with the RN's own assessment authority, medical-surgical depth, and the specialty rotations -- aimed at entry-level RN practice as NCSBN defines it.",
+      "trackType": "graduate",
+      "group": "nursing",
+      "level": "degree",
+      "requiresAcknowledgement": true,
+      "credentialStatus": "active",
+      "counts": {
+        "units": 6,
+        "objectives": 101,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 101,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "adnrn.json",
+      "hash": "50e3f4eb5739f3a8"
+    },
+    {
+      "id": "bsnrn",
+      "code": "BSNRN",
+      "title": "BSN Nursing",
+      "description": "Baccalaureate nursing organised the way the discipline organises itself: the ten Domains of the AACN Essentials, from knowledge for nursing practice through systems, informatics and professional formation.",
+      "trackType": "graduate",
+      "group": "nursing",
+      "level": "degree",
+      "requiresAcknowledgement": true,
+      "credentialStatus": "active",
+      "counts": {
+        "units": 10,
+        "objectives": 100,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 100,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "bsnrn.json",
+      "hash": "be0db2eafaacc04b"
+    },
+    {
+      "id": "npte-pt",
+      "code": "NPTEPT",
+      "title": "NPTE-PT",
+      "description": "The physical therapist licensure examination, built on FSBPT's current NPTE-PT Test Content Outline: 14 body-system and non-system domains, weighted by the exam's own published item-count ranges.",
+      "trackType": "certification",
+      "group": "pt",
+      "level": "licensure",
+      "requiresAcknowledgement": true,
+      "examCode": "NPTE-PT",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 14,
+        "objectives": 38,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 38,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "npte-pt.json",
+      "hash": "e718b83842d22029"
+    },
+    {
+      "id": "npte-pta",
+      "code": "NPTEPTA",
+      "title": "NPTE-PTA",
+      "description": "The physical therapist assistant licensure examination, built on FSBPT's current NPTE-PTA Test Content Outline: 14 body-system and non-system domains, weighted by the exam's own published item-count ranges.",
+      "trackType": "certification",
+      "group": "pt",
+      "level": "licensure",
+      "requiresAcknowledgement": true,
+      "examCode": "NPTE-PTA",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 14,
+        "objectives": 26,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 26,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "npte-pta.json",
+      "hash": "1f7e87e9b0df59ee"
+    },
+    {
+      "id": "dpt",
+      "code": "DPT",
+      "title": "Doctor of Physical Therapy (DPT)",
+      "description": "The entry-level DPT curriculum as CAPTE's 2024 accreditation standards define it: the foundational and clinical sciences, professional values and lifelong learning, and the 25 practice expectations (examination through practice management) every graduate must meet before sitting the NPTE-PT.",
+      "trackType": "graduate",
+      "group": "pt",
+      "level": "degree",
+      "requiresAcknowledgement": true,
+      "credentialStatus": "active",
+      "counts": {
+        "units": 8,
+        "objectives": 59,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 59,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "dpt.json",
+      "hash": "272e7633cfa970d8"
+    },
+    {
+      "id": "abptsocs",
+      "code": "ABPTSOCS",
+      "title": "Orthopaedic Clinical Specialist (OCS)",
+      "description": "ABPTS board certification in orthopaedic physical therapy, on the 2026 outline: 30% specialty knowledge, 60% patient management, and a body-region table that puts the lumbar spine, shoulder and knee at the top.",
+      "trackType": "certification",
+      "group": "pt",
+      "level": "specialty",
+      "requiresAcknowledgement": true,
+      "credentialStatus": "active",
+      "counts": {
+        "units": 5,
+        "objectives": 23,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 23,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "abptsocs.json",
+      "hash": "4c13ed8fbd7868d7"
+    },
+    {
+      "id": "abptsgcs",
+      "code": "ABPTSGCS",
+      "title": "Geriatric Clinical Specialist",
+      "description": "ABPTS board certification in geriatric physical therapy: examination (25%) and intervention (25%) for the older adult, with the multisystem conditions -- falls, sarcopenia, dementia, fractures, heart failure -- the outline names.",
+      "trackType": "certification",
+      "group": "pt",
+      "level": "specialty",
+      "requiresAcknowledgement": true,
+      "credentialStatus": "active",
+      "counts": {
+        "units": 6,
+        "objectives": 26,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 26,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "abptsgcs.json",
+      "hash": "ff3d676c16a5a52a"
+    },
+    {
+      "id": "abptsncs",
+      "code": "ABPTSNCS",
+      "title": "Neurologic Clinical Specialist",
+      "description": "ABPTS board certification in neurologic physical therapy: 60% patient management across stroke, spinal cord injury, brain injury, Parkinson disease, multiple sclerosis, vestibular and balance disorders, with the knowledge, reasoning and systems domains the outline weights around it.",
+      "trackType": "certification",
+      "group": "pt",
+      "level": "specialty",
+      "requiresAcknowledgement": true,
+      "credentialStatus": "active",
+      "counts": {
+        "units": 4,
+        "objectives": 22,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 22,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "abptsncs.json",
+      "hash": "5a469046c8ad8559"
+    },
+    {
+      "id": "abptsccs",
+      "code": "ABPTSCCS",
+      "title": "Cardiovascular & Pulmonary Clinical Specialist",
+      "description": "ABPTS board certification in cardiovascular and pulmonary physical therapy: case-history examination weighted toward evaluation (30%), with the outline's own frequently-, occasionally- and rarely-seen diagnoses.",
+      "trackType": "certification",
+      "group": "pt",
+      "level": "specialty",
+      "requiresAcknowledgement": true,
+      "credentialStatus": "active",
+      "counts": {
+        "units": 8,
+        "objectives": 26,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 26,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "abptsccs.json",
+      "hash": "4225a4bea55909df"
+    },
+    {
+      "id": "abptspcs",
+      "code": "ABPTSPCS",
+      "title": "Pediatric Clinical Specialist",
+      "description": "ABPTS board certification in pediatric physical therapy: examination, evaluation and intervention (20% each) across cerebral palsy, developmental disabilities, congenital and genetic conditions, from the NICU to the school setting.",
+      "trackType": "certification",
+      "group": "pt",
+      "level": "specialty",
+      "requiresAcknowledgement": true,
+      "credentialStatus": "active",
+      "counts": {
+        "units": 6,
+        "objectives": 24,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 24,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "abptspcs.json",
+      "hash": "8d9eca5b535982c2"
+    },
+    {
+      "id": "abptsscs",
+      "code": "ABPTSSCS",
+      "title": "Sports Clinical Specialist",
+      "description": "ABPTS board certification in sports physical therapy: clinical intervention (35%) and assessment (30%) for athletes, plus emergency management, injury prevention, performance and the sports science behind it.",
+      "trackType": "certification",
+      "group": "pt",
+      "level": "specialty",
+      "requiresAcknowledgement": true,
+      "credentialStatus": "active",
+      "counts": {
+        "units": 5,
+        "objectives": 19,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 19,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "abptsscs.json",
+      "hash": "079c158d37cc39a8"
+    },
+    {
+      "id": "abptsonc",
+      "code": "ABPTSONC",
+      "title": "Oncologic Clinical Specialist",
+      "description": "ABPTS board certification in oncologic physical therapy: intervention and instruction (27%) and examination (23%) for people living with and beyond cancer, across treatment effects, lymphedema, fatigue and survivorship.",
+      "trackType": "certification",
+      "group": "pt",
+      "level": "specialty",
+      "requiresAcknowledgement": true,
+      "credentialStatus": "active",
+      "counts": {
+        "units": 6,
+        "objectives": 23,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 23,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "abptsonc.json",
+      "hash": "4bcf0eab1855ed56"
+    },
+    {
+      "id": "abptsecs",
+      "code": "ABPTSECS",
+      "title": "Clinical Electrophysiologic Specialist",
+      "description": "ABPTS board certification in clinical electrophysiologic physical therapy: electrodiagnostic tests and measures (15%) and the evaluation of normal and abnormal electrophysiologic findings (25%), on the outline's own 200-item blueprint.",
+      "trackType": "certification",
+      "group": "pt",
+      "level": "specialty",
+      "requiresAcknowledgement": true,
+      "credentialStatus": "active",
+      "counts": {
+        "units": 5,
+        "objectives": 17,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 17,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "abptsecs.json",
+      "hash": "7bab90e55145d7f5"
+    },
+    {
+      "id": "abptspwcs",
+      "code": "ABPTSPWCS",
+      "title": "Pelvic & Women's Health Clinical Specialist (PWCS)",
+      "description": "ABPTS board certification in pelvic and women's health physical therapy (renamed from Women's Health in September 2025): patient and client management across pelvic floor dysfunction, urinary and bowel dysfunction, pregnancy and postpartum, lymphedema and sexual dysfunction.",
+      "trackType": "certification",
+      "group": "pt",
+      "level": "specialty",
+      "requiresAcknowledgement": true,
+      "credentialStatus": "active",
+      "counts": {
+        "units": 3,
+        "objectives": 17,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 17,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "abptspwcs.json",
+      "hash": "2e6dc45f0222050f"
+    },
+    {
+      "id": "abptswms",
+      "code": "ABPTSWMS",
+      "title": "Wound Management Clinical Specialist",
+      "description": "ABPTS board certification in wound management physical therapy: wound clinical sciences, examination, evaluation and diagnosis (12-13% each) and interventions (14%) for pressure, vascular, neuropathic, surgical and burn wounds.",
+      "trackType": "certification",
+      "group": "pt",
+      "level": "specialty",
+      "requiresAcknowledgement": true,
+      "credentialStatus": "active",
+      "counts": {
+        "units": 7,
+        "objectives": 24,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 24,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "abptswms.json",
+      "hash": "d30954bdee2f8c8b"
+    },
+    {
+      "id": "nasmcpt",
+      "code": "NASMCPT",
+      "title": "NASM Certified Personal Trainer (NASM-CPT)",
+      "description": "NASM's NCCA-accredited personal trainer exam on its current six-domain blueprint: exercise technique and training instruction (24%), program design (20%), assessment (16%), sciences and nutrition, client relations, and professional responsibility.",
+      "trackType": "certification",
+      "group": "fitness",
+      "level": "associate",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 6,
+        "objectives": 31,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 31,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "nasmcpt.json",
+      "hash": "93b0a4811e4fd6a7"
+    },
+    {
+      "id": "acecpt",
+      "code": "ACECPT",
+      "title": "ACE Certified Personal Trainer",
+      "description": "ACE's NCCA-accredited personal trainer exam on its 2022 role delineation study: client onboarding and assessments (23%), program design and implementation (31%), program modification and progression (27%), and risk management, professional conduct and ethical business practices (19%).",
+      "trackType": "certification",
+      "group": "fitness",
+      "level": "associate",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 4,
+        "objectives": 21,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 21,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "acecpt.json",
+      "hash": "4308b329d77d37d1"
+    },
+    {
+      "id": "acsmcpt",
+      "code": "ACSMCPT",
+      "title": "ACSM Certified Personal Trainer (ACSM-CPT)",
+      "description": "ACSM's NCCA-accredited personal trainer exam on the outline effective July 10, 2025: initial client consultation and assessment (25%), exercise programming and implementation (43%), exercise leadership and client education (22%), and legal and professional responsibilities (10%).",
+      "trackType": "certification",
+      "group": "fitness",
+      "level": "associate",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 4,
+        "objectives": 20,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 20,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "acsmcpt.json",
+      "hash": "5cff41c5fc4b3a2d"
+    },
+    {
+      "id": "nscacscs",
+      "code": "NSCACSCS",
+      "title": "NSCA Certified Strength and Conditioning Specialist (CSCS)",
+      "description": "NSCA's CSCS on the detailed content outline in the handbook effective July 1, 2026: two separately passed sections -- Scientific Foundations (exercise science, sport psychology, nutrition) and Practical/Applied (program design, exercise technique, program implementation, organization and administration).",
+      "trackType": "certification",
+      "group": "fitness",
+      "level": "professional",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 7,
+        "objectives": 37,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 37,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "nscacscs.json",
+      "hash": "52ebc70d9bff7359"
+    },
+    {
+      "id": "nscacpt",
+      "code": "NSCACPT",
+      "title": "NSCA Certified Personal Trainer (NSCA-CPT)",
+      "description": "NSCA's NCCA-accredited personal trainer exam on the handbook effective July 1, 2026: client consultation and assessment (23%), program planning (29%), program execution (36%), and safety, emergency procedures and legal issues (12%).",
+      "trackType": "certification",
+      "group": "fitness",
+      "level": "associate",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 4,
+        "objectives": 18,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 18,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "nscacpt.json",
+      "hash": "0c3f1c738592ca4d"
+    },
+    {
+      "id": "nccptcpt",
+      "code": "NCCPTCPT",
+      "title": "ISSA / NCCPT Certified Personal Trainer (NCCPT-CPT)",
+      "description": "The NCCA-accredited personal trainer exam behind ISSA's certification, administered by its subsidiary NCCPT, on the 2020 job analysis outline: applied science (25%), program design and implementation (25%), intake and ongoing evaluation (15%), exercise selection and instruction (15%), nutrition (10%) and professional practice (10%).",
+      "trackType": "certification",
+      "group": "fitness",
+      "level": "associate",
+      "credentialStatus": "active",
+      "counts": {
+        "units": 6,
+        "objectives": 25,
+        "bookkeeping": 0,
+        "linked": 0
+      },
+      "modalities": {
+        "do-existing": 0,
+        "do-new": 0,
+        "read": 25,
+        "combo": 0,
+        "explain": 0
+      },
+      "file": "nccptcpt.json",
+      "hash": "09ed7da5edcaf787"
     }
   ]
 }

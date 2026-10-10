@@ -1,0 +1,923 @@
+{
+  "id": "gcpace",
+  "code": "GCPACE",
+  "title": "Google Cloud Associate Cloud Engineer",
+  "description": "Google Cloud Associate Cloud Engineer: deploying, securing, and operating applications and infrastructure on Google Cloud -- environment setup, compute/storage/networking implementation, day-2 operations, and access/security configuration.",
+  "trackType": "certification",
+  "field": "gcp",
+  "units": [
+    {
+      "id": "gcpace:1",
+      "index": 1,
+      "title": "Setting Up a Cloud Solution Environment",
+      "weight": 20,
+      "gate": "Given a new Google Cloud environment to stand up, name the specific step and the exact IAM/org concept it depends on -- not just \"configure access.\"",
+      "objectives": [
+        {
+          "id": "gcpace:1:1",
+          "unitId": "gcpace:1",
+          "index": 1,
+          "text": "Building a resource hierarchy (organization, folders, projects) and applying organization policies to it",
+          "sourceHash": "e22941e38393",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:1:2",
+          "unitId": "gcpace:1",
+          "index": 2,
+          "text": "Granting IAM roles to members within a project",
+          "sourceHash": "79dfff3e4dd4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:1:3",
+          "unitId": "gcpace:1",
+          "index": 3,
+          "text": "Managing users and groups in Cloud Identity, manually and via automation",
+          "sourceHash": "f3d640b086d4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:1:4",
+          "unitId": "gcpace:1",
+          "index": 4,
+          "text": "Enabling APIs within a project",
+          "sourceHash": "102e86f1cf89",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:1:5",
+          "unitId": "gcpace:1",
+          "index": 5,
+          "text": "Provisioning and setting up Google Cloud Observability products",
+          "sourceHash": "fa8f906d381a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:1:6",
+          "unitId": "gcpace:1",
+          "index": 6,
+          "text": "Assessing quotas and requesting increases",
+          "sourceHash": "dd63939016b4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:1:7",
+          "unitId": "gcpace:1",
+          "index": 7,
+          "text": "Setting up a standalone organization",
+          "sourceHash": "576a8d53dba4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:1:8",
+          "unitId": "gcpace:1",
+          "index": 8,
+          "text": "Setting up cloud networking as part of environment setup",
+          "sourceHash": "d7b9f888dfad",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:1:9",
+          "unitId": "gcpace:1",
+          "index": 9,
+          "text": "Verifying product availability across regions and zones",
+          "sourceHash": "66702ac7219e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:1:10",
+          "unitId": "gcpace:1",
+          "index": 10,
+          "text": "Configuring Cloud Asset Inventory, and using Gemini Cloud Assist to analyze resources",
+          "sourceHash": "f5e2508e139c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:1:11",
+          "unitId": "gcpace:1",
+          "index": 11,
+          "text": "Configuring Workforce Identity Federation",
+          "sourceHash": "27a5d877222d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:1:12",
+          "unitId": "gcpace:1",
+          "index": 12,
+          "text": "Creating billing accounts and linking projects to them",
+          "sourceHash": "d3d9ff6df486",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:1:13",
+          "unitId": "gcpace:1",
+          "index": 13,
+          "text": "Establishing billing budgets and alerts",
+          "sourceHash": "dbdb2730e7f5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:1:14",
+          "unitId": "gcpace:1",
+          "index": 14,
+          "text": "Setting up billing exports",
+          "sourceHash": "23e424f61816",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "gcpace:2",
+      "index": 2,
+      "title": "Planning and Implementing a Cloud Solution",
+      "weight": 30,
+      "gate": "Given a workload's shape, pick the specific Google Cloud compute, storage, or networking product that fits it -- and the tool used to provision it as code.",
+      "objectives": [
+        {
+          "id": "gcpace:2:1",
+          "unitId": "gcpace:2",
+          "index": 1,
+          "text": "Choosing the right compute option for a workload: Compute Engine, GKE, Cloud Run, Cloud Run functions, or Agent Runtime on the Gemini Enterprise Agent Platform",
+          "sourceHash": "66b6901f1482",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:2:2",
+          "unitId": "gcpace:2",
+          "index": 2,
+          "text": "Launching a compute instance: availability policy, SSH keys",
+          "sourceHash": "438bef15c95e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:2:3",
+          "unitId": "gcpace:2",
+          "index": 3,
+          "text": "Choosing Compute Engine storage: zonal Persistent Disk, regional Persistent Disk, Google Cloud Hyperdisk",
+          "sourceHash": "0d44ba34b609",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:2:4",
+          "unitId": "gcpace:2",
+          "index": 4,
+          "text": "Creating an autoscaled managed instance group from an instance template",
+          "sourceHash": "87afacffb449",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:2:5",
+          "unitId": "gcpace:2",
+          "index": 5,
+          "text": "Configuring OS Login and VM Manager",
+          "sourceHash": "ab73fc82fabf",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:2:6",
+          "unitId": "gcpace:2",
+          "index": 6,
+          "text": "Using Spot VM instances and custom machine types",
+          "sourceHash": "863f40ff3d15",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:2:7",
+          "unitId": "gcpace:2",
+          "index": 7,
+          "text": "Installing and configuring kubectl",
+          "sourceHash": "b4bed08ffd29",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:2:8",
+          "unitId": "gcpace:2",
+          "index": 8,
+          "text": "Deploying a GKE cluster: Autopilot, regional, and private cluster configurations",
+          "sourceHash": "d57409006f3a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:2:9",
+          "unitId": "gcpace:2",
+          "index": 9,
+          "text": "Deploying a containerized application to GKE",
+          "sourceHash": "3552746b0f70",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:2:10",
+          "unitId": "gcpace:2",
+          "index": 10,
+          "text": "Deploying an application to serverless compute, including processing Google Cloud events via Pub/Sub, Cloud Storage notifications, or Eventarc",
+          "sourceHash": "c73c63738e8f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:2:11",
+          "unitId": "gcpace:2",
+          "index": 11,
+          "text": "Choosing between GPUs and TPUs for a workload",
+          "sourceHash": "fe7b5e07b6cb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:2:12",
+          "unitId": "gcpace:2",
+          "index": 12,
+          "text": "Choosing and deploying data products: Cloud SQL, BigQuery, Firestore, Spanner, Bigtable, AlloyDB, Dataflow, Pub/Sub, Managed Service for Apache Kafka, Memorystore",
+          "sourceHash": "15b292858ac8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:2:13",
+          "unitId": "gcpace:2",
+          "index": 13,
+          "text": "Choosing and deploying storage products and Cloud Storage classes: Standard, Nearline, Coldline, Archive",
+          "sourceHash": "11a7727566eb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:2:14",
+          "unitId": "gcpace:2",
+          "index": 14,
+          "text": "Loading data: command-line upload, loading from Cloud Storage, Storage Transfer Service",
+          "sourceHash": "472c83f962f5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:2:15",
+          "unitId": "gcpace:2",
+          "index": 15,
+          "text": "Maintaining multi-region redundancy across data solutions",
+          "sourceHash": "3704ce1e0dd0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:2:16",
+          "unitId": "gcpace:2",
+          "index": 16,
+          "text": "Creating a VPC with subnets: custom mode, Shared VPC, VPC Network Peering",
+          "sourceHash": "e5df7157d20e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:2:17",
+          "unitId": "gcpace:2",
+          "index": 17,
+          "text": "Creating and applying VPC firewall rules and Cloud NGFW policies (action, source, destination, targets, protocols, ports)",
+          "sourceHash": "81a3d62b8ecb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:2:18",
+          "unitId": "gcpace:2",
+          "index": 18,
+          "text": "Using tags and service accounts in Cloud NGFW policy rules",
+          "sourceHash": "2e8b6a3eba88",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:2:19",
+          "unitId": "gcpace:2",
+          "index": 19,
+          "text": "Establishing network connectivity: Cloud VPN, VPC Network Peering, Cloud Interconnect",
+          "sourceHash": "079d10443bf8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:2:20",
+          "unitId": "gcpace:2",
+          "index": 20,
+          "text": "Choosing and deploying load balancers",
+          "sourceHash": "4db12cb83d65",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:2:21",
+          "unitId": "gcpace:2",
+          "index": 21,
+          "text": "Differentiating Network Service Tiers",
+          "sourceHash": "8a2ea67c7f4f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:2:22",
+          "unitId": "gcpace:2",
+          "index": 22,
+          "text": "Infrastructure-as-code tooling: Fabric FAST, Config Connector, Terraform, Helm",
+          "sourceHash": "e5f0ed4fc697",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:2:23",
+          "unitId": "gcpace:2",
+          "index": 23,
+          "text": "AI-assisted planning and implementation: Gemini CLI, Google Antigravity, Gemini Cloud Assist, Application Design Center",
+          "sourceHash": "e8b51e3375c7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "gcpace:3",
+      "index": 3,
+      "title": "Ensuring Successful Operation of a Cloud Solution",
+      "weight": 30,
+      "gate": "Given a running system that needs day-2 attention, name the specific console/CLI action and where it shows up in monitoring or logging.",
+      "objectives": [
+        {
+          "id": "gcpace:3:1",
+          "unitId": "gcpace:3",
+          "index": 1,
+          "text": "Remotely connecting to a Compute Engine instance",
+          "sourceHash": "b586cac83219",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:3:2",
+          "unitId": "gcpace:3",
+          "index": 2,
+          "text": "Viewing currently running Compute Engine instances",
+          "sourceHash": "83df39191b80",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:3:3",
+          "unitId": "gcpace:3",
+          "index": 3,
+          "text": "Working with snapshots and images: create, view, delete, schedule",
+          "sourceHash": "b0855f20408b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:3:4",
+          "unitId": "gcpace:3",
+          "index": 4,
+          "text": "Viewing running GKE cluster inventory: nodes, Pods, Services",
+          "sourceHash": "50e5b5514920",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:3:5",
+          "unitId": "gcpace:3",
+          "index": 5,
+          "text": "Configuring GKE access to Artifact Registry",
+          "sourceHash": "4f1c0e26c2e4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:3:6",
+          "unitId": "gcpace:3",
+          "index": 6,
+          "text": "Working with GKE node pools: add, edit, remove, autoscale",
+          "sourceHash": "111ab28e73ee",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:3:7",
+          "unitId": "gcpace:3",
+          "index": 7,
+          "text": "Working with Kubernetes resources: Pods, Services, StatefulSets",
+          "sourceHash": "c1ef732cf10f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:3:8",
+          "unitId": "gcpace:3",
+          "index": 8,
+          "text": "Managing horizontal and vertical Pod autoscaling",
+          "sourceHash": "6c0f76c2a9aa",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:3:9",
+          "unitId": "gcpace:3",
+          "index": 9,
+          "text": "Managing GKE Autopilot Pod resource requests",
+          "sourceHash": "a5dc8149d778",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:3:10",
+          "unitId": "gcpace:3",
+          "index": 10,
+          "text": "Deploying new versions of a Cloud Run application, and adjusting traffic-splitting across Cloud Run, Cloud Run functions, and GKE",
+          "sourceHash": "d82d57343f83",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:3:11",
+          "unitId": "gcpace:3",
+          "index": 11,
+          "text": "Configuring autoscaling for a Cloud Run application",
+          "sourceHash": "0be877546abf",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:3:12",
+          "unitId": "gcpace:3",
+          "index": 12,
+          "text": "Attaching GPUs and TPUs to running workloads",
+          "sourceHash": "6b09f6122128",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:3:13",
+          "unitId": "gcpace:3",
+          "index": 13,
+          "text": "Deploying an agent to Agent Runtime on the Gemini Enterprise Agent Platform",
+          "sourceHash": "75444c7402be",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:3:14",
+          "unitId": "gcpace:3",
+          "index": 14,
+          "text": "Managing notebooks in Gemini Enterprise Agent Platform Workbench and BigQuery",
+          "sourceHash": "04321c6d2713",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:3:15",
+          "unitId": "gcpace:3",
+          "index": 15,
+          "text": "Managing developer environments with Cloud Workstations",
+          "sourceHash": "7cd6ca488d31",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:3:16",
+          "unitId": "gcpace:3",
+          "index": 16,
+          "text": "Managing and securing objects in Cloud Storage buckets, including lifecycle management policies",
+          "sourceHash": "e2b3b7d3d919",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:3:17",
+          "unitId": "gcpace:3",
+          "index": 17,
+          "text": "Executing queries against data instances: Cloud SQL, BigQuery, Bigtable, Spanner, Firestore, AlloyDB",
+          "sourceHash": "fba1c9c65b6a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:3:18",
+          "unitId": "gcpace:3",
+          "index": 18,
+          "text": "Estimating the cost of data storage resources",
+          "sourceHash": "b9cd2b11198c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:3:19",
+          "unitId": "gcpace:3",
+          "index": 19,
+          "text": "Backing up and restoring database instances",
+          "sourceHash": "db45cae532b5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:3:20",
+          "unitId": "gcpace:3",
+          "index": 20,
+          "text": "Reviewing job status for Dataflow and BigQuery",
+          "sourceHash": "e2308c47a3f1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:3:21",
+          "unitId": "gcpace:3",
+          "index": 21,
+          "text": "Using Database Center to manage the Google Cloud database fleet",
+          "sourceHash": "3cd9b4782183",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:3:22",
+          "unitId": "gcpace:3",
+          "index": 22,
+          "text": "Configuring customer-managed encryption keys (CMEK)",
+          "sourceHash": "28eff63be632",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:3:23",
+          "unitId": "gcpace:3",
+          "index": 23,
+          "text": "Resizing a subnet's IPv4 address range",
+          "sourceHash": "d3f51668db9c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:3:24",
+          "unitId": "gcpace:3",
+          "index": 24,
+          "text": "Reserving static external or internal IP addresses",
+          "sourceHash": "6486364c31f9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:3:25",
+          "unitId": "gcpace:3",
+          "index": 25,
+          "text": "Adding custom static routes in a VPC",
+          "sourceHash": "2c532bc9113b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:3:26",
+          "unitId": "gcpace:3",
+          "index": 26,
+          "text": "Using Cloud DNS and Cloud NAT",
+          "sourceHash": "8bdd4b4c3a38",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:3:27",
+          "unitId": "gcpace:3",
+          "index": 27,
+          "text": "Managing VPC firewall rules and Cloud NGFW policies day-to-day",
+          "sourceHash": "38b2500c9f11",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:3:28",
+          "unitId": "gcpace:3",
+          "index": 28,
+          "text": "Creating Cloud Monitoring alerts based on resource metrics",
+          "sourceHash": "4f95411b8890",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:3:29",
+          "unitId": "gcpace:3",
+          "index": 29,
+          "text": "Creating and ingesting Cloud Monitoring custom metrics",
+          "sourceHash": "52af323ac51a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:3:30",
+          "unitId": "gcpace:3",
+          "index": 30,
+          "text": "Configuring audit logs: VPC Flow Logs, audit logs, firewall logs",
+          "sourceHash": "54b8a3058d84",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:3:31",
+          "unitId": "gcpace:3",
+          "index": 31,
+          "text": "Exporting logs to external systems, including on-premises and BigQuery",
+          "sourceHash": "d02b8a155532",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:3:32",
+          "unitId": "gcpace:3",
+          "index": 32,
+          "text": "Configuring log buckets, log analytics, and log routers",
+          "sourceHash": "f4e1d7ba529b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:3:33",
+          "unitId": "gcpace:3",
+          "index": 33,
+          "text": "Viewing and filtering logs, and inspecting specific log message details, in Cloud Logging",
+          "sourceHash": "031625610175",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:3:34",
+          "unitId": "gcpace:3",
+          "index": 34,
+          "text": "Using diagnostic tools to investigate an application issue: Cloud Trace, Cloud Profiler, Query Insights, index advisor",
+          "sourceHash": "a8d119ba2790",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:3:35",
+          "unitId": "gcpace:3",
+          "index": 35,
+          "text": "Viewing the Personalized Service Health dashboard",
+          "sourceHash": "50a41ff04b8c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:3:36",
+          "unitId": "gcpace:3",
+          "index": 36,
+          "text": "Configuring and deploying Ops Agent, and deploying the Managed Service for Prometheus",
+          "sourceHash": "1be1bab570f8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:3:37",
+          "unitId": "gcpace:3",
+          "index": 37,
+          "text": "Using Gemini Cloud Assist for monitoring, and Active Assist to optimize resource utilization",
+          "sourceHash": "46075fbe171a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:3:38",
+          "unitId": "gcpace:3",
+          "index": 38,
+          "text": "Using Cloud Hub to monitor active events and application health",
+          "sourceHash": "0814c4350bce",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "gcpace:4",
+      "index": 4,
+      "title": "Configuring Access and Security",
+      "weight": 20,
+      "gate": "Given an access requirement, say whether it belongs on a user's IAM role or a service account -- and which specific mechanism narrows it to least privilege.",
+      "objectives": [
+        {
+          "id": "gcpace:4:1",
+          "unitId": "gcpace:4",
+          "index": 1,
+          "text": "Viewing and creating IAM policies",
+          "sourceHash": "2d9f6a5fa16d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:4:2",
+          "unitId": "gcpace:4",
+          "index": 2,
+          "text": "Attaching roles and understanding policy inheritance in the organization hierarchy",
+          "sourceHash": "4d4f4f07a4b1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:4:3",
+          "unitId": "gcpace:4",
+          "index": 3,
+          "text": "Managing IAM role types and defining custom roles",
+          "sourceHash": "6852640595c0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:4:4",
+          "unitId": "gcpace:4",
+          "index": 4,
+          "text": "Creating service accounts, including Google-managed ones",
+          "sourceHash": "844714740922",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:4:5",
+          "unitId": "gcpace:4",
+          "index": 5,
+          "text": "Using service accounts in IAM policies with minimum permissions",
+          "sourceHash": "1adc590685e6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:4:6",
+          "unitId": "gcpace:4",
+          "index": 6,
+          "text": "Assigning service accounts to resources",
+          "sourceHash": "07ec2bd21f57",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:4:7",
+          "unitId": "gcpace:4",
+          "index": 7,
+          "text": "Managing a service account's IAM permissions",
+          "sourceHash": "1fd534a7d41e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:4:8",
+          "unitId": "gcpace:4",
+          "index": 8,
+          "text": "Managing service account impersonation",
+          "sourceHash": "fce9b84b395d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:4:9",
+          "unitId": "gcpace:4",
+          "index": 9,
+          "text": "Creating and managing short-lived service account credentials",
+          "sourceHash": "de6ecbe99fda",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:4:10",
+          "unitId": "gcpace:4",
+          "index": 10,
+          "text": "Using a Google Cloud service account with a GKE application",
+          "sourceHash": "b691da27a9bb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpace:4:11",
+          "unitId": "gcpace:4",
+          "index": 11,
+          "text": "Provisioning Workload Identity Federation for workloads",
+          "sourceHash": "9357fd02ab6b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/gcp.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-24T00:00:00Z",
+    "officialObjectivesUrl": "https://cloud.google.com/learn/certification/guides/cloud-engineer",
+    "providerName": "Google Cloud",
+    "credentialName": "Google Cloud Associate Cloud Engineer",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 4,
+    "objectives": 86,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

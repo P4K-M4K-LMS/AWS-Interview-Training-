@@ -22,12 +22,13 @@
  *       Converts lessons exported from Ascendra's database into
  *       public/study/<course>.imported.json. No network, no key.
  */
-import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { appendFileSync, existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
 import { buildCatalog, missionLinksModule, stableJson } from "./study/catalog.mts";
-import { generateCourse, readLessonsFile, reviewTable } from "./study/generate.mts";
+import { generateCourse, readLessonsFile, reviewTable, usage, usageCost } from "./study/generate.mts";
 import { convertRows, readRows } from "./study/importAscendra.mts";
+import { lessonsIndex } from "./study/lessonsIndex.mts";
 import type { StudyCatalogIndex, StudyCourse, StudyImportedFile, StudyLessonsFile } from "../src/domain/types.ts";
 import { validateImportedFile, validateLessonsFile } from "../src/services/study/validate.ts";
 
@@ -35,6 +36,8 @@ const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..")
 const OUT = path.join(ROOT, "public", "study");
 const LINKS_MODULE = path.join(ROOT, "src", "content", "study", "missionLinks.ts");
 const FAILURES = path.join(ROOT, "scripts", "study", ".failures.json");
+/** One JSON line per generate run: what it made and the tokens it was billed for. Gitignored. */
+const USAGE_LOG = path.join(ROOT, "scripts", "study", ".usage.jsonl");
 const DEFAULT_MODEL = process.env.STUDY_MODEL ?? process.env.COACH_MODEL ?? "claude-opus-5-5";
 
 function flag(args: string[], name: string): string | undefined {
@@ -50,6 +53,8 @@ function buildCatalogCommand(): void {
   mkdirSync(OUT, { recursive: true });
   for (const f of readdirSync(OUT)) if (f.endsWith(".json") && !f.endsWith(".lessons.json") && !f.endsWith(".imported.json")) rmSync(path.join(OUT, f));
   writeFileSync(path.join(OUT, "index.json"), stableJson(built.index));
+  writeFileSync(path.join(OUT, "search.json"), JSON.stringify(built.search) + "\n");
+  writeLessonsIndex();
   for (const c of built.courses) writeFileSync(path.join(OUT, `${c.id}.json`), stableJson(c));
   const module = missionLinksModule(built);
   let previous = "";
@@ -64,6 +69,10 @@ function buildCatalogCommand(): void {
   const linked = built.index.courses.reduce((a, c) => a + c.counts.linked, 0);
   console.log(`built ${built.courses.length} courses, ${objectives} objectives (+${bookkeeping} bookkeeping), ${linked} linked to missions, ${Object.keys(built.engineGates).length} planned engines on gates`);
   for (const c of built.index.courses) console.log(`  ${c.id.padEnd(12)} ${String(c.counts.units).padStart(2)} units ${String(c.counts.objectives).padStart(3)} objectives ${String(c.counts.linked).padStart(2)} linked  ${c.title}`);
+}
+
+function writeLessonsIndex(): void {
+  writeFileSync(path.join(OUT, "lessons-index.json"), stableJson(lessonsIndex(OUT)));
 }
 
 function loadCourse(courseId: string): StudyCourse {
@@ -88,11 +97,12 @@ async function generateCommand(args: string[]): Promise<void> {
   const course = loadCourse(courseId);
   const unit = flag(args, "unit");
   const limit = flag(args, "limit");
+  const model = flag(args, "model") ?? DEFAULT_MODEL;
   const result = await generateCourse({
     course,
     outFile: flag(args, "out") ?? path.join(OUT, `${courseId}.lessons.json`),
     failuresFile: FAILURES,
-    model: flag(args, "model") ?? DEFAULT_MODEL,
+    model,
     unit: unit ? Number(unit) : undefined,
     limit: limit ? Number(limit) : undefined,
     concurrency: Number(flag(args, "concurrency") ?? 4),
@@ -107,6 +117,12 @@ async function generateCommand(args: string[]): Promise<void> {
     for (const p of result.problems.slice(0, 40)) console.error(`  ${p.where}: ${p.message}`);
   }
   console.log(`generated ${result.generated} lesson(s), ${result.scenarios} scenario(s), ${result.failures} failure(s)${result.failures ? ` (see ${path.relative(ROOT, FAILURES)}; re-run to retry)` : ""}`);
+  if (usage.calls) {
+    const cost = usageCost(model);
+    console.log(`usage: ${usage.calls} call(s), ${usage.input} input + ${usage.cacheWrite} cache-write + ${usage.cacheRead} cache-read tokens, ${usage.output} output tokens${cost === undefined ? "" : `, about $${cost.toFixed(2)} at list price`}`);
+    appendFileSync(USAGE_LOG, JSON.stringify({ at: new Date().toISOString(), course: course.id, model, lessons: result.generated, scenarios: result.scenarios, failures: result.failures, ...usage, ...(cost === undefined ? {} : { cost: Number(cost.toFixed(4)) }) }) + "\n");
+  }
+  if (!has(args, "dry-run")) writeLessonsIndex();
   if (result.failures || result.problems.length) process.exitCode = 1;
 }
 
@@ -159,6 +175,7 @@ function importCommand(args: string[]): void {
     const learnable = courses.find((c) => c.id === f.courseId)!.units.flatMap((u) => u.objectives).filter((o) => o.kind === "objective").length;
     console.log(`  ${f.courseId.padEnd(12)} ${String(f.lessons.length).padStart(3)} of ${learnable} objectives`);
   }
+  writeLessonsIndex();
   console.log(`read ${report.rows} row(s): imported ${report.imported} lesson(s) into ${files.length} course file(s); ${report.duplicates} duplicate row(s) collapsed to the newest`);
   const other = Object.entries(report.otherCourses);
   if (other.length) console.log(`skipped ${other.reduce((a, [, n]) => a + n, 0)} row(s) for courses outside the catalog${only ? " or --course" : ""}: ${other.map(([c, n]) => `${c} (${n})`).join(", ")}`);
@@ -190,8 +207,11 @@ try {
     case "import":
       importCommand(rest);
       break;
+    case "index-lessons":
+      writeLessonsIndex();
+      break;
     default:
-      console.error("usage: npx tsx scripts/generate-study.mts <build-catalog|generate|review|validate|import> [options]");
+      console.error("usage: npx tsx scripts/generate-study.mts <build-catalog|generate|review|validate|import|index-lessons> [options]");
       process.exit(2);
   }
 } catch (e) {

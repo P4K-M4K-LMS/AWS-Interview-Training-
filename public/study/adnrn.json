@@ -1,0 +1,1092 @@
+{
+  "id": "adnrn",
+  "code": "ADNRN",
+  "title": "Associate Degree Nursing (RN)",
+  "description": "The prelicensure RN program: the sciences underneath practice, the full nursing process with the RN's own assessment authority, medical-surgical depth, and the specialty rotations -- aimed at entry-level RN practice as NCSBN defines it.",
+  "trackType": "graduate",
+  "field": "nursing",
+  "requiresAcknowledgement": true,
+  "units": [
+    {
+      "id": "adnrn:1",
+      "index": 1,
+      "title": "Professional nursing foundations",
+      "weight": 14,
+      "gate": "Act as the nurse who owns the assessment: gather it, interpret it, and be accountable for the judgment that follows.",
+      "objectives": [
+        {
+          "id": "adnrn:1:1",
+          "unitId": "adnrn:1",
+          "index": 1,
+          "text": "The registered nurse role and its accountability",
+          "sourceHash": "58f6daf22847",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:1:2",
+          "unitId": "adnrn:1",
+          "index": 2,
+          "text": "Scope of practice and the state nurse practice act",
+          "sourceHash": "1e9a79f6503a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:1:3",
+          "unitId": "adnrn:1",
+          "index": 3,
+          "text": "The nursing process: assessment, diagnosis, planning, implementation, evaluation",
+          "sourceHash": "b2e21d4f58e3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:1:4",
+          "unitId": "adnrn:1",
+          "index": 4,
+          "text": "Nursing assessment as an RN act, distinct from data collection",
+          "sourceHash": "9289e7485960",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:1:5",
+          "unitId": "adnrn:1",
+          "index": 5,
+          "text": "Formulating a nursing diagnosis from assessment findings",
+          "sourceHash": "4b9d12d19748",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:1:6",
+          "unitId": "adnrn:1",
+          "index": 6,
+          "text": "Setting measurable, client-centred outcomes",
+          "sourceHash": "f5bcfa021717",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:1:7",
+          "unitId": "adnrn:1",
+          "index": 7,
+          "text": "Clinical judgment and the steps that make it a process rather than instinct",
+          "sourceHash": "07968a8686ed",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:1:8",
+          "unitId": "adnrn:1",
+          "index": 8,
+          "text": "Prioritisation frameworks and their limits",
+          "sourceHash": "43796d86b9fd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:1:9",
+          "unitId": "adnrn:1",
+          "index": 9,
+          "text": "Delegation and supervision: the five rights applied",
+          "sourceHash": "b37264c5577b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:1:10",
+          "unitId": "adnrn:1",
+          "index": 10,
+          "text": "Legal and ethical accountability, including negligence and malpractice",
+          "sourceHash": "4c1108a2a7ff",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:1:11",
+          "unitId": "adnrn:1",
+          "index": 11,
+          "text": "Informed consent and the nurse's distinct role in it",
+          "sourceHash": "2920691a2d41",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:1:12",
+          "unitId": "adnrn:1",
+          "index": 12,
+          "text": "Documentation, reporting and handoff communication",
+          "sourceHash": "1990bfadea3f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:1:13",
+          "unitId": "adnrn:1",
+          "index": 13,
+          "text": "Evidence-based practice and reading a clinical guideline",
+          "sourceHash": "83af28b9841f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:1:14",
+          "unitId": "adnrn:1",
+          "index": 14,
+          "text": "Patient safety, error disclosure and just culture",
+          "sourceHash": "0972d8a972fa",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "adnrn:2",
+      "index": 2,
+      "title": "Health assessment and the sciences underneath practice",
+      "weight": 16,
+      "gate": "Perform a full assessment and explain each abnormal finding by the physiology that produced it.",
+      "objectives": [
+        {
+          "id": "adnrn:2:1",
+          "unitId": "adnrn:2",
+          "index": 1,
+          "text": "Health history taking and interviewing technique",
+          "sourceHash": "822f5f7de5df",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:2:2",
+          "unitId": "adnrn:2",
+          "index": 2,
+          "text": "Inspection, palpation, percussion and auscultation",
+          "sourceHash": "9d8e2a93ef07",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:2:3",
+          "unitId": "adnrn:2",
+          "index": 3,
+          "text": "Cardiovascular assessment and heart sounds",
+          "sourceHash": "70d20622c312",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:2:4",
+          "unitId": "adnrn:2",
+          "index": 4,
+          "text": "Respiratory assessment and breath sounds",
+          "sourceHash": "5ef6993ee6a5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:2:5",
+          "unitId": "adnrn:2",
+          "index": 5,
+          "text": "Abdominal assessment and bowel sounds",
+          "sourceHash": "85ce6b9cb3e7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:2:6",
+          "unitId": "adnrn:2",
+          "index": 6,
+          "text": "Neurological assessment, including level of consciousness",
+          "sourceHash": "337bbb668a7f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:2:7",
+          "unitId": "adnrn:2",
+          "index": 7,
+          "text": "Musculoskeletal and integumentary assessment",
+          "sourceHash": "b6a9b5be9a73",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:2:8",
+          "unitId": "adnrn:2",
+          "index": 8,
+          "text": "Assessment across the lifespan and adjusting technique by age",
+          "sourceHash": "c505d66720d0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:2:9",
+          "unitId": "adnrn:2",
+          "index": 9,
+          "text": "Cell injury, inflammation and repair",
+          "sourceHash": "184a85ab0c34",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:2:10",
+          "unitId": "adnrn:2",
+          "index": 10,
+          "text": "Immunity, hypersensitivity and autoimmunity",
+          "sourceHash": "e249ac8696c6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:2:11",
+          "unitId": "adnrn:2",
+          "index": 11,
+          "text": "Fluid, electrolyte and acid-base regulation",
+          "sourceHash": "9fa5dbb605d6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:2:12",
+          "unitId": "adnrn:2",
+          "index": 12,
+          "text": "Acid-base interpretation from a blood gas",
+          "sourceHash": "e9dcb51be2cd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:2:13",
+          "unitId": "adnrn:2",
+          "index": 13,
+          "text": "Microbiology: organisms, transmission and antimicrobial action",
+          "sourceHash": "459cf93275ee",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:2:14",
+          "unitId": "adnrn:2",
+          "index": 14,
+          "text": "Laboratory value interpretation and trending",
+          "sourceHash": "657aea7f378c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:2:15",
+          "unitId": "adnrn:2",
+          "index": 15,
+          "text": "Pharmacokinetics and pharmacodynamics",
+          "sourceHash": "a6289c23959d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:2:16",
+          "unitId": "adnrn:2",
+          "index": 16,
+          "text": "Nutrition and its role in healing",
+          "sourceHash": "ef3aef89671c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "adnrn:3",
+      "index": 3,
+      "title": "Medical-surgical nursing I",
+      "weight": 20,
+      "gate": "Manage an adult with a common condition and anticipate the complication that condition tends to produce.",
+      "objectives": [
+        {
+          "id": "adnrn:3:1",
+          "unitId": "adnrn:3",
+          "index": 1,
+          "text": "Hypertension, heart failure and cardiomyopathy",
+          "sourceHash": "9f77ac45e7db",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:3:2",
+          "unitId": "adnrn:3",
+          "index": 2,
+          "text": "Coronary artery disease, angina and myocardial infarction",
+          "sourceHash": "31abeccf4f7f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:3:3",
+          "unitId": "adnrn:3",
+          "index": 3,
+          "text": "Dysrhythmia recognition and nursing response",
+          "sourceHash": "2b01ab4d7c1f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:3:4",
+          "unitId": "adnrn:3",
+          "index": 4,
+          "text": "Shock: recognising type, stage and urgency",
+          "sourceHash": "bbdec84982bf",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:3:5",
+          "unitId": "adnrn:3",
+          "index": 5,
+          "text": "Peripheral arterial and venous disease",
+          "sourceHash": "534547a96440",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:3:6",
+          "unitId": "adnrn:3",
+          "index": 6,
+          "text": "COPD, asthma and respiratory failure",
+          "sourceHash": "78a34f11a0c0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:3:7",
+          "unitId": "adnrn:3",
+          "index": 7,
+          "text": "Pneumonia, tuberculosis and pulmonary embolism",
+          "sourceHash": "aedf4edfa0e4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:3:8",
+          "unitId": "adnrn:3",
+          "index": 8,
+          "text": "Chest tubes, oxygen therapy and mechanical ventilation basics",
+          "sourceHash": "83ba3ecc5e97",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:3:9",
+          "unitId": "adnrn:3",
+          "index": 9,
+          "text": "Acute and chronic kidney disease",
+          "sourceHash": "e7d2930877c2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:3:10",
+          "unitId": "adnrn:3",
+          "index": 10,
+          "text": "Dialysis: hemodialysis and peritoneal",
+          "sourceHash": "c7dbd0d6a23c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:3:11",
+          "unitId": "adnrn:3",
+          "index": 11,
+          "text": "Fluid volume deficit and overload",
+          "sourceHash": "31541bc9b5c9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:3:12",
+          "unitId": "adnrn:3",
+          "index": 12,
+          "text": "Diabetes mellitus and the acute crises DKA and HHS",
+          "sourceHash": "4c05f4e264ca",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:3:13",
+          "unitId": "adnrn:3",
+          "index": 13,
+          "text": "Thyroid, adrenal and pituitary disorders",
+          "sourceHash": "edf87363bba3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:3:14",
+          "unitId": "adnrn:3",
+          "index": 14,
+          "text": "Perioperative nursing: before, during and after",
+          "sourceHash": "00f9c1a18ee9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:3:15",
+          "unitId": "adnrn:3",
+          "index": 15,
+          "text": "Wound healing, dehiscence and infection",
+          "sourceHash": "9592a0e2cc86",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:3:16",
+          "unitId": "adnrn:3",
+          "index": 16,
+          "text": "Pain management, including the opioid-tolerant patient",
+          "sourceHash": "dbb922866166",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:3:17",
+          "unitId": "adnrn:3",
+          "index": 17,
+          "text": "Sepsis recognition and the first hour of response",
+          "sourceHash": "6aac17365451",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "adnrn:4",
+      "index": 4,
+      "title": "Medical-surgical nursing II and complex care",
+      "weight": 18,
+      "gate": "Care for a patient whose systems are failing together, and decide what to act on first.",
+      "objectives": [
+        {
+          "id": "adnrn:4:1",
+          "unitId": "adnrn:4",
+          "index": 1,
+          "text": "Stroke: ischemic and hemorrhagic, and time-critical response",
+          "sourceHash": "cd3c4fd5dd67",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:4:2",
+          "unitId": "adnrn:4",
+          "index": 2,
+          "text": "Increased intracranial pressure",
+          "sourceHash": "cb8e696c93bc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:4:3",
+          "unitId": "adnrn:4",
+          "index": 3,
+          "text": "Seizure disorders and status epilepticus",
+          "sourceHash": "0a3753db4ee9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:4:4",
+          "unitId": "adnrn:4",
+          "index": 4,
+          "text": "Spinal cord injury and autonomic dysreflexia",
+          "sourceHash": "2d5e79c27f74",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:4:5",
+          "unitId": "adnrn:4",
+          "index": 5,
+          "text": "Neurodegenerative disease: Parkinson's, multiple sclerosis, ALS",
+          "sourceHash": "5f920f6338e5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:4:6",
+          "unitId": "adnrn:4",
+          "index": 6,
+          "text": "Dementia and delirium distinguished in practice",
+          "sourceHash": "5bfac1548aa2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:4:7",
+          "unitId": "adnrn:4",
+          "index": 7,
+          "text": "Gastrointestinal bleeding and liver failure",
+          "sourceHash": "e29dd23909ab",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:4:8",
+          "unitId": "adnrn:4",
+          "index": 8,
+          "text": "Pancreatitis and biliary disease",
+          "sourceHash": "1c93f87fd688",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:4:9",
+          "unitId": "adnrn:4",
+          "index": 9,
+          "text": "Inflammatory bowel disease and ostomy management",
+          "sourceHash": "19e3969cc893",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:4:10",
+          "unitId": "adnrn:4",
+          "index": 10,
+          "text": "Cancer: treatment modalities and their toxicities",
+          "sourceHash": "46710888378a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:4:11",
+          "unitId": "adnrn:4",
+          "index": 11,
+          "text": "Neutropenic precautions and oncologic emergencies",
+          "sourceHash": "81216f8e7db7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:4:12",
+          "unitId": "adnrn:4",
+          "index": 12,
+          "text": "Hematologic disorders: anemia, clotting and transfusion reaction",
+          "sourceHash": "11602faffa6c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:4:13",
+          "unitId": "adnrn:4",
+          "index": 13,
+          "text": "Blood product administration and the reaction protocol",
+          "sourceHash": "d334ea73a1de",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:4:14",
+          "unitId": "adnrn:4",
+          "index": 14,
+          "text": "Burns: depth, fluid resuscitation and infection risk",
+          "sourceHash": "8cefb4acd59f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:4:15",
+          "unitId": "adnrn:4",
+          "index": 15,
+          "text": "Trauma and emergency triage",
+          "sourceHash": "f3930c576c8a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:4:16",
+          "unitId": "adnrn:4",
+          "index": 16,
+          "text": "Musculoskeletal trauma, traction and compartment syndrome",
+          "sourceHash": "d6f0249521c2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:4:17",
+          "unitId": "adnrn:4",
+          "index": 17,
+          "text": "Palliative and end-of-life care",
+          "sourceHash": "f1c7a23b19fc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "adnrn:5",
+      "index": 5,
+      "title": "Maternal-newborn and pediatric nursing",
+      "weight": 16,
+      "gate": "Care for two patients at once during pregnancy and birth, and scale everything to the child in front of you.",
+      "objectives": [
+        {
+          "id": "adnrn:5:1",
+          "unitId": "adnrn:5",
+          "index": 1,
+          "text": "Antepartum assessment and fetal surveillance",
+          "sourceHash": "36566df41acf",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:5:2",
+          "unitId": "adnrn:5",
+          "index": 2,
+          "text": "Common complications of pregnancy: preeclampsia, gestational diabetes, placenta previa",
+          "sourceHash": "21f3e23440ea",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:5:3",
+          "unitId": "adnrn:5",
+          "index": 3,
+          "text": "Labor stages and nursing care through each",
+          "sourceHash": "3e1412145979",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:5:4",
+          "unitId": "adnrn:5",
+          "index": 4,
+          "text": "Fetal heart rate patterns and the response each demands",
+          "sourceHash": "15bea1206a67",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:5:5",
+          "unitId": "adnrn:5",
+          "index": 5,
+          "text": "Analgesia and anesthesia in labor",
+          "sourceHash": "bd822175e3ef",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:5:6",
+          "unitId": "adnrn:5",
+          "index": 6,
+          "text": "Operative birth and cesarean care",
+          "sourceHash": "2685c10469bd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:5:7",
+          "unitId": "adnrn:5",
+          "index": 7,
+          "text": "Postpartum assessment and hemorrhage management",
+          "sourceHash": "462bc0433377",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:5:8",
+          "unitId": "adnrn:5",
+          "index": 8,
+          "text": "Postpartum mood disorders",
+          "sourceHash": "eb14a9f9915d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:5:9",
+          "unitId": "adnrn:5",
+          "index": 9,
+          "text": "Newborn transition, assessment and Apgar scoring",
+          "sourceHash": "80d9a75c6146",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:5:10",
+          "unitId": "adnrn:5",
+          "index": 10,
+          "text": "Newborn feeding, jaundice and thermoregulation",
+          "sourceHash": "93f97858f2e4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:5:11",
+          "unitId": "adnrn:5",
+          "index": 11,
+          "text": "High-risk newborn care",
+          "sourceHash": "d5ecbc56a9f5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:5:12",
+          "unitId": "adnrn:5",
+          "index": 12,
+          "text": "Growth and development across childhood and adolescence",
+          "sourceHash": "c1bd25afac26",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:5:13",
+          "unitId": "adnrn:5",
+          "index": 13,
+          "text": "Pediatric dosage, fluid and airway differences",
+          "sourceHash": "c4a9ccf17721",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:5:14",
+          "unitId": "adnrn:5",
+          "index": 14,
+          "text": "Congenital and acquired cardiac conditions in children",
+          "sourceHash": "42d4a75f1c0f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:5:15",
+          "unitId": "adnrn:5",
+          "index": 15,
+          "text": "Pediatric respiratory illness: bronchiolitis, croup, epiglottitis",
+          "sourceHash": "c27661e92e59",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:5:16",
+          "unitId": "adnrn:5",
+          "index": 16,
+          "text": "Childhood cancers and chronic illness support",
+          "sourceHash": "65832a2fd490",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:5:17",
+          "unitId": "adnrn:5",
+          "index": 17,
+          "text": "Immunisation schedules and parental questions about them",
+          "sourceHash": "6bb0249009c2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:5:18",
+          "unitId": "adnrn:5",
+          "index": 18,
+          "text": "Child abuse recognition and mandatory reporting",
+          "sourceHash": "aabaec3d27cc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "adnrn:6",
+      "index": 6,
+      "title": "Mental health, community and leadership",
+      "weight": 16,
+      "gate": "Move competently outside the hospital: the psychiatric unit, the community, and the charge nurse's decisions.",
+      "objectives": [
+        {
+          "id": "adnrn:6:1",
+          "unitId": "adnrn:6",
+          "index": 1,
+          "text": "Therapeutic use of self and therapeutic communication",
+          "sourceHash": "bca642bc0eb9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:6:2",
+          "unitId": "adnrn:6",
+          "index": 2,
+          "text": "Mental status examination",
+          "sourceHash": "afb59551cedc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:6:3",
+          "unitId": "adnrn:6",
+          "index": 3,
+          "text": "Anxiety disorders and panic",
+          "sourceHash": "032687409898",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:6:4",
+          "unitId": "adnrn:6",
+          "index": 4,
+          "text": "Mood disorders: depression and bipolar disorder",
+          "sourceHash": "068ea7fccdde",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:6:5",
+          "unitId": "adnrn:6",
+          "index": 5,
+          "text": "Suicide risk assessment and safety planning",
+          "sourceHash": "b070ea6e95fd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:6:6",
+          "unitId": "adnrn:6",
+          "index": 6,
+          "text": "Schizophrenia and psychotic disorders",
+          "sourceHash": "46ebf56f33f2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:6:7",
+          "unitId": "adnrn:6",
+          "index": 7,
+          "text": "Personality disorders and consistent team response",
+          "sourceHash": "cd015cc92a8b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:6:8",
+          "unitId": "adnrn:6",
+          "index": 8,
+          "text": "Eating disorders",
+          "sourceHash": "0851bb290ca2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:6:9",
+          "unitId": "adnrn:6",
+          "index": 9,
+          "text": "Substance use disorders, withdrawal and overdose",
+          "sourceHash": "d78e32793ea2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:6:10",
+          "unitId": "adnrn:6",
+          "index": 10,
+          "text": "Psychotropic medications and their serious adverse effects",
+          "sourceHash": "ac18219b0e9b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:6:11",
+          "unitId": "adnrn:6",
+          "index": 11,
+          "text": "Crisis intervention and de-escalation",
+          "sourceHash": "c62400197318",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:6:12",
+          "unitId": "adnrn:6",
+          "index": 12,
+          "text": "Seclusion, restraint and the least restrictive principle",
+          "sourceHash": "0f18aee1106b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:6:13",
+          "unitId": "adnrn:6",
+          "index": 13,
+          "text": "Community and public health nursing roles",
+          "sourceHash": "9a32223d31e5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:6:14",
+          "unitId": "adnrn:6",
+          "index": 14,
+          "text": "Epidemiology, screening and herd immunity in practical terms",
+          "sourceHash": "e1f09b5ededb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:6:15",
+          "unitId": "adnrn:6",
+          "index": 15,
+          "text": "Social determinants of health and how they present at the bedside",
+          "sourceHash": "5e8d982f673e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:6:16",
+          "unitId": "adnrn:6",
+          "index": 16,
+          "text": "Care coordination, discharge planning and transitions of care",
+          "sourceHash": "5534fb5a8d8c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:6:17",
+          "unitId": "adnrn:6",
+          "index": 17,
+          "text": "Leadership, conflict resolution and the charge nurse role",
+          "sourceHash": "a0a3ac6a2cbd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:6:18",
+          "unitId": "adnrn:6",
+          "index": 18,
+          "text": "Quality improvement and nurse-sensitive indicators",
+          "sourceHash": "01b457c6f7dd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "adnrn:6:19",
+          "unitId": "adnrn:6",
+          "index": 19,
+          "text": "Disaster preparedness and triage",
+          "sourceHash": "61e3cdc16fc3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/nursing.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-18T00:00:00Z",
+    "officialObjectivesUrl": "https://www.ncsbn.org/public-files/2026_RN_Test%20Plan_English-F.pdf",
+    "providerName": "National Council of State Boards of Nursing",
+    "credentialName": "Associate Degree in Nursing (Registered Nurse)",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 6,
+    "objectives": 101,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

@@ -1,0 +1,303 @@
+{
+  "id": "pmiacp",
+  "code": "PMIACP",
+  "title": "PMI-ACP",
+  "description": "PMI Agile Certified Practitioner (PMI-ACP) exam prep across 4 weighted domains -- agile mindset, leadership, product, and delivery -- reframed by PMI's 2026 update around Enterprise Agility.",
+  "trackType": "certification",
+  "field": "pm",
+  "units": [
+    {
+      "id": "pmiacp:1",
+      "index": 1,
+      "title": "Mindset",
+      "weight": 28,
+      "gate": "Given a team scenario, name the specific agile-mindset practice it calls for -- a complexity-classification tool, a psychological-safety move, a feedback-loop shortening technique -- rather than generic 'be agile' advice.",
+      "objectives": [
+        {
+          "id": "pmiacp:1:1",
+          "unitId": "pmiacp:1",
+          "index": 1,
+          "text": "Experimenting early: building a thin increment to validate a solution or market need, and creating an environment that rewards learning",
+          "sourceHash": "d413c85f7fc0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmiacp:1:2",
+          "unitId": "pmiacp:1",
+          "index": 2,
+          "text": "Embracing the agile mindset: applying agile values and principles, classifying a scenario's complexity (Cynefin, the Stacey Matrix, complex adaptive systems), and choosing agile practices to fit",
+          "sourceHash": "9c2e4c5d7a53",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmiacp:1:3",
+          "unitId": "pmiacp:1",
+          "index": 3,
+          "text": "Promoting a collaborative team environment: establishing a team vision and working agreements, forming a high-performing team, and using retrospective findings to improve it",
+          "sourceHash": "a6091a55de45",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmiacp:1:4",
+          "unitId": "pmiacp:1",
+          "index": 4,
+          "text": "Building transparency: making status, risks, and impediments visible to everyone (information radiators), and defining communication strategies for co-located and distributed teams alike",
+          "sourceHash": "fc31ba1bebae",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmiacp:1:5",
+          "unitId": "pmiacp:1",
+          "index": 5,
+          "text": "Fostering psychological safety: promoting a no-blame culture, encouraging dialogue over debate, and normalizing challenges to the status quo",
+          "sourceHash": "ace4e3b086a4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmiacp:1:6",
+          "unitId": "pmiacp:1",
+          "index": 6,
+          "text": "Shortening feedback loops: involving stakeholders from day one, and applying techniques like design thinking or lean startup to compress the loop",
+          "sourceHash": "e8c01d1d78cc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmiacp:1:7",
+          "unitId": "pmiacp:1",
+          "index": 7,
+          "text": "Embracing change: responding to shifting requirements and priorities, and adapting the product based on new learning",
+          "sourceHash": "1fcea18e1270",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "pmiacp:2",
+      "index": 2,
+      "title": "Leadership",
+      "weight": 25,
+      "gate": "Given a team-leadership scenario, apply the specific coaching, conflict-resolution, or knowledge-sharing move it calls for -- not generic 'be a servant leader' advice.",
+      "objectives": [
+        {
+          "id": "pmiacp:2:1",
+          "unitId": "pmiacp:2",
+          "index": 1,
+          "text": "Empowering teams: building trust and transparent communication, coaching and mentoring, and applying emotional intelligence to resolve conflict and support the team",
+          "sourceHash": "42b14035730e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmiacp:2:2",
+          "unitId": "pmiacp:2",
+          "index": 2,
+          "text": "Facilitating problem resolution: investigating root cause (e.g., root-cause analysis, Ishikawa diagrams) and choosing the resolution strategy that adds the most value",
+          "sourceHash": "0ee9dde937a5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmiacp:2:3",
+          "unitId": "pmiacp:2",
+          "index": 3,
+          "text": "Promoting knowledge sharing: creating an environment to capture and share lessons learned, and leveraging organizational knowledge from other initiatives",
+          "sourceHash": "1fd1b9be0045",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmiacp:2:4",
+          "unitId": "pmiacp:2",
+          "index": 4,
+          "text": "Promoting the agile mindset and practices: building awareness of agile values and fostering a culture of continuous improvement",
+          "sourceHash": "7de350826a96",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmiacp:2:5",
+          "unitId": "pmiacp:2",
+          "index": 5,
+          "text": "Promoting a shared vision and purpose: ensuring the product stays aligned to organizational goals and continuously communicating why",
+          "sourceHash": "111953ca4984",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmiacp:2:6",
+          "unitId": "pmiacp:2",
+          "index": 6,
+          "text": "Facilitating conflict management: identifying a conflict's root cause and level, and promoting a collaborative resolution approach",
+          "sourceHash": "b13a3a92c987",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "pmiacp:3",
+      "index": 3,
+      "title": "Product",
+      "weight": 19,
+      "gate": "Given a backlog or roadmap scenario, apply the specific product-management technique it calls for -- a backlog-refinement step, a value-delivery metric -- rather than generic 'talk to the customer' advice.",
+      "objectives": [
+        {
+          "id": "pmiacp:3:1",
+          "unitId": "pmiacp:3",
+          "index": 1,
+          "text": "Refining the product backlog: clarifying and prioritizing items with customers/stakeholders, decomposing large items, and sizing work collectively",
+          "sourceHash": "63644d937c08",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmiacp:3:2",
+          "unitId": "pmiacp:3",
+          "index": 2,
+          "text": "Managing increments: aligning each increment to business priorities, defining increment goals, and demonstrating value through early feedback",
+          "sourceHash": "351e9bafb26f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmiacp:3:3",
+          "unitId": "pmiacp:3",
+          "index": 3,
+          "text": "Visualizing work: choosing and educating the team on work-visualization techniques, and keeping shared status data current",
+          "sourceHash": "8d683d831819",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmiacp:3:4",
+          "unitId": "pmiacp:3",
+          "index": 4,
+          "text": "Managing value delivery: defining what value looks like (success criteria, sustainability, security, compliance) and confirming targeted results were actually achieved",
+          "sourceHash": "095b4d463aad",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "pmiacp:4",
+      "index": 4,
+      "title": "Delivery",
+      "weight": 28,
+      "gate": "Given a delivery scenario, apply the specific flow, risk, or waste-elimination technique it calls for -- a WIP limit, a risk-burndown step -- rather than generic 'ship faster' advice.",
+      "objectives": [
+        {
+          "id": "pmiacp:4:1",
+          "unitId": "pmiacp:4",
+          "index": 1,
+          "text": "Seeking early feedback: delivering in small increments and collecting stakeholder feedback on a regular cadence, not just at the end",
+          "sourceHash": "6f2927fa794c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmiacp:4:2",
+          "unitId": "pmiacp:4",
+          "index": 2,
+          "text": "Managing agile metrics: choosing metrics appropriate to the audience, radiating them visibly, and using the insights to drive decisions",
+          "sourceHash": "f8e2133b4097",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmiacp:4:3",
+          "unitId": "pmiacp:4",
+          "index": 3,
+          "text": "Managing impediments and risk: proactively identifying and prioritizing risks/impediments, and using lessons learned to avoid recurrence",
+          "sourceHash": "19421bfd5644",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmiacp:4:4",
+          "unitId": "pmiacp:4",
+          "index": 4,
+          "text": "Recognizing and eliminating waste: visualizing end-to-end flow to spot value-added vs. non-value-added work, then prioritizing waste reduction",
+          "sourceHash": "f44131fcf2da",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmiacp:4:5",
+          "unitId": "pmiacp:4",
+          "index": 5,
+          "text": "Performing continuous improvement: using metrics and feedback to drive improvement actions, then evaluating whether they actually worked",
+          "sourceHash": "3971d7a348a0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmiacp:4:6",
+          "unitId": "pmiacp:4",
+          "index": 6,
+          "text": "Actively engaging customers: identifying customer needs, validating deliverables against acceptance criteria, and encouraging direct customer-team collaboration",
+          "sourceHash": "15e797be6028",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmiacp:4:7",
+          "unitId": "pmiacp:4",
+          "index": 7,
+          "text": "Optimizing flow: limiting work in progress at every level, shielding the team from interruptions, and using metrics to keep improving flow",
+          "sourceHash": "0c6e7f994e3b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/pm.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-26T00:00:00Z",
+    "officialObjectivesUrl": "https://www.pmi.org/-/media/pmi/documents/public/pdf/certifications/agile-certified-exam-outline.pdf",
+    "providerName": "Project Management Institute (PMI)",
+    "credentialName": "PMI Agile Certified Practitioner (PMI-ACP)",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 4,
+    "objectives": 24,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

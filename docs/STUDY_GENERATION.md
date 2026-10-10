@@ -93,6 +93,12 @@ Ascendra wrote each lesson the first time a learner opened an objective and cach
 
 4. Commit the `*.imported.json` files. `build-catalog` keeps them.
 
+## Cost and the usage log
+
+Every `generate` run prints what it was billed for (calls, input and output tokens, and a cost at list price for models whose price is in `PRICES` in `scripts/study/generate.mts`) and appends one JSON line to `scripts/study/.usage.jsonl` (gitignored). The Console's billing page is the record; the log is for planning the next batch. Measured on claude-opus-5-5 in October 2026: about $0.10 per objective, lesson and question bank together, plus about $0.15 per unit scenario.
+
+Health courses (nursing, physical therapy, fitness) get extra prompt rules: exam preparation only, no individual medical advice, no invented doses or values, regional differences named, fictional patients only.
+
 ## Honesty
 
 Every lesson footer in the app names the model and date from the file's metadata. The material is unofficial, not reviewed by any vendor, and finishing a course is not a credential. Objective status still comes only from answered questions and completed missions, never from reading.

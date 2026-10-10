@@ -1,0 +1,1383 @@
+{
+  "id": "az-700",
+  "code": "AZ700",
+  "title": "Azure Network Engineer Associate",
+  "description": "Microsoft Certified: Azure Network Engineer Associate (AZ-700): designing and implementing Azure networking end to end -- IP addressing and DNS, VNet routing and monitoring, VPN/ExpressRoute/Virtual WAN connectivity, load balancing and Front Door, private access, and network security (NSGs, Azure Firewall, WAF).",
+  "trackType": "certification",
+  "field": "azure",
+  "units": [
+    {
+      "id": "az-700:1",
+      "index": 1,
+      "title": "Design and Implement Core Networking Infrastructure",
+      "weight": 28,
+      "gate": "Given an IP addressing, DNS, routing, or monitoring requirement, name the specific Azure networking control that fits -- not a generic 'set up the VNet'.",
+      "objectives": [
+        {
+          "id": "az-700:1:1",
+          "unitId": "az-700:1",
+          "index": 1,
+          "text": "Planning network segmentation and address spaces",
+          "sourceHash": "7f450c53f0dc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:1:2",
+          "unitId": "az-700:1",
+          "index": 2,
+          "text": "Creating a virtual network (VNet)",
+          "sourceHash": "1c6e0b324925",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:1:3",
+          "unitId": "az-700:1",
+          "index": 3,
+          "text": "Planning and configuring subnetting for services -- virtual network gateways, private endpoints, service endpoints, firewalls, application gateways, VNet-integrated platform services, and Azure Bastion",
+          "sourceHash": "6f947518acca",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:1:4",
+          "unitId": "az-700:1",
+          "index": 4,
+          "text": "Planning and configuring subnet delegation",
+          "sourceHash": "0dae14927859",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:1:5",
+          "unitId": "az-700:1",
+          "index": 5,
+          "text": "Planning and configuring shared versus dedicated subnets",
+          "sourceHash": "23e6e77a4bc0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:1:6",
+          "unitId": "az-700:1",
+          "index": 6,
+          "text": "Creating a Public IP Prefix, and choosing when to use one",
+          "sourceHash": "150d5729033b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:1:7",
+          "unitId": "az-700:1",
+          "index": 7,
+          "text": "Planning and implementing a custom IP address prefix (bring your own IP)",
+          "sourceHash": "bde126718ba7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:1:8",
+          "unitId": "az-700:1",
+          "index": 8,
+          "text": "Creating and associating public IP addresses with resources",
+          "sourceHash": "f11bdccd7717",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:1:9",
+          "unitId": "az-700:1",
+          "index": 9,
+          "text": "Designing name resolution inside a VNet",
+          "sourceHash": "f3312f20f1ca",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:1:10",
+          "unitId": "az-700:1",
+          "index": 10,
+          "text": "Configuring DNS settings for a VNet",
+          "sourceHash": "3bd36d6bb30a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:1:11",
+          "unitId": "az-700:1",
+          "index": 11,
+          "text": "Designing public DNS zones",
+          "sourceHash": "cc90caea8fa0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:1:12",
+          "unitId": "az-700:1",
+          "index": 12,
+          "text": "Designing private DNS zones",
+          "sourceHash": "f97243268805",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:1:13",
+          "unitId": "az-700:1",
+          "index": 13,
+          "text": "Configuring public and private DNS zones",
+          "sourceHash": "eff57b3ac45f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:1:14",
+          "unitId": "az-700:1",
+          "index": 14,
+          "text": "Linking a private DNS zone to a VNet",
+          "sourceHash": "76dc18c9c569",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:1:15",
+          "unitId": "az-700:1",
+          "index": 15,
+          "text": "Designing and implementing Azure DNS Private Resolver",
+          "sourceHash": "37a565864577",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:1:16",
+          "unitId": "az-700:1",
+          "index": 16,
+          "text": "Designing service chaining, including gateway transit",
+          "sourceHash": "87fcf4a7c226",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:1:17",
+          "unitId": "az-700:1",
+          "index": 17,
+          "text": "Implementing VNet peering",
+          "sourceHash": "b1de753fad8f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:1:18",
+          "unitId": "az-700:1",
+          "index": 18,
+          "text": "Implementing and managing virtual network connectivity with Azure Virtual Network Manager",
+          "sourceHash": "358c382fdd62",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:1:19",
+          "unitId": "az-700:1",
+          "index": 19,
+          "text": "Designing and implementing user-defined routes (UDRs)",
+          "sourceHash": "5df33c4c04e1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:1:20",
+          "unitId": "az-700:1",
+          "index": 20,
+          "text": "Associating a route table with a subnet",
+          "sourceHash": "6772e786e75d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:1:21",
+          "unitId": "az-700:1",
+          "index": 21,
+          "text": "Configuring forced tunneling",
+          "sourceHash": "488370176ff6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:1:22",
+          "unitId": "az-700:1",
+          "index": 22,
+          "text": "Diagnosing and resolving routing issues",
+          "sourceHash": "64fdc1f0bee2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:1:23",
+          "unitId": "az-700:1",
+          "index": 23,
+          "text": "Designing and implementing Azure Route Server",
+          "sourceHash": "fb86c3dd58a4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:1:24",
+          "unitId": "az-700:1",
+          "index": 24,
+          "text": "Identifying use cases for Azure NAT Gateway, and implementing it",
+          "sourceHash": "5c3229cc9497",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:1:25",
+          "unitId": "az-700:1",
+          "index": 25,
+          "text": "Configuring monitoring, network diagnostics, and logs in Azure Network Watcher",
+          "sourceHash": "b4cd4162e1e8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:1:26",
+          "unitId": "az-700:1",
+          "index": 26,
+          "text": "Monitoring and troubleshooting network health and networks with Azure Network Watcher and Azure Monitor for Networks",
+          "sourceHash": "0415be7db48a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:1:27",
+          "unitId": "az-700:1",
+          "index": 27,
+          "text": "Activating and monitoring DDoS protection",
+          "sourceHash": "22d714861231",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:1:28",
+          "unitId": "az-700:1",
+          "index": 28,
+          "text": "Evaluating network security recommendations from Microsoft Defender for Cloud, via Secure Score and attack path analysis",
+          "sourceHash": "e4e2425c671a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:1:29",
+          "unitId": "az-700:1",
+          "index": 29,
+          "text": "Identifying network resources with Cloud Security Explorer in Microsoft Defender for Cloud",
+          "sourceHash": "d0d199fd2f64",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "az-700:2",
+      "index": 2,
+      "title": "Design, Implement, and Manage Connectivity Services",
+      "weight": 23,
+      "gate": "Given a hybrid-connectivity requirement, name the specific VPN, ExpressRoute, or Virtual WAN option that fits -- and the SKU/tier decision behind it -- not just 'connect it to Azure'.",
+      "objectives": [
+        {
+          "id": "az-700:2:1",
+          "unitId": "az-700:2",
+          "index": 1,
+          "text": "Designing a site-to-site VPN connection, including for high availability",
+          "sourceHash": "807042a349c1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:2:2",
+          "unitId": "az-700:2",
+          "index": 2,
+          "text": "Selecting a virtual network gateway SKU for site-to-site VPN requirements",
+          "sourceHash": "263010b38ff8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:2:3",
+          "unitId": "az-700:2",
+          "index": 3,
+          "text": "Implementing a site-to-site VPN connection",
+          "sourceHash": "ec2a25d84526",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:2:4",
+          "unitId": "az-700:2",
+          "index": 4,
+          "text": "Identifying when to use a policy-based versus route-based VPN connection",
+          "sourceHash": "ac3bc10faf07",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:2:5",
+          "unitId": "az-700:2",
+          "index": 5,
+          "text": "Creating and configuring a local network gateway",
+          "sourceHash": "38fb07e991e8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:2:6",
+          "unitId": "az-700:2",
+          "index": 6,
+          "text": "Creating and configuring an IPsec/Internet Key Exchange (IKE) policy",
+          "sourceHash": "d4ac0174b678",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:2:7",
+          "unitId": "az-700:2",
+          "index": 7,
+          "text": "Creating and configuring a virtual network gateway",
+          "sourceHash": "3408d3b0e6e2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:2:8",
+          "unitId": "az-700:2",
+          "index": 8,
+          "text": "Diagnosing and resolving virtual network gateway connectivity issues",
+          "sourceHash": "98d3d0142799",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:2:9",
+          "unitId": "az-700:2",
+          "index": 9,
+          "text": "Implementing Azure Extended Network",
+          "sourceHash": "31c6b273eca5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:2:10",
+          "unitId": "az-700:2",
+          "index": 10,
+          "text": "Selecting a virtual network gateway SKU for point-to-site VPN requirements",
+          "sourceHash": "078f4da294cf",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:2:11",
+          "unitId": "az-700:2",
+          "index": 11,
+          "text": "Selecting and configuring a tunnel type",
+          "sourceHash": "c59da6618533",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:2:12",
+          "unitId": "az-700:2",
+          "index": 12,
+          "text": "Selecting an authentication method for point-to-site VPN",
+          "sourceHash": "c94d631d1fe5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:2:13",
+          "unitId": "az-700:2",
+          "index": 13,
+          "text": "Configuring RADIUS authentication",
+          "sourceHash": "1fe7a1886179",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:2:14",
+          "unitId": "az-700:2",
+          "index": 14,
+          "text": "Configuring authentication with Microsoft Entra ID",
+          "sourceHash": "6db42b71c1b3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:2:15",
+          "unitId": "az-700:2",
+          "index": 15,
+          "text": "Implementing a VPN client configuration file",
+          "sourceHash": "8c10160f5290",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:2:16",
+          "unitId": "az-700:2",
+          "index": 16,
+          "text": "Diagnosing and resolving client-side and authentication issues",
+          "sourceHash": "086caafa2305",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:2:17",
+          "unitId": "az-700:2",
+          "index": 17,
+          "text": "Specifying Azure requirements for Always On VPN",
+          "sourceHash": "1da79288c660",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:2:18",
+          "unitId": "az-700:2",
+          "index": 18,
+          "text": "Specifying Azure requirements for Azure Network Adapter",
+          "sourceHash": "afc32da5fa99",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:2:19",
+          "unitId": "az-700:2",
+          "index": 19,
+          "text": "Selecting an ExpressRoute connectivity model",
+          "sourceHash": "85fa6fad46d1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:2:20",
+          "unitId": "az-700:2",
+          "index": 20,
+          "text": "Selecting an ExpressRoute SKU and tier",
+          "sourceHash": "f9aa0e1143f8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:2:21",
+          "unitId": "az-700:2",
+          "index": 21,
+          "text": "Designing and implementing ExpressRoute for cross-region connectivity, redundancy, and disaster recovery",
+          "sourceHash": "6b50b0d1f67a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:2:22",
+          "unitId": "az-700:2",
+          "index": 22,
+          "text": "Designing and implementing ExpressRoute options -- Global Reach, FastPath, and ExpressRoute Direct",
+          "sourceHash": "ff417501686a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:2:23",
+          "unitId": "az-700:2",
+          "index": 23,
+          "text": "Choosing between Azure private peering, Microsoft peering, or both",
+          "sourceHash": "bce663408384",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:2:24",
+          "unitId": "az-700:2",
+          "index": 24,
+          "text": "Configuring Azure private peering",
+          "sourceHash": "9643aee987a8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:2:25",
+          "unitId": "az-700:2",
+          "index": 25,
+          "text": "Configuring Microsoft peering",
+          "sourceHash": "046de61fe5d2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:2:26",
+          "unitId": "az-700:2",
+          "index": 26,
+          "text": "Creating and configuring an ExpressRoute gateway",
+          "sourceHash": "ae6bed1504b1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:2:27",
+          "unitId": "az-700:2",
+          "index": 27,
+          "text": "Connecting a virtual network to an ExpressRoute circuit",
+          "sourceHash": "d1d4daddb83f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:2:28",
+          "unitId": "az-700:2",
+          "index": 28,
+          "text": "Recommending a route advertisement configuration",
+          "sourceHash": "3053892df5a7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:2:29",
+          "unitId": "az-700:2",
+          "index": 29,
+          "text": "Configuring encryption over ExpressRoute",
+          "sourceHash": "ee66caaeff05",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:2:30",
+          "unitId": "az-700:2",
+          "index": 30,
+          "text": "Implementing Bidirectional Forwarding Detection",
+          "sourceHash": "8eafc3665dd5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:2:31",
+          "unitId": "az-700:2",
+          "index": 31,
+          "text": "Diagnosing and resolving ExpressRoute connection issues",
+          "sourceHash": "cf307294f3a5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:2:32",
+          "unitId": "az-700:2",
+          "index": 32,
+          "text": "Selecting a Virtual WAN SKU",
+          "sourceHash": "f447bb676f9e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:2:33",
+          "unitId": "az-700:2",
+          "index": 33,
+          "text": "Designing a Virtual WAN architecture, including types and services",
+          "sourceHash": "f58e94efac0a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:2:34",
+          "unitId": "az-700:2",
+          "index": 34,
+          "text": "Creating a virtual hub in Virtual WAN",
+          "sourceHash": "9212c43023ee",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:2:35",
+          "unitId": "az-700:2",
+          "index": 35,
+          "text": "Choosing a scale unit for each gateway type",
+          "sourceHash": "434f94bc8703",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:2:36",
+          "unitId": "az-700:2",
+          "index": 36,
+          "text": "Deploying a gateway into a virtual hub",
+          "sourceHash": "55d9429f5d1a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:2:37",
+          "unitId": "az-700:2",
+          "index": 37,
+          "text": "Configuring virtual hub routing",
+          "sourceHash": "6b1722dc8747",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:2:38",
+          "unitId": "az-700:2",
+          "index": 38,
+          "text": "Integrating a virtual hub with a third-party network virtual appliance (NVA) for cloud connectivity",
+          "sourceHash": "6378f456541e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "az-700:3",
+      "index": 3,
+      "title": "Design and Implement Application Delivery Services",
+      "weight": 18,
+      "gate": "Given a traffic-distribution requirement, name the specific Azure Load Balancer, Application Gateway, or Front Door feature that fits -- and why the other two don't.",
+      "objectives": [
+        {
+          "id": "az-700:3:1",
+          "unitId": "az-700:3",
+          "index": 1,
+          "text": "Mapping requirements to Azure Load Balancer features and capabilities",
+          "sourceHash": "77a753c2bb43",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:3:2",
+          "unitId": "az-700:3",
+          "index": 2,
+          "text": "Identifying use cases for Azure Load Balancer",
+          "sourceHash": "0803171cb6a3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:3:3",
+          "unitId": "az-700:3",
+          "index": 3,
+          "text": "Choosing an Azure Load Balancer SKU and tier",
+          "sourceHash": "5ee1301b97c2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:3:4",
+          "unitId": "az-700:3",
+          "index": 4,
+          "text": "Choosing between public and internal load balancers",
+          "sourceHash": "46aae668bf15",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:3:5",
+          "unitId": "az-700:3",
+          "index": 5,
+          "text": "Choosing between regional and cross-region load balancers",
+          "sourceHash": "9ca8121bd210",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:3:6",
+          "unitId": "az-700:3",
+          "index": 6,
+          "text": "Creating and configuring an Azure Load Balancer",
+          "sourceHash": "cdb8a11be258",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:3:7",
+          "unitId": "az-700:3",
+          "index": 7,
+          "text": "Implementing Azure Traffic Manager",
+          "sourceHash": "54b46c1826e6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:3:8",
+          "unitId": "az-700:3",
+          "index": 8,
+          "text": "Implementing Gateway Load Balancer",
+          "sourceHash": "67e57248ca9d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:3:9",
+          "unitId": "az-700:3",
+          "index": 9,
+          "text": "Implementing a load balancing rule",
+          "sourceHash": "cc02349533f2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:3:10",
+          "unitId": "az-700:3",
+          "index": 10,
+          "text": "Creating and configuring inbound NAT rules",
+          "sourceHash": "6f8fb18d5ed1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:3:11",
+          "unitId": "az-700:3",
+          "index": 11,
+          "text": "Creating and configuring explicit outbound rules, including source network address translation (SNAT)",
+          "sourceHash": "a279bdbc43ba",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:3:12",
+          "unitId": "az-700:3",
+          "index": 12,
+          "text": "Mapping requirements to Azure Application Gateway features and capabilities",
+          "sourceHash": "621e4c490031",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:3:13",
+          "unitId": "az-700:3",
+          "index": 13,
+          "text": "Identifying use cases for Azure Application Gateway",
+          "sourceHash": "65783e278d89",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:3:14",
+          "unitId": "az-700:3",
+          "index": 14,
+          "text": "Choosing between manual and autoscale for Application Gateway",
+          "sourceHash": "98dd0b4b9efe",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:3:15",
+          "unitId": "az-700:3",
+          "index": 15,
+          "text": "Creating a backend pool",
+          "sourceHash": "e5ac258eef39",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:3:16",
+          "unitId": "az-700:3",
+          "index": 16,
+          "text": "Configuring health probes",
+          "sourceHash": "3dedfde79458",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:3:17",
+          "unitId": "az-700:3",
+          "index": 17,
+          "text": "Configuring listeners",
+          "sourceHash": "c140de6850d1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:3:18",
+          "unitId": "az-700:3",
+          "index": 18,
+          "text": "Configuring routing rules",
+          "sourceHash": "37644ec41faa",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:3:19",
+          "unitId": "az-700:3",
+          "index": 19,
+          "text": "Configuring HTTP settings",
+          "sourceHash": "dfb91e4a81ac",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:3:20",
+          "unitId": "az-700:3",
+          "index": 20,
+          "text": "Configuring Transport Layer Security (TLS) on Application Gateway",
+          "sourceHash": "57991f998be3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:3:21",
+          "unitId": "az-700:3",
+          "index": 21,
+          "text": "Configuring rewrite rule sets",
+          "sourceHash": "c58d4d465a03",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:3:22",
+          "unitId": "az-700:3",
+          "index": 22,
+          "text": "Mapping requirements to Azure Front Door features and capabilities",
+          "sourceHash": "c7ec8c8c898a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:3:23",
+          "unitId": "az-700:3",
+          "index": 23,
+          "text": "Identifying use cases for Azure Front Door",
+          "sourceHash": "4002b1deb70e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:3:24",
+          "unitId": "az-700:3",
+          "index": 24,
+          "text": "Choosing a Front Door tier",
+          "sourceHash": "9c3f2786c810",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:3:25",
+          "unitId": "az-700:3",
+          "index": 25,
+          "text": "Configuring Azure Front Door routing, origins, and endpoints",
+          "sourceHash": "d69aa296bbdf",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:3:26",
+          "unitId": "az-700:3",
+          "index": 26,
+          "text": "Configuring TLS termination and end-to-end TLS encryption on Front Door",
+          "sourceHash": "ced90c49c9c6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:3:27",
+          "unitId": "az-700:3",
+          "index": 27,
+          "text": "Configuring caching",
+          "sourceHash": "7925db526c59",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:3:28",
+          "unitId": "az-700:3",
+          "index": 28,
+          "text": "Configuring traffic acceleration",
+          "sourceHash": "ed6d25a86c8c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:3:29",
+          "unitId": "az-700:3",
+          "index": 29,
+          "text": "Implementing rules, URL rewrite, and URL redirect",
+          "sourceHash": "56e31cd77fb2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:3:30",
+          "unitId": "az-700:3",
+          "index": 30,
+          "text": "Securing an origin with Azure Private Link in Azure Front Door",
+          "sourceHash": "d44ef2ba0a4a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "az-700:4",
+      "index": 4,
+      "title": "Design and Implement Private Access to Azure Services",
+      "weight": 13,
+      "gate": "Given a requirement to keep traffic off the public internet, name whether a private endpoint or a service endpoint fits, and why.",
+      "objectives": [
+        {
+          "id": "az-700:4:1",
+          "unitId": "az-700:4",
+          "index": 1,
+          "text": "Planning private endpoints",
+          "sourceHash": "32192db9fcff",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:4:2",
+          "unitId": "az-700:4",
+          "index": 2,
+          "text": "Creating private endpoints",
+          "sourceHash": "62e632c255db",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:4:3",
+          "unitId": "az-700:4",
+          "index": 3,
+          "text": "Configuring access to private endpoints",
+          "sourceHash": "947bf4bdfb5c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:4:4",
+          "unitId": "az-700:4",
+          "index": 4,
+          "text": "Creating a Private Link service",
+          "sourceHash": "06b50ccf3cdd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:4:5",
+          "unitId": "az-700:4",
+          "index": 5,
+          "text": "Integrating Private Link and Private Endpoint with DNS",
+          "sourceHash": "d8ac2dfbf7f3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:4:6",
+          "unitId": "az-700:4",
+          "index": 6,
+          "text": "Integrating a Private Link service with on-premises clients",
+          "sourceHash": "eb4e0546cc6a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:4:7",
+          "unitId": "az-700:4",
+          "index": 7,
+          "text": "Choosing when to use a service endpoint",
+          "sourceHash": "efd88aa2146e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:4:8",
+          "unitId": "az-700:4",
+          "index": 8,
+          "text": "Creating service endpoints",
+          "sourceHash": "288c18cb897a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:4:9",
+          "unitId": "az-700:4",
+          "index": 9,
+          "text": "Configuring service endpoint policies",
+          "sourceHash": "cdb68fc47475",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:4:10",
+          "unitId": "az-700:4",
+          "index": 10,
+          "text": "Configuring access to service endpoints",
+          "sourceHash": "07c3f2600474",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "az-700:5",
+      "index": 5,
+      "title": "Design and Implement Azure Network Security Services",
+      "weight": 18,
+      "gate": "Given a network-security requirement, name the specific NSG, Azure Firewall, or WAF control that fits, and what traffic it would actually allow or block.",
+      "objectives": [
+        {
+          "id": "az-700:5:1",
+          "unitId": "az-700:5",
+          "index": 1,
+          "text": "Creating a network security group (NSG)",
+          "sourceHash": "9fecbb6362d1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:5:2",
+          "unitId": "az-700:5",
+          "index": 2,
+          "text": "Associating an NSG to a subnet or network interface",
+          "sourceHash": "eacdeec627cf",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:5:3",
+          "unitId": "az-700:5",
+          "index": 3,
+          "text": "Creating an application security group (ASG)",
+          "sourceHash": "b64e593c5142",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:5:4",
+          "unitId": "az-700:5",
+          "index": 4,
+          "text": "Associating an ASG to a network interface",
+          "sourceHash": "2d534004428d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:5:5",
+          "unitId": "az-700:5",
+          "index": 5,
+          "text": "Creating and configuring NSG inbound and outbound security rules",
+          "sourceHash": "8c0f33d7ca2d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:5:6",
+          "unitId": "az-700:5",
+          "index": 6,
+          "text": "Implementing virtual network flow logs",
+          "sourceHash": "2e98c3ba7773",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:5:7",
+          "unitId": "az-700:5",
+          "index": 7,
+          "text": "Interpreting virtual network flow logs",
+          "sourceHash": "84e88c28bdd5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:5:8",
+          "unitId": "az-700:5",
+          "index": 8,
+          "text": "Verifying IP flow",
+          "sourceHash": "5cbb55d97b28",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:5:9",
+          "unitId": "az-700:5",
+          "index": 9,
+          "text": "Configuring an NSG for remote server administration, including Azure Bastion",
+          "sourceHash": "702803c185fe",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:5:10",
+          "unitId": "az-700:5",
+          "index": 10,
+          "text": "Implementing and managing virtual network security with Azure Virtual Network Manager",
+          "sourceHash": "2ada7a192b73",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:5:11",
+          "unitId": "az-700:5",
+          "index": 11,
+          "text": "Mapping requirements to Azure Firewall features and capabilities",
+          "sourceHash": "c5554b694cff",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:5:12",
+          "unitId": "az-700:5",
+          "index": 12,
+          "text": "Selecting an Azure Firewall SKU",
+          "sourceHash": "23b139c949b7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:5:13",
+          "unitId": "az-700:5",
+          "index": 13,
+          "text": "Designing an Azure Firewall deployment",
+          "sourceHash": "a957139e47e1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:5:14",
+          "unitId": "az-700:5",
+          "index": 14,
+          "text": "Creating and implementing an Azure Firewall deployment",
+          "sourceHash": "bfc36e5c6c4c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:5:15",
+          "unitId": "az-700:5",
+          "index": 15,
+          "text": "Configuring Azure Firewall rules",
+          "sourceHash": "842cd8d638ff",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:5:16",
+          "unitId": "az-700:5",
+          "index": 16,
+          "text": "Creating and implementing Azure Firewall Manager policies",
+          "sourceHash": "caf4f35046d4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:5:17",
+          "unitId": "az-700:5",
+          "index": 17,
+          "text": "Creating a secure hub by deploying Azure Firewall inside a Virtual WAN hub",
+          "sourceHash": "f497fadfc353",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:5:18",
+          "unitId": "az-700:5",
+          "index": 18,
+          "text": "Mapping requirements to Web Application Firewall (WAF) features and capabilities",
+          "sourceHash": "8a607cdd59cc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:5:19",
+          "unitId": "az-700:5",
+          "index": 19,
+          "text": "Designing a WAF deployment",
+          "sourceHash": "36cd9d72aa1c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:5:20",
+          "unitId": "az-700:5",
+          "index": 20,
+          "text": "Configuring detection or prevention mode",
+          "sourceHash": "db5563685a57",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:5:21",
+          "unitId": "az-700:5",
+          "index": 21,
+          "text": "Configuring WAF rule sets on Azure Front Door",
+          "sourceHash": "e3b1266e8d9d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:5:22",
+          "unitId": "az-700:5",
+          "index": 22,
+          "text": "Configuring WAF rule sets on Application Gateway",
+          "sourceHash": "5afa2ceb6f28",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:5:23",
+          "unitId": "az-700:5",
+          "index": 23,
+          "text": "Implementing a WAF policy",
+          "sourceHash": "e8efc4b10f83",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-700:5:24",
+          "unitId": "az-700:5",
+          "index": 24,
+          "text": "Associating a WAF policy",
+          "sourceHash": "ba2f7916fd1a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/azure.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-18T00:00:00Z",
+    "officialObjectivesUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-700",
+    "providerName": "Microsoft",
+    "credentialName": "Microsoft Certified: Azure Network Engineer Associate",
+    "examCode": "AZ-700",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 5,
+    "objectives": 131,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

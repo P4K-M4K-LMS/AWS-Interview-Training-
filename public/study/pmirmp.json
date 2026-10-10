@@ -1,0 +1,272 @@
+{
+  "id": "pmirmp",
+  "code": "PMIRMP",
+  "title": "PMI-RMP",
+  "description": "PMI Risk Management Professional (PMI-RMP) exam prep across 5 weighted domains -- risk strategy and planning, identification, analysis, response, and monitoring/closing risks.",
+  "trackType": "certification",
+  "field": "pm",
+  "units": [
+    {
+      "id": "pmirmp:1",
+      "index": 1,
+      "title": "Risk Strategy and Planning",
+      "weight": 22,
+      "gate": "Given a project's early risk setup, name the specific planning artifact or threshold decision it calls for -- a risk breakdown structure, an agreed risk appetite -- not generic 'plan for risk' advice.",
+      "objectives": [
+        {
+          "id": "pmirmp:1:1",
+          "unitId": "pmirmp:1",
+          "index": 1,
+          "text": "Performing preliminary document analysis: gathering industry benchmarks, lessons learned, and historical data relevant to the risk process",
+          "sourceHash": "da2549fed33d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmirmp:1:2",
+          "unitId": "pmirmp:1",
+          "index": 2,
+          "text": "Assessing the project environment for threats and opportunities: OPAs/EEFs, methodology fit (agile/waterfall/hybrid), and organizational risk culture",
+          "sourceHash": "4ab372344b00",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmirmp:1:3",
+          "unitId": "pmirmp:1",
+          "index": 3,
+          "text": "Confirming risk thresholds against organizational risk appetite, and leading stakeholder conflict resolution when appetites disagree",
+          "sourceHash": "9e41843785af",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmirmp:1:4",
+          "unitId": "pmirmp:1",
+          "index": 4,
+          "text": "Establishing a risk management strategy: processes, templates, metrics, and risk categories",
+          "sourceHash": "42e3a7734e30",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmirmp:1:5",
+          "unitId": "pmirmp:1",
+          "index": 5,
+          "text": "Documenting a risk management plan: roles/responsibilities (RACI), a risk breakdown structure (RBS), and a risk communication plan",
+          "sourceHash": "1b6edac919cf",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmirmp:1:6",
+          "unitId": "pmirmp:1",
+          "index": 6,
+          "text": "Planning and leading risk management activities with stakeholders, including tailoring communication and coaching stakeholders in risk principles",
+          "sourceHash": "07dd2fde679c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "pmirmp:2",
+      "index": 2,
+      "title": "Risk Identification",
+      "weight": 23,
+      "gate": "Given raw project information, apply the specific identification technique it calls for -- an assumption/constraint analysis, a risk register entry -- not a generic 'find the risks' answer.",
+      "objectives": [
+        {
+          "id": "pmirmp:2:1",
+          "unitId": "pmirmp:2",
+          "index": 1,
+          "text": "Conducting risk identification exercises: interviews, focus groups, SME input, and document/telemetry analysis",
+          "sourceHash": "eaa9aaa63fbd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmirmp:2:2",
+          "unitId": "pmirmp:2",
+          "index": 2,
+          "text": "Examining assumption and constraint analyses, and recognizing cascading effects between assumptions/constraints and project objectives",
+          "sourceHash": "b55caa50ab2e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmirmp:2:3",
+          "unitId": "pmirmp:2",
+          "index": 3,
+          "text": "Documenting risk triggers and thresholds based on context, including causes, timing, and consequences",
+          "sourceHash": "6095bedbbe89",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmirmp:2:4",
+          "unitId": "pmirmp:2",
+          "index": 4,
+          "text": "Developing a risk register: validating identified risks, assessing probability/impact/urgency, and classifying threats vs. opportunities",
+          "sourceHash": "5361bc439f67",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "pmirmp:3",
+      "index": 3,
+      "title": "Risk Analysis",
+      "weight": 23,
+      "gate": "Given risk data, apply the specific qualitative or quantitative technique it calls for -- a risk matrix, a Monte Carlo simulation -- not a generic 'analyze the risk' answer.",
+      "objectives": [
+        {
+          "id": "pmirmp:3:1",
+          "unitId": "pmirmp:3",
+          "index": 1,
+          "text": "Performing qualitative analysis: classifying risks in an RBS, applying risk matrices, and prioritizing by impact/urgency",
+          "sourceHash": "17d59499647f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmirmp:3:2",
+          "unitId": "pmirmp:3",
+          "index": 2,
+          "text": "Performing quantitative analysis: sensitivity analysis (Monte Carlo, decision trees, expected monetary value) and risk weighting",
+          "sourceHash": "06c24cb89a4b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmirmp:3:3",
+          "unitId": "pmirmp:3",
+          "index": 3,
+          "text": "Identifying threats and opportunities: assessing project complexity (SWOT, Ishikawa) and running impact analysis against project objectives",
+          "sourceHash": "4037423be838",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "pmirmp:4",
+      "index": 4,
+      "title": "Risk Response",
+      "weight": 13,
+      "gate": "Given an identified risk, apply the specific response strategy it calls for -- avoid, mitigate, enhance, accept -- and follow through on implementation, not just naming the strategy.",
+      "objectives": [
+        {
+          "id": "pmirmp:4:1",
+          "unitId": "pmirmp:4",
+          "index": 1,
+          "text": "Planning risk response: choosing a strategy (avoid/accept/mitigate/enhance/contingency) and assigning time-bound actions with owners",
+          "sourceHash": "b05c6c1af81c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmirmp:4:2",
+          "unitId": "pmirmp:4",
+          "index": 2,
+          "text": "Assessing and communicating the effectiveness of a chosen response strategy (e.g., a risk burndown chart)",
+          "sourceHash": "0e83ddd15c82",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmirmp:4:3",
+          "unitId": "pmirmp:4",
+          "index": 3,
+          "text": "Implementing risk response: executing response and contingency plans, and evaluating secondary/residual risks that result",
+          "sourceHash": "db99a9c29564",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "pmirmp:5",
+      "index": 5,
+      "title": "Monitor and Close Risks",
+      "weight": 19,
+      "gate": "Given ongoing project data, apply the specific monitoring or closure step it calls for -- a variance analysis, a residual-risk update -- not a generic 'keep watching' answer.",
+      "objectives": [
+        {
+          "id": "pmirmp:5:1",
+          "unitId": "pmirmp:5",
+          "index": 1,
+          "text": "Gathering and analyzing performance data: reconciling reports against risk-relevant work packages and running variance analysis",
+          "sourceHash": "6df8130c6e1e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmirmp:5:2",
+          "unitId": "pmirmp:5",
+          "index": 2,
+          "text": "Monitoring residual and secondary risks resulting from implemented responses, and updating stakeholders on their impact",
+          "sourceHash": "ec79d9a63ed1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmirmp:5:3",
+          "unitId": "pmirmp:5",
+          "index": 3,
+          "text": "Updating relevant project documents (risk register, lessons learned, change logs) and closing out expired risks",
+          "sourceHash": "bca59789a4bd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmirmp:5:4",
+          "unitId": "pmirmp:5",
+          "index": 4,
+          "text": "Monitoring overall project risk level and communicating it to stakeholders through tailored reporting",
+          "sourceHash": "6a13093681df",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/pm.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-26T00:00:00Z",
+    "officialObjectivesUrl": "https://www.pmi.org/-/media/pmi/documents/public/pdf/certifications/risk-management-exam-outline_updated-2024.pdf",
+    "providerName": "Project Management Institute (PMI)",
+    "credentialName": "PMI Risk Management Professional (PMI-RMP)",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 5,
+    "objectives": 20,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

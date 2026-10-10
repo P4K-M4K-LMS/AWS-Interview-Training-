@@ -1,0 +1,1118 @@
+{
+  "id": "bsnrn",
+  "code": "BSNRN",
+  "title": "BSN Nursing",
+  "description": "Baccalaureate nursing organised the way the discipline organises itself: the ten Domains of the AACN Essentials, from knowledge for nursing practice through systems, informatics and professional formation.",
+  "trackType": "graduate",
+  "field": "nursing",
+  "requiresAcknowledgement": true,
+  "units": [
+    {
+      "id": "bsnrn:1",
+      "index": 1,
+      "title": "Knowledge for Nursing Practice",
+      "weight": 11,
+      "gate": "Use disciplinary knowledge and knowledge from other fields together, and say which one you are leaning on.",
+      "objectives": [
+        {
+          "id": "bsnrn:1:1",
+          "unitId": "bsnrn:1",
+          "index": 1,
+          "text": "Nursing as a discipline with its own body of knowledge",
+          "sourceHash": "baffe808985a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:1:2",
+          "unitId": "bsnrn:1",
+          "index": 2,
+          "text": "Ways of knowing in nursing, and what each contributes",
+          "sourceHash": "28f592d9f03c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:1:3",
+          "unitId": "bsnrn:1",
+          "index": 3,
+          "text": "Nursing theory and its use in framing practice",
+          "sourceHash": "c4db554fa473",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:1:4",
+          "unitId": "bsnrn:1",
+          "index": 4,
+          "text": "Knowledge from the liberal arts applied to care",
+          "sourceHash": "61004419ea7c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:1:5",
+          "unitId": "bsnrn:1",
+          "index": 5,
+          "text": "Natural and social sciences underpinning nursing practice",
+          "sourceHash": "6b858cc45c8f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:1:6",
+          "unitId": "bsnrn:1",
+          "index": 6,
+          "text": "Translating evidence into a practice decision",
+          "sourceHash": "874d9ece85d7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:1:7",
+          "unitId": "bsnrn:1",
+          "index": 7,
+          "text": "Clinical judgment as the product of knowledge plus reasoning",
+          "sourceHash": "61bd73245f97",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:1:8",
+          "unitId": "bsnrn:1",
+          "index": 8,
+          "text": "Innovation in nursing practice and where it comes from",
+          "sourceHash": "98e2c37cfce5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:1:9",
+          "unitId": "bsnrn:1",
+          "index": 9,
+          "text": "Systems thinking applied to a clinical problem",
+          "sourceHash": "788ef1e466b9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "bsnrn:2",
+      "index": 2,
+      "title": "Person-Centered Care",
+      "weight": 14,
+      "gate": "Build care around the person and the people who matter to them, not around the diagnosis.",
+      "objectives": [
+        {
+          "id": "bsnrn:2:1",
+          "unitId": "bsnrn:2",
+          "index": 1,
+          "text": "Person-centered care as holistic and individualised",
+          "sourceHash": "01d6a3aeeab3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:2:2",
+          "unitId": "bsnrn:2",
+          "index": 2,
+          "text": "Establishing a caring relationship and presence",
+          "sourceHash": "50e69090d627",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:2:3",
+          "unitId": "bsnrn:2",
+          "index": 3,
+          "text": "Communicating effectively across difference",
+          "sourceHash": "bd42e3d03b00",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:2:4",
+          "unitId": "bsnrn:2",
+          "index": 4,
+          "text": "Compassionate care: noticing vulnerability and responding to it",
+          "sourceHash": "f2ff48739d8d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:2:5",
+          "unitId": "bsnrn:2",
+          "index": 5,
+          "text": "Assessment as the foundation of individualised care",
+          "sourceHash": "fba344ac220b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:2:6",
+          "unitId": "bsnrn:2",
+          "index": 6,
+          "text": "Diagnosing, planning and evaluating with the person, not for them",
+          "sourceHash": "2a2146f8354c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:2:7",
+          "unitId": "bsnrn:2",
+          "index": 7,
+          "text": "Coordinating care across settings and disciplines",
+          "sourceHash": "4af3d5320b57",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:2:8",
+          "unitId": "bsnrn:2",
+          "index": 8,
+          "text": "Family and important others as part of the unit of care",
+          "sourceHash": "4a087699b17c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:2:9",
+          "unitId": "bsnrn:2",
+          "index": 9,
+          "text": "Developmentally appropriate care across the lifespan",
+          "sourceHash": "a2b925bdc616",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:2:10",
+          "unitId": "bsnrn:2",
+          "index": 10,
+          "text": "Respecting dignity, preference and self-determination",
+          "sourceHash": "39d3eb4aa896",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:2:11",
+          "unitId": "bsnrn:2",
+          "index": 11,
+          "text": "Cultural humility and responsiveness",
+          "sourceHash": "ee35a2c0d63b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:2:12",
+          "unitId": "bsnrn:2",
+          "index": 12,
+          "text": "Managing pain and symptoms as a person experiences them",
+          "sourceHash": "4695396d1c87",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:2:13",
+          "unitId": "bsnrn:2",
+          "index": 13,
+          "text": "Advocating for the person within the system",
+          "sourceHash": "bb6e3d03d290",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "bsnrn:3",
+      "index": 3,
+      "title": "Population Health",
+      "weight": 11,
+      "gate": "Move from one patient to a population, and name the partnership that would actually shift the outcome.",
+      "objectives": [
+        {
+          "id": "bsnrn:3:1",
+          "unitId": "bsnrn:3",
+          "index": 1,
+          "text": "Population health across the prevention-to-management continuum",
+          "sourceHash": "7c3508786bdf",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:3:2",
+          "unitId": "bsnrn:3",
+          "index": 2,
+          "text": "Epidemiology and describing disease in a population",
+          "sourceHash": "20c8bb4481da",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:3:3",
+          "unitId": "bsnrn:3",
+          "index": 3,
+          "text": "Social determinants of health and their measurable effect",
+          "sourceHash": "d140f28ec04c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:3:4",
+          "unitId": "bsnrn:3",
+          "index": 4,
+          "text": "Health equity and access, connection and engagement",
+          "sourceHash": "ea4dfeba4538",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:3:5",
+          "unitId": "bsnrn:3",
+          "index": 5,
+          "text": "Community assessment and asset mapping",
+          "sourceHash": "cda0d33bc71f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:3:6",
+          "unitId": "bsnrn:3",
+          "index": 6,
+          "text": "Partnerships with public health, government, industry and community",
+          "sourceHash": "16a760e66dbe",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:3:7",
+          "unitId": "bsnrn:3",
+          "index": 7,
+          "text": "Health promotion and disease prevention at population scale",
+          "sourceHash": "334ed40d7468",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:3:8",
+          "unitId": "bsnrn:3",
+          "index": 8,
+          "text": "Emergency preparedness and disaster response",
+          "sourceHash": "610432f2c661",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:3:9",
+          "unitId": "bsnrn:3",
+          "index": 9,
+          "text": "Environmental health and its clinical consequences",
+          "sourceHash": "38764ff9d452",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:3:10",
+          "unitId": "bsnrn:3",
+          "index": 10,
+          "text": "Global health and cross-border health threats",
+          "sourceHash": "f89f95b0a4d9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:3:11",
+          "unitId": "bsnrn:3",
+          "index": 11,
+          "text": "Health policy and how nurses influence it",
+          "sourceHash": "763c5837587e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:3:12",
+          "unitId": "bsnrn:3",
+          "index": 12,
+          "text": "Advocacy for policy that improves population outcomes",
+          "sourceHash": "4f3dee11ba81",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "bsnrn:4",
+      "index": 4,
+      "title": "Scholarship for the Nursing Discipline",
+      "weight": 9,
+      "gate": "Read the evidence critically, and be able to say why a study should or should not change what you do.",
+      "objectives": [
+        {
+          "id": "bsnrn:4:1",
+          "unitId": "bsnrn:4",
+          "index": 1,
+          "text": "The generation and synthesis of nursing knowledge",
+          "sourceHash": "8cde71836dce",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:4:2",
+          "unitId": "bsnrn:4",
+          "index": 2,
+          "text": "Research process and design fundamentals",
+          "sourceHash": "760c92584a32",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:4:3",
+          "unitId": "bsnrn:4",
+          "index": 3,
+          "text": "Quantitative and qualitative approaches and what each answers",
+          "sourceHash": "b5d9071ed75f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:4:4",
+          "unitId": "bsnrn:4",
+          "index": 4,
+          "text": "Appraising evidence quality and level",
+          "sourceHash": "dffb49ccd558",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:4:5",
+          "unitId": "bsnrn:4",
+          "index": 5,
+          "text": "Statistical literacy sufficient to read a results table",
+          "sourceHash": "ee9e66af431c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:4:6",
+          "unitId": "bsnrn:4",
+          "index": 6,
+          "text": "Translating research into practice change",
+          "sourceHash": "a7b33f7d556d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:4:7",
+          "unitId": "bsnrn:4",
+          "index": 7,
+          "text": "Evidence-based practice models",
+          "sourceHash": "dd7eee2e1187",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:4:8",
+          "unitId": "bsnrn:4",
+          "index": 8,
+          "text": "Ethical conduct of research and human subject protection",
+          "sourceHash": "fc420024253f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:4:9",
+          "unitId": "bsnrn:4",
+          "index": 9,
+          "text": "Disseminating findings to clinical and lay audiences",
+          "sourceHash": "394348228a6b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "bsnrn:5",
+      "index": 5,
+      "title": "Quality and Safety",
+      "weight": 11,
+      "gate": "Treat an error as a system signal: find the condition that allowed it, not the person who met it.",
+      "objectives": [
+        {
+          "id": "bsnrn:5:1",
+          "unitId": "bsnrn:5",
+          "index": 1,
+          "text": "A culture of safety and psychological safety in teams",
+          "sourceHash": "07715fc13074",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:5:2",
+          "unitId": "bsnrn:5",
+          "index": 2,
+          "text": "Just culture, and distinguishing error from recklessness",
+          "sourceHash": "fcd1fe5fe7b5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:5:3",
+          "unitId": "bsnrn:5",
+          "index": 3,
+          "text": "Human factors and error-producing conditions",
+          "sourceHash": "d34f637eec84",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:5:4",
+          "unitId": "bsnrn:5",
+          "index": 4,
+          "text": "Root cause analysis and failure modes analysis",
+          "sourceHash": "219bfe5ae55d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:5:5",
+          "unitId": "bsnrn:5",
+          "index": 5,
+          "text": "Quality improvement methods and measurement",
+          "sourceHash": "cdd58dea4a95",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:5:6",
+          "unitId": "bsnrn:5",
+          "index": 6,
+          "text": "Nurse-sensitive indicators and outcome data",
+          "sourceHash": "e64b5c79c5c7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:5:7",
+          "unitId": "bsnrn:5",
+          "index": 7,
+          "text": "Standardisation, checklists and reducing variation",
+          "sourceHash": "95e97d9078cb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:5:8",
+          "unitId": "bsnrn:5",
+          "index": 8,
+          "text": "Reporting near misses and adverse events",
+          "sourceHash": "cc382e9be1aa",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:5:9",
+          "unitId": "bsnrn:5",
+          "index": 9,
+          "text": "Disclosure to patients and families after harm",
+          "sourceHash": "7dc5393b4a5f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:5:10",
+          "unitId": "bsnrn:5",
+          "index": 10,
+          "text": "Minimising risk of harm to patients and to providers",
+          "sourceHash": "758f4c56ca6b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "bsnrn:6",
+      "index": 6,
+      "title": "Interprofessional Partnerships",
+      "weight": 9,
+      "gate": "Work with other professions as colleagues with distinct expertise, and communicate across that difference under pressure.",
+      "objectives": [
+        {
+          "id": "bsnrn:6:1",
+          "unitId": "bsnrn:6",
+          "index": 1,
+          "text": "Interprofessional communication and structured handoff",
+          "sourceHash": "977883d76855",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:6:2",
+          "unitId": "bsnrn:6",
+          "index": 2,
+          "text": "Roles and scopes of other health professions",
+          "sourceHash": "41cfdb3335d5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:6:3",
+          "unitId": "bsnrn:6",
+          "index": 3,
+          "text": "Team dynamics and shared decision making",
+          "sourceHash": "697317eb8c32",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:6:4",
+          "unitId": "bsnrn:6",
+          "index": 4,
+          "text": "Conflict engagement and resolution within teams",
+          "sourceHash": "0029a740d59c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:6:5",
+          "unitId": "bsnrn:6",
+          "index": 5,
+          "text": "Speaking up across a hierarchy when safety requires it",
+          "sourceHash": "2ac5d3ccbc4c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:6:6",
+          "unitId": "bsnrn:6",
+          "index": 6,
+          "text": "Shared accountability for patient outcomes",
+          "sourceHash": "0b9eeb070a8c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:6:7",
+          "unitId": "bsnrn:6",
+          "index": 7,
+          "text": "Partnering with patients and families as team members",
+          "sourceHash": "fa0f2bacf5b7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:6:8",
+          "unitId": "bsnrn:6",
+          "index": 8,
+          "text": "Interprofessional education and reflective team practice",
+          "sourceHash": "476c8622f6d6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "bsnrn:7",
+      "index": 7,
+      "title": "Systems-Based Practice",
+      "weight": 9,
+      "gate": "Explain how the system pays for, staffs and constrains the care you give, and where the leverage sits.",
+      "objectives": [
+        {
+          "id": "bsnrn:7:1",
+          "unitId": "bsnrn:7",
+          "index": 1,
+          "text": "Healthcare delivery system structure and financing",
+          "sourceHash": "bde3b16784cc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:7:2",
+          "unitId": "bsnrn:7",
+          "index": 2,
+          "text": "Payment models and their effect on care decisions",
+          "sourceHash": "d4130ce162be",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:7:3",
+          "unitId": "bsnrn:7",
+          "index": 3,
+          "text": "Cost, value and stewardship of resources",
+          "sourceHash": "119e4a964e2a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:7:4",
+          "unitId": "bsnrn:7",
+          "index": 4,
+          "text": "Care coordination across the continuum",
+          "sourceHash": "725aa6941403",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:7:5",
+          "unitId": "bsnrn:7",
+          "index": 5,
+          "text": "Transitions of care and the risks they carry",
+          "sourceHash": "c84a0a2d2995",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:7:6",
+          "unitId": "bsnrn:7",
+          "index": 6,
+          "text": "Regulatory bodies, accreditation and their influence",
+          "sourceHash": "995070ac1f08",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:7:7",
+          "unitId": "bsnrn:7",
+          "index": 7,
+          "text": "Organisational structure, culture and change",
+          "sourceHash": "fc9d8d98b1ea",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:7:8",
+          "unitId": "bsnrn:7",
+          "index": 8,
+          "text": "Staffing, workload and their relationship to outcomes",
+          "sourceHash": "be865edf4b25",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:7:9",
+          "unitId": "bsnrn:7",
+          "index": 9,
+          "text": "Risk management and legal exposure",
+          "sourceHash": "031a13846502",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:7:10",
+          "unitId": "bsnrn:7",
+          "index": 10,
+          "text": "Advocating for system-level change",
+          "sourceHash": "62d2adddacb8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "bsnrn:8",
+      "index": 8,
+      "title": "Informatics and Healthcare Technologies",
+      "weight": 9,
+      "gate": "Use the record and the technology as clinical instruments, including knowing how they mislead.",
+      "objectives": [
+        {
+          "id": "bsnrn:8:1",
+          "unitId": "bsnrn:8",
+          "index": 1,
+          "text": "Information and communication technology in nursing practice",
+          "sourceHash": "0a88e0d13376",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:8:2",
+          "unitId": "bsnrn:8",
+          "index": 2,
+          "text": "Electronic health records and structured documentation",
+          "sourceHash": "90f3b155582b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:8:3",
+          "unitId": "bsnrn:8",
+          "index": 3,
+          "text": "Clinical decision support and alert fatigue",
+          "sourceHash": "1ae1382da376",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:8:4",
+          "unitId": "bsnrn:8",
+          "index": 4,
+          "text": "Data, information, knowledge and wisdom as a progression",
+          "sourceHash": "9ce93eee6540",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:8:5",
+          "unitId": "bsnrn:8",
+          "index": 5,
+          "text": "Standardised terminology in nursing documentation",
+          "sourceHash": "99c85e95780d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:8:6",
+          "unitId": "bsnrn:8",
+          "index": 6,
+          "text": "Data privacy, security and regulatory obligation",
+          "sourceHash": "907e8cf907ac",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:8:7",
+          "unitId": "bsnrn:8",
+          "index": 7,
+          "text": "Telehealth and remote monitoring",
+          "sourceHash": "ff419f8c8c74",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:8:8",
+          "unitId": "bsnrn:8",
+          "index": 8,
+          "text": "Evaluating a digital health tool before trusting it",
+          "sourceHash": "383deb1a459d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:8:9",
+          "unitId": "bsnrn:8",
+          "index": 9,
+          "text": "Artificial intelligence in clinical tools, and its failure modes",
+          "sourceHash": "3f11bd0ab720",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:8:10",
+          "unitId": "bsnrn:8",
+          "index": 10,
+          "text": "Using data to drive quality improvement",
+          "sourceHash": "e15cd12cdc10",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "bsnrn:9",
+      "index": 9,
+      "title": "Professionalism",
+      "weight": 9,
+      "gate": "Hold the standards of the profession when it is inconvenient, and know where they come from.",
+      "objectives": [
+        {
+          "id": "bsnrn:9:1",
+          "unitId": "bsnrn:9",
+          "index": 1,
+          "text": "Professional identity formation in nursing",
+          "sourceHash": "e7f276b4817b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:9:2",
+          "unitId": "bsnrn:9",
+          "index": 2,
+          "text": "The nursing code of ethics applied to real conflict",
+          "sourceHash": "ef1d52eb1507",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:9:3",
+          "unitId": "bsnrn:9",
+          "index": 3,
+          "text": "Ethical decision-making frameworks",
+          "sourceHash": "0174664b13ae",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:9:4",
+          "unitId": "bsnrn:9",
+          "index": 4,
+          "text": "Moral distress, moral courage and moral resilience",
+          "sourceHash": "1743dfe69ed0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:9:5",
+          "unitId": "bsnrn:9",
+          "index": 5,
+          "text": "Accountability for one's own practice and competence",
+          "sourceHash": "80a5ea28d4ff",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:9:6",
+          "unitId": "bsnrn:9",
+          "index": 6,
+          "text": "Professional comportment and civility",
+          "sourceHash": "cf00e31331c4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:9:7",
+          "unitId": "bsnrn:9",
+          "index": 7,
+          "text": "Nursing's social contract with the public",
+          "sourceHash": "0838942e5015",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:9:8",
+          "unitId": "bsnrn:9",
+          "index": 8,
+          "text": "Regulation, licensure and professional standards",
+          "sourceHash": "f93a2f1f3b21",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:9:9",
+          "unitId": "bsnrn:9",
+          "index": 9,
+          "text": "Stewardship and advocacy as professional obligations",
+          "sourceHash": "42ec141ffdf2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "bsnrn:10",
+      "index": 10,
+      "title": "Personal, Professional and Leadership Development",
+      "weight": 8,
+      "gate": "Build the practice you can sustain: self-awareness, lifelong learning, leadership, and the honesty to seek feedback.",
+      "objectives": [
+        {
+          "id": "bsnrn:10:1",
+          "unitId": "bsnrn:10",
+          "index": 1,
+          "text": "Self-awareness and reflective practice",
+          "sourceHash": "6a3da481c413",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:10:2",
+          "unitId": "bsnrn:10",
+          "index": 2,
+          "text": "Lifelong learning and continuing competence",
+          "sourceHash": "3622f898e0e2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:10:3",
+          "unitId": "bsnrn:10",
+          "index": 3,
+          "text": "Seeking, receiving and acting on feedback",
+          "sourceHash": "beaa4fd58f91",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:10:4",
+          "unitId": "bsnrn:10",
+          "index": 4,
+          "text": "Emotional intelligence in clinical relationships",
+          "sourceHash": "8ad90c2ae256",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:10:5",
+          "unitId": "bsnrn:10",
+          "index": 5,
+          "text": "Resilience, wellbeing and burnout prevention",
+          "sourceHash": "02394d8b5ed8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:10:6",
+          "unitId": "bsnrn:10",
+          "index": 6,
+          "text": "Managing the personal cost of clinical work",
+          "sourceHash": "68479cbf6055",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:10:7",
+          "unitId": "bsnrn:10",
+          "index": 7,
+          "text": "Leadership development at every level of practice",
+          "sourceHash": "37f3064371f6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:10:8",
+          "unitId": "bsnrn:10",
+          "index": 8,
+          "text": "Mentorship, precepting and being mentored",
+          "sourceHash": "ff65299bc0cb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:10:9",
+          "unitId": "bsnrn:10",
+          "index": 9,
+          "text": "Career planning and specialty progression",
+          "sourceHash": "0f93506476da",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "bsnrn:10:10",
+          "unitId": "bsnrn:10",
+          "index": 10,
+          "text": "Contributing to the advancement of the profession",
+          "sourceHash": "ef8bb8a4fcc5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/nursing.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-18T00:00:00Z",
+    "officialObjectivesUrl": "https://www.aacnnursing.org/essentials",
+    "providerName": "American Association of Colleges of Nursing",
+    "credentialName": "Bachelor of Science in Nursing",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 10,
+    "objectives": 100,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

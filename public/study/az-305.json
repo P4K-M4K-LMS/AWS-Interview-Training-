@@ -1,0 +1,554 @@
+{
+  "id": "az-305",
+  "code": "AZ305",
+  "title": "Azure Solutions Architect Expert",
+  "description": "Microsoft Certified: Azure Solutions Architect Expert (AZ-305): translating business requirements into Azure designs across identity/governance/monitoring, data storage, business continuity, and infrastructure -- aligned to the Well-Architected Framework and Cloud Adoption Framework. Requires the Azure Administrator Associate certification first.",
+  "trackType": "certification",
+  "field": "azure",
+  "units": [
+    {
+      "id": "az-305:1",
+      "index": 1,
+      "title": "Design Identity, Governance, and Monitoring Solutions",
+      "weight": 28,
+      "gate": "Given a business requirement, recommend the specific Azure identity, governance, or monitoring solution that satisfies it -- and say why a plausible alternative falls short -- not just name a service.",
+      "objectives": [
+        {
+          "id": "az-305:1:1",
+          "unitId": "az-305:1",
+          "index": 1,
+          "text": "Recommending a logging solution",
+          "sourceHash": "686165532f6e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-305:1:2",
+          "unitId": "az-305:1",
+          "index": 2,
+          "text": "Recommending a solution for routing logs",
+          "sourceHash": "b8b03af55502",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-305:1:3",
+          "unitId": "az-305:1",
+          "index": 3,
+          "text": "Recommending a monitoring solution",
+          "sourceHash": "056397efb363",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-305:1:4",
+          "unitId": "az-305:1",
+          "index": 4,
+          "text": "Recommending an authentication solution",
+          "sourceHash": "e5511dab4c4f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-305:1:5",
+          "unitId": "az-305:1",
+          "index": 5,
+          "text": "Recommending an identity management solution",
+          "sourceHash": "8d448ee83028",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-305:1:6",
+          "unitId": "az-305:1",
+          "index": 6,
+          "text": "Recommending a solution for authorizing access to Azure resources",
+          "sourceHash": "4d93311230a2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-305:1:7",
+          "unitId": "az-305:1",
+          "index": 7,
+          "text": "Recommending a solution for authorizing access to on-premises resources",
+          "sourceHash": "d9725c1ce346",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-305:1:8",
+          "unitId": "az-305:1",
+          "index": 8,
+          "text": "Recommending a solution to manage secrets, certificates, and keys",
+          "sourceHash": "7113bc2e6527",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-305:1:9",
+          "unitId": "az-305:1",
+          "index": 9,
+          "text": "Recommending a structure for management groups, subscriptions, and resource groups, plus a resource-tagging strategy",
+          "sourceHash": "cae837357f9d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-305:1:10",
+          "unitId": "az-305:1",
+          "index": 10,
+          "text": "Recommending a solution for managing compliance",
+          "sourceHash": "83ddf7aa57dc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-305:1:11",
+          "unitId": "az-305:1",
+          "index": 11,
+          "text": "Recommending a solution for identity governance",
+          "sourceHash": "5481013b9065",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "az-305:2",
+      "index": 2,
+      "title": "Design Data Storage Solutions",
+      "weight": 23,
+      "gate": "Given a data workload's structure, scale, and durability requirements, recommend the specific Azure data storage solution that fits -- and the tradeoff it makes against the next-best option.",
+      "objectives": [
+        {
+          "id": "az-305:2:1",
+          "unitId": "az-305:2",
+          "index": 1,
+          "text": "Recommending a solution for storing relational data",
+          "sourceHash": "a5e12f583da8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-305:2:2",
+          "unitId": "az-305:2",
+          "index": 2,
+          "text": "Recommending a database service tier and compute tier",
+          "sourceHash": "df907cc7f04f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-305:2:3",
+          "unitId": "az-305:2",
+          "index": 3,
+          "text": "Recommending a solution for database scalability",
+          "sourceHash": "569a0e17ca6e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-305:2:4",
+          "unitId": "az-305:2",
+          "index": 4,
+          "text": "Recommending a solution for data protection",
+          "sourceHash": "5ee07aa78e29",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-305:2:5",
+          "unitId": "az-305:2",
+          "index": 5,
+          "text": "Recommending a solution for storing semi-structured data",
+          "sourceHash": "122cca494a9f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-305:2:6",
+          "unitId": "az-305:2",
+          "index": 6,
+          "text": "Recommending a solution for storing unstructured data",
+          "sourceHash": "0bb2e6405c93",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-305:2:7",
+          "unitId": "az-305:2",
+          "index": 7,
+          "text": "Recommending a data storage solution that balances features, performance, and cost",
+          "sourceHash": "d263ac01c0e5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-305:2:8",
+          "unitId": "az-305:2",
+          "index": 8,
+          "text": "Recommending a data solution for protection and durability",
+          "sourceHash": "38ea579e813a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-305:2:9",
+          "unitId": "az-305:2",
+          "index": 9,
+          "text": "Recommending a solution for data integration",
+          "sourceHash": "2547d5c47994",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-305:2:10",
+          "unitId": "az-305:2",
+          "index": 10,
+          "text": "Recommending a solution for data analysis",
+          "sourceHash": "47bd96102e74",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "az-305:3",
+      "index": 3,
+      "title": "Design Business Continuity Solutions",
+      "weight": 18,
+      "gate": "Given a stated recovery objective (RPO/RTO) or availability target, recommend the specific backup, recovery, or high-availability solution that meets it.",
+      "objectives": [
+        {
+          "id": "az-305:3:1",
+          "unitId": "az-305:3",
+          "index": 1,
+          "text": "Recommending a recovery solution for Azure and hybrid workloads that meets stated recovery objectives",
+          "sourceHash": "18ac5b862532",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-305:3:2",
+          "unitId": "az-305:3",
+          "index": 2,
+          "text": "Recommending a backup and recovery solution for compute",
+          "sourceHash": "01c6a06f4fea",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-305:3:3",
+          "unitId": "az-305:3",
+          "index": 3,
+          "text": "Recommending a backup and recovery solution for databases",
+          "sourceHash": "4a0d24b81c3c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-305:3:4",
+          "unitId": "az-305:3",
+          "index": 4,
+          "text": "Recommending a backup and recovery solution for unstructured data",
+          "sourceHash": "0aea8920b701",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-305:3:5",
+          "unitId": "az-305:3",
+          "index": 5,
+          "text": "Recommending a high availability solution for compute",
+          "sourceHash": "009d7f3d9654",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-305:3:6",
+          "unitId": "az-305:3",
+          "index": 6,
+          "text": "Recommending a high availability solution for relational data",
+          "sourceHash": "e4810a7c7b05",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-305:3:7",
+          "unitId": "az-305:3",
+          "index": 7,
+          "text": "Recommending a high availability solution for semi-structured and unstructured data",
+          "sourceHash": "219ebcd43387",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "az-305:4",
+      "index": 4,
+      "title": "Design Infrastructure Solutions",
+      "weight": 33,
+      "gate": "Given a workload's compute, application-architecture, migration, or network requirement, recommend the specific Azure solution that fits -- not a generic 'move it to Azure' answer.",
+      "objectives": [
+        {
+          "id": "az-305:4:1",
+          "unitId": "az-305:4",
+          "index": 1,
+          "text": "Specifying compute-solution components based on workload requirements",
+          "sourceHash": "68fe4d9c66b6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-305:4:2",
+          "unitId": "az-305:4",
+          "index": 2,
+          "text": "Recommending a virtual machine-based solution",
+          "sourceHash": "9c7e0575f99c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-305:4:3",
+          "unitId": "az-305:4",
+          "index": 3,
+          "text": "Recommending a container-based solution",
+          "sourceHash": "c7335e6741cc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-305:4:4",
+          "unitId": "az-305:4",
+          "index": 4,
+          "text": "Recommending a serverless-based solution",
+          "sourceHash": "d47cd2f3a2f2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-305:4:5",
+          "unitId": "az-305:4",
+          "index": 5,
+          "text": "Recommending a compute solution for batch processing",
+          "sourceHash": "12978ba4d35d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-305:4:6",
+          "unitId": "az-305:4",
+          "index": 6,
+          "text": "Recommending a messaging architecture",
+          "sourceHash": "a4148685c1bf",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-305:4:7",
+          "unitId": "az-305:4",
+          "index": 7,
+          "text": "Recommending an event-driven architecture",
+          "sourceHash": "5f11a1cb466b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-305:4:8",
+          "unitId": "az-305:4",
+          "index": 8,
+          "text": "Recommending a solution for API integration",
+          "sourceHash": "c7cb6591d582",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-305:4:9",
+          "unitId": "az-305:4",
+          "index": 9,
+          "text": "Recommending a caching solution for applications",
+          "sourceHash": "a4bdd038e0fb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-305:4:10",
+          "unitId": "az-305:4",
+          "index": 10,
+          "text": "Recommending an application configuration management solution",
+          "sourceHash": "50a2e25d05cc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-305:4:11",
+          "unitId": "az-305:4",
+          "index": 11,
+          "text": "Recommending an automated deployment solution for applications",
+          "sourceHash": "eef37642f2d9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-305:4:12",
+          "unitId": "az-305:4",
+          "index": 12,
+          "text": "Evaluating a migration solution using the Microsoft Cloud Adoption Framework for Azure",
+          "sourceHash": "c05f4bf49934",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-305:4:13",
+          "unitId": "az-305:4",
+          "index": 13,
+          "text": "Evaluating on-premises servers, data, and applications for migration",
+          "sourceHash": "44184035698e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-305:4:14",
+          "unitId": "az-305:4",
+          "index": 14,
+          "text": "Recommending a solution for migrating workloads to infrastructure as a service (IaaS) and platform as a service (PaaS)",
+          "sourceHash": "a599274d390f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-305:4:15",
+          "unitId": "az-305:4",
+          "index": 15,
+          "text": "Recommending a solution for migrating databases",
+          "sourceHash": "dfd12aa2a5f6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-305:4:16",
+          "unitId": "az-305:4",
+          "index": 16,
+          "text": "Recommending a solution for migrating unstructured data",
+          "sourceHash": "77410c9d5f87",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-305:4:17",
+          "unitId": "az-305:4",
+          "index": 17,
+          "text": "Recommending a connectivity solution that connects Azure resources to the internet",
+          "sourceHash": "7e4d0fa430f3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-305:4:18",
+          "unitId": "az-305:4",
+          "index": 18,
+          "text": "Recommending a connectivity solution that connects Azure resources to on-premises networks",
+          "sourceHash": "032b01ae286f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-305:4:19",
+          "unitId": "az-305:4",
+          "index": 19,
+          "text": "Recommending a solution to optimize network performance",
+          "sourceHash": "e215e26eee63",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-305:4:20",
+          "unitId": "az-305:4",
+          "index": 20,
+          "text": "Recommending a solution to optimize network security",
+          "sourceHash": "d94ddc57b973",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-305:4:21",
+          "unitId": "az-305:4",
+          "index": 21,
+          "text": "Recommending a load-balancing and routing solution",
+          "sourceHash": "91cd7734752b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/azure.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-18T00:00:00Z",
+    "officialObjectivesUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-305",
+    "providerName": "Microsoft",
+    "credentialName": "Microsoft Certified: Azure Solutions Architect Expert",
+    "examCode": "AZ-305",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 4,
+    "objectives": 49,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

@@ -1,0 +1,282 @@
+{
+  "id": "cspp",
+  "code": "CSPP",
+  "title": "CSPP",
+  "description": "PMI & GPM Certified Sustainable Project Professional (CSPP) exam prep across 5 weighted domains -- sustainability foundations, the PRiSM life cycle, P5 impact analysis, sustainability management planning, and ESG reporting/governance. Modeled on the Certified Practitioner pathway (for candidates who already hold a qualifying PM credential); the Non-Certified Practitioner pathway adds a sixth domain and different weights for candidates without one.",
+  "trackType": "certification",
+  "field": "pm",
+  "units": [
+    {
+      "id": "cspp:1",
+      "index": 1,
+      "title": "Foundations of Sustainable Project Work",
+      "weight": 18,
+      "gate": "Given a sustainability scenario, name the specific framework or standard it calls for -- the UN SDGs, GRI/SASB/TCFD reporting, the Triple Bottom Line -- not a generic 'be sustainable' answer.",
+      "objectives": [
+        {
+          "id": "cspp:1:1",
+          "unitId": "cspp:1",
+          "index": 1,
+          "text": "Determining sustainability objectives: why organizations adopt sustainable practices and why individuals commit to them",
+          "sourceHash": "84d6d4cecbfc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cspp:1:2",
+          "unitId": "cspp:1",
+          "index": 2,
+          "text": "Explaining the Triple Bottom Line: People, Planet, and Prosperity considerations",
+          "sourceHash": "0657d0270e19",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cspp:1:3",
+          "unitId": "cspp:1",
+          "index": 3,
+          "text": "Recalling major global frameworks: the UN Sustainable Development Goals (SDGs) and the UN Global Compact's principles",
+          "sourceHash": "1cc8136eadb2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cspp:1:4",
+          "unitId": "cspp:1",
+          "index": 4,
+          "text": "Identifying the role of sustainability reporting and ESG disclosures in project contexts: GRI, SASB, TCFD, and IFRS Sustainability Disclosure Standards, and how they differ from ESG disclosures",
+          "sourceHash": "1bbc7f5e3db9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cspp:1:5",
+          "unitId": "cspp:1",
+          "index": 5,
+          "text": "Defining sustainability, regeneration, and resilience in project environments: reducing negative environmental impact and designing projects to withstand or recover from extreme events",
+          "sourceHash": "8325f8b92c2f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "cspp:2",
+      "index": 2,
+      "title": "PRiSM (Projects Integrating Sustainable Methods) Life Cycle Approach",
+      "weight": 18,
+      "gate": "Given a project at a specific PRiSM life-cycle phase, name the specific deliverable or supporting process it calls for -- not a generic 'follow the life cycle' answer.",
+      "objectives": [
+        {
+          "id": "cspp:2:1",
+          "unitId": "cspp:2",
+          "index": 1,
+          "text": "Identifying core PRiSM concepts and principles: how PRiSM relates to traditional project management, and the PRiSM Project Life Cycle's features and key deliverables",
+          "sourceHash": "0b890f3a3199",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cspp:2:2",
+          "unitId": "cspp:2",
+          "index": 2,
+          "text": "Applying PRiSM life cycle phases to a scenario: staffing, deliverables, risk/opportunity management, cost/finance, and scheduling",
+          "sourceHash": "31362b0de880",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cspp:2:3",
+          "unitId": "cspp:2",
+          "index": 3,
+          "text": "Determining PRiSM's supporting processes: stakeholder engagement practices, estimation, team development, sustainable procurement, and performance monitoring",
+          "sourceHash": "65f09124448d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "cspp:3",
+      "index": 3,
+      "title": "P5 Standard: Sustainability and Impact Analysis",
+      "weight": 36,
+      "gate": "Given a project scenario, apply the specific P5 lens (Product, Process, People, Planet, Prosperity) it calls for -- not a generic 'consider sustainability' answer.",
+      "objectives": [
+        {
+          "id": "cspp:3:1",
+          "unitId": "cspp:3",
+          "index": 1,
+          "text": "Identifying P5 categories, subcategories, elements, perspectives, and lenses, and their impact on projects, programs, and portfolios",
+          "sourceHash": "19c5986572eb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cspp:3:2",
+          "unitId": "cspp:3",
+          "index": 2,
+          "text": "Performing a P5 Impact Analysis: Product lenses (lifespan, servicing) and Process lenses (efficiency, effectiveness, fairness)",
+          "sourceHash": "7aec93ac1d29",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cspp:3:3",
+          "unitId": "cspp:3",
+          "index": 3,
+          "text": "Evaluating P5 Impact Analysis results: analysis mechanics, assigning items to elements, and project status reporting at closure",
+          "sourceHash": "6c3cabedb94f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cspp:3:4",
+          "unitId": "cspp:3",
+          "index": 4,
+          "text": "Evaluating People impacts: labor practices and decent work, community/customer concerns, human rights considerations, and ethical behavior (anti-corruption, greenwashing)",
+          "sourceHash": "7ecf065bc58b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cspp:3:5",
+          "unitId": "cspp:3",
+          "index": 5,
+          "text": "Evaluating Planet and Prosperity impacts: transport/consumption considerations, project feasibility (business case, social ROI), business agility, and market/economic stimulation",
+          "sourceHash": "ceddd8f7078b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cspp:3:6",
+          "unitId": "cspp:3",
+          "index": 6,
+          "text": "Identifying the role of materiality in ESG disclosures and sustainability reports",
+          "sourceHash": "18ac8efe4e96",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "cspp:4",
+      "index": 4,
+      "title": "Developing a Sustainability Management Plan Based on Sustainability Standards",
+      "weight": 18,
+      "gate": "Given a Sustainability Management Plan scenario, name the specific standard, role, or threshold decision it calls for -- not a generic 'plan for sustainability' answer.",
+      "objectives": [
+        {
+          "id": "cspp:4:1",
+          "unitId": "cspp:4",
+          "index": 1,
+          "text": "Evaluating aspects of a Sustainability Management Plan against a scenario: anti-bribery standards and supporting community/social-responsibility development",
+          "sourceHash": "12ca5b55a93a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cspp:4:2",
+          "unitId": "cspp:4",
+          "index": 2,
+          "text": "Identifying the project manager's role and responsibilities in implementing a Sustainability Management Plan, including systems-thinking concepts and distinguishing PM/sponsor/PMO roles",
+          "sourceHash": "53bf868ab690",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cspp:4:3",
+          "unitId": "cspp:4",
+          "index": 3,
+          "text": "Assessing sustainability impact thresholds: organizational thresholds, value-chain impact, and regulatory compliance consequences",
+          "sourceHash": "4c644cf3ebf8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cspp:4:4",
+          "unitId": "cspp:4",
+          "index": 4,
+          "text": "Defining KPIs and managing sustainability concerns in procurement: supplier selection, contract types, and contract management",
+          "sourceHash": "69ef990792a0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "cspp:5",
+      "index": 5,
+      "title": "ESG & Sustainability Reporting, Governance, and Project Communications",
+      "weight": 11,
+      "gate": "Given a sustainability-communications scenario, apply the specific reporting or governance step it calls for -- not a generic 'communicate transparently' answer.",
+      "objectives": [
+        {
+          "id": "cspp:5:1",
+          "unitId": "cspp:5",
+          "index": 1,
+          "text": "Identifying types of sustainability-related communications and their purpose: building trust, increasing transparency, and avoiding greenwashing",
+          "sourceHash": "33a68cc91856",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cspp:5:2",
+          "unitId": "cspp:5",
+          "index": 2,
+          "text": "Explaining the link between project activities, ESG disclosures, and sustainability reporting, including the role of materiality",
+          "sourceHash": "080da455e91c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cspp:5:3",
+          "unitId": "cspp:5",
+          "index": 3,
+          "text": "Determining an appropriate governance framework for a given scenario: characteristics of good governance",
+          "sourceHash": "aaf88fdf1c48",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/pm.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-27T00:00:00Z",
+    "officialObjectivesUrl": "https://www.pmi.org/-/media/pmi/documents/public/pdf/certifications/cspp/cspp-exam-content-outline_2026.pdf",
+    "providerName": "Project Management Institute (PMI)",
+    "credentialName": "PMI & GPM Certified Sustainable Project Professional (CSPP)",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 5,
+    "objectives": 21,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

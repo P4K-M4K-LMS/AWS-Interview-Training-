@@ -4,6 +4,7 @@
   "title": "AWS CloudOps Engineer Associate",
   "description": "AWS Certified CloudOps Engineer - Associate (SOA-C03), formerly SysOps Administrator - Associate: running workloads day to day -- monitoring and remediation, reliability and backups, provisioning and automation, security and compliance, and networking when the packets do not arrive.",
   "trackType": "certification",
+  "field": "aws",
   "units": [
     {
       "id": "soa-c03:1",

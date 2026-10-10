@@ -1,0 +1,523 @@
+{
+  "id": "gcpdbe",
+  "code": "GCPDBE",
+  "title": "Google Cloud Professional Cloud Database Engineer",
+  "description": "Google Cloud Professional Cloud Database Engineer: designing scalable, highly available database solutions, managing solutions across multiple database technologies, migrating data into Google Cloud, and deploying and scaling databases in production.",
+  "trackType": "certification",
+  "field": "gcp",
+  "units": [
+    {
+      "id": "gcpdbe:1",
+      "index": 1,
+      "title": "Designing Scalable and Highly Available Cloud Database Solutions",
+      "weight": 32,
+      "gate": "Given a data shape and an availability requirement, choose the specific Google Cloud database product that fits -- and say why a near-miss alternative doesn't.",
+      "objectives": [
+        {
+          "id": "gcpdbe:1:1",
+          "unitId": "gcpdbe:1",
+          "index": 1,
+          "text": "Sizing a database solution against current workload metrics and future requirements",
+          "sourceHash": "8e068296f7dd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdbe:1:2",
+          "unitId": "gcpdbe:1",
+          "index": 2,
+          "text": "Evaluating performance and cost trade-offs across database configurations: machine types, storage types",
+          "sourceHash": "27906ea4e975",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdbe:1:3",
+          "unitId": "gcpdbe:1",
+          "index": 3,
+          "text": "Sizing database compute and storage for performance requirements",
+          "sourceHash": "04ce2ff543c8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdbe:1:4",
+          "unitId": "gcpdbe:1",
+          "index": 4,
+          "text": "Evaluating trade-offs between multi-regional, regional, and zonal database deployment",
+          "sourceHash": "03c8fa6720d0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdbe:1:5",
+          "unitId": "gcpdbe:1",
+          "index": 5,
+          "text": "Defining maintenance windows and notifications against application availability requirements",
+          "sourceHash": "f1afc5d414eb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdbe:1:6",
+          "unitId": "gcpdbe:1",
+          "index": 6,
+          "text": "Configuring networking, key management, encryption, and security for application-to-database connectivity",
+          "sourceHash": "77a465ea1c3f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdbe:1:7",
+          "unitId": "gcpdbe:1",
+          "index": 7,
+          "text": "Justifying the use of session pooler services",
+          "sourceHash": "dcd747a9b289",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdbe:1:8",
+          "unitId": "gcpdbe:1",
+          "index": 8,
+          "text": "Assessing auditing policies for managed database services",
+          "sourceHash": "5d384e9e38ad",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdbe:1:9",
+          "unitId": "gcpdbe:1",
+          "index": 9,
+          "text": "Differentiating managed from unmanaged database services: self-managed, bare metal, Google-managed, Google Cloud native and partner offerings",
+          "sourceHash": "aa03b6b2133b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdbe:1:10",
+          "unitId": "gcpdbe:1",
+          "index": 10,
+          "text": "Distinguishing SQL from NoSQL by business requirement: structured, semi-structured, unstructured, vector data",
+          "sourceHash": "3752bd9ac0b2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdbe:1:11",
+          "unitId": "gcpdbe:1",
+          "index": 11,
+          "text": "Analyzing the comparative cost of running database solutions on Google Cloud",
+          "sourceHash": "e5f9b1962a99",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdbe:1:12",
+          "unitId": "gcpdbe:1",
+          "index": 12,
+          "text": "Assessing application and database dependencies",
+          "sourceHash": "eae1ba068d34",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdbe:1:13",
+          "unitId": "gcpdbe:1",
+          "index": 13,
+          "text": "Identifying database solutions that support regulatory and compliance requirements",
+          "sourceHash": "29e3af981f5e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdbe:1:14",
+          "unitId": "gcpdbe:1",
+          "index": 14,
+          "text": "Understanding how organizational policy constrains database strategy",
+          "sourceHash": "03d5d6acf03e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdbe:1:15",
+          "unitId": "gcpdbe:1",
+          "index": 15,
+          "text": "Designing solutions that span multiple database technologies: federation, exports, hybrid deployments",
+          "sourceHash": "eb8224bf4b14",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdbe:1:16",
+          "unitId": "gcpdbe:1",
+          "index": 16,
+          "text": "Using database technologies to support generative AI and LLM use cases",
+          "sourceHash": "bd4a2e24a172",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "gcpdbe:2",
+      "index": 2,
+      "title": "Managing a Solution That Spans Multiple Database Technologies",
+      "weight": 25,
+      "gate": "Given a running database, say specifically what to monitor, back up, or scale -- not a generic 'keep it healthy' answer.",
+      "objectives": [
+        {
+          "id": "gcpdbe:2:1",
+          "unitId": "gcpdbe:2",
+          "index": 1,
+          "text": "Determining IAM and access policy for database connectivity",
+          "sourceHash": "865bd74d15a2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdbe:2:2",
+          "unitId": "gcpdbe:2",
+          "index": 2,
+          "text": "Managing database users: authentication and access",
+          "sourceHash": "4263b8eac074",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdbe:2:3",
+          "unitId": "gcpdbe:2",
+          "index": 3,
+          "text": "Assessing slow-running queries, database locking, and missing indexes",
+          "sourceHash": "26c749065988",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdbe:2:4",
+          "unitId": "gcpdbe:2",
+          "index": 4,
+          "text": "Monitoring database vitals: RAM, CPU, storage, I/O, audit logging",
+          "sourceHash": "87d205b6dfbb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdbe:2:5",
+          "unitId": "gcpdbe:2",
+          "index": 5,
+          "text": "Monitoring and updating database quotas",
+          "sourceHash": "8664ce0bf778",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdbe:2:6",
+          "unitId": "gcpdbe:2",
+          "index": 6,
+          "text": "Investigating database resource contention",
+          "sourceHash": "5466c279dca0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdbe:2:7",
+          "unitId": "gcpdbe:2",
+          "index": 7,
+          "text": "Setting up alerts for errors and performance metrics",
+          "sourceHash": "391f3fc7a885",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdbe:2:8",
+          "unitId": "gcpdbe:2",
+          "index": 8,
+          "text": "Recommending backup and recovery options, including automatic scheduled backups",
+          "sourceHash": "dd3ac2e32981",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdbe:2:9",
+          "unitId": "gcpdbe:2",
+          "index": 9,
+          "text": "Configuring data export and import for databases",
+          "sourceHash": "0202d87df7d7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdbe:2:10",
+          "unitId": "gcpdbe:2",
+          "index": 10,
+          "text": "Designing for RTO, RPO, and point-in-time recovery",
+          "sourceHash": "52eb12e8cd9d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdbe:2:11",
+          "unitId": "gcpdbe:2",
+          "index": 11,
+          "text": "Managing data retention policy",
+          "sourceHash": "af6f213bf57d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdbe:2:12",
+          "unitId": "gcpdbe:2",
+          "index": 12,
+          "text": "Assessing scale-up versus scale-out options",
+          "sourceHash": "713c03733f60",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdbe:2:13",
+          "unitId": "gcpdbe:2",
+          "index": 13,
+          "text": "Scaling database instances against current and upcoming workload",
+          "sourceHash": "d51edce210f1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdbe:2:14",
+          "unitId": "gcpdbe:2",
+          "index": 14,
+          "text": "Defining replication strategies",
+          "sourceHash": "6239a4958ac1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdbe:2:15",
+          "unitId": "gcpdbe:2",
+          "index": 15,
+          "text": "Continuously assessing and optimizing database solution cost",
+          "sourceHash": "e833ca86e633",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdbe:2:16",
+          "unitId": "gcpdbe:2",
+          "index": 16,
+          "text": "Optimizing queries for cost and performance",
+          "sourceHash": "f3c14ace2778",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdbe:2:17",
+          "unitId": "gcpdbe:2",
+          "index": 17,
+          "text": "Performing database maintenance: rebuilding indexes, data exports",
+          "sourceHash": "0b6313c4a4d4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdbe:2:18",
+          "unitId": "gcpdbe:2",
+          "index": 18,
+          "text": "Scheduling database exports",
+          "sourceHash": "ed4bf3d9e716",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdbe:2:19",
+          "unitId": "gcpdbe:2",
+          "index": 19,
+          "text": "Managing upgrades for Google Cloud-managed databases",
+          "sourceHash": "357e72568736",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdbe:2:20",
+          "unitId": "gcpdbe:2",
+          "index": 20,
+          "text": "Monitoring database SLAs and SLOs",
+          "sourceHash": "2395ea9c487f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "gcpdbe:3",
+      "index": 3,
+      "title": "Migrating Data Solutions",
+      "weight": 23,
+      "gate": "Given a source database outside Google Cloud, name the specific migration tool and strategy that fits its downtime tolerance -- zero-downtime, near-zero, or an extended outage window.",
+      "objectives": [
+        {
+          "id": "gcpdbe:3:1",
+          "unitId": "gcpdbe:3",
+          "index": 1,
+          "text": "Developing and executing a migration strategy: zero/near-zero downtime, extended outage, fallback",
+          "sourceHash": "92940af7161b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdbe:3:2",
+          "unitId": "gcpdbe:3",
+          "index": 2,
+          "text": "Reverse-replicating from Google Cloud back to a source database",
+          "sourceHash": "ebff94a83e7a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdbe:3:3",
+          "unitId": "gcpdbe:3",
+          "index": 3,
+          "text": "Planning a database migration, including fallback plans and DDL/DML conversion",
+          "sourceHash": "cb7b7c4ce9a9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdbe:3:4",
+          "unitId": "gcpdbe:3",
+          "index": 4,
+          "text": "Choosing the correct database migration tool for a given scenario, including databases hosted outside Google Cloud",
+          "sourceHash": "cb29c439ffe8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "gcpdbe:4",
+      "index": 4,
+      "title": "Deploying Scalable and Highly Available Databases in Google Cloud",
+      "weight": 20,
+      "gate": "Given a production database, say what specifically makes it 'highly available' -- not just that it runs on managed infrastructure.",
+      "objectives": [
+        {
+          "id": "gcpdbe:4:1",
+          "unitId": "gcpdbe:4",
+          "index": 1,
+          "text": "Provisioning highly available database solutions in Google Cloud",
+          "sourceHash": "c7f9547b5457",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdbe:4:2",
+          "unitId": "gcpdbe:4",
+          "index": 2,
+          "text": "Testing high availability and disaster recovery strategies",
+          "sourceHash": "069ab05effff",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdbe:4:3",
+          "unitId": "gcpdbe:4",
+          "index": 3,
+          "text": "Setting up multi-regional replication for databases",
+          "sourceHash": "fbf28724f623",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdbe:4:4",
+          "unitId": "gcpdbe:4",
+          "index": 4,
+          "text": "Deploying and scaling read replicas",
+          "sourceHash": "aa47309edc24",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdbe:4:5",
+          "unitId": "gcpdbe:4",
+          "index": 5,
+          "text": "Automating database instance provisioning",
+          "sourceHash": "5eeea5ce37c4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpdbe:4:6",
+          "unitId": "gcpdbe:4",
+          "index": 6,
+          "text": "Configuring monitoring for highly available databases",
+          "sourceHash": "1f6280ecaede",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/gcp.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-24T00:00:00Z",
+    "officialObjectivesUrl": "https://cloud.google.com/learn/certification/guides/cloud-database-engineer",
+    "providerName": "Google Cloud",
+    "credentialName": "Google Cloud Professional Cloud Database Engineer",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 4,
+    "objectives": 46,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

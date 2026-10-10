@@ -8,7 +8,7 @@
  * neutrality for anything OpsForge would build. Bump PROMPT_VERSION whenever
  * wording here changes so stale lessons are regenerated.
  */
-import type { StudyCourse, StudyObjective, StudyUnit } from "../../src/domain/types.ts";
+import type { StudyCourse, StudyField, StudyObjective, StudyUnit } from "../../src/domain/types.ts";
 
 export const PROMPT_VERSION = 2;
 export const SCRIPT_VERSION = 1;
@@ -23,7 +23,31 @@ export interface LessonContext {
   engines: Array<{ id: string; name: string }>;
 }
 
-const RULES = `You write study material for OpsForge, a free, unofficial training site. The learner is an adult beginner moving into an engineering job. Rules, always:
+/**
+ * Who the learner is, by field. The technology fields keep the original
+ * wording, so the lessons already generated under PROMPT_VERSION 2 are not
+ * stale; the other fields had no lessons when their wording was added.
+ */
+const AUDIENCE: Partial<Record<StudyField, string>> = {
+  pm: "The learner is an adult beginner moving into a project management role.",
+  nursing: "The learner is an adult student preparing for a nursing exam or programme.",
+  pt: "The learner is an adult student preparing for a physical therapy exam or programme.",
+  fitness: "The learner is an adult beginner preparing for a fitness professional certification.",
+};
+const ENGINEERING_AUDIENCE = "The learner is an adult beginner moving into an engineering job.";
+
+/** Extra rules for courses where acting on a wrong answer can hurt someone. */
+const HEALTH_RULES = `
+- This is exam preparation, not clinical guidance. Teach the principle the exam tests; do not give individual medical, dosing or treatment advice, and never invent a drug dose, lab value, protocol number or guideline name you are not certain of.
+- Where practice differs by country, state, facility or current guideline, say so in one sentence and teach the widely taught exam answer.
+- Use only fictional patients and clients, never a real person.`;
+
+function rules(c: StudyCourse): string {
+  const health = c.field === "nursing" || c.field === "pt" || c.field === "fitness";
+  return RULES.replace(ENGINEERING_AUDIENCE, AUDIENCE[c.field] ?? ENGINEERING_AUDIENCE).replace("\n- Output only the JSON", `${health ? HEALTH_RULES : ""}\n- Output only the JSON`);
+}
+
+const RULES = `You write study material for OpsForge, a free, unofficial training site. ${ENGINEERING_AUDIENCE} Rules, always:
 - Plain language. Define every named term on first use, never just the first one.
 - Lead with the direct definition, then why it works, one short worked example traced step by step, one common mistake, and the consequence for a running system where that matters.
 - Stay inside the objective and the course's scope. Any question you write must be answerable from your own teaching text alone.
@@ -132,7 +156,7 @@ Hands-on engines OpsForge plans to build (for the "suggested" field only):
 ${engines}
 
 Write the lesson for this one objective as the schema describes.`;
-  return { system: `${RULES}\n\nYou are writing the teaching half of a lesson that is stored once and reused, so it must stand alone.`, user };
+  return { system: `${rules(ctx.course)}\n\nYou are writing the teaching half of a lesson that is stored once and reused, so it must stand alone.`, user };
 }
 
 export function bankPrompt(ctx: LessonContext, teach: string): { system: string; user: string } {
@@ -148,7 +172,7 @@ ${teach}
 Write one "fade" question and three "solo" questions as the schema describes. Each question has exactly four choices. Vary the correct position; never make the longest choice the correct one by habit.
 
 Every question, the fade question included, must use a situation that does not appear in the teaching text: a different organisation, different resources and different numbers. Do not restate the worked example or any list of steps from the teaching text with one item removed; a learner must be able to answer by applying the idea, not by remembering what they just read.`;
-  return { system: `${RULES}\n\nYou are writing the check-question bank for one objective. The questions are served one at a time, unseen ones first, and again as spaced reviews, so they must each stand alone.`, user };
+  return { system: `${rules(ctx.course)}\n\nYou are writing the check-question bank for one objective. The questions are served one at a time, unseen ones first, and again as spaced reviews, so they must each stand alone.`, user };
 }
 
 export function scenarioPrompt(course: StudyCourse, unit: StudyUnit): { system: string; user: string } {
@@ -159,5 +183,5 @@ Objectives this unit covers:
 ${objectives}
 
 Write one multi-part scenario for this unit as the schema describes. Set it at a fictional company, not at any real organisation.`;
-  return { system: `${RULES}\n\nYou are writing a performance-style scenario: one realistic situation with 2-4 numbered sub-tasks, graded per sub-task against your model answers.`, user };
+  return { system: `${rules(course)}\n\nYou are writing a performance-style scenario: one realistic situation with 2-4 numbered sub-tasks, graded per sub-task against your model answers.`, user };
 }

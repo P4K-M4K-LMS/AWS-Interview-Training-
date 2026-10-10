@@ -1,4 +1,5 @@
 import { Link, useParams } from "react-router-dom";
+import { HealthGate } from "../../components/study/HealthGate";
 import { Callout, PageHeader, Panel } from "../../components/ui";
 import { MISSION_BY_ID } from "../../content/missions";
 import { STUDY_DISCLAIMER } from "../../content/study/disclaimer";
@@ -107,58 +108,60 @@ export function StudyUnitPage() {
   const engine = unit.gateEngine ? ENGINE_BY_ID.get(unit.gateEngine) : undefined;
   const unitReadiness = courseReadiness({ units: [unit] }, states);
   return (
-    <div className="space-y-5">
-      <PageHeader
-        title={`${unit.index}. ${unit.title}`}
-        subtitle={
-          <>
-            <Link to="/study" className="underline">Study</Link> · <Link to={`/study/${c.id}`} className="underline">{c.title}</Link>
-            {unit.weight !== undefined && ` · ${unit.weight}% of the exam`}
-            {unit.rangeLabel && ` · ${unit.rangeLabel}`}
-            {learnable.length > 0 && ` · ${unitReadiness.mastered} of ${unitReadiness.total} at Independent or better`}
-          </>
-        }
-      />
-      {unit.gate && learnable.length > 0 && (
-        <Callout kind="info" title="What mastery of this unit means">
-          <span data-testid="study-gate">{unit.gate}</span>
-          {engine && engine.status === "built" && engine.lab && (
-            <p className="mt-2 text-xs">
-              Lab: <Link to={engine.lab} className="underline"><strong>{engine.name}</strong></Link>. {engine.what}
-            </p>
-          )}
-          {engine && engine.status !== "built" && (
-            <p className="mt-2 text-xs">
-              Lab planned: <strong>{engine.name}</strong>. {engine.what} Until it exists, objectives in this unit stop at "Independent".
-            </p>
-          )}
-        </Callout>
-      )}
-      {learnable.length > 0 && (
-        <Panel title={`Objectives (${learnable.length})${style && style !== "mixed" ? `, ${style} first` : ""}`}>
-          <ol className="space-y-2" data-testid="study-objectives">
-            {learnable.map((o) => <ObjectiveRow key={o.id} o={o} state={states.get(o.id)} courseId={c.id} unitIndex={unit.index} hasLesson={lessonIds.has(o.id)} />)}
-          </ol>
-          {lessons.status === "ready" && lessons.data.byObjective.size === 0 && <p className="muted text-xs mt-3" data-testid="unit-no-lessons">No lessons generated for this course yet; objectives open to their catalog entry and mission link.</p>}
-          <p className="muted text-xs mt-3">Status follows the 0–4 rubric: a mission credit reaches Guided, open answers you rate yourself reach Independent, Transfer-ready needs two answers graded by the proxy. Lessons and check questions arrive with the generated content; the mission links work today.</p>
-        </Panel>
-      )}
-      {scenario && learnable.length > 0 && <ScenarioPlayer scenario={scenario} state={unitStates.get(unit.id)} settings={profile?.settings ?? DEFAULT_SETTINGS} />}
-      {bookkeeping.length > 0 && (
-        <details className="panel p-3" data-testid="study-bookkeeping">
-          <summary className="cursor-pointer text-sm">
-            {bookkeeping.length} degree-plan lines (requirements, not learning objectives)
-          </summary>
-          <ul className="mt-2 text-sm muted list-disc pl-5 space-y-1">
-            {bookkeeping.map((o) => <li key={o.id}>{o.text}</li>)}
-          </ul>
-        </details>
-      )}
-      <div className="flex justify-between text-sm">
-        {prev ? <Link to={`/study/${c.id}/${prev.index}`} className="btn-ghost">← {prev.title}</Link> : <span />}
-        {next ? <Link to={`/study/${c.id}/${next.index}`} className="btn-ghost">{next.title} →</Link> : <span />}
+    <HealthGate course={c}>
+      <div className="space-y-5">
+        <PageHeader
+          title={`${unit.index}. ${unit.title}`}
+          subtitle={
+            <>
+              <Link to="/study" className="underline">Study</Link> · <Link to={`/study/${c.id}`} className="underline">{c.title}</Link>
+              {unit.weight !== undefined && ` · ${unit.weight}% of the exam`}
+              {unit.rangeLabel && ` · ${unit.rangeLabel}`}
+              {learnable.length > 0 && ` · ${unitReadiness.mastered} of ${unitReadiness.total} at Independent or better`}
+            </>
+          }
+        />
+        {unit.gate && learnable.length > 0 && (
+          <Callout kind="info" title="What mastery of this unit means">
+            <span data-testid="study-gate">{unit.gate}</span>
+            {engine && engine.status === "built" && engine.lab && (
+              <p className="mt-2 text-xs">
+                Lab: <Link to={engine.lab} className="underline"><strong>{engine.name}</strong></Link>. {engine.what}
+              </p>
+            )}
+            {engine && engine.status !== "built" && (
+              <p className="mt-2 text-xs">
+                Lab planned: <strong>{engine.name}</strong>. {engine.what} Until it exists, objectives in this unit stop at "Independent".
+              </p>
+            )}
+          </Callout>
+        )}
+        {learnable.length > 0 && (
+          <Panel title={`Objectives (${learnable.length})${style && style !== "mixed" ? `, ${style} first` : ""}`}>
+            <ol className="space-y-2" data-testid="study-objectives">
+              {learnable.map((o) => <ObjectiveRow key={o.id} o={o} state={states.get(o.id)} courseId={c.id} unitIndex={unit.index} hasLesson={lessonIds.has(o.id)} />)}
+            </ol>
+            {lessons.status === "ready" && lessons.data.byObjective.size === 0 && <p className="muted text-xs mt-3" data-testid="unit-no-lessons">No lessons generated for this course yet; objectives open to their catalog entry and mission link.</p>}
+            <p className="muted text-xs mt-3">Status follows the 0–4 rubric: a mission credit reaches Guided, open answers you rate yourself reach Independent, Transfer-ready needs two answers graded by the proxy. Lessons and check questions arrive with the generated content; the mission links work today.</p>
+          </Panel>
+        )}
+        {scenario && learnable.length > 0 && <ScenarioPlayer scenario={scenario} state={unitStates.get(unit.id)} settings={profile?.settings ?? DEFAULT_SETTINGS} />}
+        {bookkeeping.length > 0 && (
+          <details className="panel p-3" data-testid="study-bookkeeping">
+            <summary className="cursor-pointer text-sm">
+              {bookkeeping.length} degree-plan lines (requirements, not learning objectives)
+            </summary>
+            <ul className="mt-2 text-sm muted list-disc pl-5 space-y-1">
+              {bookkeeping.map((o) => <li key={o.id}>{o.text}</li>)}
+            </ul>
+          </details>
+        )}
+        <div className="flex justify-between text-sm">
+          {prev ? <Link to={`/study/${c.id}/${prev.index}`} className="btn-ghost">← {prev.title}</Link> : <span />}
+          {next ? <Link to={`/study/${c.id}/${next.index}`} className="btn-ghost">{next.title} →</Link> : <span />}
+        </div>
+        <p className="muted text-xs">{STUDY_DISCLAIMER}</p>
       </div>
-      <p className="muted text-xs">{STUDY_DISCLAIMER}</p>
-    </div>
+    </HealthGate>
   );
 }

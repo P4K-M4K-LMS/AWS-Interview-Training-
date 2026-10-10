@@ -1,0 +1,223 @@
+{
+  "id": "pmicp",
+  "code": "PMICP",
+  "title": "PMI-CP",
+  "description": "PMI Construction Professional (PMI-CP) exam prep across 4 weighted domains -- contracts management, stakeholder engagement, strategy/scope management, and project governance for built-environment and capital projects.",
+  "trackType": "certification",
+  "field": "pm",
+  "units": [
+    {
+      "id": "pmicp:1",
+      "index": 1,
+      "title": "Contracts Management",
+      "weight": 50,
+      "gate": "Given a construction contract scenario, apply the specific delivery-method, claims, or interface-management technique it calls for -- not a generic 'manage the contract' answer.",
+      "objectives": [
+        {
+          "id": "pmicp:1:1",
+          "unitId": "pmicp:1",
+          "index": 1,
+          "text": "Managing project risk throughout the contract lifecycle: recognizing positive risk, applying risk classifications, and prioritizing risk during Front End Planning",
+          "sourceHash": "ab5946eca748",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmicp:1:2",
+          "unitId": "pmicp:1",
+          "index": 2,
+          "text": "Applying risk tools: Integrated Project Risk Assessment (IPRA), Monte Carlo simulation, probabilistic risk techniques, and risk registers",
+          "sourceHash": "1b8eeadad199",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmicp:1:3",
+          "unitId": "pmicp:1",
+          "index": 3,
+          "text": "Managing the claims process: distinguishing change/variation orders from claims, using lessons learned to spot problematic patterns, and applying dispute-resolution techniques",
+          "sourceHash": "bf6a4c6b2e15",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmicp:1:4",
+          "unitId": "pmicp:1",
+          "index": 4,
+          "text": "Recognizing how contract type and delivery method selection affect claims frequency, and using early-intervention points to reach resolution",
+          "sourceHash": "40ed0b96a412",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmicp:1:5",
+          "unitId": "pmicp:1",
+          "index": 5,
+          "text": "Managing the full contract lifecycle from discovery to closeout, including Lean Integrated Project Delivery (IPD/IFOA) and advising senior stakeholders on delivery method fit",
+          "sourceHash": "9f1833667885",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmicp:1:6",
+          "unitId": "pmicp:1",
+          "index": 6,
+          "text": "Implementing interface management: planning interface points (IPs) across packages, classifying interfaces on mega projects, and applying industry-leading frameworks",
+          "sourceHash": "e60e168c6145",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "pmicp:2",
+      "index": 2,
+      "title": "Stakeholder Engagement",
+      "weight": 30,
+      "gate": "Given a stakeholder communication breakdown, apply the specific tool or technique it calls for -- a PMIS update, an Obeya/Big Room practice -- not generic 'communicate better' advice.",
+      "objectives": [
+        {
+          "id": "pmicp:2:1",
+          "unitId": "pmicp:2",
+          "index": 1,
+          "text": "Using communication tools: PMIS, a central communication platform, Obeya/Big Room practices (and their common pitfalls), and Commitment-based Management (CbM)",
+          "sourceHash": "016d83c70355",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmicp:2:2",
+          "unitId": "pmicp:2",
+          "index": 2,
+          "text": "Preventing communication issues: building stakeholder buy-in at project outset and crafting audience-tailored messaging",
+          "sourceHash": "976f0281f27e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmicp:2:3",
+          "unitId": "pmicp:2",
+          "index": 3,
+          "text": "Mitigating communication issues as they emerge: feedback loops that surface gaps, and action plans to resolve them",
+          "sourceHash": "a49977ee8d2d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmicp:2:4",
+          "unitId": "pmicp:2",
+          "index": 4,
+          "text": "Managing stakeholders effectively: identifying and assessing stakeholders, and recognizing cultural factors that affect communication",
+          "sourceHash": "577db6b93167",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "pmicp:3",
+      "index": 3,
+      "title": "Strategy and Scope Management",
+      "weight": 15,
+      "gate": "Given a scope-change scenario, apply the specific change-order or scope-management technique it calls for -- not a generic 'control scope' answer.",
+      "objectives": [
+        {
+          "id": "pmicp:3:1",
+          "unitId": "pmicp:3",
+          "index": 1,
+          "text": "Defining scope focused on project outcomes and mission, and implementing scope revisions to mature project scope accurately",
+          "sourceHash": "2ffe326c636e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmicp:3:2",
+          "unitId": "pmicp:3",
+          "index": 2,
+          "text": "Building and managing a change-order process: timing it appropriately in the project lifecycle and designing agile processes for rapid change orders",
+          "sourceHash": "d74b9bc9bf5b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmicp:3:3",
+          "unitId": "pmicp:3",
+          "index": 3,
+          "text": "Evaluating scope changes against core project outcomes, weighing the benefits and downfalls of technology-assisted scope/change-order management",
+          "sourceHash": "4af91d6a928e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmicp:3:4",
+          "unitId": "pmicp:3",
+          "index": 4,
+          "text": "Applying scope-management tools and techniques (value engineering, cost-benefit analysis) to identify and close scope gaps",
+          "sourceHash": "8adb09603c29",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "pmicp:4",
+      "index": 4,
+      "title": "Project Governance",
+      "weight": 5,
+      "gate": "Given a governance decision point, name the specific structure or practice it calls for -- not a generic 'follow governance' answer.",
+      "objectives": [
+        {
+          "id": "pmicp:4:1",
+          "unitId": "pmicp:4",
+          "index": 1,
+          "text": "Implementing governance models that drive project outcomes on built-environment projects",
+          "sourceHash": "47bc7cfb0f52",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmicp:4:2",
+          "unitId": "pmicp:4",
+          "index": 2,
+          "text": "Setting up scope governance structures and practices specific to construction projects",
+          "sourceHash": "f18a33073773",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/pm.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-27T00:00:00Z",
+    "officialObjectivesUrl": "https://www.pmi.org/-/media/pmi/documents/public/pdf/certifications/pmicp-exam-content-outline.pdf",
+    "providerName": "Project Management Institute (PMI)",
+    "credentialName": "PMI Construction Professional (PMI-CP)",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 4,
+    "objectives": 16,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

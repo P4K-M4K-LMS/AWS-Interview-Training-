@@ -1,0 +1,403 @@
+{
+  "id": "n10-009",
+  "code": "NETWORKPLUS",
+  "title": "Network+",
+  "description": "CompTIA Network+ (N10-009) exam prep across 5 weighted domains -- networking concepts, implementation, operations, security, and troubleshooting.",
+  "trackType": "certification",
+  "field": "it",
+  "units": [
+    {
+      "id": "n10-009:1",
+      "index": 1,
+      "title": "Networking Concepts",
+      "weight": 23,
+      "gate": "Given a network diagram or a described topology, name the OSI layer, appliance, and address type actually in play -- not a generic 'it's networking' answer.",
+      "objectives": [
+        {
+          "id": "n10-009:1:1",
+          "unitId": "n10-009:1",
+          "index": 1,
+          "text": "The OSI model layers, from physical through application, and which device or protocol operates at each",
+          "sourceHash": "fb1fd81781c1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "n10-009:1:2",
+          "unitId": "n10-009:1",
+          "index": 2,
+          "text": "Networking appliance roles: routers, switches, firewalls, IDS/IPS, load balancers, proxies, NAS, and SAN",
+          "sourceHash": "a93ea8008a28",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "n10-009:1:3",
+          "unitId": "n10-009:1",
+          "index": 3,
+          "text": "Cloud networking concepts: NFV, VPCs, network security groups, and cloud deployment/service models",
+          "sourceHash": "18308a9378d2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "n10-009:1:4",
+          "unitId": "n10-009:1",
+          "index": 4,
+          "text": "Common ports and protocols: FTP, SSH, DNS, DHCP, HTTP/S, SNMP, LDAP, RDP, and SIP",
+          "sourceHash": "bf9e7d5c63af",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "n10-009:1:5",
+          "unitId": "n10-009:1",
+          "index": 5,
+          "text": "Traffic types: unicast, multicast, anycast, and broadcast",
+          "sourceHash": "0a0c5f7e295c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "n10-009:1:6",
+          "unitId": "n10-009:1",
+          "index": 6,
+          "text": "Transmission media: wireless standards and wired cable types by use case",
+          "sourceHash": "1bd3eba4434e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "n10-009:1:7",
+          "unitId": "n10-009:1",
+          "index": 7,
+          "text": "Transceivers and connectors: SC, LC, ST, MPO, RJ11, RJ45, F-type, and BNC",
+          "sourceHash": "84288565a356",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "n10-009:1:8",
+          "unitId": "n10-009:1",
+          "index": 8,
+          "text": "Network topologies: mesh, star, spine-and-leaf, and three-tier designs",
+          "sourceHash": "a0fc53a3a6b5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "n10-009:1:9",
+          "unitId": "n10-009:1",
+          "index": 9,
+          "text": "IPv4 addressing: public vs. private ranges, subnetting, and address classes",
+          "sourceHash": "a0cdf3ed50e6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "n10-009:2",
+      "index": 2,
+      "title": "Network Implementation",
+      "weight": 20,
+      "gate": "Given a routing, switching, or wireless requirement, configure the specific technology that satisfies it and explain why a near-miss alternative would not.",
+      "objectives": [
+        {
+          "id": "n10-009:2:1",
+          "unitId": "n10-009:2",
+          "index": 1,
+          "text": "Routing technologies: static vs. dynamic routing, NAT, PAT, and first-hop redundancy protocols (FHRP, VIP)",
+          "sourceHash": "7cd1ceac3f62",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "n10-009:2:2",
+          "unitId": "n10-009:2",
+          "index": 2,
+          "text": "Switching technologies: VLANs, spanning tree, MTU, and jumbo frames",
+          "sourceHash": "eb2907e63fa8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "n10-009:2:3",
+          "unitId": "n10-009:2",
+          "index": 3,
+          "text": "Wireless device configuration: channels, SSIDs, encryption, authentication, and antenna types",
+          "sourceHash": "c3b25dd8f920",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "n10-009:2:4",
+          "unitId": "n10-009:2",
+          "index": 4,
+          "text": "Physical installation considerations: power redundancy and environmental controls",
+          "sourceHash": "42b768096842",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "n10-009:3",
+      "index": 3,
+      "title": "Network Operations",
+      "weight": 19,
+      "gate": "Given an ongoing network to run, produce or update the specific documentation, monitoring, or recovery artifact the situation calls for -- not a vague 'monitor it' answer.",
+      "objectives": [
+        {
+          "id": "n10-009:3:1",
+          "unitId": "n10-009:3",
+          "index": 1,
+          "text": "Documentation practices: network diagrams, rack layouts, asset inventory, IPAM, and SLAs",
+          "sourceHash": "38ed229ad9d8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "n10-009:3:2",
+          "unitId": "n10-009:3",
+          "index": 2,
+          "text": "Life-cycle management: end-of-life, end-of-support, and decommissioning procedures",
+          "sourceHash": "bffba01e606f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "n10-009:3:3",
+          "unitId": "n10-009:3",
+          "index": 3,
+          "text": "Change and configuration management processes",
+          "sourceHash": "9cc954819c7f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "n10-009:3:4",
+          "unitId": "n10-009:3",
+          "index": 4,
+          "text": "Network monitoring: SNMP, flow data, packet capture, and log aggregation",
+          "sourceHash": "9f2a61cbb4a9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "n10-009:3:5",
+          "unitId": "n10-009:3",
+          "index": 5,
+          "text": "Disaster recovery concepts: RPO, RTO, MTTR, MTBF, and site types",
+          "sourceHash": "e6b0aef4dd68",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "n10-009:3:6",
+          "unitId": "n10-009:3",
+          "index": 6,
+          "text": "Network services: DHCP, SLAAC, DNS, NTP, PTP, and NTS",
+          "sourceHash": "d8a81f1df03d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "n10-009:3:7",
+          "unitId": "n10-009:3",
+          "index": 7,
+          "text": "Remote access and management methods: VPNs, SSH, GUI, API, and console access",
+          "sourceHash": "55b4c3f0c45a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "n10-009:4",
+      "index": 4,
+      "title": "Network Security",
+      "weight": 14,
+      "gate": "Given a network to harden or an incident to classify, apply the specific security control or terminology that matches the threat -- not a generic 'lock it down' response.",
+      "objectives": [
+        {
+          "id": "n10-009:4:1",
+          "unitId": "n10-009:4",
+          "index": 1,
+          "text": "Logical security concepts: encryption, PKI, IAM, MFA, SSO, RADIUS, and RBAC",
+          "sourceHash": "8ce1cbeb5ffb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "n10-009:4:2",
+          "unitId": "n10-009:4",
+          "index": 2,
+          "text": "Physical security controls: cameras and locks",
+          "sourceHash": "3ff819d86f74",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "n10-009:4:3",
+          "unitId": "n10-009:4",
+          "index": 3,
+          "text": "Deception technologies: honeypots and honeynets",
+          "sourceHash": "c2ccf414e4b6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "n10-009:4:4",
+          "unitId": "n10-009:4",
+          "index": 4,
+          "text": "Core security terminology: risk, vulnerability, exploit, threat, and the CIA triad",
+          "sourceHash": "ceee248af7f9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "n10-009:4:5",
+          "unitId": "n10-009:4",
+          "index": 5,
+          "text": "Audits and compliance: PCI DSS, GDPR, and data locality requirements",
+          "sourceHash": "6a5f8c3ec59a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "n10-009:4:6",
+          "unitId": "n10-009:4",
+          "index": 6,
+          "text": "Network segmentation: IoT, SCADA, ICS, guest, and BYOD networks",
+          "sourceHash": "729bdfdf3198",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "n10-009:4:7",
+          "unitId": "n10-009:4",
+          "index": 7,
+          "text": "Common attack types: DoS/DDoS, VLAN hopping, and ARP/DNS poisoning",
+          "sourceHash": "152e1994bf13",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "n10-009:4:8",
+          "unitId": "n10-009:4",
+          "index": 8,
+          "text": "Security features: NAC, ACLs, content filtering, and screened subnets",
+          "sourceHash": "8edad86a0e14",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "n10-009:5",
+      "index": 5,
+      "title": "Network Troubleshooting",
+      "weight": 24,
+      "gate": "Given symptoms of a broken network link or service, apply the troubleshooting methodology in order and name the specific tool that isolates the fault -- not jump straight to a guess.",
+      "objectives": [
+        {
+          "id": "n10-009:5:1",
+          "unitId": "n10-009:5",
+          "index": 1,
+          "text": "Applying a consistent troubleshooting methodology from problem identification through documentation",
+          "sourceHash": "0f57b9f368ae",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "n10-009:5:2",
+          "unitId": "n10-009:5",
+          "index": 2,
+          "text": "Diagnosing cabling and physical interface issues",
+          "sourceHash": "d36ff7cb8ecf",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "n10-009:5:3",
+          "unitId": "n10-009:5",
+          "index": 3,
+          "text": "Diagnosing network service issues: switching, routing, and address pool exhaustion",
+          "sourceHash": "6d3b21818009",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "n10-009:5:4",
+          "unitId": "n10-009:5",
+          "index": 4,
+          "text": "Diagnosing performance issues: congestion, latency, packet loss, and wireless interference",
+          "sourceHash": "9546c22b432c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "n10-009:5:5",
+          "unitId": "n10-009:5",
+          "index": 5,
+          "text": "Using troubleshooting tools and protocols: protocol analyzers, CLI tools, cable testers, and Wi-Fi analyzers",
+          "sourceHash": "926e3f109645",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/comptia.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-24T00:00:00Z",
+    "officialObjectivesUrl": "https://www.comptia.org/en-us/certifications/network/",
+    "providerName": "CompTIA",
+    "credentialName": "CompTIA Network+",
+    "examCode": "N10-009",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 5,
+    "objectives": 33,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

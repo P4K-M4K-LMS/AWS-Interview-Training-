@@ -1,0 +1,284 @@
+{
+  "id": "pmp",
+  "code": "PMP",
+  "title": "PMP",
+  "description": "PMI Project Management Professional (PMP) exam prep across 3 weighted domains -- people, process, and business environment -- spanning predictive, agile, and hybrid ways of working.",
+  "trackType": "certification",
+  "field": "pm",
+  "units": [
+    {
+      "id": "pmp:1",
+      "index": 1,
+      "title": "People",
+      "weight": 33,
+      "gate": "Given a team or stakeholder scenario, apply the specific leadership or engagement technique it calls for -- a conflict-resolution step, a stakeholder-alignment tactic -- rather than generic 'soft skills' advice.",
+      "objectives": [
+        {
+          "id": "pmp:1:1",
+          "unitId": "pmp:1",
+          "index": 1,
+          "text": "Developing and promoting a shared project vision, and diagnosing the root cause when a team's understanding of it diverges",
+          "sourceHash": "d6d183a8721b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmp:1:2",
+          "unitId": "pmp:1",
+          "index": 2,
+          "text": "Managing conflict: identifying its source, analyzing context, implementing an agreed resolution strategy, and maintaining ground rules that prevent recurrence",
+          "sourceHash": "4ef3cd3dde3b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmp:1:3",
+          "unitId": "pmp:1",
+          "index": 3,
+          "text": "Leading a project team: setting team-level expectations, empowering the team, solving problems, representing the team's voice, and choosing an appropriate leadership style",
+          "sourceHash": "7631ca020f07",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmp:1:4",
+          "unitId": "pmp:1",
+          "index": 4,
+          "text": "Engaging stakeholders: identifying and analyzing them, tailoring communication to their needs, and executing a stakeholder engagement plan",
+          "sourceHash": "dd3be115c70d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmp:1:5",
+          "unitId": "pmp:1",
+          "index": 5,
+          "text": "Aligning and managing stakeholder expectations: categorizing stakeholders, facilitating alignment discussions, and monitoring internal/external customer satisfaction",
+          "sourceHash": "346f9999ba96",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmp:1:6",
+          "unitId": "pmp:1",
+          "index": 6,
+          "text": "Supporting knowledge transfer: gathering critical project knowledge and fostering an environment where it's shared, not siloed",
+          "sourceHash": "b1eb98d6c6f6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmp:1:7",
+          "unitId": "pmp:1",
+          "index": 7,
+          "text": "Planning and managing project communication: defining a communication strategy, establishing feedback loops, and producing reports aligned to sponsor/stakeholder expectations",
+          "sourceHash": "89d5e575d440",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "pmp:2",
+      "index": 2,
+      "title": "Process",
+      "weight": 41,
+      "gate": "Given a delivery scenario, apply the specific process-management technique it calls for -- a scope decomposition, a schedule/cost control step, a procurement decision -- rather than a generic 'follow the plan' answer.",
+      "objectives": [
+        {
+          "id": "pmp:2:1",
+          "unitId": "pmp:2",
+          "index": 1,
+          "text": "Developing and maintaining an integrated project management plan: assessing complexity, recommending a predictive/adaptive/hybrid approach, and estimating work effort",
+          "sourceHash": "bfc4b4927445",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmp:2:2",
+          "unitId": "pmp:2",
+          "index": 2,
+          "text": "Developing and managing project scope: defining it, gaining stakeholder agreement, and decomposing it",
+          "sourceHash": "41693afbe69a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmp:2:3",
+          "unitId": "pmp:2",
+          "index": 3,
+          "text": "Ensuring value-based delivery: identifying value components, prioritizing work by value and feedback, and verifying a benefits-tracking system is in place",
+          "sourceHash": "e375f835e9bd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmp:2:4",
+          "unitId": "pmp:2",
+          "index": 4,
+          "text": "Planning and managing resources, procurement (including contract type selection and vendor performance evaluation), and project finances",
+          "sourceHash": "7ae0236ab3cd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmp:2:5",
+          "unitId": "pmp:2",
+          "index": 5,
+          "text": "Planning and optimizing quality: gathering quality requirements, executing a quality management plan, and implementing continuous improvement",
+          "sourceHash": "41797bfe55da",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmp:2:6",
+          "unitId": "pmp:2",
+          "index": 6,
+          "text": "Planning and managing schedule: selecting a development-approach-appropriate estimating method, baselining the schedule, and analyzing schedule variance",
+          "sourceHash": "643ff3e9d2cc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmp:2:7",
+          "unitId": "pmp:2",
+          "index": 7,
+          "text": "Evaluating project status: developing project metrics, ensuring artifacts are created and kept accessible, and communicating status",
+          "sourceHash": "ee85c476bc48",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmp:2:8",
+          "unitId": "pmp:2",
+          "index": 8,
+          "text": "Managing project closure: obtaining stakeholder approval, validating transition readiness, and concluding closure activities (lessons learned, retrospectives, procurement/financial/resource closeout)",
+          "sourceHash": "0a457935faf8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "pmp:3",
+      "index": 3,
+      "title": "Business Environment",
+      "weight": 26,
+      "gate": "Given an organizational or compliance scenario, apply the specific governance, risk, or change-management step it calls for -- an escalation path, a risk-response action -- rather than a generic 'manage the business side' answer.",
+      "objectives": [
+        {
+          "id": "pmp:3:1",
+          "unitId": "pmp:3",
+          "index": 1,
+          "text": "Defining and establishing project governance: structure, rules, reporting, ethics, and escalation paths/thresholds",
+          "sourceHash": "e65ce67fc977",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmp:3:2",
+          "unitId": "pmp:3",
+          "index": 2,
+          "text": "Planning and managing project compliance: confirming requirements (security, health/safety, sustainability, regulatory), classifying categories, and analyzing noncompliance consequences",
+          "sourceHash": "cb81cc99e948",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmp:3:3",
+          "unitId": "pmp:3",
+          "index": 3,
+          "text": "Managing and controlling changes: executing a change control process, communicating proposed-change status, and updating documentation to reflect approved changes",
+          "sourceHash": "2bfca9b9985e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmp:3:4",
+          "unitId": "pmp:3",
+          "index": 4,
+          "text": "Removing impediments and managing issues: evaluating impact, prioritizing, applying an intervention strategy, and recognizing when a risk becomes an issue",
+          "sourceHash": "6913e91c6e99",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmp:3:5",
+          "unitId": "pmp:3",
+          "index": 5,
+          "text": "Planning and managing risk: identifying and analyzing risks, maintaining a risk register, and executing a risk management plan",
+          "sourceHash": "657a8f7fc914",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmp:3:6",
+          "unitId": "pmp:3",
+          "index": 6,
+          "text": "Driving continuous improvement: applying lessons learned and updating organizational process assets (OPAs)",
+          "sourceHash": "f11e04cbd33b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmp:3:7",
+          "unitId": "pmp:3",
+          "index": 7,
+          "text": "Supporting organizational change: assessing organizational culture and evaluating the impact of change on the project",
+          "sourceHash": "600a99aa5344",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmp:3:8",
+          "unitId": "pmp:3",
+          "index": 8,
+          "text": "Evaluating external business-environment changes (regulatory, technological, geopolitical, market) and their impact on project scope or backlog",
+          "sourceHash": "c4b86a49950c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/pm.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-26T00:00:00Z",
+    "officialObjectivesUrl": "https://www.pmi.org/-/media/pmi/documents/public/pdf/certifications/new-pmp-examination-content-outline-2026.pdf",
+    "providerName": "Project Management Institute (PMI)",
+    "credentialName": "PMI Project Management Professional (PMP)",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 3,
+    "objectives": 23,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

@@ -1,0 +1,429 @@
+{
+  "id": "npte-pta",
+  "code": "NPTEPTA",
+  "title": "NPTE-PTA",
+  "description": "The physical therapist assistant licensure examination, built on FSBPT's current NPTE-PTA Test Content Outline: 14 body-system and non-system domains, weighted by the exam's own published item-count ranges.",
+  "trackType": "certification",
+  "field": "pt",
+  "requiresAcknowledgement": true,
+  "units": [
+    {
+      "id": "npte-pta:1",
+      "index": 1,
+      "title": "Musculoskeletal System",
+      "weight": 26,
+      "rangeLabel": "31-40 of 180 items",
+      "gate": "Given a musculoskeletal treatment session, apply the specific intervention or precaution a PTA carries out under the plan of care -- not a generic 'do the exercises' answer.",
+      "objectives": [
+        {
+          "id": "npte-pta:1:1",
+          "unitId": "npte-pta:1",
+          "index": 1,
+          "text": "Implementing therapeutic exercise and manual therapy per a PT's established plan of care",
+          "sourceHash": "cae081dd3e6c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "npte-pta:1:2",
+          "unitId": "npte-pta:1",
+          "index": 2,
+          "text": "Recognizing when a patient's response to treatment requires reporting back to the supervising PT",
+          "sourceHash": "4e5790309109",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "npte-pta:1:3",
+          "unitId": "npte-pta:1",
+          "index": 3,
+          "text": "Applying joint-protection and tissue-healing precautions during intervention",
+          "sourceHash": "61d234978036",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "npte-pta:1:4",
+          "unitId": "npte-pta:1",
+          "index": 4,
+          "text": "Documenting musculoskeletal treatment sessions and progress toward established goals",
+          "sourceHash": "d8781e4fdfd2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "npte-pta:2",
+      "index": 2,
+      "title": "Neuromuscular and Nervous Systems",
+      "weight": 22,
+      "rangeLabel": "27-35 of 180 items",
+      "gate": "Given a neurological patient during a treatment session, apply the specific motor-learning technique or safety precaution it calls for.",
+      "objectives": [
+        {
+          "id": "npte-pta:2:1",
+          "unitId": "npte-pta:2",
+          "index": 1,
+          "text": "Implementing balance, gait, and coordination interventions per an established plan of care",
+          "sourceHash": "578244b59d9d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "npte-pta:2:2",
+          "unitId": "npte-pta:2",
+          "index": 2,
+          "text": "Recognizing neurological changes during a session that require immediate PT or medical notification",
+          "sourceHash": "ee80f4715750",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "npte-pta:2:3",
+          "unitId": "npte-pta:2",
+          "index": 3,
+          "text": "Applying appropriate guarding and facilitation techniques for patients with neurological impairments",
+          "sourceHash": "776b8abd3f2f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "npte-pta:3",
+      "index": 3,
+      "title": "Cardiovascular and Pulmonary Systems",
+      "weight": 17,
+      "rangeLabel": "20-27 of 180 items",
+      "gate": "Given a patient's vital signs during activity, determine whether to continue, modify, or stop the session -- not a generic 'watch the numbers' answer.",
+      "objectives": [
+        {
+          "id": "npte-pta:3:1",
+          "unitId": "npte-pta:3",
+          "index": 1,
+          "text": "Monitoring vital signs and activity tolerance during a treatment session and responding to abnormal findings",
+          "sourceHash": "9071181e3cab",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "npte-pta:3:2",
+          "unitId": "npte-pta:3",
+          "index": 2,
+          "text": "Implementing cardiac and pulmonary rehabilitation activities within established parameters",
+          "sourceHash": "afef67f0c15f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "npte-pta:3:3",
+          "unitId": "npte-pta:3",
+          "index": 3,
+          "text": "Recognizing signs of cardiopulmonary distress that require stopping treatment and notifying the supervising PT",
+          "sourceHash": "2d74be1c0fad",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "npte-pta:4",
+      "index": 4,
+      "title": "Equipment, Devices, and Technologies",
+      "weight": 6,
+      "rangeLabel": "8-10 of 180 items",
+      "gate": "Given a patient using an assistive device, apply the specific fitting-check or gait-training step it calls for.",
+      "objectives": [
+        {
+          "id": "npte-pta:4:1",
+          "unitId": "npte-pta:4",
+          "index": 1,
+          "text": "Implementing gait training with assistive devices per an established plan of care",
+          "sourceHash": "ba24eca86625",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "npte-pta:4:2",
+          "unitId": "npte-pta:4",
+          "index": 2,
+          "text": "Checking assistive-device fit and function during use",
+          "sourceHash": "4fe2310516a3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "npte-pta:5",
+      "index": 5,
+      "title": "Safety and Protection",
+      "weight": 5,
+      "rangeLabel": "6-8 of 180 items",
+      "gate": "Given a patient-safety scenario during a session, apply the specific fall-prevention or infection-control step it calls for.",
+      "objectives": [
+        {
+          "id": "npte-pta:5:1",
+          "unitId": "npte-pta:5",
+          "index": 1,
+          "text": "Applying fall-prevention techniques and correct guarding during functional activities",
+          "sourceHash": "1631c8b35654",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "npte-pta:5:2",
+          "unitId": "npte-pta:5",
+          "index": 2,
+          "text": "Applying infection-control precautions correctly during patient care",
+          "sourceHash": "152004a4a35e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "npte-pta:6",
+      "index": 6,
+      "title": "Integumentary System",
+      "weight": 4,
+      "rangeLabel": "3-8 of 180 items",
+      "gate": "Given a wound-care task delegated by a PT, apply the specific dressing or precaution it calls for.",
+      "objectives": [
+        {
+          "id": "npte-pta:6:1",
+          "unitId": "npte-pta:6",
+          "index": 1,
+          "text": "Implementing wound-care interventions per an established plan of care",
+          "sourceHash": "f012b342b8f3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "npte-pta:6:2",
+          "unitId": "npte-pta:6",
+          "index": 2,
+          "text": "Recognizing signs of wound infection or non-healing that require PT notification",
+          "sourceHash": "78f1a83e5021",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "npte-pta:7",
+      "index": 7,
+      "title": "Metabolic and Endocrine Systems",
+      "weight": 4,
+      "rangeLabel": "4-6 of 180 items",
+      "gate": "Given a metabolic complication during activity (e.g., hypoglycemia), apply the specific response it calls for.",
+      "objectives": [
+        {
+          "id": "npte-pta:7:1",
+          "unitId": "npte-pta:7",
+          "index": 1,
+          "text": "Recognizing and responding to signs of hypo/hyperglycemia during a treatment session",
+          "sourceHash": "adc5a911ad7a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "npte-pta:8",
+      "index": 8,
+      "title": "Therapeutic Modalities",
+      "weight": 4,
+      "rangeLabel": "5-7 of 180 items",
+      "gate": "Given a modality ordered by a PT, apply the specific parameters and precautions it calls for -- not a generic 'apply heat or ice' answer.",
+      "objectives": [
+        {
+          "id": "npte-pta:8:1",
+          "unitId": "npte-pta:8",
+          "index": 1,
+          "text": "Applying thermal, electrical, and mechanical modalities per an established plan of care",
+          "sourceHash": "c53b790c00e4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "npte-pta:8:2",
+          "unitId": "npte-pta:8",
+          "index": 2,
+          "text": "Recognizing contraindications and precautions for each modality",
+          "sourceHash": "c6cea48e3623",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "npte-pta:9",
+      "index": 9,
+      "title": "System Interactions",
+      "weight": 4,
+      "rangeLabel": "5-7 of 180 items",
+      "gate": "Given a patient with comorbid conditions, recognize when a change in one system requires modifying the current session.",
+      "objectives": [
+        {
+          "id": "npte-pta:9:1",
+          "unitId": "npte-pta:9",
+          "index": 1,
+          "text": "Recognizing how a comorbidity changes precautions during an intervention already underway",
+          "sourceHash": "f19e47b830c2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "npte-pta:10",
+      "index": 10,
+      "title": "Lymphatic System",
+      "weight": 3,
+      "rangeLabel": "2-6 of 180 items",
+      "gate": "Given a lymphedema patient's session, apply the specific compression or positioning precaution it calls for.",
+      "objectives": [
+        {
+          "id": "npte-pta:10:1",
+          "unitId": "npte-pta:10",
+          "index": 1,
+          "text": "Implementing complete decongestive therapy components per an established plan of care",
+          "sourceHash": "6fe4c30c566b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "npte-pta:11",
+      "index": 11,
+      "title": "Professional Responsibilities",
+      "weight": 2,
+      "rangeLabel": "2-4 of 180 items",
+      "gate": "Given a professional or supervisory scenario, apply the specific scope-of-practice or documentation requirement it calls for.",
+      "objectives": [
+        {
+          "id": "npte-pta:11:1",
+          "unitId": "npte-pta:11",
+          "index": 1,
+          "text": "Applying the PTA's scope of practice and supervision requirements to a scenario",
+          "sourceHash": "cd4f9af18a8b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "npte-pta:11:2",
+          "unitId": "npte-pta:11",
+          "index": 2,
+          "text": "Documenting care appropriately within a PTA's role",
+          "sourceHash": "41afc5efcf75",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "npte-pta:12",
+      "index": 12,
+      "title": "Gastrointestinal System",
+      "weight": 1,
+      "rangeLabel": "0-4 of 180 items",
+      "gate": "Given a GI-related complaint during a session, determine whether to continue treatment or notify the supervising PT.",
+      "objectives": [
+        {
+          "id": "npte-pta:12:1",
+          "unitId": "npte-pta:12",
+          "index": 1,
+          "text": "Recognizing GI signs/symptoms during a session that require PT notification",
+          "sourceHash": "9996a01f4b8e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "npte-pta:13",
+      "index": 13,
+      "title": "Genitourinary System",
+      "weight": 1,
+      "rangeLabel": "0-4 of 180 items",
+      "gate": "Given a genitourinary-related complaint during a session, determine whether to continue treatment or notify the supervising PT.",
+      "objectives": [
+        {
+          "id": "npte-pta:13:1",
+          "unitId": "npte-pta:13",
+          "index": 1,
+          "text": "Recognizing genitourinary signs/symptoms during a session that require PT notification",
+          "sourceHash": "a4f31cbdcfe4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "npte-pta:14",
+      "index": 14,
+      "title": "Research and Evidence-Based Practice",
+      "weight": 1,
+      "rangeLabel": "1-3 of 180 items",
+      "gate": "Given an outcome measure used in a session, apply it and interpret the result correctly.",
+      "objectives": [
+        {
+          "id": "npte-pta:14:1",
+          "unitId": "npte-pta:14",
+          "index": 1,
+          "text": "Administering standardized outcome measures correctly and reporting results to the supervising PT",
+          "sourceHash": "37f02ec3de0c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/pt.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-27T00:00:00Z",
+    "officialObjectivesUrl": "https://www.fsbpt.org/Portals/0/documents/free-resources/NPTE_Candidate_Handbook.pdf",
+    "providerName": "Federation of State Boards of Physical Therapy",
+    "credentialName": "National Physical Therapy Examination (NPTE-PTA)",
+    "examCode": "NPTE-PTA",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 14,
+    "objectives": 26,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

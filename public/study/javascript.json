@@ -4,6 +4,7 @@
   "title": "JavaScript Programming",
   "description": "9-week intro-to-advanced JavaScript progression: syntax and the DOM through async patterns, ES6+, prototypes, testing/tooling, and Node.js.",
   "trackType": "graduate",
+  "field": "cs",
   "units": [
     {
       "id": "javascript:1",
