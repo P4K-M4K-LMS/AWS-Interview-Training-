@@ -134,6 +134,8 @@ describe("generation helpers", () => {
     expect(a.system).toMatch(/never copy/i);
     const b = bankPrompt(ctx, "TEACH TEXT");
     expect(b.user).toContain("TEACH TEXT");
+    // The fade question used to be the lesson's own worked example with one step blanked out.
+    expect(b.user).toContain("does not appear in the teaching text");
     const c = scenarioPrompt(course, unit);
     expect(c.user).toContain("fictional company");
     expect(c.user).toContain("Read replicas");

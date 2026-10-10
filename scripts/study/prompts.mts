@@ -10,7 +10,7 @@
  */
 import type { StudyCourse, StudyObjective, StudyUnit } from "../../src/domain/types.ts";
 
-export const PROMPT_VERSION = 1;
+export const PROMPT_VERSION = 2;
 export const SCRIPT_VERSION = 1;
 
 export interface LessonContext {
@@ -79,7 +79,7 @@ export const BANK_SCHEMA = {
       additionalProperties: false,
       required: ["prompt", "choices", "correctIndex", "why"],
       properties: {
-        prompt: { type: "string", description: "A second example of the same idea, mostly worked through, with exactly one missing step stated unambiguously." },
+        prompt: { type: "string", description: "A new example of the same idea in a situation the teaching text does not use, mostly worked through, with exactly one missing step stated unambiguously. Never the worked example from the teaching text with a step removed." },
         choices: { type: "array", minItems: 4, maxItems: 4, items: { type: "string" }, description: "Four candidate completions: one correct, three real misconceptions or near-misses. No filler." },
         correctIndex: { type: "integer", minimum: 0, maximum: 3 },
         why: { type: "string", description: "One sentence on why the correct choice is correct." },
@@ -145,7 +145,9 @@ The teaching text the learner has read (your questions must be answerable from i
 ${teach}
 """
 
-Write one "fade" question and three "solo" questions as the schema describes. Each question has exactly four choices. Vary the correct position; never make the longest choice the correct one by habit.`;
+Write one "fade" question and three "solo" questions as the schema describes. Each question has exactly four choices. Vary the correct position; never make the longest choice the correct one by habit.
+
+Every question, the fade question included, must use a situation that does not appear in the teaching text: a different organisation, different resources and different numbers. Do not restate the worked example or any list of steps from the teaching text with one item removed; a learner must be able to answer by applying the idea, not by remembering what they just read.`;
   return { system: `${RULES}\n\nYou are writing the check-question bank for one objective. The questions are served one at a time, unseen ones first, and again as spaced reviews, so they must each stand alone.`, user };
 }
 
