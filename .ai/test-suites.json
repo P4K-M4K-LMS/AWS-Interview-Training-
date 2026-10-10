@@ -1,0 +1,30 @@
+{
+  "version": "1.0.0",
+  "suites": [
+    {
+      "id": "root-playwright-e2e",
+      "name": "root playwright e2e tests",
+      "kind": "e2e",
+      "framework": "playwright",
+      "paths": [
+        "e2e",
+        "playwright.config.ts"
+      ],
+      "command": "npm run test",
+      "covers": [],
+      "notes": ""
+    },
+    {
+      "id": "root-vitest",
+      "name": "root vitest unit tests",
+      "kind": "unit",
+      "framework": "vitest",
+      "paths": [
+        "tests"
+      ],
+      "command": "npm run test",
+      "covers": [],
+      "notes": ""
+    }
+  ]
+}
