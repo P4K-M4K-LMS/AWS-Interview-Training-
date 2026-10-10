@@ -59,6 +59,13 @@ describe("Ascendra lesson import", () => {
     expect(files[0].lessons[0].generatedAt).toBe("2026-05-01T00:00:00.000Z");
   });
 
+  it("matches Ascendra's track code (AWSSAA) as well as the exam code", () => {
+    const { files, report } = convertRows([row({ course_code: "AWSSAA" })], [saa], "2026-10-10");
+    expect(report.otherCourses).toEqual({});
+    expect(files[0].courseId).toBe("saa-c03");
+    expect(files[0].lessons.map((l) => l.objectiveId)).toEqual([first.id]);
+  });
+
   it("reports rows for other courses, unknown objective text and broken questions, and imports the rest", () => {
     const rows = [
       row(),

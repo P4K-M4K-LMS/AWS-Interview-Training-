@@ -51,7 +51,7 @@ function validateQuestions(questions: StudyChoiceQuestion[] | undefined, objecti
     if (prompts.has(q.prompt)) out.push({ where: qw, message: "duplicate prompt" });
     prompts.add(q.prompt);
     if (!Array.isArray(q.choices) || q.choices.length !== CHOICES || !q.choices.every(nonEmpty)) out.push({ where: qw, message: `need ${CHOICES} non-empty choices` });
-    else if (new Set(q.choices.map((c) => c.trim().toLowerCase())).size !== CHOICES) out.push({ where: qw, message: "choices repeat" });
+    else if (new Set(q.choices.map((c) => c.trim())).size !== CHOICES) out.push({ where: qw, message: "choices repeat" });
     if (!Number.isInteger(q.correctIndex) || q.correctIndex < 0 || q.correctIndex >= CHOICES) out.push({ where: qw, message: "correctIndex out of range" });
     if (!nonEmpty(q.why)) out.push({ where: qw, message: "empty why" });
   });

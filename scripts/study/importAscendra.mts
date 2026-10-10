@@ -104,11 +104,13 @@ function isoDate(v: string): string {
 
 export function convertRows(rows: AscendraRow[], courses: StudyCourse[], importedAt: string): { files: StudyImportedFile[]; report: ImportReport } {
   const report: ImportReport = { rows: rows.length, imported: 0, duplicates: 0, otherCourses: {}, unmatched: [], invalid: [] };
-  const byCourse = new Map(courses.map((c) => [c.id, c]));
+  // Ascendra exports its track code (AWSSAA); our ids use the exam code (saa-c03). Accept either.
+  const byCourse = new Map(courses.flatMap((c) => [[c.id, c], [c.code.toLowerCase(), c]] as const));
   const picked = new Map<string, Map<string, StudyImportedLesson>>();
   for (const row of rows) {
-    const courseId = String(row.course_code ?? "").trim().toLowerCase();
+    let courseId = String(row.course_code ?? "").trim().toLowerCase();
     const course = byCourse.get(courseId);
+    if (course) courseId = course.id;
     if (!course) {
       report.otherCourses[row.course_code] = (report.otherCourses[row.course_code] ?? 0) + 1;
       continue;

@@ -69,6 +69,9 @@ describe("Study lessons validator", () => {
     expect(validateLessonsFile(file([threeChoices]), course).map((p) => p.message)).toContain("need 4 non-empty choices");
     const repeated = { ...l, questions: l.questions.map((q, i) => (i === 2 ? { ...q, choices: ["x", "x", "y", "z"] } : q)) };
     expect(validateLessonsFile(file([repeated]), course).map((p) => p.message)).toContain("choices repeat");
+    // Command flags are case-sensitive: usermod -G and usermod -g are different answers.
+    const caseOnly = { ...l, questions: l.questions.map((q, i) => (i === 2 ? { ...q, choices: ["usermod -G", "usermod -g", "y", "z"] } : q)) };
+    expect(validateLessonsFile(file([caseOnly]), course).map((p) => p.message)).not.toContain("choices repeat");
     const badIndex = { ...l, questions: l.questions.map((q, i) => (i === 3 ? { ...q, correctIndex: 4 } : q)) };
     expect(validateLessonsFile(file([badIndex]), course).map((p) => p.message)).toContain("correctIndex out of range");
     const badId = { ...l, questions: l.questions.map((q, i) => (i === 0 ? { ...q, id: "nope" } : q)) };

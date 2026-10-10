@@ -1,0 +1,120 @@
+{
+  "courseId": "cmpcbs",
+  "imported": {
+    "source": "ascendra",
+    "importedAt": "2026-10-10",
+    "models": [
+      "claude-sonnet-5"
+    ]
+  },
+  "lessons": [
+    {
+      "objectiveId": "cmpcbs:8:1",
+      "sourceHash": "5eb1de9c5ef4",
+      "model": "claude-sonnet-5",
+      "generatedAt": "2026-09-16T16:06:10.557Z",
+      "guessPrompt": "You already know that f(x) = x^3 has an inverse, the cube root function, because cubing and cube-rooting undo each other. Based on that idea of an inverse 'undoing' a function, guess what the inverse of f(x) = 10^x might do, and in one sentence explain why it makes sense that this inverse is called a 'logarithm.'",
+      "teach": "A function is a rule that assigns exactly one output to each input; the domain is the set of allowed inputs, and the range is the set of outputs actually produced. A function is one-to-one (injective) if no two different inputs ever give the same output — this matters because only one-to-one functions have a true inverse function, written f⁻¹(x), which is a function that reverses f: if f(a) = b, then f⁻¹(b) = a. (f⁻¹ is NOT the same as 1/f(x); that confusion is the single most common mistake here.) An exponential function has the form f(x) = a·b^x (b > 0, b ≠ 1) — it's always one-to-one because it's strictly increasing or decreasing, so it always has an inverse. That inverse is a logarithmic function: y = log_b(x) means 'the power you raise b to, to get x.' So log and exponential with the same base are inverses of each other, and their graphs are mirror images across the line y = x, with domain and range swapped (exponential: domain all reals, range positive numbers; log: domain positive numbers, range all reals). Trig functions like sin, cos, tan are NOT one-to-one over their full domain because they repeat (periodic), so to build an inverse trig function like arcsin, arccos, or arctan, mathematicians first restrict the domain to a piece where the function IS one-to-one (for sine, that's [-π/2, π/2]) before inverting. This restriction is why arcsin always outputs an angle in [-π/2, π/2], never any angle whose sine matches. Worked example — find the inverse of f(x) = 2e^{3x} - 1: Step 1, write y = 2e^{3x} - 1. Step 2, swap x and y (since inverse reverses input/output roles): x = 2e^{3y} - 1. Step 3, isolate the exponential term: x + 1 = 2e^{3y}, so e^{3y} = (x+1)/2. Step 4, undo the exponential using its inverse, the natural log: 3y = ln((x+1)/2). Step 5, solve for y: y = (1/3)ln((x+1)/2). So f⁻¹(x) = (1/3)ln((x+1)/2), with domain x > -1 (matching the range of the original exponential). In computer science terms, exponential functions describe runaway growth (like O(2^n) algorithms) while their inverse, logarithms, describe how fast you can 'undo' that growth — this is exactly why binary search is O(log n): each step is the inverse operation of doubling.",
+      "questions": [
+        {
+          "id": "cmpcbs:8:1:q1",
+          "role": "fade",
+          "prompt": "Find the inverse of g(x) = 3^(x-2) + 1, following the same swap-and-solve method. Step 1: y = 3^(x-2) + 1. Step 2: swap x and y: x = 3^(y-2) + 1. Step 3: isolate the exponential: x - 1 = 3^(y-2). Step 4: undo the exponential using log base 3: log_3(x-1) = y - 2. Fill in the final step: solve this last equation for y to state the complete inverse function g⁻¹(x).",
+          "choices": [
+            "g⁻¹(x) = log_3(x-1) + 2",
+            "g⁻¹(x) = log_3(x+1) - 2",
+            "g⁻¹(x) = log_3(x-1) - 2",
+            "g⁻¹(x) = 3^(x-1) + 2"
+          ],
+          "correctIndex": 0,
+          "why": "Adding 2 to both sides of log_3(x-1) = y - 2 isolates y, giving y = log_3(x-1) + 2."
+        },
+        {
+          "id": "cmpcbs:8:1:q2",
+          "role": "solo",
+          "prompt": "Evaluate arcsin(sin(2π/3)) without a calculator. State the exact value and briefly explain why it is not simply 2π/3.",
+          "choices": [
+            "π/3",
+            "2π/3",
+            "π/6",
+            "-π/3"
+          ],
+          "correctIndex": 0,
+          "why": "arcsin must return an angle in the restricted range [-π/2, π/2], and since sin(2π/3) = √3/2 = sin(π/3), the answer is π/3, not the original angle."
+        }
+      ]
+    },
+    {
+      "objectiveId": "cmpcbs:11:1",
+      "sourceHash": "15ddff835ed8",
+      "model": "claude-sonnet-5",
+      "generatedAt": "2026-09-16T16:07:37.274Z",
+      "guessPrompt": "Try to prove this claim using any approach you like: For any integer n, if n squared is even, then n is even. Write out your best attempt at a proof (even a rough one).",
+      "teach": "Key terms: A statement (or proposition) is a sentence that is definitely true or definitely false. A conditional statement (implication), written P→Q ('if P then Q'), has a hypothesis (antecedent) P and a conclusion (consequent) Q. The negation of a statement P, written ¬P ('not P'), is always the opposite truth value of P. From P→Q we can build three related statements: the converse (Q→P, swap the two parts), the inverse (¬P→¬Q, negate both parts, keep the order), and the contrapositive (¬Q→¬P, negate both parts AND swap the order). Two statements are logically equivalent if they always have the same truth value no matter what — you can check this with a truth table. It turns out P→Q is logically equivalent to its contrapositive ¬Q→¬P (they're both false only in the one case where P is true and Q is false, and true everywhere else). The converse and inverse are NOT equivalent to the original — they're only equivalent to each other. A direct proof assumes P and derives Q using definitions and algebra/logic. Proof by contraposition instead assumes ¬Q and derives ¬P — this is a fully valid way to prove P→Q, because of the equivalence just mentioned. It's especially useful when 'not Q' gives you something concrete to work with algebraically, while Q itself doesn't. (Proof by contradiction is a different technique: assume P AND ¬Q together, then derive an impossible statement like 0=1 — not needed here, just noting the name so you don't confuse it with contraposition.) Worked example: Prove 'if n² is even, then n is even' for any integer n. Let P = 'n² is even', Q = 'n is even'. Direct proof is awkward here because 'n² is even' doesn't easily tell you the shape of n. So use contraposition: the contrapositive is ¬Q→¬P, i.e., 'if n is odd, then n² is odd.' Proof: Assume n is odd. By definition, an odd integer has the form 2k+1 for some integer k, so n = 2k+1. Then n² = (2k+1)² = 4k² + 4k + 1 = 2(2k² + 2k) + 1. Since 2k²+2k is an integer, n² has the form 2m+1 (an odd number). So n odd implies n² odd — that's ¬Q→¬P proved. Since ¬Q→¬P is logically equivalent to P→Q, we've proven the original claim. Common mistake: mixing up contrapositive with inverse. Both involve negations, but only the contrapositive (negate AND swap) is equivalent to the original statement; proving the inverse (¬P→¬Q, negate but don't swap) proves nothing about the original implication — it's actually equivalent to the converse instead, which is a different claim. Systems/complexity note: this exact move (rewriting a hard-to-use hypothesis as an easier-to-use negated conclusion) is the same trick used constantly in algorithm correctness proofs — e.g., proving a loop invariant fails only if some precondition failed, which is a contrapositive argument in disguise.",
+      "questions": [
+        {
+          "id": "cmpcbs:11:1:q1",
+          "role": "fade",
+          "prompt": "Prove by contraposition: For any integer n, if 3n+2 is odd, then n is odd. Setup: P = '3n+2 is odd', Q = 'n is odd'. The contrapositive is ¬Q→¬P: 'if n is even, then 3n+2 is even.' Proof so far: Assume n is even, so n = 2k for some integer k. Then 3n+2 = 3(2k)+2 = 6k+2 = 2(3k+1). Your job: state the final conclusion sentence that completes this proof — say what form 2(3k+1) shows 3n+2 to be, and explicitly say which statement (contrapositive or original) this establishes.",
+          "choices": [
+            "3n+2 is even, since it equals 2 times the integer (3k+1); this proves the contrapositive ¬Q→¬P, and therefore the original implication P→Q holds.",
+            "3n+2 is odd, since it equals 2 times (3k+1) plus a remainder; this proves the converse Q→P.",
+            "n is even, so 3n+2 must be odd by the definition of odd numbers; this proves the inverse ¬P→¬Q.",
+            "Since 3n+2 = 2(3k+1), n itself must be even, completing a direct proof of P→Q."
+          ],
+          "correctIndex": 0,
+          "why": "3n+2 = 2(3k+1) is exactly the definition of an even number (2 times an integer), so this establishes ¬Q→¬P, which is logically equivalent to the original statement P→Q."
+        },
+        {
+          "id": "cmpcbs:11:1:q2",
+          "role": "solo",
+          "prompt": "Using proof by contraposition, prove: For any integer n, if n² − 4n + 5 is odd, then n is even. Write the contrapositive statement first, then give the full algebraic proof of it.",
+          "choices": [
+            "Contrapositive: If n is odd, then n²−4n+5 is even. Must show: assuming n=2k+1, n²−4n+5 simplifies to 2(2k²−2k+1), an even number.",
+            "Contrapositive: If n²−4n+5 is even, then n is odd. Must show: assuming n²−4n+5 is even, derive that n is odd algebraically.",
+            "Contrapositive: If n is even, then n²−4n+5 is odd. Must show: assuming n=2k, n²−4n+5 simplifies to an odd expression.",
+            "Contrapositive: If n²−4n+5 is odd, then n is odd. Must show: assuming n²−4n+5=2k+1, derive n=2k+1."
+          ],
+          "correctIndex": 0,
+          "why": "The contrapositive of P→Q negates and swaps both parts (¬Q→¬P), giving 'if n is odd, then n²−4n+5 is even,' which is exactly what the algebra with n=2k+1 confirms."
+        }
+      ]
+    },
+    {
+      "objectiveId": "cmpcbs:13:1",
+      "sourceHash": "c3995c4a3792",
+      "model": "claude-sonnet-5",
+      "generatedAt": "2026-09-16T21:01:23.578Z",
+      "guessPrompt": "Before any teaching: a 'vector space' is basically a collection of objects (vectors) that you can add together and scale by numbers. If you take a smaller subset of vectors out of a vector space — say, all the points on a line through the origin inside the flat plane R^2 — what conditions do you think that subset would need to satisfy to still count as a valid vector space in its own right (a 'subspace')? Give your best guess, even if it's rough.",
+      "teach": "Definitions first. A **field** is a number system where you can add, subtract, multiply, and divide (except by zero) and the usual rules work — the real numbers R are the field we'll use. A **scalar** is just a number from that field, used to scale a vector. A **vector** is an element of a set V that can be added to other vectors and multiplied by scalars. A **vector space** V over a field F is a set of vectors with two operations — **vector addition** (combine two vectors into one) and **scalar multiplication** (stretch/shrink a vector by a scalar) — satisfying axioms including: **closure** (adding two vectors in V, or scaling a vector in V, always gives another vector in V — you never leave the set), commutativity and associativity of addition, existence of a **zero vector** (also called the additive identity — a vector 0 such that v+0=v for every v), existence of an **additive inverse** for every vector (a vector -v such that v+(-v)=0), and distributive laws linking scalar multiplication to addition. A **subspace** W of a vector space V is a subset of V that is itself a vector space using V's same addition and scalar multiplication. Rather than checking all 8 axioms from scratch, we use the **subspace test**: W is a subspace of V if and only if (1) the zero vector of V is in W, (2) W is closed under addition (u,v in W implies u+v in W), (3) W is closed under scalar multiplication (c a scalar, v in W implies cv in W). This works because commutativity, associativity, distributivity, etc. already hold for every vector in V, so they automatically hold for vectors in the smaller set W too — the only things that could break are whether you can still find a zero vector inside W and whether combining or scaling vectors could kick you outside W. Worked example: let V = R^3 and W = {(x,y,z) : x + y + z = 0} (a plane through the origin). Step 1 — zero vector: (0,0,0) gives 0+0+0=0, so 0 is in W. Step 2 — closure under addition: take u=(x1,y1,z1), v=(x2,y2,z2) in W, so x1+y1+z1=0 and x2+y2+z2=0. Then u+v=(x1+x2, y1+y2, z1+z2), and its component sum is (x1+y1+z1)+(x2+y2+z2)=0+0=0, so u+v is in W. Step 3 — closure under scalar multiplication: take v=(x,y,z) in W and scalar c. Then cv=(cx,cy,cz), and its component sum is c(x+y+z)=c(0)=0, so cv is in W. All three conditions hold, so W is a subspace of R^3. Common mistake: assuming any 'line-like' or 'plane-like' subset is automatically a subspace — but a subset that does NOT pass through the origin (does not contain the zero vector) can never be a subspace, even if it looks geometrically similar to one that is (e.g., {(x,y): x+y=1} fails immediately because (0,0) isn't in it). Systems implication: the solution set of a **homogeneous linear system** (one of the form Ax=0, where every equation equals zero) is always a subspace — called the **null space** of A — because it automatically passes all three subspace-test conditions the same way our example did. This is why null spaces, column spaces, and other solution sets in linear algebra are subspaces, and why finding their dimension and basis is a core computational task.",
+      "questions": [
+        {
+          "id": "cmpcbs:13:1:q1",
+          "role": "fade",
+          "prompt": "Consider V = R^3 and W = {(x, y, z) ∈ R^3 : 2x − y + z = 0}. We check whether W is a subspace using the three-part subspace test. Step 1 (zero vector): (0,0,0) satisfies 2(0) − 0 + 0 = 0, so the zero vector is in W. ✓ Step 2 (closure under addition): let u=(x1,y1,z1) and v=(x2,y2,z2) be in W, so 2x1−y1+z1=0 and 2x2−y2+z2=0. Then u+v=(x1+x2, y1+y2, z1+z2), and 2(x1+x2)−(y1+y2)+(z1+z2) = (2x1−y1+z1)+(2x2−y2+z2) = 0+0 = 0, so u+v is in W. ✓ Step 3 (closure under scalar multiplication): let v=(x,y,z) be in W, so 2x−y+z=0, and let c be any scalar. Compute cv=(cx,cy,cz). Fill in: what does 2(cx) − (cy) + (cz) simplify to, and what does that tell you about whether cv is in W?",
+          "choices": [
+            "2(cx) − (cy) + (cz) = c(2x − y + z) = c(0) = 0, so cv is in W — closure under scalar multiplication holds for every c.",
+            "2(cx) − (cy) + (cz) = c(2x − y + z) = c, so cv is only in W when c = 0.",
+            "2(cx) − (cy) + (cz) = 2x − y + z = 0, so cv is automatically equal to v.",
+            "Since W already contains the zero vector and is closed under addition, closure under scalar multiplication doesn't need to be checked separately."
+          ],
+          "correctIndex": 0,
+          "why": "Factoring out c shows the expression equals c times zero, which is zero for every scalar c, so cv always stays in W."
+        },
+        {
+          "id": "cmpcbs:13:1:q2",
+          "role": "solo",
+          "prompt": "Is the set W = {(x, y) ∈ R^2 : x^2 + y^2 = 1} (the unit circle) a subspace of R^2? Use the subspace test to justify your answer, and if it's not a subspace, name which specific condition of the test fails.",
+          "choices": [
+            "No — it fails because the zero vector (0,0) is not in W, since 0^2+0^2 = 0 ≠ 1.",
+            "Yes — it is a subspace because adding two vectors on the circle keeps you on the circle.",
+            "No — it fails only the closure-under-scalar-multiplication condition; the zero vector is in W.",
+            "Yes — it is a subspace because the zero vector is trivially considered part of any curve through the plane."
+          ],
+          "correctIndex": 0,
+          "why": "The zero vector must satisfy x^2+y^2=1 to belong to W, but 0+0=0≠1, so W fails the very first subspace-test condition and can't be a subspace."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "courseId": "aif-c01",
+  "imported": {
+    "source": "ascendra",
+    "importedAt": "2026-10-10",
+    "models": [
+      "claude-sonnet-5"
+    ]
+  },
+  "lessons": [
+    {
+      "objectiveId": "aif-c01:1:1",
+      "sourceHash": "ead9de4c707e",
+      "model": "claude-sonnet-5",
+      "generatedAt": "2026-09-30T02:59:30.812Z",
+      "guessPrompt": "A hospital wants software that looks at chest X-ray images and flags which ones might show pneumonia, learning this by studying 50,000 past X-rays that doctors already labeled 'pneumonia' or 'clear,' instead of someone coding rules like 'if there's a cloudy patch in this exact spot, flag it.' Using only your intuition: which of these terms apply here -- AI, machine learning, deep learning, neural network, computer vision, NLP -- and which one describes the specific 'type of task' (reading images) as opposed to the 'how it learns' part?",
+      "teach": "Six terms, defined precisely, with how they nest inside each other. AI (Artificial Intelligence): the overall goal of building a system that performs tasks normally requiring human intelligence -- here, recognizing disease patterns in an image the way a radiologist would. It's the umbrella term. ML (Machine Learning): a subset of AI where the system learns patterns from data examples rather than a human writing explicit if-then rules. Instead of someone coding 'cloudy patch at coordinates X,Y means pneumonia,' the system studies thousands of labeled X-rays and works out the pattern itself. Deep Learning: a subset of ML that uses neural networks with many stacked layers ('deep' = many layers) to automatically discover which visual features matter, without a human hand-picking them. It's the go-to technique for messy, high-dimensional data like raw pixels. Neural Network: the actual computing structure deep learning runs on -- layers of connected 'nodes' loosely inspired by brain neurons. Each connection has a weight; each node combines its inputs with a small math function (activation function) and passes a signal onward. Data goes in at the input layer, gets transformed through hidden layers, and a final output layer produces the answer (e.g., 'pneumonia likely' vs 'clear'). Computer Vision (CV): an application domain -- a category of *problem*, not a technique -- covering tasks where computers interpret images or video (detecting objects, reading X-rays, spotting defects). CV problems are commonly solved with deep learning today, but the term names the task type, not the method used to solve it. NLP (Natural Language Processing): the sibling application domain, covering tasks where computers understand, interpret, or generate human language (translating text, detecting sentiment, answering questions). Also usually solved with deep learning today, but NLP names a task category too. Relationship to remember: AI contains ML, which contains deep learning, which uses neural networks as its tool. CV and NLP sit alongside each other as separate application domains, each of which can be tackled with classical ML, deep learning, or old-fashioned hand-coded rules. Worked example, traced step by step, using the X-ray scenario above: Step 1 -- Goal: you want software that behaves like an expert glancing at an X-ray and spotting disease. That goal is AI. Step 2 -- Approach: rather than hand-coding rules about cloudy patches, you show the system 50,000 labeled X-rays and let it learn the pattern from data. That approach is ML. Step 3 -- Technique: because raw pixel data is messy, you use a neural network with many layers so the system learns its own features (edges, textures, opacity patterns, then 'pneumonia-like region'). That technique is deep learning. Step 4 -- Structure: the actual stack of connected nodes doing this transformation is the neural network. Step 5 -- Domain: since the input is an image and the task is 'interpret what's shown in this picture,' this task lives in the computer vision domain, not NLP, because no language is being read or generated -- only visual patterns. Common mistake: assuming CV and NLP are themselves techniques or are separate from ML/deep learning, rather than being task categories that ML/deep learning are used to solve. A second common error: assuming any ML system must involve a neural network -- plenty of ML, such as a decision tree flagging loan applications using simple learned thresholds, uses no neural network at all. Systems/complexity implication: deep learning models like the X-ray classifier need large labeled datasets (tens of thousands of images here) and heavy compute (typically GPUs) to train, and their decisions are hard to explain (black box) -- a real concern in healthcare, where regulators may want to know *why* a case was flagged. Classical ML models are cheaper, faster to train, and easier to interpret, though they may not capture subtle visual patterns as well. On AWS, you could use a pre-built CV service like Amazon Rekognition for simpler image tasks, but a specialized medical-image classifier like this X-ray model would typically be built and trained as a custom deep learning model in Amazon SageMaker, since it needs domain-specific tuning that a generic pre-built service won't offer.",
+      "questions": [
+        {
+          "id": "aif-c01:1:1:q1",
+          "role": "fade",
+          "prompt": "A hospital wants a tool that scans chest X-ray images and flags whether a tumor is likely present, so radiologists can prioritize urgent cases. The team trains a neural network with many layers on 500,000 labeled X-rays (tumor / no tumor), letting the system discover which pixel patterns matter on its own rather than a doctor hand-coding rules like 'a bright round blob of a certain size means tumor.'\n- The overall goal of building a system that performs a task normally requiring a radiologist's judgment is an instance of AI.\n- Learning the pattern from 500,000 labeled examples instead of hand-coded rules is the ML approach.\n- Using a many-layered network to automatically learn which features matter is the deep learning technique.\n- The layered structure of connected nodes doing this transformation is the neural network itself.\nFill in the one piece left blank: which application domain does this whole task belong to, and briefly say why (one sentence)?",
+          "choices": [
+            "Computer vision, because the task is interpreting the content of an image",
+            "Natural language processing, because the radiologist's report is written language the system must understand",
+            "Machine learning, because the system learns from labeled data rather than fixed rules",
+            "Deep learning, because a many-layered neural network is doing the work"
+          ],
+          "correctIndex": 0,
+          "why": "The task's input and goal are interpreting visual content (an X-ray image), which is exactly what computer vision names, regardless of which technique solves it."
+        },
+        {
+          "id": "aif-c01:1:1:q2",
+          "role": "solo",
+          "prompt": "A logistics company builds a chatbot that reads customer shipping complaints typed into a support chat, determines whether the complaint is about a late delivery, a damaged item, or a billing error, and routes it to the right team. It uses a neural network with many layers trained on 2 million past complaint transcripts, rather than hand-coded keyword rules like 'if the message contains late, route to shipping team.' In your own words, identify which of the six terms (AI, ML, deep learning, neural network, computer vision, NLP) describe this system and how they relate to each other for this specific case, and say which application domain it belongs to and why it is NOT the other domain.",
+          "choices": [
+            "AI is the overall goal; ML is learning from the 2 million labeled transcripts instead of fixed keyword rules; deep learning is the many-layered network technique used; the neural network is the layered structure itself; the domain is NLP because the input is human language text to interpret, not images, so it is not computer vision",
+            "AI is the overall goal; ML is learning from the 2 million labeled transcripts instead of fixed keyword rules; deep learning is the many-layered network technique used; the neural network is the layered structure itself; the domain is computer vision because the chatbot displays text on a screen, so it is not NLP",
+            "The system is entirely deep learning and neural networks only, since ML, AI, and NLP are just older names for the same neural network technology",
+            "AI is the overall goal; ML is the neural network itself; deep learning is learning from labeled data; the domain is NLP because it involves customer service, so it is not computer vision"
+          ],
+          "correctIndex": 0,
+          "why": "The task's input and goal are understanding written human language (complaint text), which defines NLP, while the ML/deep learning/neural network terms correctly describe the learning approach and technique layered underneath that domain."
+        }
+      ]
+    },
+    {
+      "objectiveId": "aif-c01:1:2",
+      "sourceHash": "c94d0ad42578",
+      "model": "claude-sonnet-5",
+      "generatedAt": "2026-09-30T02:58:12.819Z",
+      "guessPrompt": "In your own words, what's the difference between an 'algorithm', a 'model', 'training', and 'inference'? Try to define each one in a sentence, even roughly.",
+      "teach": "These four terms describe different stages/roles in machine learning, and mixing them up is one of the most common sources of confusion for beginners. An 'algorithm' is a general, reusable procedure or set of mathematical rules for learning patterns from data — it's like a recipe, not tied to any specific dataset. Examples: linear regression, decision trees, gradient boosting, a neural network architecture. A 'model' is the specific artifact produced after you run an algorithm on a particular dataset — it's the recipe PLUS the actual learned numbers (weights, coefficients, thresholds) that resulted from that process. The same algorithm can produce many different models depending on what data you feed it. 'Training' is the process of running the algorithm over data to produce the model — the algorithm adjusts internal parameters (like weights) to minimize error on the training data. This is the 'cooking' step. 'Inference' is using an already-trained model to make a prediction on new, unseen input — no more learning happens here, the model's parameters are frozen; you're just applying it. Why this distinction matters: in AWS contexts (and real ML systems), these map to different infrastructure and cost considerations — training is compute-heavy and happens occasionally (e.g., on SageMaker training jobs, often using GPUs), while inference happens continuously in production (e.g., SageMaker endpoints) and needs to be fast and cheap per-call. Worked example, traced step by step: (1) Algorithm: logistic regression — a general method for learning a boundary that separates two classes. (2) Training: you feed it 10,000 labeled emails (spam vs not-spam); the algorithm iterates over this data, adjusting its internal weights to minimize prediction error. (3) Model: after training finishes, you have a specific set of weights — say, weight 0.8 on the word 'free', weight -0.3 on the word 'meeting' — this weighted formula IS the model. (4) Inference: a new email arrives; you plug its features into the trained model's formula and it outputs 'spam' — no learning happens, just a calculation using the frozen weights. Common mistake: people say 'the algorithm predicted X' when they mean 'the model predicted X' — the algorithm is retired once training is done; only the model (the output of training) is used at inference time. Another frequent slip: assuming training and inference use the same amount of compute per call — training is a one-time (or periodic) heavy batch process, while inference is typically lightweight but runs far more often, so at scale inference cost often dwarfs training cost over a model's lifetime.",
+      "questions": [
+        {
+          "id": "aif-c01:1:2:q1",
+          "role": "fade",
+          "prompt": "Consider a spam-detection system built with a decision-tree learning algorithm. Walk through the pipeline: (1) The algorithm is the decision-tree induction procedure (e.g., picking splits that maximize information gain) — this is the general method, not tied to any specific dataset. (2) Training happens when this algorithm is run over 50,000 labeled emails (marked spam/not-spam), and it repeatedly picks the best features and thresholds to split on, adjusting the tree's structure and split rules until it fits the data well. (3) The output of that training run is a specific tree — with concrete split points like 'if word_count(free) > 3 and sender_domain not in contacts, go left' — saved to disk. That saved, fixed tree is the model. Now fill in the fourth piece: when a brand-new email arrives and this saved tree is used to walk down its branches and output a 'spam' or 'not spam' label, what is that process called?",
+          "choices": [
+            "Inferencing — using the trained model to produce a prediction on new, unlabeled data",
+            "Training — because the tree is still evaluating data against its rules",
+            "Re-running the algorithm — the decision-tree procedure is applied again to the new email",
+            "Validation — checking the model's accuracy before it can be trusted"
+          ],
+          "correctIndex": 0,
+          "why": "Inferencing is specifically the act of applying an already-trained, fixed model to new data to get an output; training already happened and produced the fixed tree, so nothing is being learned or adjusted anymore."
+        },
+        {
+          "id": "aif-c01:1:2:q2",
+          "role": "solo",
+          "prompt": "A team wants to build a system that recommends products to shoppers. They choose matrix factorization (a general mathematical technique for finding hidden patterns in ratings data) as their approach. They feed it three years of purchase history, and the technique iteratively adjusts numeric 'preference vectors' for each user and product until it captures patterns well. This process produces a specific, saved set of preference vectors and numbers. Later, when a shopper logs in, the system uses those saved numbers to instantly compute and display five recommended products. Name and distinguish all four elements here: what is the algorithm, what is training, what is the model, and what is inferencing?",
+          "choices": [
+            "Algorithm = matrix factorization technique; Training = the iterative process of adjusting preference vectors on 3 years of data; Model = the final saved set of preference vectors/numbers; Inferencing = computing and displaying recommendations for a logged-in shopper",
+            "Algorithm = the saved preference vectors; Training = matrix factorization; Model = displaying recommendations; Inferencing = the three years of purchase history",
+            "Algorithm = matrix factorization technique; Training = displaying the five recommended products; Model = the three years of purchase history; Inferencing = adjusting the preference vectors",
+            "Algorithm = the model; Training = inferencing; Model = matrix factorization; Inferencing = the iterative adjustment process on purchase history"
+          ],
+          "correctIndex": 0,
+          "why": "The algorithm is the general reusable technique, training is the fitting process on historical data, the model is the fixed learned output of that process, and inferencing is using that fixed output to make a prediction on a new case."
+        }
+      ]
+    },
+    {
+      "objectiveId": "aif-c01:2:1",
+      "sourceHash": "f821bd241424",
+      "model": "claude-sonnet-5",
+      "generatedAt": "2026-09-28T21:52:08.375Z",
+      "guessPrompt": "Before any teaching: (1) When an AI language model reads your input text, do you think it processes whole words as-is, or does it break the text into smaller (or differently-sized) pieces first — and why might that choice matter for cost or length limits? (2) If you wanted a computer to judge how similar the *meaning* of two sentences is (not just whether they share the same letters), what could you turn each sentence into so the computer could just do math to compare them?",
+      "teach": "Four terms, in the order they get used in a real pipeline: TOKEN, CHUNK, EMBEDDING, VECTOR.\n\nA token is the smallest unit of text a language model actually reads or generates. It is usually not a whole word — it can be a whole word, part of a word, or even a single punctuation mark, depending on the model's tokenizer (the tool that splits text into tokens). Each token is mapped to a number (a token ID) because models only do math on numbers, not letters. Example: 'unbelievable' might split into tokens like 'un', 'believ', 'able' — three tokens for one word.\n\nChunking is splitting a long document into smaller pieces (chunks) before feeding it into a system, usually measured in tokens (e.g., 'chunks of 300 tokens'), sometimes with overlap (shared tokens between consecutive chunks so context isn't lost at the boundary). Chunking exists because (a) models have a context window — a hard limit on how many tokens they can read at once — and (b) in retrieval-augmented generation (RAG), a system that fetches relevant text to help answer a question, smaller chunks let you retrieve just the specific relevant passage instead of an entire document.\n\nAn embedding is a numeric representation of a piece of text (a token, sentence, or chunk) produced by an embedding model, such that texts with similar meaning end up with numerically similar representations. This is what lets a computer compare 'meaning' instead of just matching exact words.\n\nA vector is the actual data structure an embedding takes the form of: an ordered list of numbers, like [0.12, -0.45, 0.88, ...], treated as a point in a multi-dimensional space (space with many numeric coordinates, e.g., 768 or 1536 dimensions). Similarity between two pieces of text is measured by how close their vectors are, commonly using cosine similarity (a math formula measuring the angle between two vectors — smaller angle means more similar meaning).\n\nWhy this works together: tokenization lets a model handle any text with a small fixed vocabulary of pieces. Chunking respects the model's context window and keeps retrievable pieces semantically focused. Embeddings convert meaning into numbers. Vectors are simply that number list, stored in a vector database (specialized storage optimized for fast similarity search) so a new query can be compared against thousands of stored chunks instantly.\n\nWorked example, step by step:\n1. Text: 'Cats sleep a lot.' Tokenize: ['Cats', ' sleep', ' a', ' lot', '.'] → 5 tokens.\n2. Suppose this sentence is one small part of a 50-page document. Chunking groups nearby sentences into a block of, say, 300 tokens; this sentence lands inside Chunk #3.\n3. Chunk #3's text is passed through an embedding model, which outputs a vector, e.g., a list of 768 numbers like [0.02, -0.31, 0.55, ...].\n4. That vector (plus the original chunk text as metadata) is stored in a vector database.\n5. Later, a user asks 'Do cats sleep much?' That query is tokenized, then embedded into its own vector Q.\n6. The system computes cosine similarity between Q and every stored chunk vector. Chunk #3's vector scores highest similarity, so Chunk #3's text is retrieved and handed to the model as context to answer the question — even though the wording differs from the original sentence.\n\nCommon mistake: assuming 'token = word'. Many tokens are subwords, so word count and token count differ — this matters because API costs and context limits are billed/measured in tokens, not words, and a document that 'looks short' in words can still be token-heavy.\n\nSystems/complexity implications: more tokens mean higher compute cost and slower responses (pricing is typically per-token). Chunk size is a tradeoff: too large loses retrieval precision (whole chunk retrieved even if only one sentence is relevant); too small loses surrounding context needed to answer. Higher-dimensional embedding vectors capture more nuance but cost more storage and search time, though vector databases use specialized indexes (like HNSW, a fast approximate-nearest-neighbor search structure) to keep similarity search fast even over millions of vectors.",
+      "questions": [
+        {
+          "id": "aif-c01:2:1:q1",
+          "role": "fade",
+          "prompt": "New scenario: You're preparing a 900-word article on 'the history of coffee brewing methods' for a RAG chatbot on AWS. Step 1: Tokenize the article — it comes out to about 1,200 tokens. Step 2: Chunk it into pieces of 300 tokens each with 50-token overlap, producing 4 chunks. Step 3: Each of the 4 chunks is passed through an embedding model, producing 4 vectors (e.g., 1536 numbers each), which get stored in a vector database along with their chunk text. Now a user asks the chatbot: 'What temperature is best for pour-over coffee?' The system tokenizes this question and runs it through the same embedding model, producing a query vector Q. Fill in the final step: given Q and the 4 stored chunk vectors, what does the system do next to decide which chunk(s) to hand to the language model as context for answering the question?",
+          "choices": [
+            "Compute similarity (e.g., cosine similarity) between the query vector and each stored chunk vector, and retrieve the chunk(s) with the highest similarity scores.",
+            "Search the stored chunks for exact keyword matches to the words in the query text.",
+            "Feed the query vector Q directly into the language model without comparing it to any stored vectors.",
+            "Average all 4 stored chunk vectors together and use that single averaged vector as the answer."
+          ],
+          "correctIndex": 0,
+          "why": "Embeddings only pay off if you use them to measure vector similarity (like cosine similarity) between the query and stored chunks, so retrieval works by meaning, not exact wording."
+        },
+        {
+          "id": "aif-c01:2:1:q2",
+          "role": "solo",
+          "prompt": "A company's 10,000-token internal wiki page is being prepared for a RAG chatbot. The system splits it into chunks of 500 tokens each, with no overlap. How many chunks will be created, and what specifically gets stored in the vector database for each chunk?",
+          "choices": [
+            "20 chunks are created, and for each chunk the vector database stores the chunk's text (or a reference to it) along with its embedding vector.",
+            "20 chunks are created, and for each chunk the vector database stores only the raw token IDs, with no embedding vector.",
+            "500 chunks are created, and for each chunk the vector database stores the chunk's text along with its embedding vector.",
+            "20 chunks are created, but the vector database stores the entire original document's text plus one single shared embedding vector for the whole document."
+          ],
+          "correctIndex": 0,
+          "why": "10,000 tokens divided by 500 tokens per chunk gives 20 chunks, and each chunk needs its own text plus its own embedding vector so it can be individually retrieved by similarity search."
+        }
+      ]
+    }
+  ]
+}

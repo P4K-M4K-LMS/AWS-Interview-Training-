@@ -1,0 +1,84 @@
+{
+  "courseId": "secplus",
+  "imported": {
+    "source": "ascendra",
+    "importedAt": "2026-10-10",
+    "models": [
+      "claude-sonnet-5"
+    ]
+  },
+  "lessons": [
+    {
+      "objectiveId": "secplus:1:1",
+      "sourceHash": "872e268d485f",
+      "model": "claude-sonnet-5",
+      "generatedAt": "2026-09-16T00:51:04.525Z",
+      "guessPrompt": "A company wants customer data to stay private, stay unaltered by hackers, and stay accessible whenever employees need it. It also wants to make sure that if someone approves a purchase, they can't later deny doing it, and it wants a way to check who a user is, what they're allowed to do, and keep a record of what they did. What security concepts or models are these three requirements describing?",
+      "teach": "There are two related ideas here. First, the CIA triad: three core goals of information security. Confidentiality means only authorized people can read or view data (blocked by encryption, access controls). Integrity means data hasn't been changed without authorization, and any tampering can be detected (checked with hashes, checksums, digital signatures). Availability means authorized users can access data and systems when they need to (supported by backups, redundancy, uptime planning). Second, non-repudiation: the guarantee that someone cannot later deny having performed an action, because there's cryptographic or logged proof tying that specific person to that specific action (usually a digital signature made with a private key only they possess). This is separate from confidentiality/integrity — encrypting or hash-checking data doesn't prove who created it. Third, the AAA model: Authentication (proving who you are — password, biometric, token), Authorization (once identity is confirmed, deciding what you're allowed to do), and Accounting (recording what was actually done — timestamps, actions, resource usage — for audit trails). These three models work together but answer different questions: CIA asks 'is the data safe?', AAA asks 'who did what and were they allowed to?', and non-repudiation asks 'can they deny it later?'. Worked example — online banking: (1) You log in with a password plus a one-time code — this is Authentication. (2) The bank checks that your account tier allows transfers up to $5,000 — this is Authorization. (3) The bank logs your login time, IP address, and the transfer amount — this is Accounting. (4) All traffic between you and the bank is encrypted with TLS so eavesdroppers can't read your account number — this is Confidentiality. (5) The transfer request includes a checksum so the bank can detect if the amount was altered in transit — this is Integrity. (6) The bank runs redundant servers in multiple data centers so the site stays up even if one fails — this is Availability. (7) When you submit the transfer, you enter a one-time code cryptographically tied to your device and the bank stores a signed record of the request — so you can't later claim you never authorized it — this is Non-repudiation. Common mistake: people often think logging in (Authentication) automatically means you're allowed to do anything (Authorization), or that encrypting data (Confidentiality) is enough to stop someone from denying an action (Non-repudiation) — but encryption protects secrecy, not proof of authorship; you need a signature or verified log tied uniquely to the person. Systems implication: strong accounting/non-repudiation requires storing and protecting detailed logs and cryptographic keys, which adds storage and management overhead, and availability measures like redundancy can sometimes increase the attack surface, creating tension with confidentiality goals.",
+      "questions": [
+        {
+          "id": "secplus:1:1:q1",
+          "role": "fade",
+          "prompt": "A doctor logs into a hospital's electronic health record (EHR) system to update a patient's prescription. Here's how each concept applies, mostly worked out: Authentication — the doctor swipes an ID badge and enters a PIN, proving who they are. Authorization — the system checks that this doctor's role permits editing prescriptions for patients currently under their care. Confidentiality — only authorized clinical staff can view the patient's chart, enforced via encryption and access controls. Integrity — the system uses checksums so any unauthorized tampering with the prescription record would be detected. Availability — the hospital has backup power and redundant servers so the chart stays accessible even during an outage. Accounting — the system logs the doctor's user ID, timestamp, and exact change made to the prescription. One piece is still missing: what specific mechanism would give Non-repudiation for this prescription change — proof strong enough that the doctor could not later deny having made it — and why is that different from just having the Accounting log described above?",
+          "choices": [
+            "The prescription record is digitally signed using the doctor's private cryptographic key, which only they possess, so the signature mathematically proves they authored it — unlike a log entry, it can't be forged just by knowing their username.",
+            "The doctor's username is already saved in the Accounting log, so that log entry alone counts as non-repudiation.",
+            "The prescription data is encrypted with TLS while being transmitted to the hospital's server, which prevents the doctor from denying they made the change.",
+            "The doctor must enter their password to log in, and since passwords are private, that login event itself proves non-repudiation."
+          ],
+          "correctIndex": 0,
+          "why": "A digital signature cryptographically binds the specific action to the doctor's private key, giving provable, unforgeable proof of authorship — plain log entries, encryption, or password logins alone can be disputed, shared, or spoofed and don't provide that same proof."
+        },
+        {
+          "id": "secplus:1:1:q2",
+          "role": "solo",
+          "prompt": "An e-commerce website does the following when a customer checks out: requires the customer to log in with a password, checks whether the customer's account is allowed to apply a stored discount code, encrypts the credit card number while it's sent to the payment processor, verifies with a hash check that the order total wasn't altered in transit, keeps its servers mirrored across three regions so the site stays reachable during outages, and records the customer's IP address, timestamp, and purchased items in a searchable log. Which specific mechanism in this scenario represents 'Accounting' in the AAA model, and why is it different from Authentication or Authorization here?",
+          "choices": [
+            "Recording the customer's IP address, timestamp, and purchased items in a searchable log — this tracks what happened after identity and permissions were already established, rather than proving identity or granting permission.",
+            "Requiring the customer to log in with a password — that proves identity, which is Authentication, not Accounting.",
+            "Checking whether the account is allowed to use the discount code — that's granting permission, which is Authorization, not Accounting.",
+            "Encrypting the credit card number in transit — that protects secrecy, which is Confidentiality, not Accounting."
+          ],
+          "correctIndex": 0,
+          "why": "Accounting is the record-keeping of actions that already happened, distinct from confirming identity (Authentication) or granting permission (Authorization)."
+        }
+      ]
+    },
+    {
+      "objectiveId": "secplus:1:2",
+      "sourceHash": "98c1c240b47e",
+      "model": "claude-sonnet-5",
+      "generatedAt": "2026-10-09T05:51:46.343Z",
+      "guessPrompt": "A company installs a security camera at the front door, requires new employees to sign an acceptable use policy, deploys a firewall, and posts a 'Premises Under Surveillance' sign. Before any teaching: can you guess which security control CATEGORY (technical, managerial, operational, physical) each of these four belongs to, and which control FUNCTION (preventive, detective, corrective, deterrent, compensating, directive) the camera and the sign each serve?",
+      "teach": "Security+ splits controls along two independent dimensions: CATEGORY (what the control IS / how it's implemented) and FUNCTION (what the control DOES / its purpose). Every control has one of each.\n\nCATEGORIES:\n- Technical control: enforced through technology/systems — e.g., firewalls, encryption, access control lists, IDS/IPS.\n- Managerial control: policies, procedures, and risk-management decisions made by people/governance — e.g., security policies, risk assessments, onboarding procedures.\n- Operational control: implemented and executed by PEOPLE day-to-day (not purely automated, not purely paperwork) — e.g., security awareness training, guard patrols, incident response procedures carried out by staff.\n- Physical control: restricts physical access to a space or asset — e.g., locks, fences, badges, cameras, guards.\n\nFUNCTIONS:\n- Preventive: stops an incident before it happens — e.g., firewall rules blocking traffic, locked doors.\n- Detective: identifies/records that an incident occurred — e.g., cameras reviewed later, IDS alerts, log review.\n- Corrective: reduces impact / restores normal operation after an incident — e.g., restoring from backup, patching a vulnerability after exploitation.\n- Deterrent: discourages an attacker without physically stopping them — e.g., warning signs, visible cameras (the sign itself, not the recording).\n- Compensating: an alternative control used when the primary control isn't feasible, meeting the intent of a requirement another way — e.g., using additional monitoring because a legacy system can't be patched.\n- Directive: tells people what they MUST do — relies on compliance, often policy-driven — e.g., a policy requiring employees to lock workstations, mandatory training requirements.\n\nWhy this two-axis model matters: the exam will give a scenario and ask you to name BOTH the category and function, or to pick the control that best fits a described gap. Category tells you the mechanism; function tells you the purpose. They're independent — a camera can be physical+detective (recording footage for later review) or physical+deterrent (its mere visible presence discourages intrusion), depending on what role it's playing in the scenario.\n\nWorked example, traced:\n1. Security camera at the front door: CATEGORY = physical (it's a hardware device controlling/observing physical space). FUNCTION depends on framing — if it records footage reviewed after an incident, that's detective; if its visible presence discourages someone from trying to break in, that's deterrent. A single camera can serve both, but exam scenarios usually cue one purpose explicitly.\n2. Acceptable use policy employees must sign: CATEGORY = managerial (it's a governance policy document) — note it's also directive in function since it mandates specific behavior employees must follow.\n3. Firewall: CATEGORY = technical (enforced by a system). FUNCTION = preventive (it blocks disallowed traffic before it reaches the network).\n4. 'Premises Under Surveillance' sign: CATEGORY = physical (a physical object placed in the environment). FUNCTION = deterrent (it discourages intrusion attempts without stopping anyone itself).\n\nCommon mistake: assuming category and function are the same thing, or assuming a camera is always 'detective' — many learners forget a camera's deterrent value is separate from its recording/logging value, and the exam tests whether you can distinguish the scenario's intent. Another frequent error: calling security awareness training 'managerial' because it sounds policy-related — training that people actually DO is operational; the POLICY that mandates the training is managerial.\n\nSystems implication: layered security (defense in depth) typically combines multiple categories and functions so a failure in one (e.g., a preventive technical control bypassed) is caught by another (e.g., a detective operational control like log review), and compensating controls exist specifically to cover gaps when the ideal control can't be deployed.",
+      "questions": [
+        {
+          "id": "secplus:1:2:q1",
+          "role": "fade",
+          "prompt": "A company posts security policies in an employee handbook stating that all staff must complete annual security awareness training and follow a clean-desk policy. This is a managerial control type, because it exists as a documented rule/policy set by management to guide behavior (not a technical system, not a physical barrier, and not someone actively performing a daily task). Now, by control FUNCTION, this specific example — a written rule telling employees what they must do — is best classified as which function? State exactly which control function this is and explain why in one sentence.",
+          "choices": [
+            "Directive, because it formally instructs or mandates specific behavior through documented policy rather than physically or technically stopping an action",
+            "Preventive, because having the policy physically blocks employees from ever violating clean-desk rules",
+            "Detective, because the handbook is reviewed periodically to catch violations after they occur",
+            "Compensating, because the policy makes up for the lack of a technical control enforcing clean-desk behavior"
+          ],
+          "correctIndex": 0,
+          "why": "Directive controls mandate or instruct specific actions through policy/rules, which is exactly what a written clean-desk policy does, even though it doesn't technically stop or physically block anything."
+        },
+        {
+          "id": "secplus:1:2:q2",
+          "role": "solo",
+          "prompt": "A data center requires employees to swipe a badge and pass a biometric fingerprint scan before a door will physically unlock to let them into the server room. Identify BOTH the control type (technical, managerial, operational, or physical) and the control function (preventive, detective, corrective, deterrent, compensating, or directive) for this badge-and-biometric door lock, and briefly justify each.",
+          "choices": [
+            "Physical control type, because the lock is a tangible barrier restricting physical access; preventive function, because it stops unauthorized entry before it happens",
+            "Technical control type, because it uses electronic biometric hardware; detective function, because it logs who entered after the fact",
+            "Physical control type, because it's a door; corrective function, because it fixes unauthorized access once discovered",
+            "Managerial control type, because badge policies are set by management; deterrent function, because it discourages people from trying to enter"
+          ],
+          "correctIndex": 0,
+          "why": "A locked door enforced by badge/biometric hardware is a tangible physical barrier (physical type) that stops unauthorized entry before it occurs (preventive function)."
+        }
+      ]
+    }
+  ]
+}

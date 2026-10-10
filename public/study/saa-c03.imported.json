@@ -1,0 +1,84 @@
+{
+  "courseId": "saa-c03",
+  "imported": {
+    "source": "ascendra",
+    "importedAt": "2026-10-10",
+    "models": [
+      "claude-sonnet-5"
+    ]
+  },
+  "lessons": [
+    {
+      "objectiveId": "saa-c03:1:1",
+      "sourceHash": "f7220b8f38ae",
+      "model": "claude-sonnet-5",
+      "generatedAt": "2026-09-30T02:55:32.278Z",
+      "guessPrompt": "You just inherited an AWS account from a contractor who used the root login for everything — daily console work, CLI scripts with root access keys, no MFA. Before reading any explanation, what specific changes would you make, and in what order, to bring this account up to a secure standard?",
+      "teach": "Key terms first: IAM (Identity and Access Management) is the AWS service that decides which identity can perform which action on which resource. The root user is the original identity created when the AWS account is opened, tied to the account's founding email address — it can do literally anything, including tasks no policy can ever restrict, such as closing the account or changing the support plan. An IAM user is a distinct identity you create inside the account for a specific person or application; what it can do is entirely defined by the IAM policies (JSON documents listing allowed/denied actions on specific resources) attached to it. Least privilege means giving each identity the smallest set of permissions it needs to do its job, nothing extra. MFA (Multi-Factor Authentication) requires a second proof of identity — typically a rotating code from a virtual authenticator app or a physical hardware token — in addition to the password, before login succeeds; it must be configured separately for every single identity, root included. Access keys are the secret ID/key pair used for programmatic access (CLI, SDK, API calls) instead of typing a password into a browser.\n\nWhy this works: because root's power cannot be capped by an IAM policy, a compromised root account is a total loss — data, billing, and the ability to delete the entire account. The fix is architectural: make root nearly unusable day-to-day (strong password, MFA, no access keys, locked away for emergencies only), and route all real work through IAM users or roles that are individually scoped to only what they need. That way, if one IAM identity is compromised, the blast radius is limited to that identity's narrow permissions instead of the whole account. MFA matters because it defeats the single most common attack — a leaked or guessed password — by requiring something the attacker doesn't physically possess.\n\nWorked example — remediating a neglected account, step by step:\n1. Log in as root one final time to perform the fix itself.\n2. Rotate the root password to a long, unique one stored in a password manager, not shared verbally or by chat.\n3. Enable MFA on root using a virtual authenticator app, closing the biggest open hole.\n4. Check for any root access keys; if any exist, delete them — root should never have programmatic credentials.\n5. Create a personal IAM user with administrator permissions for whoever will do daily console work, and immediately enable MFA on that IAM user too — this protection does not carry over from root, it's per-identity.\n6. Stop using root going forward; use the IAM admin user instead for routine tasks like creating S3 buckets.\n7. Reserve root login exclusively for the handful of actions that truly require it, such as changing account-level billing settings.\n\nCommon mistake: assuming that once MFA and a strong password are set on root, the account is 'secure' even though root is still being used weekly for routine work. The real fix isn't just protecting root's login — it's stopping root usage entirely for anything that an IAM user could do instead, because every login (even an MFA-protected one) is still a live credential that could be phished or session-hijacked, and routine use also means routine exposure.\n\nSystems implication: since only AWS Organizations Service Control Policies can place any limits on root at all, and even those have gaps, root is a permanent single point of total failure. That's exactly why the guidance is: secure it once, thoroughly, then structurally avoid using it — shifting daily risk onto narrowly-scoped IAM identities where a breach is contained rather than catastrophic.",
+      "questions": [
+        {
+          "id": "saa-c03:1:1:q1",
+          "role": "fade",
+          "prompt": "A mid-sized company just migrated to AWS. Here is what they've done so far: (1) the root user now has a 40-character random password stored only in a password manager, (2) MFA is enabled on the root user with a hardware security key, (3) no root access keys exist anywhere, (4) an IAM user named 'ops-admin' was created for the two cloud engineers to share for daily console work, with a broad AdministratorAccess policy attached so they never hit permission errors. A consultant reviews this setup and flags one remaining serious gap that undermines everything else they did correctly. What is the one change they must make regarding the 'ops-admin' user setup to match the security rigor already applied to root?",
+          "choices": [
+            "Split the shared 'ops-admin' user into one individual IAM user per engineer, each with their own credentials and MFA device, and scope permissions to least privilege instead of full admin access",
+            "Enable MFA on the shared 'ops-admin' IAM user so both engineers use the same authenticator app",
+            "Rotate the 'ops-admin' access keys every 24 hours instead of using console passwords",
+            "Move the AdministratorAccess policy from the IAM user onto the root user for consistency"
+          ],
+          "correctIndex": 0,
+          "why": "A shared identity destroys accountability (you can't tell which engineer did what) and destroys per-person MFA, and broad admin access violates least privilege — each person needs their own identity, their own MFA, and only the permissions their job actually requires."
+        },
+        {
+          "id": "saa-c03:1:1:q2",
+          "role": "solo",
+          "prompt": "A contractor is hired for one week to update text on a static website hosted in a single S3 bucket. The project lead is about to hand the contractor the root user's password and MFA device 'just for this week, since it's simplest.' Explain what should be done instead, covering how the contractor's access should be created, secured, and scoped.",
+          "choices": [
+            "Create a new IAM user for the contractor with MFA enabled and a custom policy granting only the S3 permissions needed for that one bucket, then delete or disable the user when the contract ends",
+            "Give the contractor the root password and MFA device as planned, but change the root password again after the week ends",
+            "Create an IAM user for the contractor with AdministratorAccess so they can troubleshoot anything, and enable MFA on it",
+            "Create IAM access keys under the root user specifically for the contractor's CLI access, since root keys aren't used elsewhere"
+          ],
+          "correctIndex": 0,
+          "why": "Root must never be shared regardless of urgency, and least privilege plus per-identity MFA means the contractor gets a dedicated, narrowly-scoped, time-limited IAM identity instead."
+        }
+      ]
+    },
+    {
+      "objectiveId": "saa-c03:1:2",
+      "sourceHash": "35e30a73662e",
+      "model": "claude-sonnet-5",
+      "generatedAt": "2026-09-30T02:54:54.904Z",
+      "guessPrompt": "A company has 20 employees who all need the same access to S3 and EC2, plus one application running on an EC2 instance that needs to write to a DynamoDB table. Without knowing AWS terminology yet, how would you organize permissions for the 20 people versus the application, and why would you treat them differently?",
+      "teach": "AWS IAM (Identity and Access Management) is the service that controls who can do what in your AWS account. It has four core building blocks. An IAM user is a persistent identity for a specific person or service, with its own long-term credentials (password and/or access keys) — think of it as a named account for 'Alice' or 'billing-bot'. A group is just a named collection of users that lets you attach permissions once to many people at once — groups cannot be logged into and cannot be nested inside other groups. A role is an identity with no long-term credentials of its own; instead, it's assumed temporarily by a user, an application, or an AWS service (like an EC2 instance or Lambda function), which receives short-lived temporary credentials via AWS STS (Security Token Service) when it assumes the role. A policy is a JSON document that actually defines permissions — a list of allowed or denied actions (like s3:GetObject) on specific resources (like a bucket ARN), optionally under certain conditions. Policies are what grant power; users, groups, and roles are just identities you attach policies to.\n\nWhy this model works: it separates 'who you are' from 'what you're allowed to do' and from 'how long you get that power.' Groups let you manage permissions at scale (add/remove users from a group instead of editing 20 individual policies). Roles let you avoid ever embedding permanent secret keys into an application or handing them to a federated outside user — temporary credentials expire automatically, shrinking the blast radius if leaked. This is the security principle of least privilege combined with reduced credential exposure.\n\nWorked example, traced step by step: You have 20 employees needing identical S3 and EC2 read access. Step 1: create an IAM group called 'analysts'. Step 2: attach one policy to the group granting s3:GetObject and ec2:Describe* actions. Step 3: add all 20 user accounts to the group — they instantly inherit the permissions, and if requirements change you edit the policy once. For the EC2 application needing DynamoDB write access, you do NOT create an IAM user with access keys stored on the instance (that's a long-lived secret sitting on a machine, a common breach vector). Instead: Step 1: create an IAM role, e.g. 'app-dynamo-writer', with a trust policy specifying that the EC2 service can assume it. Step 2: attach a permissions policy granting dynamodb:PutItem on the specific table ARN. Step 3: attach the role to the EC2 instance via an instance profile. The instance's software calls the metadata service, gets temporary credentials that auto-rotate, and never has a static key to leak.\n\nCommon mistake: treating roles like 'a type of user for machines' and forgetting that anyone or anything can assume a role — including a human user temporarily elevating privileges, or a role in another AWS account (cross-account access). The defining feature of a role isn't who uses it, it's that credentials are temporary and there's a trust policy governing who's allowed to assume it, versus a policy governing what it can do once assumed — two separate documents, easy to conflate.\n\nSystems implication: because policies attach to users, groups, AND roles, and permissions are the union of all applicable policies (with any explicit Deny always overriding any Allow), large organizations manage access primarily through groups and roles rather than per-user policies, keeping the permission surface auditable as headcount and services scale.",
+      "questions": [
+        {
+          "id": "saa-c03:1:2:q1",
+          "role": "fade",
+          "prompt": "A company has a Lambda function that needs to read objects from a specific S3 bucket and write logs to CloudWatch Logs. It should never need long-term credentials. Here's the setup so far: (1) Create an IAM role called 'lambda-s3-reader-role'. (2) Attach a trust policy to the role that specifies 'lambda.amazonaws.com' as the trusted principal, allowing the Lambda service to assume this role. (3) Attach a permissions policy granting s3:GetObject on the specific bucket ARN and logs:CreateLogGroup/CreateLogStream/PutLogEvents on the log group ARN. (4) Attach the role to the Lambda function's configuration. State exactly what mechanism the Lambda service uses at invocation time to get temporary security credentials for this role, and why this is safer than putting an IAM user's access key and secret key directly in the function's environment variables.",
+          "choices": [
+            "Lambda calls AWS Security Token Service (STS) to assume the role and receive short-lived temporary credentials automatically, which are rotated and never stored as long-term secrets in the code",
+            "Lambda embeds the role's ARN directly in the function code, which AWS treats as equivalent to a password",
+            "Lambda uses the account root user's credentials to sign all requests made by the function",
+            "Lambda encrypts a permanent IAM user access key with KMS and stores it in the deployment package"
+          ],
+          "correctIndex": 0,
+          "why": "IAM roles provide temporary credentials issued via STS's AssumeRole mechanism, so no long-lived secret ever needs to be stored, unlike a hardcoded access key/secret pair that persists and can leak."
+        },
+        {
+          "id": "saa-c03:1:2:q2",
+          "role": "solo",
+          "prompt": "An organization has 40 developers who all need identical permissions to deploy to a staging environment (read/write to specific S3 buckets and CloudFormation stacks). New developers join every month and some leave. Describe the IAM approach you'd use to manage their permissions efficiently, naming which IAM feature (user, group, role, or policy) plays which part, and explain why you would NOT attach the permissions policy directly to each individual IAM user.",
+          "choices": [
+            "Create an IAM group called 'staging-deployers', attach the permissions policy to the group once, and add/remove each developer's IAM user to/from that group as they join or leave, so permissions are managed in one place instead of duplicated across 40 users",
+            "Create 40 separate IAM roles, one per developer, each with the same policy copy-pasted in, so each person's access can be revoked independently",
+            "Attach the permissions policy directly to each developer's IAM user account so that permissions are explicit and visible on each user",
+            "Create one shared IAM user account that all 40 developers log into using the same access key, simplifying credential management"
+          ],
+          "correctIndex": 0,
+          "why": "Groups let you attach a policy once and manage membership, so adding or removing a user's access is a single membership change instead of editing 40 individual policies, which avoids drift and repeated errors."
+        }
+      ]
+    }
+  ]
+}
