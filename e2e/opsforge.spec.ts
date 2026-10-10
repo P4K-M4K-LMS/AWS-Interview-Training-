@@ -1237,3 +1237,39 @@ test("JavaScript lab, DOM and server units: delegation passes from a Study objec
   await expect(page.getByTestId("js-test-lastfive")).toContainText("both requests read the same stock before either wrote");
   await expect(page.getByTestId("js-test-alone")).toHaveAttribute("data-ok", "1");
 });
+
+test("lab layout: a long line in the editor wraps or scrolls inside its column, never widens the page", async ({ page }) => {
+  test.setTimeout(120_000);
+  await onboard(page);
+  // An unbroken 300-character word: long enough to overflow any column at any viewport.
+  const long = "x".repeat(300);
+  // A string expression: the e2e tsconfig has no DOM lib.
+  const overflow = () => page.evaluate<number>("document.documentElement.scrollWidth - document.documentElement.clientWidth");
+  // Python drills: CodeMirror, on the drill with the widest starter code.
+  await page.goto("/#/labs/python-drills?exercise=py-11-generators");
+  await expect(page.getByRole("heading", { name: "Python drills" })).toBeVisible();
+  await page.locator(".cm-content").click();
+  await page.keyboard.press("Control+End");
+  await page.keyboard.insertText(`\n# ${long}`);
+  await expect.poll(overflow).toBe(0);
+  // A button below the editor must be clickable: the layout settles instead of oscillating.
+  await page.getByTestId("pydrill-hint").click();
+  await expect(page.getByTestId("pydrill-hints")).toBeVisible();
+  // Alarms and encryption echo an unparseable line back in an error list.
+  for (const [path, box] of [["/#/labs/alarms", "alarm-editable"], ["/#/labs/crypto", "crypto-program"]] as const) {
+    await page.goto(path);
+    await page.getByTestId(box).click();
+    await page.keyboard.press("Control+End");
+    await page.keyboard.insertText(`\n${long}`);
+    await expect.poll(overflow).toBe(0);
+  }
+  // The JavaScript lab prints what the program logs and throws.
+  await page.goto("/#/labs/javascript");
+  await page.locator(".cm-content").first().click();
+  await page.keyboard.press("Control+End");
+  await page.keyboard.insertText(`\nconsole.log("${long}");`);
+  await expect(page.getByTestId("js-run")).toBeEnabled({ timeout: 60_000 });
+  await page.getByTestId("js-run").click();
+  await expect(page.getByTestId("js-console")).toContainText(long);
+  await expect.poll(overflow).toBe(0);
+});

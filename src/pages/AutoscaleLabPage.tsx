@@ -95,8 +95,8 @@ function ExerciseView({ exercise, fromPath, pick }: { exercise: AutoscaleExercis
         </div>
         {credited.length > 0 && <p className="muted text-xs mt-1">Counts toward {credited.length} Study objective{credited.length === 1 ? "" : "s"}.</p>}
       </Panel>
-      <div className="grid lg:grid-cols-2 gap-4">
-        <div className="space-y-3">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <div className="space-y-3 min-w-0 break-words">
           <Panel title="Fleet bounds">
             <div className="grid grid-cols-2 gap-2 text-sm">
               <label className="block">
@@ -215,7 +215,7 @@ function ExerciseView({ exercise, fromPath, pick }: { exercise: AutoscaleExercis
             </div>
           </Panel>
         </div>
-        <div className="space-y-3">
+        <div className="space-y-3 min-w-0 break-words">
           <Panel title="What happened">
             <div className="grid grid-cols-3 gap-2 text-sm">
               <Stat label="Failed requests" value={outcome.failedRequests.toLocaleString()} id="failed" />

@@ -65,8 +65,8 @@ function ExerciseView({ exercise, fromPath, pick }: { exercise: PolicyExercise; 
         <p className="muted text-xs mt-2">Teaches: {exercise.teaches}</p>
         {credited.length > 0 && <p className="muted text-xs mt-1">Counts toward {credited.length} Study objective{credited.length === 1 ? "" : "s"}.</p>}
       </Panel>
-      <div className="grid lg:grid-cols-2 gap-4">
-        <div className="space-y-3">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <div className="space-y-3 min-w-0 break-words">
           {exercise.policies.map((p) => {
             const editable = p.id === exercise.editable;
             const errs = compiled.errors[p.id] ?? [];
@@ -90,7 +90,7 @@ function ExerciseView({ exercise, fromPath, pick }: { exercise: PolicyExercise; 
             <pre className="text-xs whitespace-pre-wrap">{GRAMMAR}</pre>
           </Panel>
         </div>
-        <div className="space-y-3">
+        <div className="space-y-3 min-w-0 break-words">
           <Panel title="Requests that must come out right">
             <ul className="space-y-2" data-testid="policy-requests">
               {results.map((r) => {

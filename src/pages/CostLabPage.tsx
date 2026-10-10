@@ -86,8 +86,8 @@ function ExerciseView({ exercise, fromPath, pick }: { exercise: CostExercise; fr
         </div>
         {credited.length > 0 && <p className="muted text-xs mt-1">Counts toward {credited.length} Study objective{credited.length === 1 ? "" : "s"}.</p>}
       </Panel>
-      <div className="grid lg:grid-cols-2 gap-4">
-        <Panel title="Your plan">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <Panel title="Your plan" className="min-w-0 break-words">
           <div className="space-y-3 text-sm">
             <label className="block">
               <span className="label">Committed capacity units (one-year, {PRICES.committedUnitMonth} credits each, paid all month)</span>
@@ -140,7 +140,7 @@ function ExerciseView({ exercise, fromPath, pick }: { exercise: CostExercise; fr
             </label>
           </div>
         </Panel>
-        <div className="space-y-3">
+        <div className="space-y-3 min-w-0 break-words">
           <Panel title="The bill">
             <div className="text-2xl font-semibold" data-testid="cost-total">
               {result.derived.total} <span className="text-sm muted">credits a month</span>
