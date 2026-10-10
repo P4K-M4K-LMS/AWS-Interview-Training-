@@ -1,0 +1,382 @@
+{
+  "id": "pmicpmai",
+  "code": "PMICPMAI",
+  "title": "PMI-CPMAI",
+  "description": "PMI Certified Professional in Managing AI (PMI-CPMAI) exam prep across 5 weighted domains -- responsible AI, identifying business and data needs, model development/evaluation, and operationalizing AI solutions.",
+  "trackType": "certification",
+  "field": "pm",
+  "units": [
+    {
+      "id": "pmicpmai:1",
+      "index": 1,
+      "title": "Support Responsible and Trustworthy AI Efforts",
+      "weight": 15,
+      "gate": "Given an AI project's governance question, name the specific responsible-AI practice it calls for -- a bias check, an explainability requirement -- not a generic 'be ethical' answer.",
+      "objectives": [
+        {
+          "id": "pmicpmai:1:1",
+          "unitId": "pmicpmai:1",
+          "index": 1,
+          "text": "Overseeing a privacy and security plan: PII governance protocols, encryption/access controls for training data, and privacy impact assessments",
+          "sourceHash": "ed9491acfe52",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmicpmai:1:2",
+          "unitId": "pmicpmai:1",
+          "index": 2,
+          "text": "Managing AI/ML transparency: documenting model-selection rationale, data-source reporting, and explainability requirements for stakeholders",
+          "sourceHash": "4812d453ded4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmicpmai:1:3",
+          "unitId": "pmicpmai:1",
+          "index": 3,
+          "text": "Conducting bias checks across model, data, and algorithm: demographic representation analysis, fairness testing, and bias-mitigation techniques",
+          "sourceHash": "c74805c7804a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmicpmai:1:4",
+          "unitId": "pmicpmai:1",
+          "index": 4,
+          "text": "Monitoring regulatory and policy compliance: tracking evolving AI regulations and coordinating with legal/compliance teams on governance",
+          "sourceHash": "78248e0b0466",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmicpmai:1:5",
+          "unitId": "pmicpmai:1",
+          "index": 5,
+          "text": "Managing accountability documentation and audit trails: version control for models/data/training processes and stakeholder approval records",
+          "sourceHash": "3ab458faa222",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "pmicpmai:2",
+      "index": 2,
+      "title": "Identify Business Needs and Solutions",
+      "weight": 26,
+      "gate": "Given a proposed AI initiative, apply the specific feasibility, scoping, or ROI technique it calls for -- a risk assessment, a cost-benefit analysis -- not a generic 'build an AI solution' answer.",
+      "objectives": [
+        {
+          "id": "pmicpmai:2:1",
+          "unitId": "pmicpmai:2",
+          "index": 1,
+          "text": "Identifying the problem to be solved: user personas, mapping business problems to AI patterns, and validating problem statements with SMEs",
+          "sourceHash": "8152858a7d21",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmicpmai:2:2",
+          "unitId": "pmicpmai:2",
+          "index": 2,
+          "text": "Evaluating initial AI feasibility: technical viability, data availability/quality, computational resource requirements, and organizational readiness",
+          "sourceHash": "c2c48f20e1fc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmicpmai:2:3",
+          "unitId": "pmicpmai:2",
+          "index": 3,
+          "text": "Conducting risk assessments across security, safety, and ethics: failure modes, cybersecurity vulnerabilities, and mitigation strategies",
+          "sourceHash": "7b0093eaf082",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmicpmai:2:4",
+          "unitId": "pmicpmai:2",
+          "index": 4,
+          "text": "Developing an AI project scope statement: boundaries, success criteria, and in-scope/out-of-scope functionality",
+          "sourceHash": "74d8c620c0ae",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmicpmai:2:5",
+          "unitId": "pmicpmai:2",
+          "index": 5,
+          "text": "Determining ROI: expected benefits, total cost of ownership, and a cost-benefit analysis for stakeholder decision-making",
+          "sourceHash": "d08bc4bd4df4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmicpmai:2:6",
+          "unitId": "pmicpmai:2",
+          "index": 6,
+          "text": "Managing adoption and integration risk: change-management requirements, user-resistance planning, and training strategies",
+          "sourceHash": "352779ec0587",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmicpmai:2:7",
+          "unitId": "pmicpmai:2",
+          "index": 7,
+          "text": "Drafting an AI solution: high-level architecture, data flow requirements, and model/algorithmic approach",
+          "sourceHash": "676907bf14e5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmicpmai:2:8",
+          "unitId": "pmicpmai:2",
+          "index": 8,
+          "text": "Defining success criteria (KPIs, performance thresholds) and supporting business-case creation with finance teams",
+          "sourceHash": "7397278ad3c4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmicpmai:2:9",
+          "unitId": "pmicpmai:2",
+          "index": 9,
+          "text": "Identifying project resources: skill requirements, infrastructure needs, and gaps requiring outside contractors",
+          "sourceHash": "665b58b834e7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "pmicpmai:3",
+      "index": 3,
+      "title": "Identify Data Needs",
+      "weight": 26,
+      "gate": "Given an AI project's data pipeline, apply the specific sourcing, evaluation, or compliance step it calls for -- a data-quality assessment, a privacy check -- not a generic 'get good data' answer.",
+      "objectives": [
+        {
+          "id": "pmicpmai:3:1",
+          "unitId": "pmicpmai:3",
+          "index": 1,
+          "text": "Defining required data: types, formats, volume, and quality standards mapped to business objectives",
+          "sourceHash": "0d7e7597c090",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmicpmai:3:2",
+          "unitId": "pmicpmai:3",
+          "index": 2,
+          "text": "Identifying data subject-matter experts, sources, and locations: internal databases, external providers, and legacy archives",
+          "sourceHash": "ded167a939cc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmicpmai:3:3",
+          "unitId": "pmicpmai:3",
+          "index": 3,
+          "text": "Coordinating AI workspace infrastructure: compute provisioning, secure development environments, and version control",
+          "sourceHash": "4d95b5888154",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmicpmai:3:4",
+          "unitId": "pmicpmai:3",
+          "index": 4,
+          "text": "Gathering required data and checking privacy, compliance, and access rights (usage licensing, data protection regulations)",
+          "sourceHash": "8970944c82b9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmicpmai:3:5",
+          "unitId": "pmicpmai:3",
+          "index": 5,
+          "text": "Overseeing data evaluation: quality dimensions (accuracy, completeness, consistency), bias/gap analysis, and exploratory data analysis",
+          "sourceHash": "0ea7304c49bd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmicpmai:3:6",
+          "unitId": "pmicpmai:3",
+          "index": 6,
+          "text": "Determining whether available data meets solution needs, and conveying data readiness to leadership in business-relevant terms",
+          "sourceHash": "72c4c11d8372",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "pmicpmai:4",
+      "index": 4,
+      "title": "Manage AI Model Development and Evaluation",
+      "weight": 16,
+      "gate": "Given a model in development, apply the specific technique/QA step it calls for -- a hyperparameter-tuning decision, a go/no-go call -- not a generic 'train the model' answer.",
+      "objectives": [
+        {
+          "id": "pmicpmai:4:1",
+          "unitId": "pmicpmai:4",
+          "index": 1,
+          "text": "Overseeing AI/ML model technique and algorithm selection: supervised/unsupervised/reinforcement learning tradeoffs against complexity and interpretability",
+          "sourceHash": "5ec5275a1421",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmicpmai:4:2",
+          "unitId": "pmicpmai:4",
+          "index": 2,
+          "text": "Overseeing model QA/QC: testing protocols, configuration management, and peer review of model design",
+          "sourceHash": "37b47a1c2ad3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmicpmai:4:3",
+          "unitId": "pmicpmai:4",
+          "index": 3,
+          "text": "Managing AI/ML model training: scheduling, hyperparameter tuning, cross-validation, and experiment tracking",
+          "sourceHash": "190a458bc15a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmicpmai:4:4",
+          "unitId": "pmicpmai:4",
+          "index": 4,
+          "text": "Managing data transformation and preparation: cleaning, feature engineering, normalization, and reproducibility documentation",
+          "sourceHash": "e78b99058095",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmicpmai:4:5",
+          "unitId": "pmicpmai:4",
+          "index": 5,
+          "text": "Verifying data quality and readiness for training with a go/no-go decision, and verifying model readiness for operationalization",
+          "sourceHash": "b50929724c61",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "pmicpmai:5",
+      "index": 5,
+      "title": "Operationalize AI Solution",
+      "weight": 17,
+      "gate": "Given a model ready for production, apply the specific deployment or governance step it calls for -- a rollback plan, a drift-monitoring setup -- not a generic 'deploy it' answer.",
+      "objectives": [
+        {
+          "id": "pmicpmai:5:1",
+          "unitId": "pmicpmai:5",
+          "index": 1,
+          "text": "Creating an AI solution deployment plan: strategy, timeline, infrastructure requirements, and rollback procedures",
+          "sourceHash": "10bba62e40e3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmicpmai:5:2",
+          "unitId": "pmicpmai:5",
+          "index": 2,
+          "text": "Managing AI solution deployment: coordinating activities, validating production performance, and post-deployment verification",
+          "sourceHash": "525f7c2d5ee5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmicpmai:5:3",
+          "unitId": "pmicpmai:5",
+          "index": 3,
+          "text": "Overseeing model governance: lifecycle management, versioning, and drift detection/monitoring",
+          "sourceHash": "bcbf19735489",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmicpmai:5:4",
+          "unitId": "pmicpmai:5",
+          "index": 4,
+          "text": "Overseeing AI solution metrics: monitoring dashboards, KPI tracking, and performance-degradation alerting",
+          "sourceHash": "0b838ce63e80",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmicpmai:5:5",
+          "unitId": "pmicpmai:5",
+          "index": 5,
+          "text": "Preparing a final report and lessons learned, and managing the transition plan to operational/production support teams",
+          "sourceHash": "878a8577d94e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmicpmai:5:6",
+          "unitId": "pmicpmai:5",
+          "index": 6,
+          "text": "Overseeing an AI solution contingency plan: incident response, disaster recovery, and business-continuity procedures",
+          "sourceHash": "4f360505684e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/pm.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-27T00:00:00Z",
+    "officialObjectivesUrl": "https://www.pmi.org/-/media/pmi/documents/public/pdf/certifications/pmicpmai-exam-content-outline2025-updated.pdf",
+    "providerName": "Project Management Institute (PMI)",
+    "credentialName": "PMI Certified Professional in Managing AI (PMI-CPMAI)",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 5,
+    "objectives": 31,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

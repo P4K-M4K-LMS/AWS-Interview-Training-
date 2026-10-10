@@ -2,6 +2,8 @@ import { readdirSync, readFileSync, statSync } from "node:fs";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
 import { validateImportedFile, validateLessonsFile } from "../src/services/study/validate";
+import { stableJson } from "../scripts/study/catalog.mts";
+import { lessonsIndex } from "../scripts/study/lessonsIndex.mts";
 import type { StudyCourse, StudyImportedFile, StudyLessonsFile } from "../src/domain/types";
 
 const OUT = path.resolve(__dirname, "..", "public", "study");
@@ -34,5 +36,11 @@ describe("committed Study lessons", () => {
   it("knows which courses have lessons (none until generated locally)", () => {
     // Informational: the list grows as the owner generates courses. Nothing to assert beyond shape.
     for (const f of files) expect(f).toMatch(/^[a-z0-9-]+\.lessons\.json$/);
+  });
+});
+
+describe("lessons index", () => {
+  it("matches the lessons and imported files on disk (run `npx tsx scripts/generate-study.mts index-lessons`)", () => {
+    expect(readFileSync(path.join(OUT, "lessons-index.json"), "utf8")).toBe(stableJson(lessonsIndex(OUT)));
   });
 });

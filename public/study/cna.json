@@ -1,0 +1,798 @@
+{
+  "id": "cna",
+  "code": "CNA",
+  "title": "Certified Nursing Assistant",
+  "description": "Nurse aide training built on the federal requirements at 42 CFR 483.152 -- the sixteen hours that must come before you ever touch a resident, then basic nursing and personal care skills, cognition, restorative services and residents' rights.",
+  "trackType": "certification",
+  "field": "nursing",
+  "requiresAcknowledgement": true,
+  "units": [
+    {
+      "id": "cna:1",
+      "index": 1,
+      "title": "Before resident contact",
+      "weight": 18,
+      "rangeLabel": "At least 16 hours, federally required first",
+      "gate": "Demonstrate the five things federal law says you must know before you are allowed near a resident at all.",
+      "objectives": [
+        {
+          "id": "cna:1:1",
+          "unitId": "cna:1",
+          "index": 1,
+          "text": "Why this block exists: federal law bars resident contact until it is complete",
+          "sourceHash": "0009ca2b17e3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:1:2",
+          "unitId": "cna:1",
+          "index": 2,
+          "text": "Communication and interpersonal skills with residents",
+          "sourceHash": "36bbc3a74a0f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:1:3",
+          "unitId": "cna:1",
+          "index": 3,
+          "text": "Communicating with families and with the care team",
+          "sourceHash": "0bd1b33ea614",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:1:4",
+          "unitId": "cna:1",
+          "index": 4,
+          "text": "Infection control: hand hygiene as the single highest-value habit",
+          "sourceHash": "471152927e08",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:1:5",
+          "unitId": "cna:1",
+          "index": 5,
+          "text": "Standard precautions and personal protective equipment",
+          "sourceHash": "05ec7e639d9c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:1:6",
+          "unitId": "cna:1",
+          "index": 6,
+          "text": "Safety and emergency procedures",
+          "sourceHash": "537dbd157516",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:1:7",
+          "unitId": "cna:1",
+          "index": 7,
+          "text": "The Heimlich maneuver, named explicitly in the regulation",
+          "sourceHash": "bd3b44e7db46",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:1:8",
+          "unitId": "cna:1",
+          "index": 8,
+          "text": "Recognising an emergency and summoning help correctly",
+          "sourceHash": "501a16b5b448",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:1:9",
+          "unitId": "cna:1",
+          "index": 9,
+          "text": "Promoting residents' independence rather than doing for them",
+          "sourceHash": "37b02cdd650f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:1:10",
+          "unitId": "cna:1",
+          "index": 10,
+          "text": "Respecting residents' rights in everyday interaction",
+          "sourceHash": "6b7f309fe9d3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "cna:2",
+      "index": 2,
+      "title": "Basic nursing skills",
+      "weight": 18,
+      "rangeLabel": "42 CFR 483.152(b)(2)",
+      "gate": "Take an accurate set of measurements, notice when something has changed, and report it to the nurse without editorialising.",
+      "objectives": [
+        {
+          "id": "cna:2:1",
+          "unitId": "cna:2",
+          "index": 1,
+          "text": "Taking and recording temperature, pulse, respiration and blood pressure",
+          "sourceHash": "0dec030344b3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:2:2",
+          "unitId": "cna:2",
+          "index": 2,
+          "text": "Recognising a measurement that falls outside the expected range",
+          "sourceHash": "6eacf9c6510c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:2:3",
+          "unitId": "cna:2",
+          "index": 3,
+          "text": "Measuring and recording height and weight",
+          "sourceHash": "5fd271321cdd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:2:4",
+          "unitId": "cna:2",
+          "index": 4,
+          "text": "Caring for the resident's environment: bed, unit, call light within reach",
+          "sourceHash": "6ebfa44c032f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:2:5",
+          "unitId": "cna:2",
+          "index": 5,
+          "text": "Bed making, occupied and unoccupied",
+          "sourceHash": "afaced8d2f62",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:2:6",
+          "unitId": "cna:2",
+          "index": 6,
+          "text": "Recognising abnormal changes in body functioning",
+          "sourceHash": "e699e78d8167",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:2:7",
+          "unitId": "cna:2",
+          "index": 7,
+          "text": "Reporting changes to the nurse: what, when and in what words",
+          "sourceHash": "e9ed5d21af16",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:2:8",
+          "unitId": "cna:2",
+          "index": 8,
+          "text": "Observation versus interpretation, and why the aide reports the first",
+          "sourceHash": "a17a3b9fe876",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:2:9",
+          "unitId": "cna:2",
+          "index": 9,
+          "text": "Caring for residents when death is imminent",
+          "sourceHash": "2dd7bd9ae1d3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:2:10",
+          "unitId": "cna:2",
+          "index": 10,
+          "text": "Supporting the family of a dying resident",
+          "sourceHash": "39bd26610d2a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:2:11",
+          "unitId": "cna:2",
+          "index": 11,
+          "text": "Documenting care accurately and within scope",
+          "sourceHash": "15409621e334",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "cna:3",
+      "index": 3,
+      "title": "Personal care skills",
+      "weight": 20,
+      "rangeLabel": "42 CFR 483.152(b)(3)",
+      "gate": "Provide personal care that is clean, safe and unhurried, and that leaves the resident's dignity intact.",
+      "objectives": [
+        {
+          "id": "cna:3:1",
+          "unitId": "cna:3",
+          "index": 1,
+          "text": "Bathing: bed bath, shower and tub, and water temperature safety",
+          "sourceHash": "3efb919559f2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:3:2",
+          "unitId": "cna:3",
+          "index": 2,
+          "text": "Grooming, including mouth care and denture care",
+          "sourceHash": "a23b598102b7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:3:3",
+          "unitId": "cna:3",
+          "index": 3,
+          "text": "Hair and nail care within scope",
+          "sourceHash": "d85a730c5889",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:3:4",
+          "unitId": "cna:3",
+          "index": 4,
+          "text": "Shaving safely",
+          "sourceHash": "d49365ce1462",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:3:5",
+          "unitId": "cna:3",
+          "index": 5,
+          "text": "Dressing, including a resident with a weak or affected side",
+          "sourceHash": "d3caa8f87333",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:3:6",
+          "unitId": "cna:3",
+          "index": 6,
+          "text": "Toileting, bedpan and urinal use",
+          "sourceHash": "6da79324a56e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:3:7",
+          "unitId": "cna:3",
+          "index": 7,
+          "text": "Incontinence care and protecting skin",
+          "sourceHash": "70571b47a826",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:3:8",
+          "unitId": "cna:3",
+          "index": 8,
+          "text": "Assisting with eating and hydration",
+          "sourceHash": "4e0f49e06955",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:3:9",
+          "unitId": "cna:3",
+          "index": 9,
+          "text": "Proper feeding techniques and reducing aspiration risk",
+          "sourceHash": "844e5225c186",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:3:10",
+          "unitId": "cna:3",
+          "index": 10,
+          "text": "Recognising and reporting poor intake",
+          "sourceHash": "d4691c74ff92",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:3:11",
+          "unitId": "cna:3",
+          "index": 11,
+          "text": "Skin care and recognising early pressure injury",
+          "sourceHash": "4bf90d888af4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:3:12",
+          "unitId": "cna:3",
+          "index": 12,
+          "text": "Transfers, positioning and turning",
+          "sourceHash": "d98a7483c618",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:3:13",
+          "unitId": "cna:3",
+          "index": 13,
+          "text": "Using a gait belt and a mechanical lift safely",
+          "sourceHash": "84f30c2d8a95",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:3:14",
+          "unitId": "cna:3",
+          "index": 14,
+          "text": "Protecting the resident's privacy throughout personal care",
+          "sourceHash": "3a1de641a0da",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "cna:4",
+      "index": 4,
+      "title": "Mental health and social service needs",
+      "weight": 13,
+      "rangeLabel": "42 CFR 483.152(b)(4)",
+      "gate": "Respond to a resident's behavior by changing your own approach first, rather than managing the resident.",
+      "objectives": [
+        {
+          "id": "cna:4:1",
+          "unitId": "cna:4",
+          "index": 1,
+          "text": "Modifying your own behavior in response to a resident's behavior",
+          "sourceHash": "950b9bb5b907",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:4:2",
+          "unitId": "cna:4",
+          "index": 2,
+          "text": "Developmental tasks associated with the aging process",
+          "sourceHash": "0c000c4c5a67",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:4:3",
+          "unitId": "cna:4",
+          "index": 3,
+          "text": "Responding to behavior without escalating it",
+          "sourceHash": "1fe37a8faefa",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:4:4",
+          "unitId": "cna:4",
+          "index": 4,
+          "text": "Allowing residents to make their own choices",
+          "sourceHash": "1517c08220a1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:4:5",
+          "unitId": "cna:4",
+          "index": 5,
+          "text": "Behavior that maintains and enhances the resident's dignity",
+          "sourceHash": "28aada3f8d30",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:4:6",
+          "unitId": "cna:4",
+          "index": 6,
+          "text": "Using the resident's family as a source of emotional support",
+          "sourceHash": "7cdf4ffac87b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:4:7",
+          "unitId": "cna:4",
+          "index": 7,
+          "text": "Recognising depression and withdrawal, and reporting it",
+          "sourceHash": "1ffbfb059599",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:4:8",
+          "unitId": "cna:4",
+          "index": 8,
+          "text": "Cultural and religious practices that shape daily care",
+          "sourceHash": "7742b674b731",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:4:9",
+          "unitId": "cna:4",
+          "index": 9,
+          "text": "Sexuality and the older adult resident",
+          "sourceHash": "931d978009ec",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "cna:5",
+      "index": 5,
+      "title": "Care of cognitively impaired residents",
+      "weight": 13,
+      "rangeLabel": "42 CFR 483.152(b)(5)",
+      "gate": "Meet a resident with dementia where they are: reduce the demand, not the person.",
+      "objectives": [
+        {
+          "id": "cna:5:1",
+          "unitId": "cna:5",
+          "index": 1,
+          "text": "Needs and behaviors of residents with dementia, Alzheimer's and other causes",
+          "sourceHash": "bbe8878c430c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:5:2",
+          "unitId": "cna:5",
+          "index": 2,
+          "text": "Communicating with a cognitively impaired resident",
+          "sourceHash": "11c9538227c8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:5:3",
+          "unitId": "cna:5",
+          "index": 3,
+          "text": "Understanding behavior as communication rather than defiance",
+          "sourceHash": "d7e5e2c66857",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:5:4",
+          "unitId": "cna:5",
+          "index": 4,
+          "text": "Appropriate responses to behavior, including agitation and resistance",
+          "sourceHash": "dfca22aea79f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:5:5",
+          "unitId": "cna:5",
+          "index": 5,
+          "text": "Methods of reducing the effects of cognitive impairment",
+          "sourceHash": "b095c183ed7d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:5:6",
+          "unitId": "cna:5",
+          "index": 6,
+          "text": "Consistent routine, orientation cues and a calm environment",
+          "sourceHash": "e9672ea70483",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:5:7",
+          "unitId": "cna:5",
+          "index": 7,
+          "text": "Wandering and exit-seeking: keeping a resident safe without restraint",
+          "sourceHash": "2ce2b796e5b7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:5:8",
+          "unitId": "cna:5",
+          "index": 8,
+          "text": "Sundowning and adjusting the approach late in the day",
+          "sourceHash": "10af8032d22b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:5:9",
+          "unitId": "cna:5",
+          "index": 9,
+          "text": "Supporting the family of a resident with dementia",
+          "sourceHash": "ebb9072f2b34",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "cna:6",
+      "index": 6,
+      "title": "Basic restorative services",
+      "weight": 10,
+      "rangeLabel": "42 CFR 483.152(b)(6)",
+      "gate": "Help a resident keep or regain function, matching the help to what they can still do for themselves.",
+      "objectives": [
+        {
+          "id": "cna:6:1",
+          "unitId": "cna:6",
+          "index": 1,
+          "text": "Teaching self-care according to the resident's own ability",
+          "sourceHash": "aa088880cf6c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:6:2",
+          "unitId": "cna:6",
+          "index": 2,
+          "text": "Assistive devices for transferring, ambulation, eating and dressing",
+          "sourceHash": "f024ca611b9f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:6:3",
+          "unitId": "cna:6",
+          "index": 3,
+          "text": "Maintaining range of motion, active and passive",
+          "sourceHash": "49299d435949",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:6:4",
+          "unitId": "cna:6",
+          "index": 4,
+          "text": "Proper turning and positioning in bed and in a chair",
+          "sourceHash": "beffc2848751",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:6:5",
+          "unitId": "cna:6",
+          "index": 5,
+          "text": "Bowel and bladder training",
+          "sourceHash": "a433d4aa46c4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:6:6",
+          "unitId": "cna:6",
+          "index": 6,
+          "text": "Care and use of prosthetic and orthotic devices",
+          "sourceHash": "a5cc5c2d2f65",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:6:7",
+          "unitId": "cna:6",
+          "index": 7,
+          "text": "Ambulation with a walker, cane or crutches",
+          "sourceHash": "7cdf26c9da1b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:6:8",
+          "unitId": "cna:6",
+          "index": 8,
+          "text": "Recognising when a device fits poorly or is unsafe",
+          "sourceHash": "fa637196d29e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "cna:7",
+      "index": 7,
+      "title": "Residents' rights",
+      "weight": 8,
+      "rangeLabel": "42 CFR 483.152(b)(7)",
+      "gate": "Name what a resident is entitled to, and what you must do the moment you suspect it has been violated.",
+      "objectives": [
+        {
+          "id": "cna:7:1",
+          "unitId": "cna:7",
+          "index": 1,
+          "text": "Providing privacy and maintaining confidentiality",
+          "sourceHash": "39ba86c577a1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:7:2",
+          "unitId": "cna:7",
+          "index": 2,
+          "text": "Supporting each resident's right to make personal choices",
+          "sourceHash": "9cfa42f1ac29",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:7:3",
+          "unitId": "cna:7",
+          "index": 3,
+          "text": "Assisting in resolving grievances and disputes",
+          "sourceHash": "29ba30502985",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:7:4",
+          "unitId": "cna:7",
+          "index": 4,
+          "text": "Helping residents take part in resident and family groups and activities",
+          "sourceHash": "fe8dcb994c0d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:7:5",
+          "unitId": "cna:7",
+          "index": 5,
+          "text": "Care and security of residents' personal possessions",
+          "sourceHash": "a4c5eac9c1e0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:7:6",
+          "unitId": "cna:7",
+          "index": 6,
+          "text": "Freedom from abuse, mistreatment and neglect",
+          "sourceHash": "b54456cacf3f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:7:7",
+          "unitId": "cna:7",
+          "index": 7,
+          "text": "Recognising abuse and neglect, including neglect by omission",
+          "sourceHash": "bd9b92cadf45",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:7:8",
+          "unitId": "cna:7",
+          "index": 8,
+          "text": "Reporting a suspected violation to the right facility staff, promptly",
+          "sourceHash": "950edfef4f46",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cna:7:9",
+          "unitId": "cna:7",
+          "index": 9,
+          "text": "Avoiding the need for restraints in line with current professional standards",
+          "sourceHash": "a527a55a7cee",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/nursing.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-18T00:00:00Z",
+    "officialObjectivesUrl": "https://www.ecfr.gov/current/title-42/section-483.152",
+    "providerName": "Centers for Medicare & Medicaid Services",
+    "credentialName": "Certified Nursing Assistant (Nurse Aide)",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 7,
+    "objectives": 70,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

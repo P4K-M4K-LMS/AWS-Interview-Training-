@@ -1,0 +1,1910 @@
+{
+  "id": "nclex-pn",
+  "code": "NCLEXPN",
+  "title": "NCLEX-PN",
+  "description": "The practical and vocational nurse licensure examination, built on the 2026 NCSBN test plan. Weighted as the exam weights it, and scoped as the licence is scoped -- what the PN collects, reports and contributes, rather than what the RN decides.",
+  "trackType": "certification",
+  "field": "nursing",
+  "requiresAcknowledgement": true,
+  "units": [
+    {
+      "id": "nclex-pn:1",
+      "index": 1,
+      "title": "Coordinated Care",
+      "weight": 21,
+      "rangeLabel": "18-24% of the exam",
+      "gate": "Given a shift and a set of clients, act inside the PN scope: know what you may accept, what you must pass to the RN, and what you report rather than decide.",
+      "objectives": [
+        {
+          "id": "nclex-pn:1:1",
+          "unitId": "nclex-pn:1",
+          "index": 1,
+          "text": "What the practical nurse licence permits, and where it stops",
+          "sourceHash": "bf7dae5a0d04",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:1:2",
+          "unitId": "nclex-pn:1",
+          "index": 2,
+          "text": "Accepting an assignment, and declining one that exceeds scope or competence",
+          "sourceHash": "4caef003b7e3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:1:3",
+          "unitId": "nclex-pn:1",
+          "index": 3,
+          "text": "Assignment and delegation as they apply to the PN, including delegation to assistive personnel",
+          "sourceHash": "5845c9c609a0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:1:4",
+          "unitId": "nclex-pn:1",
+          "index": 4,
+          "text": "Reporting to the registered nurse: what must be escalated rather than handled",
+          "sourceHash": "22c2bec82cea",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:1:5",
+          "unitId": "nclex-pn:1",
+          "index": 5,
+          "text": "Establishing priorities among assigned clients",
+          "sourceHash": "423b4f30e20b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:1:6",
+          "unitId": "nclex-pn:1",
+          "index": 6,
+          "text": "Recognising the client whose condition requires immediate RN or provider involvement",
+          "sourceHash": "b37b66f2e317",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:1:7",
+          "unitId": "nclex-pn:1",
+          "index": 7,
+          "text": "Contributing to the plan of care rather than authoring it",
+          "sourceHash": "f5ba511bb0a0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:1:8",
+          "unitId": "nclex-pn:1",
+          "index": 8,
+          "text": "Continuity of care and handoff of assigned clients",
+          "sourceHash": "1d3cd3eb8bd1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:1:9",
+          "unitId": "nclex-pn:1",
+          "index": 9,
+          "text": "Admission, transfer and discharge procedures",
+          "sourceHash": "e503833b75c0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:1:10",
+          "unitId": "nclex-pn:1",
+          "index": 10,
+          "text": "Advance directives, and the client's right to self-determination",
+          "sourceHash": "34e4adc77460",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:1:11",
+          "unitId": "nclex-pn:1",
+          "index": 11,
+          "text": "Acting as client advocate within the PN role",
+          "sourceHash": "1e24af838346",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:1:12",
+          "unitId": "nclex-pn:1",
+          "index": 12,
+          "text": "Client rights, and educating clients and staff about them",
+          "sourceHash": "49f4da54be98",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:1:13",
+          "unitId": "nclex-pn:1",
+          "index": 13,
+          "text": "Informed consent: what the PN may and may not do in the process",
+          "sourceHash": "6f32c5a01d47",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:1:14",
+          "unitId": "nclex-pn:1",
+          "index": 14,
+          "text": "Confidentiality and information security, including social media disclosure",
+          "sourceHash": "d94b131693fc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:1:15",
+          "unitId": "nclex-pn:1",
+          "index": 15,
+          "text": "Ethical practice and recognising an ethical dilemma",
+          "sourceHash": "23498931e077",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:1:16",
+          "unitId": "nclex-pn:1",
+          "index": 16,
+          "text": "Legal rights and responsibilities, including refusal of treatment",
+          "sourceHash": "3f015ea32375",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:1:17",
+          "unitId": "nclex-pn:1",
+          "index": 17,
+          "text": "Mandatory reporting: abuse, neglect, communicable disease",
+          "sourceHash": "1020dc3aab15",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:1:18",
+          "unitId": "nclex-pn:1",
+          "index": 18,
+          "text": "Documenting accurately, completely and in approved terminology",
+          "sourceHash": "0e2a8515b4f0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:1:19",
+          "unitId": "nclex-pn:1",
+          "index": 19,
+          "text": "Information technology and appropriate access to client records",
+          "sourceHash": "f85f0aa01bd1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:1:20",
+          "unitId": "nclex-pn:1",
+          "index": 20,
+          "text": "Receiving and verifying provider orders within scope",
+          "sourceHash": "287077bd13f8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:1:21",
+          "unitId": "nclex-pn:1",
+          "index": 21,
+          "text": "Collaborating with the interdisciplinary team",
+          "sourceHash": "8c199766d15b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:1:22",
+          "unitId": "nclex-pn:1",
+          "index": 22,
+          "text": "The referral process and the PN's part in it",
+          "sourceHash": "33c4938c4d87",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:1:23",
+          "unitId": "nclex-pn:1",
+          "index": 23,
+          "text": "Resource management and cost-conscious care",
+          "sourceHash": "8f3b9bf80fe0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:1:24",
+          "unitId": "nclex-pn:1",
+          "index": 24,
+          "text": "Performance and quality improvement participation",
+          "sourceHash": "7571cf8c3388",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:1:25",
+          "unitId": "nclex-pn:1",
+          "index": 25,
+          "text": "Concepts of management and supervision as they apply to the PN",
+          "sourceHash": "ff900a3ca218",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:1:26",
+          "unitId": "nclex-pn:1",
+          "index": 26,
+          "text": "Recognising the limits of one's own competence and using resources",
+          "sourceHash": "a6f2153ddc2c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "nclex-pn:2",
+      "index": 2,
+      "title": "Safety and Infection Prevention and Control",
+      "weight": 13,
+      "rangeLabel": "10-16% of the exam",
+      "gate": "Given a client and an environment, apply the right precautions and use the least restrictive option that keeps the client safe.",
+      "objectives": [
+        {
+          "id": "nclex-pn:2:1",
+          "unitId": "nclex-pn:2",
+          "index": 1,
+          "text": "Principles of infection prevention: hand hygiene, aseptic and sterile technique",
+          "sourceHash": "2961de17e6f8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:2:2",
+          "unitId": "nclex-pn:2",
+          "index": 2,
+          "text": "Standard precautions applied to every client",
+          "sourceHash": "21d6441b8cab",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:2:3",
+          "unitId": "nclex-pn:2",
+          "index": 3,
+          "text": "Transmission-based precautions: airborne, droplet, contact",
+          "sourceHash": "7d1ee97c97fb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:2:4",
+          "unitId": "nclex-pn:2",
+          "index": 4,
+          "text": "Surgical asepsis and maintaining a sterile field",
+          "sourceHash": "721c63b26ba3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:2:5",
+          "unitId": "nclex-pn:2",
+          "index": 5,
+          "text": "Caring for the immunocompromised client",
+          "sourceHash": "d9b4eb8c1ac2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:2:6",
+          "unitId": "nclex-pn:2",
+          "index": 6,
+          "text": "Communicable disease reporting procedure",
+          "sourceHash": "a3981c234953",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:2:7",
+          "unitId": "nclex-pn:2",
+          "index": 7,
+          "text": "Educating client and staff on infection prevention",
+          "sourceHash": "efb4b9aba041",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:2:8",
+          "unitId": "nclex-pn:2",
+          "index": 8,
+          "text": "Correct client identification before care",
+          "sourceHash": "95b9af8a505c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:2:9",
+          "unitId": "nclex-pn:2",
+          "index": 9,
+          "text": "Client allergies: collecting the data and acting on it",
+          "sourceHash": "82b5577c53ba",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:2:10",
+          "unitId": "nclex-pn:2",
+          "index": 10,
+          "text": "Accident, error and injury prevention",
+          "sourceHash": "87f418a6c30a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:2:11",
+          "unitId": "nclex-pn:2",
+          "index": 11,
+          "text": "Factors raising injury risk: age, developmental stage, mental status",
+          "sourceHash": "126916667310",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:2:12",
+          "unitId": "nclex-pn:2",
+          "index": 12,
+          "text": "Deficits that impede safety: visual, hearing, sensory",
+          "sourceHash": "3d51c590e635",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:2:13",
+          "unitId": "nclex-pn:2",
+          "index": 13,
+          "text": "Seizure precautions",
+          "sourceHash": "bf722be594db",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:2:14",
+          "unitId": "nclex-pn:2",
+          "index": 14,
+          "text": "Home safety, including fire and environmental hazards",
+          "sourceHash": "2c54fbd5c77c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:2:15",
+          "unitId": "nclex-pn:2",
+          "index": 15,
+          "text": "Ergonomic principles and safe client handling",
+          "sourceHash": "efba8e5e8175",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:2:16",
+          "unitId": "nclex-pn:2",
+          "index": 16,
+          "text": "Safe use of equipment and removing faulty equipment from use",
+          "sourceHash": "c0d492a8f224",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:2:17",
+          "unitId": "nclex-pn:2",
+          "index": 17,
+          "text": "Handling hazardous and infectious materials",
+          "sourceHash": "26612a1f6045",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:2:18",
+          "unitId": "nclex-pn:2",
+          "index": 18,
+          "text": "Least restrictive restraints and safety devices: choosing the least restrictive option",
+          "sourceHash": "7d2d5b109fec",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:2:19",
+          "unitId": "nclex-pn:2",
+          "index": 19,
+          "text": "Legal and facility requirements attached to restraint use",
+          "sourceHash": "7c02f3d34fed",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:2:20",
+          "unitId": "nclex-pn:2",
+          "index": 20,
+          "text": "Monitoring and evaluating the client in restraints",
+          "sourceHash": "9fa3dc854a4b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:2:21",
+          "unitId": "nclex-pn:2",
+          "index": 21,
+          "text": "Incident, event and variance reporting",
+          "sourceHash": "615b7f5e67fd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:2:22",
+          "unitId": "nclex-pn:2",
+          "index": 22,
+          "text": "Acknowledging and documenting errors and near misses",
+          "sourceHash": "a2591c604d4a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:2:23",
+          "unitId": "nclex-pn:2",
+          "index": 23,
+          "text": "Emergency response plans and participation in drills",
+          "sourceHash": "fedc15027b72",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:2:24",
+          "unitId": "nclex-pn:2",
+          "index": 24,
+          "text": "Security plans: newborn security, controlled access, violence",
+          "sourceHash": "77e66901d358",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "nclex-pn:3",
+      "index": 3,
+      "title": "Health Promotion and Maintenance",
+      "weight": 9,
+      "rangeLabel": "6-12% of the exam",
+      "gate": "Given a client at any life stage, collect the right data, recognise what is expected for that stage, and reinforce the teaching.",
+      "objectives": [
+        {
+          "id": "nclex-pn:3:1",
+          "unitId": "nclex-pn:3",
+          "index": 1,
+          "text": "Data collection technique, and how it differs from assessment",
+          "sourceHash": "6db37a4e7630",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:3:2",
+          "unitId": "nclex-pn:3",
+          "index": 2,
+          "text": "Collecting a health history and reporting the findings",
+          "sourceHash": "8273b4048c8a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:3:3",
+          "unitId": "nclex-pn:3",
+          "index": 3,
+          "text": "Choosing the right technique and equipment for the client's age",
+          "sourceHash": "e2f6c9970da5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:3:4",
+          "unitId": "nclex-pn:3",
+          "index": 4,
+          "text": "Expected age-related changes across the lifespan",
+          "sourceHash": "e217c1c88845",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:3:5",
+          "unitId": "nclex-pn:3",
+          "index": 5,
+          "text": "Developmental stages and the transitions between them",
+          "sourceHash": "cc869160d2ec",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:3:6",
+          "unitId": "nclex-pn:3",
+          "index": 6,
+          "text": "Care of the newborn, infant and toddler",
+          "sourceHash": "9e5f29351414",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:3:7",
+          "unitId": "nclex-pn:3",
+          "index": 7,
+          "text": "Care of the preschool, school-age and adolescent client",
+          "sourceHash": "cd237b7c9818",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:3:8",
+          "unitId": "nclex-pn:3",
+          "index": 8,
+          "text": "Care of the adult client",
+          "sourceHash": "44cede4a7695",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:3:9",
+          "unitId": "nclex-pn:3",
+          "index": 9,
+          "text": "Care of the older adult client",
+          "sourceHash": "6da7529ccff3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:3:10",
+          "unitId": "nclex-pn:3",
+          "index": 10,
+          "text": "Antepartum care and data collection",
+          "sourceHash": "5596119c8a17",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:3:11",
+          "unitId": "nclex-pn:3",
+          "index": 11,
+          "text": "Care of the client in labor",
+          "sourceHash": "997f8111fbed",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:3:12",
+          "unitId": "nclex-pn:3",
+          "index": 12,
+          "text": "Postpartum care, including signs of hemorrhage and infection",
+          "sourceHash": "2a11ce848019",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:3:13",
+          "unitId": "nclex-pn:3",
+          "index": 13,
+          "text": "Newborn care and feeding",
+          "sourceHash": "f3a9c4920cd0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:3:14",
+          "unitId": "nclex-pn:3",
+          "index": 14,
+          "text": "Health promotion and disease prevention teaching",
+          "sourceHash": "2f8b50778f89",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:3:15",
+          "unitId": "nclex-pn:3",
+          "index": 15,
+          "text": "Reinforcing teaching the RN has planned",
+          "sourceHash": "8d9ee397a6e9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:3:16",
+          "unitId": "nclex-pn:3",
+          "index": 16,
+          "text": "High-risk behaviours and teaching about them",
+          "sourceHash": "30f590a13fec",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:3:17",
+          "unitId": "nclex-pn:3",
+          "index": 17,
+          "text": "Lifestyle choices, including family planning and sexuality",
+          "sourceHash": "21959a0662fb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:3:18",
+          "unitId": "nclex-pn:3",
+          "index": 18,
+          "text": "Self-care capacity and managing care in the home",
+          "sourceHash": "de1bbccf2b18",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:3:19",
+          "unitId": "nclex-pn:3",
+          "index": 19,
+          "text": "Community resources available to the client",
+          "sourceHash": "ef6e2102027a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "nclex-pn:4",
+      "index": 4,
+      "title": "Psychosocial Integrity",
+      "weight": 12,
+      "rangeLabel": "9-15% of the exam",
+      "gate": "Given a client in distress, respond therapeutically, and recognise when distress has become a safety problem to escalate.",
+      "objectives": [
+        {
+          "id": "nclex-pn:4:1",
+          "unitId": "nclex-pn:4",
+          "index": 1,
+          "text": "Therapeutic communication technique, and what makes a response non-therapeutic",
+          "sourceHash": "3555ef5106d1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:4:2",
+          "unitId": "nclex-pn:4",
+          "index": 2,
+          "text": "Encouraging the client to express feelings",
+          "sourceHash": "629911c7216d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:4:3",
+          "unitId": "nclex-pn:4",
+          "index": 3,
+          "text": "Recognising nonverbal cues to distress",
+          "sourceHash": "c84bfe8feff3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:4:4",
+          "unitId": "nclex-pn:4",
+          "index": 4,
+          "text": "Abuse or neglect: recognising it, reporting it, escalating it",
+          "sourceHash": "9d38efa3161c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:4:5",
+          "unitId": "nclex-pn:4",
+          "index": 5,
+          "text": "Risk factors for domestic, child and elder abuse",
+          "sourceHash": "00ac30fac0ff",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:4:6",
+          "unitId": "nclex-pn:4",
+          "index": 6,
+          "text": "Recognising the potential for violence and using safety precautions",
+          "sourceHash": "11406c2f55b6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:4:7",
+          "unitId": "nclex-pn:4",
+          "index": 7,
+          "text": "Crisis intervention within the PN role",
+          "sourceHash": "a8bdef290970",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:4:8",
+          "unitId": "nclex-pn:4",
+          "index": 8,
+          "text": "Coping mechanisms and adaptation to role change",
+          "sourceHash": "592e5460cb11",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:4:9",
+          "unitId": "nclex-pn:4",
+          "index": 9,
+          "text": "Supporting the client with an altered body image",
+          "sourceHash": "bca6cfefee0c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:4:10",
+          "unitId": "nclex-pn:4",
+          "index": 10,
+          "text": "Substance use disorder, dependency and withdrawal",
+          "sourceHash": "8be30fac51d0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:4:11",
+          "unitId": "nclex-pn:4",
+          "index": 11,
+          "text": "Recognising signs of withdrawal or toxicity and reporting them",
+          "sourceHash": "a8f876f83520",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:4:12",
+          "unitId": "nclex-pn:4",
+          "index": 12,
+          "text": "Non-substance dependencies",
+          "sourceHash": "64ecd3313ef5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:4:13",
+          "unitId": "nclex-pn:4",
+          "index": 13,
+          "text": "Mental health concepts and recognising acute and chronic mental illness",
+          "sourceHash": "d369c8731bda",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:4:14",
+          "unitId": "nclex-pn:4",
+          "index": 14,
+          "text": "Impaired cognition: memory loss, altered judgment, poor hygiene",
+          "sourceHash": "10707bae0338",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:4:15",
+          "unitId": "nclex-pn:4",
+          "index": 15,
+          "text": "Behavioural management technique",
+          "sourceHash": "ec2f16c7cad3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:4:16",
+          "unitId": "nclex-pn:4",
+          "index": 16,
+          "text": "Orienting the client to reality",
+          "sourceHash": "2c2f809c3a5e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:4:17",
+          "unitId": "nclex-pn:4",
+          "index": 17,
+          "text": "Sensory and perceptual alterations",
+          "sourceHash": "4a9cd1dbb5a4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:4:18",
+          "unitId": "nclex-pn:4",
+          "index": 18,
+          "text": "Grief, loss and anticipatory grieving",
+          "sourceHash": "315fcc921491",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:4:19",
+          "unitId": "nclex-pn:4",
+          "index": 19,
+          "text": "End-of-life care concepts and comfort at end of life",
+          "sourceHash": "22b185e6b91a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:4:20",
+          "unitId": "nclex-pn:4",
+          "index": 20,
+          "text": "Supporting the family and caregiver",
+          "sourceHash": "a65d9cdffce4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:4:21",
+          "unitId": "nclex-pn:4",
+          "index": 21,
+          "text": "Cultural awareness and incorporating cultural practice into care",
+          "sourceHash": "9d9862bd3713",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:4:22",
+          "unitId": "nclex-pn:4",
+          "index": 22,
+          "text": "Religious and spiritual influences on health",
+          "sourceHash": "90ce7d0e4818",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:4:23",
+          "unitId": "nclex-pn:4",
+          "index": 23,
+          "text": "Support systems and involving them in care",
+          "sourceHash": "737675483048",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:4:24",
+          "unitId": "nclex-pn:4",
+          "index": 24,
+          "text": "Stress management technique",
+          "sourceHash": "00a38e919f53",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:4:25",
+          "unitId": "nclex-pn:4",
+          "index": 25,
+          "text": "Maintaining a therapeutic environment",
+          "sourceHash": "0e159fd4aa04",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "nclex-pn:5",
+      "index": 5,
+      "title": "Basic Care and Comfort",
+      "weight": 10,
+      "rangeLabel": "7-13% of the exam",
+      "gate": "Given a client who cannot fully care for themselves, provide the assistance the deficit calls for while keeping dignity intact.",
+      "objectives": [
+        {
+          "id": "nclex-pn:5:1",
+          "unitId": "nclex-pn:5",
+          "index": 1,
+          "text": "Activities of daily living and assisting where the client cannot",
+          "sourceHash": "26c6ba4b3219",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:5:2",
+          "unitId": "nclex-pn:5",
+          "index": 2,
+          "text": "Maintaining dignity and privacy during personal care",
+          "sourceHash": "ab9f2258c23f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:5:3",
+          "unitId": "nclex-pn:5",
+          "index": 3,
+          "text": "Personal hygiene, including oral and perineal care",
+          "sourceHash": "786b72bd209e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:5:4",
+          "unitId": "nclex-pn:5",
+          "index": 4,
+          "text": "Assistive devices and prostheses",
+          "sourceHash": "ab366c063ac4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:5:5",
+          "unitId": "nclex-pn:5",
+          "index": 5,
+          "text": "Compensating for a physical or sensory impairment",
+          "sourceHash": "a6474638ae46",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:5:6",
+          "unitId": "nclex-pn:5",
+          "index": 6,
+          "text": "Mobility and immobility, and the complications of immobility",
+          "sourceHash": "b4c62a2d4016",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:5:7",
+          "unitId": "nclex-pn:5",
+          "index": 7,
+          "text": "Positioning, range of motion and promoting circulation",
+          "sourceHash": "519760b3033f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:5:8",
+          "unitId": "nclex-pn:5",
+          "index": 8,
+          "text": "Safe transfer and ambulation",
+          "sourceHash": "67194d2b5a74",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:5:9",
+          "unitId": "nclex-pn:5",
+          "index": 9,
+          "text": "Skin care and maintaining tissue integrity",
+          "sourceHash": "f4ca82a38d16",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:5:10",
+          "unitId": "nclex-pn:5",
+          "index": 10,
+          "text": "Nutrition and oral hydration",
+          "sourceHash": "82277512887d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:5:11",
+          "unitId": "nclex-pn:5",
+          "index": 11,
+          "text": "Assisting with feeding, and tube feeding within scope",
+          "sourceHash": "10a675822057",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:5:12",
+          "unitId": "nclex-pn:5",
+          "index": 12,
+          "text": "Monitoring and recording intake and output",
+          "sourceHash": "d2b41ae59063",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:5:13",
+          "unitId": "nclex-pn:5",
+          "index": 13,
+          "text": "Bowel and bladder elimination",
+          "sourceHash": "0a92e23991d8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:5:14",
+          "unitId": "nclex-pn:5",
+          "index": 14,
+          "text": "Catheter care and ostomy care",
+          "sourceHash": "ad1e8c501e7e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:5:15",
+          "unitId": "nclex-pn:5",
+          "index": 15,
+          "text": "Performing irrigations within scope",
+          "sourceHash": "b855fda8fe6b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:5:16",
+          "unitId": "nclex-pn:5",
+          "index": 16,
+          "text": "Rest and sleep patterns",
+          "sourceHash": "63083449bdb5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:5:17",
+          "unitId": "nclex-pn:5",
+          "index": 17,
+          "text": "Collecting data about pain and reporting it",
+          "sourceHash": "01aac9e75102",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:5:18",
+          "unitId": "nclex-pn:5",
+          "index": 18,
+          "text": "Nonpharmacological comfort interventions",
+          "sourceHash": "c364c7f33167",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:5:19",
+          "unitId": "nclex-pn:5",
+          "index": 19,
+          "text": "Postmortem care",
+          "sourceHash": "ceef1d307575",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "nclex-pn:6",
+      "index": 6,
+      "title": "Pharmacological Therapies",
+      "weight": 13,
+      "rangeLabel": "10-16% of the exam",
+      "gate": "Given an order and a client, give the medication safely within the PN scope -- or stop and report the reason you cannot.",
+      "objectives": [
+        {
+          "id": "nclex-pn:6:1",
+          "unitId": "nclex-pn:6",
+          "index": 1,
+          "text": "The rights of medication administration, applied rather than recited",
+          "sourceHash": "ce0aabf1a089",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:6:2",
+          "unitId": "nclex-pn:6",
+          "index": 2,
+          "text": "Checking contraindications, allergies and interactions before giving",
+          "sourceHash": "33287cef2b8f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:6:3",
+          "unitId": "nclex-pn:6",
+          "index": 3,
+          "text": "Performing dosage calculations accurately",
+          "sourceHash": "d62c8a8e3d1c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:6:4",
+          "unitId": "nclex-pn:6",
+          "index": 4,
+          "text": "Converting between units of measurement",
+          "sourceHash": "857672516f94",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:6:5",
+          "unitId": "nclex-pn:6",
+          "index": 5,
+          "text": "Administering medication by oral and topical routes",
+          "sourceHash": "9e31a184c9e7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:6:6",
+          "unitId": "nclex-pn:6",
+          "index": 6,
+          "text": "Administering medication by intramuscular, subcutaneous and intradermal routes",
+          "sourceHash": "ee404e45b6fb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:6:7",
+          "unitId": "nclex-pn:6",
+          "index": 7,
+          "text": "Routes and procedures that fall outside the PN scope in most jurisdictions",
+          "sourceHash": "2dbe44c1f7d2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:6:8",
+          "unitId": "nclex-pn:6",
+          "index": 8,
+          "text": "Documenting medication administration",
+          "sourceHash": "b2065bceeb9c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:6:9",
+          "unitId": "nclex-pn:6",
+          "index": 9,
+          "text": "Expected actions and therapeutic outcomes",
+          "sourceHash": "882ff0a6d30a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:6:10",
+          "unitId": "nclex-pn:6",
+          "index": 10,
+          "text": "Side effects, adverse effects, contraindications and interactions distinguished",
+          "sourceHash": "d8f098055d71",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:6:11",
+          "unitId": "nclex-pn:6",
+          "index": 11,
+          "text": "Recognising an allergic reaction and responding to it",
+          "sourceHash": "e7f8ecc25ca3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:6:12",
+          "unitId": "nclex-pn:6",
+          "index": 12,
+          "text": "Reporting adverse effects to the registered nurse or provider",
+          "sourceHash": "c56718178cd3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:6:13",
+          "unitId": "nclex-pn:6",
+          "index": 13,
+          "text": "Monitoring the client's response to a medication",
+          "sourceHash": "141da014fe6b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:6:14",
+          "unitId": "nclex-pn:6",
+          "index": 14,
+          "text": "Pharmacological pain management and p.r.n. decisions within scope",
+          "sourceHash": "b422a8bf8daa",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:6:15",
+          "unitId": "nclex-pn:6",
+          "index": 15,
+          "text": "Evaluating and documenting the response to pain medication",
+          "sourceHash": "00e0263215c5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:6:16",
+          "unitId": "nclex-pn:6",
+          "index": 16,
+          "text": "Controlled substances: handling, counting and documentation",
+          "sourceHash": "082b70982694",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:6:17",
+          "unitId": "nclex-pn:6",
+          "index": 17,
+          "text": "Safe storage and disposal of medication",
+          "sourceHash": "bc9697997647",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:6:18",
+          "unitId": "nclex-pn:6",
+          "index": 18,
+          "text": "Maintaining an intravenous site and recognising infiltration or phlebitis",
+          "sourceHash": "ffb960270295",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:6:19",
+          "unitId": "nclex-pn:6",
+          "index": 19,
+          "text": "Reinforcing medication teaching with the client",
+          "sourceHash": "672aaf9ad26d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "nclex-pn:7",
+      "index": 7,
+      "title": "Reduction of Risk Potential",
+      "weight": 12,
+      "rangeLabel": "9-15% of the exam",
+      "gate": "Given a client before or after a procedure, collect the data that would show a complication developing, and report it in time.",
+      "objectives": [
+        {
+          "id": "nclex-pn:7:1",
+          "unitId": "nclex-pn:7",
+          "index": 1,
+          "text": "Collecting vital signs and recognising changes and trends",
+          "sourceHash": "1b29aefd823f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:7:2",
+          "unitId": "nclex-pn:7",
+          "index": 2,
+          "text": "Reporting an abnormal vital sign rather than acting alone on it",
+          "sourceHash": "1f0a173003d1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:7:3",
+          "unitId": "nclex-pn:7",
+          "index": 3,
+          "text": "Comparing laboratory values against normal values",
+          "sourceHash": "d274bc857ecc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:7:4",
+          "unitId": "nclex-pn:7",
+          "index": 4,
+          "text": "Monitoring laboratory results and reporting them",
+          "sourceHash": "ffc56abd3710",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:7:5",
+          "unitId": "nclex-pn:7",
+          "index": 5,
+          "text": "Collecting blood and non-blood specimens",
+          "sourceHash": "d61d898b1ff3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:7:6",
+          "unitId": "nclex-pn:7",
+          "index": 6,
+          "text": "Preparing the client for a diagnostic test",
+          "sourceHash": "efed8f203877",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:7:7",
+          "unitId": "nclex-pn:7",
+          "index": 7,
+          "text": "Caring for the client during and after diagnostic testing",
+          "sourceHash": "ff0ccd7ae52f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:7:8",
+          "unitId": "nclex-pn:7",
+          "index": 8,
+          "text": "Testing within the PN scope, including point-of-care testing",
+          "sourceHash": "6e910d8b9aef",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:7:9",
+          "unitId": "nclex-pn:7",
+          "index": 9,
+          "text": "Potential for aspiration and preventing it",
+          "sourceHash": "6cb93dc9ce64",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:7:10",
+          "unitId": "nclex-pn:7",
+          "index": 10,
+          "text": "Potential for skin breakdown and preventing it",
+          "sourceHash": "4a054a7e986d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:7:11",
+          "unitId": "nclex-pn:7",
+          "index": 11,
+          "text": "Risk of insufficient vascular perfusion",
+          "sourceHash": "6e39a7b66787",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:7:12",
+          "unitId": "nclex-pn:7",
+          "index": 12,
+          "text": "Comparing current data against the client's baseline",
+          "sourceHash": "18f6bf183c31",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:7:13",
+          "unitId": "nclex-pn:7",
+          "index": 13,
+          "text": "Monitoring output for change from baseline",
+          "sourceHash": "e4c6b074afc7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:7:14",
+          "unitId": "nclex-pn:7",
+          "index": 14,
+          "text": "Focused data collection on a body system",
+          "sourceHash": "d81cf9b9a6b8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:7:15",
+          "unitId": "nclex-pn:7",
+          "index": 15,
+          "text": "Recognising abnormal neurologic status",
+          "sourceHash": "18a48c46508a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:7:16",
+          "unitId": "nclex-pn:7",
+          "index": 16,
+          "text": "Recognising peripheral edema and abnormal pulses",
+          "sourceHash": "741c228f47d9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:7:17",
+          "unitId": "nclex-pn:7",
+          "index": 17,
+          "text": "Signs of hypoglycemia and hyperglycemia",
+          "sourceHash": "7b868c5ae840",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:7:18",
+          "unitId": "nclex-pn:7",
+          "index": 18,
+          "text": "Factors that delay wound healing",
+          "sourceHash": "271e5ef7172f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:7:19",
+          "unitId": "nclex-pn:7",
+          "index": 19,
+          "text": "Risk assessment for falls and mobility",
+          "sourceHash": "b06dd72140e1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:7:20",
+          "unitId": "nclex-pn:7",
+          "index": 20,
+          "text": "Therapeutic procedures and the PN's role in them",
+          "sourceHash": "3798a381ee09",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:7:21",
+          "unitId": "nclex-pn:7",
+          "index": 21,
+          "text": "Care before and after surgery, and reinforcing preoperative teaching",
+          "sourceHash": "3864ef34bc45",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:7:22",
+          "unitId": "nclex-pn:7",
+          "index": 22,
+          "text": "Recovery from anesthesia and what to watch for",
+          "sourceHash": "bb8b96bcfb76",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:7:23",
+          "unitId": "nclex-pn:7",
+          "index": 23,
+          "text": "Maintaining tubes and drains, including patency",
+          "sourceHash": "e5b1b41ce5a5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:7:24",
+          "unitId": "nclex-pn:7",
+          "index": 24,
+          "text": "Devices that promote venous return",
+          "sourceHash": "1e6d0d4648ee",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:7:25",
+          "unitId": "nclex-pn:7",
+          "index": 25,
+          "text": "Preventing neurologic complications of immobility",
+          "sourceHash": "b802110460e2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:7:26",
+          "unitId": "nclex-pn:7",
+          "index": 26,
+          "text": "Evaluating and reporting the client's response to a procedure",
+          "sourceHash": "e0e4f2b9a6bc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "nclex-pn:8",
+      "index": 8,
+      "title": "Physiological Adaptation",
+      "weight": 10,
+      "rangeLabel": "7-13% of the exam",
+      "gate": "Given a client whose condition is changing, connect basic pathophysiology to what you are seeing and escalate at the right moment.",
+      "objectives": [
+        {
+          "id": "nclex-pn:8:1",
+          "unitId": "nclex-pn:8",
+          "index": 1,
+          "text": "Basic pathophysiology: injury and repair, immunity, cellular structure",
+          "sourceHash": "bf1bb33f6f0d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:8:2",
+          "unitId": "nclex-pn:8",
+          "index": 2,
+          "text": "Connecting a chronic condition to the findings it produces",
+          "sourceHash": "0a278e89b638",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:8:3",
+          "unitId": "nclex-pn:8",
+          "index": 3,
+          "text": "Alterations in body systems and the care they require",
+          "sourceHash": "f93983ebb703",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:8:4",
+          "unitId": "nclex-pn:8",
+          "index": 4,
+          "text": "Fluid and electrolyte imbalance: recognising and reporting it",
+          "sourceHash": "2e471174d23d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:8:5",
+          "unitId": "nclex-pn:8",
+          "index": 5,
+          "text": "Caring for the client with a fluid or electrolyte imbalance",
+          "sourceHash": "44039f9d936b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:8:6",
+          "unitId": "nclex-pn:8",
+          "index": 6,
+          "text": "Monitoring the client with impaired oxygenation",
+          "sourceHash": "1f8b5466b33f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:8:7",
+          "unitId": "nclex-pn:8",
+          "index": 7,
+          "text": "Oxygen therapy and airway care within scope",
+          "sourceHash": "dc0b9e21a5fa",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:8:8",
+          "unitId": "nclex-pn:8",
+          "index": 8,
+          "text": "Performing suctioning",
+          "sourceHash": "75f2f0a9ca1b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:8:9",
+          "unitId": "nclex-pn:8",
+          "index": 9,
+          "text": "Caring for the client with a tracheostomy",
+          "sourceHash": "f772a2da3676",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:8:10",
+          "unitId": "nclex-pn:8",
+          "index": 10,
+          "text": "Wound care and dressing changes",
+          "sourceHash": "340406c02651",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:8:11",
+          "unitId": "nclex-pn:8",
+          "index": 11,
+          "text": "Monitoring wounds for signs of infection",
+          "sourceHash": "e359fe7b9625",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:8:12",
+          "unitId": "nclex-pn:8",
+          "index": 12,
+          "text": "Managing drainage devices",
+          "sourceHash": "8e99b8ec2fc1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:8:13",
+          "unitId": "nclex-pn:8",
+          "index": 13,
+          "text": "Ostomy care and reinforcing client teaching",
+          "sourceHash": "318756f8b801",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:8:14",
+          "unitId": "nclex-pn:8",
+          "index": 14,
+          "text": "Postoperative care and recognising complications",
+          "sourceHash": "c7a16b6ad65c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:8:15",
+          "unitId": "nclex-pn:8",
+          "index": 15,
+          "text": "Infectious disease: signs, symptoms and incubation periods",
+          "sourceHash": "4b6e1dee0577",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:8:16",
+          "unitId": "nclex-pn:8",
+          "index": 16,
+          "text": "Caring for the client receiving radiation or chemotherapy",
+          "sourceHash": "ecf07d8cec89",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:8:17",
+          "unitId": "nclex-pn:8",
+          "index": 17,
+          "text": "Maintaining the client's optimal temperature",
+          "sourceHash": "ea4ba94a7010",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:8:18",
+          "unitId": "nclex-pn:8",
+          "index": 18,
+          "text": "Complications of pregnancy and delivery to recognise and report",
+          "sourceHash": "ddf2dce85b01",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:8:19",
+          "unitId": "nclex-pn:8",
+          "index": 19,
+          "text": "Medical emergencies and the PN's immediate response",
+          "sourceHash": "d85d0364a686",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:8:20",
+          "unitId": "nclex-pn:8",
+          "index": 20,
+          "text": "Identifying client data that must be reported immediately",
+          "sourceHash": "bd5e3cfe4b82",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:8:21",
+          "unitId": "nclex-pn:8",
+          "index": 21,
+          "text": "Unexpected response to therapy, and recognising complications early",
+          "sourceHash": "dd99121d9d9c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nclex-pn:8:22",
+          "unitId": "nclex-pn:8",
+          "index": 22,
+          "text": "Reporting a change in condition to the registered nurse or provider",
+          "sourceHash": "267dd7353f08",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/nursing.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-18T00:00:00Z",
+    "officialObjectivesUrl": "https://www.ncsbn.org/public-files/2026_PN_Test%20Plan-F.pdf",
+    "providerName": "National Council of State Boards of Nursing",
+    "credentialName": "NCLEX-PN Examination",
+    "examCode": "NCLEX-PN",
+    "credentialStatus": "active",
+    "retirementDate": "2029-03-31",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 8,
+    "objectives": 180,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

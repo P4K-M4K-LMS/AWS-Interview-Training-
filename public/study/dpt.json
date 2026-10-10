@@ -1,0 +1,682 @@
+{
+  "id": "dpt",
+  "code": "DPT",
+  "title": "Doctor of Physical Therapy (DPT)",
+  "description": "The entry-level DPT curriculum as CAPTE's 2024 accreditation standards define it: the foundational and clinical sciences, professional values and lifelong learning, and the 25 practice expectations (examination through practice management) every graduate must meet before sitting the NPTE-PT.",
+  "trackType": "graduate",
+  "field": "pt",
+  "requiresAcknowledgement": true,
+  "units": [
+    {
+      "id": "dpt:1",
+      "index": 1,
+      "title": "Foundational sciences for physical therapist practice (7A)",
+      "gate": "Trace a symptom to the tissue, system or movement mechanism producing it -- not a generic 'it hurts because it is injured' answer.",
+      "objectives": [
+        {
+          "id": "dpt:1:1",
+          "unitId": "dpt:1",
+          "index": 1,
+          "text": "Anatomy, physiology and pathology of the cardiovascular, pulmonary, musculoskeletal, neuromuscular, integumentary and lymphatic systems across the life span",
+          "sourceHash": "e0d6a22ab7ac",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dpt:1:2",
+          "unitId": "dpt:1",
+          "index": 2,
+          "text": "Anatomy, physiology and pathology of the endocrine, metabolic, gastrointestinal, genitourinary and renal systems as they bear on physical therapy",
+          "sourceHash": "be17e8e4118c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dpt:1:3",
+          "unitId": "dpt:1",
+          "index": 3,
+          "text": "Body-system interactions: how dysfunction in one system changes examination findings and tolerance in another",
+          "sourceHash": "a0c3a34c49ee",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dpt:1:4",
+          "unitId": "dpt:1",
+          "index": 4,
+          "text": "Differential diagnosis: distinguishing conditions appropriate for physical therapy from those requiring referral",
+          "sourceHash": "e705f142eddd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dpt:1:5",
+          "unitId": "dpt:1",
+          "index": 5,
+          "text": "Medical and surgical conditions commonly seen in physical therapy and their implications for the plan of care",
+          "sourceHash": "59466bf9f3bc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dpt:1:6",
+          "unitId": "dpt:1",
+          "index": 6,
+          "text": "Genetics and genetic conditions relevant to movement and rehabilitation",
+          "sourceHash": "b0c1c614ab6f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dpt:1:7",
+          "unitId": "dpt:1",
+          "index": 7,
+          "text": "Exercise science: energy systems, training principles and physiological responses to exercise",
+          "sourceHash": "cce951401571",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dpt:1:8",
+          "unitId": "dpt:1",
+          "index": 8,
+          "text": "Biomechanics and kinesiology: forces, levers, joint mechanics and normal movement analysis",
+          "sourceHash": "f6c56fea1668",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dpt:1:9",
+          "unitId": "dpt:1",
+          "index": 9,
+          "text": "Neuroscience, motor control and motor learning as the basis for movement retraining",
+          "sourceHash": "146031551843",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dpt:1:10",
+          "unitId": "dpt:1",
+          "index": 10,
+          "text": "Diagnostic imaging: reading the report and recognising what a PT should and should not infer from it",
+          "sourceHash": "b3d07420ad64",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dpt:1:11",
+          "unitId": "dpt:1",
+          "index": 11,
+          "text": "Pharmacology: drug classes that alter exercise response, balance, cognition and healing",
+          "sourceHash": "2f180ddfc8d5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dpt:1:12",
+          "unitId": "dpt:1",
+          "index": 12,
+          "text": "Nutrition and its influence on recovery, tissue healing and performance",
+          "sourceHash": "f74dcdce25e8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dpt:1:13",
+          "unitId": "dpt:1",
+          "index": 13,
+          "text": "Pain science and the lived pain experience, including central sensitisation and persistent pain",
+          "sourceHash": "56ce79406467",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dpt:1:14",
+          "unitId": "dpt:1",
+          "index": 14,
+          "text": "Psychosocial aspects of health and disability, including behaviour change and adherence",
+          "sourceHash": "ba7ac63abd7d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "dpt:2",
+      "index": 2,
+      "title": "Ethics, values, service and leadership (7B)",
+      "gate": "Given a practice dilemma, name the principle of the APTA Code of Ethics or Core Value at stake and the action it requires.",
+      "objectives": [
+        {
+          "id": "dpt:2:1",
+          "unitId": "dpt:2",
+          "index": 1,
+          "text": "The APTA Code of Ethics and Core Values for the physical therapist and physical therapist assistant, applied to real practice decisions",
+          "sourceHash": "8c5e077d642b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dpt:2:2",
+          "unitId": "dpt:2",
+          "index": 2,
+          "text": "Service and leadership: advocacy, community collaboration and responding to health care disparity",
+          "sourceHash": "42d00e7b87ba",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dpt:2:3",
+          "unitId": "dpt:2",
+          "index": 3,
+          "text": "Practising within the legal framework of the jurisdiction, including the state practice act and relevant federal requirements",
+          "sourceHash": "6ae24b7c0078",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dpt:2:4",
+          "unitId": "dpt:2",
+          "index": 4,
+          "text": "Professional responsibility: integrity, accountability and the duty to report",
+          "sourceHash": "4b393cd0f880",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "dpt:3",
+      "index": 3,
+      "title": "Lifelong learning, education and health care disparities (7C)",
+      "gate": "Read a study abstract and state what it does and does not justify changing in a plan of care.",
+      "objectives": [
+        {
+          "id": "dpt:3:1",
+          "unitId": "dpt:3",
+          "index": 1,
+          "text": "Evidence-informed practice: forming a clinical question and locating the best available evidence",
+          "sourceHash": "d5644f0931bf",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dpt:3:2",
+          "unitId": "dpt:3",
+          "index": 2,
+          "text": "Interpreting statistical evidence: effect sizes, confidence intervals, minimal clinically important difference and study design limits",
+          "sourceHash": "59ea93c33019",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dpt:3:3",
+          "unitId": "dpt:3",
+          "index": 3,
+          "text": "Clinical reasoning and decision making as an explicit, defensible process",
+          "sourceHash": "9b7a54277299",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dpt:3:4",
+          "unitId": "dpt:3",
+          "index": 4,
+          "text": "Scholarly inquiry and the physical therapist's role in generating evidence",
+          "sourceHash": "7d623ff9d932",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dpt:3:5",
+          "unitId": "dpt:3",
+          "index": 5,
+          "text": "Teaching and learning principles for educating patients, caregivers and other health professionals",
+          "sourceHash": "8b835a27ce84",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dpt:3:6",
+          "unitId": "dpt:3",
+          "index": 6,
+          "text": "Health care disparities and the social determinants of health as they shape access, adherence and outcomes",
+          "sourceHash": "d60aebc6f35c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "dpt:4",
+      "index": 4,
+      "title": "Examination and screening (7D1)",
+      "gate": "For a presenting complaint, select the systems review items and tests and measures that rule in or out the plausible sources -- and say when the patient needs someone else.",
+      "objectives": [
+        {
+          "id": "dpt:4:1",
+          "unitId": "dpt:4",
+          "index": 1,
+          "text": "Taking a comprehensive subjective examination: history, health record review and the questions that change the plan",
+          "sourceHash": "f844110c7d78",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dpt:4:2",
+          "unitId": "dpt:4",
+          "index": 2,
+          "text": "Performing a systems review and deciding what it means to proceed, modify or refer",
+          "sourceHash": "9c55e4f7c4bd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dpt:4:3",
+          "unitId": "dpt:4",
+          "index": 3,
+          "text": "Selecting and administering age-appropriate tests and measures for the cardiovascular and pulmonary systems",
+          "sourceHash": "5feb7e4fe9bc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dpt:4:4",
+          "unitId": "dpt:4",
+          "index": 4,
+          "text": "Selecting and administering tests and measures for the neurological and musculoskeletal systems",
+          "sourceHash": "ac284a88c1eb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dpt:4:5",
+          "unitId": "dpt:4",
+          "index": 5,
+          "text": "Selecting and administering tests and measures for the integumentary and lymphatic systems",
+          "sourceHash": "ab329ca93ed3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dpt:4:6",
+          "unitId": "dpt:4",
+          "index": 6,
+          "text": "Assessing growth and development, pain, psychosocial and mental-health aspects within the examination",
+          "sourceHash": "2cc763a4462e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dpt:4:7",
+          "unitId": "dpt:4",
+          "index": 7,
+          "text": "Determining when a patient needs further examination, consultation or referral to another professional",
+          "sourceHash": "3e79ca1f7630",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dpt:4:8",
+          "unitId": "dpt:4",
+          "index": 8,
+          "text": "Providing physical therapist services through direct access, including the screening that makes it safe",
+          "sourceHash": "3338b57c212f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "dpt:5",
+      "index": 5,
+      "title": "Evaluation, diagnosis, prognosis and plan of care (7D2-7D9)",
+      "gate": "From a set of examination findings, write the ICF-structured problem list, the PT diagnosis, a prognosis with a timeline, and a plan of care that names who does what.",
+      "objectives": [
+        {
+          "id": "dpt:5:1",
+          "unitId": "dpt:5",
+          "index": 1,
+          "text": "Evaluating examination data to make clinical judgments about impairments, activity limitations and participation restrictions",
+          "sourceHash": "dae88dcaf718",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dpt:5:2",
+          "unitId": "dpt:5",
+          "index": 2,
+          "text": "Describing a patient's problems using the International Classification of Functioning, Disability and Health (ICF)",
+          "sourceHash": "586c4d887171",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dpt:5:3",
+          "unitId": "dpt:5",
+          "index": 3,
+          "text": "Determining a physical therapy diagnosis that guides management",
+          "sourceHash": "e5b36e871ff7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dpt:5:4",
+          "unitId": "dpt:5",
+          "index": 4,
+          "text": "Determining a prognosis with patient goals, expected outcomes, available resources (including payment sources) and expected time to achieve them",
+          "sourceHash": "f00adace1dd7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dpt:5:5",
+          "unitId": "dpt:5",
+          "index": 5,
+          "text": "Establishing a safe and effective plan of care in collaboration with the patient, caregivers, payers and other professionals",
+          "sourceHash": "9004d05e52b0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dpt:5:6",
+          "unitId": "dpt:5",
+          "index": 6,
+          "text": "Determining and supervising the components of care that may be directed to a physical therapist assistant: team-based care, patient needs, the PTA's competence, jurisdictional law, payer and facility policy",
+          "sourceHash": "6e98d68bcc22",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dpt:5:7",
+          "unitId": "dpt:5",
+          "index": 7,
+          "text": "Determining and supervising activities that may be directed to unlicensed support personnel",
+          "sourceHash": "3649bee00edb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dpt:5:8",
+          "unitId": "dpt:5",
+          "index": 8,
+          "text": "Creating a discontinuation-of-care plan that optimises success after the episode ends",
+          "sourceHash": "c567111448f6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "dpt:6",
+      "index": 6,
+      "title": "Interventions and management of the delivery of care (7D10-7D16)",
+      "gate": "Given a condition and stage, select the specific intervention and dose, state how you will know it is working, and document it the way the jurisdiction requires.",
+      "objectives": [
+        {
+          "id": "dpt:6:1",
+          "unitId": "dpt:6",
+          "index": 1,
+          "text": "Selecting and performing interventions for cardiovascular and pulmonary conditions to achieve patient goals",
+          "sourceHash": "1d6385673d71",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dpt:6:2",
+          "unitId": "dpt:6",
+          "index": 2,
+          "text": "Selecting and performing interventions for neurological and musculoskeletal conditions",
+          "sourceHash": "a13fce13ffca",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dpt:6:3",
+          "unitId": "dpt:6",
+          "index": 3,
+          "text": "Selecting and performing interventions for integumentary, lymphatic and metabolic conditions",
+          "sourceHash": "3678df1e8792",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dpt:6:4",
+          "unitId": "dpt:6",
+          "index": 4,
+          "text": "Interventions across human development and for pain and the pain experience",
+          "sourceHash": "73adb4d7f83a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dpt:6:5",
+          "unitId": "dpt:6",
+          "index": 5,
+          "text": "Monitoring and adjusting the plan of care to optimise health outcomes",
+          "sourceHash": "efedddf2d37a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dpt:6:6",
+          "unitId": "dpt:6",
+          "index": 6,
+          "text": "Assessing outcomes with appropriate standardised tests and measures at the impairment, activity and participation levels",
+          "sourceHash": "823115255a75",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dpt:6:7",
+          "unitId": "dpt:6",
+          "index": 7,
+          "text": "Educating others with teaching methods matched to the learner, including clinical education of students, with cultural humility and attention to social determinants of health",
+          "sourceHash": "9eec0497b98f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dpt:6:8",
+          "unitId": "dpt:6",
+          "index": 8,
+          "text": "Managing the delivery of care consistent with the practice environment's policies, including environmental emergencies",
+          "sourceHash": "751e59b19948",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dpt:6:9",
+          "unitId": "dpt:6",
+          "index": 9,
+          "text": "Documentation that follows the practice act, the setting and regulatory requirements",
+          "sourceHash": "e883a1a27d60",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dpt:6:10",
+          "unitId": "dpt:6",
+          "index": 10,
+          "text": "Participating in the case management process",
+          "sourceHash": "33843edb0778",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "dpt:7",
+      "index": 7,
+      "title": "Health care activities and community health (7D17-7D22)",
+      "gate": "Describe how a physical therapist contributes to quality improvement, interprofessional care and population health -- with a concrete example, not a slogan.",
+      "objectives": [
+        {
+          "id": "dpt:7:1",
+          "unitId": "dpt:7",
+          "index": 1,
+          "text": "Participating in ongoing assessment and improvement of the quality of services",
+          "sourceHash": "e299b77b011d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dpt:7:2",
+          "unitId": "dpt:7",
+          "index": 2,
+          "text": "Patient-centred interprofessional collaborative practice",
+          "sourceHash": "4678d930a3e4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dpt:7:3",
+          "unitId": "dpt:7",
+          "index": 3,
+          "text": "Using health informatics in the health care environment",
+          "sourceHash": "a19a11568f97",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dpt:7:4",
+          "unitId": "dpt:7",
+          "index": 4,
+          "text": "Assessing care delivery with the principles of Health Systems Science, including the impact of policy and payment",
+          "sourceHash": "8bc8977c3154",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dpt:7:5",
+          "unitId": "dpt:7",
+          "index": 5,
+          "text": "Physical therapy services informed by cultural humility across primary, secondary and tertiary prevention, health promotion and wellness",
+          "sourceHash": "0f62f5eef1ed",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dpt:7:6",
+          "unitId": "dpt:7",
+          "index": 6,
+          "text": "Promoting health equity: reducing health disparities and considering social determinants of health in the plan of care",
+          "sourceHash": "372eed09f4f1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "dpt:8",
+      "index": 8,
+      "title": "Practice management (7D23-7D25)",
+      "gate": "Identify a safety, billing or regulatory risk in a practice scenario and the specific action that addresses it.",
+      "objectives": [
+        {
+          "id": "dpt:8:1",
+          "unitId": "dpt:8",
+          "index": 1,
+          "text": "Assessing, documenting and minimising safety risks for patients and providers, including facility safety policies",
+          "sourceHash": "742c01a69e53",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dpt:8:2",
+          "unitId": "dpt:8",
+          "index": 2,
+          "text": "Participating in the financial management of the practice, including accurate billing and payment for services",
+          "sourceHash": "231fcd3828e3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dpt:8:3",
+          "unitId": "dpt:8",
+          "index": 3,
+          "text": "Practice management activities: marketing, public relations, regulatory and legal requirements, risk management, staffing and continuous quality improvement",
+          "sourceHash": "d6503b5efd26",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/pt.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-10-08T00:00:00Z",
+    "officialObjectivesUrl": "https://www.capteonline.org/globalassets/capte-docs/2024-capte-pt-standards-required-elements.pdf",
+    "providerName": "Commission on Accreditation in Physical Therapy Education",
+    "credentialName": "Doctor of Physical Therapy (CAPTE-accredited program)",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 8,
+    "objectives": 59,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

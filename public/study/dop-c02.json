@@ -4,6 +4,7 @@
   "title": "AWS DevOps Engineer Professional",
   "description": "AWS Certified DevOps Engineer - Professional (DOP-C02): automating the whole delivery path -- CI/CD pipelines and artifacts, infrastructure as code across many accounts, resilient and scalable systems, monitoring and logging, incident response, and security controls applied by machine rather than by hand.",
   "trackType": "certification",
+  "field": "aws",
   "units": [
     {
       "id": "dop-c02:1",

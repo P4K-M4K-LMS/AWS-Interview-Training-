@@ -1,0 +1,844 @@
+{
+  "id": "az-140",
+  "code": "AZ140",
+  "title": "Azure Virtual Desktop Specialty",
+  "description": "Microsoft Certified: Azure Virtual Desktop Specialty (AZ-140): planning and implementing an Azure Virtual Desktop infrastructure -- networking, storage, host pools, and session host images -- plus identity and security, user environments and app delivery (FSLogix, App attach), and ongoing monitoring, backup, and disaster recovery.",
+  "trackType": "certification",
+  "field": "azure",
+  "units": [
+    {
+      "id": "az-140:1",
+      "index": 1,
+      "title": "Plan and Implement an Azure Virtual Desktop Infrastructure",
+      "weight": 43,
+      "gate": "Given an AVD networking, storage, host-pool, or image requirement, name the specific control or workflow that fits -- not a generic 'deploy AVD'.",
+      "objectives": [
+        {
+          "id": "az-140:1:1",
+          "unitId": "az-140:1",
+          "index": 1,
+          "text": "Assessing network capacity and speed requirements for Azure Virtual Desktop",
+          "sourceHash": "76b5a3937215",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:1:2",
+          "unitId": "az-140:1",
+          "index": 2,
+          "text": "Designing network configuration for session hosts to meet AVD requirements",
+          "sourceHash": "5f49d6de5efe",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:1:3",
+          "unitId": "az-140:1",
+          "index": 3,
+          "text": "Planning and implementing RDP Shortpath, RDP Multipath, and quality of service (QoS) policies",
+          "sourceHash": "6b7a61f3a74f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:1:4",
+          "unitId": "az-140:1",
+          "index": 4,
+          "text": "Planning and implementing an Azure Private Link solution for Azure Virtual Desktop",
+          "sourceHash": "79c82bfe1546",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:1:5",
+          "unitId": "az-140:1",
+          "index": 5,
+          "text": "Monitoring and troubleshooting network connectivity",
+          "sourceHash": "75825cce6243",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:1:6",
+          "unitId": "az-140:1",
+          "index": 6,
+          "text": "Planning storage for Azure Virtual Desktop user data",
+          "sourceHash": "2ec6f0deea58",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:1:7",
+          "unitId": "az-140:1",
+          "index": 7,
+          "text": "Implementing storage for FSLogix components",
+          "sourceHash": "57e4c7ff2e14",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:1:8",
+          "unitId": "az-140:1",
+          "index": 8,
+          "text": "Implementing storage accounts for Azure Virtual Desktop",
+          "sourceHash": "8747505fbbb2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:1:9",
+          "unitId": "az-140:1",
+          "index": 9,
+          "text": "Implementing file shares for Azure Virtual Desktop",
+          "sourceHash": "b6654a4fcdce",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:1:10",
+          "unitId": "az-140:1",
+          "index": 10,
+          "text": "Implementing Azure NetApp Files for Azure Virtual Desktop",
+          "sourceHash": "13300a9e7852",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:1:11",
+          "unitId": "az-140:1",
+          "index": 11,
+          "text": "Recommending resource groups, subscriptions, and management groups for Azure Virtual Desktop resources",
+          "sourceHash": "fe2b60794e9d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:1:12",
+          "unitId": "az-140:1",
+          "index": 12,
+          "text": "Recommending an operating system for Azure Virtual Desktop session hosts",
+          "sourceHash": "7290e763508e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:1:13",
+          "unitId": "az-140:1",
+          "index": 13,
+          "text": "Recommending a licensing model for Azure Virtual Desktop based on requirements",
+          "sourceHash": "c2e6f7ca636f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:1:14",
+          "unitId": "az-140:1",
+          "index": 14,
+          "text": "Planning a host pool architecture",
+          "sourceHash": "1ad242814a99",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:1:15",
+          "unitId": "az-140:1",
+          "index": 15,
+          "text": "Designing an Azure Virtual Desktop configuration for performance requirements",
+          "sourceHash": "d125609c0005",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:1:16",
+          "unitId": "az-140:1",
+          "index": 16,
+          "text": "Designing an Azure Virtual Desktop configuration for Azure VM capacity requirements",
+          "sourceHash": "807f544a8460",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:1:17",
+          "unitId": "az-140:1",
+          "index": 17,
+          "text": "Creating host pools and session hosts using the Azure portal",
+          "sourceHash": "9c602f7e6457",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:1:18",
+          "unitId": "az-140:1",
+          "index": 18,
+          "text": "Automating creation of Azure Virtual Desktop hosts and host pools with PowerShell, Azure CLI, ARM templates, and Bicep files",
+          "sourceHash": "b7389047c634",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:1:19",
+          "unitId": "az-140:1",
+          "index": 19,
+          "text": "Configuring host pool and session host settings",
+          "sourceHash": "93b886bbdde6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:1:20",
+          "unitId": "az-140:1",
+          "index": 20,
+          "text": "Configuring licensing for session hosts, including Windows client access eligibility and RDS Client Access License requirements for Windows Server",
+          "sourceHash": "750e473d09cf",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:1:21",
+          "unitId": "az-140:1",
+          "index": 21,
+          "text": "Creating a session host image manually",
+          "sourceHash": "dd3af13798c2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:1:22",
+          "unitId": "az-140:1",
+          "index": 22,
+          "text": "Creating a session host image using Azure VM Image Builder",
+          "sourceHash": "1019a379d278",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:1:23",
+          "unitId": "az-140:1",
+          "index": 23,
+          "text": "Modifying a session host image",
+          "sourceHash": "ff71936dfc8c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:1:24",
+          "unitId": "az-140:1",
+          "index": 24,
+          "text": "Planning and implementing lifecycle management for session host images",
+          "sourceHash": "ac66bf2c6f6b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:1:25",
+          "unitId": "az-140:1",
+          "index": 25,
+          "text": "Applying OS and application updates to a session host image",
+          "sourceHash": "4ebdfd4eaa39",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:1:26",
+          "unitId": "az-140:1",
+          "index": 26,
+          "text": "Creating a session host from a custom image",
+          "sourceHash": "b4124c49a610",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:1:27",
+          "unitId": "az-140:1",
+          "index": 27,
+          "text": "Planning and implementing image storage, including Azure Compute Gallery",
+          "sourceHash": "201bf6014eaf",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "az-140:2",
+      "index": 2,
+      "title": "Plan and Implement Identity and Security",
+      "weight": 18,
+      "gate": "Given an AVD identity or security requirement, name the specific identity scenario or protection control that fits, not just 'secure it'.",
+      "objectives": [
+        {
+          "id": "az-140:2:1",
+          "unitId": "az-140:2",
+          "index": 1,
+          "text": "Selecting an identity scenario for Azure Virtual Desktop -- Active Directory Domain Services, Microsoft Entra ID, and Microsoft Entra Domain Services",
+          "sourceHash": "47a0e54df27f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:2:2",
+          "unitId": "az-140:2",
+          "index": 2,
+          "text": "Specifying requirements to configure the AVD session host for an identity scenario",
+          "sourceHash": "83b1be0100bf",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:2:3",
+          "unitId": "az-140:2",
+          "index": 3,
+          "text": "Planning and implementing Azure role-based access control (Azure RBAC) for Azure Virtual Desktop",
+          "sourceHash": "043e03f4f7ff",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:2:4",
+          "unitId": "az-140:2",
+          "index": 4,
+          "text": "Planning and implementing Microsoft Entra Conditional Access policies for connections to Azure Virtual Desktop",
+          "sourceHash": "4595dbd71efc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:2:5",
+          "unitId": "az-140:2",
+          "index": 5,
+          "text": "Planning and implementing authentication options in Azure Virtual Desktop, including passwordless, smart card, and multifactor authentication",
+          "sourceHash": "4d463ea261ad",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:2:6",
+          "unitId": "az-140:2",
+          "index": 6,
+          "text": "Managing roles, groups, and rights assignments on Azure Virtual Desktop session hosts",
+          "sourceHash": "eb7d8f0f2054",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:2:7",
+          "unitId": "az-140:2",
+          "index": 7,
+          "text": "Configuring Microsoft Entra single sign-on",
+          "sourceHash": "e4418c58f885",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:2:8",
+          "unitId": "az-140:2",
+          "index": 8,
+          "text": "Planning, implementing, and managing security for Azure Virtual Desktop session hosts using Microsoft Defender for Cloud",
+          "sourceHash": "f081a585d849",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:2:9",
+          "unitId": "az-140:2",
+          "index": 9,
+          "text": "Configuring session host protection using Microsoft Defender Antivirus",
+          "sourceHash": "8a2b3d1b5688",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:2:10",
+          "unitId": "az-140:2",
+          "index": 10,
+          "text": "Configuring session host protection using Microsoft Defender for Endpoint, including onboarding and scanning options",
+          "sourceHash": "53c49fab5e1f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:2:11",
+          "unitId": "az-140:2",
+          "index": 11,
+          "text": "Implementing and managing network security for connections to Azure Virtual Desktop, including user-defined routes, network security groups, and Azure Firewall",
+          "sourceHash": "94addae20cfe",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:2:12",
+          "unitId": "az-140:2",
+          "index": 12,
+          "text": "Configuring Azure Bastion or just-in-time VM access for administrative access to session hosts",
+          "sourceHash": "be5c565eac11",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:2:13",
+          "unitId": "az-140:2",
+          "index": 13,
+          "text": "Planning and implementing Windows threat protection features on Azure Virtual Desktop session hosts, including App Control for Business and Controlled Folder Access",
+          "sourceHash": "1487ddd3d206",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:2:14",
+          "unitId": "az-140:2",
+          "index": 14,
+          "text": "Planning for and implementing Azure confidential VMs and Trusted Launch security features for Azure Virtual Desktop session hosts",
+          "sourceHash": "25fe90609239",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "az-140:3",
+      "index": 3,
+      "title": "Plan and Implement User Environments and Apps",
+      "weight": 23,
+      "gate": "Given a user-profile or app-delivery requirement, name the specific FSLogix, client, or App attach configuration that fits.",
+      "objectives": [
+        {
+          "id": "az-140:3:1",
+          "unitId": "az-140:3",
+          "index": 1,
+          "text": "Recommending an FSLogix configuration",
+          "sourceHash": "5df120fca267",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:3:2",
+          "unitId": "az-140:3",
+          "index": 2,
+          "text": "Configuring FSLogix Profile Containers",
+          "sourceHash": "a6e58777a0ff",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:3:3",
+          "unitId": "az-140:3",
+          "index": 3,
+          "text": "Configuring FSLogix ODFC containers",
+          "sourceHash": "1511f9125803",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:3:4",
+          "unitId": "az-140:3",
+          "index": 4,
+          "text": "Configuring FSLogix Cloud Cache",
+          "sourceHash": "f07a8488ccba",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:3:5",
+          "unitId": "az-140:3",
+          "index": 5,
+          "text": "Implementing FSLogix application masking",
+          "sourceHash": "7f124d15e6a5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:3:6",
+          "unitId": "az-140:3",
+          "index": 6,
+          "text": "Choosing an Azure Virtual Desktop client",
+          "sourceHash": "1cabcc789818",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:3:7",
+          "unitId": "az-140:3",
+          "index": 7,
+          "text": "Choosing a deployment method for the client",
+          "sourceHash": "25ae4f39fca4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:3:8",
+          "unitId": "az-140:3",
+          "index": 8,
+          "text": "Deploying and troubleshooting Azure Virtual Desktop clients",
+          "sourceHash": "423275c824ad",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:3:9",
+          "unitId": "az-140:3",
+          "index": 9,
+          "text": "Configuring device redirection",
+          "sourceHash": "fed2a163374b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:3:10",
+          "unitId": "az-140:3",
+          "index": 10,
+          "text": "Configuring multimedia redirection",
+          "sourceHash": "98822e05e27b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:3:11",
+          "unitId": "az-140:3",
+          "index": 11,
+          "text": "Configuring printing and Universal Print",
+          "sourceHash": "72c9e7861ca2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:3:12",
+          "unitId": "az-140:3",
+          "index": 12,
+          "text": "Configuring user settings through Microsoft Intune policies or Group Policy",
+          "sourceHash": "fbd1dfd8885e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:3:13",
+          "unitId": "az-140:3",
+          "index": 13,
+          "text": "Configuring Remote Desktop Protocol (RDP) properties on a host pool",
+          "sourceHash": "fc22b7f20786",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:3:14",
+          "unitId": "az-140:3",
+          "index": 14,
+          "text": "Configuring session timeout properties",
+          "sourceHash": "0f48602645c7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:3:15",
+          "unitId": "az-140:3",
+          "index": 15,
+          "text": "Implementing the Start VM on Connect feature",
+          "sourceHash": "c672beae6177",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:3:16",
+          "unitId": "az-140:3",
+          "index": 16,
+          "text": "Assigning and unassigning personal desktops to users",
+          "sourceHash": "b690ecdd079f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:3:17",
+          "unitId": "az-140:3",
+          "index": 17,
+          "text": "Choosing a method for deploying an app to Azure Virtual Desktop",
+          "sourceHash": "1a29346bdf77",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:3:18",
+          "unitId": "az-140:3",
+          "index": 18,
+          "text": "Creating and configuring an application group",
+          "sourceHash": "0897da8e1278",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:3:19",
+          "unitId": "az-140:3",
+          "index": 19,
+          "text": "Assigning users to application groups",
+          "sourceHash": "a01bb701863b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:3:20",
+          "unitId": "az-140:3",
+          "index": 20,
+          "text": "Publishing an application as a RemoteApp",
+          "sourceHash": "67fcd8f08914",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:3:21",
+          "unitId": "az-140:3",
+          "index": 21,
+          "text": "Implementing and managing Microsoft 365 Apps on Azure Virtual Desktop session hosts",
+          "sourceHash": "4fadb94bd494",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:3:22",
+          "unitId": "az-140:3",
+          "index": 22,
+          "text": "Implementing and managing OneDrive, including multisession environments",
+          "sourceHash": "f440e575b6f1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:3:23",
+          "unitId": "az-140:3",
+          "index": 23,
+          "text": "Implementing and managing Microsoft Teams, including the Remote Desktop WebRTC Redirector Service",
+          "sourceHash": "1eb8dcaa8d5b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:3:24",
+          "unitId": "az-140:3",
+          "index": 24,
+          "text": "Implementing and managing browsers for Azure Virtual Desktop sessions",
+          "sourceHash": "052d8e973cd8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:3:25",
+          "unitId": "az-140:3",
+          "index": 25,
+          "text": "Configuring dynamic application delivery using App attach",
+          "sourceHash": "eabd438f0ba9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:3:26",
+          "unitId": "az-140:3",
+          "index": 26,
+          "text": "Creating an application package for App attach",
+          "sourceHash": "919e4d410105",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "az-140:4",
+      "index": 4,
+      "title": "Monitor and Maintain an Azure Virtual Desktop Infrastructure",
+      "weight": 13,
+      "gate": "Given an ongoing-operations requirement, name the specific monitoring, autoscaling, backup, or DR control that fits, not just 'keep an eye on it'.",
+      "objectives": [
+        {
+          "id": "az-140:4:1",
+          "unitId": "az-140:4",
+          "index": 1,
+          "text": "Configuring log collection and analysis for Azure Virtual Desktop session hosts",
+          "sourceHash": "aaa7fdc5bc9c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:4:2",
+          "unitId": "az-140:4",
+          "index": 2,
+          "text": "Monitoring Azure Virtual Desktop using Azure Monitor",
+          "sourceHash": "384fd2cb508d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:4:3",
+          "unitId": "az-140:4",
+          "index": 3,
+          "text": "Customizing Azure Monitor workbooks for Azure Virtual Desktop Insights",
+          "sourceHash": "406ecfedbb51",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:4:4",
+          "unitId": "az-140:4",
+          "index": 4,
+          "text": "Optimizing session host capacity and performance",
+          "sourceHash": "1790039805d9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:4:5",
+          "unitId": "az-140:4",
+          "index": 5,
+          "text": "Implementing autoscaling in host pools",
+          "sourceHash": "e4f08eead189",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:4:6",
+          "unitId": "az-140:4",
+          "index": 6,
+          "text": "Monitoring and managing active sessions and application groups",
+          "sourceHash": "4b8b0692a5c0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:4:7",
+          "unitId": "az-140:4",
+          "index": 7,
+          "text": "Recommending an update strategy for session hosts",
+          "sourceHash": "367a4b8f9372",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:4:8",
+          "unitId": "az-140:4",
+          "index": 8,
+          "text": "Planning and implementing a disaster recovery plan for Azure Virtual Desktop",
+          "sourceHash": "469c1f0856c2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:4:9",
+          "unitId": "az-140:4",
+          "index": 9,
+          "text": "Planning for multi-region implementation",
+          "sourceHash": "9548b3dece4e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:4:10",
+          "unitId": "az-140:4",
+          "index": 10,
+          "text": "Designing and implementing a backup strategy for Azure Virtual Desktop",
+          "sourceHash": "02f3a1698a44",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-140:4:11",
+          "unitId": "az-140:4",
+          "index": 11,
+          "text": "Configuring backup and restore for FSLogix user profiles, personal desktops, and images",
+          "sourceHash": "89c84302c707",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/azure.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-18T00:00:00Z",
+    "officialObjectivesUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-140",
+    "providerName": "Microsoft",
+    "credentialName": "Microsoft Certified: Azure Virtual Desktop Specialty",
+    "examCode": "AZ-140",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 4,
+    "objectives": 78,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

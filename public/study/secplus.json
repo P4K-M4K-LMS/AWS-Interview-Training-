@@ -4,6 +4,7 @@
   "title": "Security+",
   "description": "CompTIA Security+ SY0-701 exam prep across 5 weighted domains, with PBQ scenario drilling.",
   "trackType": "certification",
+  "field": "security",
   "units": [
     {
       "id": "secplus:1",

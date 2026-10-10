@@ -1,0 +1,893 @@
+{
+  "id": "az-104",
+  "code": "AZ104",
+  "title": "Azure Administrator Associate",
+  "description": "Microsoft Certified: Azure Administrator Associate (AZ-104): implementing, managing, and monitoring an Azure environment -- identities and governance, storage, compute, virtual networking, and day-to-day monitoring and recovery.",
+  "trackType": "certification",
+  "field": "azure",
+  "units": [
+    {
+      "id": "az-104:1",
+      "index": 1,
+      "title": "Manage Azure Identities and Governance",
+      "weight": 23,
+      "gate": "Given an identity, access, or governance scenario, name the specific Entra ID or Azure Policy/subscription control that applies -- not just 'set a permission'.",
+      "objectives": [
+        {
+          "id": "az-104:1:1",
+          "unitId": "az-104:1",
+          "index": 1,
+          "text": "Creating Microsoft Entra users and groups",
+          "sourceHash": "4782b9f73bb4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:1:2",
+          "unitId": "az-104:1",
+          "index": 2,
+          "text": "Managing user and group properties",
+          "sourceHash": "31ad9a9e2e03",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:1:3",
+          "unitId": "az-104:1",
+          "index": 3,
+          "text": "Managing licenses in Microsoft Entra ID",
+          "sourceHash": "d29e8cc324cd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:1:4",
+          "unitId": "az-104:1",
+          "index": 4,
+          "text": "Managing external (guest) users",
+          "sourceHash": "62602cc41da5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:1:5",
+          "unitId": "az-104:1",
+          "index": 5,
+          "text": "Configuring self-service password reset (SSPR)",
+          "sourceHash": "af84c494275e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:1:6",
+          "unitId": "az-104:1",
+          "index": 6,
+          "text": "Working with built-in Azure roles",
+          "sourceHash": "242788de2659",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:1:7",
+          "unitId": "az-104:1",
+          "index": 7,
+          "text": "Assigning roles at different scopes",
+          "sourceHash": "d4400533faa2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:1:8",
+          "unitId": "az-104:1",
+          "index": 8,
+          "text": "Interpreting access assignments",
+          "sourceHash": "f5c981931be6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:1:9",
+          "unitId": "az-104:1",
+          "index": 9,
+          "text": "Implementing and managing Azure Policy",
+          "sourceHash": "ea7e12bd00d9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:1:10",
+          "unitId": "az-104:1",
+          "index": 10,
+          "text": "Configuring resource locks",
+          "sourceHash": "687415829ef0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:1:11",
+          "unitId": "az-104:1",
+          "index": 11,
+          "text": "Applying and managing tags on resources",
+          "sourceHash": "0ac03737d58b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:1:12",
+          "unitId": "az-104:1",
+          "index": 12,
+          "text": "Managing resource groups",
+          "sourceHash": "5804efbce2b6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:1:13",
+          "unitId": "az-104:1",
+          "index": 13,
+          "text": "Managing subscriptions",
+          "sourceHash": "60c118dbabd6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:1:14",
+          "unitId": "az-104:1",
+          "index": 14,
+          "text": "Managing costs with alerts, budgets, and Azure Advisor recommendations",
+          "sourceHash": "3e34cd7d2f27",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:1:15",
+          "unitId": "az-104:1",
+          "index": 15,
+          "text": "Configuring management groups",
+          "sourceHash": "dc6a9d08b48b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "az-104:2",
+      "index": 2,
+      "title": "Implement and Manage Storage",
+      "weight": 18,
+      "gate": "Given a storage access, redundancy, or lifecycle requirement, name the specific Azure Storage feature that satisfies it and how it differs from a similarly-named alternative.",
+      "objectives": [
+        {
+          "id": "az-104:2:1",
+          "unitId": "az-104:2",
+          "index": 1,
+          "text": "Configuring Azure Storage firewalls and virtual network rules",
+          "sourceHash": "64ac6c7c2184",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:2:2",
+          "unitId": "az-104:2",
+          "index": 2,
+          "text": "Creating and using shared access signature (SAS) tokens",
+          "sourceHash": "abc8785fefa9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:2:3",
+          "unitId": "az-104:2",
+          "index": 3,
+          "text": "Configuring stored access policies",
+          "sourceHash": "58311105bccf",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:2:4",
+          "unitId": "az-104:2",
+          "index": 4,
+          "text": "Managing storage account access keys",
+          "sourceHash": "1a62e1a8fb81",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:2:5",
+          "unitId": "az-104:2",
+          "index": 5,
+          "text": "Configuring identity-based access for Azure Files",
+          "sourceHash": "ab7aed3f4c9a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:2:6",
+          "unitId": "az-104:2",
+          "index": 6,
+          "text": "Creating and configuring storage accounts",
+          "sourceHash": "8a35b592f5a5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:2:7",
+          "unitId": "az-104:2",
+          "index": 7,
+          "text": "Configuring Azure Storage redundancy options",
+          "sourceHash": "e298f22a9010",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:2:8",
+          "unitId": "az-104:2",
+          "index": 8,
+          "text": "Configuring object replication",
+          "sourceHash": "0d16b2750f74",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:2:9",
+          "unitId": "az-104:2",
+          "index": 9,
+          "text": "Configuring storage account encryption",
+          "sourceHash": "c5a3583b8fbb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:2:10",
+          "unitId": "az-104:2",
+          "index": 10,
+          "text": "Managing data with Azure Storage Explorer and AzCopy",
+          "sourceHash": "97686ee23a5b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:2:11",
+          "unitId": "az-104:2",
+          "index": 11,
+          "text": "Creating and configuring a file share in Azure Files",
+          "sourceHash": "2a00848509d5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:2:12",
+          "unitId": "az-104:2",
+          "index": 12,
+          "text": "Creating and configuring a container in Azure Blob Storage",
+          "sourceHash": "752365a627c8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:2:13",
+          "unitId": "az-104:2",
+          "index": 13,
+          "text": "Configuring storage tiers",
+          "sourceHash": "403f6647a318",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:2:14",
+          "unitId": "az-104:2",
+          "index": 14,
+          "text": "Configuring soft delete for blobs and containers",
+          "sourceHash": "bce2a5e13e17",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:2:15",
+          "unitId": "az-104:2",
+          "index": 15,
+          "text": "Configuring snapshots and soft delete for Azure Files",
+          "sourceHash": "e2114687aa20",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:2:16",
+          "unitId": "az-104:2",
+          "index": 16,
+          "text": "Configuring blob lifecycle management",
+          "sourceHash": "68f5fa86e0be",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:2:17",
+          "unitId": "az-104:2",
+          "index": 17,
+          "text": "Configuring blob versioning",
+          "sourceHash": "7429f0856d52",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "az-104:3",
+      "index": 3,
+      "title": "Deploy and Manage Azure Compute Resources",
+      "weight": 23,
+      "gate": "Given a workload, name the specific compute option (VM, Scale Set, container, or App Service) and the exact ARM/Bicep or portal step that provisions or configures it -- not just 'deploy it'.",
+      "objectives": [
+        {
+          "id": "az-104:3:1",
+          "unitId": "az-104:3",
+          "index": 1,
+          "text": "Interpreting an Azure Resource Manager template or a Bicep file",
+          "sourceHash": "ada549aaad9e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:3:2",
+          "unitId": "az-104:3",
+          "index": 2,
+          "text": "Modifying an existing Azure Resource Manager template",
+          "sourceHash": "fb4a02d624e2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:3:3",
+          "unitId": "az-104:3",
+          "index": 3,
+          "text": "Modifying an existing Bicep file",
+          "sourceHash": "dc110e128adc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:3:4",
+          "unitId": "az-104:3",
+          "index": 4,
+          "text": "Deploying resources with an Azure Resource Manager template or a Bicep file",
+          "sourceHash": "c25ef56b4ef9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:3:5",
+          "unitId": "az-104:3",
+          "index": 5,
+          "text": "Exporting a deployment as an ARM template, or converting an ARM template to Bicep",
+          "sourceHash": "829cbbce6097",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:3:6",
+          "unitId": "az-104:3",
+          "index": 6,
+          "text": "Creating a virtual machine",
+          "sourceHash": "6beaebd05519",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:3:7",
+          "unitId": "az-104:3",
+          "index": 7,
+          "text": "Configuring encryption at host for Azure virtual machines",
+          "sourceHash": "05a512af2bfd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:3:8",
+          "unitId": "az-104:3",
+          "index": 8,
+          "text": "Moving a virtual machine to another resource group, subscription, or region",
+          "sourceHash": "f21077d51dd7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:3:9",
+          "unitId": "az-104:3",
+          "index": 9,
+          "text": "Managing virtual machine sizes",
+          "sourceHash": "e026862acc58",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:3:10",
+          "unitId": "az-104:3",
+          "index": 10,
+          "text": "Managing virtual machine disks",
+          "sourceHash": "2f9bf4351a97",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:3:11",
+          "unitId": "az-104:3",
+          "index": 11,
+          "text": "Deploying virtual machines to availability zones and availability sets",
+          "sourceHash": "68420ab0b061",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:3:12",
+          "unitId": "az-104:3",
+          "index": 12,
+          "text": "Deploying and configuring Azure Virtual Machine Scale Sets",
+          "sourceHash": "2049cd4c0650",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:3:13",
+          "unitId": "az-104:3",
+          "index": 13,
+          "text": "Creating and managing an Azure Container Registry",
+          "sourceHash": "8050a72a846a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:3:14",
+          "unitId": "az-104:3",
+          "index": 14,
+          "text": "Provisioning a container with Azure Container Instances",
+          "sourceHash": "740a1bf5d6cf",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:3:15",
+          "unitId": "az-104:3",
+          "index": 15,
+          "text": "Provisioning a container with Azure Container Apps",
+          "sourceHash": "f116675d19a0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:3:16",
+          "unitId": "az-104:3",
+          "index": 16,
+          "text": "Managing sizing and scaling for Azure Container Instances and Azure Container Apps",
+          "sourceHash": "ddf40f2b5ae3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:3:17",
+          "unitId": "az-104:3",
+          "index": 17,
+          "text": "Provisioning an App Service plan",
+          "sourceHash": "6f589e4e0bd4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:3:18",
+          "unitId": "az-104:3",
+          "index": 18,
+          "text": "Configuring scaling for an App Service plan",
+          "sourceHash": "1c811b83c573",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:3:19",
+          "unitId": "az-104:3",
+          "index": 19,
+          "text": "Creating an App Service",
+          "sourceHash": "f6d62bd988f5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:3:20",
+          "unitId": "az-104:3",
+          "index": 20,
+          "text": "Configuring certificates and Transport Layer Security (TLS) for an App Service",
+          "sourceHash": "d8ad49066ca2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:3:21",
+          "unitId": "az-104:3",
+          "index": 21,
+          "text": "Mapping an existing custom DNS name to an App Service",
+          "sourceHash": "3afadc2961cd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:3:22",
+          "unitId": "az-104:3",
+          "index": 22,
+          "text": "Configuring backup for an App Service",
+          "sourceHash": "a8e4bfd7f53a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:3:23",
+          "unitId": "az-104:3",
+          "index": 23,
+          "text": "Configuring networking settings for an App Service",
+          "sourceHash": "5806970de7e0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:3:24",
+          "unitId": "az-104:3",
+          "index": 24,
+          "text": "Configuring deployment slots for an App Service",
+          "sourceHash": "ab2538a8f982",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "az-104:4",
+      "index": 4,
+      "title": "Implement and Manage Virtual Networking",
+      "weight": 18,
+      "gate": "Given a connectivity or network-security requirement, name the specific virtual networking control (NSG, peering, Bastion, load balancer) that applies and what it would actually block or route.",
+      "objectives": [
+        {
+          "id": "az-104:4:1",
+          "unitId": "az-104:4",
+          "index": 1,
+          "text": "Creating and configuring virtual networks and subnets",
+          "sourceHash": "922694b71f71",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:4:2",
+          "unitId": "az-104:4",
+          "index": 2,
+          "text": "Creating and configuring virtual network peering",
+          "sourceHash": "b22fcef57878",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:4:3",
+          "unitId": "az-104:4",
+          "index": 3,
+          "text": "Configuring public IP addresses",
+          "sourceHash": "da0dcd950bcb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:4:4",
+          "unitId": "az-104:4",
+          "index": 4,
+          "text": "Configuring user-defined routes",
+          "sourceHash": "f66a43c5d9f8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:4:5",
+          "unitId": "az-104:4",
+          "index": 5,
+          "text": "Troubleshooting network connectivity",
+          "sourceHash": "aeb0d46cf6ee",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:4:6",
+          "unitId": "az-104:4",
+          "index": 6,
+          "text": "Creating and configuring network security groups (NSGs) and application security groups",
+          "sourceHash": "babc666717e1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:4:7",
+          "unitId": "az-104:4",
+          "index": 7,
+          "text": "Evaluating effective security rules in NSGs",
+          "sourceHash": "fc740baa153c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:4:8",
+          "unitId": "az-104:4",
+          "index": 8,
+          "text": "Implementing Azure Bastion",
+          "sourceHash": "2964fe35988a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:4:9",
+          "unitId": "az-104:4",
+          "index": 9,
+          "text": "Configuring service endpoints for Azure platform as a service (PaaS)",
+          "sourceHash": "1662e18acded",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:4:10",
+          "unitId": "az-104:4",
+          "index": 10,
+          "text": "Configuring private endpoints for Azure PaaS",
+          "sourceHash": "9423c4cbe190",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:4:11",
+          "unitId": "az-104:4",
+          "index": 11,
+          "text": "Configuring Azure DNS",
+          "sourceHash": "732acba59953",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:4:12",
+          "unitId": "az-104:4",
+          "index": 12,
+          "text": "Configuring an internal or public load balancer",
+          "sourceHash": "9ad57baf4b1c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:4:13",
+          "unitId": "az-104:4",
+          "index": 13,
+          "text": "Troubleshooting load balancing",
+          "sourceHash": "0ee02e755e20",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "az-104:5",
+      "index": 5,
+      "title": "Monitor and Maintain Azure Resources",
+      "weight": 12,
+      "gate": "Given a monitoring or disaster-recovery scenario, name the specific Azure Monitor or Azure Backup/Site Recovery capability that surfaces or restores what's needed.",
+      "objectives": [
+        {
+          "id": "az-104:5:1",
+          "unitId": "az-104:5",
+          "index": 1,
+          "text": "Interpreting metrics in Azure Monitor",
+          "sourceHash": "3b8c1adaa5ab",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:5:2",
+          "unitId": "az-104:5",
+          "index": 2,
+          "text": "Configuring log settings in Azure Monitor",
+          "sourceHash": "1c9072408fe2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:5:3",
+          "unitId": "az-104:5",
+          "index": 3,
+          "text": "Querying and analyzing logs in Azure Monitor",
+          "sourceHash": "8f14d9379d62",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:5:4",
+          "unitId": "az-104:5",
+          "index": 4,
+          "text": "Setting up alert rules, action groups, and alert processing rules in Azure Monitor",
+          "sourceHash": "62b5460104b8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:5:5",
+          "unitId": "az-104:5",
+          "index": 5,
+          "text": "Configuring and interpreting monitoring of virtual machines, storage accounts, and networks with Azure Monitor Insights",
+          "sourceHash": "f49f8a44bc8f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:5:6",
+          "unitId": "az-104:5",
+          "index": 6,
+          "text": "Using Azure Network Watcher and Connection Monitor",
+          "sourceHash": "a89c67e1bcde",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:5:7",
+          "unitId": "az-104:5",
+          "index": 7,
+          "text": "Creating a Recovery Services vault",
+          "sourceHash": "30eca5ba05c0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:5:8",
+          "unitId": "az-104:5",
+          "index": 8,
+          "text": "Creating an Azure Backup vault",
+          "sourceHash": "9ab90276d1ae",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:5:9",
+          "unitId": "az-104:5",
+          "index": 9,
+          "text": "Creating and configuring a backup policy",
+          "sourceHash": "3f1db048833e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:5:10",
+          "unitId": "az-104:5",
+          "index": 10,
+          "text": "Performing backup and restore operations with Azure Backup",
+          "sourceHash": "39d05f268c06",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:5:11",
+          "unitId": "az-104:5",
+          "index": 11,
+          "text": "Configuring Azure Site Recovery for Azure resources",
+          "sourceHash": "54a451daccbf",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:5:12",
+          "unitId": "az-104:5",
+          "index": 12,
+          "text": "Performing a failover to a secondary region with Site Recovery",
+          "sourceHash": "e120b168e64d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-104:5:13",
+          "unitId": "az-104:5",
+          "index": 13,
+          "text": "Configuring and interpreting reports and alerts for backups",
+          "sourceHash": "8b81f7cc74b0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/azure.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-18T00:00:00Z",
+    "officialObjectivesUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-104",
+    "providerName": "Microsoft",
+    "credentialName": "Microsoft Certified: Azure Administrator Associate",
+    "examCode": "AZ-104",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 5,
+    "objectives": 82,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

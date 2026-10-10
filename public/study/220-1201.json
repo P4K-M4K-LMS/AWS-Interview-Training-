@@ -1,0 +1,413 @@
+{
+  "id": "220-1201",
+  "code": "APLUS_CORE1",
+  "title": "A+ Core 1",
+  "description": "CompTIA A+ Core 1 (220-1201) exam prep across 5 weighted domains -- mobile devices, networking, hardware, virtualization/cloud, and hardware/network troubleshooting.",
+  "trackType": "certification",
+  "field": "it",
+  "units": [
+    {
+      "id": "220-1201:1",
+      "index": 1,
+      "title": "Mobile Devices",
+      "weight": 13,
+      "gate": "Given a malfunctioning laptop or mobile device, correctly identify the failing component or setting and describe the fix, without guessing at internals you haven't actually opened.",
+      "objectives": [
+        {
+          "id": "220-1201:1:1",
+          "unitId": "220-1201:1",
+          "index": 1,
+          "text": "Installing and replacing laptop hardware: battery, keyboard, touchpad, and internal wireless card",
+          "sourceHash": "26559f0fbcf3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "220-1201:1:2",
+          "unitId": "220-1201:1",
+          "index": 2,
+          "text": "Upgrading laptop internal components: SODIMM RAM and M.2/NVMe storage, respecting compatibility",
+          "sourceHash": "8d62312c0ddb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "220-1201:1:3",
+          "unitId": "220-1201:1",
+          "index": 3,
+          "text": "Configuring mobile device accessories and ports: USB-C/Lightning, Bluetooth pairing, NFC, and docking stations",
+          "sourceHash": "b4c5300325d0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "220-1201:1:4",
+          "unitId": "220-1201:1",
+          "index": 4,
+          "text": "Configuring mobile device network connectivity: Wi-Fi, cellular data, Bluetooth tethering/hotspot, and airplane mode",
+          "sourceHash": "d17bb21318da",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "220-1201:1:5",
+          "unitId": "220-1201:1",
+          "index": 5,
+          "text": "Syncing a mobile device to a computer or cloud account and applying mobile device management (MDM) profiles",
+          "sourceHash": "d7e52f313698",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "220-1201:1:6",
+          "unitId": "220-1201:1",
+          "index": 6,
+          "text": "Troubleshooting common mobile device hardware issues: short battery life, overheating, and unresponsive digitizers",
+          "sourceHash": "4a0e3b3da71c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "220-1201:1:7",
+          "unitId": "220-1201:1",
+          "index": 7,
+          "text": "Troubleshooting common mobile OS and app issues: app crashes, high resource use, and failed synchronization",
+          "sourceHash": "65ad5a6256f7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "220-1201:2",
+      "index": 2,
+      "title": "Networking",
+      "weight": 23,
+      "gate": "Given a small office/home office scenario, configure the router, choose the right cable/connector, and diagnose a connectivity complaint using command-line tools and physical testers, not guesswork.",
+      "objectives": [
+        {
+          "id": "220-1201:2:1",
+          "unitId": "220-1201:2",
+          "index": 1,
+          "text": "Common networking ports and protocols, and matching TCP/UDP port numbers to the service that uses them",
+          "sourceHash": "d4d20a67ff7f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "220-1201:2:2",
+          "unitId": "220-1201:2",
+          "index": 2,
+          "text": "Networking hardware roles: switches, routers, access points, and patch panels",
+          "sourceHash": "5ac3c6a96f40",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "220-1201:2:3",
+          "unitId": "220-1201:2",
+          "index": 3,
+          "text": "Wireless standards and encryption: 802.11 generations, frequency bands, and WPA2/WPA3",
+          "sourceHash": "99af4e62b69b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "220-1201:2:4",
+          "unitId": "220-1201:2",
+          "index": 4,
+          "text": "Configuring a SOHO network: static vs. DHCP addressing, NAT, firewall rules, and port forwarding",
+          "sourceHash": "9bce1f145972",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "220-1201:2:5",
+          "unitId": "220-1201:2",
+          "index": 5,
+          "text": "Configuring and troubleshooting VPN, VLAN, and QoS settings on a SOHO router",
+          "sourceHash": "233a941e24f5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "220-1201:2:6",
+          "unitId": "220-1201:2",
+          "index": 6,
+          "text": "Comparing internet connection types: cable, DSL, fiber, satellite, and cellular",
+          "sourceHash": "358779c218a0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "220-1201:2:7",
+          "unitId": "220-1201:2",
+          "index": 7,
+          "text": "Using networking tools to troubleshoot connectivity: cable tester, crimper, Wi-Fi analyzer, and punchdown tool",
+          "sourceHash": "4417cd14d2a2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "220-1201:2:8",
+          "unitId": "220-1201:2",
+          "index": 8,
+          "text": "Interpreting command-line network diagnostics: ipconfig/ifconfig, ping, tracert, and nslookup",
+          "sourceHash": "75b8cef56ba6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "220-1201:3",
+      "index": 3,
+      "title": "Hardware",
+      "weight": 25,
+      "gate": "Given a PC build or upgrade request, select compatible components (motherboard, CPU, RAM, storage, power supply) and install them correctly, explaining any compatibility constraint that ruled out an alternative.",
+      "objectives": [
+        {
+          "id": "220-1201:3:1",
+          "unitId": "220-1201:3",
+          "index": 1,
+          "text": "Identifying and installing common cables and connectors: HDMI, DisplayPort, USB-A/C, RJ-45, and SATA",
+          "sourceHash": "05dd4ed7c624",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "220-1201:3:2",
+          "unitId": "220-1201:3",
+          "index": 2,
+          "text": "Installing and configuring motherboards, CPUs, and add-on cards, matching socket and chipset compatibility",
+          "sourceHash": "8ec5bb4d0f24",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "220-1201:3:3",
+          "unitId": "220-1201:3",
+          "index": 3,
+          "text": "Selecting and installing RAM by type and compatibility: DDR4/DDR5 and single- vs. dual-channel configurations",
+          "sourceHash": "246e60c55d46",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "220-1201:3:4",
+          "unitId": "220-1201:3",
+          "index": 4,
+          "text": "Installing and configuring storage devices: SATA and NVMe SSDs, HDDs, and RAID levels by use case",
+          "sourceHash": "a6db3dad4744",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "220-1201:3:5",
+          "unitId": "220-1201:3",
+          "index": 5,
+          "text": "Selecting a power supply by wattage and connector type, and choosing appropriate cooling for a build",
+          "sourceHash": "10b683338ee7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "220-1201:3:6",
+          "unitId": "220-1201:3",
+          "index": 6,
+          "text": "Installing and maintaining peripheral devices: printers, scanners, and multifunction devices",
+          "sourceHash": "1f71f75f7c5c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "220-1201:3:7",
+          "unitId": "220-1201:3",
+          "index": 7,
+          "text": "Comparing laser, inkjet, thermal, and impact printer technologies and their routine maintenance",
+          "sourceHash": "0459b6191b7a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "220-1201:4",
+      "index": 4,
+      "title": "Virtualization and Cloud Computing",
+      "weight": 11,
+      "gate": "Given a workload description, say whether it belongs on a local VM or in the cloud, which cloud service model fits it, and why the near-miss alternative doesn't.",
+      "objectives": [
+        {
+          "id": "220-1201:4:1",
+          "unitId": "220-1201:4",
+          "index": 1,
+          "text": "Cloud service models -- IaaS, PaaS, and SaaS -- and matching a scenario to the right one",
+          "sourceHash": "29e107fae652",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "220-1201:4:2",
+          "unitId": "220-1201:4",
+          "index": 2,
+          "text": "Cloud deployment models: public, private, hybrid, and community cloud",
+          "sourceHash": "0da368d332fa",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "220-1201:4:3",
+          "unitId": "220-1201:4",
+          "index": 3,
+          "text": "Common cloud characteristics: rapid elasticity, resource pooling, metered utilization, and file synchronization",
+          "sourceHash": "5a693b67c635",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "220-1201:4:4",
+          "unitId": "220-1201:4",
+          "index": 4,
+          "text": "Client-side virtualization concepts: the purpose of a VM and type 1 vs. type 2 hypervisors",
+          "sourceHash": "68023421fa93",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "220-1201:4:5",
+          "unitId": "220-1201:4",
+          "index": 5,
+          "text": "Configuring and troubleshooting resource allocation for a client-side virtual machine",
+          "sourceHash": "608ec449542c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "220-1201:5",
+      "index": 5,
+      "title": "Hardware and Network Troubleshooting",
+      "weight": 28,
+      "gate": "Given symptoms of a broken PC or network link, apply the standard troubleshooting methodology end to end -- identify, theorize, test, plan, implement, verify, document -- rather than jumping straight to a fix.",
+      "objectives": [
+        {
+          "id": "220-1201:5:1",
+          "unitId": "220-1201:5",
+          "index": 1,
+          "text": "Applying a consistent troubleshooting methodology: identify the problem, establish a theory, test it, plan and implement a solution, verify, and document",
+          "sourceHash": "cc05ebe8d53c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "220-1201:5:2",
+          "unitId": "220-1201:5",
+          "index": 2,
+          "text": "Troubleshooting common PC hardware symptoms: no power, POST failures, overheating, and unusual noise",
+          "sourceHash": "f299289e5271",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "220-1201:5:3",
+          "unitId": "220-1201:5",
+          "index": 3,
+          "text": "Troubleshooting common video and display issues",
+          "sourceHash": "ac2492b6803e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "220-1201:5:4",
+          "unitId": "220-1201:5",
+          "index": 4,
+          "text": "Troubleshooting common storage issues: read/write failures, degraded performance, and RAID or boot failures",
+          "sourceHash": "a8901825f861",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "220-1201:5:5",
+          "unitId": "220-1201:5",
+          "index": 5,
+          "text": "Troubleshooting motherboard, CPU, and power issues using diagnostic tools and POST error codes",
+          "sourceHash": "a7157b6fede6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "220-1201:5:6",
+          "unitId": "220-1201:5",
+          "index": 6,
+          "text": "Troubleshooting wired and wireless network problems: intermittent connectivity, slow transfer speeds, and limited connectivity",
+          "sourceHash": "6c2578db2854",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "220-1201:5:7",
+          "unitId": "220-1201:5",
+          "index": 7,
+          "text": "Using hardware and network troubleshooting tools: multimeter, loopback plug, cable tester, and POST card",
+          "sourceHash": "d18818f165f8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/comptia.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-24T00:00:00Z",
+    "officialObjectivesUrl": "https://www.comptia.org/en-us/certifications/a/core-1-v15/",
+    "providerName": "CompTIA",
+    "credentialName": "CompTIA A+",
+    "examCode": "220-1201",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 5,
+    "objectives": 34,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

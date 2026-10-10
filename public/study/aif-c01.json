@@ -4,6 +4,7 @@
   "title": "AWS AI Practitioner",
   "description": "AWS Certified AI Practitioner (AIF-C01): AI, ML, and generative AI on AWS for the person who uses these systems rather than builds them -- foundation models, prompt engineering, RAG and agents, responsible AI, and the security and governance around it all.",
   "trackType": "certification",
+  "field": "aws",
   "units": [
     {
       "id": "aif-c01:1",

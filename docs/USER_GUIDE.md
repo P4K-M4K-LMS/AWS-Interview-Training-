@@ -113,7 +113,13 @@ Incident missions open with a ticket and a broken platform on a one-second clock
 
 ## Study
 
-Study (Learn group) holds exam-style objective catalogs taken from the Ascendra project: eleven AWS certification courses and nine core computer-science and security courses. Each course lists its units with the exam weight and a one-sentence "gate" that says what mastering the unit means, and each unit lists its objectives.
+Study (Learn group) holds exam-style objective catalogs taken from the Ascendra project: 90 courses across cloud (AWS, Azure, Google Cloud), technology (security, IT and networking, computer science), project management and health (nursing, physical therapy, fitness).
+
+The Study home opens on the courses you have started, then lists every course by area and field. Each field shows a few suggested learning paths, with the first course marked "start here", and its courses grouped by level (fundamentals, associate, degree, licensure, professional, specialty). Each course card says whether its lessons are ready. The search box finds courses by name or exam code and, from three letters, every objective whose text mentions your words, each one a link straight to the objective. The field buttons, the level list and "Only courses with lessons" narrow everything; they are kept in the address, so a filtered view can be bookmarked.
+
+Nursing and physical therapy courses open on a disclaimer: the material is exam preparation, not clinical guidance, and must not be used for a real patient. Nothing in the course shows until you accept it, once per field; if the wording ever changes in meaning, you are asked again.
+
+Each course lists its units with the exam weight and a one-sentence "gate" that says what mastering the unit means, and each unit lists its objectives.
 
 Every objective carries a label that says how it is best learned here: "Do it: existing mission" means an OpsForge mission already makes you do it, and the card links straight to that mission; "Read and check", "Read, then a scenario" and "Explain it back" describe the lesson formats that arrive with the generated content; "Do it: lab planned" names a hands-on lab that does not exist yet. Today only the mission links are live; the rest of each objective is a catalog entry.
 

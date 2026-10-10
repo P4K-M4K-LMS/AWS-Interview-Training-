@@ -1,0 +1,372 @@
+{
+  "id": "fc0-u71",
+  "code": "TECHPLUS",
+  "title": "Tech+",
+  "description": "CompTIA Tech+ (FC0-U71) exam prep across 6 weighted domains -- tech concepts and terminology, infrastructure, applications software, software development concepts, data and database fundamentals, and security. Tech+ is CompTIA's 2024 relaunch of ITF+ (IT Fundamentals+).",
+  "trackType": "certification",
+  "field": "it",
+  "units": [
+    {
+      "id": "fc0-u71:1",
+      "index": 1,
+      "title": "Tech Concepts and Terminology",
+      "weight": 13,
+      "gate": "Given a computing scenario, name the specific notational system, unit of measure, or troubleshooting step it calls for -- not a vague 'it's a computer thing' answer.",
+      "objectives": [
+        {
+          "id": "fc0-u71:1:1",
+          "unitId": "fc0-u71:1",
+          "index": 1,
+          "text": "Computing basics: input, processing, output, and storage",
+          "sourceHash": "fb2bccd647b7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "fc0-u71:1:2",
+          "unitId": "fc0-u71:1",
+          "index": 2,
+          "text": "Notational systems: binary, hexadecimal, decimal, and octal",
+          "sourceHash": "2ecf7e7c497c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "fc0-u71:1:3",
+          "unitId": "fc0-u71:1",
+          "index": 3,
+          "text": "Units of measure: storage (bit, byte, KB, GB, TB), speed (MHz, GHz), and throughput (bps, Mbps, Gbps)",
+          "sourceHash": "dbaed20a2933",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "fc0-u71:1:4",
+          "unitId": "fc0-u71:1",
+          "index": 4,
+          "text": "Troubleshooting methodology: identifying problems, testing theories, implementing solutions, and documenting findings",
+          "sourceHash": "2f97d84e7185",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "fc0-u71:2",
+      "index": 2,
+      "title": "Infrastructure",
+      "weight": 24,
+      "gate": "Given a device or network to set up, identify the specific component, interface, or deployment model involved -- not a generic 'plug it in' answer.",
+      "objectives": [
+        {
+          "id": "fc0-u71:2:1",
+          "unitId": "fc0-u71:2",
+          "index": 1,
+          "text": "Computing devices: smartphones, tablets, laptops, servers, IoT devices, and gaming consoles",
+          "sourceHash": "a3ae4e8692d7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "fc0-u71:2:2",
+          "unitId": "fc0-u71:2",
+          "index": 2,
+          "text": "Internal components: motherboard, CPU, RAM, storage (HDD, SSD, NVMe), NIC, and GPU",
+          "sourceHash": "b1fde209231e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "fc0-u71:2:3",
+          "unitId": "fc0-u71:2",
+          "index": 3,
+          "text": "Storage types: volatile vs. non-volatile, local, network, and cloud storage",
+          "sourceHash": "aaefa257c356",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "fc0-u71:2:4",
+          "unitId": "fc0-u71:2",
+          "index": 4,
+          "text": "Peripheral setup: printers, scanners, monitors, and driver installation",
+          "sourceHash": "4a90c0ef1902",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "fc0-u71:2:5",
+          "unitId": "fc0-u71:2",
+          "index": 5,
+          "text": "Device interfaces: USB, HDMI, Ethernet, Bluetooth, and NFC",
+          "sourceHash": "96b675f37f4f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "fc0-u71:2:6",
+          "unitId": "fc0-u71:2",
+          "index": 6,
+          "text": "Virtualization and cloud: hypervisors, SaaS, PaaS, IaaS, hybrid, and on-premises models",
+          "sourceHash": "103349011d15",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "fc0-u71:2:7",
+          "unitId": "fc0-u71:2",
+          "index": 7,
+          "text": "Networking basics: LAN vs. WAN, IP/MAC addresses, routers, switches, and firewalls",
+          "sourceHash": "5425c76d2666",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "fc0-u71:2:8",
+          "unitId": "fc0-u71:2",
+          "index": 8,
+          "text": "Wireless networks: 802.11 standards, speed, and interference considerations",
+          "sourceHash": "2397113be296",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "fc0-u71:3",
+      "index": 3,
+      "title": "Applications Software",
+      "weight": 18,
+      "gate": "Given a software task, name the specific OS component, application type, or browser feature that handles it -- not a generic 'use an app' answer.",
+      "objectives": [
+        {
+          "id": "fc0-u71:3:1",
+          "unitId": "fc0-u71:3",
+          "index": 1,
+          "text": "Operating systems: mobile, desktop, server, and embedded",
+          "sourceHash": "b0d5e41f2a87",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "fc0-u71:3:2",
+          "unitId": "fc0-u71:3",
+          "index": 2,
+          "text": "OS components: file systems (NTFS, FAT32), interfaces (GUI, command line), utilities, and drivers",
+          "sourceHash": "cc41e1016cad",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "fc0-u71:3:3",
+          "unitId": "fc0-u71:3",
+          "index": 3,
+          "text": "Software types: productivity tools, collaboration apps, web browsers, and remote support",
+          "sourceHash": "d4cf487d5c02",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "fc0-u71:3:4",
+          "unitId": "fc0-u71:3",
+          "index": 4,
+          "text": "Web browser features: private browsing, add-ons, password management, and cache clearing",
+          "sourceHash": "b9f1d15c661f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "fc0-u71:3:5",
+          "unitId": "fc0-u71:3",
+          "index": 5,
+          "text": "Artificial intelligence basics: chatbots, assistants, and generative AI content prediction",
+          "sourceHash": "90b873b7a148",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "fc0-u71:4",
+      "index": 4,
+      "title": "Software Development Concepts",
+      "weight": 13,
+      "gate": "Given a coding problem, identify the specific data type, programming concept, or organizational technique it needs -- not a vague 'write some code' answer.",
+      "objectives": [
+        {
+          "id": "fc0-u71:4:1",
+          "unitId": "fc0-u71:4",
+          "index": 1,
+          "text": "Programming languages: interpreted, compiled, scripting, markup, and assembly",
+          "sourceHash": "46dd78d5ce28",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "fc0-u71:4:2",
+          "unitId": "fc0-u71:4",
+          "index": 2,
+          "text": "Data types: char, strings, numbers (integers, floats), and Boolean",
+          "sourceHash": "6f8fb4ddcc85",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "fc0-u71:4:3",
+          "unitId": "fc0-u71:4",
+          "index": 3,
+          "text": "Programming concepts: variables, constants, arrays, functions, and objects",
+          "sourceHash": "7227098f605b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "fc0-u71:4:4",
+          "unitId": "fc0-u71:4",
+          "index": 4,
+          "text": "Organizational techniques: pseudocode, flowcharts, object-oriented methods, branching, and looping",
+          "sourceHash": "2fff15203df6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "fc0-u71:5",
+      "index": 5,
+      "title": "Data and Database Fundamentals",
+      "weight": 13,
+      "gate": "Given a dataset, name the specific database concept -- relational vs. non-relational, a key type, a query -- or the specific backup approach it calls for.",
+      "objectives": [
+        {
+          "id": "fc0-u71:5:1",
+          "unitId": "fc0-u71:5",
+          "index": 1,
+          "text": "The value of data: data-driven decisions, reporting, and monetization",
+          "sourceHash": "d0e6a28709ac",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "fc0-u71:5:2",
+          "unitId": "fc0-u71:5",
+          "index": 2,
+          "text": "Database concepts: relational vs. non-relational, tables, rows, fields, and primary/foreign keys",
+          "sourceHash": "e0567c7c38b1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "fc0-u71:5:3",
+          "unitId": "fc0-u71:5",
+          "index": 3,
+          "text": "Database use: queries, reports, scalability, and cloud vs. local storage",
+          "sourceHash": "3c7dbfcb5ffb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "fc0-u71:5:4",
+          "unitId": "fc0-u71:5",
+          "index": 4,
+          "text": "Backup concepts: file system backups and local vs. other storage targets",
+          "sourceHash": "71047e3205bc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "fc0-u71:6",
+      "index": 6,
+      "title": "Security",
+      "weight": 19,
+      "gate": "Given a device or account to protect, apply the specific control -- a password practice, encryption in the right state, or a named security concept -- rather than a generic 'be secure' answer.",
+      "objectives": [
+        {
+          "id": "fc0-u71:6:1",
+          "unitId": "fc0-u71:6",
+          "index": 1,
+          "text": "Security concepts: confidentiality, integrity, availability, authentication, and authorization",
+          "sourceHash": "c73346624ac4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "fc0-u71:6:2",
+          "unitId": "fc0-u71:6",
+          "index": 2,
+          "text": "Device security: anti-malware, firewalls, patching, physical security, and safe browsing",
+          "sourceHash": "b152714a73e2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "fc0-u71:6:3",
+          "unitId": "fc0-u71:6",
+          "index": 3,
+          "text": "Password practices: length, complexity, privacy, reuse, and password managers",
+          "sourceHash": "62b2917b043a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "fc0-u71:6:4",
+          "unitId": "fc0-u71:6",
+          "index": 4,
+          "text": "Encryption: data at rest, data in transit, HTTPS, VPNs, and mobile devices",
+          "sourceHash": "6da89cc21352",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/comptia.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-24T00:00:00Z",
+    "officialObjectivesUrl": "https://www.comptia.org/en-us/certifications/tech/",
+    "providerName": "CompTIA",
+    "credentialName": "CompTIA Tech+",
+    "examCode": "FC0-U71",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 6,
+    "objectives": 29,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

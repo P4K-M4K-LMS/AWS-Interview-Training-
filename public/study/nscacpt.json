@@ -1,0 +1,243 @@
+{
+  "id": "nscacpt",
+  "code": "NSCACPT",
+  "title": "NSCA Certified Personal Trainer (NSCA-CPT)",
+  "description": "NSCA's NCCA-accredited personal trainer exam on the handbook effective July 1, 2026: client consultation and assessment (23%), program planning (29%), program execution (36%), and safety, emergency procedures and legal issues (12%).",
+  "trackType": "certification",
+  "field": "fitness",
+  "units": [
+    {
+      "id": "nscacpt:1",
+      "index": 1,
+      "title": "Client consultation and assessment",
+      "weight": 23,
+      "gate": "Take a client from first conversation to a baseline you can plan from, including the wellbeing review and any referral it triggers.",
+      "objectives": [
+        {
+          "id": "nscacpt:1:1",
+          "unitId": "nscacpt:1",
+          "index": 1,
+          "text": "Initial interview, health screening, informed consent and goal setting with key performance indicators",
+          "sourceHash": "b2c89780eabb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nscacpt:1:2",
+          "unitId": "nscacpt:1",
+          "index": 2,
+          "text": "Fitness and performance evaluation: selecting, conducting and interpreting assessments",
+          "sourceHash": "eb702caaf6d5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nscacpt:1:3",
+          "unitId": "nscacpt:1",
+          "index": 3,
+          "text": "Scheduling and conducting reevaluation and reassessment",
+          "sourceHash": "15a48283ad42",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nscacpt:1:4",
+          "unitId": "nscacpt:1",
+          "index": 4,
+          "text": "Basic wellness review within scope: nutrition, sleep, stress and mental health, and recognizing RED-S and disordered eating",
+          "sourceHash": "6369ce6f81e2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nscacpt:1:5",
+          "unitId": "nscacpt:1",
+          "index": 5,
+          "text": "Referring to and collaborating with health care professionals from evaluation results",
+          "sourceHash": "253c5fb84680",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "nscacpt:2",
+      "index": 2,
+      "title": "Program planning",
+      "weight": 29,
+      "gate": "Plan a periodized client program with format, FITT, order, tempo and progression, and adapt it for a stated special-population need.",
+      "objectives": [
+        {
+          "id": "nscacpt:2:1",
+          "unitId": "nscacpt:2",
+          "index": 1,
+          "text": "Creating macro-, meso- and microcycle plans targeting client goals",
+          "sourceHash": "7b2ff36af81f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nscacpt:2:2",
+          "unitId": "nscacpt:2",
+          "index": 2,
+          "text": "Session format, length, warm-up, modality selection and recovery procedures",
+          "sourceHash": "addefadd6566",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nscacpt:2:3",
+          "unitId": "nscacpt:2",
+          "index": 3,
+          "text": "Exercise order, FITT, work-to-rest ratio and tempo by contraction phase",
+          "sourceHash": "6df926aa0e89",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nscacpt:2:4",
+          "unitId": "nscacpt:2",
+          "index": 4,
+          "text": "Progressing variables over time and modifying from reassessment results",
+          "sourceHash": "ef9f3eed45ea",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nscacpt:2:5",
+          "unitId": "nscacpt:2",
+          "index": 5,
+          "text": "Special populations: recognizing conditions, contraindications and modifying within medical recommendations",
+          "sourceHash": "a10fffc166a6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "nscacpt:3",
+      "index": 3,
+      "title": "Program execution",
+      "weight": 36,
+      "gate": "Coach a session: cue the exercise, evaluate technique across every modality, and adjust in the moment.",
+      "objectives": [
+        {
+          "id": "nscacpt:3:1",
+          "unitId": "nscacpt:3",
+          "index": 1,
+          "text": "Exercise instruction: motivational coaching techniques, explaining purpose and teaching general safety guidelines",
+          "sourceHash": "612e41fbd7b8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nscacpt:3:2",
+          "unitId": "nscacpt:3",
+          "index": 2,
+          "text": "Evaluating technique on machine resistance and free-weight exercises",
+          "sourceHash": "5c921383cac3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nscacpt:3:3",
+          "unitId": "nscacpt:3",
+          "index": 3,
+          "text": "Evaluating flexibility, mobility, calisthenic and body-weight exercises",
+          "sourceHash": "11d3d67e9cfc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nscacpt:3:4",
+          "unitId": "nscacpt:3",
+          "index": 4,
+          "text": "Evaluating sport-specific and performance activities: plyometrics, sprinting, agility and reaction drills",
+          "sourceHash": "06bac142735e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nscacpt:3:5",
+          "unitId": "nscacpt:3",
+          "index": 5,
+          "text": "Cardiovascular machine use and monitoring intensity during execution",
+          "sourceHash": "3dbe4f140ac1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "nscacpt:4",
+      "index": 4,
+      "title": "Safety, emergency procedures and legal issues",
+      "weight": 12,
+      "gate": "Identify the safety or legal exposure in a scenario and the procedure that controls it.",
+      "objectives": [
+        {
+          "id": "nscacpt:4:1",
+          "unitId": "nscacpt:4",
+          "index": 1,
+          "text": "Facility and equipment safety, environment checks and client monitoring",
+          "sourceHash": "4344a1907174",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nscacpt:4:2",
+          "unitId": "nscacpt:4",
+          "index": 2,
+          "text": "Emergency action plans, CPR/AED use and incident documentation",
+          "sourceHash": "7fb318201af7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nscacpt:4:3",
+          "unitId": "nscacpt:4",
+          "index": 3,
+          "text": "Scope of practice, professional standards, liability and legal responsibilities",
+          "sourceHash": "658189f496ba",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/fitness.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-10-08T00:00:00Z",
+    "officialObjectivesUrl": "https://www.nsca.com/globalassets/certification/certification-pdfs/nsca-certification-handbook.pdf",
+    "providerName": "National Strength and Conditioning Association",
+    "credentialName": "NSCA Certified Personal Trainer (NSCA-CPT)",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 4,
+    "objectives": 18,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

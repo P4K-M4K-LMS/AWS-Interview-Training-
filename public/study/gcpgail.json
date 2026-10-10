@@ -1,0 +1,563 @@
+{
+  "id": "gcpgail",
+  "code": "GCPGAIL",
+  "title": "Google Cloud Generative AI Leader",
+  "description": "Google Cloud Generative AI Leader: a business-level, no-code fluency in generative AI -- core concepts, Google Cloud's gen AI product landscape, techniques that improve model output, and the business strategy and security/responsible-AI considerations behind a successful gen AI initiative.",
+  "trackType": "certification",
+  "field": "gcp",
+  "units": [
+    {
+      "id": "gcpgail:1",
+      "index": 1,
+      "title": "Fundamentals of Gen AI",
+      "weight": 30,
+      "gate": "Given a gen AI term or a data question, define it precisely -- not with another buzzword -- and say which stage of the ML lifecycle it belongs to.",
+      "objectives": [
+        {
+          "id": "gcpgail:1:1",
+          "unitId": "gcpgail:1",
+          "index": 1,
+          "text": "Defining core gen AI concepts: artificial intelligence, natural language processing, machine learning, generative AI, foundation models, multimodal foundation models, diffusion models, prompt tuning, prompt engineering, large language models",
+          "sourceHash": "b11ba6c47aa3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpgail:1:2",
+          "unitId": "gcpgail:1",
+          "index": 2,
+          "text": "Describing ML approaches: supervised, unsupervised, reinforcement",
+          "sourceHash": "0056e605b294",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpgail:1:3",
+          "unitId": "gcpgail:1",
+          "index": 3,
+          "text": "Identifying the stages of the ML lifecycle -- data ingestion, data preparation, model training, model deployment, model management -- and the Google Cloud tool for each",
+          "sourceHash": "1b46d52cb66a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpgail:1:4",
+          "unitId": "gcpgail:1",
+          "index": 4,
+          "text": "Choosing the appropriate foundation model for a business use case: modality, context window, security, availability/reliability, cost, performance, fine-tuning, customization",
+          "sourceHash": "706d94b6e1df",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpgail:1:5",
+          "unitId": "gcpgail:1",
+          "index": 5,
+          "text": "Identifying business use cases where gen AI creates, summarizes, discovers, or automates: text, image, code, and video generation, data analysis, personalized experience",
+          "sourceHash": "b4675bef7744",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpgail:1:6",
+          "unitId": "gcpgail:1",
+          "index": 6,
+          "text": "Explaining the characteristics and importance of data quality and accessibility: completeness, consistency, relevance, availability, cost, format",
+          "sourceHash": "41b22a13c0fc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpgail:1:7",
+          "unitId": "gcpgail:1",
+          "index": 7,
+          "text": "Differentiating structured from unstructured data, with real-world examples of each",
+          "sourceHash": "fb3b4794aad1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpgail:1:8",
+          "unitId": "gcpgail:1",
+          "index": 8,
+          "text": "Differentiating labeled from unlabeled data",
+          "sourceHash": "fe8b5701ebbd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpgail:1:9",
+          "unitId": "gcpgail:1",
+          "index": 9,
+          "text": "Identifying the core layers of the gen AI landscape: infrastructure, models, platforms, agents, applications",
+          "sourceHash": "d455cb5c6066",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpgail:1:10",
+          "unitId": "gcpgail:1",
+          "index": 10,
+          "text": "Identifying the use cases and strengths of Google's own foundation models: Gemini, Gemma, Imagen, Veo",
+          "sourceHash": "e2cc72d2b215",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "gcpgail:2",
+      "index": 2,
+      "title": "Google Cloud's Gen AI Offerings",
+      "weight": 35,
+      "gate": "Given a business need, name the specific Google Cloud gen AI product that fits it -- not just 'Google has an AI for that.'",
+      "objectives": [
+        {
+          "id": "gcpgail:2:1",
+          "unitId": "gcpgail:2",
+          "index": 1,
+          "text": "Describing how Google's AI-first approach translates into its gen AI solutions",
+          "sourceHash": "03c6fa8822be",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpgail:2:2",
+          "unitId": "gcpgail:2",
+          "index": 2,
+          "text": "Describing what makes Google Cloud's AI platform enterprise-ready: responsible, secure, private, reliable, scalable",
+          "sourceHash": "9c93c8a6d5b8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpgail:2:3",
+          "unitId": "gcpgail:2",
+          "index": 3,
+          "text": "Recognizing the advantages of Google's integrated AI ecosystem across products and services",
+          "sourceHash": "f748cef5fcfd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpgail:2:4",
+          "unitId": "gcpgail:2",
+          "index": 4,
+          "text": "Describing the benefits of Google Cloud's open approach to AI",
+          "sourceHash": "34e08bbe3628",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpgail:2:5",
+          "unitId": "gcpgail:2",
+          "index": 5,
+          "text": "Identifying the components of Google Cloud's AI-optimized infrastructure: AI Hypercomputer, custom TPUs, GPUs, data centers",
+          "sourceHash": "537171f355d3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpgail:2:6",
+          "unitId": "gcpgail:2",
+          "index": 6,
+          "text": "Explaining how Google Cloud's AI platform gives users control over their data: security, privacy, governance, open first-party models, pre-built and customizable solutions, agents",
+          "sourceHash": "47421235ef25",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpgail:2:7",
+          "unitId": "gcpgail:2",
+          "index": 7,
+          "text": "Describing how Google Cloud democratizes AI development: low-code and no-code tools, pre-trained models, APIs",
+          "sourceHash": "3b7fef47ced9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpgail:2:8",
+          "unitId": "gcpgail:2",
+          "index": 8,
+          "text": "Recognizing the functionality, use cases, and business value of the Gemini app and Gemini Advanced, including Gems",
+          "sourceHash": "7e4468801a02",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpgail:2:9",
+          "unitId": "gcpgail:2",
+          "index": 9,
+          "text": "Recognizing the functionality, use cases, and business value of Gemini Enterprise: Notebook API, multimodal search, custom agent capabilities",
+          "sourceHash": "735c2cedff9f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpgail:2:10",
+          "unitId": "gcpgail:2",
+          "index": 10,
+          "text": "Recognizing the functionality, use cases, and business value of Gemini for Google Workspace",
+          "sourceHash": "229758916b7b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpgail:2:11",
+          "unitId": "gcpgail:2",
+          "index": 11,
+          "text": "Recognizing the functionality, use cases, and business value of Google Cloud's external search offerings: Agent Search on the Gemini Enterprise Agent Platform, Google Search",
+          "sourceHash": "0e1ab62c9d9a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpgail:2:12",
+          "unitId": "gcpgail:2",
+          "index": 12,
+          "text": "Recognizing the functionality, use cases, and business value of Google's Customer Engagement Suite: Conversational Agents, Agent Assist, Conversational Insights, Google Cloud Contact Center as a Service",
+          "sourceHash": "e9a0315e57e1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpgail:2:13",
+          "unitId": "gcpgail:2",
+          "index": 13,
+          "text": "Recognizing the functionality, use cases, and business value of the Agent Platform: Model Garden, Agent Search, Agent Platform AutoML",
+          "sourceHash": "24a381cbb119",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpgail:2:14",
+          "unitId": "gcpgail:2",
+          "index": 14,
+          "text": "Recognizing the functionality, use cases, and business value of Google Cloud's RAG offerings: prebuilt RAG with Agent Search, RAG APIs",
+          "sourceHash": "f85e0a531b3c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpgail:2:15",
+          "unitId": "gcpgail:2",
+          "index": 15,
+          "text": "Recognizing the functionality, use cases, and business value of building custom agents on the Agent Platform",
+          "sourceHash": "149f9392fabb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpgail:2:16",
+          "unitId": "gcpgail:2",
+          "index": 16,
+          "text": "Identifying how agents use tools to interact with the external environment: extensions, functions, data stores, plugins",
+          "sourceHash": "daaa3267eefd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpgail:2:17",
+          "unitId": "gcpgail:2",
+          "index": 17,
+          "text": "Identifying Google Cloud services and pre-built AI APIs used for agent tooling",
+          "sourceHash": "2480d416f534",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpgail:2:18",
+          "unitId": "gcpgail:2",
+          "index": 18,
+          "text": "Choosing between Agent Studio and Google AI Studio",
+          "sourceHash": "d697cb09dccc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "gcpgail:3",
+      "index": 3,
+      "title": "Techniques to Improve Gen AI Model Output",
+      "weight": 20,
+      "gate": "Given a foundation model limitation, name the specific technique -- grounding, RAG, prompting, fine-tuning -- that actually addresses it.",
+      "objectives": [
+        {
+          "id": "gcpgail:3:1",
+          "unitId": "gcpgail:3",
+          "index": 1,
+          "text": "Identifying common foundation model limitations: data dependency, knowledge cutoff, bias, fairness, hallucinations, edge cases",
+          "sourceHash": "c55a1f0ed889",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpgail:3:2",
+          "unitId": "gcpgail:3",
+          "index": 2,
+          "text": "Describing Google Cloud-recommended practices to address model limitations: grounding, retrieval-augmented generation, prompt engineering, fine-tuning, human in the loop",
+          "sourceHash": "e9ebccacd799",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpgail:3:3",
+          "unitId": "gcpgail:3",
+          "index": 3,
+          "text": "Recognizing Google-recommended practices for continuously monitoring and evaluating gen AI models: automatic upgrades, KPIs, security patches, versioning, performance tracking, drift monitoring",
+          "sourceHash": "4dd2a0789ceb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpgail:3:4",
+          "unitId": "gcpgail:3",
+          "index": 4,
+          "text": "Defining prompt engineering and its significance when working with LLMs",
+          "sourceHash": "74937963c633",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpgail:3:5",
+          "unitId": "gcpgail:3",
+          "index": 5,
+          "text": "Identifying prompting techniques and their use cases: zero-shot, one-shot, few-shot, role prompting, prompt chaining",
+          "sourceHash": "cac0921425f0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpgail:3:6",
+          "unitId": "gcpgail:3",
+          "index": 6,
+          "text": "Identifying advanced prompting techniques and when to use them: chain-of-thought prompting, ReAct prompting",
+          "sourceHash": "0a775288a5d6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpgail:3:7",
+          "unitId": "gcpgail:3",
+          "index": 7,
+          "text": "Describing grounding in LLMs, and differentiating grounding with first-party enterprise data, third-party data, and world data",
+          "sourceHash": "d7f66cf9bd7d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpgail:3:8",
+          "unitId": "gcpgail:3",
+          "index": 8,
+          "text": "Describing how retrieval-augmented generation affects a gen AI model's output",
+          "sourceHash": "997f3d8b4894",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpgail:3:9",
+          "unitId": "gcpgail:3",
+          "index": 9,
+          "text": "Identifying Google Cloud's grounding offerings: prebuilt RAG with Agent Search, RAG APIs, Grounding with Google Search",
+          "sourceHash": "aa5ed9810369",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpgail:3:10",
+          "unitId": "gcpgail:3",
+          "index": 10,
+          "text": "Identifying how sampling parameters control gen AI model behavior: token count, temperature, top-p, safety settings, output length",
+          "sourceHash": "64d8329fd8f3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "gcpgail:4",
+      "index": 4,
+      "title": "Business Strategies for a Successful Gen AI Solution",
+      "weight": 15,
+      "gate": "Given an organization considering gen AI, say what actually has to happen -- choosing the right solution, securing it, measuring its impact -- not just 'adopt AI.'",
+      "objectives": [
+        {
+          "id": "gcpgail:4:1",
+          "unitId": "gcpgail:4",
+          "index": 1,
+          "text": "Recognizing types of gen AI solutions: text generation, image generation, code generation, personalized user needs",
+          "sourceHash": "ba212cfd05f1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpgail:4:2",
+          "unitId": "gcpgail:4",
+          "index": 2,
+          "text": "Identifying the key factors that influence gen AI needs: business requirements, technical constraints",
+          "sourceHash": "e5b763b4f450",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpgail:4:3",
+          "unitId": "gcpgail:4",
+          "index": 3,
+          "text": "Choosing the right gen AI solution for a specific business need",
+          "sourceHash": "c308a5f2418e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpgail:4:4",
+          "unitId": "gcpgail:4",
+          "index": 4,
+          "text": "Identifying the steps to integrate gen AI into an organization",
+          "sourceHash": "962738824ed1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpgail:4:5",
+          "unitId": "gcpgail:4",
+          "index": 5,
+          "text": "Identifying techniques to measure the impact of a gen AI initiative",
+          "sourceHash": "3d0aa2c232f3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpgail:4:6",
+          "unitId": "gcpgail:4",
+          "index": 6,
+          "text": "Explaining security considerations throughout the ML lifecycle",
+          "sourceHash": "4b72684b699f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpgail:4:7",
+          "unitId": "gcpgail:4",
+          "index": 7,
+          "text": "Identifying the purpose and benefits of Google's Secure AI Framework (SAIF)",
+          "sourceHash": "0b4b2d74d141",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpgail:4:8",
+          "unitId": "gcpgail:4",
+          "index": 8,
+          "text": "Recognizing Google Cloud security tools and their purpose: secure-by-design infrastructure, IAM, Security Command Center, workload monitoring",
+          "sourceHash": "91f2e9925549",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpgail:4:9",
+          "unitId": "gcpgail:4",
+          "index": 9,
+          "text": "Explaining the importance of responsible AI and transparency",
+          "sourceHash": "d75862abd8fb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpgail:4:10",
+          "unitId": "gcpgail:4",
+          "index": 10,
+          "text": "Describing privacy considerations: privacy risks, data anonymization, pseudonymization",
+          "sourceHash": "db2489f85122",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpgail:4:11",
+          "unitId": "gcpgail:4",
+          "index": 11,
+          "text": "Describing the business implications of data quality, bias, and fairness",
+          "sourceHash": "8bfffd4691b5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpgail:4:12",
+          "unitId": "gcpgail:4",
+          "index": 12,
+          "text": "Describing the importance of accountability and explainability in AI systems",
+          "sourceHash": "2609356ecb8e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/gcp.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-24T00:00:00Z",
+    "officialObjectivesUrl": "https://cloud.google.com/learn/certification/generative-ai-leader",
+    "providerName": "Google Cloud",
+    "credentialName": "Google Cloud Generative AI Leader",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 4,
+    "objectives": 50,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

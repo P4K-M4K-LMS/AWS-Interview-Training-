@@ -1,0 +1,312 @@
+{
+  "id": "abptsonc",
+  "code": "ABPTSONC",
+  "title": "Oncologic Clinical Specialist",
+  "description": "ABPTS board certification in oncologic physical therapy: intervention and instruction (27%) and examination (23%) for people living with and beyond cancer, across treatment effects, lymphedema, fatigue and survivorship.",
+  "trackType": "certification",
+  "field": "pt",
+  "requiresAcknowledgement": true,
+  "units": [
+    {
+      "id": "abptsonc:1",
+      "index": 1,
+      "title": "Knowledge areas: foundation, behavioral and clinical sciences",
+      "weight": 15,
+      "gate": "Explain how a specific cancer treatment produces the impairment in front of you, and the precaution it creates for exercise.",
+      "objectives": [
+        {
+          "id": "abptsonc:1:1",
+          "unitId": "abptsonc:1",
+          "index": 1,
+          "text": "Cancer biology, staging and the natural history of common cancers",
+          "sourceHash": "cdb8742d54cd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsonc:1:2",
+          "unitId": "abptsonc:1",
+          "index": 2,
+          "text": "Effects of surgery, chemotherapy, radiation, hormonal and immunotherapy on the musculoskeletal, neurologic, cardiopulmonary and integumentary systems",
+          "sourceHash": "a717c4ee4461",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsonc:1:3",
+          "unitId": "abptsonc:1",
+          "index": 3,
+          "text": "Behavioral sciences: distress, fear of recurrence, body image and family dynamics in cancer care",
+          "sourceHash": "8e2865ac9f4e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsonc:1:4",
+          "unitId": "abptsonc:1",
+          "index": 4,
+          "text": "Laboratory values, bone metastasis and other precautions that govern exercise safety in oncology",
+          "sourceHash": "6d68ad1da0d2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "abptsonc:2",
+      "index": 2,
+      "title": "Professional roles, responsibilities and values",
+      "weight": 16,
+      "gate": "Describe the oncology specialist's role in advocacy, consultation and evidence-based practice across the cancer continuum.",
+      "objectives": [
+        {
+          "id": "abptsonc:2:1",
+          "unitId": "abptsonc:2",
+          "index": 1,
+          "text": "Professional behavior, development and communication in oncology settings, including palliative and end-of-life care",
+          "sourceHash": "3d2f124aba39",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsonc:2:2",
+          "unitId": "abptsonc:2",
+          "index": 2,
+          "text": "Social responsibility, leadership, education and advocacy for rehabilitation access in cancer care",
+          "sourceHash": "b07f2d4c4640",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsonc:2:3",
+          "unitId": "abptsonc:2",
+          "index": 3,
+          "text": "Administration and consultation within cancer programs",
+          "sourceHash": "cbaf1eaa8fa2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsonc:2:4",
+          "unitId": "abptsonc:2",
+          "index": 4,
+          "text": "Evidence-based practice in oncology rehabilitation",
+          "sourceHash": "d215000ea23c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "abptsonc:3",
+      "index": 3,
+      "title": "Examination and reexamination",
+      "weight": 23,
+      "gate": "Select the examination that establishes safety to proceed and quantifies the impairment for a patient at a stated point in treatment.",
+      "objectives": [
+        {
+          "id": "abptsonc:3:1",
+          "unitId": "abptsonc:3",
+          "index": 1,
+          "text": "Screening for red flags: metastatic disease, spinal cord compression, deep vein thrombosis, febrile neutropenia",
+          "sourceHash": "e94b1fbdd42c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsonc:3:2",
+          "unitId": "abptsonc:3",
+          "index": 2,
+          "text": "Examination of cancer-related fatigue, chemotherapy-induced peripheral neuropathy and cognitive change",
+          "sourceHash": "d6d671b698d4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsonc:3:3",
+          "unitId": "abptsonc:3",
+          "index": 3,
+          "text": "Lymphedema examination, limb volume measurement and staging",
+          "sourceHash": "66519eeede0d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsonc:3:4",
+          "unitId": "abptsonc:3",
+          "index": 4,
+          "text": "Examination of shoulder, trunk and pelvic function after breast, head and neck, thoracic and pelvic cancer treatment",
+          "sourceHash": "bf0e1ee479e6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsonc:3:5",
+          "unitId": "abptsonc:3",
+          "index": 5,
+          "text": "Cardiopulmonary and functional examination for exercise prescription during and after treatment",
+          "sourceHash": "27911db9dacb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "abptsonc:4",
+      "index": 4,
+      "title": "Evaluation, diagnosis and prognosis",
+      "weight": 14,
+      "gate": "State the movement diagnosis and a prognosis for a patient at a given stage of treatment or survivorship, naming what limits it.",
+      "objectives": [
+        {
+          "id": "abptsonc:4:1",
+          "unitId": "abptsonc:4",
+          "index": 1,
+          "text": "Integrating oncologic history, treatment phase and comorbidities into a movement-system diagnosis",
+          "sourceHash": "e50c1875f321",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsonc:4:2",
+          "unitId": "abptsonc:4",
+          "index": 2,
+          "text": "Prognosis during active treatment, in survivorship and in advanced disease",
+          "sourceHash": "87f7e4d4d79f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsonc:4:3",
+          "unitId": "abptsonc:4",
+          "index": 3,
+          "text": "Differentiating treatment-related impairment from disease progression and other causes",
+          "sourceHash": "161d881bfd75",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "abptsonc:5",
+      "index": 5,
+      "title": "Intervention and instruction",
+      "weight": 27,
+      "gate": "Prescribe exercise with dose and precautions for a specific cancer, treatment and lab picture, and state the instruction the patient needs.",
+      "objectives": [
+        {
+          "id": "abptsonc:5:1",
+          "unitId": "abptsonc:5",
+          "index": 1,
+          "text": "Exercise prescription during and after treatment, including dosing with low blood counts, bone metastasis and cardiotoxicity",
+          "sourceHash": "a0675f1d7e89",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsonc:5:2",
+          "unitId": "abptsonc:5",
+          "index": 2,
+          "text": "Complete decongestive therapy and long-term management of lymphedema",
+          "sourceHash": "c5b774d5f997",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsonc:5:3",
+          "unitId": "abptsonc:5",
+          "index": 3,
+          "text": "Management of cancer-related fatigue, neuropathy, pain and radiation fibrosis",
+          "sourceHash": "3814d599dfa0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsonc:5:4",
+          "unitId": "abptsonc:5",
+          "index": 4,
+          "text": "Rehabilitation after breast, head and neck, thoracic, abdominal and pelvic cancer surgery",
+          "sourceHash": "5d41b6244c8f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsonc:5:5",
+          "unitId": "abptsonc:5",
+          "index": 5,
+          "text": "Prehabilitation, palliative rehabilitation and patient and caregiver instruction",
+          "sourceHash": "846311306119",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "abptsonc:6",
+      "index": 6,
+      "title": "Outcomes",
+      "weight": 5,
+      "gate": "Choose an outcome measure appropriate to this patient's treatment stage and state what change is meaningful.",
+      "objectives": [
+        {
+          "id": "abptsonc:6:1",
+          "unitId": "abptsonc:6",
+          "index": 1,
+          "text": "Outcome measures for fatigue, function, lymphedema and quality of life in oncology",
+          "sourceHash": "37dcdd245b05",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsonc:6:2",
+          "unitId": "abptsonc:6",
+          "index": 2,
+          "text": "Using outcomes across the cancer continuum to guide the plan and communicate with the oncology team",
+          "sourceHash": "b1e4e6c61549",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/pt.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-10-08T00:00:00Z",
+    "officialObjectivesUrl": "https://specialization.apta.org/become-a-specialist/oncology/specialist-certification-examination-outline-oncology",
+    "providerName": "American Board of Physical Therapy Specialties",
+    "credentialName": "Board-Certified Clinical Specialist in Oncologic Physical Therapy",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 6,
+    "objectives": 23,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

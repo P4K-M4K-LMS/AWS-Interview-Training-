@@ -1,0 +1,363 @@
+{
+  "id": "capm",
+  "code": "CAPM",
+  "title": "CAPM",
+  "description": "PMI Certified Associate in Project Management (CAPM) exam prep across 4 weighted domains -- PM fundamentals, predictive/plan-based methods, agile methods, and business analysis frameworks.",
+  "trackType": "certification",
+  "field": "pm",
+  "units": [
+    {
+      "id": "capm:1",
+      "index": 1,
+      "title": "Project Management Fundamentals and Core Concepts",
+      "weight": 36,
+      "gate": "Given a scenario, correctly place it against PM fundamentals -- project vs. program vs. portfolio, predictive vs. adaptive, a PM's role vs. a sponsor's -- rather than answering with generic project-management language.",
+      "objectives": [
+        {
+          "id": "capm:1:1",
+          "unitId": "capm:1",
+          "index": 1,
+          "text": "Distinguishing a project from operations, a program, and a portfolio, and predictive from adaptive delivery approaches",
+          "sourceHash": "99b412d1221f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "capm:1:2",
+          "unitId": "capm:1",
+          "index": 2,
+          "text": "Telling apart an issue, a risk, an assumption, and a constraint, and reviewing a project scope statement for gaps",
+          "sourceHash": "6007d70b4d56",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "capm:1:3",
+          "unitId": "capm:1",
+          "index": 3,
+          "text": "Applying the PMI Code of Ethics and Professional Conduct to a scenario, and explaining a project's role as a vehicle for organizational change",
+          "sourceHash": "9be0e9411a6f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "capm:1:4",
+          "unitId": "capm:1",
+          "index": 4,
+          "text": "The purpose of cost, quality, risk, and schedule management within a project management plan, and the difference between that plan and a product management plan",
+          "sourceHash": "fa2e3a48d398",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "capm:1:5",
+          "unitId": "capm:1",
+          "index": 5,
+          "text": "Distinguishing a milestone from a task duration, sizing the number and type of resources a project needs, and using a risk register and a stakeholder register in a given situation",
+          "sourceHash": "a5f6fe121cc6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "capm:1:6",
+          "unitId": "capm:1",
+          "index": 6,
+          "text": "Explaining project closure and transition activities",
+          "sourceHash": "02122147ae78",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "capm:1:7",
+          "unitId": "capm:1",
+          "index": 7,
+          "text": "Comparing the roles and responsibilities of a project manager, a project sponsor, and the project team, and the range of roles a PM plays (initiator, negotiator, listener, coach, facilitator, working team member)",
+          "sourceHash": "0f51080ec13a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "capm:1:8",
+          "unitId": "capm:1",
+          "index": 8,
+          "text": "The difference between leadership and management, and how emotional intelligence (EQ) affects project outcomes",
+          "sourceHash": "a1bd25636100",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "capm:1:9",
+          "unitId": "capm:1",
+          "index": 9,
+          "text": "Following and executing a planned strategy or framework (e.g., for communication or risk), and explaining the benefit of project initiation and planning",
+          "sourceHash": "1ed1438d8270",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "capm:1:10",
+          "unitId": "capm:1",
+          "index": 10,
+          "text": "Evaluating meeting effectiveness and the purpose of common problem-solving formats: focus groups, stand-ups, and brainstorming sessions",
+          "sourceHash": "843b7d180a99",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "capm:2",
+      "index": 2,
+      "title": "Predictive, Plan-Based Methodologies",
+      "weight": 17,
+      "gate": "Given a predictive/plan-based project scenario, apply the specific technique it calls for -- critical path, a schedule/cost variance calculation, a WBS decomposition -- rather than a generic 'waterfall' answer.",
+      "objectives": [
+        {
+          "id": "capm:2:1",
+          "unitId": "capm:2",
+          "index": 1,
+          "text": "When a predictive, plan-based approach fits an organizational structure (virtual, colocated, matrix, hierarchical) better than an adaptive one",
+          "sourceHash": "44a09321004d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "capm:2:2",
+          "unitId": "capm:2",
+          "index": 2,
+          "text": "The activities within each predictive process group, and distinguishing the components unique to a predictive project",
+          "sourceHash": "67086975f73f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "capm:2:3",
+          "unitId": "capm:2",
+          "index": 3,
+          "text": "Applying the critical path method and calculating schedule variance",
+          "sourceHash": "d7a7cc9ac006",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "capm:2:4",
+          "unitId": "capm:2",
+          "index": 4,
+          "text": "Building a work breakdown structure (WBS) and defining its work packages",
+          "sourceHash": "45533b1ade2f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "capm:2:5",
+          "unitId": "capm:2",
+          "index": 5,
+          "text": "Identifying the artifacts used to document and control a predictive, plan-based project",
+          "sourceHash": "da66bbf4ccfa",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "capm:2:6",
+          "unitId": "capm:2",
+          "index": 6,
+          "text": "Calculating cost and schedule variances from project control data",
+          "sourceHash": "b9c710996e8b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "capm:3",
+      "index": 3,
+      "title": "Agile Frameworks and Methodologies",
+      "weight": 20,
+      "gate": "Given an adaptive/agile project scenario, apply the specific framework component it calls for -- an iteration boundary, a Scrum vs. Kanban distinction, a backlog artifact -- rather than a generic 'agile' answer.",
+      "objectives": [
+        {
+          "id": "capm:3:1",
+          "unitId": "capm:3",
+          "index": 1,
+          "text": "When an adaptive approach fits better than a predictive one, including organizational-structure suitability and the organizational process assets/environmental factors that favor it",
+          "sourceHash": "58f8f489d215",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "capm:3:2",
+          "unitId": "capm:3",
+          "index": 2,
+          "text": "Planning project iterations: distinguishing logical iteration units, weighing their pros and cons, and translating a WBS into an adaptive iteration",
+          "sourceHash": "7ce2efd0ea3f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "capm:3:3",
+          "unitId": "capm:3",
+          "index": 3,
+          "text": "Determining scope inputs, and why adaptive project tracking differs from predictive tracking",
+          "sourceHash": "02b428adf4e1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "capm:3:4",
+          "unitId": "capm:3",
+          "index": 4,
+          "text": "Identifying the artifacts used to document and control an adaptive project",
+          "sourceHash": "140c35e29a1c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "capm:3:5",
+          "unitId": "capm:3",
+          "index": 5,
+          "text": "Distinguishing the components of different adaptive methodologies: Scrum, Extreme Programming (XP), Scaled Agile Framework (SAFe), and Kanban",
+          "sourceHash": "88404f12083e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "capm:3:6",
+          "unitId": "capm:3",
+          "index": 6,
+          "text": "Preparing and executing task-management steps: interpreting success criteria and prioritizing tasks in an adaptive project",
+          "sourceHash": "51a7b606d94d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "capm:4",
+      "index": 4,
+      "title": "Business Analysis Frameworks",
+      "weight": 27,
+      "gate": "Given a requirements or stakeholder scenario, name the specific business-analysis role, tool, or artifact it calls for -- a requirements-gathering technique, a traceability-matrix use -- rather than a generic 'talk to stakeholders' answer.",
+      "objectives": [
+        {
+          "id": "capm:4:1",
+          "unitId": "capm:4",
+          "index": 1,
+          "text": "Distinguishing business-analysis stakeholder roles: process owner, process manager, product manager, and product owner, and internal vs. external roles",
+          "sourceHash": "cebc45fe863c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "capm:4:2",
+          "unitId": "capm:4",
+          "index": 2,
+          "text": "Why dedicated BA roles and responsibilities exist on a project team",
+          "sourceHash": "87b69e2e6aac",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "capm:4:3",
+          "unitId": "capm:4",
+          "index": 3,
+          "text": "Recommending the right stakeholder communication channel or tool, and explaining why BA communication across teams matters",
+          "sourceHash": "8121ed5921a0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "capm:4:4",
+          "unitId": "capm:4",
+          "index": 4,
+          "text": "Matching a requirements-gathering technique to a scenario: user stories, use cases, stakeholder interviews, surveys, workshops, and lessons learned",
+          "sourceHash": "1040af29f878",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "capm:4:5",
+          "unitId": "capm:4",
+          "index": 5,
+          "text": "Using a requirements traceability matrix or product backlog",
+          "sourceHash": "6291bec082c6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "capm:4:6",
+          "unitId": "capm:4",
+          "index": 6,
+          "text": "Applying and interpreting a product roadmap, including which components map to which release",
+          "sourceHash": "28214a00a6d6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "capm:4:7",
+          "unitId": "capm:4",
+          "index": 7,
+          "text": "How the chosen project methodology (adaptive vs. predictive) shapes the business analyst's role",
+          "sourceHash": "d4bd02560c58",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "capm:4:8",
+          "unitId": "capm:4",
+          "index": 8,
+          "text": "Validating requirements through delivery: defining acceptance criteria and judging delivery readiness against a traceability matrix or backlog",
+          "sourceHash": "8efdfe974e78",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/pm.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-26T00:00:00Z",
+    "officialObjectivesUrl": "https://www.pmi.org/-/media/pmi/documents/public/pdf/certifications/capm-exam-content-outline-english.pdf",
+    "providerName": "Project Management Institute (PMI)",
+    "credentialName": "PMI Certified Associate in Project Management (CAPM)",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 4,
+    "objectives": 30,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

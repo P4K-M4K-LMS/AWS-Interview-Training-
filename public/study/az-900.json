@@ -1,0 +1,575 @@
+{
+  "id": "az-900",
+  "code": "AZ900",
+  "title": "Azure Fundamentals",
+  "description": "Microsoft Certified: Azure Fundamentals (AZ-900): core cloud concepts, Azure's architecture and core services, and how cost, compliance, and governance work day to day in Azure.",
+  "trackType": "certification",
+  "field": "azure",
+  "units": [
+    {
+      "id": "az-900:1",
+      "index": 1,
+      "title": "Cloud Concepts",
+      "weight": 28,
+      "gate": "Given a cloud scenario, name the specific model, pricing approach, or service type at play and justify it against a stated cost, control, or availability requirement -- instead of reciting 'scalable and flexible'.",
+      "objectives": [
+        {
+          "id": "az-900:1:1",
+          "unitId": "az-900:1",
+          "index": 1,
+          "text": "Defining cloud computing, and the shared responsibility model between customer and provider",
+          "sourceHash": "145290b6ed61",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-900:1:2",
+          "unitId": "az-900:1",
+          "index": 2,
+          "text": "Public, private, and hybrid cloud models, and which situations fit each",
+          "sourceHash": "a17d50ad9a34",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-900:1:3",
+          "unitId": "az-900:1",
+          "index": 3,
+          "text": "The consumption-based (pay-as-you-go) pricing model, and comparing it against other cloud pricing models",
+          "sourceHash": "5c2428b38418",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-900:1:4",
+          "unitId": "az-900:1",
+          "index": 4,
+          "text": "What serverless computing means",
+          "sourceHash": "d90e8dd5273b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-900:1:5",
+          "unitId": "az-900:1",
+          "index": 5,
+          "text": "Benefits of high availability and scalability in the cloud",
+          "sourceHash": "39dd286662ca",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-900:1:6",
+          "unitId": "az-900:1",
+          "index": 6,
+          "text": "Benefits of reliability and predictability in the cloud",
+          "sourceHash": "2a0705d1a34f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-900:1:7",
+          "unitId": "az-900:1",
+          "index": 7,
+          "text": "Benefits of security and governance in the cloud",
+          "sourceHash": "9aed90ac0185",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-900:1:8",
+          "unitId": "az-900:1",
+          "index": 8,
+          "text": "Benefits of manageability in the cloud",
+          "sourceHash": "dd0060fd680d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-900:1:9",
+          "unitId": "az-900:1",
+          "index": 9,
+          "text": "Infrastructure as a service (IaaS), platform as a service (PaaS), and software as a service (SaaS)",
+          "sourceHash": "b49870527978",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-900:1:10",
+          "unitId": "az-900:1",
+          "index": 10,
+          "text": "Choosing the right cloud service type -- IaaS, PaaS, or SaaS -- for a given use case",
+          "sourceHash": "d6a831b0fd0f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "az-900:2",
+      "index": 2,
+      "title": "Azure Architecture and Services",
+      "weight": 38,
+      "gate": "Given a workload's availability, data, or identity requirement, name the specific Azure building block that satisfies it -- not just 'use Azure'.",
+      "objectives": [
+        {
+          "id": "az-900:2:1",
+          "unitId": "az-900:2",
+          "index": 1,
+          "text": "Azure regions, region pairs, and sovereign regions",
+          "sourceHash": "46bf34f5d1bb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-900:2:2",
+          "unitId": "az-900:2",
+          "index": 2,
+          "text": "Availability zones",
+          "sourceHash": "c382ee7018f8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-900:2:3",
+          "unitId": "az-900:2",
+          "index": 3,
+          "text": "Azure datacenters",
+          "sourceHash": "09ed40f0ecc3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-900:2:4",
+          "unitId": "az-900:2",
+          "index": 4,
+          "text": "Azure resources and resource groups",
+          "sourceHash": "6d3b2baa74f8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-900:2:5",
+          "unitId": "az-900:2",
+          "index": 5,
+          "text": "Azure subscriptions",
+          "sourceHash": "c48b0bb73c87",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-900:2:6",
+          "unitId": "az-900:2",
+          "index": 6,
+          "text": "Azure management groups",
+          "sourceHash": "16e6219752ef",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-900:2:7",
+          "unitId": "az-900:2",
+          "index": 7,
+          "text": "The hierarchy connecting resource groups, subscriptions, and management groups",
+          "sourceHash": "69da793b0973",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-900:2:8",
+          "unitId": "az-900:2",
+          "index": 8,
+          "text": "Comparing compute types: containers, virtual machines, and functions",
+          "sourceHash": "f795736a7802",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-900:2:9",
+          "unitId": "az-900:2",
+          "index": 9,
+          "text": "Virtual machine options: Azure Virtual Machines, Virtual Machine Scale Sets, availability sets, and Azure Virtual Desktop",
+          "sourceHash": "ab374d3baa1d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-900:2:10",
+          "unitId": "az-900:2",
+          "index": 10,
+          "text": "The resources a virtual machine requires",
+          "sourceHash": "59797dce43e5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-900:2:11",
+          "unitId": "az-900:2",
+          "index": 11,
+          "text": "Application hosting options: web apps, containers, and virtual machines",
+          "sourceHash": "de19bfb8d1f7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-900:2:12",
+          "unitId": "az-900:2",
+          "index": 12,
+          "text": "Virtual networking concepts: virtual networks, subnets, peering, Azure DNS, Azure VPN Gateway, and Azure ExpressRoute",
+          "sourceHash": "946910a08743",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-900:2:13",
+          "unitId": "az-900:2",
+          "index": 13,
+          "text": "Public versus private endpoints",
+          "sourceHash": "700dcc0f9bab",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-900:2:14",
+          "unitId": "az-900:2",
+          "index": 14,
+          "text": "Comparing Azure Storage services",
+          "sourceHash": "ce2a56b300c9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-900:2:15",
+          "unitId": "az-900:2",
+          "index": 15,
+          "text": "Storage tiers",
+          "sourceHash": "de16503bdd6a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-900:2:16",
+          "unitId": "az-900:2",
+          "index": 16,
+          "text": "Redundancy options for Azure Storage",
+          "sourceHash": "bf7dd168927b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-900:2:17",
+          "unitId": "az-900:2",
+          "index": 17,
+          "text": "Storage account options and storage types",
+          "sourceHash": "52c77162f347",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-900:2:18",
+          "unitId": "az-900:2",
+          "index": 18,
+          "text": "Moving files into Azure: AzCopy, Azure Storage Explorer, and Azure File Sync",
+          "sourceHash": "50ca93bf8d9f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-900:2:19",
+          "unitId": "az-900:2",
+          "index": 19,
+          "text": "Migration options: Azure Migrate and Azure Data Box",
+          "sourceHash": "0fb9b3bb4091",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-900:2:20",
+          "unitId": "az-900:2",
+          "index": 20,
+          "text": "Directory services in Azure: Microsoft Entra ID and Microsoft Entra Domain Services",
+          "sourceHash": "07621388525c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-900:2:21",
+          "unitId": "az-900:2",
+          "index": 21,
+          "text": "Authentication methods: single sign-on, multifactor authentication, and passwordless authentication",
+          "sourceHash": "c258d00a2c2e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-900:2:22",
+          "unitId": "az-900:2",
+          "index": 22,
+          "text": "External identities in Azure",
+          "sourceHash": "bc1e442b2130",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-900:2:23",
+          "unitId": "az-900:2",
+          "index": 23,
+          "text": "Microsoft Entra Conditional Access",
+          "sourceHash": "3c7d86bad222",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-900:2:24",
+          "unitId": "az-900:2",
+          "index": 24,
+          "text": "Azure role-based access control (RBAC)",
+          "sourceHash": "3cfe117b4ad8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-900:2:25",
+          "unitId": "az-900:2",
+          "index": 25,
+          "text": "The concept of Zero Trust",
+          "sourceHash": "df13e1c1a55a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-900:2:26",
+          "unitId": "az-900:2",
+          "index": 26,
+          "text": "The defense-in-depth model",
+          "sourceHash": "f55031a9869a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-900:2:27",
+          "unitId": "az-900:2",
+          "index": 27,
+          "text": "The purpose of Microsoft Defender for Cloud",
+          "sourceHash": "ba42f0746f65",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "az-900:3",
+      "index": 3,
+      "title": "Azure Management and Governance",
+      "weight": 33,
+      "gate": "Given a cost, compliance, or resource-management scenario, name the specific Azure tool that addresses it and what it would actually surface or enforce.",
+      "objectives": [
+        {
+          "id": "az-900:3:1",
+          "unitId": "az-900:3",
+          "index": 1,
+          "text": "Factors that affect Azure costs",
+          "sourceHash": "504d3d0e2da4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-900:3:2",
+          "unitId": "az-900:3",
+          "index": 2,
+          "text": "The Azure pricing calculator",
+          "sourceHash": "f67ced0309dc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-900:3:3",
+          "unitId": "az-900:3",
+          "index": 3,
+          "text": "Cost management capabilities in Azure",
+          "sourceHash": "d33b24f8122f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-900:3:4",
+          "unitId": "az-900:3",
+          "index": 4,
+          "text": "The purpose of tags in Azure",
+          "sourceHash": "1525b25f140b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-900:3:5",
+          "unitId": "az-900:3",
+          "index": 5,
+          "text": "The purpose of Microsoft Purview in Azure",
+          "sourceHash": "aec3b0a04e67",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-900:3:6",
+          "unitId": "az-900:3",
+          "index": 6,
+          "text": "The purpose of Azure Policy",
+          "sourceHash": "1e320a44d7ff",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-900:3:7",
+          "unitId": "az-900:3",
+          "index": 7,
+          "text": "The purpose of resource locks",
+          "sourceHash": "9a37845de6ce",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-900:3:8",
+          "unitId": "az-900:3",
+          "index": 8,
+          "text": "The Azure portal",
+          "sourceHash": "aab61d0c2abf",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-900:3:9",
+          "unitId": "az-900:3",
+          "index": 9,
+          "text": "Azure Cloud Shell, Azure CLI, and Azure PowerShell",
+          "sourceHash": "be596bc27fa1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-900:3:10",
+          "unitId": "az-900:3",
+          "index": 10,
+          "text": "The purpose of Azure Arc",
+          "sourceHash": "169cfd0914f7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-900:3:11",
+          "unitId": "az-900:3",
+          "index": 11,
+          "text": "The concept of infrastructure as code (IaC)",
+          "sourceHash": "e3d3b8c38e92",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-900:3:12",
+          "unitId": "az-900:3",
+          "index": 12,
+          "text": "Azure Resource Manager (ARM) and ARM templates",
+          "sourceHash": "f8e7eb072003",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-900:3:13",
+          "unitId": "az-900:3",
+          "index": 13,
+          "text": "The purpose of Azure Advisor",
+          "sourceHash": "0915e29ccbc8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-900:3:14",
+          "unitId": "az-900:3",
+          "index": 14,
+          "text": "Azure Service Health",
+          "sourceHash": "c3fdc7e1efea",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-900:3:15",
+          "unitId": "az-900:3",
+          "index": 15,
+          "text": "Azure Monitor, including Log Analytics, Monitor alerts, and Application Insights",
+          "sourceHash": "81c5f459b385",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/azure.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-18T00:00:00Z",
+    "officialObjectivesUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-900",
+    "providerName": "Microsoft",
+    "credentialName": "Microsoft Certified: Azure Fundamentals",
+    "examCode": "AZ-900",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 3,
+    "objectives": 52,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

@@ -1,0 +1,248 @@
+{
+  "id": "abptsecs",
+  "code": "ABPTSECS",
+  "title": "Clinical Electrophysiologic Specialist",
+  "description": "ABPTS board certification in clinical electrophysiologic physical therapy: electrodiagnostic tests and measures (15%) and the evaluation of normal and abnormal electrophysiologic findings (25%), on the outline's own 200-item blueprint.",
+  "trackType": "certification",
+  "field": "pt",
+  "requiresAcknowledgement": true,
+  "units": [
+    {
+      "id": "abptsecs:1",
+      "index": 1,
+      "title": "Anatomy, neuroscience and physiology",
+      "weight": 21,
+      "rangeLabel": "42 of 200 items",
+      "gate": "Trace a nerve from root to muscle and predict which studies change, and how, when a lesion sits at a named point.",
+      "objectives": [
+        {
+          "id": "abptsecs:1:1",
+          "unitId": "abptsecs:1",
+          "index": 1,
+          "text": "Peripheral nerve anatomy: roots, plexus, named nerves and the muscles each supplies",
+          "sourceHash": "194b1b3f4129",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsecs:1:2",
+          "unitId": "abptsecs:1",
+          "index": 2,
+          "text": "Neuroscience of axonal conduction, demyelination and the neuromuscular junction",
+          "sourceHash": "c2f7a68354f4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsecs:1:3",
+          "unitId": "abptsecs:1",
+          "index": 3,
+          "text": "Physiology of the motor unit, membrane potentials and the basis of evoked responses",
+          "sourceHash": "92402c3b24f0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "abptsecs:2",
+      "index": 2,
+      "title": "Clinical sciences, critical inquiry and professional roles",
+      "weight": 19,
+      "rangeLabel": "38 of 200 items",
+      "gate": "Explain the clinical science behind an electrodiagnostic referral and the standards governing how the study is performed and reported.",
+      "objectives": [
+        {
+          "id": "abptsecs:2:1",
+          "unitId": "abptsecs:2",
+          "index": 1,
+          "text": "Clinical sciences of entrapment neuropathy, radiculopathy, polyneuropathy, motor neuron disease, myopathy and neuromuscular junction disorders",
+          "sourceHash": "155c234b3db7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsecs:2:2",
+          "unitId": "abptsecs:2",
+          "index": 2,
+          "text": "Critical inquiry: reference values, sensitivity and specificity of electrodiagnostic tests",
+          "sourceHash": "189845661001",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsecs:2:3",
+          "unitId": "abptsecs:2",
+          "index": 3,
+          "text": "Professional roles and responsibilities: scope, safety, infection control and reporting standards in electrodiagnosis",
+          "sourceHash": "d1f3d65e6f63",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "abptsecs:3",
+      "index": 3,
+      "title": "Examination: history, systems review and tests and measures",
+      "weight": 20,
+      "rangeLabel": "40 of 200 items",
+      "gate": "Plan an electrodiagnostic study for a referral question: which nerves, which muscles, which techniques, and why.",
+      "objectives": [
+        {
+          "id": "abptsecs:3:1",
+          "unitId": "abptsecs:3",
+          "index": 1,
+          "text": "History, systems review and reexamination that focus an electrodiagnostic study",
+          "sourceHash": "987c78135641",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsecs:3:2",
+          "unitId": "abptsecs:3",
+          "index": 2,
+          "text": "Nerve conduction studies: motor, sensory, late responses and repetitive stimulation technique",
+          "sourceHash": "8a766ea869d1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsecs:3:3",
+          "unitId": "abptsecs:3",
+          "index": 3,
+          "text": "Needle electromyography technique and muscle selection for a stated question",
+          "sourceHash": "1eba3ac2e5f4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsecs:3:4",
+          "unitId": "abptsecs:3",
+          "index": 4,
+          "text": "Somatosensory and other evoked potentials and their indications",
+          "sourceHash": "1aedb702c60f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "abptsecs:4",
+      "index": 4,
+      "title": "Evaluation: normal and abnormal electrophysiologic characteristics",
+      "weight": 25,
+      "rangeLabel": "50 of 200 items",
+      "gate": "Read a set of nerve conduction and EMG findings, say whether each is normal, and localize and characterize the lesion the abnormalities describe.",
+      "objectives": [
+        {
+          "id": "abptsecs:4:1",
+          "unitId": "abptsecs:4",
+          "index": 1,
+          "text": "Normal electrophysiologic values and the technical and physiologic factors that alter them",
+          "sourceHash": "5bb16ebe00d5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsecs:4:2",
+          "unitId": "abptsecs:4",
+          "index": 2,
+          "text": "Interpreting abnormal findings: axonal versus demyelinating, focal versus diffuse, acute versus chronic",
+          "sourceHash": "668240896354",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsecs:4:3",
+          "unitId": "abptsecs:4",
+          "index": 3,
+          "text": "Patterns in carpal tunnel and cubital tunnel syndrome, radiculopathy, polyneuropathy, motor neuron disease, myopathy and myasthenia gravis",
+          "sourceHash": "1f886decc345",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "abptsecs:5",
+      "index": 5,
+      "title": "Diagnosis, prognosis and interventions",
+      "weight": 15,
+      "rangeLabel": "30 of 200 items",
+      "gate": "Write the electrodiagnostic impression, state the prognosis it implies, and the communication and instruction the patient and referrer need.",
+      "objectives": [
+        {
+          "id": "abptsecs:5:1",
+          "unitId": "abptsecs:5",
+          "index": 1,
+          "text": "Formulating the electrodiagnostic diagnosis and the differential it supports",
+          "sourceHash": "ad23d4435283",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsecs:5:2",
+          "unitId": "abptsecs:5",
+          "index": 2,
+          "text": "Prognosis from the severity and chronicity of electrophysiologic findings",
+          "sourceHash": "e5d62dfd61ef",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsecs:5:3",
+          "unitId": "abptsecs:5",
+          "index": 3,
+          "text": "Coordination, communication and documentation of the study and its results",
+          "sourceHash": "3806cec971b3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsecs:5:4",
+          "unitId": "abptsecs:5",
+          "index": 4,
+          "text": "Patient and client-related instruction following electrodiagnostic evaluation",
+          "sourceHash": "46cdef501e6a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/pt.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-10-08T00:00:00Z",
+    "officialObjectivesUrl": "https://specialization.apta.org/become-a-specialist/clinical-electrophysiology/specialist-certification-examination-outline-clinical-electrophysiology",
+    "providerName": "American Board of Physical Therapy Specialties",
+    "credentialName": "Board-Certified Clinical Specialist in Clinical Electrophysiologic Physical Therapy",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 5,
+    "objectives": 17,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

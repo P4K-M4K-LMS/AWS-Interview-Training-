@@ -1,0 +1,933 @@
+{
+  "id": "az-400",
+  "code": "AZ400",
+  "title": "Azure DevOps Engineer Expert",
+  "description": "Microsoft Certified: DevOps Engineer Expert (AZ-400): designing and implementing Microsoft DevOps solutions across GitHub and Azure DevOps -- work-item flow and metrics, source control strategy, build/release pipelines, deployment strategies, infrastructure as code, security and compliance scanning, and instrumentation. Requires the Azure Administrator Associate certification.",
+  "trackType": "certification",
+  "field": "azure",
+  "units": [
+    {
+      "id": "az-400:1",
+      "index": 1,
+      "title": "Design and Implement Processes and Communications",
+      "weight": 13,
+      "gate": "Given a work-tracking, metrics, or collaboration requirement, name the specific GitHub/Azure Boards integration or metric that fits, not just 'track it'.",
+      "objectives": [
+        {
+          "id": "az-400:1:1",
+          "unitId": "az-400:1",
+          "index": 1,
+          "text": "Designing and implementing a structure for the flow of work, including GitHub Flow",
+          "sourceHash": "1a28e00c7508",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:1:2",
+          "unitId": "az-400:1",
+          "index": 2,
+          "text": "Designing and implementing a strategy for feedback cycles, including notifications and GitHub Issues",
+          "sourceHash": "4d24b030ca9f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:1:3",
+          "unitId": "az-400:1",
+          "index": 3,
+          "text": "Designing and implementing integration for tracking work, including GitHub projects, Azure Boards, and repositories",
+          "sourceHash": "f30c16ce03dd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:1:4",
+          "unitId": "az-400:1",
+          "index": 4,
+          "text": "Designing and implementing source, bug, and quality traceability",
+          "sourceHash": "4189561f6ce3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:1:5",
+          "unitId": "az-400:1",
+          "index": 5,
+          "text": "Designing and implementing a dashboard for flow of work, including cycle times, time to recovery, and lead time",
+          "sourceHash": "c59fd9d675da",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:1:6",
+          "unitId": "az-400:1",
+          "index": 6,
+          "text": "Designing and implementing metrics and queries for project planning",
+          "sourceHash": "7e0e55558173",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:1:7",
+          "unitId": "az-400:1",
+          "index": 7,
+          "text": "Designing and implementing metrics and queries for development",
+          "sourceHash": "2d7e85962898",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:1:8",
+          "unitId": "az-400:1",
+          "index": 8,
+          "text": "Designing and implementing metrics and queries for testing",
+          "sourceHash": "cb732e0b3d3a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:1:9",
+          "unitId": "az-400:1",
+          "index": 9,
+          "text": "Designing and implementing metrics and queries for security",
+          "sourceHash": "208d7a09e1ab",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:1:10",
+          "unitId": "az-400:1",
+          "index": 10,
+          "text": "Designing and implementing metrics and queries for delivery",
+          "sourceHash": "e39bc4f95af7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:1:11",
+          "unitId": "az-400:1",
+          "index": 11,
+          "text": "Designing and implementing metrics and queries for operations",
+          "sourceHash": "3cc387af27c4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:1:12",
+          "unitId": "az-400:1",
+          "index": 12,
+          "text": "Documenting a project by configuring wikis and process diagrams, including Markdown and Mermaid syntax",
+          "sourceHash": "a5a74cbff5db",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:1:13",
+          "unitId": "az-400:1",
+          "index": 13,
+          "text": "Configuring release documentation, including release notes and API documentation",
+          "sourceHash": "6e91e7c98e41",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:1:14",
+          "unitId": "az-400:1",
+          "index": 14,
+          "text": "Automating creation of documentation from Git history",
+          "sourceHash": "f21f45fa573c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:1:15",
+          "unitId": "az-400:1",
+          "index": 15,
+          "text": "Configuring integration using webhooks",
+          "sourceHash": "94f6c0641785",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:1:16",
+          "unitId": "az-400:1",
+          "index": 16,
+          "text": "Configuring integration between Azure Boards and GitHub repositories",
+          "sourceHash": "db24ac76198b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:1:17",
+          "unitId": "az-400:1",
+          "index": 17,
+          "text": "Configuring integration between GitHub or Azure DevOps and Microsoft Teams",
+          "sourceHash": "ee71400b76b0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "az-400:2",
+      "index": 2,
+      "title": "Design and Implement a Source Control Strategy",
+      "weight": 13,
+      "gate": "Given a branching, repository-scale, or data-recovery requirement, name the specific Git strategy or command that fits.",
+      "objectives": [
+        {
+          "id": "az-400:2:1",
+          "unitId": "az-400:2",
+          "index": 1,
+          "text": "Designing a branch strategy -- trunk-based, feature branch, and release branch",
+          "sourceHash": "8ab2e27520ce",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:2:2",
+          "unitId": "az-400:2",
+          "index": 2,
+          "text": "Designing and implementing a pull request workflow using branch policies and branch protection rules",
+          "sourceHash": "8957182edfdd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:2:3",
+          "unitId": "az-400:2",
+          "index": 3,
+          "text": "Implementing branch merging restrictions using branch policies and branch protection rules",
+          "sourceHash": "ee4b7edffffa",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:2:4",
+          "unitId": "az-400:2",
+          "index": 4,
+          "text": "Designing and implementing a strategy for managing large files, including Git Large File Storage (LFS) and git-fat",
+          "sourceHash": "f7a68494f253",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:2:5",
+          "unitId": "az-400:2",
+          "index": 5,
+          "text": "Designing a strategy for scaling and optimizing a Git repository, including Scalar and cross-repository sharing",
+          "sourceHash": "cc299d7aebd5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:2:6",
+          "unitId": "az-400:2",
+          "index": 6,
+          "text": "Configuring permissions in the source control repository",
+          "sourceHash": "22b0134cc985",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:2:7",
+          "unitId": "az-400:2",
+          "index": 7,
+          "text": "Configuring tags to organize the source control repository",
+          "sourceHash": "23650b915431",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:2:8",
+          "unitId": "az-400:2",
+          "index": 8,
+          "text": "Recovering specific data using Git commands",
+          "sourceHash": "6665d83397cb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:2:9",
+          "unitId": "az-400:2",
+          "index": 9,
+          "text": "Removing specific data from source control",
+          "sourceHash": "cbbb05ff5465",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "az-400:3",
+      "index": 3,
+      "title": "Design and Implement Build and Release Pipelines",
+      "weight": 53,
+      "gate": "Given a pipeline, deployment, or infrastructure-as-code requirement, name the specific technique or tool that fits -- not a generic 'automate the deployment'.",
+      "objectives": [
+        {
+          "id": "az-400:3:1",
+          "unitId": "az-400:3",
+          "index": 1,
+          "text": "Recommending package management tools, including GitHub Packages and Azure Artifacts",
+          "sourceHash": "2ffe30794451",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:3:2",
+          "unitId": "az-400:3",
+          "index": 2,
+          "text": "Designing and implementing package feeds and views for local and upstream packages",
+          "sourceHash": "8249dfd376ae",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:3:3",
+          "unitId": "az-400:3",
+          "index": 3,
+          "text": "Designing and implementing a dependency versioning strategy for code assets and packages, including semantic versioning (SemVer) and date-based (CalVer)",
+          "sourceHash": "7f0a6a62860e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:3:4",
+          "unitId": "az-400:3",
+          "index": 4,
+          "text": "Designing and implementing a versioning strategy for pipeline artifacts",
+          "sourceHash": "7d0b7df348bd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:3:5",
+          "unitId": "az-400:3",
+          "index": 5,
+          "text": "Designing and implementing quality and release gates, including security and governance",
+          "sourceHash": "32946a992a7b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:3:6",
+          "unitId": "az-400:3",
+          "index": 6,
+          "text": "Designing a comprehensive testing strategy, including local tests, unit tests, integration tests, and load tests",
+          "sourceHash": "8c3287a6a49a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:3:7",
+          "unitId": "az-400:3",
+          "index": 7,
+          "text": "Implementing tests in a pipeline, including configuring test tasks, configuring test agents, and integration of test results",
+          "sourceHash": "21234823e5af",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:3:8",
+          "unitId": "az-400:3",
+          "index": 8,
+          "text": "Implementing code coverage analysis",
+          "sourceHash": "2d009bb8282e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:3:9",
+          "unitId": "az-400:3",
+          "index": 9,
+          "text": "Selecting a deployment automation solution, including GitHub Actions and Azure Pipelines",
+          "sourceHash": "6c7277934e8b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:3:10",
+          "unitId": "az-400:3",
+          "index": 10,
+          "text": "Designing and implementing a GitHub runner or Azure DevOps agent infrastructure, including cost, tool selection, licenses, connectivity, and maintainability",
+          "sourceHash": "9cafec6ea0ab",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:3:11",
+          "unitId": "az-400:3",
+          "index": 11,
+          "text": "Designing and implementing integration between GitHub repositories and Azure Pipelines",
+          "sourceHash": "bbbb15b468c0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:3:12",
+          "unitId": "az-400:3",
+          "index": 12,
+          "text": "Developing and implementing pipeline trigger rules",
+          "sourceHash": "7a68dbeddcff",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:3:13",
+          "unitId": "az-400:3",
+          "index": 13,
+          "text": "Developing pipelines using YAML",
+          "sourceHash": "6695db9dacf6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:3:14",
+          "unitId": "az-400:3",
+          "index": 14,
+          "text": "Designing and implementing a strategy for job execution order, including parallelism and multi-stage pipelines",
+          "sourceHash": "9e6f6dc8a878",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:3:15",
+          "unitId": "az-400:3",
+          "index": 15,
+          "text": "Developing and implementing complex pipeline scenarios, such as hybrid pipelines, VM templates, and self-hosted runners or agents",
+          "sourceHash": "af51405113fe",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:3:16",
+          "unitId": "az-400:3",
+          "index": 16,
+          "text": "Creating reusable pipeline elements, including YAML templates, task groups, variables, and variable groups",
+          "sourceHash": "3885acb5b4e6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:3:17",
+          "unitId": "az-400:3",
+          "index": 17,
+          "text": "Designing and implementing checks and approvals using YAML-based environments",
+          "sourceHash": "7106c7d8126a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:3:18",
+          "unitId": "az-400:3",
+          "index": 18,
+          "text": "Designing a deployment strategy, including blue-green, canary, ring, progressive exposure, feature flags, and A/B testing",
+          "sourceHash": "864961608d6c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:3:19",
+          "unitId": "az-400:3",
+          "index": 19,
+          "text": "Designing a pipeline to ensure that dependency deployments are reliably ordered",
+          "sourceHash": "31ae6e830fc5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:3:20",
+          "unitId": "az-400:3",
+          "index": 20,
+          "text": "Planning for minimizing downtime during deployments using load balancing, rolling deployments, and deployment slot usage and swap",
+          "sourceHash": "2501f98f8f64",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:3:21",
+          "unitId": "az-400:3",
+          "index": 21,
+          "text": "Designing a hotfix path plan for responding to high-priority code fixes",
+          "sourceHash": "d778ff044e18",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:3:22",
+          "unitId": "az-400:3",
+          "index": 22,
+          "text": "Designing and implementing a resiliency strategy for deployment",
+          "sourceHash": "b58cc889f7dd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:3:23",
+          "unitId": "az-400:3",
+          "index": 23,
+          "text": "Implementing feature flags using Azure App Configuration Feature Manager",
+          "sourceHash": "9abbba81f375",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:3:24",
+          "unitId": "az-400:3",
+          "index": 24,
+          "text": "Implementing application deployment using containers, binaries, and scripts",
+          "sourceHash": "a30534dded53",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:3:25",
+          "unitId": "az-400:3",
+          "index": 25,
+          "text": "Implementing a deployment that includes database tasks",
+          "sourceHash": "aa16c9b474cb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:3:26",
+          "unitId": "az-400:3",
+          "index": 26,
+          "text": "Recommending a configuration management technology for application infrastructure",
+          "sourceHash": "7b6c07d5d3cc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:3:27",
+          "unitId": "az-400:3",
+          "index": 27,
+          "text": "Implementing a configuration management strategy for application infrastructure",
+          "sourceHash": "742c661df92b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:3:28",
+          "unitId": "az-400:3",
+          "index": 28,
+          "text": "Defining an infrastructure as code (IaC) strategy, including source control and automation of testing and deployment",
+          "sourceHash": "2b165c0ada81",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:3:29",
+          "unitId": "az-400:3",
+          "index": 29,
+          "text": "Designing and implementing desired state configuration for environments, including Azure Automation State Configuration, Azure Resource Manager, Bicep, and Azure Machine Configuration",
+          "sourceHash": "11dbd090baae",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:3:30",
+          "unitId": "az-400:3",
+          "index": 30,
+          "text": "Designing and implementing Azure Deployment Environments for on-demand self-deployment",
+          "sourceHash": "7396a85ffb31",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:3:31",
+          "unitId": "az-400:3",
+          "index": 31,
+          "text": "Monitoring pipeline health, including failure rate, duration, and flaky tests",
+          "sourceHash": "210cda552009",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:3:32",
+          "unitId": "az-400:3",
+          "index": 32,
+          "text": "Optimizing a pipeline for cost, time, performance, and reliability",
+          "sourceHash": "0d80a6dc8833",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:3:33",
+          "unitId": "az-400:3",
+          "index": 33,
+          "text": "Optimizing pipeline concurrency for performance and cost",
+          "sourceHash": "02a91d594664",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:3:34",
+          "unitId": "az-400:3",
+          "index": 34,
+          "text": "Designing and implementing a retention strategy for pipeline artifacts and dependencies",
+          "sourceHash": "fe4b5ee16521",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:3:35",
+          "unitId": "az-400:3",
+          "index": 35,
+          "text": "Migrating a pipeline from classic to YAML in Azure Pipelines",
+          "sourceHash": "c7947580edbd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "az-400:4",
+      "index": 4,
+      "title": "Develop a Security and Compliance Plan",
+      "weight": 13,
+      "gate": "Given a DevOps identity, secrets, or scanning requirement, name the specific control that fits, not just 'secure the pipeline'.",
+      "objectives": [
+        {
+          "id": "az-400:4:1",
+          "unitId": "az-400:4",
+          "index": 1,
+          "text": "Choosing between Microsoft Entra service principals and managed identities for Azure resources, system-assigned and user-assigned",
+          "sourceHash": "63e02d85931c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:4:2",
+          "unitId": "az-400:4",
+          "index": 2,
+          "text": "Implementing and managing GitHub authentication, including GitHub Apps, GITHUB_TOKEN, and personal access tokens",
+          "sourceHash": "334caefff686",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:4:3",
+          "unitId": "az-400:4",
+          "index": 3,
+          "text": "Implementing and managing Azure DevOps service connections and personal access tokens",
+          "sourceHash": "e42b600aa489",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:4:4",
+          "unitId": "az-400:4",
+          "index": 4,
+          "text": "Designing and implementing permissions and roles in GitHub",
+          "sourceHash": "a289870bbffb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:4:5",
+          "unitId": "az-400:4",
+          "index": 5,
+          "text": "Designing and implementing permissions and security groups in Azure DevOps",
+          "sourceHash": "48c3c3ff22dc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:4:6",
+          "unitId": "az-400:4",
+          "index": 6,
+          "text": "Recommending appropriate access levels, including stakeholder access in Azure DevOps and outside collaborator access in GitHub",
+          "sourceHash": "96026a8a5982",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:4:7",
+          "unitId": "az-400:4",
+          "index": 7,
+          "text": "Configuring projects and teams in Azure DevOps",
+          "sourceHash": "08bc339e6824",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:4:8",
+          "unitId": "az-400:4",
+          "index": 8,
+          "text": "Implementing and managing secrets, keys, and certificates using Azure Key Vault",
+          "sourceHash": "d75124738ed4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:4:9",
+          "unitId": "az-400:4",
+          "index": 9,
+          "text": "Implementing and managing secrets and secretless authentication -- for example, workload identity federation/OpenID Connect -- in GitHub Actions and Azure Pipelines",
+          "sourceHash": "474fab8864a0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:4:10",
+          "unitId": "az-400:4",
+          "index": 10,
+          "text": "Designing and implementing a strategy for managing sensitive files during deployment, including Azure Pipelines secure files",
+          "sourceHash": "57b086e70a16",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:4:11",
+          "unitId": "az-400:4",
+          "index": 11,
+          "text": "Designing pipelines to prevent leakage of sensitive information",
+          "sourceHash": "302d47a781f9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:4:12",
+          "unitId": "az-400:4",
+          "index": 12,
+          "text": "Designing a strategy for security and compliance scanning, including dependency, code, secret, and licensing scanning",
+          "sourceHash": "2de20e309ae5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:4:13",
+          "unitId": "az-400:4",
+          "index": 13,
+          "text": "Configuring Microsoft Defender for Cloud DevOps Security",
+          "sourceHash": "4e70bd563fb3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:4:14",
+          "unitId": "az-400:4",
+          "index": 14,
+          "text": "Configuring GitHub Advanced Security for GitHub and GitHub Advanced Security for Azure DevOps",
+          "sourceHash": "0629d07badd8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:4:15",
+          "unitId": "az-400:4",
+          "index": 15,
+          "text": "Integrating GitHub Advanced Security with Microsoft Defender for Cloud",
+          "sourceHash": "4405833ba50c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:4:16",
+          "unitId": "az-400:4",
+          "index": 16,
+          "text": "Automating container scanning, including scanning container images and configuring an action to run CodeQL analysis in a container",
+          "sourceHash": "197cc9affdf7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:4:17",
+          "unitId": "az-400:4",
+          "index": 17,
+          "text": "Automating analysis of vulnerabilities of open-source components using Dependabot alerts",
+          "sourceHash": "5b71243f60ba",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "az-400:5",
+      "index": 5,
+      "title": "Implement an Instrumentation Strategy",
+      "weight": 8,
+      "gate": "Given a DevOps monitoring or telemetry-analysis requirement, name the specific Azure Monitor or GitHub instrumentation control that fits.",
+      "objectives": [
+        {
+          "id": "az-400:5:1",
+          "unitId": "az-400:5",
+          "index": 1,
+          "text": "Configuring Azure Monitor and Azure Monitor Logs to integrate with DevOps tools",
+          "sourceHash": "8aab8c3a99f6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:5:2",
+          "unitId": "az-400:5",
+          "index": 2,
+          "text": "Configuring collection of telemetry using Azure Monitor Application Insights, Azure VM Insights, Azure Container Insights, Azure Monitor for Storage, and Azure Monitor for Networks",
+          "sourceHash": "e2e7b8518d3b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:5:3",
+          "unitId": "az-400:5",
+          "index": 3,
+          "text": "Configuring monitoring in GitHub, including enabling insights and creating and configuring charts",
+          "sourceHash": "03ae41d6aa64",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:5:4",
+          "unitId": "az-400:5",
+          "index": 4,
+          "text": "Configuring alerts for events in GitHub Actions and Azure Pipelines",
+          "sourceHash": "6337f3cd712e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:5:5",
+          "unitId": "az-400:5",
+          "index": 5,
+          "text": "Inspecting infrastructure performance indicators, including CPU, memory, disk, and network",
+          "sourceHash": "380f17c5b360",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:5:6",
+          "unitId": "az-400:5",
+          "index": 6,
+          "text": "Analyzing metrics using collected telemetry, including usage and application performance",
+          "sourceHash": "7ee9c0d795f2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:5:7",
+          "unitId": "az-400:5",
+          "index": 7,
+          "text": "Inspecting distributed tracing using Azure Monitor Application Insights",
+          "sourceHash": "7b66f7991e9c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-400:5:8",
+          "unitId": "az-400:5",
+          "index": 8,
+          "text": "Interrogating logs using basic Kusto Query Language (KQL) queries",
+          "sourceHash": "07663e47ae86",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/azure.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-18T00:00:00Z",
+    "officialObjectivesUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-400",
+    "providerName": "Microsoft",
+    "credentialName": "Microsoft Certified: DevOps Engineer Expert",
+    "examCode": "AZ-400",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 5,
+    "objectives": 86,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

@@ -1,0 +1,392 @@
+{
+  "id": "cv0-004",
+  "code": "CLOUDPLUS",
+  "title": "Cloud+",
+  "description": "CompTIA Cloud+ (CV0-004) exam prep across 6 weighted domains -- cloud architecture, deployment, security, operations, troubleshooting, and DevOps fundamentals.",
+  "trackType": "certification",
+  "field": "it",
+  "units": [
+    {
+      "id": "cv0-004:1",
+      "index": 1,
+      "title": "Cloud Architecture",
+      "weight": 23,
+      "gate": "Given a workload description, recommend the specific cloud model, networking approach, and resource-optimization move that fits it -- not a generic 'move it to the cloud' answer.",
+      "objectives": [
+        {
+          "id": "cv0-004:1:1",
+          "unitId": "cv0-004:1",
+          "index": 1,
+          "text": "Comparing public, private, hybrid, and multi-cloud deployment models against a business need",
+          "sourceHash": "dbb9190a035f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cv0-004:1:2",
+          "unitId": "cv0-004:1",
+          "index": 2,
+          "text": "The role of virtualization technologies in a cloud environment",
+          "sourceHash": "b35ade912a81",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cv0-004:1:3",
+          "unitId": "cv0-004:1",
+          "index": 3,
+          "text": "Cloud networking: VPNs and virtual network design",
+          "sourceHash": "ed336a12cb0f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cv0-004:1:4",
+          "unitId": "cv0-004:1",
+          "index": 4,
+          "text": "The role of containerization in cloud environments",
+          "sourceHash": "7cd7e7cb2a19",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cv0-004:1:5",
+          "unitId": "cv0-004:1",
+          "index": 5,
+          "text": "Managing containers with orchestration techniques",
+          "sourceHash": "499f74572741",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cv0-004:1:6",
+          "unitId": "cv0-004:1",
+          "index": 6,
+          "text": "Database concepts as used by cloud applications",
+          "sourceHash": "b83314a9d4b2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cv0-004:1:7",
+          "unitId": "cv0-004:1",
+          "index": 7,
+          "text": "Optimizing cloud resources for performance and cost efficiency",
+          "sourceHash": "d2980f87fc29",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cv0-004:1:8",
+          "unitId": "cv0-004:1",
+          "index": 8,
+          "text": "Billing management and usage-cost considerations",
+          "sourceHash": "6a2835ae0a2c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "cv0-004:2",
+      "index": 2,
+      "title": "Deployment",
+      "weight": 19,
+      "gate": "Given a workload to move to the cloud, plan and execute the migration -- analyzing requirements, provisioning resources, and automating the build -- rather than clicking through the console ad hoc.",
+      "objectives": [
+        {
+          "id": "cv0-004:2:1",
+          "unitId": "cv0-004:2",
+          "index": 1,
+          "text": "Analyzing system requirements ahead of a workload migration",
+          "sourceHash": "72a7f7a499ee",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cv0-004:2:2",
+          "unitId": "cv0-004:2",
+          "index": 2,
+          "text": "Implementing infrastructure as code (IaC) techniques for automation",
+          "sourceHash": "4ce813c070e9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cv0-004:2:3",
+          "unitId": "cv0-004:2",
+          "index": 3,
+          "text": "Planning and executing workload migrations to a cloud environment",
+          "sourceHash": "4ee4897669cb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cv0-004:2:4",
+          "unitId": "cv0-004:2",
+          "index": 4,
+          "text": "Provisioning and configuring cloud resources effectively",
+          "sourceHash": "34bceea0f22a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "cv0-004:3",
+      "index": 3,
+      "title": "Security",
+      "weight": 19,
+      "gate": "Given a cloud environment to secure, apply the specific control -- IAM, container hardening, or a named compliance standard -- that matches the risk, not a generic 'add security' answer.",
+      "objectives": [
+        {
+          "id": "cv0-004:3:1",
+          "unitId": "cv0-004:3",
+          "index": 1,
+          "text": "Identifying and addressing vulnerabilities in cloud environments",
+          "sourceHash": "daba4f4a7d81",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cv0-004:3:2",
+          "unitId": "cv0-004:3",
+          "index": 2,
+          "text": "Implementing identity and access management (IAM) to control resource access",
+          "sourceHash": "329d8be487f4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cv0-004:3:3",
+          "unitId": "cv0-004:3",
+          "index": 3,
+          "text": "Safeguarding containerized applications and resources",
+          "sourceHash": "aa3d77cdb274",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cv0-004:3:4",
+          "unitId": "cv0-004:3",
+          "index": 4,
+          "text": "Ensuring compliance with standards such as PCI DSS, SOC 2, and ISO 27001",
+          "sourceHash": "57eb6ff96320",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cv0-004:3:5",
+          "unitId": "cv0-004:3",
+          "index": 5,
+          "text": "Deploying security controls to protect cloud environments",
+          "sourceHash": "d79efe383b91",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "cv0-004:4",
+      "index": 4,
+      "title": "Operations",
+      "weight": 17,
+      "gate": "Given a cloud resource already in production, manage its lifecycle and monitor it -- scaling, updating, backing up, and observing it -- rather than treating deployment as the finish line.",
+      "objectives": [
+        {
+          "id": "cv0-004:4:1",
+          "unitId": "cv0-004:4",
+          "index": 1,
+          "text": "Managing the lifecycle of cloud resources, including scaling and updates",
+          "sourceHash": "ca6439dcf898",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cv0-004:4:2",
+          "unitId": "cv0-004:4",
+          "index": 2,
+          "text": "Implementing backup and recovery strategies to ensure data integrity",
+          "sourceHash": "b07045b90c0b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cv0-004:4:3",
+          "unitId": "cv0-004:4",
+          "index": 3,
+          "text": "Monitoring and analyzing cloud environments for performance optimization",
+          "sourceHash": "0593a387f554",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "cv0-004:5",
+      "index": 5,
+      "title": "Troubleshooting",
+      "weight": 12,
+      "gate": "Given a broken cloud deployment, diagnose the specific fault -- connectivity, a leaked credential, a misconfiguration, or a disrupted service -- rather than guessing at a fix.",
+      "objectives": [
+        {
+          "id": "cv0-004:5:1",
+          "unitId": "cv0-004:5",
+          "index": 1,
+          "text": "Diagnosing and resolving deployment problems",
+          "sourceHash": "74a6be49edb8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cv0-004:5:2",
+          "unitId": "cv0-004:5",
+          "index": 2,
+          "text": "Troubleshooting network connectivity issues in cloud environments",
+          "sourceHash": "c4ae653e1e5f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cv0-004:5:3",
+          "unitId": "cv0-004:5",
+          "index": 3,
+          "text": "Addressing security incidents such as leaked credentials and privilege escalation",
+          "sourceHash": "be351e7b77ae",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cv0-004:5:4",
+          "unitId": "cv0-004:5",
+          "index": 4,
+          "text": "Resolving service disruptions in DNS, DHCP, and NTP",
+          "sourceHash": "9b227191cbab",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cv0-004:5:5",
+          "unitId": "cv0-004:5",
+          "index": 5,
+          "text": "Identifying and fixing cloud misconfigurations",
+          "sourceHash": "099308dd0493",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "cv0-004:6",
+      "index": 6,
+      "title": "DevOps Fundamentals",
+      "weight": 10,
+      "gate": "Given a repetitive cloud operations task, automate it with the right tool -- source control, a CI/CD pipeline, or an orchestration tool like Kubernetes/Ansible/Jenkins -- rather than doing it by hand again.",
+      "objectives": [
+        {
+          "id": "cv0-004:6:1",
+          "unitId": "cv0-004:6",
+          "index": 1,
+          "text": "Using automation tools to streamline cloud operations",
+          "sourceHash": "0393fe3a5046",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cv0-004:6:2",
+          "unitId": "cv0-004:6",
+          "index": 2,
+          "text": "Managing code with source control techniques",
+          "sourceHash": "58cc47f5e1ad",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cv0-004:6:3",
+          "unitId": "cv0-004:6",
+          "index": 3,
+          "text": "Building and managing CI/CD pipelines",
+          "sourceHash": "2d8684dd98a4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cv0-004:6:4",
+          "unitId": "cv0-004:6",
+          "index": 4,
+          "text": "Integrating systems for seamless cloud operations",
+          "sourceHash": "e033c996cf5e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cv0-004:6:5",
+          "unitId": "cv0-004:6",
+          "index": 5,
+          "text": "Working with common DevOps tools: Kubernetes, Ansible, and Jenkins",
+          "sourceHash": "3a5f42580a4e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cv0-004:6:6",
+          "unitId": "cv0-004:6",
+          "index": 6,
+          "text": "Event-driven architectures in cloud applications",
+          "sourceHash": "44bfdd3cf18b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/comptia.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-24T00:00:00Z",
+    "officialObjectivesUrl": "https://www.comptia.org/en-us/certifications/cloud/",
+    "providerName": "CompTIA",
+    "credentialName": "CompTIA Cloud+",
+    "examCode": "CV0-004",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 6,
+    "objectives": 31,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

@@ -1,0 +1,844 @@
+{
+  "id": "az-120",
+  "code": "AZ120",
+  "title": "Azure for SAP Workloads Specialty",
+  "description": "Microsoft Certified: Azure for SAP Workloads Specialty (AZ-120): planning, migrating, and administering SAP landscapes on Azure -- migration strategy and SAP RISE integration, compute/networking/storage infrastructure for SAP virtual machines, high availability and disaster recovery (clustering, Pacemaker, Site Recovery), and ongoing performance optimization and monitoring.",
+  "trackType": "certification",
+  "field": "azure",
+  "units": [
+    {
+      "id": "az-120:1",
+      "index": 1,
+      "title": "Migrate SAP Workloads to Azure",
+      "weight": 28,
+      "gate": "Given an SAP migration-planning requirement, name the specific target-infrastructure decision or RISE integration point that fits, not just 'move it to Azure'.",
+      "objectives": [
+        {
+          "id": "az-120:1:1",
+          "unitId": "az-120:1",
+          "index": 1,
+          "text": "Estimating target sizing for SAP workloads",
+          "sourceHash": "6caa54f31965",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:1:2",
+          "unitId": "az-120:1",
+          "index": 2,
+          "text": "Identifying supported scenarios for SAP deployments on Azure",
+          "sourceHash": "0a0c863f2471",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:1:3",
+          "unitId": "az-120:1",
+          "index": 3,
+          "text": "Identifying compute, storage, and network requirements for SAP workloads",
+          "sourceHash": "a47c05b74e50",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:1:4",
+          "unitId": "az-120:1",
+          "index": 4,
+          "text": "Assessing constraints imposed by subscription models and quota limits",
+          "sourceHash": "58b29e183a3c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:1:5",
+          "unitId": "az-120:1",
+          "index": 5,
+          "text": "Identifying software licensing requirements for target workloads",
+          "sourceHash": "1f539980c6b7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:1:6",
+          "unitId": "az-120:1",
+          "index": 6,
+          "text": "Identifying cost implications for target workloads",
+          "sourceHash": "e26e3a1d6066",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:1:7",
+          "unitId": "az-120:1",
+          "index": 7,
+          "text": "Specifying an Azure support plan for the target infrastructure",
+          "sourceHash": "fb4369bd960f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:1:8",
+          "unitId": "az-120:1",
+          "index": 8,
+          "text": "Choosing between lift and shift, lift-shift-migrate, and lift-shift-migrate to HANA",
+          "sourceHash": "1bf7090cb644",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:1:9",
+          "unitId": "az-120:1",
+          "index": 9,
+          "text": "Choosing an appropriate SAP workload migration strategy and tools",
+          "sourceHash": "8f3084ccc727",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:1:10",
+          "unitId": "az-120:1",
+          "index": 10,
+          "text": "Designing and implementing authorization and access control for SAP workloads",
+          "sourceHash": "28668b362072",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:1:11",
+          "unitId": "az-120:1",
+          "index": 11,
+          "text": "Designing and implementing governance and compliance using Azure Policy",
+          "sourceHash": "878040ba7279",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:1:12",
+          "unitId": "az-120:1",
+          "index": 12,
+          "text": "Designing and implementing authentication for SAP workloads",
+          "sourceHash": "39c108f90de8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:1:13",
+          "unitId": "az-120:1",
+          "index": 13,
+          "text": "Designing and implementing authentication for SAP software as a service (SaaS) applications",
+          "sourceHash": "3ccf3869e1f0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:1:14",
+          "unitId": "az-120:1",
+          "index": 14,
+          "text": "Designing and implementing a management hierarchy, including management groups, subscriptions, and resource groups",
+          "sourceHash": "ed626e4429c8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:1:15",
+          "unitId": "az-120:1",
+          "index": 15,
+          "text": "Designing Azure landing zones for SAP",
+          "sourceHash": "664512b4f3d0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:1:16",
+          "unitId": "az-120:1",
+          "index": 16,
+          "text": "Designing networking for SAP RISE",
+          "sourceHash": "31c574356726",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:1:17",
+          "unitId": "az-120:1",
+          "index": 17,
+          "text": "Implementing networking for SAP RISE",
+          "sourceHash": "2dd40eddea24",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:1:18",
+          "unitId": "az-120:1",
+          "index": 18,
+          "text": "Designing and implementing Azure compute, network, and storage services with SAP RISE",
+          "sourceHash": "f9dc9e201fdb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:1:19",
+          "unitId": "az-120:1",
+          "index": 19,
+          "text": "Designing and implementing integration of data management services, such as data archiving",
+          "sourceHash": "311a89381956",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:1:20",
+          "unitId": "az-120:1",
+          "index": 20,
+          "text": "Designing and implementing integration of identity and security services with SAP RISE",
+          "sourceHash": "506e1e945e74",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "az-120:2",
+      "index": 2,
+      "title": "Design and Implement Infrastructure to Support SAP Workloads on Azure",
+      "weight": 25,
+      "gate": "Given a compute, networking, or storage requirement for SAP virtual machines, name the specific Azure control that fits.",
+      "objectives": [
+        {
+          "id": "az-120:2:1",
+          "unitId": "az-120:2",
+          "index": 1,
+          "text": "Choosing an SAP-certified Azure virtual machine for a given SAP workload",
+          "sourceHash": "4b3d83f42644",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:2:2",
+          "unitId": "az-120:2",
+          "index": 2,
+          "text": "Configuring the Azure VM extension for SAP solutions",
+          "sourceHash": "54463c74b90f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:2:3",
+          "unitId": "az-120:2",
+          "index": 3,
+          "text": "Deploying an operating system using an Azure Marketplace image",
+          "sourceHash": "8c03ee8f1fd4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:2:4",
+          "unitId": "az-120:2",
+          "index": 4,
+          "text": "Creating a custom image and deploying it to an Azure virtual machine",
+          "sourceHash": "fd0ddb3e5ef1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:2:5",
+          "unitId": "az-120:2",
+          "index": 5,
+          "text": "Automating a deployment of Azure virtual machines using infrastructure as code, including Bicep and Azure Resource Manager (ARM) templates",
+          "sourceHash": "2ef76cea3672",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:2:6",
+          "unitId": "az-120:2",
+          "index": 6,
+          "text": "Automating a deployment using the SAP Deployment Automation Framework",
+          "sourceHash": "5eea2b2dfd28",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:2:7",
+          "unitId": "az-120:2",
+          "index": 7,
+          "text": "Automating a deployment using Azure Center for SAP solutions",
+          "sourceHash": "81d8917c7b80",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:2:8",
+          "unitId": "az-120:2",
+          "index": 8,
+          "text": "Designing and implementing virtual networks and subnets",
+          "sourceHash": "3b7ac42efed2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:2:9",
+          "unitId": "az-120:2",
+          "index": 9,
+          "text": "Implementing Accelerated Networking for Azure virtual machines",
+          "sourceHash": "abe5d70133fb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:2:10",
+          "unitId": "az-120:2",
+          "index": 10,
+          "text": "Designing and configuring proximity placement groups",
+          "sourceHash": "b5ad7367b8a5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:2:11",
+          "unitId": "az-120:2",
+          "index": 11,
+          "text": "Designing networking to meet SAP workload latency requirements",
+          "sourceHash": "632376556121",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:2:12",
+          "unitId": "az-120:2",
+          "index": 12,
+          "text": "Designing and implementing network flow control",
+          "sourceHash": "1de318752576",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:2:13",
+          "unitId": "az-120:2",
+          "index": 13,
+          "text": "Designing and implementing network security",
+          "sourceHash": "86f12c0a517b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:2:14",
+          "unitId": "az-120:2",
+          "index": 14,
+          "text": "Designing and implementing service endpoints and private endpoints for Azure Storage",
+          "sourceHash": "8181c9a0cb0b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:2:15",
+          "unitId": "az-120:2",
+          "index": 15,
+          "text": "Designing name resolution for integration with Azure DNS",
+          "sourceHash": "635c6a425473",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:2:16",
+          "unitId": "az-120:2",
+          "index": 16,
+          "text": "Designing and configuring ExpressRoute for hybrid connectivity",
+          "sourceHash": "b1132f57cf0b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:2:17",
+          "unitId": "az-120:2",
+          "index": 17,
+          "text": "Choosing a storage type",
+          "sourceHash": "82aa79c1d61b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:2:18",
+          "unitId": "az-120:2",
+          "index": 18,
+          "text": "Specifying when to use disk striping and simple volumes",
+          "sourceHash": "d4ae8f754f99",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:2:19",
+          "unitId": "az-120:2",
+          "index": 19,
+          "text": "Designing for storage security considerations",
+          "sourceHash": "16632d1df8bd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:2:20",
+          "unitId": "az-120:2",
+          "index": 20,
+          "text": "Designing and implementing data protection",
+          "sourceHash": "d71c44717ef5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:2:21",
+          "unitId": "az-120:2",
+          "index": 21,
+          "text": "Designing and implementing caching for disks",
+          "sourceHash": "1cf8dfa25e93",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:2:22",
+          "unitId": "az-120:2",
+          "index": 22,
+          "text": "Configuring Write Accelerator",
+          "sourceHash": "6d37b435f920",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:2:23",
+          "unitId": "az-120:2",
+          "index": 23,
+          "text": "Configuring encryption for storage, disks, and data",
+          "sourceHash": "d8000f826e1e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:2:24",
+          "unitId": "az-120:2",
+          "index": 24,
+          "text": "Designing and implementing volumes using Azure NetApp Files",
+          "sourceHash": "7a4db26420d6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:2:25",
+          "unitId": "az-120:2",
+          "index": 25,
+          "text": "Designing and implementing volumes using Azure Files",
+          "sourceHash": "780826e117d0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "az-120:3",
+      "index": 3,
+      "title": "Design and Implement High Availability and Disaster Recovery",
+      "weight": 23,
+      "gate": "Given an SAP resiliency requirement, name the specific clustering, replication, or Site Recovery configuration that fits, not just 'make it available'.",
+      "objectives": [
+        {
+          "id": "az-120:3:1",
+          "unitId": "az-120:3",
+          "index": 1,
+          "text": "Designing for service-level agreement (SLA) considerations",
+          "sourceHash": "08473e4d9e1a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:3:2",
+          "unitId": "az-120:3",
+          "index": 2,
+          "text": "Designing and deploying SAP workloads into availability sets and availability zones",
+          "sourceHash": "45d0b60e1bc0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:3:3",
+          "unitId": "az-120:3",
+          "index": 3,
+          "text": "Designing and implementing load balancing for high availability",
+          "sourceHash": "695269b2a341",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:3:4",
+          "unitId": "az-120:3",
+          "index": 4,
+          "text": "Configuring clustering for HANA and SAP Central Services (SCS)",
+          "sourceHash": "f4d327f17e69",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:3:5",
+          "unitId": "az-120:3",
+          "index": 5,
+          "text": "Configuring clustering for SQL",
+          "sourceHash": "68a9bcfe833c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:3:6",
+          "unitId": "az-120:3",
+          "index": 6,
+          "text": "Configuring Pacemaker and STONITH",
+          "sourceHash": "1bc6fa8b3936",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:3:7",
+          "unitId": "az-120:3",
+          "index": 7,
+          "text": "Configuring an Azure fence agent or STONITH Block Device (SBD)",
+          "sourceHash": "8963eab9a690",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:3:8",
+          "unitId": "az-120:3",
+          "index": 8,
+          "text": "Designing and configuring storage-level replication for SAP workloads",
+          "sourceHash": "72ae1dfa9a36",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:3:9",
+          "unitId": "az-120:3",
+          "index": 9,
+          "text": "Configuring restart of SAP systems, instances, and HANA databases",
+          "sourceHash": "7a399d4f2001",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:3:10",
+          "unitId": "az-120:3",
+          "index": 10,
+          "text": "Designing and implementing an Azure Site Recovery strategy for an SAP infrastructure",
+          "sourceHash": "8b450ff19e79",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:3:11",
+          "unitId": "az-120:3",
+          "index": 11,
+          "text": "Designing a disaster recovery solution with regional considerations",
+          "sourceHash": "b4f203ebd2ad",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:3:12",
+          "unitId": "az-120:3",
+          "index": 12,
+          "text": "Specifying network configurations for disaster recovery",
+          "sourceHash": "cedaca2d6efc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:3:13",
+          "unitId": "az-120:3",
+          "index": 13,
+          "text": "Designing a backup strategy to meet SLA requirements",
+          "sourceHash": "cf73ca48ca68",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:3:14",
+          "unitId": "az-120:3",
+          "index": 14,
+          "text": "Implementing policies for backups and snapshots",
+          "sourceHash": "066e48befd30",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:3:15",
+          "unitId": "az-120:3",
+          "index": 15,
+          "text": "Configuring and validating snapshots and backups for SAP workloads",
+          "sourceHash": "3164672374c3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:3:16",
+          "unitId": "az-120:3",
+          "index": 16,
+          "text": "Performing backup and restore",
+          "sourceHash": "4e880ebe3dc4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:3:17",
+          "unitId": "az-120:3",
+          "index": 17,
+          "text": "Testing disaster recovery",
+          "sourceHash": "9cd6d165e0c8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "az-120:4",
+      "index": 4,
+      "title": "Maintain SAP Workloads on Azure",
+      "weight": 23,
+      "gate": "Given an ongoing SAP cost or monitoring requirement, name the specific Azure Advisor, Monitor, or Center for SAP solutions control that fits.",
+      "objectives": [
+        {
+          "id": "az-120:4:1",
+          "unitId": "az-120:4",
+          "index": 1,
+          "text": "Optimizing performance and costs for an SAP workload using Azure Advisor recommendations",
+          "sourceHash": "55001f1d1c51",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:4:2",
+          "unitId": "az-120:4",
+          "index": 2,
+          "text": "Analyzing and optimizing network performance",
+          "sourceHash": "b4fa5aef8855",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:4:3",
+          "unitId": "az-120:4",
+          "index": 3,
+          "text": "Optimizing costs using Azure Savings Plans or Reserved Instances for SAP virtual machines",
+          "sourceHash": "2c868fe06860",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:4:4",
+          "unitId": "az-120:4",
+          "index": 4,
+          "text": "Optimizing performance and costs by resizing Azure virtual machines",
+          "sourceHash": "fa9612e19bed",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:4:5",
+          "unitId": "az-120:4",
+          "index": 5,
+          "text": "Optimizing storage costs",
+          "sourceHash": "463b17c07452",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:4:6",
+          "unitId": "az-120:4",
+          "index": 6,
+          "text": "Optimizing data performance using archiving",
+          "sourceHash": "0934fc077e3d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:4:7",
+          "unitId": "az-120:4",
+          "index": 7,
+          "text": "Optimizing performance and costs of SAP application servers and databases",
+          "sourceHash": "2f270797fb0f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:4:8",
+          "unitId": "az-120:4",
+          "index": 8,
+          "text": "Monitoring Azure virtual machines using Azure Monitor",
+          "sourceHash": "fe74e7912434",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:4:9",
+          "unitId": "az-120:4",
+          "index": 9,
+          "text": "Monitoring high availability using Azure Monitor",
+          "sourceHash": "f2d90a505ec4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:4:10",
+          "unitId": "az-120:4",
+          "index": 10,
+          "text": "Monitoring storage using Azure Monitor",
+          "sourceHash": "7194eb3a8b4b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:4:11",
+          "unitId": "az-120:4",
+          "index": 11,
+          "text": "Monitoring networking using Azure Monitor and Azure Network Watcher",
+          "sourceHash": "81d89d511dec",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:4:12",
+          "unitId": "az-120:4",
+          "index": 12,
+          "text": "Configuring Azure Monitor for SAP solutions",
+          "sourceHash": "12c568558647",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:4:13",
+          "unitId": "az-120:4",
+          "index": 13,
+          "text": "Managing backups using Azure Backup",
+          "sourceHash": "374a07982a08",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:4:14",
+          "unitId": "az-120:4",
+          "index": 14,
+          "text": "Starting and stopping SAP systems using Azure Center for SAP solutions",
+          "sourceHash": "56314b52b001",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:4:15",
+          "unitId": "az-120:4",
+          "index": 15,
+          "text": "Managing virtual instances using Azure Center for SAP solutions",
+          "sourceHash": "5bc3e2346222",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "az-120:4:16",
+          "unitId": "az-120:4",
+          "index": 16,
+          "text": "Implementing the SAP Landscape Management (LaMa) connector for Azure",
+          "sourceHash": "c6abb5f331aa",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/azure.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-18T00:00:00Z",
+    "officialObjectivesUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-120",
+    "providerName": "Microsoft",
+    "credentialName": "Microsoft Certified: Azure for SAP Workloads Specialty",
+    "examCode": "AZ-120",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 4,
+    "objectives": 78,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

@@ -1,0 +1,225 @@
+{
+  "id": "abptspwcs",
+  "code": "ABPTSPWCS",
+  "title": "Pelvic & Women's Health Clinical Specialist (PWCS)",
+  "description": "ABPTS board certification in pelvic and women's health physical therapy (renamed from Women's Health in September 2025): patient and client management across pelvic floor dysfunction, urinary and bowel dysfunction, pregnancy and postpartum, lymphedema and sexual dysfunction.",
+  "trackType": "certification",
+  "field": "pt",
+  "requiresAcknowledgement": true,
+  "units": [
+    {
+      "id": "abptspwcs:1",
+      "index": 1,
+      "title": "Knowledge areas: foundation, clinical and behavioral sciences",
+      "weight": 20,
+      "gate": "Explain the pelvic anatomy, hormonal physiology or psychosocial factor behind a presentation, not just the symptom.",
+      "objectives": [
+        {
+          "id": "abptspwcs:1:1",
+          "unitId": "abptspwcs:1",
+          "index": 1,
+          "text": "Pelvic floor, abdominal wall and lumbopelvic anatomy and neurophysiology",
+          "sourceHash": "ee7b9973b1b3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptspwcs:1:2",
+          "unitId": "abptspwcs:1",
+          "index": 2,
+          "text": "Physiology of pregnancy, postpartum, menopause and hormonal change and their musculoskeletal effects",
+          "sourceHash": "9181304c0fbc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptspwcs:1:3",
+          "unitId": "abptspwcs:1",
+          "index": 3,
+          "text": "Clinical sciences of pelvic organ prolapse, chronic pelvic pain, endometriosis, interstitial cystitis, osteoporosis and fibromyalgia",
+          "sourceHash": "8a5e11245038",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptspwcs:1:4",
+          "unitId": "abptspwcs:1",
+          "index": 4,
+          "text": "Behavioral sciences: trauma-informed care, sexual health and the psychosocial dimensions of pelvic conditions",
+          "sourceHash": "bac25601af51",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "abptspwcs:2",
+      "index": 2,
+      "title": "Patient and client management",
+      "weight": 55,
+      "gate": "Screen a pelvic health referral for conditions outside PT scope, then examine, diagnose and treat the pelvic floor or pregnancy-related problem with a specific, dosed intervention.",
+      "objectives": [
+        {
+          "id": "abptspwcs:2:1",
+          "unitId": "abptspwcs:2",
+          "index": 1,
+          "text": "Screening for medical conditions requiring referral in pelvic and women's health, the outline's largest single area",
+          "sourceHash": "386b5bcdae66",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptspwcs:2:2",
+          "unitId": "abptspwcs:2",
+          "index": 2,
+          "text": "Internal and external pelvic floor examination, musculoskeletal examination and evaluation",
+          "sourceHash": "731213f06034",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptspwcs:2:3",
+          "unitId": "abptspwcs:2",
+          "index": 3,
+          "text": "Diagnosis and prognosis in pelvic floor dysfunction and pain (26% of conditions): prolapse, chronic pelvic pain, endometriosis, cystitis",
+          "sourceHash": "03af51c2bd21",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptspwcs:2:4",
+          "unitId": "abptspwcs:2",
+          "index": 4,
+          "text": "Musculoskeletal dysfunction (26%): osteoporosis, fibromyalgia, pelvic girdle pain and post-surgical dysfunction",
+          "sourceHash": "e53b9d222a0c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptspwcs:2:5",
+          "unitId": "abptspwcs:2",
+          "index": 5,
+          "text": "Urinary dysfunction (15%): incontinence, retention and urgency, including bladder training and pelvic floor muscle training",
+          "sourceHash": "54761053559d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptspwcs:2:6",
+          "unitId": "abptspwcs:2",
+          "index": 6,
+          "text": "Pregnancy and postpartum (12%): musculoskeletal dysfunction, high-risk pregnancy precautions and return to activity",
+          "sourceHash": "e685f368d884",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptspwcs:2:7",
+          "unitId": "abptspwcs:2",
+          "index": 7,
+          "text": "Bowel dysfunction (5%), lymphedema (5%) and sexual dysfunction (5%): examination and intervention",
+          "sourceHash": "8f4951b29bf4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptspwcs:2:8",
+          "unitId": "abptspwcs:2",
+          "index": 8,
+          "text": "Other conditions (6%): cardiovascular, hormonal, oncologic, autoimmune and neurologic conditions in pelvic health practice",
+          "sourceHash": "95d4865f1709",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptspwcs:2:9",
+          "unitId": "abptspwcs:2",
+          "index": 9,
+          "text": "Procedural interventions, coordination, communication, documentation and outcome measurement",
+          "sourceHash": "391287fed9f0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "abptspwcs:3",
+      "index": 3,
+      "title": "Professional practice expectations",
+      "weight": 25,
+      "gate": "Apply evidence, cultural humility and advocacy to a pelvic health scenario, naming the specific professional expectation involved.",
+      "objectives": [
+        {
+          "id": "abptspwcs:3:1",
+          "unitId": "abptspwcs:3",
+          "index": 1,
+          "text": "Critical inquiry, clinical decision-making and evidence-based practice in pelvic health (the largest professional area at 8%)",
+          "sourceHash": "362e553a2923",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptspwcs:3:2",
+          "unitId": "abptspwcs:3",
+          "index": 2,
+          "text": "Communication, individual and cultural differences and trauma-informed professional behavior",
+          "sourceHash": "3a068428074d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptspwcs:3:3",
+          "unitId": "abptspwcs:3",
+          "index": 3,
+          "text": "Education, leadership, social responsibility and advocacy for pelvic health access",
+          "sourceHash": "cd0da2bee19f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptspwcs:3:4",
+          "unitId": "abptspwcs:3",
+          "index": 4,
+          "text": "Administration and consultation in pelvic and women's health services",
+          "sourceHash": "54a61a9d84f4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/pt.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-10-08T00:00:00Z",
+    "officialObjectivesUrl": "https://specialization.apta.org/become-a-specialist/pelvic-womens-health/specialist-certification-examination-outline-womens-health",
+    "providerName": "American Board of Physical Therapy Specialties",
+    "credentialName": "Board-Certified Pelvic & Women's Health Clinical Specialist (PWCS)",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 3,
+    "objectives": 17,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

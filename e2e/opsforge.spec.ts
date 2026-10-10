@@ -665,7 +665,8 @@ test("study: browse the catalog from a course to a unit and into the mission tha
   await expect(page.getByRole("heading", { name: "Study", exact: true })).toBeVisible();
   await expect(page.getByTestId("study-disclaimer")).toContainText("not affiliated");
   await expect(page.getByTestId("study-group-aws").getByRole("link")).toHaveCount(11);
-  await expect(page.getByTestId("study-group-core").getByRole("link")).toHaveCount(9);
+  await expect(page.getByTestId("study-group-nursing").getByRole("link")).toHaveCount(6);
+  await expect(page.getByTestId("study-paths-aws")).toContainText("Solutions architect");
   await page.getByTestId("study-course-saa-c03").click();
   await expect(page.getByRole("heading", { name: "AWS Solutions Architect Associate" })).toBeVisible();
   await expect(page.getByTestId("study-provenance")).toContainText("Exam SAA-C03");
@@ -684,6 +685,30 @@ test("study: browse the catalog from a course to a unit and into the mission tha
   await page.goto("/#/study/cmpcbs/28");
   await expect(page.getByTestId("study-bookkeeping")).toContainText("6 degree-plan lines");
   await expect(page.getByTestId("study-objectives")).toHaveCount(0);
+});
+
+test("study: search finds courses and objectives, filters live in the address, and health courses ask for a disclaimer first", async ({ page }) => {
+  await onboard(page);
+  await page.goto("/#/study");
+  await page.getByTestId("study-search").fill("peering");
+  await expect(page).toHaveURL(/q=peering/);
+  await expect(page.getByTestId("study-objective-results").getByRole("link").first()).toBeVisible();
+  await page.getByTestId("study-search").fill("");
+  await page.getByTestId("study-field-pm").click();
+  await expect(page).toHaveURL(/field=pm/);
+  await expect(page.getByTestId("study-results").getByRole("link")).toHaveCount(13);
+  await page.getByTestId("study-level-filter").selectOption("fundamentals");
+  await expect(page.getByTestId("study-results").getByRole("link")).toHaveCount(2);
+  await page.reload();
+  await expect(page.getByTestId("study-results").getByRole("link")).toHaveCount(2);
+
+  await page.goto("/#/study/nclex-rn");
+  await expect(page.getByTestId("study-health-gate")).toContainText("not clinical guidance");
+  await expect(page.getByTestId("study-provenance")).toHaveCount(0);
+  await page.getByTestId("study-health-accept").click();
+  await expect(page.getByTestId("study-provenance")).toContainText("NCLEX-RN");
+  await page.goto("/#/study/npte-pt");
+  await expect(page.getByTestId("study-health-gate")).toBeVisible();
 });
 
 test("study lesson loop: guess, read, check, explain it back; status moves and the unit shows it", async ({ page }) => {

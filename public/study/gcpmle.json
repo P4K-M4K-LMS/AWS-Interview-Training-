@@ -1,0 +1,611 @@
+{
+  "id": "gcpmle",
+  "code": "GCPMLE",
+  "title": "Google Cloud Professional Machine Learning Engineer",
+  "description": "Google Cloud Professional Machine Learning Engineer: architecting low-code AI solutions, managing data and models with a team, scaling prototypes into production ML models, serving and scaling models, automating ML pipelines, and monitoring AI solutions.",
+  "trackType": "certification",
+  "field": "gcp",
+  "units": [
+    {
+      "id": "gcpmle:1",
+      "index": 1,
+      "title": "Architecting Low-Code AI Solutions",
+      "weight": 13,
+      "gate": "Given a business problem, decide whether it needs a low-code model (BigQuery ML, AutoML) or a foundational-model solution -- and justify the choice.",
+      "objectives": [
+        {
+          "id": "gcpmle:1:1",
+          "unitId": "gcpmle:1",
+          "index": 1,
+          "text": "Building models in BigQuery ML or Agent Platform AutoML -- classification, regression, forecasting, clustering -- based on the business problem",
+          "sourceHash": "a65d396859be",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpmle:1:2",
+          "unitId": "gcpmle:1",
+          "index": 2,
+          "text": "Performing feature engineering and selection using BigQuery ML",
+          "sourceHash": "365e82721256",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpmle:1:3",
+          "unitId": "gcpmle:1",
+          "index": 3,
+          "text": "Generating predictions using BigQuery ML",
+          "sourceHash": "c7ca3e9eb226",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpmle:1:4",
+          "unitId": "gcpmle:1",
+          "index": 4,
+          "text": "Training models using Agent Platform AutoML",
+          "sourceHash": "bb200be6e249",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpmle:1:5",
+          "unitId": "gcpmle:1",
+          "index": 5,
+          "text": "Fine-tuning Gemini models using BigQuery",
+          "sourceHash": "16dcc25f76d1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpmle:1:6",
+          "unitId": "gcpmle:1",
+          "index": 6,
+          "text": "Evaluating and selecting a model from the Gemini Enterprise Agent Platform Model Garden",
+          "sourceHash": "c1d7a4212e28",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpmle:1:7",
+          "unitId": "gcpmle:1",
+          "index": 7,
+          "text": "Building applications with industry-specific APIs: Document AI, Vision, Translate",
+          "sourceHash": "3a114964382d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpmle:1:8",
+          "unitId": "gcpmle:1",
+          "index": 8,
+          "text": "Building solutions and tuning models for specific use cases: Gemini, Imagen, Veo, Model Garden models-as-a-service",
+          "sourceHash": "941cdbb88777",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpmle:1:9",
+          "unitId": "gcpmle:1",
+          "index": 9,
+          "text": "Optimizing Gemini-based applications for cost, latency, and availability",
+          "sourceHash": "693e6c14a736",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "gcpmle:2",
+      "index": 2,
+      "title": "Collaborating Within and Across Teams to Manage Data and Models",
+      "weight": 16,
+      "gate": "Given a data type and team workflow, choose the specific Google Cloud tool for preprocessing, prototyping, or experiment tracking that fits.",
+      "objectives": [
+        {
+          "id": "gcpmle:2:1",
+          "unitId": "gcpmle:2",
+          "index": 1,
+          "text": "Organizing and exploring data types -- tabular, text, images -- for efficient experimenting, training, and serving",
+          "sourceHash": "ac35327933f3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpmle:2:2",
+          "unitId": "gcpmle:2",
+          "index": 2,
+          "text": "Choosing the right data preprocessing tool by scale and complexity: BigQuery, Dataflow, Apache Spark, in-memory Python frameworks",
+          "sourceHash": "8cf022497605",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpmle:2:3",
+          "unitId": "gcpmle:2",
+          "index": 3,
+          "text": "Creating and consolidating features in the Agent Platform Feature Store",
+          "sourceHash": "50824c09922f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpmle:2:4",
+          "unitId": "gcpmle:2",
+          "index": 4,
+          "text": "Ensuring data privacy and handling PII",
+          "sourceHash": "77752bb71faf",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpmle:2:5",
+          "unitId": "gcpmle:2",
+          "index": 5,
+          "text": "Applying collaboration and security best practices when setting up notebook environments",
+          "sourceHash": "ca3be9946e08",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpmle:2:6",
+          "unitId": "gcpmle:2",
+          "index": 6,
+          "text": "Developing models in Agent Platform Workbench or Colab Enterprise notebooks using common frameworks: PyTorch, sklearn, JAX",
+          "sourceHash": "221bf248b799",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpmle:2:7",
+          "unitId": "gcpmle:2",
+          "index": 7,
+          "text": "Using foundational and open-source Model Garden models to prototype in notebooks",
+          "sourceHash": "d6cec6e179cf",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpmle:2:8",
+          "unitId": "gcpmle:2",
+          "index": 8,
+          "text": "Choosing the right environment for development and experimentation given the framework: Experiments on Agent Platform, Agent Platform Pipelines, Kubeflow Pipelines",
+          "sourceHash": "7558c4d6937a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpmle:2:9",
+          "unitId": "gcpmle:2",
+          "index": 9,
+          "text": "Evaluating predictive and generative AI solutions: model evaluation metrics, LLM-as-a-judge",
+          "sourceHash": "436d2def7a04",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpmle:2:10",
+          "unitId": "gcpmle:2",
+          "index": 10,
+          "text": "Tracking and comparing model artifacts, versions, and lineage",
+          "sourceHash": "b8fbd0f62040",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "gcpmle:3",
+      "index": 3,
+      "title": "Scaling Prototypes into ML Models",
+      "weight": 21,
+      "gate": "Given a cost, latency, or scalability constraint, name the specific model type, product, and training hardware that fits -- not just 'use a bigger model.'",
+      "objectives": [
+        {
+          "id": "gcpmle:3:1",
+          "unitId": "gcpmle:3",
+          "index": 1,
+          "text": "Choosing a model type: ARIMA, DNN, LLM",
+          "sourceHash": "ded8a5e9d649",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpmle:3:2",
+          "unitId": "gcpmle:3",
+          "index": 2,
+          "text": "Choosing the right product: Agent Platform AutoML, BigQuery ML, Agent Platform Pipelines",
+          "sourceHash": "bf615ca8ac2e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpmle:3:3",
+          "unitId": "gcpmle:3",
+          "index": 3,
+          "text": "Choosing a deployment strategy",
+          "sourceHash": "dc901146f0f2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpmle:3:4",
+          "unitId": "gcpmle:3",
+          "index": 4,
+          "text": "Choosing modeling techniques against interpretability requirements",
+          "sourceHash": "5f93c5a280dc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpmle:3:5",
+          "unitId": "gcpmle:3",
+          "index": 5,
+          "text": "Organizing training data -- tabular, text, speech, images, video -- on Google Cloud: Cloud Storage, BigQuery",
+          "sourceHash": "5f66248d6bc1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpmle:3:6",
+          "unitId": "gcpmle:3",
+          "index": 6,
+          "text": "Ingesting structured and unstructured data from various sources into training pipelines",
+          "sourceHash": "9aa557d848fa",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpmle:3:7",
+          "unitId": "gcpmle:3",
+          "index": 7,
+          "text": "Training with different SDKs and organizing training on Google Cloud: Agent Platform custom training, Kubeflow on GKE, Agent Platform AutoML, Tabular Workflows",
+          "sourceHash": "1f70d1f2d740",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpmle:3:8",
+          "unitId": "gcpmle:3",
+          "index": 8,
+          "text": "Troubleshooting ML model training failures",
+          "sourceHash": "22918177b76c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpmle:3:9",
+          "unitId": "gcpmle:3",
+          "index": 9,
+          "text": "Tuning hyperparameters",
+          "sourceHash": "51dd7e2ee685",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpmle:3:10",
+          "unitId": "gcpmle:3",
+          "index": 10,
+          "text": "Fine-tuning foundational models from Agent Platform and Model Garden, and knowing when tuning is warranted",
+          "sourceHash": "dc8ece1913b8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpmle:3:11",
+          "unitId": "gcpmle:3",
+          "index": 11,
+          "text": "Evaluating compute and accelerator options: CPU, GPU, TPU",
+          "sourceHash": "44e535eef4c4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpmle:3:12",
+          "unitId": "gcpmle:3",
+          "index": 12,
+          "text": "Understanding distributed training options on GPUs and TPUs: data and model parallelism strategies",
+          "sourceHash": "0e62ca551d7c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "gcpmle:4",
+      "index": 4,
+      "title": "Serving and Scaling Models",
+      "weight": 20,
+      "gate": "Given a model ready to serve, choose the specific deployment target and rollout strategy -- and say how the serving backend actually scales with throughput.",
+      "objectives": [
+        {
+          "id": "gcpmle:4:1",
+          "unitId": "gcpmle:4",
+          "index": 1,
+          "text": "Deploying models for batch and online inference using the right service: Agent Platform, Model Garden, Cloud Run, GKE",
+          "sourceHash": "a8620fbf7d49",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpmle:4:2",
+          "unitId": "gcpmle:4",
+          "index": 2,
+          "text": "Packaging and serving models from different frameworks -- PyTorch, XGBoost -- using prebuilt and custom containers",
+          "sourceHash": "10d17f96dad2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpmle:4:3",
+          "unitId": "gcpmle:4",
+          "index": 3,
+          "text": "Organizing and versioning models in the Model Registry",
+          "sourceHash": "b05b90359e01",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpmle:4:4",
+          "unitId": "gcpmle:4",
+          "index": 4,
+          "text": "Implementing model rollout strategies -- A/B testing, canary deployments -- to compare model versions",
+          "sourceHash": "25b48d5ae98d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpmle:4:5",
+          "unitId": "gcpmle:4",
+          "index": 5,
+          "text": "Developing solutions for inference preprocessing and postprocessing",
+          "sourceHash": "b3eec4ebd1cb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpmle:4:6",
+          "unitId": "gcpmle:4",
+          "index": 6,
+          "text": "Managing and serving features using the Feature Store",
+          "sourceHash": "a01a509e919b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpmle:4:7",
+          "unitId": "gcpmle:4",
+          "index": 7,
+          "text": "Deploying models to public and private endpoints",
+          "sourceHash": "b323674afda6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpmle:4:8",
+          "unitId": "gcpmle:4",
+          "index": 8,
+          "text": "Choosing appropriate serving hardware: CPU, GPU, TPU, edge",
+          "sourceHash": "dcd94fbc1948",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpmle:4:9",
+          "unitId": "gcpmle:4",
+          "index": 9,
+          "text": "Scaling the serving backend against throughput",
+          "sourceHash": "746d7f271db7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpmle:4:10",
+          "unitId": "gcpmle:4",
+          "index": 10,
+          "text": "Tuning ML models for training and serving in production",
+          "sourceHash": "6a708af71d67",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "gcpmle:5",
+      "index": 5,
+      "title": "Automating and Orchestrating ML Pipelines",
+      "weight": 18,
+      "gate": "Given a model that needs to stay current in production, say what retraining policy and CI/CD/CT mechanism keeps it that way.",
+      "objectives": [
+        {
+          "id": "gcpmle:5:1",
+          "unitId": "gcpmle:5",
+          "index": 1,
+          "text": "Validating data and models as part of a pipeline",
+          "sourceHash": "61d170b32fb6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpmle:5:2",
+          "unitId": "gcpmle:5",
+          "index": 2,
+          "text": "Building and orchestrating pipelines with managed or unmanaged services, from templates or custom solutions: Agent Platform Pipelines, Managed Service for Apache Airflow, Ray on the Agent Platform",
+          "sourceHash": "c320e42f1632",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpmle:5:3",
+          "unitId": "gcpmle:5",
+          "index": 3,
+          "text": "Ensuring consistent data preprocessing between training and serving",
+          "sourceHash": "dfce83b2da28",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpmle:5:4",
+          "unitId": "gcpmle:5",
+          "index": 4,
+          "text": "Determining an appropriate model retraining policy",
+          "sourceHash": "0c7cc00e0a14",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpmle:5:5",
+          "unitId": "gcpmle:5",
+          "index": 5,
+          "text": "Deploying models in continuous integration, continuous delivery, and continuous training (CI/CD/CT) pipelines",
+          "sourceHash": "612211550c34",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "gcpmle:6",
+      "index": 6,
+      "title": "Monitoring AI Solutions",
+      "weight": 13,
+      "gate": "Given a production AI system, name the specific security or monitoring signal that catches a real risk -- data leakage, bias, drift -- before it becomes an incident.",
+      "objectives": [
+        {
+          "id": "gcpmle:6:1",
+          "unitId": "gcpmle:6",
+          "index": 1,
+          "text": "Building secure AI systems against unintentional exploitation and data/model leaks: data exfiltration, malicious prompting, sharing sensitive data with LLMs",
+          "sourceHash": "a395aba5886e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpmle:6:2",
+          "unitId": "gcpmle:6",
+          "index": 2,
+          "text": "Choosing the right security tool for an AI risk: Regex, safety filters, Model Armor",
+          "sourceHash": "20c873273ae7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpmle:6:3",
+          "unitId": "gcpmle:6",
+          "index": 3,
+          "text": "Aligning with responsible AI practices, including monitoring for bias",
+          "sourceHash": "b64567a65ed9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpmle:6:4",
+          "unitId": "gcpmle:6",
+          "index": 4,
+          "text": "Applying model explainability on the Agent Platform",
+          "sourceHash": "523a75321f30",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpmle:6:5",
+          "unitId": "gcpmle:6",
+          "index": 5,
+          "text": "Configuring Model Monitoring for continuous evaluation of production models",
+          "sourceHash": "1d3fa1f6d8a6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpmle:6:6",
+          "unitId": "gcpmle:6",
+          "index": 6,
+          "text": "Monitoring for training-serving skew, data drift, concept drift, and feature attribution drift",
+          "sourceHash": "2252203e6871",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpmle:6:7",
+          "unitId": "gcpmle:6",
+          "index": 7,
+          "text": "Monitoring, testing, and evaluating generative AI solutions",
+          "sourceHash": "29ea3111e7fe",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/gcp.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-24T00:00:00Z",
+    "officialObjectivesUrl": "https://cloud.google.com/learn/certification/guides/machine-learning-engineer",
+    "providerName": "Google Cloud",
+    "credentialName": "Google Cloud Professional Machine Learning Engineer",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 6,
+    "objectives": 53,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

@@ -1,0 +1,1013 @@
+{
+  "id": "dp-300",
+  "code": "DP300",
+  "title": "Azure Database Administrator Associate",
+  "description": "Microsoft Certified: Azure Database Administrator Associate (DP-300): administering Azure SQL Database, Azure SQL Managed Instance, and SQL Server on Azure VMs -- deployment and migration, authentication and data protection, performance monitoring and tuning, task automation, and high availability/disaster recovery.",
+  "trackType": "certification",
+  "field": "azure",
+  "units": [
+    {
+      "id": "dp-300:1",
+      "index": 1,
+      "title": "Plan and Implement Data Platform Resources",
+      "weight": 18,
+      "gate": "Given an Azure SQL deployment, scaling, or migration requirement, name the specific offering or migration strategy that fits -- not a generic 'move it to Azure'.",
+      "objectives": [
+        {
+          "id": "dp-300:1:1",
+          "unitId": "dp-300:1",
+          "index": 1,
+          "text": "Recommending a database offering based on specific requirements",
+          "sourceHash": "21b699692433",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:1:2",
+          "unitId": "dp-300:1",
+          "index": 2,
+          "text": "Choosing an automated deployment method",
+          "sourceHash": "a6d82e63f91d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:1:3",
+          "unitId": "dp-300:1",
+          "index": 3,
+          "text": "Identifying use cases for Azure Arc-enabled SQL services",
+          "sourceHash": "1bb379a389bb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:1:4",
+          "unitId": "dp-300:1",
+          "index": 4,
+          "text": "Identifying use cases for Azure SQL Database in Microsoft Fabric",
+          "sourceHash": "e77a04a07187",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:1:5",
+          "unitId": "dp-300:1",
+          "index": 5,
+          "text": "Planning for table partitioning",
+          "sourceHash": "2ad4a1232676",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:1:6",
+          "unitId": "dp-300:1",
+          "index": 6,
+          "text": "Recommending a database sharding solution",
+          "sourceHash": "6e0234bb72d9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:1:7",
+          "unitId": "dp-300:1",
+          "index": 7,
+          "text": "Deploying database offerings on selected platforms",
+          "sourceHash": "8e9aa0c582ae",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:1:8",
+          "unitId": "dp-300:1",
+          "index": 8,
+          "text": "Deploying hybrid SQL Server solutions",
+          "sourceHash": "44b7da22f125",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:1:9",
+          "unitId": "dp-300:1",
+          "index": 9,
+          "text": "Applying patches and updates for hybrid and infrastructure as a service (IaaS) deployments",
+          "sourceHash": "d0e0baa3e368",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:1:10",
+          "unitId": "dp-300:1",
+          "index": 10,
+          "text": "Configuring Azure SQL Database for scale and performance",
+          "sourceHash": "2a8a4d7e2867",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:1:11",
+          "unitId": "dp-300:1",
+          "index": 11,
+          "text": "Configuring Azure SQL Managed Instance for scale and performance",
+          "sourceHash": "e4d63513548b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:1:12",
+          "unitId": "dp-300:1",
+          "index": 12,
+          "text": "Configuring SQL Server on Azure Virtual Machines for scale and performance",
+          "sourceHash": "156f539e76c6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:1:13",
+          "unitId": "dp-300:1",
+          "index": 13,
+          "text": "Configuring table partitioning",
+          "sourceHash": "d03debada18c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:1:14",
+          "unitId": "dp-300:1",
+          "index": 14,
+          "text": "Configuring data compression",
+          "sourceHash": "0029ce51b59e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:1:15",
+          "unitId": "dp-300:1",
+          "index": 15,
+          "text": "Evaluating requirements for a migration",
+          "sourceHash": "4b26dd916d93",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:1:16",
+          "unitId": "dp-300:1",
+          "index": 16,
+          "text": "Evaluating offline versus online migration strategies",
+          "sourceHash": "bacce5d438ac",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:1:17",
+          "unitId": "dp-300:1",
+          "index": 17,
+          "text": "Implementing an online migration strategy",
+          "sourceHash": "da607e122bb2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:1:18",
+          "unitId": "dp-300:1",
+          "index": 18,
+          "text": "Implementing an offline migration strategy",
+          "sourceHash": "7834e0176590",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:1:19",
+          "unitId": "dp-300:1",
+          "index": 19,
+          "text": "Implementing a migration to Azure",
+          "sourceHash": "fa9748925272",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:1:20",
+          "unitId": "dp-300:1",
+          "index": 20,
+          "text": "Implementing a migration between Azure SQL services",
+          "sourceHash": "de54f07a9c77",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:1:21",
+          "unitId": "dp-300:1",
+          "index": 21,
+          "text": "Implementing Azure SQL Managed Instance database copy and move",
+          "sourceHash": "de7d6b128e66",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:1:22",
+          "unitId": "dp-300:1",
+          "index": 22,
+          "text": "Troubleshooting a migration",
+          "sourceHash": "1dbe5c000153",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "dp-300:2",
+      "index": 2,
+      "title": "Implement a Secure Environment",
+      "weight": 23,
+      "gate": "Given a database authentication, encryption, or compliance requirement, name the specific control that fits, not just 'lock it down'.",
+      "objectives": [
+        {
+          "id": "dp-300:2:1",
+          "unitId": "dp-300:2",
+          "index": 1,
+          "text": "Configuring Microsoft Entra ID authentication for Azure SQL Database, Azure SQL Managed Instance, and SQL Server",
+          "sourceHash": "15af265b9c7e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:2:2",
+          "unitId": "dp-300:2",
+          "index": 2,
+          "text": "Configuring authentication for SQL on Azure VMs and Azure SQL Managed Instance",
+          "sourceHash": "2229796a7ef4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:2:3",
+          "unitId": "dp-300:2",
+          "index": 3,
+          "text": "Configuring security principals",
+          "sourceHash": "dd0e1275d1c6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:2:4",
+          "unitId": "dp-300:2",
+          "index": 4,
+          "text": "Creating users from Microsoft Entra identities",
+          "sourceHash": "90e83562d155",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:2:5",
+          "unitId": "dp-300:2",
+          "index": 5,
+          "text": "Configuring database and object-level permissions using graphical tools",
+          "sourceHash": "08d0c599d324",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:2:6",
+          "unitId": "dp-300:2",
+          "index": 6,
+          "text": "Applying the principle of least privilege for all securables",
+          "sourceHash": "db056ef37394",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:2:7",
+          "unitId": "dp-300:2",
+          "index": 7,
+          "text": "Troubleshooting authentication and authorization issues",
+          "sourceHash": "39aabad95109",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:2:8",
+          "unitId": "dp-300:2",
+          "index": 8,
+          "text": "Managing authentication and authorization using T-SQL",
+          "sourceHash": "1aa678e68687",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:2:9",
+          "unitId": "dp-300:2",
+          "index": 9,
+          "text": "Implementing transparent data encryption (TDE)",
+          "sourceHash": "23a7285a1e40",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:2:10",
+          "unitId": "dp-300:2",
+          "index": 10,
+          "text": "Implementing object-level encryption",
+          "sourceHash": "68512e4439c3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:2:11",
+          "unitId": "dp-300:2",
+          "index": 11,
+          "text": "Configuring server- and database-level firewall rules",
+          "sourceHash": "080b86788f99",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:2:12",
+          "unitId": "dp-300:2",
+          "index": 12,
+          "text": "Implementing Always Encrypted",
+          "sourceHash": "edfc8602bf1c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:2:13",
+          "unitId": "dp-300:2",
+          "index": 13,
+          "text": "Implementing Always Encrypted with VBS enclaves",
+          "sourceHash": "6d1e7cd1c25d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:2:14",
+          "unitId": "dp-300:2",
+          "index": 14,
+          "text": "Configuring private links and service endpoints",
+          "sourceHash": "5def8b1c4912",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:2:15",
+          "unitId": "dp-300:2",
+          "index": 15,
+          "text": "Applying a data classification strategy",
+          "sourceHash": "7ccf84e31e2f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:2:16",
+          "unitId": "dp-300:2",
+          "index": 16,
+          "text": "Configuring server and database audits",
+          "sourceHash": "7043ee5ab79b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:2:17",
+          "unitId": "dp-300:2",
+          "index": 17,
+          "text": "Implementing change data tracking",
+          "sourceHash": "c8b60925dc4b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:2:18",
+          "unitId": "dp-300:2",
+          "index": 18,
+          "text": "Implementing dynamic data masking",
+          "sourceHash": "3196c2514341",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:2:19",
+          "unitId": "dp-300:2",
+          "index": 19,
+          "text": "Implementing ledger in Azure SQL",
+          "sourceHash": "1a07ff40d54c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:2:20",
+          "unitId": "dp-300:2",
+          "index": 20,
+          "text": "Implementing row-level security",
+          "sourceHash": "29b091c5f36a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "dp-300:3",
+      "index": 3,
+      "title": "Monitor, Configure, and Optimize Database Resources",
+      "weight": 23,
+      "gate": "Given a performance-monitoring or tuning requirement, name the specific metric source or tuning control that fits, not just 'make it faster'.",
+      "objectives": [
+        {
+          "id": "dp-300:3:1",
+          "unitId": "dp-300:3",
+          "index": 1,
+          "text": "Preparing an operational performance baseline",
+          "sourceHash": "15f8344e4175",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:3:2",
+          "unitId": "dp-300:3",
+          "index": 2,
+          "text": "Determining sources for performance metrics",
+          "sourceHash": "b15e5f112e77",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:3:3",
+          "unitId": "dp-300:3",
+          "index": 3,
+          "text": "Interpreting performance metrics",
+          "sourceHash": "c1ceb23ecf6e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:3:4",
+          "unitId": "dp-300:3",
+          "index": 4,
+          "text": "Configuring and monitoring activity and performance",
+          "sourceHash": "4b03e499061d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:3:5",
+          "unitId": "dp-300:3",
+          "index": 5,
+          "text": "Monitoring using database watcher",
+          "sourceHash": "47b75c0abf1e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:3:6",
+          "unitId": "dp-300:3",
+          "index": 6,
+          "text": "Monitoring using Extended Events",
+          "sourceHash": "fc68916539c0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:3:7",
+          "unitId": "dp-300:3",
+          "index": 7,
+          "text": "Configuring Query Store",
+          "sourceHash": "81155db59629",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:3:8",
+          "unitId": "dp-300:3",
+          "index": 8,
+          "text": "Monitoring using Query Store",
+          "sourceHash": "b5a795e75b85",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:3:9",
+          "unitId": "dp-300:3",
+          "index": 9,
+          "text": "Identifying and resolving session blocking",
+          "sourceHash": "d66e113cfa26",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:3:10",
+          "unitId": "dp-300:3",
+          "index": 10,
+          "text": "Identifying performance issues using dynamic management views (DMVs)",
+          "sourceHash": "a49fa98a4231",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:3:11",
+          "unitId": "dp-300:3",
+          "index": 11,
+          "text": "Identifying and implementing index changes for queries",
+          "sourceHash": "7ab5a3caa515",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:3:12",
+          "unitId": "dp-300:3",
+          "index": 12,
+          "text": "Recommending query construct modifications based on resource usage",
+          "sourceHash": "5b37e918453d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:3:13",
+          "unitId": "dp-300:3",
+          "index": 13,
+          "text": "Reviewing execution plans",
+          "sourceHash": "bee57100325c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:3:14",
+          "unitId": "dp-300:3",
+          "index": 14,
+          "text": "Monitoring using Intelligent Insights",
+          "sourceHash": "d3b366a85c6a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:3:15",
+          "unitId": "dp-300:3",
+          "index": 15,
+          "text": "Implementing index maintenance tasks",
+          "sourceHash": "d7f74152a402",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:3:16",
+          "unitId": "dp-300:3",
+          "index": 16,
+          "text": "Implementing statistics maintenance tasks",
+          "sourceHash": "f076e0e7baf5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:3:17",
+          "unitId": "dp-300:3",
+          "index": 17,
+          "text": "Implementing database integrity checks",
+          "sourceHash": "48bae1c064db",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:3:18",
+          "unitId": "dp-300:3",
+          "index": 18,
+          "text": "Configuring database automatic tuning",
+          "sourceHash": "1faca58a2877",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:3:19",
+          "unitId": "dp-300:3",
+          "index": 19,
+          "text": "Configuring server settings for performance",
+          "sourceHash": "63e33b27d4ee",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:3:20",
+          "unitId": "dp-300:3",
+          "index": 20,
+          "text": "Configuring Resource Governor for performance",
+          "sourceHash": "2a263735d3a3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:3:21",
+          "unitId": "dp-300:3",
+          "index": 21,
+          "text": "Implementing database-scoped configuration",
+          "sourceHash": "9d31063f1c4b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:3:22",
+          "unitId": "dp-300:3",
+          "index": 22,
+          "text": "Configuring compute and storage resources for scaling",
+          "sourceHash": "9166dc1c7209",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:3:23",
+          "unitId": "dp-300:3",
+          "index": 23,
+          "text": "Identifying use cases for intelligent query processing (IQP) features",
+          "sourceHash": "bd047da672f3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "dp-300:4",
+      "index": 4,
+      "title": "Configure and Manage Automation of Tasks",
+      "weight": 18,
+      "gate": "Given a recurring database-operations requirement, name the specific automation tool (SQL Server Agent, ARM/Bicep, elastic jobs) that fits.",
+      "objectives": [
+        {
+          "id": "dp-300:4:1",
+          "unitId": "dp-300:4",
+          "index": 1,
+          "text": "Managing schedules for regular maintenance jobs",
+          "sourceHash": "adb799601a97",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:4:2",
+          "unitId": "dp-300:4",
+          "index": 2,
+          "text": "Configuring job alerts and notifications",
+          "sourceHash": "beacc123a4eb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:4:3",
+          "unitId": "dp-300:4",
+          "index": 3,
+          "text": "Troubleshooting SQL Server Agent jobs",
+          "sourceHash": "ee651e4b581b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:4:4",
+          "unitId": "dp-300:4",
+          "index": 4,
+          "text": "Automating deployment using Azure Resource Manager (ARM) and Bicep templates",
+          "sourceHash": "b7b3a198d2b1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:4:5",
+          "unitId": "dp-300:4",
+          "index": 5,
+          "text": "Automating deployment using Azure PowerShell",
+          "sourceHash": "b053429a8796",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:4:6",
+          "unitId": "dp-300:4",
+          "index": 6,
+          "text": "Automating deployment using Azure CLI",
+          "sourceHash": "5663e0b6ed0c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:4:7",
+          "unitId": "dp-300:4",
+          "index": 7,
+          "text": "Monitoring and troubleshooting deployments",
+          "sourceHash": "4c5c7fdf5e45",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:4:8",
+          "unitId": "dp-300:4",
+          "index": 8,
+          "text": "Creating and configuring elastic jobs",
+          "sourceHash": "c733b5e9c366",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:4:9",
+          "unitId": "dp-300:4",
+          "index": 9,
+          "text": "Creating and configuring database tasks using automation",
+          "sourceHash": "27b0bbe574a9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:4:10",
+          "unitId": "dp-300:4",
+          "index": 10,
+          "text": "Configuring alerts and notifications on database tasks",
+          "sourceHash": "86f8e7dd24e5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:4:11",
+          "unitId": "dp-300:4",
+          "index": 11,
+          "text": "Troubleshooting automated database tasks",
+          "sourceHash": "bbc5be5e2c47",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "dp-300:5",
+      "index": 5,
+      "title": "Plan and Configure a High Availability and Disaster Recovery Environment",
+      "weight": 23,
+      "gate": "Given an RPO/RTO requirement, name the specific HA/DR configuration (geo-replication, availability groups, failover groups, log shipping) that fits, not just 'make it resilient'.",
+      "objectives": [
+        {
+          "id": "dp-300:5:1",
+          "unitId": "dp-300:5",
+          "index": 1,
+          "text": "Recommending an HA/DR strategy based on Recovery Point Objective/Recovery Time Objective (RPO/RTO) requirements",
+          "sourceHash": "5ecbed2306aa",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:5:2",
+          "unitId": "dp-300:5",
+          "index": 2,
+          "text": "Evaluating HA/DR for hybrid deployments",
+          "sourceHash": "00ede3912f25",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:5:3",
+          "unitId": "dp-300:5",
+          "index": 3,
+          "text": "Evaluating Azure-specific HA/DR solutions",
+          "sourceHash": "cbd31186e0e5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:5:4",
+          "unitId": "dp-300:5",
+          "index": 4,
+          "text": "Planning a testing procedure for an HA/DR solution",
+          "sourceHash": "d201c36be80f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:5:5",
+          "unitId": "dp-300:5",
+          "index": 5,
+          "text": "Recommending a database backup and restore strategy",
+          "sourceHash": "c7c79cf10e80",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:5:6",
+          "unitId": "dp-300:5",
+          "index": 6,
+          "text": "Performing a database backup using native tools",
+          "sourceHash": "d45fec22fc6f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:5:7",
+          "unitId": "dp-300:5",
+          "index": 7,
+          "text": "Performing a database restore using native tools",
+          "sourceHash": "6f7f8a15515d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:5:8",
+          "unitId": "dp-300:5",
+          "index": 8,
+          "text": "Performing a database restore to a point in time",
+          "sourceHash": "5cd52d912e0b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:5:9",
+          "unitId": "dp-300:5",
+          "index": 9,
+          "text": "Configuring long-term backup retention",
+          "sourceHash": "8049d819523b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:5:10",
+          "unitId": "dp-300:5",
+          "index": 10,
+          "text": "Backing up and restoring a database using T-SQL",
+          "sourceHash": "07353d8c30ba",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:5:11",
+          "unitId": "dp-300:5",
+          "index": 11,
+          "text": "Backing up to and restoring from cloud storage",
+          "sourceHash": "d98b361397ef",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:5:12",
+          "unitId": "dp-300:5",
+          "index": 12,
+          "text": "Configuring active geo-replication",
+          "sourceHash": "ba78717a4725",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:5:13",
+          "unitId": "dp-300:5",
+          "index": 13,
+          "text": "Configuring Always On availability groups on SQL Managed Instance and Azure virtual machines",
+          "sourceHash": "61c22a2ab195",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:5:14",
+          "unitId": "dp-300:5",
+          "index": 14,
+          "text": "Configuring failover groups",
+          "sourceHash": "788ea0893568",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:5:15",
+          "unitId": "dp-300:5",
+          "index": 15,
+          "text": "Configuring Always On Failover Cluster Instances on Azure virtual machines",
+          "sourceHash": "312ed951c518",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:5:16",
+          "unitId": "dp-300:5",
+          "index": 16,
+          "text": "Configuring log shipping",
+          "sourceHash": "1479f943297c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:5:17",
+          "unitId": "dp-300:5",
+          "index": 17,
+          "text": "Monitoring an HA/DR solution",
+          "sourceHash": "60b75b08ddab",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-300:5:18",
+          "unitId": "dp-300:5",
+          "index": 18,
+          "text": "Troubleshooting an HA/DR solution",
+          "sourceHash": "6d5cc77c7753",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/azure.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-18T00:00:00Z",
+    "officialObjectivesUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/dp-300",
+    "providerName": "Microsoft",
+    "credentialName": "Microsoft Certified: Azure Database Administrator Associate",
+    "examCode": "DP-300",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 5,
+    "objectives": 94,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

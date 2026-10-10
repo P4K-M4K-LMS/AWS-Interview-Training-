@@ -1,0 +1,333 @@
+{
+  "id": "dy0-001",
+  "code": "DATAAI",
+  "title": "DataAI",
+  "description": "CompTIA DataAI (DY0-001, formerly DataX) exam prep across 5 weighted domains -- mathematics and statistics, modeling/analysis/outcomes, machine learning, operations and processes, and specialized data-science applications.",
+  "trackType": "certification",
+  "field": "it",
+  "units": [
+    {
+      "id": "dy0-001:1",
+      "index": 1,
+      "title": "Mathematics and Statistics",
+      "weight": 17,
+      "gate": "Given a dataset or model-evaluation question, apply the specific statistical test, distribution, or linear-algebra concept it calls for -- not a generic 'run the numbers' answer.",
+      "objectives": [
+        {
+          "id": "dy0-001:1:1",
+          "unitId": "dy0-001:1",
+          "index": 1,
+          "text": "Statistical methods and concepts: t-tests, chi-squared tests, ANOVA, hypothesis testing, regression performance metrics (R2, RMSE), and confusion-matrix metrics (precision, recall, F1, MCC)",
+          "sourceHash": "134a9d0457f5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dy0-001:1:2",
+          "unitId": "dy0-001:1",
+          "index": 2,
+          "text": "Probability and synthetic modeling concepts: normal/uniform/Poisson/binomial distributions, skewness and kurtosis, heteroskedasticity, Monte Carlo simulation, bootstrapping, and Bayes' rule",
+          "sourceHash": "d38952716d31",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dy0-001:1:3",
+          "unitId": "dy0-001:1",
+          "index": 3,
+          "text": "The importance of linear algebra and calculus: matrix rank and eigenvalues, matrix operations, distance metrics (Euclidean, Manhattan, cosine), partial derivatives, and the chain rule",
+          "sourceHash": "e7c9b791baf7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dy0-001:1:4",
+          "unitId": "dy0-001:1",
+          "index": 4,
+          "text": "Temporal models compared and contrasted: time series (AR, MA, ARIMA), survival analysis, and causal inference (DAGs, difference-in-differences, A/B testing, RCTs)",
+          "sourceHash": "64392953ffdd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "dy0-001:2",
+      "index": 2,
+      "title": "Modeling, Analysis, and Outcomes",
+      "weight": 24,
+      "gate": "Given experiment results or a stakeholder audience, choose the specific EDA method, diagnostic check, or communication format the situation calls for -- not a generic 'analyze the data' answer.",
+      "objectives": [
+        {
+          "id": "dy0-001:2:1",
+          "unitId": "dy0-001:2",
+          "index": 1,
+          "text": "Exploratory data analysis methods: univariate and multivariate analysis, and chart selection (scatter, box-and-whisker, heat map, Q-Q plot) by data type",
+          "sourceHash": "4ca2b9b5554e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dy0-001:2:2",
+          "unitId": "dy0-001:2",
+          "index": 2,
+          "text": "Analyzing common data issues: sparse data, non-linearity, non-stationarity, seasonality, and remediation via one-hot encoding, scaling, geocoding, or synthetic data",
+          "sourceHash": "6545ffcbf1ad",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dy0-001:2:3",
+          "unitId": "dy0-001:2",
+          "index": 3,
+          "text": "Conducting the model design iteration process: design constraints, model selection, literature review, hyperparameter tuning, and experiment tracking",
+          "sourceHash": "6cba55518cf8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dy0-001:2:4",
+          "unitId": "dy0-001:2",
+          "index": 4,
+          "text": "Analyzing experiment and testing results to justify a final model recommendation: performance evaluation, diagnostic plots, benchmarking, and requirements validation",
+          "sourceHash": "117faf375b13",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dy0-001:2:5",
+          "unitId": "dy0-001:2",
+          "index": 5,
+          "text": "Translating and communicating results: choosing visualizations and reports for executive, domain, and peer audiences while avoiding deceptive charting and ensuring accessibility",
+          "sourceHash": "fa14bc8c52d2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dy0-001:2:6",
+          "unitId": "dy0-001:2",
+          "index": 6,
+          "text": "The importance of data model and code documentation: data dictionaries, metadata, and change descriptions",
+          "sourceHash": "3d45cc4d8011",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "dy0-001:3",
+      "index": 3,
+      "title": "Machine Learning",
+      "weight": 24,
+      "gate": "Given a modeling problem, select the specific supervised, tree-based, deep-learning, or unsupervised technique it calls for -- not a generic 'train a model' answer.",
+      "objectives": [
+        {
+          "id": "dy0-001:3:1",
+          "unitId": "dy0-001:3",
+          "index": 1,
+          "text": "Foundational machine-learning concepts: loss functions, the bias-variance tradeoff, class-imbalance mitigations (SMOTE, oversampling), regularization, cross-validation, ensemble models, and model drift",
+          "sourceHash": "6a48d0f09947",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dy0-001:3:2",
+          "unitId": "dy0-001:3",
+          "index": 2,
+          "text": "Statistical supervised machine-learning concepts: linear and logistic regression variants (ridge, LASSO, elastic net), discriminant analysis, association rules, and naive Bayes",
+          "sourceHash": "14e77b708d51",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dy0-001:3:3",
+          "unitId": "dy0-001:3",
+          "index": 3,
+          "text": "Tree-based supervised machine-learning concepts: decision trees, random forest, boosting (XGBoost), and bootstrap aggregation",
+          "sourceHash": "e20846331462",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dy0-001:3:4",
+          "unitId": "dy0-001:3",
+          "index": 4,
+          "text": "Deep-learning and neural-network architecture: activation functions, layer types, backpropagation, CNNs, RNNs/LSTMs, GANs, and frameworks (PyTorch, TensorFlow/Keras)",
+          "sourceHash": "97116b89da59",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dy0-001:3:5",
+          "unitId": "dy0-001:3",
+          "index": 5,
+          "text": "Unsupervised machine-learning concepts: k-means clustering, hierarchical and density-based (DBSCAN) clustering, dimensionality reduction (PCA, t-SNE, UMAP), and k-nearest neighbors",
+          "sourceHash": "7442be51f740",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "dy0-001:4",
+      "index": 4,
+      "title": "Operations and Processes",
+      "weight": 22,
+      "gate": "Given a data-science team's workflow, name the specific ingestion, wrangling, life-cycle, or MLOps practice it's missing -- not a generic 'improve the pipeline' answer.",
+      "objectives": [
+        {
+          "id": "dy0-001:4:1",
+          "unitId": "dy0-001:4",
+          "index": 1,
+          "text": "The role of data science in business functions: compliance, privacy (PII), KPIs, and translating business needs into solutions",
+          "sourceHash": "ef7a3f856b55",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dy0-001:4:2",
+          "unitId": "dy0-001:4",
+          "index": 2,
+          "text": "The process and purpose of obtaining different types of data: generated and synthetic data, sampling rationale, and commercial/public data licensing",
+          "sourceHash": "96ea775c0c03",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dy0-001:4:3",
+          "unitId": "dy0-001:4",
+          "index": 3,
+          "text": "Data ingestion and storage concepts: GPU/TPU infrastructure, file formats (CSV, JSON, Parquet), and data orchestration and automation",
+          "sourceHash": "442706c2e6e2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dy0-001:4:4",
+          "unitId": "dy0-001:4",
+          "index": 4,
+          "text": "Data-wrangling techniques: merging and combining datasets, date/time standardization, and winsorization",
+          "sourceHash": "85230a18741c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dy0-001:4:5",
+          "unitId": "dy0-001:4",
+          "index": 5,
+          "text": "The data science life cycle and workflow models: CRISP-DM, version control, and clean-code practices",
+          "sourceHash": "b911f6d51ef0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dy0-001:4:6",
+          "unitId": "dy0-001:4",
+          "index": 6,
+          "text": "DevOps and MLOps concepts: CI/CD pipelines, model deployment, container orchestration, and performance monitoring",
+          "sourceHash": "e54cdd4920d2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dy0-001:4:7",
+          "unitId": "dy0-001:4",
+          "index": 7,
+          "text": "Data science deployment environments compared and contrasted: on-premises, cloud, hybrid, and edge",
+          "sourceHash": "8193c6cd4d75",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "dy0-001:5",
+      "index": 5,
+      "title": "Specialized Applications of Data Science",
+      "weight": 13,
+      "gate": "Given a specialized data-science problem, name the specific optimization, NLP, computer-vision, or other technique it calls for -- not a generic 'apply AI' answer.",
+      "objectives": [
+        {
+          "id": "dy0-001:5:1",
+          "unitId": "dy0-001:5",
+          "index": 1,
+          "text": "Optimization concepts compared and contrasted: constrained vs. unconstrained optimization, and multi-armed bandit problems",
+          "sourceHash": "28b92cbbf997",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dy0-001:5:2",
+          "unitId": "dy0-001:5",
+          "index": 2,
+          "text": "Natural language processing concepts: tokenization, word embeddings, TF-IDF, topic modeling, and NLP applications (sentiment analysis, NER, text generation)",
+          "sourceHash": "c19748140550",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dy0-001:5:3",
+          "unitId": "dy0-001:5",
+          "index": 3,
+          "text": "Computer vision concepts: optical character recognition, object detection and tracking, and data augmentation",
+          "sourceHash": "1ef50bf5870c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dy0-001:5:4",
+          "unitId": "dy0-001:5",
+          "index": 4,
+          "text": "The purpose of other specialized applications: graph analysis, reinforcement learning, fraud and anomaly detection, and signal processing",
+          "sourceHash": "5c72cad16fe3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/comptia.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-26T00:00:00Z",
+    "officialObjectivesUrl": "https://www.comptia.org/en-us/certifications/dataai/",
+    "providerName": "CompTIA",
+    "credentialName": "CompTIA DataAI",
+    "examCode": "DY0-001",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 5,
+    "objectives": 26,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

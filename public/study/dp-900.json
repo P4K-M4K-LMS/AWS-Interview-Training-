@@ -1,0 +1,364 @@
+{
+  "id": "dp-900",
+  "code": "DP900",
+  "title": "Azure Data Fundamentals",
+  "description": "Microsoft Certified: Azure Data Fundamentals (DP-900): core relational and non-relational data concepts, Azure's data services for each, and the building blocks of an analytics workload -- ingestion, analytical stores, real-time analytics, and Power BI visualization.",
+  "trackType": "certification",
+  "field": "azure",
+  "units": [
+    {
+      "id": "dp-900:1",
+      "index": 1,
+      "title": "Core Data Concepts",
+      "weight": 28,
+      "gate": "Given a dataset or workload description, name whether it's structured/semi-structured/unstructured and transactional/analytical -- and which data role owns it -- not just 'it's data'.",
+      "objectives": [
+        {
+          "id": "dp-900:1:1",
+          "unitId": "dp-900:1",
+          "index": 1,
+          "text": "Features of structured data",
+          "sourceHash": "8466075d8ed5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-900:1:2",
+          "unitId": "dp-900:1",
+          "index": 2,
+          "text": "Features of semi-structured data",
+          "sourceHash": "b02f54a9b67e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-900:1:3",
+          "unitId": "dp-900:1",
+          "index": 3,
+          "text": "Features of unstructured data",
+          "sourceHash": "9f67542de347",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-900:1:4",
+          "unitId": "dp-900:1",
+          "index": 4,
+          "text": "Common formats for data files",
+          "sourceHash": "67bfa4bd3e96",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-900:1:5",
+          "unitId": "dp-900:1",
+          "index": 5,
+          "text": "Features of common data stores, including databases",
+          "sourceHash": "cd57df85f96c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-900:1:6",
+          "unitId": "dp-900:1",
+          "index": 6,
+          "text": "Identifying Azure datastores for common use cases",
+          "sourceHash": "acda72c751b9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-900:1:7",
+          "unitId": "dp-900:1",
+          "index": 7,
+          "text": "Features of transactional workloads",
+          "sourceHash": "38e97a121381",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-900:1:8",
+          "unitId": "dp-900:1",
+          "index": 8,
+          "text": "Features of analytical workloads",
+          "sourceHash": "61984825dfc5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-900:1:9",
+          "unitId": "dp-900:1",
+          "index": 9,
+          "text": "Responsibilities of database administrators",
+          "sourceHash": "98177363ada5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-900:1:10",
+          "unitId": "dp-900:1",
+          "index": 10,
+          "text": "Responsibilities of data engineers",
+          "sourceHash": "a87421fa398d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-900:1:11",
+          "unitId": "dp-900:1",
+          "index": 11,
+          "text": "Responsibilities of data analysts",
+          "sourceHash": "66d0a4bd6617",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "dp-900:2",
+      "index": 2,
+      "title": "Relational Data on Azure",
+      "weight": 23,
+      "gate": "Given a relational-data requirement, name the specific Azure SQL product or open-source database service that fits -- and the SQL concept (normalization, a given statement type, a database object) behind it.",
+      "objectives": [
+        {
+          "id": "dp-900:2:1",
+          "unitId": "dp-900:2",
+          "index": 1,
+          "text": "Features of relational data",
+          "sourceHash": "817dd866e6ab",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-900:2:2",
+          "unitId": "dp-900:2",
+          "index": 2,
+          "text": "Normalization and why it's used",
+          "sourceHash": "869fbf9c5852",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-900:2:3",
+          "unitId": "dp-900:2",
+          "index": 3,
+          "text": "Common SQL statements",
+          "sourceHash": "bdb3d3e8c93b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-900:2:4",
+          "unitId": "dp-900:2",
+          "index": 4,
+          "text": "Common database objects",
+          "sourceHash": "2316b1cd6c8d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-900:2:5",
+          "unitId": "dp-900:2",
+          "index": 5,
+          "text": "The Azure SQL family of products: Azure SQL Database, Azure SQL Managed Instance, and SQL Server on Azure Virtual Machines",
+          "sourceHash": "831d289eb775",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-900:2:6",
+          "unitId": "dp-900:2",
+          "index": 6,
+          "text": "Azure database services for open-source database systems",
+          "sourceHash": "46b380b24ed5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "dp-900:3",
+      "index": 3,
+      "title": "Non-Relational Data on Azure",
+      "weight": 18,
+      "gate": "Given a non-relational data scenario, name the specific Azure Storage or Cosmos DB feature/API that fits -- not just 'use Cosmos DB'.",
+      "objectives": [
+        {
+          "id": "dp-900:3:1",
+          "unitId": "dp-900:3",
+          "index": 1,
+          "text": "Features of Azure Blob storage",
+          "sourceHash": "70f098e2856c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-900:3:2",
+          "unitId": "dp-900:3",
+          "index": 2,
+          "text": "Features of Azure Files",
+          "sourceHash": "6502c989260d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-900:3:3",
+          "unitId": "dp-900:3",
+          "index": 3,
+          "text": "Features of Azure Table storage",
+          "sourceHash": "45e49acaae99",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-900:3:4",
+          "unitId": "dp-900:3",
+          "index": 4,
+          "text": "Use cases for Azure Cosmos DB",
+          "sourceHash": "93f6c589a72c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-900:3:5",
+          "unitId": "dp-900:3",
+          "index": 5,
+          "text": "Azure Cosmos DB APIs",
+          "sourceHash": "c8bc40383122",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "dp-900:4",
+      "index": 4,
+      "title": "Analytics Workload on Azure",
+      "weight": 28,
+      "gate": "Given an analytics scenario, name the specific ingestion, storage, or visualization component -- including whether it's batch or streaming -- that fits, and how Power BI would present the result.",
+      "objectives": [
+        {
+          "id": "dp-900:4:1",
+          "unitId": "dp-900:4",
+          "index": 1,
+          "text": "Considerations for data ingestion and processing",
+          "sourceHash": "3e0072e47df3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-900:4:2",
+          "unitId": "dp-900:4",
+          "index": 2,
+          "text": "Options for analytical data stores",
+          "sourceHash": "ec740d4111fe",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-900:4:3",
+          "unitId": "dp-900:4",
+          "index": 3,
+          "text": "Microsoft cloud services for large-scale analytics, including Azure Databricks and Microsoft Fabric",
+          "sourceHash": "2f9fadf8effd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-900:4:4",
+          "unitId": "dp-900:4",
+          "index": 4,
+          "text": "The difference between batch and streaming data",
+          "sourceHash": "fb725334b777",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-900:4:5",
+          "unitId": "dp-900:4",
+          "index": 5,
+          "text": "Microsoft cloud services for real-time analytics",
+          "sourceHash": "58fca1bd6146",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-900:4:6",
+          "unitId": "dp-900:4",
+          "index": 6,
+          "text": "Capabilities of Power BI",
+          "sourceHash": "ca4e3c7e34c8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-900:4:7",
+          "unitId": "dp-900:4",
+          "index": 7,
+          "text": "Features of data models in Power BI",
+          "sourceHash": "1763197089c9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "dp-900:4:8",
+          "unitId": "dp-900:4",
+          "index": 8,
+          "text": "Choosing appropriate visualizations for data",
+          "sourceHash": "8959524d8424",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/azure.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-18T00:00:00Z",
+    "officialObjectivesUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/dp-900",
+    "providerName": "Microsoft",
+    "credentialName": "Microsoft Certified: Azure Data Fundamentals",
+    "examCode": "DP-900",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 4,
+    "objectives": 30,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

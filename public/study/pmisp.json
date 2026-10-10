@@ -1,0 +1,342 @@
+{
+  "id": "pmisp",
+  "code": "PMISP",
+  "title": "PMI-SP",
+  "description": "PMI Scheduling Professional (PMI-SP) exam prep across 5 weighted domains -- schedule strategy, planning/development, monitoring/controlling, closeout, and stakeholder communications.",
+  "trackType": "certification",
+  "field": "pm",
+  "units": [
+    {
+      "id": "pmisp:1",
+      "index": 1,
+      "title": "Schedule Strategy",
+      "weight": 14,
+      "gate": "Given a new project's setup, name the specific scheduling-approach or configuration-management decision it calls for -- not a generic 'make a schedule' answer.",
+      "objectives": [
+        {
+          "id": "pmisp:1:1",
+          "unitId": "pmisp:1",
+          "index": 1,
+          "text": "Establishing schedule configuration management policies (accessibility, storage, baseline/change control)",
+          "sourceHash": "f64b437c3d11",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmisp:1:2",
+          "unitId": "pmisp:1",
+          "index": 2,
+          "text": "Developing a schedule approach based on a project's unique characteristics, EEFs, and OPAs",
+          "sourceHash": "a31bac0e6be1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmisp:1:3",
+          "unitId": "pmisp:1",
+          "index": 3,
+          "text": "Setting scheduling policies and procedures: tool selection, activity granularity, EVM implementation, and approval requirements",
+          "sourceHash": "df4cbbd22b01",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmisp:1:4",
+          "unitId": "pmisp:1",
+          "index": 4,
+          "text": "Integrating scheduling-related components into the broader project management plan (scope, cost, quality, risk, procurement)",
+          "sourceHash": "ce6a0a31d03d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmisp:1:5",
+          "unitId": "pmisp:1",
+          "index": 5,
+          "text": "Communicating scheduling objectives, the scheduler's role, and scheduling procedures to the project team",
+          "sourceHash": "792029d96750",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "pmisp:2",
+      "index": 2,
+      "title": "Schedule Planning and Development",
+      "weight": 31,
+      "gate": "Given a set of activities, apply the specific scheduling technique it calls for -- a WBS decomposition, a critical-path calculation, a resource-constrained adjustment -- not a generic 'build the schedule' answer.",
+      "objectives": [
+        {
+          "id": "pmisp:2:1",
+          "unitId": "pmisp:2",
+          "index": 1,
+          "text": "Building a work breakdown structure (WBS), organizational breakdown structure (OBS), and control accounts",
+          "sourceHash": "3f44685dbba3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmisp:2:2",
+          "unitId": "pmisp:2",
+          "index": 2,
+          "text": "Estimating activity durations using three-point, parametric, analogous, or PERT techniques",
+          "sourceHash": "51de685917d4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmisp:2:3",
+          "unitId": "pmisp:2",
+          "index": 3,
+          "text": "Sequencing activities with dependencies, milestones, and constraints into a logical, dynamic schedule model",
+          "sourceHash": "603dd8d1e3b8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmisp:2:4",
+          "unitId": "pmisp:2",
+          "index": 4,
+          "text": "Identifying critical and near-critical paths (Critical Path Method, Critical Chain, PERT, Monte Carlo simulation)",
+          "sourceHash": "16d78d98cb32",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmisp:2:5",
+          "unitId": "pmisp:2",
+          "index": 5,
+          "text": "Building a resource breakdown structure (RBS) and assigning resources to activities to produce a resource-constrained schedule",
+          "sourceHash": "56ed375fcc74",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmisp:2:6",
+          "unitId": "pmisp:2",
+          "index": 6,
+          "text": "Aligning the schedule to an integrated master plan (IMP) and analyzing major milestones against contract/SOW deadlines",
+          "sourceHash": "f65368f24423",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmisp:2:7",
+          "unitId": "pmisp:2",
+          "index": 7,
+          "text": "Performing schedule risk analysis (what-if scenarios, Monte Carlo simulation) to test whether milestones are achievable within risk tolerance",
+          "sourceHash": "b6d0aa34d420",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmisp:2:8",
+          "unitId": "pmisp:2",
+          "index": 8,
+          "text": "Obtaining stakeholder consensus on an approved baseline schedule and establishing a Performance Measurement Baseline (PMB)",
+          "sourceHash": "973f7eb72e77",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "pmisp:3",
+      "index": 3,
+      "title": "Schedule Monitoring and Controlling",
+      "weight": 35,
+      "gate": "Given schedule status data, apply the specific control action it calls for -- a what-if reanalysis, a formal baseline change -- not a generic 'monitor progress' answer.",
+      "objectives": [
+        {
+          "id": "pmisp:3:1",
+          "unitId": "pmisp:3",
+          "index": 1,
+          "text": "Collecting activity status at defined intervals via reports, meetings, and inspections to update the schedule model",
+          "sourceHash": "719e9745399d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmisp:3:2",
+          "unitId": "pmisp:3",
+          "index": 2,
+          "text": "Performing schedule analyses to identify and report status, changes, impacts, and issues",
+          "sourceHash": "4107dffdeb77",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmisp:3:3",
+          "unitId": "pmisp:3",
+          "index": 3,
+          "text": "Identifying alternative execution options through what-if scenario analysis to optimize the schedule",
+          "sourceHash": "79137dab7a96",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmisp:3:4",
+          "unitId": "pmisp:3",
+          "index": 4,
+          "text": "Incorporating approved risk-mitigation activities into the schedule under formal change control, establishing a new PMB",
+          "sourceHash": "d0ec81e294a1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmisp:3:5",
+          "unitId": "pmisp:3",
+          "index": 5,
+          "text": "Updating the schedule model and documenting baseline changes through formal change-control processes",
+          "sourceHash": "8ed8bd6a7663",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "pmisp:4",
+      "index": 4,
+      "title": "Schedule Closeout",
+      "weight": 6,
+      "gate": "Given a completed project, apply the specific closeout step it calls for -- an EVM variance calculation, a lessons-learned archive -- not a generic 'wrap up' answer.",
+      "objectives": [
+        {
+          "id": "pmisp:4:1",
+          "unitId": "pmisp:4",
+          "index": 1,
+          "text": "Finalizing schedule activities and evaluating schedule performance against the original baseline",
+          "sourceHash": "9811021f9ce3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmisp:4:2",
+          "unitId": "pmisp:4",
+          "index": 2,
+          "text": "Soliciting stakeholder feedback to identify lessons learned and develop scheduling best practices",
+          "sourceHash": "474cfccfbeac",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmisp:4:3",
+          "unitId": "pmisp:4",
+          "index": 3,
+          "text": "Updating organizational process assets with documented lessons learned",
+          "sourceHash": "9a934a232279",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmisp:4:4",
+          "unitId": "pmisp:4",
+          "index": 4,
+          "text": "Distributing final schedule reports (including EVM calculations and variance analysis) to stakeholders",
+          "sourceHash": "1a6e3033f78b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmisp:4:5",
+          "unitId": "pmisp:4",
+          "index": 5,
+          "text": "Archiving schedule files (model, management plan, status reports, change log) to satisfy contractual and forensic-analysis needs",
+          "sourceHash": "050bb7cb280a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "pmisp:5",
+      "index": 5,
+      "title": "Stakeholder Communications Management",
+      "weight": 14,
+      "gate": "Given a schedule status scenario, apply the specific communication or escalation step it calls for -- a targeted stakeholder update, an issue elevation -- not a generic 'communicate the schedule' answer.",
+      "objectives": [
+        {
+          "id": "pmisp:5:1",
+          "unitId": "pmisp:5",
+          "index": 1,
+          "text": "Developing and fostering stakeholder relationships consistent with the communication management plan",
+          "sourceHash": "fff7cdd69d50",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmisp:5:2",
+          "unitId": "pmisp:5",
+          "index": 2,
+          "text": "Generating and maintaining schedule visibility with the project manager and stakeholders",
+          "sourceHash": "2b54145d2cf4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmisp:5:3",
+          "unitId": "pmisp:5",
+          "index": 3,
+          "text": "Providing verbal/written schedule status updates and corrective-action impacts to senior management and stakeholders",
+          "sourceHash": "fd3bba1313cb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmisp:5:4",
+          "unitId": "pmisp:5",
+          "index": 4,
+          "text": "Communicating schedule issues that could impact scope or the schedule management plan to relevant stakeholders",
+          "sourceHash": "6db2f5165df0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/pm.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-26T00:00:00Z",
+    "officialObjectivesUrl": "https://www.pmi.org/-/media/pmi/documents/public/pdf/certifications/scheduling-professional-exam-outline.pdf",
+    "providerName": "Project Management Institute (PMI)",
+    "credentialName": "PMI Scheduling Professional (PMI-SP)",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 5,
+    "objectives": 27,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

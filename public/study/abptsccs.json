@@ -1,0 +1,359 @@
+{
+  "id": "abptsccs",
+  "code": "ABPTSCCS",
+  "title": "Cardiovascular & Pulmonary Clinical Specialist",
+  "description": "ABPTS board certification in cardiovascular and pulmonary physical therapy: case-history examination weighted toward evaluation (30%), with the outline's own frequently-, occasionally- and rarely-seen diagnoses.",
+  "trackType": "certification",
+  "field": "pt",
+  "requiresAcknowledgement": true,
+  "units": [
+    {
+      "id": "abptsccs:1",
+      "index": 1,
+      "title": "Professional behaviors, leadership, education, administration and consultation",
+      "weight": 5,
+      "gate": "Describe the specialist's consulting role on a cardiac or pulmonary unit with a concrete example.",
+      "objectives": [
+        {
+          "id": "abptsccs:1:1",
+          "unitId": "abptsccs:1",
+          "index": 1,
+          "text": "Leadership, consultation and program administration in cardiopulmonary rehabilitation",
+          "sourceHash": "7a3fff45b3e0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsccs:1:2",
+          "unitId": "abptsccs:1",
+          "index": 2,
+          "text": "Education of patients, families and interprofessional staff about activity, risk and self-management",
+          "sourceHash": "d71899f5d3d3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "abptsccs:2",
+      "index": 2,
+      "title": "Evidence-based clinical practice and critical inquiry",
+      "weight": 10,
+      "gate": "Appraise a cardiopulmonary rehabilitation study and state what it justifies in practice.",
+      "objectives": [
+        {
+          "id": "abptsccs:2:1",
+          "unitId": "abptsccs:2",
+          "index": 1,
+          "text": "Critical inquiry principles and methods applied to cardiopulmonary rehabilitation evidence",
+          "sourceHash": "5292f3bce846",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsccs:2:2",
+          "unitId": "abptsccs:2",
+          "index": 2,
+          "text": "Clinical practice guidelines for cardiac and pulmonary rehabilitation and their limits",
+          "sourceHash": "6d56d928004b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "abptsccs:3",
+      "index": 3,
+      "title": "Examination",
+      "weight": 15,
+      "gate": "From a case history, select the examination that establishes exercise safety and the physiologic limit to activity.",
+      "objectives": [
+        {
+          "id": "abptsccs:3:1",
+          "unitId": "abptsccs:3",
+          "index": 1,
+          "text": "History and chart review: cardiac and pulmonary diagnoses, procedures, devices, labs and medications that change the plan",
+          "sourceHash": "1470764e31b3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsccs:3:2",
+          "unitId": "abptsccs:3",
+          "index": 2,
+          "text": "Vital signs, ECG rhythm recognition and hemodynamic monitoring during examination",
+          "sourceHash": "9206b315b78d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsccs:3:3",
+          "unitId": "abptsccs:3",
+          "index": 3,
+          "text": "Pulmonary examination: breath sounds, breathing pattern, cough and airway clearance assessment",
+          "sourceHash": "60e1b00b9f01",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsccs:3:4",
+          "unitId": "abptsccs:3",
+          "index": 4,
+          "text": "Exercise and functional testing: six-minute walk, submaximal and symptom-limited testing and when each is appropriate",
+          "sourceHash": "1d2a58357084",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsccs:3:5",
+          "unitId": "abptsccs:3",
+          "index": 5,
+          "text": "Examination of the patient with lines, drains, ventilators, pacemakers, defibrillators and ventricular assist devices",
+          "sourceHash": "c360d0513746",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "abptsccs:4",
+      "index": 4,
+      "title": "Evaluation",
+      "weight": 30,
+      "gate": "Interpret the full data set -- rhythm, hemodynamics, gases, imaging, labs -- for a frequently-seen diagnosis and decide whether to proceed, modify or stop.",
+      "objectives": [
+        {
+          "id": "abptsccs:4:1",
+          "unitId": "abptsccs:4",
+          "index": 1,
+          "text": "Interpreting ECG, arterial blood gases, pulmonary function tests, chest imaging and laboratory values",
+          "sourceHash": "fb5bfdc0481e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsccs:4:2",
+          "unitId": "abptsccs:4",
+          "index": 2,
+          "text": "Evaluating exercise responses in coronary disease, heart failure, dysrhythmia, hypertension and peripheral vascular disease",
+          "sourceHash": "fb877d6f7d24",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsccs:4:3",
+          "unitId": "abptsccs:4",
+          "index": 3,
+          "text": "Evaluating the post-procedure patient: angioplasty, bypass graft, valve replacement, pacemaker and defibrillator, transplant and assist devices",
+          "sourceHash": "bd7d55ea50ad",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsccs:4:4",
+          "unitId": "abptsccs:4",
+          "index": 4,
+          "text": "Evaluating pulmonary presentations: COPD, asthma, pneumonia, atelectasis, effusion, respiratory failure, pulmonary embolism and post-operative complications",
+          "sourceHash": "8d93b927778a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsccs:4:5",
+          "unitId": "abptsccs:4",
+          "index": 5,
+          "text": "Evaluating occasionally- and rarely-seen diagnoses: cystic fibrosis, lung transplant, congenital defects, ECMO, aortic repair and pericarditis",
+          "sourceHash": "56cb9c4a91e2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsccs:4:6",
+          "unitId": "abptsccs:4",
+          "index": 6,
+          "text": "Recognizing decompensation and emergencies that require stopping activity or escalating care",
+          "sourceHash": "c09365be0665",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "abptsccs:5",
+      "index": 5,
+      "title": "Diagnosis and prognosis",
+      "weight": 5,
+      "gate": "State the physical therapy diagnosis and a realistic prognosis for a cardiopulmonary case, with the factor most likely to limit it.",
+      "objectives": [
+        {
+          "id": "abptsccs:5:1",
+          "unitId": "abptsccs:5",
+          "index": 1,
+          "text": "Movement-system diagnosis in cardiovascular and pulmonary disease",
+          "sourceHash": "faee45192a5a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsccs:5:2",
+          "unitId": "abptsccs:5",
+          "index": 2,
+          "text": "Prognosis across acute, inpatient rehabilitation, outpatient and home settings",
+          "sourceHash": "e9c5c4b1aff7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "abptsccs:6",
+      "index": 6,
+      "title": "Plan of care and interventions",
+      "weight": 15,
+      "gate": "Write an exercise prescription with intensity, monitoring parameters and stop criteria for a specific cardiac or pulmonary diagnosis.",
+      "objectives": [
+        {
+          "id": "abptsccs:6:1",
+          "unitId": "abptsccs:6",
+          "index": 1,
+          "text": "Exercise prescription and progression in cardiac rehabilitation phases",
+          "sourceHash": "0d33221eadc4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsccs:6:2",
+          "unitId": "abptsccs:6",
+          "index": 2,
+          "text": "Pulmonary rehabilitation: airway clearance, breathing retraining, inspiratory muscle training and oxygen titration",
+          "sourceHash": "c71df5d0ca41",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsccs:6:3",
+          "unitId": "abptsccs:6",
+          "index": 3,
+          "text": "Early mobilization in the ICU, including patients on mechanical ventilation and circulatory support",
+          "sourceHash": "86d385f47d52",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsccs:6:4",
+          "unitId": "abptsccs:6",
+          "index": 4,
+          "text": "Risk-factor modification and self-management education",
+          "sourceHash": "c1cd68e69ce3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "abptsccs:7",
+      "index": 7,
+      "title": "Outcomes",
+      "weight": 5,
+      "gate": "Select the outcome measure that will show change for a cardiopulmonary patient and state what change is meaningful.",
+      "objectives": [
+        {
+          "id": "abptsccs:7:1",
+          "unitId": "abptsccs:7",
+          "index": 1,
+          "text": "Outcome measures for exercise capacity, dyspnea, quality of life and participation",
+          "sourceHash": "3f3433d94b48",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsccs:7:2",
+          "unitId": "abptsccs:7",
+          "index": 2,
+          "text": "Using outcomes to guide discharge and transition between rehabilitation phases",
+          "sourceHash": "4aedd4313c65",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "abptsccs:8",
+      "index": 8,
+      "title": "Diagnosis frequency distribution",
+      "gate": "Name which category -- frequently, occasionally or rarely seen -- a given diagnosis sits in, and why that changes how much exam attention it earns.",
+      "objectives": [
+        {
+          "id": "abptsccs:8:1",
+          "unitId": "abptsccs:8",
+          "index": 1,
+          "text": "Frequently-seen diagnoses (60% of items): coronary and peripheral atherosclerosis, heart failure, hypertension, dysrhythmia, myocardial infarction, pulmonary edema, COPD, pneumonia, atelectasis and respiratory failure",
+          "sourceHash": "e5c593400ead",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsccs:8:2",
+          "unitId": "abptsccs:8",
+          "index": 2,
+          "text": "Occasionally-seen diagnoses (30%): aortic repair, ventricular assist devices, heart transplant, cystic fibrosis, lung resection and transplant, bronchiolitis and sarcoidosis",
+          "sourceHash": "72b1a3523355",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsccs:8:3",
+          "unitId": "abptsccs:8",
+          "index": 3,
+          "text": "Rarely-seen diagnoses (10%): congenital heart defects, ECMO, lymphedema, tuberculosis, bronchopulmonary dysplasia and heart-lung transplant",
+          "sourceHash": "bb1a02a82bee",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/pt.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-10-08T00:00:00Z",
+    "officialObjectivesUrl": "https://specialization.apta.org/become-a-specialist/cardiovascular-pulmonary/exam-outline",
+    "providerName": "American Board of Physical Therapy Specialties",
+    "credentialName": "Board-Certified Clinical Specialist in Cardiovascular and Pulmonary Physical Therapy",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 8,
+    "objectives": 26,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

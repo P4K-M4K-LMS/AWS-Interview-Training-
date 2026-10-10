@@ -1,0 +1,253 @@
+{
+  "id": "da0-002",
+  "code": "DATAPLUS",
+  "title": "Data+",
+  "description": "CompTIA Data+ (DA0-002) exam prep across 5 weighted domains -- data concepts and environments, acquisition and preparation, analysis, visualization and reporting, and governance.",
+  "trackType": "certification",
+  "field": "it",
+  "units": [
+    {
+      "id": "da0-002:1",
+      "index": 1,
+      "title": "Data Concepts and Environments",
+      "weight": 20,
+      "gate": "Given a dataset and its storage environment, name the specific database type, infrastructure, and tooling in play -- not a generic 'it's data' answer.",
+      "objectives": [
+        {
+          "id": "da0-002:1:1",
+          "unitId": "da0-002:1",
+          "index": 1,
+          "text": "Data concepts: database types, data structures, file extensions, and data types",
+          "sourceHash": "91c95f98c532",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "da0-002:1:2",
+          "unitId": "da0-002:1",
+          "index": 2,
+          "text": "Data sources: databases, APIs, website data, files, logs, and repositories",
+          "sourceHash": "ba652c1aee74",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "da0-002:1:3",
+          "unitId": "da0-002:1",
+          "index": 3,
+          "text": "Infrastructure: cloud, on-premise, storage, and containerization",
+          "sourceHash": "3f1b6cef4b5c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "da0-002:1:4",
+          "unitId": "da0-002:1",
+          "index": 4,
+          "text": "Data tools: coding environments, BI software, and analysis platforms",
+          "sourceHash": "51c19d14a4fd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "da0-002:1:5",
+          "unitId": "da0-002:1",
+          "index": 5,
+          "text": "AI concepts: identifying AI models, natural language processing, and robotic process automation",
+          "sourceHash": "7765cb422691",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "da0-002:2",
+      "index": 2,
+      "title": "Data Acquisition and Preparation",
+      "weight": 22,
+      "gate": "Given a raw, messy dataset, apply the specific exploration and transformation step that fixes it -- finding the missing values or duplicates before cleansing and merging -- not jump straight to analysis.",
+      "objectives": [
+        {
+          "id": "da0-002:2:1",
+          "unitId": "da0-002:2",
+          "index": 1,
+          "text": "Acquisition methods: data integration and queries to gather and combine data",
+          "sourceHash": "9722a5c56be5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "da0-002:2:2",
+          "unitId": "da0-002:2",
+          "index": 2,
+          "text": "Exploration: finding missing values, duplication, redundancy, and outliers",
+          "sourceHash": "47b16d1dcfb9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "da0-002:2:3",
+          "unitId": "da0-002:2",
+          "index": 3,
+          "text": "Transformation: cleansing, merging, parsing, and formatting data",
+          "sourceHash": "1f80cfff2d47",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "da0-002:3",
+      "index": 3,
+      "title": "Data Analysis",
+      "weight": 24,
+      "gate": "Given a dataset and an audience, choose the specific statistical method and communication approach that fits both -- not a one-size-fits-all summary.",
+      "objectives": [
+        {
+          "id": "da0-002:3:1",
+          "unitId": "da0-002:3",
+          "index": 1,
+          "text": "Selecting communication methods appropriate to different audiences",
+          "sourceHash": "ec1c85466d70",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "da0-002:3:2",
+          "unitId": "da0-002:3",
+          "index": 2,
+          "text": "Applying basic statistical techniques to data",
+          "sourceHash": "916957742758",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "da0-002:3:3",
+          "unitId": "da0-002:3",
+          "index": 3,
+          "text": "Using tools and resources to troubleshoot data analysis problems",
+          "sourceHash": "e5fabd3872de",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "da0-002:4",
+      "index": 4,
+      "title": "Visualization and Reporting",
+      "weight": 20,
+      "gate": "Given analysis results, choose the specific chart, table, or dashboard element that best conveys them, and validate the finished report before shipping it.",
+      "objectives": [
+        {
+          "id": "da0-002:4:1",
+          "unitId": "da0-002:4",
+          "index": 1,
+          "text": "Choosing visuals: charts, maps, tables, and design elements",
+          "sourceHash": "ce6d8bcd35ed",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "da0-002:4:2",
+          "unitId": "da0-002:4",
+          "index": 2,
+          "text": "Producing reports: dashboards and summaries using appropriate methods",
+          "sourceHash": "e054995e6f9c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "da0-002:4:3",
+          "unitId": "da0-002:4",
+          "index": 3,
+          "text": "Applying validation and review to catch reporting issues",
+          "sourceHash": "9cb85c993f1b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "da0-002:5",
+      "index": 5,
+      "title": "Data Governance",
+      "weight": 14,
+      "gate": "Given a dataset that needs to be managed responsibly, apply the specific governance control -- documentation, a retention rule, an access control, or a quality check -- rather than a vague 'handle it carefully' answer.",
+      "objectives": [
+        {
+          "id": "da0-002:5:1",
+          "unitId": "da0-002:5",
+          "index": 1,
+          "text": "Management practices: documentation, versioning, and data lineage",
+          "sourceHash": "39b3a0095653",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "da0-002:5:2",
+          "unitId": "da0-002:5",
+          "index": 2,
+          "text": "Compliance: retention, audits, and regulations",
+          "sourceHash": "98530428d993",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "da0-002:5:3",
+          "unitId": "da0-002:5",
+          "index": 3,
+          "text": "Privacy strategies: access control, encryption, and masking",
+          "sourceHash": "cdcc39837d1c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "da0-002:5:4",
+          "unitId": "da0-002:5",
+          "index": 4,
+          "text": "Quality assurance: profiling, monitoring, and testing data quality",
+          "sourceHash": "622b5268b500",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/comptia.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-24T00:00:00Z",
+    "officialObjectivesUrl": "https://www.comptia.org/en-us/certifications/data/",
+    "providerName": "CompTIA",
+    "credentialName": "CompTIA Data+",
+    "examCode": "DA0-002",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 5,
+    "objectives": 18,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

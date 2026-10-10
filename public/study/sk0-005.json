@@ -1,0 +1,264 @@
+{
+  "id": "sk0-005",
+  "code": "SERVERPLUS",
+  "title": "Server+",
+  "description": "CompTIA Server+ (SK0-005) exam prep across 4 weighted domains -- server hardware installation and management, server administration, security and disaster recovery, and troubleshooting.",
+  "trackType": "certification",
+  "field": "it",
+  "units": [
+    {
+      "id": "sk0-005:1",
+      "index": 1,
+      "title": "Server Hardware Installation and Management",
+      "weight": 18,
+      "gate": "Given a physical server to rack and provision, install it correctly -- power, cooling, cabling, and the right RAID level for the workload -- and maintain it with the right out-of-band tool, not a guess.",
+      "objectives": [
+        {
+          "id": "sk0-005:1:1",
+          "unitId": "sk0-005:1",
+          "index": 1,
+          "text": "Installing physical hardware: racking, cabling, power, and cooling management",
+          "sourceHash": "229aecce20f2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sk0-005:1:2",
+          "unitId": "sk0-005:1",
+          "index": 2,
+          "text": "Deploying and managing storage: RAID levels, shared storage, and capacity planning",
+          "sourceHash": "b39087926b65",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sk0-005:1:3",
+          "unitId": "sk0-005:1",
+          "index": 3,
+          "text": "Performing hardware maintenance: out-of-band management, firmware upgrades, and hot-swappable components",
+          "sourceHash": "b1566c507e13",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "sk0-005:2",
+      "index": 2,
+      "title": "Server Administration",
+      "weight": 30,
+      "gate": "Given a server to bring into production, install the OS, configure its network services, and set up the specific high-availability or virtualization approach the workload needs -- not a default, unconfigured build.",
+      "objectives": [
+        {
+          "id": "sk0-005:2:1",
+          "unitId": "sk0-005:2",
+          "index": 1,
+          "text": "Installing server operating systems: partition types, file systems, and installation methods",
+          "sourceHash": "d5d6bc2afe54",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sk0-005:2:2",
+          "unitId": "sk0-005:2",
+          "index": 2,
+          "text": "Configuring network services: IP addressing, DNS, DHCP, and VLANs",
+          "sourceHash": "2ad254545158",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sk0-005:2:3",
+          "unitId": "sk0-005:2",
+          "index": 3,
+          "text": "Managing server functions: roles, monitoring, data migration, and performance metrics",
+          "sourceHash": "8056c44aaee3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sk0-005:2:4",
+          "unitId": "sk0-005:2",
+          "index": 4,
+          "text": "High availability: clustering, load balancing, and failover processes",
+          "sourceHash": "47db686d3990",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sk0-005:2:5",
+          "unitId": "sk0-005:2",
+          "index": 5,
+          "text": "Virtualization: host vs. guest, resource allocation, and cloud models",
+          "sourceHash": "8939de47523d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sk0-005:2:6",
+          "unitId": "sk0-005:2",
+          "index": 6,
+          "text": "Scripting basics: loops, variables, and common server tasks",
+          "sourceHash": "486a575f2a2b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sk0-005:2:7",
+          "unitId": "sk0-005:2",
+          "index": 7,
+          "text": "Asset management: documentation, lifecycle management, and secure storage",
+          "sourceHash": "9310d7b7fe43",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "sk0-005:3",
+      "index": 3,
+      "title": "Security and Disaster Recovery",
+      "weight": 24,
+      "gate": "Given a server to secure or retire, apply the specific control -- encryption, MFA, hardening, or proper media destruction -- that matches the requirement, not a generic 'lock it down' answer.",
+      "objectives": [
+        {
+          "id": "sk0-005:3:1",
+          "unitId": "sk0-005:3",
+          "index": 1,
+          "text": "Data security: encryption, retention policies, and lifecycle management",
+          "sourceHash": "e290ab2c1418",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sk0-005:3:2",
+          "unitId": "sk0-005:3",
+          "index": 2,
+          "text": "Physical security: access controls, environmental controls, and biometric systems",
+          "sourceHash": "3c52897f8f49",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sk0-005:3:3",
+          "unitId": "sk0-005:3",
+          "index": 3,
+          "text": "Identity and access management: user accounts, MFA, and permissions",
+          "sourceHash": "b794a5b9fdf4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sk0-005:3:4",
+          "unitId": "sk0-005:3",
+          "index": 4,
+          "text": "Mitigation strategies: malware prevention, DLP, and SIEM",
+          "sourceHash": "d4a5fce72c14",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sk0-005:3:5",
+          "unitId": "sk0-005:3",
+          "index": 5,
+          "text": "Server hardening: OS updates, disabling unused services, and host security",
+          "sourceHash": "af88d2e7f6f3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sk0-005:3:6",
+          "unitId": "sk0-005:3",
+          "index": 6,
+          "text": "Decommissioning: media destruction, recycling, and asset management",
+          "sourceHash": "e2192e07670d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "sk0-005:4",
+      "index": 4,
+      "title": "Troubleshooting",
+      "weight": 28,
+      "gate": "Given a failing server, isolate the fault to hardware, software, or network before acting, and validate that a disaster-recovery plan actually works rather than assuming it does.",
+      "objectives": [
+        {
+          "id": "sk0-005:4:1",
+          "unitId": "sk0-005:4",
+          "index": 1,
+          "text": "Troubleshooting hardware: power issues, storage failures, and connectivity problems",
+          "sourceHash": "42c54a710280",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sk0-005:4:2",
+          "unitId": "sk0-005:4",
+          "index": 2,
+          "text": "Troubleshooting software: OS errors, application issues, and patching failures",
+          "sourceHash": "bbee1bceea2d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sk0-005:4:3",
+          "unitId": "sk0-005:4",
+          "index": 3,
+          "text": "Troubleshooting network issues: latency, misconfigurations, and security breaches",
+          "sourceHash": "a79a760f97e4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "sk0-005:4:4",
+          "unitId": "sk0-005:4",
+          "index": 4,
+          "text": "Disaster recovery: backup strategies, recovery testing, and failover validation",
+          "sourceHash": "a6045e8c8b30",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/comptia.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-24T00:00:00Z",
+    "officialObjectivesUrl": "https://www.comptia.org/en-us/certifications/server/",
+    "providerName": "CompTIA",
+    "credentialName": "CompTIA Server+",
+    "examCode": "SK0-005",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 4,
+    "objectives": 20,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

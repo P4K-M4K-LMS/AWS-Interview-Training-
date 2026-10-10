@@ -1,0 +1,336 @@
+{
+  "id": "ai-901",
+  "code": "AI901",
+  "title": "Azure AI Fundamentals",
+  "description": "Microsoft Certified: Azure AI Fundamentals (AI-901): core AI/ML concepts and responsible AI principles, then building generative AI, vision, speech, and information-extraction solutions with Microsoft Foundry.",
+  "trackType": "certification",
+  "field": "azure",
+  "units": [
+    {
+      "id": "ai-901:1",
+      "index": 1,
+      "title": "AI Concepts and Capabilities",
+      "weight": 43,
+      "gate": "Given an AI scenario, name the specific responsible-AI consideration or workload category at play -- not a generic 'AI can help with that'.",
+      "objectives": [
+        {
+          "id": "ai-901:1:1",
+          "unitId": "ai-901:1",
+          "index": 1,
+          "text": "Considerations for fairness in an AI solution",
+          "sourceHash": "7a9d04c6350d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ai-901:1:2",
+          "unitId": "ai-901:1",
+          "index": 2,
+          "text": "Considerations for reliability and safety in an AI solution",
+          "sourceHash": "f45d09de94ec",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ai-901:1:3",
+          "unitId": "ai-901:1",
+          "index": 3,
+          "text": "Considerations for privacy and security in an AI solution",
+          "sourceHash": "cbe70e1b956d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ai-901:1:4",
+          "unitId": "ai-901:1",
+          "index": 4,
+          "text": "Considerations for inclusiveness in an AI solution",
+          "sourceHash": "be62be1c6494",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ai-901:1:5",
+          "unitId": "ai-901:1",
+          "index": 5,
+          "text": "Considerations for transparency in an AI solution",
+          "sourceHash": "12c009887d0c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ai-901:1:6",
+          "unitId": "ai-901:1",
+          "index": 6,
+          "text": "Considerations for accountability in an AI solution",
+          "sourceHash": "b886b16e3bc2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ai-901:1:7",
+          "unitId": "ai-901:1",
+          "index": 7,
+          "text": "How generative AI models work",
+          "sourceHash": "6c507c680433",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ai-901:1:8",
+          "unitId": "ai-901:1",
+          "index": 8,
+          "text": "Identifying an appropriate AI model based on its capabilities",
+          "sourceHash": "2d95f7c28e37",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ai-901:1:9",
+          "unitId": "ai-901:1",
+          "index": 9,
+          "text": "Identifying appropriate model deployment options and configuration parameters",
+          "sourceHash": "15a2782dd368",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ai-901:1:10",
+          "unitId": "ai-901:1",
+          "index": 10,
+          "text": "Scenarios for common AI workloads, including generative and agentic AI, text analysis, speech, computer vision, and information extraction",
+          "sourceHash": "2b9449600f0c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ai-901:1:11",
+          "unitId": "ai-901:1",
+          "index": 11,
+          "text": "Common text analysis techniques: keyword extraction, entity detection, sentiment analysis, and summarization",
+          "sourceHash": "b8f2198ecee2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ai-901:1:12",
+          "unitId": "ai-901:1",
+          "index": 12,
+          "text": "Features and capabilities of speech recognition and speech synthesis",
+          "sourceHash": "fa31ad43b535",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ai-901:1:13",
+          "unitId": "ai-901:1",
+          "index": 13,
+          "text": "Features and capabilities of computer vision and image-generation models",
+          "sourceHash": "ff0a75e6d1fe",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ai-901:1:14",
+          "unitId": "ai-901:1",
+          "index": 14,
+          "text": "Techniques to extract information from text, images, audio, and video",
+          "sourceHash": "89baf37fc4cf",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "ai-901:2",
+      "index": 2,
+      "title": "Implementing AI Solutions with Microsoft Foundry",
+      "weight": 58,
+      "gate": "Given a task -- a chat agent, a vision or speech feature, an extraction pipeline -- name the specific Foundry capability that builds it and how a lightweight client would call it.",
+      "objectives": [
+        {
+          "id": "ai-901:2:1",
+          "unitId": "ai-901:2",
+          "index": 1,
+          "text": "Writing effective system and user prompts for generative AI models",
+          "sourceHash": "8419efc8ce92",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ai-901:2:2",
+          "unitId": "ai-901:2",
+          "index": 2,
+          "text": "Deploying a model and interacting with it in the Foundry portal",
+          "sourceHash": "8d1050098229",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ai-901:2:3",
+          "unitId": "ai-901:2",
+          "index": 3,
+          "text": "Building a lightweight chat client application with the Foundry SDK",
+          "sourceHash": "bb032dbe9d8e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ai-901:2:4",
+          "unitId": "ai-901:2",
+          "index": 4,
+          "text": "Creating and testing a single-agent solution in the Foundry portal",
+          "sourceHash": "c64b65b7c398",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ai-901:2:5",
+          "unitId": "ai-901:2",
+          "index": 5,
+          "text": "Building a lightweight client application for an agent",
+          "sourceHash": "89cdd34d0fda",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ai-901:2:6",
+          "unitId": "ai-901:2",
+          "index": 6,
+          "text": "Building a lightweight application that includes text analysis",
+          "sourceHash": "c7269041eacb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ai-901:2:7",
+          "unitId": "ai-901:2",
+          "index": 7,
+          "text": "Responding to spoken prompts using a deployed multimodal model",
+          "sourceHash": "b02ddccd80cf",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ai-901:2:8",
+          "unitId": "ai-901:2",
+          "index": 8,
+          "text": "Building a lightweight application using Azure Speech in Foundry Tools",
+          "sourceHash": "d30fe39d3e27",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ai-901:2:9",
+          "unitId": "ai-901:2",
+          "index": 9,
+          "text": "Interpreting visual input in prompts using a deployed multimodal model",
+          "sourceHash": "2038f42638b6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ai-901:2:10",
+          "unitId": "ai-901:2",
+          "index": 10,
+          "text": "Creating new visual outputs using generative models",
+          "sourceHash": "152f7afd4376",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ai-901:2:11",
+          "unitId": "ai-901:2",
+          "index": 11,
+          "text": "Building a lightweight application that includes vision capabilities",
+          "sourceHash": "ab47b5e2fbb6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ai-901:2:12",
+          "unitId": "ai-901:2",
+          "index": 12,
+          "text": "Extracting information from documents and forms using Azure Content Understanding in Foundry Tools",
+          "sourceHash": "4f2add0c4254",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ai-901:2:13",
+          "unitId": "ai-901:2",
+          "index": 13,
+          "text": "Extracting information from images using Content Understanding",
+          "sourceHash": "b7268a75dc96",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ai-901:2:14",
+          "unitId": "ai-901:2",
+          "index": 14,
+          "text": "Extracting information from audio and video using Content Understanding",
+          "sourceHash": "8513393a2417",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "ai-901:2:15",
+          "unitId": "ai-901:2",
+          "index": 15,
+          "text": "Building a lightweight application with information-extraction capabilities using Content Understanding",
+          "sourceHash": "a5f7d8eb7152",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/azure.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-18T00:00:00Z",
+    "officialObjectivesUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-901",
+    "providerName": "Microsoft",
+    "credentialName": "Microsoft Certified: Azure AI Fundamentals",
+    "examCode": "AI-901",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 2,
+    "objectives": 29,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

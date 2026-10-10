@@ -17,16 +17,34 @@ import {
   SECURITYX_TRACK,
 } from "../../tools/ascendra-catalog/data.ts";
 import { AWS_TRACKS } from "../../tools/ascendra-catalog/tracks/aws.ts";
+import { AZURE_TRACKS } from "../../tools/ascendra-catalog/tracks/azure.ts";
+import { COMPTIA_TRACKS } from "../../tools/ascendra-catalog/tracks/comptia.ts";
+import { FITNESS_TRACKS } from "../../tools/ascendra-catalog/tracks/fitness.ts";
+import { GCP_TRACKS } from "../../tools/ascendra-catalog/tracks/gcp.ts";
+import { NURSING_TRACKS } from "../../tools/ascendra-catalog/tracks/nursing.ts";
+import { PM_TRACKS } from "../../tools/ascendra-catalog/tracks/pm.ts";
+import { PT_TRACKS } from "../../tools/ascendra-catalog/tracks/pt.ts";
 import { BOOKKEEPING_UNITS, STUDY_LAB_LINKS, STUDY_LINKS, UNIT_ENGINE_GATES } from "../../src/content/study/links.ts";
-import type { StudyCatalogIndex, StudyCourse, StudyCourseSummary, StudyModality, StudyObjective, StudyUnit } from "../../src/domain/types.ts";
+import { PATHS, PLACEMENT } from "../../src/content/study/paths.ts";
+import type { StudyCatalogIndex, StudyCourse, StudySearchIndex, StudyCourseSummary, StudyModality, StudyObjective, StudyUnit } from "../../src/domain/types.ts";
 
 export const SOURCE_COMMIT = "e1ac219b22688230c330bed7dc3de1130b531b48";
 
 export const CORE_TRACKS: SeedTrack[] = [MSCS_TRACK, PYTHON_TRACK, JAVASCRIPT_TRACK, SECPLUS_TRACK, LINUXPLUS_TRACK, CYSAPLUS_TRACK, PENTESTPLUS_TRACK, SECURITYX_TRACK, CMPCBS_TRACK];
 
-export const SEED_TRACKS: Array<{ track: SeedTrack; group: "aws" | "core"; sourceFile: string }> = [
-  ...AWS_TRACKS.map((track) => ({ track, group: "aws" as const, sourceFile: "backend/supabase/seed/tracks/aws.ts" })),
-  ...CORE_TRACKS.map((track) => ({ track, group: "core" as const, sourceFile: "backend/supabase/seed/data.ts" })),
+const seed = (tracks: SeedTrack[], file: string) => tracks.map((track) => ({ track, sourceFile: `backend/supabase/seed/${file}` }));
+
+/** Every Ascendra track, in the order its source files list them. Field and level come from src/content/study/paths.ts. */
+export const SEED_TRACKS: Array<{ track: SeedTrack; sourceFile: string }> = [
+  ...seed(AWS_TRACKS, "tracks/aws.ts"),
+  ...seed(AZURE_TRACKS, "tracks/azure.ts"),
+  ...seed(GCP_TRACKS, "tracks/gcp.ts"),
+  ...seed(CORE_TRACKS, "data.ts"),
+  ...seed(COMPTIA_TRACKS, "tracks/comptia.ts"),
+  ...seed(PM_TRACKS, "tracks/pm.ts"),
+  ...seed(NURSING_TRACKS, "tracks/nursing.ts"),
+  ...seed(PT_TRACKS, "tracks/pt.ts"),
+  ...seed(FITNESS_TRACKS, "tracks/fitness.ts"),
 ];
 
 export function sha256(text: string): string {
@@ -51,6 +69,7 @@ export interface BuiltCatalog {
   engineGates: Record<string, string[]>;
   /** lab exercise id -> objective ids it credits */
   labLinks: Record<string, string[]>;
+  search: StudySearchIndex;
 }
 
 function normaliseText(s: string): string {
@@ -68,8 +87,10 @@ function stripCoach(title: string): string {
   return title.replace(/\s+Coach$/, "");
 }
 
-export function buildCourse(track: SeedTrack, group: "aws" | "core", sourceFile: string): { course: StudyCourse; summary: Omit<StudyCourseSummary, "hash" | "file">; missionLinks: Record<string, string[]>; engineGates: Record<string, string[]>; labLinks: Record<string, string[]> } {
+export function buildCourse(track: SeedTrack, sourceFile: string): { course: StudyCourse; summary: Omit<StudyCourseSummary, "hash" | "file">; missionLinks: Record<string, string[]>; engineGates: Record<string, string[]>; labLinks: Record<string, string[]> } {
   const courseId = courseIdFor(track);
+  const place = PLACEMENT[track.code];
+  if (!place) throw new Error(`${track.code}: no field or level in src/content/study/paths.ts`);
   const bookkeepingUnits = new Set(BOOKKEEPING_UNITS.filter((b) => b.course === track.code).map((b) => b.unit));
   const links = STUDY_LINKS.filter((l) => l.course === track.code);
   const gates = UNIT_ENGINE_GATES.filter((g) => g.course === track.code);
@@ -163,6 +184,8 @@ export function buildCourse(track: SeedTrack, group: "aws" | "core", sourceFile:
     title: stripCoach(track.title),
     description: track.description,
     trackType: track.trackType,
+    field: place.field,
+    ...(track.requiresAcknowledgement ? { requiresAcknowledgement: true } : {}),
     units,
     provenance: {
       sourceRepo: "ascendra",
@@ -185,7 +208,9 @@ export function buildCourse(track: SeedTrack, group: "aws" | "core", sourceFile:
     title: course.title,
     description: track.description,
     trackType: track.trackType,
-    group,
+    group: place.field,
+    level: place.level,
+    ...(track.requiresAcknowledgement ? { requiresAcknowledgement: true } : {}),
     ...(cred?.examCode ? { examCode: cred.examCode } : {}),
     ...(cred?.status ? { credentialStatus: cred.status } : {}),
     ...(cred?.retirementDate ? { retirementDate: cred.retirementDate } : {}),
@@ -202,8 +227,8 @@ export function buildCatalog(): BuiltCatalog {
   const engineGates: Record<string, string[]> = {};
   const labLinks: Record<string, string[]> = {};
   const seenIds = new Set<string>();
-  for (const { track, group, sourceFile } of SEED_TRACKS) {
-    const built = buildCourse(track, group, sourceFile);
+  for (const { track, sourceFile } of SEED_TRACKS) {
+    const built = buildCourse(track, sourceFile);
     if (seenIds.has(built.course.id)) throw new Error(`duplicate course id ${built.course.id}`);
     seenIds.add(built.course.id);
     courses.push(built.course);
@@ -222,12 +247,18 @@ export function buildCatalog(): BuiltCatalog {
   for (const g of UNIT_ENGINE_GATES) if (!known.has(g.course)) throw new Error(`gate for unknown course code ${g.course}`);
   for (const l of STUDY_LAB_LINKS) if (!known.has(l.course)) throw new Error(`lab link for unknown course code ${l.course}`);
   for (const b of BOOKKEEPING_UNITS) if (!known.has(b.course)) throw new Error(`bookkeeping unit for unknown course code ${b.course}`);
+  for (const code of Object.keys(PLACEMENT)) if (!known.has(code)) throw new Error(`placement for unknown course code ${code}`);
+  for (const p of PATHS) for (const code of p.steps) {
+    if (!known.has(code)) throw new Error(`path ${p.id} names unknown course code ${code}`);
+    if (PLACEMENT[code].field !== p.field) throw new Error(`path ${p.id} is in ${p.field} but ${code} is placed in ${PLACEMENT[code].field}`);
+  }
   return {
     index: { schemaVersion: 1, builtFrom: { sourceRepo: "ascendra", sourceCommit: SOURCE_COMMIT }, courses: summaries },
     courses,
     missionLinks: sortedLinks,
     engineGates: sortedGates,
     labLinks: sortedLabs,
+    search: { schemaVersion: 1, objectives: courses.flatMap((c) => c.units.flatMap((u) => u.objectives.filter((o) => o.kind === "objective").map((o): [string, string] => [o.id, o.text]))) },
   };
 }
 

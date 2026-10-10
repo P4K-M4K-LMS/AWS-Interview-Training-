@@ -4,6 +4,7 @@
   "title": "MSCS Foundations",
   "description": "15-week graduate-CS bridge covering algorithms, data structures, discrete math, OS, computer architecture, database theory, ML math, cybersecurity, HCI/UX, and big data.",
   "trackType": "graduate",
+  "field": "cs",
   "units": [
     {
       "id": "mscs:1",

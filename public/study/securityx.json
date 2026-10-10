@@ -4,6 +4,7 @@
   "title": "SecurityX",
   "description": "CompTIA SecurityX CAS-005 exam prep across 4 weighted domains for enterprise security architecture and engineering.",
   "trackType": "certification",
+  "field": "security",
   "units": [
     {
       "id": "securityx:1",

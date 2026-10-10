@@ -1,0 +1,263 @@
+{
+  "id": "abptsscs",
+  "code": "ABPTSSCS",
+  "title": "Sports Clinical Specialist",
+  "description": "ABPTS board certification in sports physical therapy: clinical intervention (35%) and assessment (30%) for athletes, plus emergency management, injury prevention, performance and the sports science behind it.",
+  "trackType": "certification",
+  "field": "pt",
+  "requiresAcknowledgement": true,
+  "units": [
+    {
+      "id": "abptsscs:1",
+      "index": 1,
+      "title": "Knowledge areas",
+      "weight": 20,
+      "gate": "Explain the sports-science and medical-condition knowledge behind a return-to-play decision, not just the protocol.",
+      "objectives": [
+        {
+          "id": "abptsscs:1:1",
+          "unitId": "abptsscs:1",
+          "index": 1,
+          "text": "Anatomy, physiology, normal movement science and clinical science applied to athletic populations",
+          "sourceHash": "d2232200ee63",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsscs:1:2",
+          "unitId": "abptsscs:1",
+          "index": 2,
+          "text": "Medical and surgical conditions in athletes, including concussion, cardiac screening findings and overtraining",
+          "sourceHash": "ec15be653794",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsscs:1:3",
+          "unitId": "abptsscs:1",
+          "index": 3,
+          "text": "Sports science and wellness: periodization, energy systems, recovery and load monitoring",
+          "sourceHash": "b02bd4ccbb17",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsscs:1:4",
+          "unitId": "abptsscs:1",
+          "index": 4,
+          "text": "Scope of practice and principles of teaching and learning in sports settings",
+          "sourceHash": "fb9233073c81",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "abptsscs:2",
+      "index": 2,
+      "title": "Professional roles and responsibilities",
+      "weight": 5,
+      "gate": "Describe the sports specialist's consultation and evidence roles within a team's medical staff.",
+      "objectives": [
+        {
+          "id": "abptsscs:2:1",
+          "unitId": "abptsscs:2",
+          "index": 1,
+          "text": "Consultation and education with athletes, coaches, parents and medical staff",
+          "sourceHash": "f5e63e3c564c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsscs:2:2",
+          "unitId": "abptsscs:2",
+          "index": 2,
+          "text": "Critical inquiry for evidence-based sports practice",
+          "sourceHash": "ec03e133cee2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsscs:2:3",
+          "unitId": "abptsscs:2",
+          "index": 3,
+          "text": "Administration of sports medicine services and event coverage",
+          "sourceHash": "1f75f5100aae",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "abptsscs:3",
+      "index": 3,
+      "title": "Patient and client assessment",
+      "weight": 30,
+      "gate": "For an athletic injury, perform the examination that establishes the diagnosis and the functional tests that decide readiness to return.",
+      "objectives": [
+        {
+          "id": "abptsscs:3:1",
+          "unitId": "abptsscs:3",
+          "index": 1,
+          "text": "Clinical examination and evaluation of sport-specific injuries of the spine and extremities",
+          "sourceHash": "66a24f1571b1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsscs:3:2",
+          "unitId": "abptsscs:3",
+          "index": 2,
+          "text": "On-field and sideline assessment, including concussion evaluation",
+          "sourceHash": "b7ae6cc8b9b9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsscs:3:3",
+          "unitId": "abptsscs:3",
+          "index": 3,
+          "text": "Diagnosis and prognosis for ligament, tendon, muscle, bone-stress and cartilage injuries",
+          "sourceHash": "d9f8bf3c6e31",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsscs:3:4",
+          "unitId": "abptsscs:3",
+          "index": 4,
+          "text": "Functional and performance testing used in return-to-sport decisions",
+          "sourceHash": "894364660944",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "abptsscs:4",
+      "index": 4,
+      "title": "Patient and client clinical intervention",
+      "weight": 35,
+      "gate": "Design a rehabilitation and return-to-activity progression with objective criteria for each phase, and state the emergency plan for the venue.",
+      "objectives": [
+        {
+          "id": "abptsscs:4:1",
+          "unitId": "abptsscs:4",
+          "index": 1,
+          "text": "Rehabilitation and return-to-activity progression with criterion-based phases",
+          "sourceHash": "a80114d8c1e4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsscs:4:2",
+          "unitId": "abptsscs:4",
+          "index": 2,
+          "text": "Injury prevention programs and the epidemiology that justifies them",
+          "sourceHash": "11a150d82e3f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsscs:4:3",
+          "unitId": "abptsscs:4",
+          "index": 3,
+          "text": "Emergency management and athlete safety: spine-injury management, sudden cardiac arrest, heat illness and the emergency action plan",
+          "sourceHash": "ba820eb72fcd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsscs:4:4",
+          "unitId": "abptsscs:4",
+          "index": 4,
+          "text": "Sports performance and enhancement: strength, power, speed and agility training",
+          "sourceHash": "efc007e49462",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsscs:4:5",
+          "unitId": "abptsscs:4",
+          "index": 5,
+          "text": "Nutrition, fluids, supplements, ergogenic aids and drugs: what affects performance and recovery and the rules around them",
+          "sourceHash": "cebc23e73764",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsscs:4:6",
+          "unitId": "abptsscs:4",
+          "index": 6,
+          "text": "Non-emergency medical conditions in athletes: skin, respiratory, gastrointestinal and the female athlete triad / relative energy deficiency in sport",
+          "sourceHash": "5ab5b6487ce5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "abptsscs:5",
+      "index": 5,
+      "title": "Patient outcomes",
+      "weight": 10,
+      "gate": "Select an outcome measure that captures sport-specific function and interpret the change it shows.",
+      "objectives": [
+        {
+          "id": "abptsscs:5:1",
+          "unitId": "abptsscs:5",
+          "index": 1,
+          "text": "Patient-reported and performance-based outcome measures for athletes",
+          "sourceHash": "4116e97899cb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "abptsscs:5:2",
+          "unitId": "abptsscs:5",
+          "index": 2,
+          "text": "Using outcomes to inform return-to-play clearance and re-injury risk",
+          "sourceHash": "1527ec157d65",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/pt.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-10-08T00:00:00Z",
+    "officialObjectivesUrl": "https://specialization.apta.org/become-a-specialist/sports/specialist-certification-examination-outline-sports",
+    "providerName": "American Board of Physical Therapy Specialties",
+    "credentialName": "Board-Certified Clinical Specialist in Sports Physical Therapy",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 5,
+    "objectives": 19,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

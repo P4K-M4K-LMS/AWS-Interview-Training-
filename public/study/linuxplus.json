@@ -4,6 +4,7 @@
   "title": "Linux+",
   "description": "CompTIA Linux+ XK0-006 exam prep across 5 weighted domains, with hands-on shell labs.",
   "trackType": "certification",
+  "field": "it",
   "units": [
     {
       "id": "linuxplus:1",

@@ -1,0 +1,1091 @@
+{
+  "id": "gcppca",
+  "code": "GCPPCA",
+  "title": "Google Cloud Professional Cloud Architect",
+  "description": "Google Cloud Professional Cloud Architect: designing, building, and managing secure, scalable, cost-effective solutions on Google Cloud, anchored in the Well-Architected Framework's six pillars, plus the exam's own recurring case studies (Altostrat Media, Cymbal Retail, EHR Healthcare, KnightMotives Automotive).",
+  "trackType": "certification",
+  "field": "gcp",
+  "units": [
+    {
+      "id": "gcppca:1",
+      "index": 1,
+      "title": "Designing and Planning a Cloud Solution Architecture",
+      "weight": 25,
+      "gate": "Given a business requirement, not a technical one, translate it into an architecture decision -- and say which Well-Architected Framework pillar that decision actually serves.",
+      "objectives": [
+        {
+          "id": "gcppca:1:1",
+          "unitId": "gcppca:1",
+          "index": 1,
+          "text": "Matching a cloud architecture to a business use case and product strategy",
+          "sourceHash": "e3155bf6f538",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:1:2",
+          "unitId": "gcppca:1",
+          "index": 2,
+          "text": "Identifying functional versus non-functional requirements",
+          "sourceHash": "114310fbb11d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:1:3",
+          "unitId": "gcppca:1",
+          "index": 3,
+          "text": "Building a business continuity plan into the architecture",
+          "sourceHash": "08b9c01fa9ac",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:1:4",
+          "unitId": "gcppca:1",
+          "index": 4,
+          "text": "Weighing cost optimization against other requirements",
+          "sourceHash": "43b822699a22",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:1:5",
+          "unitId": "gcppca:1",
+          "index": 5,
+          "text": "Supporting the application design layer from the infrastructure",
+          "sourceHash": "c57bcc80e873",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:1:6",
+          "unitId": "gcppca:1",
+          "index": 6,
+          "text": "Choosing integration patterns with external systems",
+          "sourceHash": "4fb1147159fa",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:1:7",
+          "unitId": "gcppca:1",
+          "index": 7,
+          "text": "Planning how data moves through the architecture",
+          "sourceHash": "335a567dc021",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:1:8",
+          "unitId": "gcppca:1",
+          "index": 8,
+          "text": "Naming a design decision's real trade-off, not just its benefit",
+          "sourceHash": "373747a1b04d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:1:9",
+          "unitId": "gcppca:1",
+          "index": 9,
+          "text": "Choosing a workload disposition strategy: build, buy, modify, or deprecate",
+          "sourceHash": "966690be04c4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:1:10",
+          "unitId": "gcppca:1",
+          "index": 10,
+          "text": "Choosing success measurements: KPIs, ROI, and other metrics",
+          "sourceHash": "a8898db56b38",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:1:11",
+          "unitId": "gcppca:1",
+          "index": 11,
+          "text": "Designing for security and compliance from the start",
+          "sourceHash": "a8d2bad7d18f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:1:12",
+          "unitId": "gcppca:1",
+          "index": 12,
+          "text": "Designing for observability from the start",
+          "sourceHash": "9058d2384480",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:1:13",
+          "unitId": "gcppca:1",
+          "index": 13,
+          "text": "Applying the Well-Architected Framework's six pillars to a design decision",
+          "sourceHash": "424a710a0761",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:1:14",
+          "unitId": "gcppca:1",
+          "index": 14,
+          "text": "Designing for high availability and failover",
+          "sourceHash": "7df600d27f2d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:1:15",
+          "unitId": "gcppca:1",
+          "index": 15,
+          "text": "Designing for the flexibility of cloud resources",
+          "sourceHash": "e553d1b68c61",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:1:16",
+          "unitId": "gcppca:1",
+          "index": 16,
+          "text": "Designing for scalability against growth requirements",
+          "sourceHash": "354413250120",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:1:17",
+          "unitId": "gcppca:1",
+          "index": 17,
+          "text": "Designing for performance and latency",
+          "sourceHash": "a44229073f1f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:1:18",
+          "unitId": "gcppca:1",
+          "index": 18,
+          "text": "Using Gemini Cloud Assist during architecture design",
+          "sourceHash": "b3585317225a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:1:19",
+          "unitId": "gcppca:1",
+          "index": 19,
+          "text": "Designing backup and recovery into the solution",
+          "sourceHash": "f06f60a59e9c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:1:20",
+          "unitId": "gcppca:1",
+          "index": 20,
+          "text": "Designing integration with on-premises or multicloud environments",
+          "sourceHash": "3a70c2414927",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:1:21",
+          "unitId": "gcppca:1",
+          "index": 21,
+          "text": "Choosing Google Cloud AI/ML solutions for a design: Gemini LLMs, Agent Builder, Model Garden, Gemini models, AI Hypercomputer",
+          "sourceHash": "eba17fe484e0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:1:22",
+          "unitId": "gcppca:1",
+          "index": 22,
+          "text": "Designing cloud-native networking: VPC, peering, firewalls, load balancers, routing, container networking, Shared VPC, Private Service Connect",
+          "sourceHash": "155092f1820d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:1:23",
+          "unitId": "gcppca:1",
+          "index": 23,
+          "text": "Choosing a data processing solution",
+          "sourceHash": "b196d49ae3af",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:1:24",
+          "unitId": "gcppca:1",
+          "index": 24,
+          "text": "Choosing the appropriate storage type: object, file, or database",
+          "sourceHash": "6a2c21f40aaf",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:1:25",
+          "unitId": "gcppca:1",
+          "index": 25,
+          "text": "Mapping compute needs to platform products: GKE, Cloud Run, Cloud Run functions",
+          "sourceHash": "7578021f2fcf",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:1:26",
+          "unitId": "gcppca:1",
+          "index": 26,
+          "text": "Choosing compute resources: Spot VMs, custom machine types, specialized workloads",
+          "sourceHash": "cd72acd048ad",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:1:27",
+          "unitId": "gcppca:1",
+          "index": 27,
+          "text": "Integrating a new solution with existing systems as part of a migration plan",
+          "sourceHash": "d2a33a8ebf4e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:1:28",
+          "unitId": "gcppca:1",
+          "index": 28,
+          "text": "Assessing and migrating systems and data with Google Cloud Migration Center",
+          "sourceHash": "cc80be00bc0a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:1:29",
+          "unitId": "gcppca:1",
+          "index": 29,
+          "text": "Using migration methodologies, workload testing, network planning, and dependency planning",
+          "sourceHash": "fc2f52591ba0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:1:30",
+          "unitId": "gcppca:1",
+          "index": 30,
+          "text": "Determining a migration's software license implications and financial impact",
+          "sourceHash": "5397dc2798e2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:1:31",
+          "unitId": "gcppca:1",
+          "index": 31,
+          "text": "Anticipating cloud and technology improvements over a solution's life",
+          "sourceHash": "b22bf1b731be",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:1:32",
+          "unitId": "gcppca:1",
+          "index": 32,
+          "text": "Designing for the evolution of business needs",
+          "sourceHash": "97bc7b1a5a5d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:1:33",
+          "unitId": "gcppca:1",
+          "index": 33,
+          "text": "Applying a cloud-first design approach to future decisions",
+          "sourceHash": "a0e57c36c145",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "gcppca:2",
+      "index": 2,
+      "title": "Managing and Provisioning a Cloud Solution Infrastructure",
+      "weight": 17.5,
+      "gate": "Given a provisioning task, say which layer it belongs to -- network topology, storage, compute, or ML pipeline -- and the specific Google Cloud mechanism that implements it.",
+      "objectives": [
+        {
+          "id": "gcppca:2:1",
+          "unitId": "gcppca:2",
+          "index": 1,
+          "text": "Extending network topology to on-premises environments",
+          "sourceHash": "8421be0ceb7f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:2:2",
+          "unitId": "gcppca:2",
+          "index": 2,
+          "text": "Extending network topology to a multicloud environment, including Google Cloud-to-Google Cloud communication",
+          "sourceHash": "6edf1fffabee",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:2:3",
+          "unitId": "gcppca:2",
+          "index": 3,
+          "text": "Building security protection into network topology: intrusion protection, access control, firewalls",
+          "sourceHash": "e9691944e1ec",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:2:4",
+          "unitId": "gcppca:2",
+          "index": 4,
+          "text": "Designing VPC topology and load balancing for cloud, internet, and cloud-adjacent access",
+          "sourceHash": "268a124129b8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:2:5",
+          "unitId": "gcppca:2",
+          "index": 5,
+          "text": "Allocating data storage",
+          "sourceHash": "7671feeec57e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:2:6",
+          "unitId": "gcppca:2",
+          "index": 6,
+          "text": "Provisioning data processing and compute together",
+          "sourceHash": "2ac5a9dc5864",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:2:7",
+          "unitId": "gcppca:2",
+          "index": 7,
+          "text": "Configuring security and access management for storage systems",
+          "sourceHash": "ae2dc62def0e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:2:8",
+          "unitId": "gcppca:2",
+          "index": 8,
+          "text": "Configuring data transfer and latency",
+          "sourceHash": "fa8643f5a3d3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:2:9",
+          "unitId": "gcppca:2",
+          "index": 9,
+          "text": "Setting data retention and lifecycle management policy",
+          "sourceHash": "73bc7f844f53",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:2:10",
+          "unitId": "gcppca:2",
+          "index": 10,
+          "text": "Planning for data growth",
+          "sourceHash": "3814efab4069",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:2:11",
+          "unitId": "gcppca:2",
+          "index": 11,
+          "text": "Configuring data protection: backup and recovery",
+          "sourceHash": "9ca91a63e4b8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:2:12",
+          "unitId": "gcppca:2",
+          "index": 12,
+          "text": "Provisioning compute resources",
+          "sourceHash": "167ddfde3034",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:2:13",
+          "unitId": "gcppca:2",
+          "index": 13,
+          "text": "Configuring compute volatility: Spot versus standard",
+          "sourceHash": "b9487151de65",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:2:14",
+          "unitId": "gcppca:2",
+          "index": 14,
+          "text": "Configuring cloud-native networking for compute resources: Compute Engine, GKE, serverless networking, Google Cloud VMware Engine",
+          "sourceHash": "341e592849b2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:2:15",
+          "unitId": "gcppca:2",
+          "index": 15,
+          "text": "Orchestrating infrastructure, configuring resources, and managing patches",
+          "sourceHash": "22dcb06e9c9a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:2:16",
+          "unitId": "gcppca:2",
+          "index": 16,
+          "text": "Orchestrating containers",
+          "sourceHash": "59e453defb2b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:2:17",
+          "unitId": "gcppca:2",
+          "index": 17,
+          "text": "Configuring serverless compute",
+          "sourceHash": "b700d32668d2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:2:18",
+          "unitId": "gcppca:2",
+          "index": 18,
+          "text": "Using Agent Platform Pipelines to automate and orchestrate the ML lifecycle",
+          "sourceHash": "3db92a6da7cb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:2:19",
+          "unitId": "gcppca:2",
+          "index": 19,
+          "text": "Preparing for Agent Platform data integration",
+          "sourceHash": "0c2596fbe3e3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:2:20",
+          "unitId": "gcppca:2",
+          "index": 20,
+          "text": "Using AI Hypercomputer for ML/AI workloads: integrating GPUs and TPUs in training/serving, optimizing consumption models, running large-scale training",
+          "sourceHash": "a9aa966aca20",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:2:21",
+          "unitId": "gcppca:2",
+          "index": 21,
+          "text": "Differentiating the Google AI APIs: Search, Conversation, Vision, Image, Video, Audio",
+          "sourceHash": "b67511a968e3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:2:22",
+          "unitId": "gcppca:2",
+          "index": 22,
+          "text": "Integrating Gemini Enterprise features -- AI Agents and NotebookLM -- into a workflow",
+          "sourceHash": "40270a16c1a1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:2:23",
+          "unitId": "gcppca:2",
+          "index": 23,
+          "text": "Integrating a Model Garden AI model into the solution",
+          "sourceHash": "079d06ca9374",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "gcppca:3",
+      "index": 3,
+      "title": "Designing for Security and Compliance",
+      "weight": 17.5,
+      "gate": "Given a security or compliance requirement, name the specific Google Cloud control that satisfies it -- not a generic 'add security review' answer.",
+      "objectives": [
+        {
+          "id": "gcppca:3:1",
+          "unitId": "gcppca:3",
+          "index": 1,
+          "text": "Designing IAM for a solution",
+          "sourceHash": "f9b7af9567a3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:3:2",
+          "unitId": "gcppca:3",
+          "index": 2,
+          "text": "Designing a resource hierarchy: organizations, folders, projects",
+          "sourceHash": "46310349b87f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:3:3",
+          "unitId": "gcppca:3",
+          "index": 3,
+          "text": "Designing data security: key management, encryption, secret management",
+          "sourceHash": "14aee59070e3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:3:4",
+          "unitId": "gcppca:3",
+          "index": 4,
+          "text": "Designing for separation of duties",
+          "sourceHash": "a04fcadd6326",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:3:5",
+          "unitId": "gcppca:3",
+          "index": 5,
+          "text": "Designing security controls: auditing, VPC Service Controls, context-aware access, organization policy, hierarchical firewall policy",
+          "sourceHash": "14e2b2cf45a9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:3:6",
+          "unitId": "gcppca:3",
+          "index": 6,
+          "text": "Managing customer-managed encryption keys with Cloud KMS",
+          "sourceHash": "a45b0c8241bf",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:3:7",
+          "unitId": "gcppca:3",
+          "index": 7,
+          "text": "Designing secure remote access: Identity-Aware Proxy, service account impersonation, Chrome Enterprise Premium, Workload Identity Federation",
+          "sourceHash": "de9bd3bfb62e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:3:8",
+          "unitId": "gcppca:3",
+          "index": 8,
+          "text": "Securing the software supply chain",
+          "sourceHash": "c3e21f7f1f85",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:3:9",
+          "unitId": "gcppca:3",
+          "index": 9,
+          "text": "Securing AI: Model Armor, Sensitive Data Protection, secure model deployment",
+          "sourceHash": "c158529fd34a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:3:10",
+          "unitId": "gcppca:3",
+          "index": 10,
+          "text": "Designing for legislation and regulation: health record privacy, children's privacy, data privacy, data ownership, data sovereignty",
+          "sourceHash": "e85deb04717d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:3:11",
+          "unitId": "gcppca:3",
+          "index": 11,
+          "text": "Designing for commercial compliance: handling credit card data and PII",
+          "sourceHash": "ca5cafc4604f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:3:12",
+          "unitId": "gcppca:3",
+          "index": 12,
+          "text": "Aligning a design with industry certifications like SOC 2",
+          "sourceHash": "9802db13ca07",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:3:13",
+          "unitId": "gcppca:3",
+          "index": 13,
+          "text": "Designing for audits, including log retention",
+          "sourceHash": "f0da89b11836",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "gcppca:4",
+      "index": 4,
+      "title": "Analyzing and Optimizing Technical and Business Processes",
+      "weight": 15,
+      "gate": "Given an organizational or process problem (not an infrastructure one), say what a Professional Cloud Architect is actually being asked to advise on.",
+      "objectives": [
+        {
+          "id": "gcppca:4:1",
+          "unitId": "gcppca:4",
+          "index": 1,
+          "text": "Analyzing the software development lifecycle",
+          "sourceHash": "78ebd8da4731",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:4:2",
+          "unitId": "gcppca:4",
+          "index": 2,
+          "text": "Analyzing CI/CD processes",
+          "sourceHash": "bdbf9f2ecc9b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:4:3",
+          "unitId": "gcppca:4",
+          "index": 3,
+          "text": "Applying troubleshooting and root-cause-analysis best practices",
+          "sourceHash": "5e3121e0dade",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:4:4",
+          "unitId": "gcppca:4",
+          "index": 4,
+          "text": "Testing and validating software and infrastructure",
+          "sourceHash": "1c0ef5a2bbd9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:4:5",
+          "unitId": "gcppca:4",
+          "index": 5,
+          "text": "Designing a service catalog and provisioning process",
+          "sourceHash": "139562440bd9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:4:6",
+          "unitId": "gcppca:4",
+          "index": 6,
+          "text": "Planning for disaster recovery",
+          "sourceHash": "a35999a12713",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:4:7",
+          "unitId": "gcppca:4",
+          "index": 7,
+          "text": "Managing stakeholders: influencing and facilitation",
+          "sourceHash": "96262b0cb16c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:4:8",
+          "unitId": "gcppca:4",
+          "index": 8,
+          "text": "Managing organizational change",
+          "sourceHash": "790bf0b837aa",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:4:9",
+          "unitId": "gcppca:4",
+          "index": 9,
+          "text": "Assessing team skills readiness",
+          "sourceHash": "872c49592920",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:4:10",
+          "unitId": "gcppca:4",
+          "index": 10,
+          "text": "Analyzing decision-making processes",
+          "sourceHash": "2b93ecc21514",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:4:11",
+          "unitId": "gcppca:4",
+          "index": 11,
+          "text": "Managing customer success",
+          "sourceHash": "c120b1ca707c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:4:12",
+          "unitId": "gcppca:4",
+          "index": 12,
+          "text": "Optimizing cost and resources: CapEx versus OpEx",
+          "sourceHash": "c3867b6d8eb7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:4:13",
+          "unitId": "gcppca:4",
+          "index": 13,
+          "text": "Planning for business continuity",
+          "sourceHash": "584fff866f75",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "gcppca:5",
+      "index": 5,
+      "title": "Managing Implementation",
+      "weight": 12.5,
+      "gate": "Given a deployment in progress, say what a Professional Cloud Architect advises the dev/ops teams to do -- not do it for them.",
+      "objectives": [
+        {
+          "id": "gcppca:5:1",
+          "unitId": "gcppca:5",
+          "index": 1,
+          "text": "Advising on application and infrastructure deployment",
+          "sourceHash": "d63b8f0b29ba",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:5:2",
+          "unitId": "gcppca:5",
+          "index": 2,
+          "text": "Applying API management best practices with Apigee",
+          "sourceHash": "4ab0dce59434",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:5:3",
+          "unitId": "gcppca:5",
+          "index": 3,
+          "text": "Choosing testing frameworks: load, unit, integration",
+          "sourceHash": "a4ca7349a6a9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:5:4",
+          "unitId": "gcppca:5",
+          "index": 4,
+          "text": "Choosing data and system migration/management tooling",
+          "sourceHash": "c27545029c19",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:5:5",
+          "unitId": "gcppca:5",
+          "index": 5,
+          "text": "Using Gemini Cloud Assist during implementation",
+          "sourceHash": "1415f5dd1291",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:5:6",
+          "unitId": "gcppca:5",
+          "index": 6,
+          "text": "Using Cloud Shell Editor, Cloud Code, and the Cloud Shell Terminal",
+          "sourceHash": "b1ac22deb6ad",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:5:7",
+          "unitId": "gcppca:5",
+          "index": 7,
+          "text": "Using Google Cloud SDKs: gcloud, gsutil, bq",
+          "sourceHash": "171015543942",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:5:8",
+          "unitId": "gcppca:5",
+          "index": 8,
+          "text": "Using Cloud Emulators: Bigtable, Spanner, Pub/Sub, Firestore",
+          "sourceHash": "72090af0491b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:5:9",
+          "unitId": "gcppca:5",
+          "index": 9,
+          "text": "Using Infrastructure as Code, including Terraform",
+          "sourceHash": "c42ae7fd9c54",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:5:10",
+          "unitId": "gcppca:5",
+          "index": 10,
+          "text": "Following Google API access best practices",
+          "sourceHash": "d6b40a3740d5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:5:11",
+          "unitId": "gcppca:5",
+          "index": 11,
+          "text": "Using Google API client libraries",
+          "sourceHash": "ab30b7b9d057",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "gcppca:6",
+      "index": 6,
+      "title": "Ensuring Solution and Operations Excellence",
+      "weight": 12.5,
+      "gate": "Given a production solution, say how a Professional Cloud Architect verifies it's actually reliable -- not just that it was designed to be.",
+      "objectives": [
+        {
+          "id": "gcppca:6:1",
+          "unitId": "gcppca:6",
+          "index": 1,
+          "text": "Applying the operational excellence pillar's principles and recommendations",
+          "sourceHash": "8017bcd78ec3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:6:2",
+          "unitId": "gcppca:6",
+          "index": 2,
+          "text": "Monitoring and logging with Google Cloud Observability",
+          "sourceHash": "edd38ea1540e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:6:3",
+          "unitId": "gcppca:6",
+          "index": 3,
+          "text": "Profiling and benchmarking a solution",
+          "sourceHash": "d9ccb5aa6c1c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:6:4",
+          "unitId": "gcppca:6",
+          "index": 4,
+          "text": "Designing alerting strategies",
+          "sourceHash": "2b17dd9eaa63",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:6:5",
+          "unitId": "gcppca:6",
+          "index": 5,
+          "text": "Managing deployment and release",
+          "sourceHash": "fde3ddad9630",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:6:6",
+          "unitId": "gcppca:6",
+          "index": 6,
+          "text": "Assisting with the support of deployed solutions",
+          "sourceHash": "5bec30ad6978",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:6:7",
+          "unitId": "gcppca:6",
+          "index": 7,
+          "text": "Evaluating quality control measures",
+          "sourceHash": "e1096235dadd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcppca:6:8",
+          "unitId": "gcppca:6",
+          "index": 8,
+          "text": "Ensuring production reliability: chaos engineering, penetration testing, load testing",
+          "sourceHash": "1825aa5c91e4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/gcp.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-24T00:00:00Z",
+    "officialObjectivesUrl": "https://cloud.google.com/learn/certification/guides/cloud-architect",
+    "providerName": "Google Cloud",
+    "credentialName": "Google Cloud Professional Cloud Architect",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 6,
+    "objectives": 101,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

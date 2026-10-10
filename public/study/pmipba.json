@@ -1,0 +1,352 @@
+{
+  "id": "pmipba",
+  "code": "PMIPBA",
+  "title": "PMI-PBA",
+  "description": "PMI Professional in Business Analysis (PMI-PBA) exam prep across 5 weighted domains -- needs assessment, planning, analysis, traceability/monitoring, and evaluation.",
+  "trackType": "certification",
+  "field": "pm",
+  "units": [
+    {
+      "id": "pmipba:1",
+      "index": 1,
+      "title": "Needs Assessment",
+      "weight": 18,
+      "gate": "Given a business problem statement, apply the specific needs-assessment technique it calls for -- a value-proposition analysis, a stakeholder identification pass -- not a generic 'understand the problem' answer.",
+      "objectives": [
+        {
+          "id": "pmipba:1:1",
+          "unitId": "pmipba:1",
+          "index": 1,
+          "text": "Defining and reviewing a business problem or opportunity using problem/opportunity-analysis techniques to develop a solution scope statement",
+          "sourceHash": "9ee652466d52",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmipba:1:2",
+          "unitId": "pmipba:1",
+          "index": 2,
+          "text": "Collecting and analyzing information from varied sources to determine an initiative's value proposition",
+          "sourceHash": "fa1a86bd21d8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmipba:1:3",
+          "unitId": "pmipba:1",
+          "index": 3,
+          "text": "Collaborating on project goals and objectives, clarifying business needs and solution scope to align the product with organizational goals",
+          "sourceHash": "91e7b1145b68",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmipba:1:4",
+          "unitId": "pmipba:1",
+          "index": 4,
+          "text": "Identifying stakeholders by reviewing goals, objectives, and requirements to ensure the right parties are represented and informed",
+          "sourceHash": "94b632b1749c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmipba:1:5",
+          "unitId": "pmipba:1",
+          "index": 5,
+          "text": "Determining stakeholder values through elicitation techniques to establish a baseline for prioritizing requirements",
+          "sourceHash": "0429b93e8e8c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "pmipba:2",
+      "index": 2,
+      "title": "Planning",
+      "weight": 22,
+      "gate": "Given a project about to start requirements work, apply the specific planning artifact it calls for -- a traceability strategy, a change-control method -- not a generic 'make a plan' answer.",
+      "objectives": [
+        {
+          "id": "pmipba:2:1",
+          "unitId": "pmipba:2",
+          "index": 1,
+          "text": "Reviewing the business case and project goals to establish context for business analysis activities",
+          "sourceHash": "897d0db350b0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmipba:2:2",
+          "unitId": "pmipba:2",
+          "index": 2,
+          "text": "Defining a requirements traceability strategy using traceability tools and techniques",
+          "sourceHash": "4b86176b8551",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmipba:2:3",
+          "unitId": "pmipba:2",
+          "index": 3,
+          "text": "Developing a requirements management plan: stakeholders, roles/responsibilities, and elicitation/analysis/approval methods",
+          "sourceHash": "dd8f9aeee9aa",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmipba:2:4",
+          "unitId": "pmipba:2",
+          "index": 4,
+          "text": "Selecting requirements change-control methods and standard protocols for incorporation into the change management plan",
+          "sourceHash": "4cd2f3ad0980",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmipba:2:5",
+          "unitId": "pmipba:2",
+          "index": 5,
+          "text": "Selecting document-control methods to establish standard requirements traceability and versioning",
+          "sourceHash": "63be366108a3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmipba:2:6",
+          "unitId": "pmipba:2",
+          "index": 6,
+          "text": "Defining business metrics and acceptance criteria collaboratively with stakeholders",
+          "sourceHash": "c200402f0e05",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "pmipba:3",
+      "index": 3,
+      "title": "Analysis",
+      "weight": 35,
+      "gate": "Given a set of raw stakeholder input, apply the specific elicitation, decomposition, or specification technique it calls for -- a dependency analysis, a use case, a prototype validation -- not a generic 'gather requirements' answer.",
+      "objectives": [
+        {
+          "id": "pmipba:3:1",
+          "unitId": "pmipba:3",
+          "index": 1,
+          "text": "Eliciting or identifying requirements using individual and group elicitation techniques, capturing origin and rationale",
+          "sourceHash": "4f32c7968261",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmipba:3:2",
+          "unitId": "pmipba:3",
+          "index": 2,
+          "text": "Analyzing, decomposing, and elaborating requirements: dependency analysis, interface analysis, and data/process modeling",
+          "sourceHash": "9ef9912bbdaa",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmipba:3:3",
+          "unitId": "pmipba:3",
+          "index": 3,
+          "text": "Evaluating product options and capabilities with decision-making and valuation techniques to accept, defer, or reject requirements",
+          "sourceHash": "fb50c821875a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmipba:3:4",
+          "unitId": "pmipba:3",
+          "index": 4,
+          "text": "Allocating accepted/deferred requirements against scope, schedule, budget, and resource constraints to create a requirements baseline",
+          "sourceHash": "842e4951b5f9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmipba:3:5",
+          "unitId": "pmipba:3",
+          "index": 5,
+          "text": "Obtaining sign-off on the requirements baseline through decision-making techniques that build stakeholder consensus",
+          "sourceHash": "335e728913d1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmipba:3:6",
+          "unitId": "pmipba:3",
+          "index": 6,
+          "text": "Writing requirements specifications (use cases, user stories, data/interface details) so they're measurable and actionable for development",
+          "sourceHash": "7f16e9d5ef08",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmipba:3:7",
+          "unitId": "pmipba:3",
+          "index": 7,
+          "text": "Validating requirements via documentation review, prototypes, and demos to confirm completeness and alignment with goals",
+          "sourceHash": "7f4bb67d517a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmipba:3:8",
+          "unitId": "pmipba:3",
+          "index": 8,
+          "text": "Elaborating detailed metrics and acceptance criteria used to evaluate whether the solution meets requirements",
+          "sourceHash": "782048c7d742",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "pmipba:4",
+      "index": 4,
+      "title": "Traceability and Monitoring",
+      "weight": 15,
+      "gate": "Given a requirement moving through its lifecycle, apply the specific tracking or change-impact step it calls for -- a traceability-artifact update, an impact assessment -- not a generic 'keep track of it' answer.",
+      "objectives": [
+        {
+          "id": "pmipba:4:1",
+          "unitId": "pmipba:4",
+          "index": 1,
+          "text": "Tracking requirements using traceability artifacts/tools to provide evidence of delivery against what was stated",
+          "sourceHash": "52074277742d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmipba:4:2",
+          "unitId": "pmipba:4",
+          "index": 2,
+          "text": "Monitoring requirements throughout their lifecycle to ensure supporting artifacts (models, documentation, test cases) are produced and reviewed at each stage",
+          "sourceHash": "736bbdf631b5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmipba:4:3",
+          "unitId": "pmipba:4",
+          "index": 3,
+          "text": "Updating and communicating a requirement's status as it moves through lifecycle states, recording changes in the traceability tool",
+          "sourceHash": "4dca35a3c4b9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmipba:4:4",
+          "unitId": "pmipba:4",
+          "index": 4,
+          "text": "Communicating requirements status to the project manager and stakeholders: issues, conflicts, changes, risks, and overall status",
+          "sourceHash": "639200a7d17c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmipba:4:5",
+          "unitId": "pmipba:4",
+          "index": 5,
+          "text": "Managing requirement changes by assessing impact, dependencies, and risk against the change-control plan and requirements baseline",
+          "sourceHash": "12d8cbbddc5a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "pmipba:5",
+      "index": 5,
+      "title": "Evaluation",
+      "weight": 10,
+      "gate": "Given a delivered solution, apply the specific validation or gap-analysis step it calls for -- a test-result review, a sign-off decision -- not a generic 'check if it works' answer.",
+      "objectives": [
+        {
+          "id": "pmipba:5:1",
+          "unitId": "pmipba:5",
+          "index": 1,
+          "text": "Validating a solution's test results, reports, and evidence against requirements and acceptance criteria",
+          "sourceHash": "43a5273e02db",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmipba:5:2",
+          "unitId": "pmipba:5",
+          "index": 2,
+          "text": "Analyzing and communicating identified gaps/deltas between solution scope, requirements, and what was actually built",
+          "sourceHash": "5be5b6e68c4a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmipba:5:3",
+          "unitId": "pmipba:5",
+          "index": 3,
+          "text": "Obtaining stakeholder sign-off on the developed solution to proceed to deployment",
+          "sourceHash": "878e67a9ee01",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "pmipba:5:4",
+          "unitId": "pmipba:5",
+          "index": 4,
+          "text": "Evaluating the deployed solution against the original business case and value proposition",
+          "sourceHash": "b0f883d52ad7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/pm.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-27T00:00:00Z",
+    "officialObjectivesUrl": "https://www.pmi.org/-/media/pmi/documents/public/pdf/certifications/professional-business-analysis-exam-outline.pdf",
+    "providerName": "Project Management Institute (PMI)",
+    "credentialName": "PMI Professional in Business Analysis (PMI-PBA)",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 5,
+    "objectives": 28,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

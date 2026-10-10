@@ -1,0 +1,467 @@
+{
+  "id": "nscacscs",
+  "code": "NSCACSCS",
+  "title": "NSCA Certified Strength and Conditioning Specialist (CSCS)",
+  "description": "NSCA's CSCS on the detailed content outline in the handbook effective July 1, 2026: two separately passed sections -- Scientific Foundations (exercise science, sport psychology, nutrition) and Practical/Applied (program design, exercise technique, program implementation, organization and administration).",
+  "trackType": "certification",
+  "field": "fitness",
+  "units": [
+    {
+      "id": "nscacscs:1",
+      "index": 1,
+      "title": "Scientific Foundations: exercise science",
+      "weight": 25,
+      "rangeLabel": "48 of 80 scored items in Section 1",
+      "gate": "Explain a training adaptation down to the muscle, nerve, hormone or energy system responsible, and how it differs by biological age, training age and sex.",
+      "objectives": [
+        {
+          "id": "nscacscs:1:1",
+          "unitId": "nscacscs:1",
+          "index": 1,
+          "text": "Muscle anatomy and physiology: fiber types, sliding filament theory and muscle actions",
+          "sourceHash": "2d72dc0540bf",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nscacscs:1:2",
+          "unitId": "nscacscs:1",
+          "index": 2,
+          "text": "Neuromuscular anatomy and physiology: motor units, spindles, Golgi tendon organs and recruitment patterns",
+          "sourceHash": "84e14958f703",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nscacscs:1:3",
+          "unitId": "nscacscs:1",
+          "index": 3,
+          "text": "Biomechanics of exercise selection and execution: planes, kinetics, lever systems and force-velocity and force-time curves",
+          "sourceHash": "0a3307825445",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nscacscs:1:4",
+          "unitId": "nscacscs:1",
+          "index": 4,
+          "text": "Bioenergetics and metabolism: energy systems and manipulating training variables to target them",
+          "sourceHash": "1f2b66047475",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nscacscs:1:5",
+          "unitId": "nscacscs:1",
+          "index": 5,
+          "text": "Neuroendocrine physiology and hormonal responses to training",
+          "sourceHash": "ffe3ba4e6af4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nscacscs:1:6",
+          "unitId": "nscacscs:1",
+          "index": 6,
+          "text": "Cardiopulmonary anatomy, physiology and responses to exercise",
+          "sourceHash": "2fbd4f6e7a68",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nscacscs:1:7",
+          "unitId": "nscacscs:1",
+          "index": 7,
+          "text": "Physiological adaptations to resistance training and conditioning",
+          "sourceHash": "9f408e26f89e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nscacscs:1:8",
+          "unitId": "nscacscs:1",
+          "index": 8,
+          "text": "Integrated physiology: performance planning, fatigue, recovery, sleep, travel and restoration",
+          "sourceHash": "aa8759b6ac9c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nscacscs:1:9",
+          "unitId": "nscacscs:1",
+          "index": 9,
+          "text": "Scientific literacy: reading research and applying PICOT-style questions to practice",
+          "sourceHash": "ec44d74c7850",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "nscacscs:2",
+      "index": 2,
+      "title": "Scientific Foundations: sport psychology",
+      "weight": 10,
+      "rangeLabel": "20 of 80 scored items in Section 1",
+      "gate": "Pick the motivational or mental-skills technique that fits a described athlete, and recognize when a concern needs a referral.",
+      "objectives": [
+        {
+          "id": "nscacscs:2:1",
+          "unitId": "nscacscs:2",
+          "index": 1,
+          "text": "Motivational theories, mental skills (arousal regulation, attentional control, imagery, self-talk) and confidence building",
+          "sourceHash": "8aaf0aa4e868",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nscacscs:2:2",
+          "unitId": "nscacscs:2",
+          "index": 2,
+          "text": "Coach-athlete relationships, team dynamics, cohesion and leadership",
+          "sourceHash": "749b38b9f76d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nscacscs:2:3",
+          "unitId": "nscacscs:2",
+          "index": 3,
+          "text": "Athlete mental health and wellness: setbacks, identity, anxiety, depression and disordered eating, and when to refer",
+          "sourceHash": "33f872b33d4d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "nscacscs:3",
+      "index": 3,
+      "title": "Scientific Foundations: nutrition",
+      "weight": 7,
+      "rangeLabel": "12 of 80 scored items in Section 1",
+      "gate": "Give a scope-appropriate nutrition recommendation for a stated performance goal and say what would need a dietitian.",
+      "objectives": [
+        {
+          "id": "nscacscs:3:1",
+          "unitId": "nscacscs:3",
+          "index": 1,
+          "text": "Nutrition topics within scope of practice and when to refer",
+          "sourceHash": "6dae66b0db9f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nscacscs:3:2",
+          "unitId": "nscacscs:3",
+          "index": 2,
+          "text": "Nutritional factors for endurance, hypertrophy, strength and power: hydration, energy balance, macronutrient timing and quality",
+          "sourceHash": "14ac2024b08d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nscacscs:3:3",
+          "unitId": "nscacscs:3",
+          "index": 3,
+          "text": "Supplement efficacy and safety, third-party testing, and the impact of alcohol and drugs",
+          "sourceHash": "3c2bf8fd4573",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nscacscs:3:4",
+          "unitId": "nscacscs:3",
+          "index": 4,
+          "text": "Evidence-based versus fad approaches to altering body composition",
+          "sourceHash": "206da89a4d30",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "nscacscs:4",
+      "index": 4,
+      "title": "Practical/Applied: program design",
+      "weight": 23,
+      "rangeLabel": "44 of 110 scored items in Section 2",
+      "gate": "From a needs analysis for a named sport and athlete, produce the program: exercises, order, intensities, volumes, rest, progression and periodization.",
+      "objectives": [
+        {
+          "id": "nscacscs:4:1",
+          "unitId": "nscacscs:4",
+          "index": 1,
+          "text": "Conducting a needs analysis: sport movement, physiological and injury analysis, athlete history and benchmark testing",
+          "sourceHash": "ac4e107a6040",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nscacscs:4:2",
+          "unitId": "nscacscs:4",
+          "index": 2,
+          "text": "Selecting training methods and modes for muscular endurance, hypertrophy, strength, power and energy-system development",
+          "sourceHash": "44fbd25f7f60",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nscacscs:4:3",
+          "unitId": "nscacscs:4",
+          "index": 3,
+          "text": "Exercise selection for the training period, injury-risk reduction and available facility and staff",
+          "sourceHash": "3ea2180c3202",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nscacscs:4:4",
+          "unitId": "nscacscs:4",
+          "index": 4,
+          "text": "Exercise order based on session goals and mechanical and metabolic interference",
+          "sourceHash": "59584ee2fad4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nscacscs:4:5",
+          "unitId": "nscacscs:4",
+          "index": 5,
+          "text": "Assigning mechanical and metabolic load: percent 1RM, RM loads, RPE and Karvonen",
+          "sourceHash": "087980103a70",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nscacscs:4:6",
+          "unitId": "nscacscs:4",
+          "index": 6,
+          "text": "Training volume, work-to-rest periods, recovery and unloading across the microcycle and macrocycle",
+          "sourceHash": "b313397c8bd2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nscacscs:4:7",
+          "unitId": "nscacscs:4",
+          "index": 7,
+          "text": "Exercise progression and periodization strategies: linear and nonlinear, off-season to in-season",
+          "sourceHash": "c988b19abee4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nscacscs:4:8",
+          "unitId": "nscacscs:4",
+          "index": 8,
+          "text": "Programming during injury, reconditioning and return to play with the interdisciplinary team",
+          "sourceHash": "cc5f493e5827",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "nscacscs:5",
+      "index": 5,
+      "title": "Practical/Applied: exercise technique",
+      "weight": 15,
+      "rangeLabel": "28 of 110 scored items in Section 2",
+      "gate": "Watch a lift and name the fault, the cue and the safety protocol -- for free weights, machines and alternative implements alike.",
+      "objectives": [
+        {
+          "id": "nscacscs:5:1",
+          "unitId": "nscacscs:5",
+          "index": 1,
+          "text": "Teaching and evaluating movement preparation: soft tissue work, mobility, PNF, CNS preparation and dynamic stretching",
+          "sourceHash": "425d179a42e2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nscacscs:5:2",
+          "unitId": "nscacscs:5",
+          "index": 2,
+          "text": "Teaching and evaluating free-weight technique: barbells, dumbbells and kettlebells, including spotting and set-up",
+          "sourceHash": "b14ee6da963e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nscacscs:5:3",
+          "unitId": "nscacscs:5",
+          "index": 3,
+          "text": "Teaching and evaluating machine and alternative-equipment technique: sleds, logs, tires, flywheels, ropes, sandbags, medicine balls and bands",
+          "sourceHash": "96dcb975ba47",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nscacscs:5:4",
+          "unitId": "nscacscs:5",
+          "index": 4,
+          "text": "Assessing, cueing and modifying technique based on arousal, focus, competency and safety",
+          "sourceHash": "4f3182fac328",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nscacscs:5:5",
+          "unitId": "nscacscs:5",
+          "index": 5,
+          "text": "Plyometric, speed, agility and conditioning technique",
+          "sourceHash": "6d62469b2cf8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "nscacscs:6",
+      "index": 6,
+      "title": "Practical/Applied: program implementation",
+      "weight": 12,
+      "rangeLabel": "22 of 110 scored items in Section 2",
+      "gate": "Run a session and a testing day: define roles, coach with the right cues, collect valid data, and communicate the results.",
+      "objectives": [
+        {
+          "id": "nscacscs:6:1",
+          "unitId": "nscacscs:6",
+          "index": 1,
+          "text": "Coaching athletes through training sessions: preparation, roles, motor-learning cues, observation, feedback and debrief",
+          "sourceHash": "2a86e52b82d8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nscacscs:6:2",
+          "unitId": "nscacscs:6",
+          "index": 2,
+          "text": "Selecting evidence-based tests and monitoring protocols, including readiness measures such as HRV",
+          "sourceHash": "ed0ec9cc80a1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nscacscs:6:3",
+          "unitId": "nscacscs:6",
+          "index": 3,
+          "text": "Administering testing and monitoring: data collection, warm-up, rest between trials and athlete readiness",
+          "sourceHash": "a1c2b99aa3c0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nscacscs:6:4",
+          "unitId": "nscacscs:6",
+          "index": 4,
+          "text": "Evaluating, interpreting and communicating assessment results and adjusting the program",
+          "sourceHash": "d4e0b436813f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "nscacscs:7",
+      "index": 7,
+      "title": "Practical/Applied: organization and administration",
+      "weight": 8,
+      "rangeLabel": "16 of 110 scored items in Section 2",
+      "gate": "Spot the facility, scope or safety problem in a scenario and the policy or action that addresses it.",
+      "objectives": [
+        {
+          "id": "nscacscs:7:1",
+          "unitId": "nscacscs:7",
+          "index": 1,
+          "text": "Scope of practice, NSCA codes and policies, collaboration with allied health and when to refer",
+          "sourceHash": "936daa3ddf50",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nscacscs:7:2",
+          "unitId": "nscacscs:7",
+          "index": 2,
+          "text": "Facility operation policies: cleaning, maintenance, rules, staffing, scheduling and emergency procedures",
+          "sourceHash": "500cfe135a68",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nscacscs:7:3",
+          "unitId": "nscacscs:7",
+          "index": 3,
+          "text": "Risk, standard of care and liability in the strength and conditioning facility",
+          "sourceHash": "a9c6eef643a1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nscacscs:7:4",
+          "unitId": "nscacscs:7",
+          "index": 4,
+          "text": "Recognizing and responding to unsafe training: overuse, overtraining and temperature-induced illness",
+          "sourceHash": "c12a775b6a34",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/fitness.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-10-08T00:00:00Z",
+    "officialObjectivesUrl": "https://www.nsca.com/globalassets/certification/certification-pdfs/nsca-certification-handbook.pdf",
+    "providerName": "National Strength and Conditioning Association",
+    "credentialName": "Certified Strength and Conditioning Specialist (CSCS)",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 7,
+    "objectives": 37,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

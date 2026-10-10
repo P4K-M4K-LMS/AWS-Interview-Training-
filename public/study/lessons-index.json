@@ -1,0 +1,330 @@
+{
+  "schemaVersion": 1,
+  "courses": {
+    "220-1201": {
+      "generated": 34,
+      "imported": 0,
+      "scenarios": 5
+    },
+    "220-1202": {
+      "generated": 28,
+      "imported": 0,
+      "scenarios": 4
+    },
+    "ai-901": {
+      "generated": 29,
+      "imported": 0,
+      "scenarios": 2
+    },
+    "aif-c01": {
+      "generated": 79,
+      "imported": 3,
+      "scenarios": 5
+    },
+    "ans-c01": {
+      "generated": 109,
+      "imported": 0,
+      "scenarios": 4
+    },
+    "at0-001": {
+      "generated": 14,
+      "imported": 0,
+      "scenarios": 4
+    },
+    "az-104": {
+      "generated": 82,
+      "imported": 0,
+      "scenarios": 5
+    },
+    "az-120": {
+      "generated": 78,
+      "imported": 0,
+      "scenarios": 4
+    },
+    "az-140": {
+      "generated": 78,
+      "imported": 0,
+      "scenarios": 4
+    },
+    "az-305": {
+      "generated": 49,
+      "imported": 0,
+      "scenarios": 4
+    },
+    "az-400": {
+      "generated": 86,
+      "imported": 0,
+      "scenarios": 5
+    },
+    "az-700": {
+      "generated": 131,
+      "imported": 0,
+      "scenarios": 5
+    },
+    "az-900": {
+      "generated": 52,
+      "imported": 0,
+      "scenarios": 3
+    },
+    "capm": {
+      "generated": 30,
+      "imported": 0,
+      "scenarios": 4
+    },
+    "clf-c02": {
+      "generated": 80,
+      "imported": 0,
+      "scenarios": 4
+    },
+    "cmpcbs": {
+      "generated": 102,
+      "imported": 3,
+      "scenarios": 20
+    },
+    "cnx-001": {
+      "generated": 25,
+      "imported": 0,
+      "scenarios": 4
+    },
+    "cspp": {
+      "generated": 21,
+      "imported": 0,
+      "scenarios": 5
+    },
+    "cv0-004": {
+      "generated": 31,
+      "imported": 0,
+      "scenarios": 6
+    },
+    "cy0-001": {
+      "generated": 15,
+      "imported": 0,
+      "scenarios": 4
+    },
+    "cysaplus": {
+      "generated": 22,
+      "imported": 0,
+      "scenarios": 4
+    },
+    "da0-002": {
+      "generated": 18,
+      "imported": 0,
+      "scenarios": 5
+    },
+    "dea-c01": {
+      "generated": 113,
+      "imported": 0,
+      "scenarios": 4
+    },
+    "dop-c02": {
+      "generated": 114,
+      "imported": 0,
+      "scenarios": 5
+    },
+    "dp-300": {
+      "generated": 94,
+      "imported": 0,
+      "scenarios": 5
+    },
+    "dp-900": {
+      "generated": 30,
+      "imported": 0,
+      "scenarios": 4
+    },
+    "dva-c02": {
+      "generated": 98,
+      "imported": 0,
+      "scenarios": 4
+    },
+    "dy0-001": {
+      "generated": 26,
+      "imported": 0,
+      "scenarios": 5
+    },
+    "fc0-u71": {
+      "generated": 29,
+      "imported": 0,
+      "scenarios": 6
+    },
+    "gcpace": {
+      "generated": 86,
+      "imported": 0,
+      "scenarios": 4
+    },
+    "gcpcdl": {
+      "generated": 65,
+      "imported": 0,
+      "scenarios": 6
+    },
+    "gcpdbe": {
+      "generated": 46,
+      "imported": 0,
+      "scenarios": 4
+    },
+    "gcpdev": {
+      "generated": 57,
+      "imported": 0,
+      "scenarios": 4
+    },
+    "gcpdevops": {
+      "generated": 75,
+      "imported": 0,
+      "scenarios": 5
+    },
+    "gcpgail": {
+      "generated": 50,
+      "imported": 0,
+      "scenarios": 4
+    },
+    "gcpmle": {
+      "generated": 52,
+      "imported": 0,
+      "scenarios": 6
+    },
+    "gcpnet": {
+      "generated": 128,
+      "imported": 0,
+      "scenarios": 6
+    },
+    "gcppca": {
+      "generated": 98,
+      "imported": 0,
+      "scenarios": 6
+    },
+    "gcppde": {
+      "generated": 70,
+      "imported": 0,
+      "scenarios": 5
+    },
+    "gcpsec": {
+      "generated": 70,
+      "imported": 0,
+      "scenarios": 5
+    },
+    "javascript": {
+      "generated": 45,
+      "imported": 0,
+      "scenarios": 9
+    },
+    "linuxplus": {
+      "generated": 31,
+      "imported": 2,
+      "scenarios": 5
+    },
+    "mla-c02": {
+      "generated": 107,
+      "imported": 0,
+      "scenarios": 4
+    },
+    "mscs": {
+      "generated": 113,
+      "imported": 2,
+      "scenarios": 15
+    },
+    "n10-009": {
+      "generated": 33,
+      "imported": 0,
+      "scenarios": 5
+    },
+    "pentestplus": {
+      "generated": 22,
+      "imported": 1,
+      "scenarios": 5
+    },
+    "pfmp": {
+      "generated": 34,
+      "imported": 0,
+      "scenarios": 5
+    },
+    "pgmp": {
+      "generated": 35,
+      "imported": 0,
+      "scenarios": 5
+    },
+    "pk0-005": {
+      "generated": 24,
+      "imported": 0,
+      "scenarios": 4
+    },
+    "pmiacp": {
+      "generated": 24,
+      "imported": 0,
+      "scenarios": 4
+    },
+    "pmicp": {
+      "generated": 16,
+      "imported": 0,
+      "scenarios": 4
+    },
+    "pmicpmai": {
+      "generated": 31,
+      "imported": 0,
+      "scenarios": 5
+    },
+    "pmipba": {
+      "generated": 28,
+      "imported": 0,
+      "scenarios": 5
+    },
+    "pmipmocp": {
+      "generated": 22,
+      "imported": 0,
+      "scenarios": 6
+    },
+    "pmirmp": {
+      "generated": 20,
+      "imported": 0,
+      "scenarios": 5
+    },
+    "pmisp": {
+      "generated": 27,
+      "imported": 0,
+      "scenarios": 5
+    },
+    "pmp": {
+      "generated": 23,
+      "imported": 0,
+      "scenarios": 3
+    },
+    "python": {
+      "generated": 50,
+      "imported": 0,
+      "scenarios": 9
+    },
+    "saa-c03": {
+      "generated": 99,
+      "imported": 2,
+      "scenarios": 4
+    },
+    "sap-c02": {
+      "generated": 113,
+      "imported": 0,
+      "scenarios": 4
+    },
+    "scs-c03": {
+      "generated": 70,
+      "imported": 0,
+      "scenarios": 6
+    },
+    "secplus": {
+      "generated": 36,
+      "imported": 2,
+      "scenarios": 5
+    },
+    "securityx": {
+      "generated": 19,
+      "imported": 0,
+      "scenarios": 4
+    },
+    "sk0-005": {
+      "generated": 20,
+      "imported": 0,
+      "scenarios": 4
+    },
+    "soa-c03": {
+      "generated": 59,
+      "imported": 0,
+      "scenarios": 5
+    }
+  }
+}

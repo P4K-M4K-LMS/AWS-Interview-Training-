@@ -97,6 +97,26 @@ export function apiSchema(schema: unknown): unknown {
 
 type Client = InstanceType<typeof Anthropic>;
 
+/** Models that accept the server-side `fallbacks: "default"` parameter. */
+const FALLBACK_MODELS = new Set(["claude-opus-5-5", "claude-sonnet-5-5", "claude-fable-5-1"]);
+
+/** Tokens billed by this process, failed replies included, so a run can report what it actually spent. */
+export const usage = { calls: 0, input: 0, output: 0, cacheRead: 0, cacheWrite: 0 };
+
+/** Dollars per million tokens. Only models listed here get a cost line; check the Console for the bill itself. */
+export const PRICES: Record<string, { input: number; output: number }> = {
+  "claude-opus-5-5": { input: 4, output: 20 },
+  "claude-sonnet-5-5": { input: 2, output: 10 },
+  // Haiku 5.5's rate for prompts up to 100K tokens; lesson prompts are far below that.
+  "claude-haiku-5-5": { input: 0.1, output: 0.5 },
+};
+
+export function usageCost(model: string): number | undefined {
+  const p = PRICES[model];
+  if (!p) return undefined;
+  return (usage.input * p.input + usage.cacheWrite * p.input * 1.25 + usage.cacheRead * p.input * 0.1 + usage.output * p.output) / 1e6;
+}
+
 async function structured<T>(client: Client, model: string, system: string, user: string, schema: object, maxTokens: number): Promise<{ data: T; model: string }> {
   let attempt = 0;
   for (;;) {
@@ -107,8 +127,17 @@ async function structured<T>(client: Client, model: string, system: string, user
         system,
         output_config: { effort: "medium", format: { type: "json_schema", schema: apiSchema(schema) } },
         messages: [{ role: "user", content: user }],
+        // Opus 5.5's safety filter declines some security-testing objectives (PenTest+). With fallbacks on,
+        // the API re-runs a declined request on a model chosen for that refusal category, in the same call;
+        // msg.model then names the model that wrote the lesson. Haiku has no server-side fallback.
+        ...(FALLBACK_MODELS.has(model) ? { betas: ["server-side-fallback-2026-07-01"], fallbacks: "default" } : {}),
       } as never);
-      const msg = response as unknown as { stop_reason: string; content: Array<{ type: string; text?: string }>; model: string };
+      const msg = response as unknown as { stop_reason: string; content: Array<{ type: string; text?: string }>; model: string; usage?: { input_tokens?: number; output_tokens?: number; cache_read_input_tokens?: number | null; cache_creation_input_tokens?: number | null } };
+      usage.calls += 1;
+      usage.input += msg.usage?.input_tokens ?? 0;
+      usage.output += msg.usage?.output_tokens ?? 0;
+      usage.cacheRead += msg.usage?.cache_read_input_tokens ?? 0;
+      usage.cacheWrite += msg.usage?.cache_creation_input_tokens ?? 0;
       if (msg.stop_reason === "refusal") throw new Error("the model declined this request");
       // Thinking counts against max_tokens, so a low cap cuts the JSON off mid-string.
       if (msg.stop_reason === "max_tokens") throw new Error(`reply cut off at max_tokens (${maxTokens}); raise the limit for this call`);
@@ -196,7 +225,8 @@ export async function generateCourse(opts: GenerateOptions): Promise<{ generated
         promptVersion: PROMPT_VERSION,
         model: lessonPart.model,
         generatedAt: new Date().toISOString(),
-        plain: lessonPart.data.plain,
+        // The plain paragraph is prose for beginners; objective text like "`this` in call contexts" invites backticks.
+        plain: lessonPart.data.plain.replace(/`/g, ""),
         guessPrompt: lessonPart.data.guessPrompt,
         teach: lessonPart.data.teach,
         questions: [toQuestion(`${objective.id}:q1`, "fade", bank.data.fade), ...bank.data.solo.map((q, i) => toQuestion(`${objective.id}:q${i + 2}`, "solo", q))],

@@ -1,0 +1,1182 @@
+{
+  "courseId": "at0-001",
+  "generated": {
+    "scriptVersion": 1,
+    "promptVersion": 2,
+    "generatedAt": "2026-10-10T08:41:01.809Z",
+    "models": [
+      "claude-opus-5-5"
+    ]
+  },
+  "lessons": [
+    {
+      "objectiveId": "at0-001:1:1",
+      "sourceHash": "241bde712d94",
+      "promptVersion": 2,
+      "model": "claude-opus-5-5",
+      "generatedAt": "2026-10-10T08:38:53.829Z",
+      "plain": "An automation script is a short program that does a repetitive job for you, like checking ten servers or cleaning old log files. Three building blocks make it useful. A variable is a named box that holds a value, such as a server name, so you change it in one place. A function is a named, reusable recipe: you write the steps once and call them whenever needed. A loop repeats steps for every item in a list. Think of a chef: ingredients in labelled jars (variables), a written recipe (function), and cooking it for every guest at the table (loop).",
+      "guessPrompt": "You need to check disk space on 50 servers, and your script currently has the same 6 lines copied 50 times with a different server name each time. What would you change so that adding a 51st server takes one small edit instead of six new lines?",
+      "teach": "A variable is a name bound to a value, for example threshold = 90. A function is a named block of steps that accepts inputs, called parameters, and can hand back a result, called a return value. A loop runs the same block once for each item in a collection, such as a list of hostnames. Together they remove repetition: data lives in variables, logic lives in functions, and loops apply the logic to every item.\n\nWhy this works: when each fact is stored once, a change happens in one place. When logic lives in one function, a bug fix applies everywhere it is used. That is what maintenance means here: keeping the script correct as servers, paths and rules change.\n\nWorked example. Variables: servers = [web1, web2, db1] and threshold = 90. Function check_disk(host, limit) reads the host's disk usage and returns True if usage is above limit. Loop: for each host in servers, call check_disk(host, threshold) and print an alert if it returns True. Trace: web1 is at 40 percent, so the function returns False and nothing prints. web2 is at 95 percent, so it returns True and an alert prints. db1 is at 70 percent, so it returns False. Adding a server means adding one name to the list.\n\nTesting means running a function with known inputs and checking the output matches what you expect, such as confirming check_disk returns True for 95 and False for 40, before trusting it on real machines. Small functions are easy to test because each does one job.\n\nA common mistake is hard-coding, meaning typing a value like 90 or a server name directly in many places instead of using a variable. Later someone changes the threshold in three places but misses the fourth. In a running system that means one server silently stops alerting, and a disk fills up with nobody warned.",
+      "questions": [
+        {
+          "id": "at0-001:1:1:q1",
+          "role": "fade",
+          "prompt": "A dental clinic's IT team writes a script to watch its booking services. Variables: services = [billing, booking, records] and max_restarts = 3. The function needs_attention(service, limit) reads how many times that service restarted today and returns True only if the count is above limit. Loop: for each service in services, call needs_attention(service, max_restarts) and print an alert if it returns True.\n\nTrace: billing restarted 1 time, so the function returns False and nothing prints. booking restarted 5 times, so it returns True and an alert prints. records restarted exactly 3 times. What happens for records?",
+          "choices": [
+            "The function returns True and an alert prints, because 3 matches the limit.",
+            "The function returns the number 3, and the loop prints that count as an alert.",
+            "The loop stops before records, because booking already returned True.",
+            "The function returns False and nothing prints, because 3 is not above the limit of 3."
+          ],
+          "correctIndex": 3,
+          "why": "The function returns True only when the count is above the limit, and 3 equals the limit rather than exceeding it, so it returns False and no alert prints."
+        },
+        {
+          "id": "at0-001:1:1:q2",
+          "role": "solo",
+          "prompt": "In an automation script, a function named days_until_expiry(cert) is given a certificate and hands back a number such as 12. What is that handed-back number called?",
+          "choices": [
+            "A variable binding",
+            "A parameter",
+            "A loop",
+            "The return value"
+          ],
+          "correctIndex": 3,
+          "why": "The result a function hands back to the code that called it is its return value. The cert input it accepts is a parameter."
+        },
+        {
+          "id": "at0-001:1:1:q3",
+          "role": "solo",
+          "prompt": "A logistics company's script has the timeout value 30 typed directly into five separate tasks. An engineer changes four of them to 60 but misses the fifth. That task keeps timing out early, and nobody notices for weeks. Which coding concept is at fault?",
+          "choices": [
+            "The function had too many parameters, so it ignored the new value",
+            "The loop ran over too few items in its collection",
+            "Hard-coding: the value was typed in many places instead of being stored once in a variable",
+            "The function was tested with known inputs before it was used"
+          ],
+          "correctIndex": 2,
+          "why": "Typing the same value in many places is hard-coding. Storing it once in a variable would have made the change happen in one place, so no copy could be missed."
+        },
+        {
+          "id": "at0-001:1:1:q4",
+          "role": "solo",
+          "prompt": "A school district has a function low_toner(level, minimum) that should return True when a printer's toner level is below minimum. Before running it across 200 printers, what is the best way to test it?",
+          "choices": [
+            "Read through the function's code once and trust it if it looks correct",
+            "Call it with known inputs, such as level 5 and minimum 10 expecting True, and level 50 and minimum 10 expecting False, and check the outputs match",
+            "Add more parameters to the function so it can handle more cases",
+            "Run it on all 200 printers at once and assume it works if any alerts appear"
+          ],
+          "correctIndex": 1,
+          "why": "Testing means running a function with known inputs and confirming the output matches what you expect before you trust it on real machines."
+        }
+      ],
+      "explainPrompt": "Explain to a teammate why you would rewrite a long copy-pasted automation script using variables, a function and a loop, and how you would test it. Name one limit or tradeoff of this approach.",
+      "modelAnswer": "The copy-pasted version repeats the same steps for every server, so each fix or change has to be made many times, and it is easy to miss one. I would put changing data, like the server list and the alert threshold, in variables so they are defined once. I would put the check itself in a function that takes a host and a limit as parameters and returns True or False. Then a loop calls that function for every server in the list. To test it, I call the function with known inputs, such as 95 and 40 percent usage, and confirm it returns the expected answer before running it against real servers. The tradeoff is that a bug inside the shared function now affects every server at once, so testing it matters more, and over-splitting into tiny functions can make a simple script harder to read.",
+      "rubricPoints": [
+        "Variables store values once so a change happens in one place.",
+        "A function packages reusable logic with parameters and a return value.",
+        "A loop applies the same logic to every item in a collection.",
+        "Testing means calling functions with known inputs and checking expected outputs before real use.",
+        "Hard-coded or copy-pasted values cause missed updates and silent failures.",
+        "Names a tradeoff, such as a shared bug affecting every item or added structure for very small scripts."
+      ],
+      "suggested": {
+        "modality": "do-existing",
+        "missionId": "python-02-log-parser",
+        "rationale": "This mission has the learner write loops and conditions over real data, directly practising variables, functions and loops in an automation script."
+      }
+    },
+    {
+      "objectiveId": "at0-001:1:2",
+      "sourceHash": "c47a8632a7e1",
+      "promptVersion": 2,
+      "model": "claude-opus-5-5",
+      "generatedAt": "2026-10-10T08:38:53.816Z",
+      "plain": "Source control is a shared history of every change made to a project's files, so a team can see who changed what, undo mistakes, and work side by side. Git keeps a full copy of that history on your own machine (the local repository) and syncs it with a shared copy on a server (the remote). Branches let people work on separate lines of change without disturbing each other. Semantic versioning is a numbering habit for releases that tells users how risky an upgrade is. Think of a shared recipe book: everyone drafts on their own copy, merges approved edits back, and labels each printed edition.",
+      "guessPrompt": "A library goes from version 2.4.1 to 3.0.0. Without any other information, would you expect your existing code that uses it to keep working unchanged? Why or why not?",
+      "teach": "A repository is a project's files plus their full change history. In Git, your local repository lives on your machine; a remote is a copy on a shared server, usually named origin. Local operations need no network: commit records a snapshot of staged changes, and branch creates a movable pointer to a line of commits. Remote operations sync copies: clone copies a remote down for the first time, fetch downloads new commits without changing your work, pull is fetch plus merge into your current branch, and push uploads your commits. This split works because every copy holds the whole history, so you can work offline and sync later.\n\nA branching strategy is a team's agreement on how branches are used. Feature branching gives each change its own short branch, merged back after review. GitFlow adds long-lived develop and release branches for scheduled releases. Trunk-based development has everyone merge small changes into the main branch (the trunk) at least daily, which suits continuous integration because changes never drift far apart.\n\nSemantic versioning (SemVer) numbers releases MAJOR.MINOR.PATCH. Increase PATCH for backward-compatible bug fixes, MINOR for backward-compatible new features (reset PATCH to 0), and MAJOR for breaking changes (reset both to 0).\n\nWorked example: a team's tool is at 1.4.2. Step 1: a developer branches feature/retry from main, commits locally, and pushes the branch. Step 2: after review it merges; it adds an optional retry flag without breaking anything, so the release becomes 1.5.0. Step 3: a bug fix follows, giving 1.5.1. Step 4: a config field is renamed so old files fail; that is breaking, so 2.0.0.\n\nCommon mistake: committing and assuming teammates or the CI server can see it. A commit is local until pushed. Another: shipping a breaking change as a MINOR bump. In a running system, automation that pins to compatible versions (accept any 1.x) will auto-upgrade and break production when a mislabeled release arrives.",
+      "questions": [
+        {
+          "id": "at0-001:1:2:q1",
+          "role": "fade",
+          "prompt": "A weather-data team maintains an internal parsing library. It is currently at version 3.2.6 and follows semantic versioning (SemVer), which numbers releases MAJOR.MINOR.PATCH. Step 1: they fix a timeout bug without changing how anyone calls the library, so the release becomes 3.2.7. Step 2: they add a new, optional CSV output mode, and existing callers keep working unchanged. The release becomes ____. Step 3: they remove an old function that several scripts still call, so those scripts fail. That breaking change makes the release 4.0.0. What version belongs in the blank in Step 2?",
+          "choices": [
+            "3.3.0",
+            "3.3.7",
+            "4.0.0",
+            "3.2.8"
+          ],
+          "correctIndex": 0,
+          "why": "A backward-compatible new feature raises MINOR from 2 to 3 and resets PATCH to 0, giving 3.3.0."
+        },
+        {
+          "id": "at0-001:1:2:q2",
+          "role": "solo",
+          "prompt": "Priya's local Git repository (the copy of the project and its history on her laptop) is behind origin, the shared remote copy on the team's server. She wants to download her teammates' new commits so she can look at them first, without changing the files she is currently working on. Which Git operation fits?",
+          "choices": [
+            "pull",
+            "clone",
+            "fetch",
+            "push"
+          ],
+          "correctIndex": 2,
+          "why": "Fetch downloads new commits from the remote without touching your current work. Pull would also merge those commits into your current branch."
+        },
+        {
+          "id": "at0-001:1:2:q3",
+          "role": "solo",
+          "prompt": "An engineer at a logistics company fixes a bug in a deployment script and runs git commit on his laptop. He then tells the team that the continuous integration (CI) server, which builds whatever is on the shared remote, should now pick up the fix. An hour later the CI server still has not built it. What concept explains this?",
+          "choices": [
+            "He should have run fetch so the CI server could download his work",
+            "The fix needed a MAJOR version bump before CI would accept it",
+            "A commit stays in the local repository until it is pushed to the remote",
+            "The CI server only builds commits on long-lived GitFlow release branches"
+          ],
+          "correctIndex": 2,
+          "why": "Commit is a local operation. Teammates and the CI server cannot see the change until push uploads it to the remote."
+        },
+        {
+          "id": "at0-001:1:2:q4",
+          "role": "solo",
+          "prompt": "A fintech team keeps feature branches open for weeks, and merging them back becomes slow and full of conflicts. They want a branching strategy, meaning an agreement on how the team uses branches, that fits continuous integration by having everyone merge small changes into the main branch at least daily. Which strategy is this?",
+          "choices": [
+            "Feature branching with one long branch per release",
+            "Semantic versioning",
+            "Trunk-based development",
+            "GitFlow, with long-lived develop and release branches"
+          ],
+          "correctIndex": 2,
+          "why": "In trunk-based development, everyone merges small changes into the trunk (the main branch) at least daily, so changes never drift far apart."
+        }
+      ],
+      "explainPrompt": "Explain to a teammate the difference between a local Git operation and a remote one, how a branching strategy like trunk-based development differs from long-lived branches, and how semantic versioning signals upgrade risk. Name one limit or tradeoff along the way.",
+      "modelAnswer": "Git keeps the whole history on my machine, so commit and branch are local and nobody else sees them. Push sends my commits to the remote, fetch downloads others' commits without touching my work, and pull fetches then merges. If the CI server never ran my change, the first thing I check is whether I actually pushed. For branching, trunk-based development means small changes merged into main often, which keeps integration easy but needs good automated tests and sometimes hiding unfinished features; GitFlow's long-lived branches suit scheduled releases but merges get bigger and more conflict-prone. Semantic versioning uses MAJOR.MINOR.PATCH: patch for compatible fixes, minor for compatible features, major for breaking changes. Its limit is that it is only a promise made by humans; if someone mislabels a breaking change as minor, anything auto-upgrading within the major version will break.",
+      "rubricPoints": [
+        "Commit and branch are local; push, fetch, pull and clone talk to the remote.",
+        "Pull is fetch plus merge, while fetch alone does not change your working branch.",
+        "Trunk-based development merges small changes into main often; long-lived branches like GitFlow suit scheduled releases but cause larger merges.",
+        "SemVer bumps PATCH for compatible fixes, MINOR for compatible features, MAJOR for breaking changes, resetting lower numbers.",
+        "Names a tradeoff, such as SemVer relying on honest labeling or trunk-based needing strong automated tests."
+      ],
+      "suggested": {
+        "modality": "combo",
+        "rationale": "No current mission or planned engine exercises Git operations or version numbering directly, so reasoning through exam-style scenarios (unpushed commits, wrong version bump, choosing a branching model) builds the diagnostic skill the unit asks for."
+      }
+    },
+    {
+      "objectiveId": "at0-001:1:3",
+      "sourceHash": "c5cfa24d5f6d",
+      "promptVersion": 2,
+      "model": "claude-opus-5-5",
+      "generatedAt": "2026-10-10T08:39:02.737Z",
+      "plain": "Infrastructure as code (IaC) means describing your servers, networks, and settings in text files that a tool reads and builds for you, instead of clicking through screens by hand. Four ideas make this work well. Reusability means writing a piece once and using it many times. Immutability means replacing something rather than patching it in place. Idempotency means running the same file twice leaves you in the same place as running it once. Declarative files describe the finished result, while imperative scripts list the steps. Think of ordering a cake by photo (declarative) versus handing the baker a recipe (imperative).",
+      "guessPrompt": "A script says 'create one new web server' and you run it twice by accident. A different file says 'there should be exactly one web server' and you apply it twice. How many servers do you expect to end up with in each case?",
+      "teach": "Infrastructure as code (IaC) is the practice of defining infrastructure, meaning servers, networks, storage, and their settings, in version-controlled text files that an automation tool applies. Four principles explain why it is reliable.\n\nDeclarative versus imperative. A declarative file states the desired end state, such as 'three web servers, port 443 open', and the tool compares that to what exists and works out the steps. An imperative script gives ordered commands, such as 'create a server, then open a port', and runs them exactly as written whatever already exists.\n\nIdempotency means applying the same definition repeatedly produces the same result as applying it once. Declarative tools are built around this because they act only on the difference between desired and actual state.\n\nImmutability means you never edit a running resource; you build a fresh one from the definition and swap it in. This prevents configuration drift, where hand-made changes slowly make servers differ from each other and from the files.\n\nReusability means packaging a definition as a module or template with parameters, such as size or region, so one tested piece builds many environments.\n\nWorked example. A declarative file says three web servers. Step one: the tool finds two running. Step two: it creates one, total three. Step three: you apply again; it finds three, so it changes nothing. That is idempotent. Now an imperative script says 'create three servers'. First run: three exist. Second run: it creates three more, total six, because it never checked what was there.\n\nA common mistake is confusing idempotency with immutability. Idempotency is about repeat runs giving the same outcome; immutability is about replacing instead of modifying. A system can have one without the other.\n\nIn a running system, a non-idempotent script rerun by a retrying pipeline creates duplicate resources, unexpected cost, and conflicts, while skipping immutability lets drift turn every server into a unique, hard-to-debug snowflake.",
+      "questions": [
+        {
+          "id": "at0-001:1:3:q1",
+          "role": "fade",
+          "prompt": "A logistics company keeps a declarative file stating that its message system should have five queues. The team applies the file and the tool traces the run like this. Step one: the tool checks what exists and finds three queues already running. Step two: [missing]. Step three: the team applies the same file again; the tool finds five queues, so it changes nothing. Which choice correctly fills in step two?",
+          "choices": [
+            "It creates five new queues, so eight queues now exist in total.",
+            "It creates two new queues, so five queues now exist in total.",
+            "It changes nothing, because some queues already exist and it never edits them.",
+            "It deletes the three queues and builds five new ones from the file."
+          ],
+          "correctIndex": 1,
+          "why": "A declarative tool acts only on the difference between the desired state (five) and the actual state (three), so it creates two, and that is why the later rerun changes nothing."
+        },
+        {
+          "id": "at0-001:1:3:q2",
+          "role": "solo",
+          "prompt": "A retail company's deployment pipeline runs a script that says 'create a load balancer and attach two servers'. A network glitch makes the pipeline retry the job, and the team then finds two load balancers and a surprise bill. Which infrastructure-as-code principle did the script fail to follow?",
+          "choices": [
+            "Immutability, because the load balancer was edited in place",
+            "Declarative design, because the file named too many servers",
+            "Idempotency, because a repeat run gave a different result than one run",
+            "Reusability, because the script was not packaged as a module"
+          ],
+          "correctIndex": 2,
+          "why": "Idempotency means repeated runs give the same outcome as a single run; this script added a duplicate on the retry because it never checked what already existed."
+        },
+        {
+          "id": "at0-001:1:3:q3",
+          "role": "solo",
+          "prompt": "At a hospital IT team, engineers log in to running servers and tweak settings by hand whenever a problem appears. After a year, no two servers match each other or the definition files, and bugs are hard to reproduce. Which change applies the immutability principle to fix this?",
+          "choices": [
+            "Copy the tweaked settings from the healthiest server onto the others",
+            "Build fresh servers from the updated definition and swap them in for the old ones",
+            "Rerun the same definition file twice to confirm nothing changes",
+            "Write an ordered script that logs in and applies each tweak in turn"
+          ],
+          "correctIndex": 1,
+          "why": "Immutability means never editing a running resource and instead replacing it with a new one built from the definition, which stops configuration drift."
+        },
+        {
+          "id": "at0-001:1:3:q4",
+          "role": "solo",
+          "prompt": "A media company has four copies of the same network definition, one per region, each hand-edited with a different region name and size. A fix made in one copy is often forgotten in the others. Which approach best applies the reusability principle?",
+          "choices": [
+            "Switch each of the four copies from imperative to declarative style",
+            "Turn the definition into one tested module with region and size as parameters",
+            "Apply each of the four copies twice to check the results stay the same",
+            "Replace the networks in every region instead of editing them in place"
+          ],
+          "correctIndex": 1,
+          "why": "Reusability means packaging a definition as a module or template with parameters so one tested piece builds many environments, and a fix lands everywhere at once."
+        }
+      ],
+      "explainPrompt": "Explain to a teammate the difference between declarative and imperative infrastructure code, and how idempotency and immutability fit in. Name one limit or tradeoff of the declarative approach.",
+      "modelAnswer": "Imperative code is a list of steps the tool runs in order, like 'create a server, then open a port', and it does not check what already exists. Declarative code describes the end state, like 'three servers with port 443 open', and the tool calculates what to add, change, or remove. Because declarative tools act only on the gap, applying the same file twice is idempotent: the second run changes nothing. Immutability is a separate idea: instead of editing a live server, you replace it with a new one built from the file, which stops drift. Reusable modules with parameters let one definition build dev and production alike. The tradeoff is control: with declarative code you give up exact ordering and the tool decides how to reach the state, and immutable replacement can be slower than a quick in-place patch.",
+      "rubricPoints": [
+        "Declarative describes the desired end state while imperative lists ordered steps.",
+        "Idempotency means repeated runs give the same result as one run.",
+        "Immutability means replacing resources rather than modifying them, which prevents drift.",
+        "Reusability means parameterized modules or templates used across environments.",
+        "Names a real tradeoff, such as less control over ordering or slower replacement."
+      ],
+      "suggested": {
+        "modality": "combo",
+        "rationale": "No current mission builds infrastructure from code, so reasoning through exam-style scenarios, such as spotting why a rerun duplicated servers, best trains naming the exact principle at fault."
+      }
+    },
+    {
+      "objectiveId": "at0-001:1:4",
+      "sourceHash": "51feb81a303b",
+      "promptVersion": 2,
+      "model": "claude-opus-5-5",
+      "generatedAt": "2026-10-10T08:39:03.814Z",
+      "plain": "Code can fail at three different moments in its life, and each failure has a name. A syntax error means the code breaks the language's grammar rules, so the computer refuses to start it at all. A runtime error means the grammar is fine and the code starts, but something goes wrong partway through, such as a missing file. A merge conflict happens in source control, the system that tracks code changes, when two people edited the same lines and the tool cannot decide whose version to keep. Think of a recipe: a misprinted word, a missing ingredient discovered mid-cook, and two cooks crossing out the same step differently.",
+      "guessPrompt": "Script A stops before doing anything and complains about a missing closing bracket on line 12. Script B prints three lines of output, then crashes saying a file does not exist. Do you think these are the same kind of failure, and which one did more work before failing?",
+      "teach": "A syntax error is code that breaks the grammar of its language: a missing bracket, an unclosed quote, a misspelled keyword, or wrong indentation in Python. The interpreter (the program that reads and runs a script) parses, meaning it reads and checks the whole file's structure, before running it, so a syntax error stops everything at the start and nothing executes. The message usually gives a line number, though the real mistake is often just above it.\n\nA runtime error happens while the code is executing. The grammar is valid, so the script starts, but an operation fails: opening a file that is not there, dividing by zero, using a variable that was never set, or calling a service that refuses the connection. Because it fails midway, earlier steps have already happened.\n\nA merge conflict belongs to Git, the version-control tool. Merging combines two branches, which are separate lines of work. If both branches changed the same lines differently, Git cannot choose, so it pauses and writes conflict markers into the file: a line starting with <<<<<<< before your version, a ======= line between, and >>>>>>> after the other version. You resolve it by editing to the correct final text, deleting all markers, then staging and committing.\n\nWorked example: Ana and Ben both edit line 5 of deploy.py on separate branches. Ana merges Ben's branch, and Git reports a conflict in deploy.py. Ana edits line 5 but forgets to delete the >>>>>>> line, then commits. The pipeline runs deploy.py, and the interpreter rejects it with a syntax error at that marker line, so nothing deploys. After she removes the marker, the script starts, creates two servers, then crashes because config.yaml is missing. That is a runtime error.\n\nCommon mistake: calling every failure 'the code is broken'. Naming the type tells you where to look: syntax means the source text, runtime means the environment or data, and conflict means the merge. In a running system, runtime errors are the most dangerous, because a half-finished script can leave infrastructure partly changed.",
+      "questions": [
+        {
+          "id": "at0-001:1:4:q1",
+          "role": "fade",
+          "prompt": "At a regional logistics firm, Priya runs a Python script, tagbuckets.py. It is meant to add a cost-centre tag to 12 storage buckets and then read a settings file called regions.json. The output shows 'tag added' for all 12 buckets, followed by an error saying regions.json cannot be found. She diagnoses it in three steps. Step 1: Did the script start at all? Yes. It changed 12 buckets, so the interpreter accepted the file's grammar when it parsed it. Step 2: [missing]. Step 3: She therefore looks at the environment, checking whether regions.json exists where the script expects it. She also notes that the 12 buckets were already changed before the crash. Which choice correctly fills Step 2?",
+          "choices": [
+            "An operation failed partway through a run that had already started, so this is a runtime error.",
+            "Any failure that stops a script is a syntax error, because the interpreter halts as soon as it stops.",
+            "The error message names a file, so this is a syntax error, and she should fix the spelling on that line of the source.",
+            "The script touched several resources at once, so this must be a merge conflict between two branches."
+          ],
+          "correctIndex": 0,
+          "why": "The grammar was valid and the script did real work before an operation failed, which is exactly what a runtime error is, so the place to look is the environment or data rather than the source text."
+        },
+        {
+          "id": "at0-001:1:4:q2",
+          "role": "solo",
+          "prompt": "At a small hospital IT team, Omar runs a script called backup.py. It prints nothing and makes no changes at all. It immediately reports an error at line 18, and line 17 contains a string that opens with a quote mark but never closes it. What type of error is this, and where should Omar look first?",
+          "choices": [
+            "A runtime error, so he should check whether the backup server is reachable.",
+            "A syntax error, so he should check line 18 and the line just above it in the source text.",
+            "A runtime error, so he should check which backups finished before the script stopped.",
+            "A merge conflict, so he should look for marker lines left over from a recent merge."
+          ],
+          "correctIndex": 1,
+          "why": "The script stopped before anything ran and the problem is an unclosed quote, which breaks the language's grammar. That makes it a syntax error, and the real mistake often sits just above the reported line."
+        },
+        {
+          "id": "at0-001:1:4:q3",
+          "role": "solo",
+          "prompt": "At a games studio, Lena merges a teammate's branch into hers, which is her separate line of work. Git pauses and reports a conflict in settings.py, and the file now shows the lines <<<<<<<, ======= and >>>>>>> around two different versions of the same lines. Which action correctly resolves the conflict?",
+          "choices": [
+            "Delete only the <<<<<<< and >>>>>>> lines, keep the ======= line as a separator, then stage and commit the file.",
+            "Run settings.py straight away so the interpreter can decide which version is correct, then commit the result.",
+            "Commit the file exactly as it is, because Git will pick the newer version automatically on the next merge.",
+            "Edit the section to the correct final text, delete all three kinds of marker lines, then stage and commit the file."
+          ],
+          "correctIndex": 3,
+          "why": "Git cannot choose between the two versions, so a person must write the correct final text and remove every marker line before staging and committing. Any leftover marker would break the file's grammar."
+        },
+        {
+          "id": "at0-001:1:4:q4",
+          "role": "solo",
+          "prompt": "An operations team at a city council runs automation that changes live servers. Which type of failure does the teaching text describe as the most dangerous for a running system, and why?",
+          "choices": [
+            "A syntax error, because the interpreter runs every line before it reports the faulty one.",
+            "A merge conflict, because Git silently deletes one branch's changes when it cannot choose.",
+            "A syntax error, because its line number always points to the exact line that is wrong.",
+            "A runtime error, because a script that stops midway can leave infrastructure partly changed."
+          ],
+          "correctIndex": 3,
+          "why": "A runtime error happens after earlier steps have already run, so a half-finished script can leave systems partly modified. A syntax error, by contrast, stops everything before anything executes."
+        }
+      ],
+      "explainPrompt": "Explain to a teammate how to tell a syntax error, a runtime error, and a merge conflict apart, and name one limit or risk that makes runtime errors harder to deal with than syntax errors.",
+      "modelAnswer": "A syntax error means the code breaks the language's grammar, like a missing bracket. The interpreter checks the whole file before running, so nothing executes at all; you fix the text near the reported line. A runtime error means the grammar is fine and the script starts, but something fails while it runs, like a missing file or an unset variable. A merge conflict is a Git problem: two branches changed the same lines, so Git stops the merge and inserts conflict markers that I must resolve by hand and then commit. The tradeoff is that syntax errors are caught early and safely, while runtime errors only show up when that code path actually runs, and they can leave work half done, such as servers created but never configured. Also, leftover conflict markers turn into a syntax error later.",
+      "rubricPoints": [
+        "Syntax errors break language grammar and stop the script before anything runs.",
+        "Runtime errors occur during execution after earlier steps have already happened.",
+        "Merge conflicts happen when Git cannot combine changes to the same lines and inserts markers.",
+        "Resolving a conflict means editing the final text, removing all markers, and committing.",
+        "Runtime errors can leave a system partly changed and only appear when that path executes."
+      ],
+      "suggested": {
+        "modality": "combo",
+        "rationale": "The unit's goal is naming which failure type is at fault in a given script or Git situation, so reasoning through exam-style scenarios builds that skill best."
+      }
+    },
+    {
+      "objectiveId": "at0-001:2:1",
+      "sourceHash": "c7613ea04862",
+      "promptVersion": 2,
+      "model": "claude-opus-5-5",
+      "generatedAt": "2026-10-10T08:38:58.530Z",
+      "plain": "Configuration management means writing down how your servers should be set up (which packages, settings, files and services) and letting a tool keep them that way. Over time, people make quick manual changes and systems slowly stop matching what was written down. That gap is called drift. Drift detection is noticing the gap, remediation is closing it, and state management is keeping an accurate record of what the tool believes exists. Think of a thermostat: you set a target temperature, it measures the room, and if the room has drifted it heats or cools until the two match again.",
+      "guessPrompt": "An engineer logs into a server and changes a web setting by hand to fix an urgent problem, but never updates the configuration files the team's automation tool uses. What do you think happens the next time that automation tool runs against the server?",
+      "teach": "Configuration management keeps systems matching a written description. The desired state is that description, usually stored in version control (a tracked history of files, such as Git). The actual state is what is really on the machine right now. Drift is any difference between the two.\n\nDrift detection works by comparing. The tool reads the desired state, inspects the actual state, and reports differences. Many tools offer a dry run (a check-only mode that shows what would change without changing anything). Remediation is correcting drift, either automatically on a schedule (enforcement) or after a human reviews the report. Tools can do this safely because their operations are idempotent: applying the same configuration twice gives the same result as applying it once, so a re-run only touches what is wrong. Repeatedly moving actual state toward desired state is called convergence.\n\nState management is the tool's record of what it created and manages. Some tools, like Terraform, keep a state file mapping your definitions to real resources. That file must be stored centrally, protected, and locked (only one run may write at a time) so two engineers do not corrupt it.\n\nWorked example: desired state says nginx max upload size is 10 MB. Someone hand-edits it to 50 MB. Step one, a scheduled dry run compares and reports one difference: 50 MB actual, 10 MB desired. Step two, the team decides. If 10 MB is still correct, they apply the configuration and the tool rewrites only that line and reloads nginx. If 50 MB is genuinely needed, they change the desired state in version control, review it, then apply.\n\nThe common mistake is fixing the server by hand and stopping there. The next enforcement run silently reverts the fix, and the outage returns. The opposite mistake is deleting or editing a state file to make an error go away; the tool may then think resources do not exist and try to recreate or destroy them. Fix the source of truth, then let the tool converge.",
+      "questions": [
+        {
+          "id": "at0-001:2:1:q1",
+          "role": "fade",
+          "prompt": "A logistics company keeps its server settings in Git. The desired state says application logs are kept for 14 days. A dry run on one reporting server shows one difference: logs are actually kept for 30 days, because an engineer hand-edited the setting during an audit. Step one: the dry run reports the difference (30 days actual, 14 days desired). Step two: the team confirms that auditors now really do require 30 days of logs on that server. Step three: ________. Step four: the tool applies the configuration, finds the server already matches, and changes nothing. What is step three?",
+          "choices": [
+            "Change the retention value to 30 days in the desired state in Git, have it reviewed, and merge it",
+            "Edit the tool's state file so it records 30 days and stops reporting the difference",
+            "Hand-edit the other reporting servers to 30 days so the whole fleet looks consistent",
+            "Run enforcement now so the tool resets the server to 14 days, then ask auditors to accept the shorter period"
+          ],
+          "correctIndex": 0,
+          "why": "When the drifted value is genuinely needed, the source of truth must be updated and reviewed so the tool converges to it instead of reverting it."
+        },
+        {
+          "id": "at0-001:2:1:q2",
+          "role": "solo",
+          "prompt": "An enforcement job applies the same configuration every 30 minutes to 200 servers. On a server that already matches the desired state, what happens during a run, and which property makes that safe?",
+          "choices": [
+            "The tool rewrites every setting from scratch each time, which is safe because version control keeps a history",
+            "Nothing changes, because the operations are idempotent, so re-applying only touches what differs",
+            "The run fails with an error, because convergence only works on servers that have drifted",
+            "The tool switches into a dry run automatically, because enforcement is only allowed after a human review"
+          ],
+          "correctIndex": 1,
+          "why": "Idempotent operations give the same result whether applied once or many times, so a matching server is left untouched."
+        },
+        {
+          "id": "at0-001:2:1:q3",
+          "role": "solo",
+          "prompt": "At a hospital supply firm, an app server kept crashing. An engineer logged in and raised its memory limit from 2 GB to 4 GB by hand, and the crashes stopped. The desired state in version control still says 2 GB, and enforcement runs every hour. What is most likely to happen next?",
+          "choices": [
+            "Nothing, because enforcement only runs when a human approves a dry-run report",
+            "Within the hour the tool sets the limit back to 2 GB and the crashes return",
+            "The tool learns the new 4 GB value from the server and updates version control to match",
+            "The tool detects drift but leaves it alone because the hand edit fixed a real problem"
+          ],
+          "correctIndex": 1,
+          "why": "Enforcement moves actual state toward the desired state, so a hand fix not recorded in the source of truth gets silently reverted."
+        },
+        {
+          "id": "at0-001:2:1:q4",
+          "role": "solo",
+          "prompt": "A Terraform run at a retail company keeps failing with an error that mentions a database listed in the state file. A colleague suggests deleting that database's entry from the state file to make the error go away. What is the main risk?",
+          "choices": [
+            "Terraform may believe the database does not exist and try to create a new one or manage it wrongly",
+            "The state file will stay locked forever, so no one can run Terraform again",
+            "Version control will reject the change, so the deletion simply will not take effect",
+            "Nothing serious, because the state file is only a cache that Terraform rebuilds from scratch on each run"
+          ],
+          "correctIndex": 0,
+          "why": "The state file maps definitions to real resources, so removing an entry makes the tool think the resource is missing and act to recreate or change it."
+        }
+      ],
+      "explainPrompt": "Explain to a teammate how drift detection and remediation work, and why a manual hotfix on a server is risky in a configuration-managed environment. Name one limit or tradeoff of automatic remediation.",
+      "modelAnswer": "Our automation tool holds a desired state in version control and compares it with the actual state on each server. Any difference is drift. A dry run shows us the drift without changing anything; applying the configuration remediates it. Because the operations are idempotent, a re-run only fixes what differs and leaves correct things alone. If you hotfix a server by hand and don't update the repo, the next run will treat your fix as drift and undo it, so the problem comes back. The right move is to change the desired state, review it, and apply. Tools that track resources in a state file need that file stored centrally and locked, never hand-edited. The tradeoff with automatic remediation is that it can overwrite a deliberate emergency change or cause a restart at a bad moment, so some teams use report-only mode for sensitive systems and remediate after review.",
+      "rubricPoints": [
+        "Defines drift as a difference between desired state and actual state.",
+        "Explains detection by comparison, such as a dry run or check mode.",
+        "Explains remediation by updating or re-applying the source of truth, relying on idempotency.",
+        "Notes that manual fixes not recorded in the desired state get reverted.",
+        "Describes state files as needing central storage and locking, not hand edits.",
+        "Names a tradeoff such as auto-remediation overwriting intentional changes or causing disruption."
+      ],
+      "suggested": {
+        "modality": "combo",
+        "rationale": "No current mission exercises a configuration tool's drift loop, and the unit's goal is choosing the specific fix in a drifted-system scenario, which exam-style reasoning practice builds best."
+      }
+    },
+    {
+      "objectiveId": "at0-001:2:2",
+      "sourceHash": "9862248f081f",
+      "promptVersion": 2,
+      "model": "claude-opus-5-5",
+      "generatedAt": "2026-10-10T08:38:53.831Z",
+      "plain": "Automating server setup can be done in a few different styles, and they come in three pairs. Remote means a control machine reaches out over the network to configure servers, while local means each server configures itself. Declarative means you describe the end result you want, while imperative means you list the exact steps to take. Push means a central server sends changes out when you say so, while pull means each server regularly checks in and fetches its own instructions. Think of a restaurant: a manager shouting orders to cooks is push, while cooks reading a posted recipe board on their own schedule is pull.",
+      "guessPrompt": "You have 500 servers, and some of them are often switched off or offline when you roll out a change. Would you rather have a central machine send the change to every server at once, or have every server check in on its own every 30 minutes and fetch its instructions? Why?",
+      "teach": "Configuration automation can be sorted along three separate choices. You can mix them in any combination.\n\nRemote versus local is about where the work runs. In remote execution, a control node (the machine holding your automation code) connects to each target server, usually over SSH (an encrypted remote login protocol) or an API, and runs the changes there. In local execution, an agent (a small background program installed on each server) or a script applies changes on the same machine where it runs.\n\nDeclarative versus imperative is about how you write the instructions. Declarative code states the desired state, such as \"nginx installed, service running, port 443 open,\" and the tool works out which steps are needed. Imperative code lists the commands in order, such as \"run apt install nginx, then start nginx.\" Declarative tools are usually idempotent, meaning that running them again on a system that is already correct changes nothing. That property is why they can safely re-run to fix drift, which is any unplanned difference between a system's real state and its intended state.\n\nPush versus pull is about who starts the change. In push, the control node sends changes out when an operator or pipeline triggers it, as Ansible does by default. In pull, each agent polls (checks on a timer) a central server and applies whatever configuration it finds there, as Puppet and Chef agents do.\n\nWorked example: a server's nginx was stopped by hand. A pull agent polls 30 minutes later. It reads the declared state \"nginx running,\" compares that with reality, finds nginx stopped, starts it, and reports the fix. On the next poll everything already matches, so it does nothing.\n\nA common mistake is treating an imperative script as if it were declarative. For example, a step like \"append this line to the config file\" adds a duplicate line on every run, and the duplicates can corrupt the file. Another tradeoff is that push gives immediate control but misses servers that are offline when the change goes out. Pull reaches servers eventually, but it needs agents installed everywhere and only applies changes at the next poll.",
+      "questions": [
+        {
+          "id": "at0-001:2:2:q1",
+          "role": "fade",
+          "prompt": "A logistics company keeps a declarative file on its control node stating \"chrony time service installed, service running, time zone UTC.\" Ansible-style push automation applies it over SSH. Step 1: a pipeline triggers the run against 40 warehouse servers. Step 2: the control node reaches 37 of them, compares each with the declared state and fixes any differences. Step 3: three servers were powered off for maintenance, so they received nothing. Step 4: the next morning the three servers are back online. What is the correct next step?",
+          "choices": [
+            "Do nothing; the three servers will poll the control node at their next interval and fetch the configuration on their own.",
+            "Re-run the same push against all 40; the 37 already-correct servers see no change, and the three returning servers are brought to the declared state.",
+            "Rebuild the three servers from scratch, because a push run cannot change a server that missed the first run.",
+            "Push only to the three servers, because re-running against all 40 would install chrony a second time and duplicate settings on the 37."
+          ],
+          "correctIndex": 1,
+          "why": "In push, nothing happens until someone triggers a run, and because declarative code is idempotent, re-running it changes nothing on correct servers and fixes only the three that missed the change."
+        },
+        {
+          "id": "at0-001:2:2:q2",
+          "role": "solo",
+          "prompt": "At a hospital IT department, every server runs a small background program. Every 20 minutes that program checks a central server, downloads a file saying \"backup package present, backup service enabled,\" and makes the server match it. Which combination describes this setup?",
+          "choices": [
+            "Remote execution, declarative instructions, push method",
+            "Remote execution, imperative instructions, pull method",
+            "Local execution, declarative instructions, pull method",
+            "Local execution, imperative instructions, push method"
+          ],
+          "correctIndex": 2,
+          "why": "An agent applies changes on its own machine (local), the file states a desired state (declarative), and the agent starts each change by checking on a timer (pull)."
+        },
+        {
+          "id": "at0-001:2:2:q3",
+          "role": "solo",
+          "prompt": "A bank's nightly shell script includes the step \"append the line 'MaxSessions 10' to /etc/ssh/sshd_config.\" The script has run every night for a week. What is the most likely state of that file?",
+          "choices": [
+            "It contains the line once, because the shell recognizes the line already exists and skips the step",
+            "It contains no copy of the line, because each run overwrites the previous change",
+            "It is unchanged after the first night, because scripts become idempotent once they run successfully",
+            "It contains the line seven times, and the duplicates may corrupt the configuration"
+          ],
+          "correctIndex": 3,
+          "why": "An imperative append step runs the same command every time without checking the current state, so it adds a duplicate line on each run, which can corrupt the file."
+        },
+        {
+          "id": "at0-001:2:2:q4",
+          "role": "solo",
+          "prompt": "A media company must change a setting on 25 web servers right now because of a security issue. All 25 servers are online, and no configuration agents are installed on them. Which approach fits best?",
+          "choices": [
+            "Push from a control node over SSH, because it applies the change immediately when triggered and needs no agents",
+            "Push, because it is the only method that can reach servers that are currently offline",
+            "Pull, because it is the only method that can use declarative instructions",
+            "Pull, because servers that check a central server will pick up the change at their next poll"
+          ],
+          "correctIndex": 0,
+          "why": "Push gives immediate control and needs no agents, while pull requires agents everywhere and only applies changes at the next poll."
+        }
+      ],
+      "explainPrompt": "Explain to a teammate the difference between push and pull configuration and between declarative and imperative code, and name one tradeoff of each.",
+      "modelAnswer": "These are two separate choices, and you can combine them however you like. Push versus pull is about who starts the change. With push, a control node sends changes out to the servers when we trigger it, which is fast and gives us direct control. The downside is that any server that is offline at that moment never gets the change. With pull, an agent on every server checks a central source on a timer and applies whatever it finds there. Even servers that were down catch up eventually, and drift gets corrected on its own, but changes wait for the next poll and we have to install and maintain agents everywhere. Declarative versus imperative is about how we write the instructions. Declarative describes the end state we want and lets the tool work out the steps, so it is usually safe to run again and again. Imperative lists exact commands in order, which gives us precise control. The risk is that if those commands are not written to be repeatable, running them twice can break things, for example by adding the same config line twice.",
+      "rubricPoints": [
+        "Push means a central node starts the change, and pull means agents poll a central source and fetch changes themselves.",
+        "Declarative describes the desired end state, while imperative lists ordered steps.",
+        "Declarative tools are usually idempotent, so they can safely re-run to correct drift.",
+        "Push can miss offline servers, while pull delays changes until the next poll and needs agents.",
+        "Remote versus local is about where the work executes, and it is a separate choice from push versus pull."
+      ],
+      "suggested": {
+        "modality": "explain",
+        "rationale": "No current mission or planned engine compares these automation styles, so the core skill is explaining these paired concepts and their tradeoffs back clearly."
+      }
+    },
+    {
+      "objectiveId": "at0-001:2:3",
+      "sourceHash": "559070a540b4",
+      "promptVersion": 2,
+      "model": "claude-opus-5-5",
+      "generatedAt": "2026-10-10T08:39:10.951Z",
+      "plain": "A REST API is a way for one program to ask another program to do things over the web, using a small set of standard verbs. Almost everything you do with it falls into four actions: create something new, read what exists, update it, or delete it, known together as CRUD. Think of a library desk: you can donate a book (create), ask to see a book (read), correct its catalogue card (update), or have it removed (delete). Each request names the thing you mean by its address, and the server replies with a numbered result code telling you whether it worked.",
+      "guessPrompt": "If you send the exact same 'create a new server record' request twice by accident, how many records do you think you end up with, and would sending the same 'delete record 42' request twice be any different?",
+      "teach": "REST (representational state transfer) is a style of API where each thing the server manages, called a resource, has its own address, called a URL or endpoint, such as /servers/42. You act on it with HTTP methods, the verbs of the web. POST creates a new resource. GET reads one or a list, and changes nothing. PUT replaces a resource entirely with the body you send. PATCH changes only the fields you send. DELETE removes it. The body is usually JSON, a text format of named fields and values.\n\nThe server answers with a status code. 200 means OK, 201 means created, 204 means done with nothing to return, 400 means your request was malformed, 401 means you are not authenticated, 403 means you are not allowed, 404 means not found, and 5xx means the server failed. Tools that send these requests include curl (a command-line client), Postman (a graphical client), and libraries such as Python's requests.\n\nA key idea is idempotency: an operation is idempotent if repeating it leaves the same end state. GET, PUT and DELETE are idempotent; POST is not, so retrying a POST can create duplicates.\n\nWorked example: a config record for web01 shows port 8080 but should be 443. Step 1, GET /servers/42 returns 200 with {name: web01, port: 8080, env: prod}. Step 2, PATCH /servers/42 with {port: 443} returns 200. Step 3, GET again confirms port 443 and env still prod. That is a targeted fix, not a redeploy.\n\nCommon mistake: sending PUT /servers/42 with only {port: 443}. Because PUT replaces the whole resource, name and env may be wiped or reset. In a running system that can silently strip a production tag, breaking monitoring or routing that depends on it. Use PATCH for partial changes, or send the complete object with PUT, and always read back with GET to verify.",
+      "questions": [
+        {
+          "id": "at0-001:2:3:q1",
+          "role": "fade",
+          "prompt": "A logistics company keeps firewall rules as resources behind a REST API (an interface where each managed thing has its own address, or endpoint). Rule /rules/305 is stale and must be removed. Step 1: GET /rules/305 returns 200 with {name: legacy-ftp, port: 21, action: allow}, confirming it exists. Step 2: DELETE /rules/305 returns 204, meaning done with nothing to return. Step 3 is missing. What is the correct way to verify the rule is really gone?",
+          "choices": [
+            "Send DELETE /rules/305 again and expect 201, which confirms the removal was recorded",
+            "Send GET /rules/305 and expect 200 with an empty body, which shows the rule was cleared",
+            "Send POST /rules/305 with an empty body and expect 400, which proves nothing is there",
+            "Send GET /rules/305 and expect 404, showing the server no longer has that resource"
+          ],
+          "correctIndex": 3,
+          "why": "Reading the resource back with GET and getting 404 (not found) confirms that the DELETE removed it."
+        },
+        {
+          "id": "at0-001:2:3:q2",
+          "role": "solo",
+          "prompt": "A monitoring tool registers new alerts by sending POST /alerts to a REST API. One request timed out, the tool automatically retried it, and the team now sees two identical alerts. What best explains the duplicate?",
+          "choices": [
+            "The JSON body was malformed, which makes the server copy the resource instead of failing",
+            "GET should have been used, because GET creates resources without risk of duplicates",
+            "The server returned 5xx, and a 5xx code always makes the server store a request twice",
+            "POST is not idempotent, so repeating it can create a second new resource each time"
+          ],
+          "correctIndex": 3,
+          "why": "POST creates a new resource on every call, so it is not idempotent and a retry can leave two alerts instead of one."
+        },
+        {
+          "id": "at0-001:2:3:q3",
+          "role": "solo",
+          "prompt": "An automation script sends PATCH /vlans/7 with a valid, correctly signed login token to change a VLAN name. The server answers 403. What does this tell the engineer?",
+          "choices": [
+            "The request body is malformed JSON, so the server cannot read the new name",
+            "The caller is identified but is not allowed to make this change to the resource",
+            "The VLAN at /vlans/7 does not exist on the server, so there is nothing to change",
+            "The token is missing or invalid, so the server does not know who is calling"
+          ],
+          "correctIndex": 1,
+          "why": "403 means you are authenticated but not permitted; 401 would mean not authenticated, 404 not found, and 400 malformed."
+        },
+        {
+          "id": "at0-001:2:3:q4",
+          "role": "solo",
+          "prompt": "A colleague at a media company sent PUT /queues/12 with only {maxSize: 500} to raise a message queue's size limit. Afterwards, the queue's owner and region fields are blank, and an alerting rule that filters on region stopped firing. What is the right fix going forward?",
+          "choices": [
+            "Use PATCH with only {maxSize: 500}, or PUT with the complete object, then GET to verify",
+            "Use POST /queues/12 with {maxSize: 500}, since POST updates only the fields sent",
+            "Keep using PUT with only the changed field but retry it, since PUT is idempotent",
+            "Use DELETE /queues/12 and then GET /queues/12, which restores the original fields"
+          ],
+          "correctIndex": 0,
+          "why": "PUT replaces the whole resource, so a partial body wipes other fields; PATCH changes only the fields sent, and a follow-up GET confirms the result."
+        }
+      ],
+      "explainPrompt": "Explain to a teammate how you would use a REST API to fix one wrong field on a server's configuration record, including which methods you would use, what status codes you expect, and one tradeoff or risk between PUT and PATCH or around retrying requests.",
+      "modelAnswer": "Each server record is a resource at its own URL, and CRUD maps to HTTP methods: POST creates, GET reads, PUT replaces, PATCH partially updates, DELETE removes. To fix one wrong field, I first GET the record and expect 200 so I can see current state. Then I PATCH with only the field I want changed and expect 200 or 204. Finally I GET again to verify nothing else moved. I avoid PUT with a partial body, because PUT replaces the whole resource and can wipe fields I did not include; PUT is fine only if I send the full object. On retries: GET, PUT and DELETE are idempotent, so repeating them is safe, but POST is not, so blindly retrying a create can leave duplicate records. If I see 401 or 403, it is an auth or permission issue, not a bad payload, which would be 400.",
+      "rubricPoints": [
+        "Maps create, read, update and delete to POST, GET, PUT or PATCH, and DELETE.",
+        "Distinguishes PUT as full replacement from PATCH as partial change.",
+        "Names expected status codes such as 200, 201, 204, 400, 401/403, 404.",
+        "Explains idempotency and that retrying POST can create duplicates.",
+        "Verifies the change by reading the resource back with GET."
+      ],
+      "suggested": {
+        "modality": "combo",
+        "rationale": "No current mission has the learner issue CRUD calls against a resource, so reasoning through exam-style scenarios about choosing the right method, reading status codes and avoiding PUT or POST pitfalls adds the most."
+      }
+    },
+    {
+      "objectiveId": "at0-001:2:4",
+      "sourceHash": "029e259d50a5",
+      "promptVersion": 2,
+      "model": "claude-opus-5-5",
+      "generatedAt": "2026-10-10T08:39:10.946Z",
+      "plain": "When an automated system stops working, the cause is often not the code but how it is set up. Three culprits come up again and again. Two programs may fail to talk over an API (an application programming interface, the agreed way one program asks another for data or actions). A certificate (a digital ID card that proves a server is who it claims to be) may be expired or wrong. Or a configuration file may have a typo the computer cannot read. Troubleshooting is like a mechanic checking fuel, ignition and wiring in order: you read the symptom, then test the most likely cause first.",
+      "guessPrompt": "A script that worked yesterday now fails when it calls a server, with the message 'certificate has expired'. Nothing in the script changed. Where would you look first, and would rewriting the script help?",
+      "teach": "Troubleshooting configuration issues means reading a failure's evidence and matching it to one of three families, then applying the specific fix.\n\nAPI communication failures: an API call returns an HTTP status code, a three-digit number summarizing the result. 401 means not authenticated (missing or wrong credentials such as a token, a secret string that proves identity). 403 means authenticated but not allowed. 404 means the URL path is wrong. 429 means too many requests, so slow down. 5xx codes mean the server itself failed. A timeout or 'connection refused' with no code at all points at the network, a firewall, or a wrong host or port.\n\nCertificate problems: TLS (Transport Layer Security, the encryption behind HTTPS) checks the server's certificate. It fails if the certificate is expired, if its name does not match the hostname you called, or if it was signed by a certificate authority (an issuer your machine trusts) that is not in your trust store, the local list of trusted issuers. The fix is to renew the certificate, call the correct hostname, or add the right issuer to the trust store. Turning verification off is the common mistake: it hides the error and lets an impostor server through.\n\nConfiguration-file syntax errors: formats like YAML (indentation-based) and JSON (brace-based) must parse exactly. A tab instead of spaces, a missing colon, or a trailing comma stops the parser before anything runs. Validate with a linter, a tool that checks syntax and reports the line number.\n\nWorked example: a deploy job fails. Step one, read the log: 'HTTP 401'. Step two, 401 means credentials, so check the token. Step three, the token variable is empty because config.yaml indents 'token:' under the wrong key. Step four, fix the indentation, lint the file, rerun: 200 OK.\n\nIn a running system, guessing or blindly redeploying repeats the failure; reading the code, message and line number points straight at the fix.",
+      "questions": [
+        {
+          "id": "at0-001:2:4:q1",
+          "role": "fade",
+          "prompt": "A nightly backup script at Harborline Freight calls https://10.40.2.17:8443/api/snapshots. It has failed three nights in a row. Step 1: read the log, which says 'TLS handshake failed: certificate name does not match host'. Step 2: identify the failure family. The certificate is valid and not expired, but it was issued for backup.harborline.net, while the script calls a raw IP address, so the name check fails. Step 3: ______. Step 4: rerun the script, and the response comes back as HTTP 200. Which action belongs in Step 3?",
+          "choices": [
+            "Turn off certificate verification in the script so the handshake no longer checks the name",
+            "Change the script's URL to call backup.harborline.net instead of the IP address",
+            "Renew the certificate so it gets a fresh expiry date",
+            "Add the certificate authority that signed the certificate to the local trust store"
+          ],
+          "correctIndex": 1,
+          "why": "The error is a name mismatch on a certificate that is otherwise valid, so the fix is to call the hostname the certificate was issued for."
+        },
+        {
+          "id": "at0-001:2:4:q2",
+          "role": "solo",
+          "prompt": "A provisioning tool at Larkspur Labs sends a request to a cloud API using a freshly issued, correct token. The API replies with HTTP 403. What does this code tell you?",
+          "choices": [
+            "The URL path does not exist on the server",
+            "The server itself crashed while handling the request",
+            "The caller was identified, but this identity is not allowed to perform the action",
+            "The token is missing or wrong, so the caller was not identified"
+          ],
+          "correctIndex": 2,
+          "why": "A 403 means authentication succeeded but the identity lacks permission, which is different from 401, where the credentials are missing or wrong."
+        },
+        {
+          "id": "at0-001:2:4:q3",
+          "role": "solo",
+          "prompt": "An inventory sync job at Tidewater Retail tries to reach an API on port 9443. It fails with 'connection refused', and the log shows no HTTP status code at all. Where should you look first?",
+          "choices": [
+            "The API's rate limit, because the job is sending too many requests",
+            "The network path: firewall rules and whether the host and port are correct",
+            "The API token, because missing credentials cause refused connections",
+            "The JSON request body, for a trailing comma"
+          ],
+          "correctIndex": 1,
+          "why": "When there is no status code, the request never got a response from the API, which points to the network, a firewall, or a wrong host or port."
+        },
+        {
+          "id": "at0-001:2:4:q4",
+          "role": "solo",
+          "prompt": "A pipeline at Copperfield Analytics stops before running any steps. The error says the settings.json file could not be parsed. An engineer spots a comma after the last item in a list. What is the right response?",
+          "choices": [
+            "Redeploy the pipeline unchanged, since parse errors are usually temporary",
+            "Remove the trailing comma and run a linter on the file to confirm it now parses",
+            "Disable the parser's strict mode so it skips over the bad line",
+            "Convert the file to YAML and replace the spaces with tabs"
+          ],
+          "correctIndex": 1,
+          "why": "JSON must parse exactly and a trailing comma breaks it, so you fix that syntax and use a linter, a tool that checks syntax and reports line numbers, to confirm nothing else is wrong."
+        }
+      ],
+      "explainPrompt": "Explain to a teammate how you would tell apart an API auth failure, a certificate problem and a config-file syntax error from the evidence alone, and name one tempting shortcut that trades safety for speed.",
+      "modelAnswer": "I start with the exact error. If the API returned a status code, it tells me a lot: 401 is bad or missing credentials, 403 is a permissions problem, 404 a wrong path, 429 rate limiting, and 5xx a server-side fault. No code at all, just a timeout or refused connection, suggests network, firewall or wrong host and port. If the error mentions a certificate, TLS rejected the server: it is expired, the name does not match the hostname, or the issuer is not in our trust store, so I renew, fix the hostname or add the issuer. If the tool fails before doing anything with a parse error and line number, it is config syntax, like YAML indentation or a JSON trailing comma, and I run a linter. The tempting shortcut is disabling certificate verification: it makes the error vanish but lets an impostor server in, so it is never the real fix.",
+      "rubricPoints": [
+        "Uses HTTP status codes to classify API failures, distinguishing 401 from 403 and client from server errors.",
+        "Recognizes timeouts or refused connections as network or host problems rather than auth.",
+        "Names the main certificate causes: expiry, hostname mismatch, untrusted issuer.",
+        "Identifies syntax errors by parse failures with line numbers and fixes them with a linter or validator.",
+        "Rejects disabling certificate verification as a fix because it removes protection against impostor servers."
+      ],
+      "suggested": {
+        "modality": "do-existing",
+        "missionId": "linux-02-log-detective",
+        "rationale": "The mission has the learner read logs to diagnose why an API is failing, which is exactly the evidence-first troubleshooting this objective tests."
+      }
+    },
+    {
+      "objectiveId": "at0-001:3:1",
+      "sourceHash": "87ec000d5c52",
+      "promptVersion": 2,
+      "model": "claude-opus-5-5",
+      "generatedAt": "2026-10-10T08:40:10.663Z",
+      "plain": "A CI (continuous integration) system is a shared robot that builds and tests code every time someone changes it. To do that job well it needs three things handled carefully. Secrets, such as passwords and access keys, must reach the robot without being written into the code or shown in logs. Artifacts, the finished packages a build produces, must be stored, labeled and reused instead of rebuilt each time. A task runner, a tool that runs named steps in a fixed order, keeps every build the same. Think of a bakery with a locked key cabinet, a labeled shelf of finished loaves, and one written recipe.",
+      "guessPrompt": "A build needs a password to upload its finished package to a storage server. Where do you think that password should be kept, and what could go wrong if someone simply typed it into the pipeline file?",
+      "teach": "Three environment factors decide whether a CI pipeline is safe and repeatable.\n\nSecrets management is how a pipeline gets sensitive values, such as passwords, tokens and API keys, without exposing them. The values live in a secret store, an encrypted service (a vault, or the CI tool's built-in secrets setting) that releases them only to jobs allowed to read them. At run time the pipeline injects each secret, usually as an environment variable (a named value the running process can read), and the CI tool masks it, printing asterisks if it appears in a log. Rotation means replacing a secret on a schedule or after a leak.\n\nArtifact management handles artifacts, the outputs of a build such as a container image, a compiled program or a zip package. They go into an artifact repository, a storage service that keeps each artifact under a unique version and a checksum (a fingerprint proving the file is unchanged). Good practice is build once, promote many: the same immutable (never edited) artifact moves from test to staging to production.\n\nA task runner is a tool, such as Make, npm scripts or Gradle, that defines named tasks like lint, test and package, plus their order, so a laptop and the CI server run identical steps.\n\nWorked example: a job fails with \"401 Unauthorized\" while uploading a package. Step one, build and tests passed, so the task runner and code are fine. Step two, the failure is at upload, which talks to the artifact repository. Step three, 401 means a credential was rejected, so check the secret: is it available to this branch, named exactly as the script expects, and still valid after any rotation? The cause is secrets management, not artifact management.\n\nA common mistake is pasting a token directly into the pipeline file to make it work. Everyone with repository access, plus every copy and old log, now holds it, and rotating it later breaks every place it was pasted.",
+      "questions": [
+        {
+          "id": "at0-001:3:1:q1",
+          "role": "fade",
+          "prompt": "Tidewater Logistics' pipeline builds a container image tagged 3.2.0, tests it, and deploys it to staging, where it works. For production, a separate job rebuilds the image from the same source code and also tags it 3.2.0. Production then shows a bug never seen in staging. Diagnosis so far. Step 1: no job reported an authorization error, so no credential was rejected. Step 2: the team compares the checksums of the staging image and the production image and finds they are different. Step 3: ______. Step 4: the fix is to build the image one time, store it in the artifact repository, and deploy that same unchanged image to both environments. Which choice correctly completes Step 3?",
+          "choices": [
+            "The task runner ran lint and test in the wrong order, so the cause is the task runner.",
+            "Different checksums mean production ran a different file than the one tested; rebuilding per stage broke build once, promote many, so the cause is artifact management.",
+            "The production database password was probably rotated, so the cause is secrets management.",
+            "The repository should let the team edit the 3.2.0 image in place so both environments match."
+          ],
+          "correctIndex": 1,
+          "why": "A checksum is a fingerprint of the file, so differing checksums prove production received a different artifact than the one tested, which is an artifact-management failure."
+        },
+        {
+          "id": "at0-001:3:1:q2",
+          "role": "solo",
+          "prompt": "At Brightline Clinics, the README tells developers to run five commands by hand before committing, while the CI file runs its own four commands in a different order. Tests pass on laptops but fail on the CI server. Which concept most directly prevents this mismatch?",
+          "choices": [
+            "An artifact repository that stores each build with a checksum",
+            "A task runner that defines named tasks and their order, used by both laptops and CI",
+            "Rotating the team's API keys on a schedule",
+            "A secret store that injects values as environment variables"
+          ],
+          "correctIndex": 1,
+          "why": "A task runner defines the named steps and their order once, so a laptop and the CI server run identical steps."
+        },
+        {
+          "id": "at0-001:3:1:q3",
+          "role": "solo",
+          "prompt": "A payment-processing team pasted a database password directly into the pipeline files of 12 repositories. A contractor with repository access has now left the company. What is the main problem the team faces?",
+          "choices": [
+            "Anyone with repository access, plus every copy and old log, holds the password, and rotating it means finding and editing all 12 pasted copies or those pipelines break.",
+            "The task runner can no longer find the password, so builds will start failing right away.",
+            "The artifacts built by those pipelines are no longer immutable and must be rebuilt.",
+            "The CI tool will mask the password, so the contractor never saw it and nothing needs to change."
+          ],
+          "correctIndex": 0,
+          "why": "A pasted secret is exposed to everyone who can read the repository, its copies and old logs, and rotating it breaks every place it was pasted."
+        },
+        {
+          "id": "at0-001:3:1:q4",
+          "role": "solo",
+          "prompt": "A job on the branch feature/maps-import fails with \"secret MAPS_API_KEY not found\" before any upload starts, while the identical job on the main branch succeeds. Lint and tests ran fine on both. Which concept is most likely responsible?",
+          "choices": [
+            "Secrets management: the secret store is not releasing the key to jobs on that branch.",
+            "Artifact management: the maps package has a checksum mismatch in the repository.",
+            "Task runner: the lint task must be renamed on feature branches.",
+            "Artifact management: the build was not promoted from test to staging."
+          ],
+          "correctIndex": 0,
+          "why": "A secret store releases values only to jobs allowed to read them, so a key that is available on main but missing on another branch points to secrets management."
+        }
+      ],
+      "explainPrompt": "Explain to a teammate, in your own words, how secrets management, artifact management and task runners each make a CI pipeline safer or more repeatable, and name one limit or tradeoff of at least one of them.",
+      "modelAnswer": "Secrets management keeps passwords and tokens in an encrypted secret store and injects them into a job only when it runs, usually as environment variables, with the CI tool masking them in logs. That stops credentials leaking through the code or the build output, and lets us rotate them in one place. Artifact management means the build's output, like an image or binary, is stored once in a repository with a version and checksum, and that exact file is promoted through test, staging and production, so what we tested is what we ship. A task runner defines the build steps and their order so laptops and CI run the same thing. Tradeoff: masking is not perfect, since a script that transforms or encodes a secret before printing it can still leak it, and storing every artifact version costs storage, so retention rules are needed.",
+      "rubricPoints": [
+        "Secrets live in an encrypted store and are injected at run time, not written into code or pipeline files.",
+        "Masking and rotation limit damage if a secret appears or leaks.",
+        "Artifacts are versioned build outputs kept in a repository with a checksum.",
+        "Build once and promote the same immutable artifact through every environment.",
+        "A task runner defines named steps and their order so local and CI builds match.",
+        "Names a real limit, such as masking gaps, storage cost of artifacts, or rotation breaking hard-coded copies."
+      ],
+      "suggested": {
+        "modality": "combo",
+        "rationale": "The unit asks learners to spot which of the three factors caused a given pipeline failure, so reasoning through exam-style failure scenarios covers all three better than a single hands-on task."
+      }
+    },
+    {
+      "objectiveId": "at0-001:3:2",
+      "sourceHash": "4d4b1b5192bd",
+      "promptVersion": 2,
+      "model": "claude-opus-5-5",
+      "generatedAt": "2026-10-10T08:39:48.773Z",
+      "plain": "CI workflow management is how an automated build process decides what runs, in what order, and what happens when something goes wrong. Think of a kitchen during dinner service: the head chef makes sure vegetables are chopped before the stir-fry starts, that the right ingredients are on hand, and that a burnt dish is replaced with a good one before it reaches the customer. In software, orchestration is the ordering, dependency handling makes sure each step has what it needs, and automated rollback swaps a bad release for the last good one without waiting for a human.",
+      "guessPrompt": "Your pipeline has three steps: build the app, run tests, and deploy. If the tests fail, what should happen to the deploy step, and why?",
+      "teach": "Orchestration is the coordination of jobs in a pipeline: which ones run first, which run in parallel, and which must wait. A job is one unit of work, such as compiling code or running tests. Pipelines are often drawn as a directed acyclic graph (DAG), a map of jobs connected by one-way arrows with no loops, so the runner always knows which job can start next.\n\nDependency handling covers two kinds of dependency. A job dependency means one job needs another to finish successfully first; in GitHub Actions this is declared with a needs setting, and in Jenkins by stage order. A package dependency is an outside library your code uses; it is handled by pinning exact versions in a lockfile (a file recording the precise versions installed) and often caching the downloads so builds are fast and repeatable.\n\nAutomated rollback means the pipeline returns to the last known good release on its own when a health check fails. A health check is an automatic test that the running service answers correctly.\n\nWorked example: the build job produces version 42. The test and lint jobs both depend on build, so they run in parallel after it. Deploy depends on both, so it waits. Version 42 deploys, the health check gets errors for two minutes, and the rollback step redeploys stored version 41. Users see a brief blip instead of a long outage.\n\nA common mistake is leaving package versions unpinned, so a library update arrives silently and the same commit passes Monday and fails Tuesday. Another is relying on rollback without keeping the previous artifact; if version 41 was deleted, there is nothing to roll back to. In a running system, missing job dependencies let deploys run before tests finish, shipping untested code to production.",
+      "questions": [
+        {
+          "id": "at0-001:3:2:q1",
+          "role": "fade",
+          "prompt": "A ticket-booking company has a pipeline with four jobs. The package job builds release 18. The unit-test job and the security-scan job each depend on package, so they run in parallel once package finishes. The publish job depends on both, so it waits for them. Release 18 goes live and the health check (an automatic test that the running service answers correctly) reports failed responses for three minutes. Missing step: what does the automated rollback step do next?",
+          "choices": [
+            "It reruns the unit-test and security-scan jobs against release 18",
+            "It rebuilds release 18 from the same commit and deploys it again",
+            "It stops the service and waits for an engineer to choose a version",
+            "It redeploys the stored release 17, the last known good version"
+          ],
+          "correctIndex": 3,
+          "why": "Automated rollback returns the service on its own to the last known good release, which here is the kept copy of release 17."
+        },
+        {
+          "id": "at0-001:3:2:q2",
+          "role": "solo",
+          "prompt": "A payroll team's build passes on Thursday and fails on Friday, and no one changed the code between the two runs. The project's outside libraries are listed without exact versions, and there is no lockfile. Which concept best explains the failure?",
+          "choices": [
+            "The health check was too strict and reported a false failure",
+            "The pipeline graph contained a loop, so the runner chose randomly",
+            "A missing job dependency let two jobs run in the wrong order",
+            "Unpinned package dependencies let a library update arrive silently"
+          ],
+          "correctIndex": 3,
+          "why": "Without exact versions pinned in a lockfile, a new library version can be installed on a later run, so the same commit can pass one day and fail the next."
+        },
+        {
+          "id": "at0-001:3:2:q3",
+          "role": "solo",
+          "prompt": "In a warehouse company's GitHub Actions pipeline, the deploy job sometimes starts while the integration-test job is still running, and untested code reaches production. What change fixes this?",
+          "choices": [
+            "Add a health check after the deploy job finishes",
+            "Declare that deploy needs the integration-test job",
+            "Cache the downloaded packages between pipeline runs",
+            "Pin the exact library versions in a lockfile"
+          ],
+          "correctIndex": 1,
+          "why": "A job dependency, declared with a needs setting in GitHub Actions, makes deploy wait until integration tests finish successfully."
+        },
+        {
+          "id": "at0-001:3:2:q4",
+          "role": "solo",
+          "prompt": "A clinic's scheduling service deploys release 9, the health check fails, and automated rollback triggers, but the rollback step errors out. A nightly cleanup job had deleted every stored release except the newest one. Why did rollback fail?",
+          "choices": [
+            "The previous release artifact was gone, so there was nothing to roll back to",
+            "The lockfile pinned an older library version than release 9 used",
+            "The health check ran before the deploy job had completed",
+            "The pipeline lacked a directed acyclic graph to order the jobs"
+          ],
+          "correctIndex": 0,
+          "why": "Rollback redeploys the last known good release, so it only works if that earlier artifact is still kept."
+        }
+      ],
+      "explainPrompt": "Explain to a teammate how orchestration, dependency handling, and automated rollback work together in a CI/CD pipeline, and name one limit or tradeoff of automated rollback.",
+      "modelAnswer": "Orchestration is the pipeline's plan: it decides which jobs run in order and which can run side by side. Job dependencies enforce that plan, so deploy waits until build and tests have both succeeded. Package dependencies are pinned in a lockfile so the same commit always builds with the same library versions, and caching keeps that fast. Automated rollback is the safety net after deploy: a health check watches the new release, and if it fails, the pipeline redeploys the last known good artifact. The tradeoff is that rollback only works if the previous artifact is still stored and the health check actually detects the problem. It also cannot undo changes that are hard to reverse, like a database schema migration, so those need extra planning or a fix-forward approach.",
+      "rubricPoints": [
+        "Orchestration controls job order and parallelism, often as a DAG.",
+        "Job dependencies make later jobs wait for earlier ones to succeed.",
+        "Package dependencies should be pinned in a lockfile for repeatable builds.",
+        "Automated rollback redeploys the last known good artifact when a health check fails.",
+        "Names a limit, such as needing stored artifacts, good health checks, or irreversible data changes."
+      ],
+      "suggested": {
+        "modality": "do-existing",
+        "missionId": "devops-03-bad-release-rollback",
+        "rationale": "This mission has the learner roll back a bad release and then fix forward, which practices the rollback part of this objective directly."
+      }
+    },
+    {
+      "objectiveId": "at0-001:3:3",
+      "sourceHash": "4c1aa68d6189",
+      "promptVersion": 2,
+      "model": "claude-opus-5-5",
+      "generatedAt": "2026-10-10T08:40:01.598Z",
+      "plain": "An automation pipeline is a fixed list of steps, such as fetch the code, build it, and test it, that a computer runs for you every time the code changes. The pipeline definition is a text file kept alongside the code that spells out those steps. A trigger is the event that tells the pipeline to start, such as someone saving new code or a set time of day. A hook is the doorbell: a small automatic message one system sends another saying something just happened. Picture a factory line. The recipe card is the definition, the order arriving is the trigger, and the bell that announces the order is the hook.",
+      "guessPrompt": "Suppose a team wants every code change tested automatically, but nobody wants to click a Start button. What do you think has to happen between a developer saving their code and the tests starting to run?",
+      "teach": "A pipeline definition is a file stored in the code repository (the shared, version-tracked home of the project's code). It describes the automated work as ordered stages or jobs, each made of steps. A stage or job is a named group of work, like build or test. A step is one command. Jenkins, a self-hosted automation server, usually reads a file named Jenkinsfile. GitHub Actions, the automation service built into GitHub, reads YAML workflow files kept in a .github/workflows folder. YAML is a plain-text format that uses indentation to show structure. Because the definition is versioned with the code, any change to the pipeline is reviewed and can be undone like any other change.\n\nA trigger is the condition that starts a run. Common triggers are a push (new commits arrive), a pull request (a proposed change is opened or updated), a schedule (cron-style timing, for example nightly), and a manual run. Triggers often carry filters, such as which branches or file paths count.\n\nA hook is how the CI system learns that an event happened. A webhook is an HTTP message the repository host sends to the CI server the moment an event occurs. The older alternative is polling, where the CI server checks the repository on a timer. Polling is slower and wastes effort. Git hooks are a separate idea: scripts that run on a developer's own machine, for example before each commit.\n\nWorked example: a workflow says to run on push to the main branch. A developer pushes to the branch feature-login. The host sends its webhook, and the CI system checks the trigger. The branch filter does not match, so no run starts. Later the change merges into main. That push matches, so the build and test jobs run in order.\n\nA common mistake is a trigger filter that does not match the team's real branch names, such as main versus master, or a webhook that was never registered. The consequence is silent: nothing fails, nothing runs, and untested code reaches the main branch.",
+      "questions": [
+        {
+          "id": "at0-001:3:3:q1",
+          "role": "fade",
+          "prompt": "A clinic-scheduling team keeps a GitHub Actions workflow file in .github/workflows. Its trigger says: run on pull request into the branch release, but only when files under the path api/ change. A developer opens a pull request into release that changes only web/styles.css. Trace it: Step 1, the repository host sends a webhook to the CI system saying a pull request was opened. Step 2, the CI system sees the event is a pull request aimed at release, so the event type and branch filter both match. Step 3, ???. Step 4, the CI system starts no run, and no error appears. What is Step 3?",
+          "choices": [
+            "The CI system polls the repository on its timer and finds no new commits, so it waits for the next check",
+            "The CI system checks the path filter, finds that no changed file is under api/, so the trigger does not match",
+            "The pipeline starts, but the build stage fails because the web/ folder has no test steps defined",
+            "The developer's Git hook blocks the commit on their own machine before the change reaches the host"
+          ],
+          "correctIndex": 1,
+          "why": "The trigger also carries a path filter, and since the only changed file sits under web/ rather than api/, the condition is not met and no run begins."
+        },
+        {
+          "id": "at0-001:3:3:q2",
+          "role": "solo",
+          "prompt": "At a freight-tracking company, a developer sets up a script on their own laptop that runs a code-style check every time they make a commit, before anything is sent to the shared repository. Which concept is this?",
+          "choices": [
+            "A webhook",
+            "A pipeline step",
+            "A Git hook",
+            "A scheduled trigger"
+          ],
+          "correctIndex": 2,
+          "why": "Git hooks are scripts that run on a developer's own machine around actions like committing, unlike webhooks, which the repository host sends to the CI server."
+        },
+        {
+          "id": "at0-001:3:3:q3",
+          "role": "solo",
+          "prompt": "A city library's IT team moved their default branch from master to main. Their pipeline definition still says to run on push to master. For three weeks, merges into main go through with no failed builds and no error messages. What best explains this?",
+          "choices": [
+            "The webhook was replaced by polling, which only runs on a nightly schedule",
+            "The YAML indentation broke, so every run fails silently in the test stage",
+            "Git hooks on developer machines stopped the tests from being uploaded",
+            "The trigger's branch filter no longer matches the real branch, so no runs start"
+          ],
+          "correctIndex": 3,
+          "why": "A branch filter that does not match the team's real branch name means nothing ever starts, so nothing fails and untested code silently reaches the main branch."
+        },
+        {
+          "id": "at0-001:3:3:q4",
+          "role": "solo",
+          "prompt": "A hotel-booking startup's Jenkins server checks the repository every 20 minutes for new commits, so builds sometimes begin up to 20 minutes after a push. What change would let runs start the moment a push happens?",
+          "choices": [
+            "Shorten the build stage by merging its steps into one command",
+            "Add a Git hook on each developer's machine to run tests before commit",
+            "Register a webhook so the repository host notifies Jenkins on each event",
+            "Add a nightly schedule trigger to the Jenkinsfile"
+          ],
+          "correctIndex": 2,
+          "why": "A webhook is an HTTP message the host sends to the CI server as soon as an event occurs, replacing slower timer-based polling."
+        }
+      ],
+      "explainPrompt": "Explain to a teammate how a pipeline definition, a trigger, and a webhook work together to start an automated build, and name one limit or tradeoff, such as webhooks versus polling or how broad a trigger filter should be.",
+      "modelAnswer": "The pipeline definition is a file in our repo, like a Jenkinsfile or a GitHub Actions YAML workflow. It lists the jobs and steps, such as build and test, in order. Because it lives with the code, changes to it get reviewed and versioned. The trigger is the rule for when a run starts: on a push, on a pull request, on a schedule, or by hand. It can be narrowed to certain branches or paths. The webhook is the notification the repository host sends to the CI system when an event happens, so the CI system can check the trigger and start right away. The tradeoff is that a webhook is fast and efficient but depends on being configured and reachable. Polling is simpler but slower. A filter that is too narrow, or a misspelled branch name, means nothing runs. A filter that is too broad wastes build time.",
+      "rubricPoints": [
+        "A pipeline definition is a versioned file in the repo that lists stages or jobs and steps.",
+        "A trigger is the event or rule that starts a run, such as a push, pull request, schedule, or manual run.",
+        "A webhook is a push-style notification from the repo host to the CI system, unlike polling.",
+        "Trigger filters such as branch or path control which events actually start a run.",
+        "It names a tradeoff or failure mode, such as a mismatched filter meaning no run, or polling delay."
+      ],
+      "suggested": {
+        "modality": "do-existing",
+        "missionId": "devops-01-broken-pipeline",
+        "rationale": "Repairing a red CI pipeline makes the learner read and fix a real pipeline definition and see how its jobs and triggers behave."
+      }
+    },
+    {
+      "objectiveId": "at0-001:4:1",
+      "sourceHash": "8f540803e79a",
+      "promptVersion": 2,
+      "model": "claude-opus-5-5",
+      "generatedAt": "2026-10-10T08:40:02.449Z",
+      "plain": "A deployment strategy is the plan for swapping an old version of software for a new one on live servers without upsetting users. Think of replacing the tyres on a delivery fleet. You could swap every tyre on the same truck while it sits in the yard, which is in-place. You could swap a few trucks at a time, which is rolling. You could keep a second fleet ready and switch drivers over, which is blue-green. Or you could send one truck out first and watch it, which is canary. Each choice trades speed, cost and safety differently.",
+      "guessPrompt": "If you had to release a risky change to a busy website and wanted only a small slice of real users to see it first, how would you arrange your servers?",
+      "teach": "A deployment strategy is the method used to move live traffic from an old software version to a new one. There are four common ones.\n\nIn-place deployment stops the old version on each existing server and installs the new one on that same server. It needs no extra machines, but users usually see downtime, and rollback means reinstalling the old version.\n\nRolling deployment updates servers in small batches. A load balancer, which is a component that spreads requests across servers, keeps sending traffic to the batches still running while one batch upgrades. There is no full outage, but for a while two versions run side by side, so they must be compatible.\n\nBlue-green deployment keeps two complete, identical environments. Blue serves users while green gets the new version and is tested. Traffic is then switched to green all at once. Rollback is fast because you simply switch back to blue, but you pay for double capacity.\n\nCanary deployment sends a small percentage of real traffic to the new version, watches error rates and latency, then widens the share step by step. It limits the blast radius, meaning how many users a bad release can hurt.\n\nWorked example: a payments team must cut over a release with near-instant rollback and has budget for spare capacity. Step one, rule out in-place because of downtime. Step two, rule out rolling because rollback is slow and gradual. Step three, canary is gradual too and does not give a single clean switch. Step four, blue-green fits: test green fully, switch, and switch back in seconds if needed.\n\nA common mistake is treating canary and blue-green as the same. Blue-green flips all traffic at once; canary shifts a small slice first. Another mistake is running rolling or canary releases when the new version changes a database schema the old version cannot read, which causes errors for users still on the old version while both run.",
+      "questions": [
+        {
+          "id": "at0-001:4:1:q1",
+          "role": "fade",
+          "prompt": "A concert-ticket website runs its search service on 40 servers. The team wants to try a new search version on real users while limiting how many people a bad release could hurt. They have no budget for a second full set of servers, and downtime is not acceptable. Step one: rule out in-place deployment, because stopping and reinstalling on each server usually causes downtime. Step two: rule out blue-green deployment, because it needs double capacity and flips all traffic at once. Step three: rolling deployment avoids a full outage, but it is not built around testing a small share of real traffic and measuring it before going further. Step four is missing. Which choice correctly completes step four?",
+          "choices": [
+            "Use canary: move all traffic to the new version at once, then switch back if error rates rise.",
+            "Use blue-green: build a second set of 40 servers, test the new version there, then switch all traffic over at once.",
+            "Use in-place: upgrade all 40 servers together late at night, when fewer users are online.",
+            "Use canary: send about 2% of real requests to the new version, watch error rates and latency, then widen the share step by step."
+          ],
+          "correctIndex": 3,
+          "why": "Canary sends only a small slice of real traffic to the new version and widens it gradually, which limits the blast radius without needing a full duplicate environment."
+        },
+        {
+          "id": "at0-001:4:1:q2",
+          "role": "solo",
+          "prompt": "Which description matches a rolling deployment?",
+          "choices": [
+            "Two complete identical environments are kept, and all traffic is switched from one to the other in a single move.",
+            "Each server's old version is stopped and the new version is installed on that same server, usually with some downtime.",
+            "A small percentage of real traffic goes to the new version first, and that share grows only if error rates and latency stay healthy.",
+            "Servers are upgraded in small batches while a load balancer keeps sending requests to the batches still running, so old and new versions run side by side for a while."
+          ],
+          "correctIndex": 3,
+          "why": "Rolling deployment updates batches of servers while the load balancer sends traffic to the rest, which avoids a full outage but means two versions run at once."
+        },
+        {
+          "id": "at0-001:4:1:q3",
+          "role": "solo",
+          "prompt": "A small accounting firm runs an internal reporting tool on 3 servers. Staff only use it on weekdays, so a short outage on Saturday is acceptable. There is no money for extra servers, and the team wants the simplest approach. Which deployment strategy fits best?",
+          "choices": [
+            "Canary, because sending a small share of traffic first limits the blast radius.",
+            "Rolling, because upgrading in batches avoids any outage at all.",
+            "In-place, because it needs no extra machines and a short weekend outage is acceptable.",
+            "Blue-green, because switching back to the old environment gives the fastest rollback."
+          ],
+          "correctIndex": 2,
+          "why": "In-place reuses the existing servers with no extra capacity, and its main drawback, downtime, does not matter here because a Saturday outage is acceptable."
+        },
+        {
+          "id": "at0-001:4:1:q4",
+          "role": "solo",
+          "prompt": "A delivery-tracking company starts a rolling deployment across 12 servers. The new version renames a database column, and the old version cannot read the renamed column. What is the most likely result while the rollout is in progress?",
+          "choices": [
+            "Users whose requests reach servers still running the old version get errors, because both versions run side by side during the rollout.",
+            "The whole site goes down at once, the same as an all-at-once traffic switch.",
+            "Nothing goes wrong, because the load balancer automatically sends every request to the upgraded servers.",
+            "The rollout pauses and automatically reverts to the old version, because rolling deployments roll back instantly."
+          ],
+          "correctIndex": 0,
+          "why": "During a rolling deployment both versions serve traffic at the same time, so a schema change the old version cannot read causes errors for users still routed to old-version servers."
+        }
+      ],
+      "explainPrompt": "Explain to a teammate how canary, blue-green, rolling and in-place deployments differ, and name one tradeoff that would make you pick one over another.",
+      "modelAnswer": "All four are ways to replace an old version with a new one. In-place reinstalls the app on the existing servers, so it is cheap but usually causes downtime and slow rollback. Rolling upgrades servers in batches behind a load balancer, so there is no full outage, but old and new versions run together for a while and must be compatible. Blue-green keeps a second full environment with the new version and flips all traffic over at once; rollback is a quick flip back, but you pay for double capacity. Canary sends a small percentage of real users to the new version, watches metrics and widens gradually, which limits the blast radius but takes longer and needs good monitoring. The key tradeoff: if I need instant rollback and can afford spare capacity, I pick blue-green; if I want to test on real traffic with minimal exposure, I pick canary.",
+      "rubricPoints": [
+        "Defines in-place as upgrading existing servers with likely downtime.",
+        "Defines rolling as batch upgrades where two versions coexist temporarily.",
+        "Defines blue-green as two full environments with an all-at-once traffic switch and fast rollback.",
+        "Defines canary as a small, gradually widened share of real traffic watched through metrics.",
+        "Names a concrete tradeoff such as cost of double capacity, rollback speed, or version compatibility."
+      ],
+      "suggested": {
+        "modality": "do-new",
+        "engineId": "deploy-shift",
+        "rationale": "Choosing a strategy and then watching traffic shift, fail and roll back under each one builds the selection judgement this objective tests better than reading alone."
+      }
+    },
+    {
+      "objectiveId": "at0-001:4:2",
+      "sourceHash": "8276e5452cfb",
+      "promptVersion": 2,
+      "model": "claude-opus-5-5",
+      "generatedAt": "2026-10-10T08:40:01.592Z",
+      "plain": "These are the ways a team promises and measures how well a running service behaves. Uptime is the share of time the service works. A target the team sets for itself is an SLO; a promise written into a contract with a customer, with a penalty if broken, is an SLA. MTTR is how long, on average, it takes to get things working again after a failure. A feedback loop is the habit of feeding what you measure back into decisions. Think of a pizza shop: it aims internally for 25-minute delivery (SLO), tells customers 'over 40 minutes and it's free' (SLA), and times every late order to improve.",
+      "guessPrompt": "If a service promises 99.9% uptime over a 30-day month, roughly how many minutes of downtime can it have before the promise is broken: about 4, about 43, or about 430?",
+      "teach": "A service-level indicator (SLI) is a measured number about behaviour, such as the percentage of requests that succeeded. Uptime is one common SLI: the percentage of a period during which the service was available. A service-level objective (SLO) is the internal target for an SLI, for example 99.9% availability per month. A service-level agreement (SLA) is a contract with customers stating a level of service and the consequence, often service credits or refunds, if it is missed. Mean time to recovery (MTTR) is total outage time divided by the number of incidents, telling you how fast you restore service. A feedback loop is the cycle of measuring, comparing against targets and changing behaviour, such as slowing releases or fixing alerts.\n\nWhy it works: numbers turn 'is it reliable?' into a question with an answer, and the gap between an SLO and the SLA gives the team warning before money is at stake. The allowed shortfall under an SLO is called the error budget.\n\nWorked example. A month has 30 days, which is 30 × 24 × 60 = 43,200 minutes. A 99.9% SLO allows 0.1% downtime: 43,200 × 0.001 = 43.2 minutes. Suppose three incidents last 10, 20 and 6 minutes. Total downtime is 36 minutes, so uptime is (43,200 − 36) ÷ 43,200 ≈ 99.917%, inside the SLO. MTTR is 36 ÷ 3 = 12 minutes. Only 7.2 minutes of error budget remain, so the feedback loop says: pause risky deploys and invest in faster rollback.\n\nCommon mistake: treating SLO and SLA as the same number. If the SLA promises exactly what you aim for internally, every slip immediately costs credits. Teams set the SLA looser (say 99.5%) than the SLO (99.9%).\n\nIn a running system, ignoring the feedback loop means the error budget silently runs out, customers notice before engineers do, and contractual penalties follow; shortening MTTR through quick rollback and good alerts is often the cheapest way to protect uptime.",
+      "questions": [
+        {
+          "id": "at0-001:4:2:q1",
+          "role": "fade",
+          "prompt": "A payroll API team tracks availability over one 7-day week, which is 7 × 24 × 60 = 10,080 minutes. Their SLO (internal availability target) is 99.5%, so the error budget (allowed downtime under the SLO) is 10,080 × 0.005 = 50.4 minutes. During the week there were three outages lasting 15, 9 and 6 minutes, so total downtime is 30 minutes. Uptime is (10,080 − 30) ÷ 10,080 ≈ 99.70%, which is inside the SLO. MTTR (mean time to recovery) is 30 ÷ 3 = 10 minutes. Missing step: how much error budget is left for the rest of the week?",
+          "choices": [
+            "10 minutes, because the remaining budget equals the MTTR",
+            "20.4 minutes, because 50.4 − 30 = 20.4",
+            "50.4 minutes, because uptime is still inside the SLO",
+            "80.4 minutes, because 50.4 + 30 = 80.4"
+          ],
+          "correctIndex": 1,
+          "why": "The remaining error budget is the allowed downtime minus the downtime already used: 50.4 − 30 = 20.4 minutes."
+        },
+        {
+          "id": "at0-001:4:2:q2",
+          "role": "solo",
+          "prompt": "An online ticketing company reports four facts about its booking service. Which one is a service-level indicator (SLI)?",
+          "choices": [
+            "The team aims for 99.9% of booking requests to succeed each month",
+            "The team may lose up to 0.1% of requests this month before missing its target",
+            "Last week, 99.82% of booking requests succeeded",
+            "The contract says customers get a 10% credit if monthly availability falls below 99.5%"
+          ],
+          "correctIndex": 2,
+          "why": "An SLI is a measured number about behaviour, such as the percentage of requests that actually succeeded; the others describe an SLA, an SLO and an error budget."
+        },
+        {
+          "id": "at0-001:4:2:q3",
+          "role": "solo",
+          "prompt": "A video streaming service had four incidents in a month, lasting 5, 25, 15 and 35 minutes. What is its MTTR (mean time to recovery)?",
+          "choices": [
+            "35 minutes",
+            "About 26.7 minutes",
+            "20 minutes",
+            "80 minutes"
+          ],
+          "correctIndex": 2,
+          "why": "MTTR is total outage time divided by the number of incidents: (5 + 25 + 15 + 35) ÷ 4 = 80 ÷ 4 = 20 minutes."
+        },
+        {
+          "id": "at0-001:4:2:q4",
+          "role": "solo",
+          "prompt": "A cloud storage startup sets its internal SLO at 99.95% availability and writes the exact same 99.95% into its customer SLA (the contract that grants refunds if missed). What is the main problem with this choice?",
+          "choices": [
+            "MTTR will automatically get longer because the target is stricter",
+            "Uptime can no longer be measured once the SLA is signed",
+            "There is no warning margin, so any slip below the internal target immediately costs customer credits",
+            "The error budget becomes larger, so the team will release too slowly"
+          ],
+          "correctIndex": 2,
+          "why": "Setting the SLA looser than the SLO gives the team a buffer to react; when they are equal, missing the internal target is already a contract breach with financial consequences."
+        }
+      ],
+      "explainPrompt": "Explain to a teammate how SLOs, SLAs, uptime and MTTR relate to each other, and describe one tradeoff a team faces when choosing how strict to make the SLO.",
+      "modelAnswer": "Uptime is a measurement: the share of time the service actually worked. An SLO is our own target for that measurement, like 99.9% a month, which leaves about 43 minutes of error budget. An SLA is the contract version shown to customers, with credits or refunds if we miss it, so we deliberately set it looser than the SLO to give ourselves a warning zone. MTTR is total outage time divided by the number of incidents; lowering it, for example with fast rollbacks, protects uptime even when failures still happen. The feedback loop ties it together: when the error budget is nearly spent, we slow releases and fix reliability. The tradeoff is that a stricter SLO means fewer allowed minutes of downtime, which demands more engineering effort and cost and slows feature delivery, while a loose one may let customers suffer before we react.",
+      "rubricPoints": [
+        "Uptime is a measured percentage of available time, not a target.",
+        "An SLO is an internal target while an SLA is a customer contract with penalties.",
+        "The SLA is set looser than the SLO to leave a safety margin.",
+        "MTTR is average time to restore service and lowering it protects uptime.",
+        "A feedback loop uses measurements such as remaining error budget to change release or engineering decisions.",
+        "Names a tradeoff, such as stricter targets costing more effort and slowing delivery."
+      ],
+      "suggested": {
+        "modality": "combo",
+        "rationale": "The exam tests choosing and calculating targets in scenarios, so reasoning through an uptime and MTTR situation like the error-budget example builds the skill better than reading alone."
+      }
+    },
+    {
+      "objectiveId": "at0-001:4:3",
+      "sourceHash": "26094de0d680",
+      "promptVersion": 2,
+      "model": "claude-opus-5-5",
+      "generatedAt": "2026-10-10T08:40:14.318Z",
+      "plain": "When an automated delivery pipeline deploys software, it has to log in to a cloud provider, much as you log in to a website. It does this through a CLI (command-line interface, a text tool for giving the provider instructions) or an SDK (software development kit, a code library that makes the same requests from a program). IAM (identity and access management) decides who the pipeline is and what it may touch. Think of a hotel key card: a good one opens only your room and expires at checkout. A master key that never expires is convenient, but it is dangerous if lost.",
+      "guessPrompt": "Your pipeline needs to deploy to a cloud account. Which do you think is safer: storing a permanent password-like key in the pipeline settings, or having the pipeline get a fresh key that works for one hour and can only deploy one app? Why?",
+      "teach": "Securing a provider connection means the pipeline proves its identity with credentials that are short-lived and narrowly scoped, and never exposed. Credentials are the secrets that prove identity. A long-lived access key is a static ID-and-secret pair that works until someone deletes it. A temporary credential expires on its own, often within an hour. A role is an IAM identity with attached permissions that another identity can temporarily assume. Least privilege means granting only the actions and resources the job truly needs.\n\nThe preferred pattern is federation, often done with OIDC (OpenID Connect, a standard for one system to vouch for an identity to another). The provider trusts tokens signed by your CI platform, so no stored key is needed. This works because a stolen temporary credential soon becomes useless, and a narrow role limits what a thief could do.\n\nHere is a worked example. First, a deploy job starts on the main branch. Second, the CI platform issues a signed identity token stating the repository and branch. Third, the job's CLI sends that token to the provider and asks to assume the deploy-prod role. Fourth, the role's trust policy, which lists who may assume it, checks that the token comes from that repository's main branch, and it does. Fifth, the provider returns credentials valid for one hour that allow updating only one service. Sixth, the CLI or SDK finds them through its credential chain, the ordered list of places it searches: environment variables, then config files, then the machine's attached identity.\n\nA common mistake is pasting an administrator's long-lived key into a pipeline variable. If it is echoed into a build log or read by a malicious pull request, an attacker gets permanent full access. A related mistake is leaving an old key file on a build runner. Because the credential chain uses the first match it finds, that stale key can quietly override the intended role. Use separate roles per environment, mask secrets in logs, keep any unavoidable secrets in a secrets manager, and rotate them.",
+      "questions": [
+        {
+          "id": "at0-001:4:3:q1",
+          "role": "fade",
+          "prompt": "Riverbend Analytics deploys its reporting service through a CI pipeline. The pipeline uses OIDC federation, so the provider trusts identity tokens signed by the CI platform. Read the trace and choose the missing step.\n\nStep 1: A developer pushes to the branch feature/login, which triggers a job that tries to deploy to the reporting cluster.\nStep 2: The CI platform issues a signed identity token that names the repository and the branch feature/login.\nStep 3: The job's CLI sends the token to the provider and asks to assume the role report-deploy. That role's trust policy allows only tokens from release/ branches of this repository.\nStep 4: ???\nStep 5: The job fails before touching the cluster, and no credentials exist that anyone could copy from the build log.",
+          "choices": [
+            "The CLI moves down its credential chain and uses the administrator's long-lived key stored in a pipeline variable instead.",
+            "The provider issues one-hour credentials because the token is validly signed, and relies on the short expiry to limit any risk.",
+            "The provider checks the token against the role's trust policy, sees that the branch does not match release/, and refuses to issue credentials.",
+            "The provider issues credentials anyway, but drops them to read-only permissions because the branch is not a release branch."
+          ],
+          "correctIndex": 2,
+          "why": "The trust policy decides who may assume the role, so a token from a non-matching branch is rejected and no credentials are ever created. That is why step 5 says the job fails with nothing to leak."
+        },
+        {
+          "id": "at0-001:4:3:q2",
+          "role": "solo",
+          "prompt": "A ticket-sales company's release pipeline has one job: upload compiled web files to a storage bucket named tix-assets. Which permission grant for the pipeline's role follows least privilege?",
+          "choices": [
+            "Read and write access to every storage bucket in the account.",
+            "Permission to write objects only to the tix-assets bucket.",
+            "Full administrator access, so the job never fails on a missing permission.",
+            "Permission to create new roles, so the job can grant itself access when needed."
+          ],
+          "correctIndex": 1,
+          "why": "Least privilege means granting only the actions and resources the job truly needs, and here that is writing to one specific bucket."
+        },
+        {
+          "id": "at0-001:4:3:q3",
+          "role": "solo",
+          "prompt": "At a clinic, a build runner has an attached identity that should let jobs upload only to a staging area. A job unexpectedly acts as a former intern's account, which has much broader access. The job's environment variables hold no credentials. What is the most likely cause?",
+          "choices": [
+            "An old key file belonging to the intern is still on the runner. The credential chain checks config files before the attached identity and uses the first match.",
+            "The attached identity's temporary credentials expired, so the provider switched to the intern's account automatically.",
+            "The trust policy on the staging role lists the intern's account as the only identity allowed to assume it.",
+            "The CI platform signed its identity token with the intern's name instead of the repository and branch."
+          ],
+          "correctIndex": 0,
+          "why": "The credential chain searches environment variables, then config files, then the machine's attached identity, and it stops at the first match. A stale key file on the runner therefore quietly overrides the intended identity."
+        },
+        {
+          "id": "at0-001:4:3:q4",
+          "role": "solo",
+          "prompt": "A delivery pipeline at a logistics firm gets its credentials by assuming a narrowly scoped role for each run. Why would a leak of those credentials do less damage than a leak of a long-lived administrator access key?",
+          "choices": [
+            "The credentials expire on their own, often within an hour, and they allow only the few actions the role grants.",
+            "The provider automatically detects when temporary credentials are stolen and blocks the thief.",
+            "Temporary credentials work only on the build runner that requested them, so they are useless anywhere else.",
+            "The credentials are encrypted, so an attacker who copies them from a log cannot read or use them."
+          ],
+          "correctIndex": 0,
+          "why": "A stolen temporary credential soon becomes useless, and a narrow role limits what a thief can do in the meantime. A long-lived admin key gives permanent full access until someone deletes it."
+        }
+      ],
+      "explainPrompt": "Explain to a teammate how our pipeline should authenticate to the cloud provider for deployments, and name one limit or tradeoff of the approach you recommend.",
+      "modelAnswer": "Our pipeline shouldn't hold a permanent access key. Instead, it should use federation: the CI platform issues a signed token saying which repo and branch the job runs from. The provider's trust policy checks that token, then lets the job assume a deploy role and returns temporary credentials that expire in about an hour. The CLI or SDK picks those up through its credential chain. The role follows least privilege, meaning it can only update the services this pipeline deploys, and production gets its own role that only main-branch jobs can assume. If something leaks, the damage is small and short-lived. The tradeoff is setup complexity. Trust policies must be written carefully, because a loose condition, like allowing any branch, could let a feature branch deploy to production. Long jobs can also outlast the session, so they need refreshes. Debugging is harder too, since a leftover key earlier in the credential chain can silently win.",
+      "rubricPoints": [
+        "Prefers short-lived temporary credentials over long-lived static access keys.",
+        "Describes assuming a role through federation or a trust policy instead of storing keys.",
+        "Applies least privilege and separates roles per environment.",
+        "Mentions keeping secrets out of logs and stored in a secrets manager if unavoidable.",
+        "Notes the credential chain order and the risk of a stale key overriding the intended identity.",
+        "Names a tradeoff such as setup complexity, trust-policy mistakes, or session expiry."
+      ],
+      "suggested": {
+        "modality": "do-existing",
+        "missionId": "devops-04-secret-wiring",
+        "rationale": "That mission has the learner fix a deploy that cannot authenticate without leaking the secret, which is exactly the provider-connection skill taught here."
+      }
+    }
+  ],
+  "scenarios": [
+    {
+      "unitId": "at0-001:1",
+      "promptVersion": 2,
+      "model": "claude-opus-5-5",
+      "generatedAt": "2026-10-10T08:40:55.879Z",
+      "title": "The Nightly Setup Script at Harborline Freight",
+      "scenario": "You have just joined Harborline Freight, a fictional shipping company, as a junior automation engineer. Your team keeps an automation script, a small program that does a repetitive job so nobody has to do it by hand. This one is called setup-depot.sh. Each night it prepares new warehouse servers. It stores the server name in a variable, which is a named slot that holds a value. A loop, a block of code that repeats once for each item in a list, then goes through each of the 20 depot servers. On each server it adds the line 'log_level=info' to the end of a settings file.\n\nThe script lives in Git. Git is a source control tool that records every change to files over time. The project's files and their history are called a repository. Your copy of the repository on your laptop is the local repository. The shared copy on the team's server is the remote repository. Work happens on branches, which are separate lines of changes that can later be combined into the main line, called main.\n\nThis week four problems landed on your desk.\n\nFirst, an operator ran the script twice by accident on Tuesday. Every server's settings file now has 'log_level=info' written on two lines, and one server has it on three lines.\n\nSecond, a teammate edited the script, and on Wednesday's run it stopped before doing any work at all. The message pointed to line 14 and said a quotation mark was never closed. On Thursday, after that was fixed, the script handled 11 servers successfully. It then stopped on server 12 with the message 'No such file or directory' because that server's settings file had been deleted.\n\nThird, you changed the log level line on your own branch. A teammate also changed that same line on main and pushed the change to the remote. When you pulled main into your branch, Git paused. The file now contains a block starting with a row of less-than signs (<<<<<<<), a row of equals signs (=======) in the middle, and a row of greater-than signs (>>>>>>>) at the end.\n\nFourth, the team labels script releases using semantic versioning, a three-number scheme written MAJOR.MINOR.PATCH. The current release is 2.3.1. You have added a new optional setting that lets operators pick a different log level. Every existing way of running the script still works exactly as before.\n\n1. Name the infrastructure-as-code concept the script breaks when it is run twice. Explain how you would change the script so that running it again is safe.\n2. Classify Wednesday's failure and Thursday's failure as either a syntax error or a runtime error. Explain how you can tell them apart.\n3. Name what happened during the pull. Describe, step by step, how you would resolve it and finish the job.\n4. State the correct new version number for your release and explain why. Then say what the number would be if you had instead removed an old setting that existing users rely on.",
+      "subParts": [
+        "Idempotency failure and fix",
+        "Syntax error vs runtime error",
+        "Merge conflict resolution",
+        "Semantic version bump"
+      ],
+      "modelAnswer": [
+        "The concept at fault is idempotency. An operation is idempotent when running it once or many times leaves the system in the same final state. Infrastructure as code (IaC) means managing servers and settings through code files instead of by hand, and idempotency is one of its core principles.\n\nThe script breaks idempotency because it blindly appends, meaning it adds to the end of the file every time. It never looks at what is already there, so each extra run adds another copy of the line.\n\nThe fix is to check before acting, so the script describes the state you want rather than an action to repeat. Inside the loop, for each server, the script should first look for an existing log_level line. If the correct line is already present, it should do nothing. If a log_level line exists with a different value, it should replace that line. Only if no log_level line exists should it add one.\n\nHere is that logic traced on a server whose file already holds 'log_level=info'. The check finds the line, the value matches, and the script skips the server. The file still has exactly one line, no matter how many times the script runs.\n\nA common mistake is to just tell operators not to run the script twice. Reruns happen anyway, through retries, scheduled jobs, and human error. A non-idempotent script quietly piles up duplicate or conflicting settings, and services may then read the wrong value or fail to start. The duplicates already created on Tuesday also need a one-time cleanup.",
+        "Wednesday's failure is a syntax error. Thursday's failure is a runtime error.\n\nA syntax error means the code breaks the grammar rules of the language, such as an unclosed quotation mark. The interpreter is the program that reads and runs the script. Because of the grammar mistake, it cannot correctly understand the script, so the script fails before any work is done or as soon as the faulty line is read. The message usually points to a line number and a grammar problem. That matches Wednesday: no servers were touched, and the message pointed to line 14 and an unclosed quote.\n\nA runtime error happens while the program is running. The code itself is valid, but something goes wrong in practice, such as a missing file, a lost network connection, or a permission problem. That matches Thursday: 11 servers were done, and then server 12's settings file was missing.\n\nThe practical test is this: did any real work happen before the failure, and does the message describe the code's grammar or the outside world? Grammar points to a syntax error. The outside world points to a runtime error.\n\nA common mistake is to treat both the same way. A syntax error is fixed by correcting the code. A runtime error calls for handling the condition, for example checking that the file exists and logging or skipping that server, so that one bad server does not halt the whole run. Thursday's run also left the fleet half-finished, with 11 servers updated and 9 not. This is another reason the script should be idempotent, so it can simply be rerun to finish the rest.",
+        "This is a merge conflict. A merge conflict happens when Git tries to combine two branches and both sides changed the same lines differently. Git cannot know which version is right, so it stops and asks a person to decide.\n\nPulling means first fetching, which downloads the new commits from the remote, and then merging them into your local branch. A commit is a saved snapshot of changes. Your change and your teammate's change touched the same log level line, which caused the conflict.\n\nIn the file, the part between the less-than markers and the equals row is your version. The part between the equals row and the greater-than markers is the incoming version from main.\n\nHere is how to resolve it, step by step. First, open the file and read both versions, talking to your teammate if the right outcome is unclear. Second, edit the block so it contains the single correct final line, which might be either version or a combination of both. Third, delete all three marker rows. Fourth, check the script for syntax errors and run its tests. Fifth, mark the file as resolved by staging it, which means telling Git the file is ready to be included in the next commit. Sixth, commit to complete the merge. Seventh, push, which uploads your commits to the remote.\n\nA common mistake is to stage and commit the file with the marker rows still inside it. Those markers are not valid script code, so the next run fails with a syntax error. Another common mistake is to throw away your teammate's change without checking with them, which silently undoes their fix.",
+        "The new version is 2.4.0.\n\nIn semantic versioning, you raise MAJOR for changes that break existing users. You raise MINOR for new features that remain backward compatible, meaning everything that worked before still works the same way. You raise PATCH for backward-compatible bug fixes only. When you raise one number, every number to its right resets to zero.\n\nYour optional log level setting is a new feature that breaks nothing, so MINOR goes from 3 to 4 and PATCH resets from 1 to 0. Traced step by step: 2.3.1, then raise MINOR to get 2.4.1, then reset PATCH to get 2.4.0.\n\nIf you had removed an old setting that people rely on, that is a breaking change. MAJOR would rise from 2 to 3, and both MINOR and PATCH would reset, giving 3.0.0.\n\nA common mistake is labelling a new feature as a patch, such as 2.3.2, or forgetting to reset the lower numbers, such as 2.4.1. Teams and tools use these numbers to decide whether an upgrade is safe. A breaking change hidden behind a small version bump can be installed automatically and break running servers without warning."
+      ]
+    },
+    {
+      "unitId": "at0-001:2",
+      "promptVersion": 2,
+      "model": "claude-opus-5-5",
+      "generatedAt": "2026-10-10T08:40:55.876Z",
+      "title": "Drift, a Broken Config File, and a Failing Inventory Call at Bramblefield Logistics",
+      "scenario": "You have just joined the operations team at Bramblefield Logistics, a fictional parcel-delivery company. The team uses a configuration-management tool, which is software that keeps servers set up the way the team intends. The intended setup is written down as desired state, meaning a file that describes what the end result should look like (for example, 'the web service allows 200 connections') rather than a list of steps. Describing the end result like this is called the declarative approach. The step-by-step style ('run this command, then this one') is called imperative.\n\nEach web server runs an agent, a small background program that wakes up every 30 minutes, fetches the latest desired-state files from the team's version-control repository (a shared, tracked history of file changes), and compares them with the server. This is a pull method, because each server pulls its own instructions. In a push method, a central machine would connect out to the servers and send changes. When a server no longer matches its desired state, that mismatch is called configuration drift. Finding it is drift detection, and putting the server back in line is remediation.\n\nThis morning three things happened.\n\nFirst, the agent on server web-02 reported drift. The desired-state file says max_connections: 200, but web-02 now shows 50. A colleague admits he logged in last night and edited the setting by hand during a traffic spike, and the team does not want 50 kept.\n\nSecond, after another colleague committed (saved into the repository) a change to the file app-settings.yaml, the agents on every server stopped applying changes and logged 'parse error at line 7'. YAML is a plain-text format for settings in which each setting is written as a name, a colon, a space, then the value, and nesting is shown with spaces, never tab characters. Line 6 reads 'listen_host: 0.0.0.0' and line 7 reads 'listen_port 8080'.\n\nThird, a script registers each server in the company's inventory service through a REST API. A REST API lets programs manage records over the web using standard HTTP methods: POST creates a record, GET reads one, PUT or PATCH updates one (PUT replaces the whole record, PATCH changes only named fields), and DELETE removes one. These four actions are known as CRUD: create, read, update, delete. The server replies with a status code, a number that summarises the result. The script failed in two ways. At first, every call stopped with the error 'certificate has expired'. A TLS certificate is the digital identity document a website or API presents so callers can confirm they are talking to the real server over an encrypted connection. After the infrastructure team renewed that certificate, the script ran again, but its call to record web-02's new IP address used POST to /servers/web-02 and got status 409 Conflict, which means a record with that name already exists. A teammate suggests making the script skip certificate checks 'so this never happens again'.\n\nYour tasks:\n1. Explain how to remediate the drift on web-02 using the configuration-management approach described, and say what the colleague should have done instead of editing by hand.\n2. Identify the syntax error in app-settings.yaml, give the corrected line, and name one habit that would catch this before it reaches the servers.\n3. Respond to the teammate's suggestion about skipping certificate checks, and say what the script should do differently to change web-02's IP address in the inventory service.",
+      "subParts": [
+        "Remediate drift on web-02",
+        "Fix the YAML syntax error",
+        "Certificate handling and correct API update"
+      ],
+      "modelAnswer": [
+        "Because the tool is declarative and the repository still holds the correct desired state (max_connections: 200), the fix is to let the tool re-apply that state, not to rebuild or redeploy the server. Either trigger the agent on web-02 to run now or wait for its next 30-minute pull. It will compare the server with the desired state, find 50 instead of 200, and set the value back to 200. Then confirm the drift report for web-02 is clear. Hand-editing the value back is not needed and would still bypass the tracked record. The colleague should have changed the desired-state file in the repository, committed it, and let the agents pull it. That way the change is recorded and reviewable, and the agent does not quietly undo it. A hand edit on a server under configuration management is either overwritten at the next run or, if agents are paused, left as hidden drift that nobody tracks.",
+        "Line 7, 'listen_port 8080', is missing the colon that YAML requires between a setting's name and its value, so the file cannot be parsed. The corrected line is 'listen_port: 8080', written as the name, a colon, a space, then the value, with the same space-only indentation as line 6 and no tab characters. Because every agent pulls the same broken file, the parse error stops all servers from applying any changes until it is fixed in the repository and committed. The preventive habit is to run the file through a YAML validator or linter (a tool that checks syntax) before committing, ideally as an automatic check that rejects the commit if the file does not parse.",
+        "Do not skip certificate checks. The check is what proves the script is talking to the real inventory service over an encrypted connection. Turning it off would hide the next expiry and let an impostor server receive or alter inventory data. The correct fix for 'certificate has expired' was the one already applied: renew the certificate on the API server. A sensible follow-up is to track or alert on certificate expiry dates so they are renewed before they lapse. For the IP change, 409 Conflict shows that web-02 already exists, so a create call (POST) is the wrong operation. The script should use an update call instead. PATCH /servers/web-02 with only the new IP address is the best fit, because it changes just that field. PUT works too if the script sends the full record. Optionally, the script can first GET /servers/web-02 to confirm the record exists, then POST only when the GET reports the record is not found."
+      ]
+    },
+    {
+      "unitId": "at0-001:3",
+      "promptVersion": 2,
+      "model": "claude-opus-5-5",
+      "generatedAt": "2026-10-10T08:40:52.575Z",
+      "title": "Brindlewood Freight: The Pipeline That Shipped a Broken Build",
+      "scenario": "Brindlewood Freight is a fictional, small company that writes route-planning software for delivery vans. Its four-person team uses continuous integration (CI), the practice of merging every developer's changes into a shared codebase often and having a machine automatically build and test each change. The machine's work is laid out in a pipeline, which is an ordered list of automated steps. The team writes its pipeline in GitHub Actions, a hosted CI service. The pipeline lives in a workflow file, a text file stored in the code repository (the shared, version-tracked store of the team's code) that tells the CI service what to do.\n\nThe workflow file has a trigger, which is the event that starts the pipeline. Here the trigger is a push, meaning a developer sending new commits to the repository. The file defines three jobs. A job is a group of steps that runs on its own fresh machine, called a runner. By default, separate jobs run at the same time unless the file states that one job depends on another.\n\nIn plain words, the file says the following. Job one, build: compile the code and save the result to the company's artifact repository under the name route-planner-latest. An artifact is the packaged output of a build, the thing you actually install. An artifact repository is a storage service that keeps those packages. Job two, test: run the automated tests. Job three, deploy: rebuild the code from scratch, then copy it to the production server, which is the live system customers use. To log in to that server, the deploy job contains this line typed directly in the file: SERVER_PASSWORD equals Brindle2024!\n\nLast Tuesday, developer Priya pushed a change. The test job failed, but customers saw errors anyway, because the broken code was already live. Afterwards the team found three more facts. First, the deploy job had started at the same moment as the test job and finished before the tests reported their failure. Second, when they tried to put back the previous working version, they could not: each build had saved over route-planner-latest, so the old package no longer existed. Third, nothing in the pipeline checked the live server after deploying. A health check, an automatic request to the running application that confirms it responds correctly, was never run. That meant nothing could start an automated rollback, which is the pipeline putting the last known-good version back without a person stepping in. A contractor with read access to the repository also noticed the password line.\n\n1. Name the secrets-management problem in the workflow file. Explain the risk and state how a secret should be supplied to the pipeline instead.\n2. Explain why the deploy job ran before testing had finished. Describe the change to the workflow that makes deploy wait for a successful test.\n3. Identify the two artifact-management mistakes: the deploy job rebuilding the code, and the single name route-planner-latest. Explain how fixing them makes going back to an earlier release possible.\n4. Describe how the team could add an automated rollback to the deploy job. Trace what would happen, step by step, if a bad release reached the server after your fix.",
+      "subParts": [
+        "Secrets management",
+        "Job ordering and dependencies",
+        "Artifact management",
+        "Automated rollback"
+      ],
+      "modelAnswer": [
+        "The problem is a hardcoded secret. A secret is any sensitive value, such as a password, key, or token, that grants access to a system. Here the production server password is typed in plain text inside the workflow file. Because that file is stored in the repository, anyone who can read the repository can read the password. That includes the contractor, and it includes every past version of the file, since version history keeps old copies even after the line is deleted. Someone holding it could log in to the live server. The fix has three parts. First, change the server password immediately, because the old one must be treated as exposed. Second, store the new value in the CI service's secrets store. This is a protected setting the CI tool keeps encrypted and hides from logs. In GitHub Actions these are called repository or environment secrets. Third, have the deploy job refer to the secret by name, so the value is injected only while the job runs and never appears in the file. A good answer also notes that access should be limited so only the deploy job, and only the people who need it, can use that secret.",
+        "Jobs in the workflow run at the same time by default. The file never said that deploy depends on test, so the CI service started all three jobs together. Deploy simply finished first. This is a dependency-handling and orchestration problem. Orchestration means controlling the order in which jobs run and the conditions under which they run. The fix is to declare dependencies so the jobs form a chain: test depends on build, and deploy depends on test. In GitHub Actions this is done with the needs setting on a job. Jenkins expresses the same idea through the order of its stages. Once that is in place, deploy only starts after test finishes successfully. If test fails, deploy is skipped. Traced against Tuesday's push: build succeeds, test fails, deploy never starts, and the production server keeps running the old working version.",
+        "The first mistake is that deploy rebuilds the code instead of using the artifact that build already made. That means the package going live is not the one that was tested, and a rebuild can quietly differ, for example by picking up a newer library. The rule is build once, then promote that same artifact: deploy should download the exact package that build stored and test checked. The second mistake is the single, constantly overwritten name route-planner-latest. Every build destroys the previous package, so there is no earlier version to return to. The fix is to give each artifact a unique, unchanging version label, such as a version number or the commit identifier, and keep older versions in the artifact repository. With both fixes, the team can identify exactly which package is live, and it can redeploy any previous version by fetching it from the repository instead of trying to recreate it.",
+        "Add steps to the end of the deploy job. Before deploying, record which artifact version is currently live; that is the last known-good version. Deploy the new versioned artifact. Then run a health check against the server, for example several requests to a status page over a short waiting period. If the health check passes, mark the new version as the known-good one. If it fails, the pipeline automatically redeploys the recorded previous version from the artifact repository, runs the health check again to confirm recovery, marks the pipeline as failed, and alerts the team. Traced example: version 41 is live and recorded as good. Version 42 passes its tests and is deployed, but the status page returns errors. The health check fails, so the pipeline fetches version 41 from the artifact repository and redeploys it. The second health check passes, the team is notified that 42 was rolled back, and customers see errors only for a few moments instead of until someone notices. A common mistake is skipping the stored versions. Rollback depends on the previous artifact still existing, so it would not have worked under the old route-planner-latest setup."
+      ]
+    },
+    {
+      "unitId": "at0-001:4",
+      "promptVersion": 2,
+      "model": "claude-opus-5-5",
+      "generatedAt": "2026-10-10T08:41:01.809Z",
+      "title": "Lanternfield Logistics: Shipping a Risky Tracking API Release Safely",
+      "scenario": "Lanternfield Logistics is a fictional parcel-delivery company. Its tracking API (an application programming interface, meaning the web service that customer apps call to ask where a parcel is) runs on 10 identical servers behind a load balancer. A load balancer is a component that spreads incoming requests across servers. The team is about to release version 2.0, which rewrites how tracking data is looked up. Developers are confident in it but admit it has never handled real customer traffic.\n\nThe release manager has set these requirements. First, only a small slice of real users, about 5 percent, should hit version 2.0 at the start. The team will watch its error rate and response time before sending more traffic its way. Second, if problems appear, almost all customers must stay unaffected, and moving traffic back to version 1 must take minutes, not hours. Third, the budget allows one or two extra servers for a short time, but not a full second copy of all 10 servers.\n\nLanternfield also has two reliability numbers. A large retail customer has a signed contract promising 99.5 percent monthly uptime, with service credits (refunds) if Lanternfield falls short. Uptime is the share of time the service is working and reachable. Internally, the engineering team aims for 99.9 percent monthly uptime. Use a 30-day month, which is 43,200 minutes. Last month the API had two outages, one of 20 minutes and one of 30 minutes.\n\nFinally, a security review of the delivery pipeline found a problem. A pipeline is the automated sequence of steps that builds, tests, and deploys code. Its deploy script calls the cloud provider's CLI (command-line interface, a text tool for sending commands to the provider) and SDK (software development kit, a code library for calling the provider from a program). Both use a long-lived access key, which is a permanent username-and-password-style credential. The key belongs to an administrator account that can change anything in the cloud account. It is typed directly into the script, which is stored in the shared code repository.\n\n1. Choose the deployment strategy that fits the release requirements: canary, blue-green, rolling, or in-place. Explain why it fits, and why at least two of the other strategies fit worse.\n\n2. Say which of the two reliability numbers is the SLA and which is the SLO. Then calculate the allowed monthly downtime for each, and decide whether last month met each one.\n\n3. Calculate last month's MTTR, and describe one feedback loop the team should build into the version 2.0 rollout.\n\n4. Recommend specific IAM (identity and access management, the provider's system for deciding who or what can do which actions) changes to secure the pipeline's connection to the cloud provider.",
+      "subParts": [
+        "Choose the deployment strategy",
+        "Identify SLA vs SLO and check last month",
+        "Calculate MTTR and design a feedback loop",
+        "Secure the pipeline's provider connection with IAM"
+      ],
+      "modelAnswer": [
+        "The right choice is a canary deployment. In a canary deployment, the new version runs on a small number of servers alongside the old version. The load balancer sends only a small share of real traffic to it, here about 5 percent. The team watches error rates and response times and widens the share step by step if the numbers stay healthy.\n\nCanary fits all three requirements. It exposes version 2.0 to real users in a controlled slice. If it misbehaves, only about 5 percent of users are affected, and rollback just means sending all traffic back to the version 1 servers. It needs only one or two extra servers, which is within budget.\n\nBlue-green fits worse. It builds a full second copy of the environment (here, 10 more servers) and switches all traffic at once. That breaks the budget and does not give a gradual 5 percent test. Rolling fits worse because it replaces servers in batches until everything runs the new version. It is not built around deliberately holding a small traffic share while you measure, and rolling back means rolling every batch back. In-place fits worst. It stops and updates the existing servers directly, so every user is exposed at once and rollback means reinstalling the old version, which is slow. A strong answer must name canary and give reasons tied to the small traffic share, fast rollback, and limited extra capacity.",
+        "The 99.5 percent figure is the SLA (service-level agreement). An SLA is a formal promise to a customer, usually in a contract, with a consequence such as service credits if it is missed. The 99.9 percent figure is the SLO (service-level objective). An SLO is an internal target the team sets for itself, usually stricter than the SLA so problems are caught before the contract is broken.\n\nHere is the allowed downtime in a 43,200-minute month. For the SLO, 0.1 percent of 43,200 is 43.2 minutes. For the SLA, 0.5 percent of 43,200 is 216 minutes, or 3.6 hours. Last month's total downtime was 20 plus 30, which is 50 minutes.\n\nFifty minutes is more than 43.2, so the team missed its SLO. Fifty minutes is less than 216, so the SLA was still met, and no service credits are owed. The practical consequence is that the team has used up its internal reliability margin. That is a signal to be extra careful with risky releases like version 2.0, which supports choosing a cautious canary rollout.",
+        "MTTR (mean time to recovery, sometimes called mean time to repair) is the average time it takes to restore service after a failure. Last month there were two incidents totalling 50 minutes, so MTTR is 50 divided by 2, which is 25 minutes.\n\nA feedback loop is a process where measurements from the running system are fed back to change what the team or pipeline does next. For the rollout, the pipeline should continuously compare the canary's error rate and response time against version 1 and against agreed limits. If the canary stays within limits for a set period, the pipeline moves on to a larger share, for example 5 percent, then 25 percent, then 50 percent, then 100 percent. If it breaks a limit, the pipeline automatically stops and sends all traffic back to version 1, and alerts the team. This keeps the blast radius small and cuts recovery time, which lowers MTTR and protects the remaining SLO margin. An answer that gives the correct MTTR and describes measure, decide, and act (including automatic rollback or halting) is fully correct.",
+        "First, remove the hard-coded access key from the script and the repository, and immediately revoke or rotate that key. Anyone who could read the repository may already have copied it, so it must be treated as exposed.\n\nSecond, create a dedicated identity for the pipeline, such as a service account or role, separate from any human administrator. Apply least privilege, meaning the identity gets only the permissions it needs to do its job. Here that means only the deploy actions it performs, such as updating the tracking API servers and load balancer settings. Those permissions should be limited to those specific resources, not the whole account, and should exclude rights such as managing users or deleting unrelated resources.\n\nThird, prefer short-lived credentials. The pipeline should assume the role at run time and receive temporary credentials that expire automatically, instead of using a permanent key. If a secret is unavoidable, keep it in the pipeline's protected secret store and pass it to the CLI and SDK through environment variables at run time. It must never appear in code or logs.\n\nIt also helps to enable logging of the pipeline identity's actions for auditing. The consequence of these changes for the running system is that a leaked or misused pipeline credential can only do a narrow set of deploy actions for a short time, instead of taking over the entire cloud account."
+      ]
+    }
+  ]
+}

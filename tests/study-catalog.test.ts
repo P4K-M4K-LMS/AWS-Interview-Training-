@@ -19,20 +19,35 @@ import { PYTHON_DRILL_BY_ID } from "../src/content/study/pythonDrills";
 import { JS_DRILL_BY_ID } from "../src/content/study/jsDrills";
 import { LAB_LABELS } from "../src/content/study/labs";
 import { ENGINE_GATES, LAB_LINKS, MISSION_LINKS } from "../src/content/study/missionLinks";
+import { FIELDS, LEVELS, PATHS } from "../src/content/study/paths";
 import type { StudyCatalogIndex, StudyCourse } from "../src/domain/types";
 
 const OUT = path.resolve(__dirname, "..", "public", "study");
 const built = buildCatalog();
 
 describe("Study catalog (Ascendra snapshot)", () => {
-  it("covers the proof slice: 20 courses, 1,481 objectives plus 20 bookkeeping lines", () => {
-    expect(built.courses).toHaveLength(20);
-    expect(built.index.courses.filter((c) => c.group === "aws")).toHaveLength(11);
-    expect(built.index.courses.filter((c) => c.group === "core")).toHaveLength(9);
+  it("covers all 90 Ascendra courses: 4,906 objectives plus 20 bookkeeping lines, every course placed in a field", () => {
+    expect(built.courses).toHaveLength(90);
+    const perField = Object.fromEntries(FIELDS.map((f) => [f.id, built.index.courses.filter((c) => c.group === f.id).length]));
+    expect(perField).toEqual({ aws: 11, azure: 10, gcp: 11, security: 5, it: 11, cs: 4, pm: 13, nursing: 6, pt: 13, fitness: 6 });
     const objectives = built.courses.flatMap((c) => c.units.flatMap((u) => u.objectives));
-    expect(objectives.filter((o) => o.kind === "objective")).toHaveLength(1481);
+    expect(objectives.filter((o) => o.kind === "objective")).toHaveLength(4906);
     expect(objectives.filter((o) => o.kind === "bookkeeping")).toHaveLength(20);
-    expect(objectives).toHaveLength(1501);
+    expect(built.search.objectives).toHaveLength(4906);
+  });
+
+  it("asks for a health disclaimer on every nursing and physical therapy course, and no other", () => {
+    const gated = built.index.courses.filter((c) => c.requiresAcknowledgement).map((c) => c.group);
+    expect(new Set(gated)).toEqual(new Set(["nursing", "pt"]));
+    expect(gated).toHaveLength(19);
+  });
+
+  it("puts every path step in its own field and starts each path at its easiest course", () => {
+    const byCode = new Map(built.index.courses.map((c) => [c.code, c]));
+    for (const p of PATHS) {
+      const levels = p.steps.map((code) => LEVELS[byCode.get(code)!.level].order);
+      expect(levels[0], `${p.id} starts above its lowest level`).toBe(Math.min(...levels));
+    }
   });
 
   it("matches the committed JSON byte for byte (run `npx tsx scripts/generate-study.mts build-catalog` after editing links or the snapshot)", () => {
@@ -41,7 +56,7 @@ describe("Study catalog (Ascendra snapshot)", () => {
     for (const c of built.courses) {
       expect(readFileSync(path.join(OUT, `${c.id}.json`), "utf8"), c.id).toBe(stableJson(c));
     }
-    const courseFiles = readdirSync(OUT).filter((f) => f.endsWith(".json") && f !== "index.json" && !f.endsWith(".lessons.json") && !f.endsWith(".imported.json"));
+    const courseFiles = readdirSync(OUT).filter((f) => f.endsWith(".json") && !["index.json", "search.json", "lessons-index.json"].includes(f) && !f.endsWith(".lessons.json") && !f.endsWith(".imported.json"));
     expect(courseFiles.sort()).toEqual(built.courses.map((c) => `${c.id}.json`).sort());
     const committedModule = readFileSync(path.resolve(__dirname, "..", "src", "content", "study", "missionLinks.ts"), "utf8");
     expect(committedModule).toBe(missionLinksModule(built));
@@ -133,7 +148,8 @@ describe("Study catalog (Ascendra snapshot)", () => {
   });
 
   it("keeps the index small and the counts consistent", () => {
-    expect(stableJson(built.index).length).toBeLessThan(20_000);
+    // About 800 bytes per course; the Study home loads it on every visit.
+    expect(stableJson(built.index).length).toBeLessThan(100_000);
     for (const s of built.index.courses) {
       const c = built.courses.find((x) => x.id === s.id) as StudyCourse;
       expect(s.counts).toEqual(c.counts);

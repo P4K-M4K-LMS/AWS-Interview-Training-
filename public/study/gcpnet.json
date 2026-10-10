@@ -1,0 +1,1381 @@
+{
+  "id": "gcpnet",
+  "code": "GCPNET",
+  "title": "Google Cloud Professional Cloud Network Engineer",
+  "description": "Google Cloud Professional Cloud Network Engineer: designing, implementing, and troubleshooting VPC networks, hybrid/multicloud interconnectivity, managed network services, and cloud network security on Google Cloud.",
+  "trackType": "certification",
+  "field": "gcp",
+  "units": [
+    {
+      "id": "gcpnet:1",
+      "index": 1,
+      "title": "Designing and Planning a Google Cloud VPC Network",
+      "weight": 21,
+      "gate": "Given a network design requirement, name the specific Google Cloud construct -- not just 'a VPC' -- and the constraint (IP space, MTU, quota) that actually shapes the decision.",
+      "objectives": [
+        {
+          "id": "gcpnet:1:1",
+          "unitId": "gcpnet:1",
+          "index": 1,
+          "text": "Differentiating network tiers: Premium and Standard",
+          "sourceHash": "0928b2cfd18c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:1:2",
+          "unitId": "gcpnet:1",
+          "index": 2,
+          "text": "Designing for high availability, failover, disaster recovery, and scale",
+          "sourceHash": "ed878bd9df34",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:1:3",
+          "unitId": "gcpnet:1",
+          "index": 3,
+          "text": "Designing DNS topology: on-premises and Cloud DNS",
+          "sourceHash": "fd217fdb6804",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:1:4",
+          "unitId": "gcpnet:1",
+          "index": 4,
+          "text": "Choosing the appropriate load balancer for a network implementation",
+          "sourceHash": "ae2568814477",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:1:5",
+          "unitId": "gcpnet:1",
+          "index": 5,
+          "text": "Planning GKE networking: secondary ranges, IP address space for scale, control-plane access",
+          "sourceHash": "7f083d8adc23",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:1:6",
+          "unitId": "gcpnet:1",
+          "index": 6,
+          "text": "Choosing the right IAM roles for a network architecture: load balancer provisioning, Shared VPC subnet permissions",
+          "sourceHash": "755027da0ba4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:1:7",
+          "unitId": "gcpnet:1",
+          "index": 7,
+          "text": "Planning connectivity to managed services: private services access, Private Service Connect, Serverless VPC Access",
+          "sourceHash": "7f3f38adb18b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:1:8",
+          "unitId": "gcpnet:1",
+          "index": 8,
+          "text": "Planning for network quotas and limits",
+          "sourceHash": "ba053360f326",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:1:9",
+          "unitId": "gcpnet:1",
+          "index": 9,
+          "text": "Choosing VPC type and quantity: standalone or Shared VPC, number of VPC environments",
+          "sourceHash": "c9b9b8b4be24",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:1:10",
+          "unitId": "gcpnet:1",
+          "index": 10,
+          "text": "Determining how networks interconnect: VPC Network Peering, mesh/star topology with Network Connectivity Center, Private Service Connect",
+          "sourceHash": "5b2f8ef39faa",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:1:11",
+          "unitId": "gcpnet:1",
+          "index": 11,
+          "text": "Planning an IP address management strategy: subnets, IPv6, bring-your-own-IP, privately used public IP, Private NAT, non-RFC 1918 addresses, managed services, IPAM automation",
+          "sourceHash": "8b87ec007bea",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:1:12",
+          "unitId": "gcpnet:1",
+          "index": 12,
+          "text": "Planning a global versus regional network environment",
+          "sourceHash": "7502cfb3750e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:1:13",
+          "unitId": "gcpnet:1",
+          "index": 13,
+          "text": "Determining correct MTU sizing for a VPC's workloads",
+          "sourceHash": "962c4ccc6df2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:1:14",
+          "unitId": "gcpnet:1",
+          "index": 14,
+          "text": "Planning third-party device insertion: network virtual appliances, custom routes, load balancing",
+          "sourceHash": "8bc3e4210d2c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:1:15",
+          "unitId": "gcpnet:1",
+          "index": 15,
+          "text": "Designing hybrid connectivity: on-premises/branch office, bandwidth and security constraints, Dedicated Interconnect, Partner Interconnect, Cloud VPN, SD-WAN appliances",
+          "sourceHash": "888821ec2cbf",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:1:16",
+          "unitId": "gcpnet:1",
+          "index": 16,
+          "text": "Designing multicloud connectivity: Cloud VPN, Cross-Cloud Interconnect",
+          "sourceHash": "d95e1ee1418f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:1:17",
+          "unitId": "gcpnet:1",
+          "index": 17,
+          "text": "Choosing between Direct Peering and a Verified Peering Provider",
+          "sourceHash": "38d01108ae48",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:1:18",
+          "unitId": "gcpnet:1",
+          "index": 18,
+          "text": "Designing high-availability and disaster-recovery connectivity across multiple regions",
+          "sourceHash": "229d6bee677c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:1:19",
+          "unitId": "gcpnet:1",
+          "index": 19,
+          "text": "Accessing multiple VPCs from on-premises locations: Shared VPC, multi-VPC peering, Network Connectivity Center topologies",
+          "sourceHash": "a33e77b9dfc6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:1:20",
+          "unitId": "gcpnet:1",
+          "index": 20,
+          "text": "Accessing Google services and APIs privately from on-premises locations",
+          "sourceHash": "e0c1a2e0ed0c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:1:21",
+          "unitId": "gcpnet:1",
+          "index": 21,
+          "text": "Accessing managed services through Private Service Connect and VPC Network Peering",
+          "sourceHash": "d49d7021e8dd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:1:22",
+          "unitId": "gcpnet:1",
+          "index": 22,
+          "text": "Designing IP address space across on-premises and cloud environments, avoiding overlaps",
+          "sourceHash": "fcf1ef701ecc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:1:23",
+          "unitId": "gcpnet:1",
+          "index": 23,
+          "text": "Architecting hybrid DNS topology: forwarding paths, inbound policies, cross-project binding, DNS peering",
+          "sourceHash": "35ef9b3905f3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:1:24",
+          "unitId": "gcpnet:1",
+          "index": 24,
+          "text": "Determining correct MTU sizing for hybrid connections: Cloud Interconnect and HA VPN",
+          "sourceHash": "ff91b2ba5426",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:1:25",
+          "unitId": "gcpnet:1",
+          "index": 25,
+          "text": "Understanding interconnect encryption options: MACsec, HA VPN over Cloud Interconnect",
+          "sourceHash": "7b49c562d9ac",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:1:26",
+          "unitId": "gcpnet:1",
+          "index": 26,
+          "text": "Choosing public versus private GKE cluster nodes and node pools",
+          "sourceHash": "ec2b7feb1176",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:1:27",
+          "unitId": "gcpnet:1",
+          "index": 27,
+          "text": "Choosing public versus private GKE control plane endpoints",
+          "sourceHash": "d4a9a01d71d7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:1:28",
+          "unitId": "gcpnet:1",
+          "index": 28,
+          "text": "Planning GKE subnets: primary and secondary ranges",
+          "sourceHash": "431b39fd112f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:1:29",
+          "unitId": "gcpnet:1",
+          "index": 29,
+          "text": "Planning GKE IP addressing: RFC 1918, non-RFC 1918, Google-managed services range, Private Service Connect, shared IP ranges, privately used public IP",
+          "sourceHash": "17b4ec61fba8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:1:30",
+          "unitId": "gcpnet:1",
+          "index": 30,
+          "text": "Planning for IPv6 in GKE",
+          "sourceHash": "0754b669c08d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:1:31",
+          "unitId": "gcpnet:1",
+          "index": 31,
+          "text": "Designing load balancing and node pool configuration for GKE",
+          "sourceHash": "80d2b1259674",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "gcpnet:2",
+      "index": 2,
+      "title": "Implementing a VPC Network",
+      "weight": 20,
+      "gate": "Given a VPC to actually build, name the exact configuration step and the specific setting that would be wrong on a near-miss answer.",
+      "objectives": [
+        {
+          "id": "gcpnet:2:1",
+          "unitId": "gcpnet:2",
+          "index": 1,
+          "text": "Creating Google Cloud VPC resources: networks, subnets, firewall rules/policies, private services access subnet, private pools",
+          "sourceHash": "06abfffc07ba",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:2:2",
+          "unitId": "gcpnet:2",
+          "index": 2,
+          "text": "Configuring VPC Network Peering",
+          "sourceHash": "225ece5682c2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:2:3",
+          "unitId": "gcpnet:2",
+          "index": 3,
+          "text": "Creating a Shared VPC network and sharing subnets with other projects",
+          "sourceHash": "39f4d51b1eb1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:2:4",
+          "unitId": "gcpnet:2",
+          "index": 4,
+          "text": "Assigning IAM permissions to use Shared VPC subnets from service projects",
+          "sourceHash": "75f11b2c772d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:2:5",
+          "unitId": "gcpnet:2",
+          "index": 5,
+          "text": "Configuring access to Google APIs and Google-managed services: Private Google Access, public interfaces",
+          "sourceHash": "c02a626d391b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:2:6",
+          "unitId": "gcpnet:2",
+          "index": 6,
+          "text": "Expanding a VPC subnet's range after creation",
+          "sourceHash": "81a7d66e4732",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:2:7",
+          "unitId": "gcpnet:2",
+          "index": 7,
+          "text": "Configuring restricted Google Cloud services with VPC Service Controls perimeters",
+          "sourceHash": "bbe271633722",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:2:8",
+          "unitId": "gcpnet:2",
+          "index": 8,
+          "text": "Setting up static and dynamic routing with Cloud Router",
+          "sourceHash": "2d0ed065d2ea",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:2:9",
+          "unitId": "gcpnet:2",
+          "index": 9,
+          "text": "Configuring global versus regional dynamic routing",
+          "sourceHash": "5ab4c730acb1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:2:10",
+          "unitId": "gcpnet:2",
+          "index": 10,
+          "text": "Implementing routing using network tags and priority",
+          "sourceHash": "dda3557e0cd6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:2:11",
+          "unitId": "gcpnet:2",
+          "index": 11,
+          "text": "Implementing route priorities with global dynamic routing: policy-based and dynamic routing",
+          "sourceHash": "2e78fb496972",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:2:12",
+          "unitId": "gcpnet:2",
+          "index": 12,
+          "text": "Implementing an internal load balancer as a next hop",
+          "sourceHash": "8e4476fec0eb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:2:13",
+          "unitId": "gcpnet:2",
+          "index": 13,
+          "text": "Configuring custom route import/export over VPC Network Peering and Network Connectivity Center",
+          "sourceHash": "f4df58f67e72",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:2:14",
+          "unitId": "gcpnet:2",
+          "index": 14,
+          "text": "Configuring policy-based routing",
+          "sourceHash": "e24950eb9983",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:2:15",
+          "unitId": "gcpnet:2",
+          "index": 15,
+          "text": "Differentiating Network Connectivity Center spoke types: VPC spoke, hybrid spoke, producer spoke",
+          "sourceHash": "d6184438641e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:2:16",
+          "unitId": "gcpnet:2",
+          "index": 16,
+          "text": "Managing VPC topology: star, hub-and-spoke, mesh",
+          "sourceHash": "56ad0e2707d2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:2:17",
+          "unitId": "gcpnet:2",
+          "index": 17,
+          "text": "Configuring Private NAT and Private Service Connect propagation",
+          "sourceHash": "7f2ef84da22b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:2:18",
+          "unitId": "gcpnet:2",
+          "index": 18,
+          "text": "Configuring IP/CIDR range filters for Network Connectivity Center spokes",
+          "sourceHash": "87aeaea4f8fe",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:2:19",
+          "unitId": "gcpnet:2",
+          "index": 19,
+          "text": "Monitoring and troubleshooting Network Connectivity Center",
+          "sourceHash": "35b3c1cc6976",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:2:20",
+          "unitId": "gcpnet:2",
+          "index": 20,
+          "text": "Creating VPC-native GKE clusters using alias IPs",
+          "sourceHash": "ef7c4f97db88",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:2:21",
+          "unitId": "gcpnet:2",
+          "index": 21,
+          "text": "Setting up GKE clusters with Shared VPC",
+          "sourceHash": "598fcf02320d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:2:22",
+          "unitId": "gcpnet:2",
+          "index": 22,
+          "text": "Configuring private GKE clusters and private control plane endpoints",
+          "sourceHash": "63d751251b08",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:2:23",
+          "unitId": "gcpnet:2",
+          "index": 23,
+          "text": "Adding authorized networks for a GKE cluster's control plane endpoint",
+          "sourceHash": "24f1973d3224",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:2:24",
+          "unitId": "gcpnet:2",
+          "index": 24,
+          "text": "Using a DNS-based endpoint for GKE control plane access",
+          "sourceHash": "7e578fd2d222",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:2:25",
+          "unitId": "gcpnet:2",
+          "index": 25,
+          "text": "Enabling GKE Dataplane V2",
+          "sourceHash": "98d7895a3dda",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:2:26",
+          "unitId": "gcpnet:2",
+          "index": 26,
+          "text": "Configuring SNAT and IP Masquerade policies for GKE",
+          "sourceHash": "57e7a474c5fc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:2:27",
+          "unitId": "gcpnet:2",
+          "index": 27,
+          "text": "Creating GKE network policies",
+          "sourceHash": "4c54a41e1fbb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:2:28",
+          "unitId": "gcpnet:2",
+          "index": 28,
+          "text": "Configuring GKE Pod ranges and service ranges",
+          "sourceHash": "6d8ad843b067",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:2:29",
+          "unitId": "gcpnet:2",
+          "index": 29,
+          "text": "Deploying additional Pod ranges for a GKE cluster",
+          "sourceHash": "df8882c9027f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:2:30",
+          "unitId": "gcpnet:2",
+          "index": 30,
+          "text": "Configuring GKE DNS: local DNS cache, Cloud DNS, kube-dns",
+          "sourceHash": "851723c80811",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "gcpnet:3",
+      "index": 3,
+      "title": "Configuring Managed Network Services",
+      "weight": 16,
+      "gate": "Given a traffic-delivery requirement, choose the specific load balancer type, CDN configuration, or DNS setting that fits -- not just 'add a load balancer.'",
+      "objectives": [
+        {
+          "id": "gcpnet:3:1",
+          "unitId": "gcpnet:3",
+          "index": 1,
+          "text": "Choosing a load balancing solution: internal/external, regional/global, application/proxy/passthrough",
+          "sourceHash": "2d91b613bfed",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:3:2",
+          "unitId": "gcpnet:3",
+          "index": 2,
+          "text": "Configuring backend services and autoscaling: network endpoint groups, managed instance groups",
+          "sourceHash": "2db876bc6217",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:3:3",
+          "unitId": "gcpnet:3",
+          "index": 3,
+          "text": "Configuring load balancer and backend settings: balancing method, session affinity, serving capacity, URL maps, health checks, global access",
+          "sourceHash": "ce04623c6450",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:3:4",
+          "unitId": "gcpnet:3",
+          "index": 4,
+          "text": "Understanding GKE load balancers: GKE Gateway controller, GKE Ingress controller, network endpoint groups",
+          "sourceHash": "4381acab8fb5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:3:5",
+          "unitId": "gcpnet:3",
+          "index": 5,
+          "text": "Setting up Application Load Balancer traffic management: traffic splitting, traffic mirroring, URL rewrites",
+          "sourceHash": "44b68d03f66f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:3:6",
+          "unitId": "gcpnet:3",
+          "index": 6,
+          "text": "Setting up Cloud CDN for supported origins: managed instance groups, Cloud Storage buckets, Cloud Run",
+          "sourceHash": "a59aec5950e7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:3:7",
+          "unitId": "gcpnet:3",
+          "index": 7,
+          "text": "Setting up Cloud CDN for external backends and third-party object storage",
+          "sourceHash": "dee917295ba5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:3:8",
+          "unitId": "gcpnet:3",
+          "index": 8,
+          "text": "Invalidating cached content in Cloud CDN",
+          "sourceHash": "06e99f4573f6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:3:9",
+          "unitId": "gcpnet:3",
+          "index": 9,
+          "text": "Managing Cloud DNS zones and records",
+          "sourceHash": "c47a06fecb8b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:3:10",
+          "unitId": "gcpnet:3",
+          "index": 10,
+          "text": "Migrating to Cloud DNS",
+          "sourceHash": "d5340b0f5a3e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:3:11",
+          "unitId": "gcpnet:3",
+          "index": 11,
+          "text": "Configuring Cloud DNS routing policies: geolocation, failover",
+          "sourceHash": "2ba0b0067bbe",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:3:12",
+          "unitId": "gcpnet:3",
+          "index": 12,
+          "text": "Enabling DNS Security Extensions (DNSSEC)",
+          "sourceHash": "89c9288a6f21",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:3:13",
+          "unitId": "gcpnet:3",
+          "index": 13,
+          "text": "Setting up self-hosted DNS integration with Cloud DNS: forwarding, DNS server policies",
+          "sourceHash": "f3984eefc429",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:3:14",
+          "unitId": "gcpnet:3",
+          "index": 14,
+          "text": "Understanding DNS private and public zones, and setting up split-horizon DNS",
+          "sourceHash": "6df8e0ab003e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:3:15",
+          "unitId": "gcpnet:3",
+          "index": 15,
+          "text": "Setting up DNS cross-project binding and DNS peering",
+          "sourceHash": "82d36f848f49",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:3:16",
+          "unitId": "gcpnet:3",
+          "index": 16,
+          "text": "Configuring Cloud DNS and the external-DNS operator for GKE",
+          "sourceHash": "3f1f9d21da52",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "gcpnet:4",
+      "index": 4,
+      "title": "Configuring and Implementing Hybrid and Multicloud Network Interconnectivity",
+      "weight": 16,
+      "gate": "Given an on-premises or multicloud connectivity requirement, name the specific interconnect or VPN mechanism -- and its SLA -- that fits.",
+      "objectives": [
+        {
+          "id": "gcpnet:4:1",
+          "unitId": "gcpnet:4",
+          "index": 1,
+          "text": "Creating Dedicated Interconnect connections and configuring VLAN attachments",
+          "sourceHash": "ff159f6a4d3a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:4:2",
+          "unitId": "gcpnet:4",
+          "index": 2,
+          "text": "Creating Partner Interconnect connections and VLAN attachments, differentiating layer 2 from layer 3 interconnects",
+          "sourceHash": "71edc871b1cb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:4:3",
+          "unitId": "gcpnet:4",
+          "index": 3,
+          "text": "Creating Cross-Cloud Interconnect connections and VLAN attachments",
+          "sourceHash": "2cd18616e58c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:4:4",
+          "unitId": "gcpnet:4",
+          "index": 4,
+          "text": "Configuring HA VPN over Cloud Interconnect",
+          "sourceHash": "6c2461d3227a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:4:5",
+          "unitId": "gcpnet:4",
+          "index": 5,
+          "text": "Implementing 99.9% and 99.99% SLA interconnect topologies",
+          "sourceHash": "91b8b1667f2d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:4:6",
+          "unitId": "gcpnet:4",
+          "index": 6,
+          "text": "Configuring HA VPN toward on-premises VPN gateways",
+          "sourceHash": "90a04abfd17d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:4:7",
+          "unitId": "gcpnet:4",
+          "index": 7,
+          "text": "Configuring HA VPN toward other Google Cloud VPCs",
+          "sourceHash": "6f71c8c5b916",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:4:8",
+          "unitId": "gcpnet:4",
+          "index": 8,
+          "text": "Configuring Classic VPN: route-based and policy-based",
+          "sourceHash": "bab0e0c870a5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:4:9",
+          "unitId": "gcpnet:4",
+          "index": 9,
+          "text": "Implementing BGP attributes on Cloud Router: ASN, route priority/MED, link-local addresses, authentication",
+          "sourceHash": "e09aa88d722b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:4:10",
+          "unitId": "gcpnet:4",
+          "index": 10,
+          "text": "Configuring Bidirectional Forwarding Detection (BFD)",
+          "sourceHash": "f14c9aed1785",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:4:11",
+          "unitId": "gcpnet:4",
+          "index": 11,
+          "text": "Creating custom-advertised and custom-learned routes",
+          "sourceHash": "1a0d469c3269",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:4:12",
+          "unitId": "gcpnet:4",
+          "index": 12,
+          "text": "Choosing between legacy and standard best path selection at the VPC",
+          "sourceHash": "95a4312327e0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:4:13",
+          "unitId": "gcpnet:4",
+          "index": 13,
+          "text": "Creating Network Connectivity Center hybrid spokes: VPN and VLAN attachment",
+          "sourceHash": "193ee704b4d6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:4:14",
+          "unitId": "gcpnet:4",
+          "index": 14,
+          "text": "Establishing site-to-site data transfer",
+          "sourceHash": "c05c7224ad91",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:4:15",
+          "unitId": "gcpnet:4",
+          "index": 15,
+          "text": "Creating router appliances",
+          "sourceHash": "3c71533cfbb7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:4:16",
+          "unitId": "gcpnet:4",
+          "index": 16,
+          "text": "Solving common transitivity networking issues",
+          "sourceHash": "364f02b1bb86",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "gcpnet:5",
+      "index": 5,
+      "title": "Managing, Monitoring, and Troubleshooting Network Operations",
+      "weight": 14,
+      "gate": "Given a network operations problem, name the specific Google Cloud Observability or Network Intelligence Center tool that diagnoses it -- not just 'check the logs.'",
+      "objectives": [
+        {
+          "id": "gcpnet:5:1",
+          "unitId": "gcpnet:5",
+          "index": 1,
+          "text": "Enabling and reviewing Cloud Logging for networking components: Cloud VPN, Cloud Router, VPC Service Controls, Cloud NGFW, Firewall Insights, VPC Flow Logs, Cloud DNS, Cloud NAT, Network Connectivity Center",
+          "sourceHash": "87b7897b3709",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:5:2",
+          "unitId": "gcpnet:5",
+          "index": 2,
+          "text": "Monitoring networking metrics: Cloud VPN, Cloud Interconnect/VLAN attachments, Cloud Router, load balancers, Google Cloud Armor, Cloud NAT",
+          "sourceHash": "9b804a448c35",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:5:3",
+          "unitId": "gcpnet:5",
+          "index": 3,
+          "text": "Draining and redirecting traffic flows with Application Load Balancer",
+          "sourceHash": "7eaed661c09d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:5:4",
+          "unitId": "gcpnet:5",
+          "index": 4,
+          "text": "Managing and troubleshooting VPNs",
+          "sourceHash": "ef9e7de964c5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:5:5",
+          "unitId": "gcpnet:5",
+          "index": 5,
+          "text": "Managing and troubleshooting Cloud Interconnect issues",
+          "sourceHash": "410578b74e50",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:5:6",
+          "unitId": "gcpnet:5",
+          "index": 6,
+          "text": "Troubleshooting Cloud Router BGP peering issues",
+          "sourceHash": "adaac3b66b5a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:5:7",
+          "unitId": "gcpnet:5",
+          "index": 7,
+          "text": "Troubleshooting with VPC Flow Logs, firewall logs, and Packet Mirroring",
+          "sourceHash": "cefa42afd40d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:5:8",
+          "unitId": "gcpnet:5",
+          "index": 8,
+          "text": "Using Network Topology to visualize throughput and traffic flows",
+          "sourceHash": "ed858a1c48a5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:5:9",
+          "unitId": "gcpnet:5",
+          "index": 9,
+          "text": "Using Connectivity Tests to diagnose route and firewall misconfigurations",
+          "sourceHash": "1053b08ae921",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:5:10",
+          "unitId": "gcpnet:5",
+          "index": 10,
+          "text": "Using Performance Dashboard to identify packet loss and latency, Google-wide and project-scoped",
+          "sourceHash": "7a4f9f33cb36",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:5:11",
+          "unitId": "gcpnet:5",
+          "index": 11,
+          "text": "Using Firewall Insights to monitor, identify, and improve firewall rules",
+          "sourceHash": "5c2f03af1767",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:5:12",
+          "unitId": "gcpnet:5",
+          "index": 12,
+          "text": "Using Network Analyzer to identify network failures, suboptimal configurations, and utilization warnings",
+          "sourceHash": "7772675b4205",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:5:13",
+          "unitId": "gcpnet:5",
+          "index": 13,
+          "text": "Using Flow Analyzer and VPC Flow Logs to evaluate network traffic",
+          "sourceHash": "7f13207ab671",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "gcpnet:6",
+      "index": 6,
+      "title": "Configuring, Implementing, and Managing a Cloud Network Security Solution",
+      "weight": 13,
+      "gate": "Given a network-layer threat or exposure, name the specific Cloud Armor, NGFW, or NAT/proxy configuration that addresses it.",
+      "objectives": [
+        {
+          "id": "gcpnet:6:1",
+          "unitId": "gcpnet:6",
+          "index": 1,
+          "text": "Configuring and attaching Cloud Armor edge and backend security policies",
+          "sourceHash": "62c60c940c77",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:6:2",
+          "unitId": "gcpnet:6",
+          "index": 2,
+          "text": "Implementing WAF rules: SQL injection, cross-site scripting, remote file inclusion",
+          "sourceHash": "21b8c2c1d5d7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:6:3",
+          "unitId": "gcpnet:6",
+          "index": 3,
+          "text": "Configuring advanced network DDoS protection and Adaptive Protection",
+          "sourceHash": "a7cfebfd3eb5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:6:4",
+          "unitId": "gcpnet:6",
+          "index": 4,
+          "text": "Configuring rate limiting in Cloud Armor",
+          "sourceHash": "d966792e770e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:6:5",
+          "unitId": "gcpnet:6",
+          "index": 5,
+          "text": "Configuring bot management",
+          "sourceHash": "2063336c45f4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:6:6",
+          "unitId": "gcpnet:6",
+          "index": 6,
+          "text": "Applying Google Threat Intelligence to Cloud Armor policy",
+          "sourceHash": "1ebbfe1c486e",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:6:7",
+          "unitId": "gcpnet:6",
+          "index": 7,
+          "text": "Planning a firewall strategy: VPC firewall rules, Cloud NGFW, hierarchical firewall rules, third-party integration",
+          "sourceHash": "5899ec79fc62",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:6:8",
+          "unitId": "gcpnet:6",
+          "index": 8,
+          "text": "Understanding effective policy rules in hierarchical firewall situations",
+          "sourceHash": "634da27e278f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:6:9",
+          "unitId": "gcpnet:6",
+          "index": 9,
+          "text": "Configuring Cloud NGFW to support GKE and Cloud Load Balancing",
+          "sourceHash": "909eb619e6a6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:6:10",
+          "unitId": "gcpnet:6",
+          "index": 10,
+          "text": "Creating and troubleshooting VPC firewall rules and Cloud NGFW regional/global/hierarchical policies",
+          "sourceHash": "8451e2125fde",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:6:11",
+          "unitId": "gcpnet:6",
+          "index": 11,
+          "text": "Enabling layer 7 packet inspection with Cloud NGFW Enterprise",
+          "sourceHash": "c9e104e35c59",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:6:12",
+          "unitId": "gcpnet:6",
+          "index": 12,
+          "text": "Migrating from VPC firewall rules to Cloud NGFW policies",
+          "sourceHash": "e255d64916f6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:6:13",
+          "unitId": "gcpnet:6",
+          "index": 13,
+          "text": "Configuring VPC and NGFW rule criteria: priority, protocol, direction, source, destination",
+          "sourceHash": "2d18bf288d55",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:6:14",
+          "unitId": "gcpnet:6",
+          "index": 14,
+          "text": "Configuring VPC and firewall rules logging",
+          "sourceHash": "acd658ca005b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:6:15",
+          "unitId": "gcpnet:6",
+          "index": 15,
+          "text": "Incorporating micro-segmentation: metadata, secure tags, service accounts, network tags",
+          "sourceHash": "976822cca9c6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:6:16",
+          "unitId": "gcpnet:6",
+          "index": 16,
+          "text": "Differentiating Cloud NGFW tiers: Essentials, Standard, Enterprise",
+          "sourceHash": "9890d5b8aba6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:6:17",
+          "unitId": "gcpnet:6",
+          "index": 17,
+          "text": "Configuring public Cloud NAT IP addressing: automatic and manual assignment",
+          "sourceHash": "b0cdbe855e44",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:6:18",
+          "unitId": "gcpnet:6",
+          "index": 18,
+          "text": "Configuring static and dynamic port allocation for Cloud NAT",
+          "sourceHash": "071a56a67c4c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:6:19",
+          "unitId": "gcpnet:6",
+          "index": 19,
+          "text": "Configuring Secure Web Proxy",
+          "sourceHash": "ea7788ebfaf5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:6:20",
+          "unitId": "gcpnet:6",
+          "index": 20,
+          "text": "Routing and inspecting inter-VPC traffic using multi-NIC virtual machines: NGFW appliances",
+          "sourceHash": "4528f26392b3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:6:21",
+          "unitId": "gcpnet:6",
+          "index": 21,
+          "text": "Configuring an internal load balancer as a next hop for HA multi-NIC VM routing",
+          "sourceHash": "7b19d968acf6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:6:22",
+          "unitId": "gcpnet:6",
+          "index": 22,
+          "text": "Configuring policy-based routes for HA multi-NIC VM routing",
+          "sourceHash": "cd91602eda26",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:6:23",
+          "unitId": "gcpnet:6",
+          "index": 23,
+          "text": "Developing a strategy for out-of-band network security integration",
+          "sourceHash": "be2826ca46a8",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "gcpnet:6:24",
+          "unitId": "gcpnet:6",
+          "index": 24,
+          "text": "Configuring Packet Mirroring for VPC traffic toward self-managed collectors",
+          "sourceHash": "47b5179a76e1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/gcp.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-24T00:00:00Z",
+    "officialObjectivesUrl": "https://cloud.google.com/learn/certification/guides/cloud-network-engineer",
+    "providerName": "Google Cloud",
+    "credentialName": "Google Cloud Professional Cloud Network Engineer",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 6,
+    "objectives": 130,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

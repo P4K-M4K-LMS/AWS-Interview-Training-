@@ -1,0 +1,214 @@
+{
+  "id": "cy0-001",
+  "code": "SECAIPLUS",
+  "title": "SecAI+",
+  "description": "CompTIA SecAI+ (CY0-001) exam prep across 4 weighted domains -- basic AI concepts for cybersecurity, securing AI systems, AI-assisted security, and AI governance/risk/compliance.",
+  "trackType": "certification",
+  "field": "security",
+  "units": [
+    {
+      "id": "cy0-001:1",
+      "index": 1,
+      "title": "Basic AI Concepts Related to Cybersecurity",
+      "weight": 17,
+      "gate": "Given an AI system description, name the specific model type, training technique, or life-cycle stage in play -- not a generic 'it's AI' answer.",
+      "objectives": [
+        {
+          "id": "cy0-001:1:1",
+          "unitId": "cy0-001:1",
+          "index": 1,
+          "text": "AI types and techniques used in cybersecurity: generative AI, machine learning, deep learning, NLP (LLMs, SLMs, GANs), model training techniques, and prompt engineering (system/user prompts, zero/one/multi-shot)",
+          "sourceHash": "00ea143e2c88",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cy0-001:1:2",
+          "unitId": "cy0-001:1",
+          "index": 2,
+          "text": "The importance of data security in relation to AI: data processing and lineage, data types, watermarking, and retrieval-augmented generation (vector storage, embeddings)",
+          "sourceHash": "20ff3b3c1bb5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cy0-001:1:3",
+          "unitId": "cy0-001:1",
+          "index": 3,
+          "text": "The importance of security throughout the AI life cycle: business use-case alignment, data collection trustworthiness, model development through deployment and monitoring, and human-centric design (human-in-the-loop, oversight, validation)",
+          "sourceHash": "d212c120924c",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "cy0-001:2",
+      "index": 2,
+      "title": "Securing AI Systems",
+      "weight": 40,
+      "gate": "Given an AI deployment scenario, apply the specific model, gateway, access, or data control that mitigates the described risk -- not a generic 'add guardrails' answer.",
+      "objectives": [
+        {
+          "id": "cy0-001:2:1",
+          "unitId": "cy0-001:2",
+          "index": 1,
+          "text": "AI threat-modeling frameworks: the OWASP LLM and ML Security Top 10, the MIT AI Risk Repository, and MITRE ATLAS",
+          "sourceHash": "639288c778b0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cy0-001:2:2",
+          "unitId": "cy0-001:2",
+          "index": 2,
+          "text": "Security controls for AI systems: model controls and guardrails, gateway controls (prompt firewalls, rate/token limits, input quotas), and guardrail testing and validation",
+          "sourceHash": "66eeec8a309b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cy0-001:2:3",
+          "unitId": "cy0-001:2",
+          "index": 3,
+          "text": "Access controls for AI systems: model access, data access, agent access, and network/API access",
+          "sourceHash": "d259c5f06d41",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cy0-001:2:4",
+          "unitId": "cy0-001:2",
+          "index": 4,
+          "text": "Data security controls for AI systems: encryption in transit/at rest/in use, and data safety practices (anonymization, classification, redaction, masking, minimization)",
+          "sourceHash": "d13f7cfe7bd0",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cy0-001:2:5",
+          "unitId": "cy0-001:2",
+          "index": 5,
+          "text": "Monitoring and auditing AI systems: prompt and log monitoring, AI cost monitoring, and auditing for hallucinations, accuracy, and bias",
+          "sourceHash": "894e47f71a00",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cy0-001:2:6",
+          "unitId": "cy0-001:2",
+          "index": 6,
+          "text": "Analyzing evidence of AI-specific attacks and applying compensating controls: prompt injection, model/data poisoning, jailbreaking, model inversion and theft, and AI supply-chain attacks",
+          "sourceHash": "e7911f8dd82b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "cy0-001:3",
+      "index": 3,
+      "title": "AI-assisted Security",
+      "weight": 24,
+      "gate": "Given a security task, name the specific AI-enabled tool, use case, or automation the scenario calls for -- and separately, the specific attack vector AI enables against it.",
+      "objectives": [
+        {
+          "id": "cy0-001:3:1",
+          "unitId": "cy0-001:3",
+          "index": 1,
+          "text": "Using AI-enabled tools to facilitate security tasks: IDE/browser/CLI plug-ins, chatbots, MCP servers, and use cases like vulnerability analysis and automated penetration testing",
+          "sourceHash": "158430d840dc",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cy0-001:3:2",
+          "unitId": "cy0-001:3",
+          "index": 2,
+          "text": "How AI enables or enhances attack vectors: deepfake impersonation and disinformation, adversarial networks, automated reconnaissance, and automated attack generation",
+          "sourceHash": "4fb9c37ee015",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cy0-001:3:3",
+          "unitId": "cy0-001:3",
+          "index": 3,
+          "text": "Using AI to automate security tasks: low-code/no-code scripting, AI-assisted change management, AI agents, and CI/CD security scanning",
+          "sourceHash": "bcb7f22f6296",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "cy0-001:4",
+      "index": 4,
+      "title": "AI Governance, Risk, and Compliance",
+      "weight": 19,
+      "gate": "Given an organizational AI initiative, name the specific governance structure, responsible-AI principle, or compliance framework it must satisfy -- not a generic 'follow policy' answer.",
+      "objectives": [
+        {
+          "id": "cy0-001:4:1",
+          "unitId": "cy0-001:4",
+          "index": 1,
+          "text": "Organizational governance structures that support AI: AI centers of excellence, AI policies and procedures, and AI-related roles (AI architect, MLOps engineer, AI governance engineer, AI risk analyst)",
+          "sourceHash": "752413c39fd4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cy0-001:4:2",
+          "unitId": "cy0-001:4",
+          "index": 2,
+          "text": "Principles and risks of responsible AI use: transparency, explainability, accountability, and risks such as bias introduction, accidental data leakage, IP exposure, and shadow AI",
+          "sourceHash": "95756ece8388",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "cy0-001:4:3",
+          "unitId": "cy0-001:4",
+          "index": 3,
+          "text": "The impact of compliance on AI business use and development: the EU AI Act, OECD standards, ISO AI standards, the NIST AI Risk Management Framework, and data sovereignty",
+          "sourceHash": "f9854236cfb5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/comptia.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-26T00:00:00Z",
+    "officialObjectivesUrl": "https://www.comptia.org/en-us/certifications/secai/",
+    "providerName": "CompTIA",
+    "credentialName": "CompTIA SecAI+",
+    "examCode": "CY0-001",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 4,
+    "objectives": 15,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

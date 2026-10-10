@@ -1,0 +1,391 @@
+{
+  "id": "nasmcpt",
+  "code": "NASMCPT",
+  "title": "NASM Certified Personal Trainer (NASM-CPT)",
+  "description": "NASM's NCCA-accredited personal trainer exam on its current six-domain blueprint: exercise technique and training instruction (24%), program design (20%), assessment (16%), sciences and nutrition, client relations, and professional responsibility.",
+  "trackType": "certification",
+  "field": "fitness",
+  "units": [
+    {
+      "id": "nasmcpt:1",
+      "index": 1,
+      "title": "Basic and applied sciences and nutritional concepts",
+      "weight": 15,
+      "gate": "Explain the physiology behind a training response -- which system adapts, how, and what that means for the next session.",
+      "objectives": [
+        {
+          "id": "nasmcpt:1:1",
+          "unitId": "nasmcpt:1",
+          "index": 1,
+          "text": "Structures and functions of the nervous, muscular, skeletal, cardiorespiratory and endocrine systems",
+          "sourceHash": "875431766fcb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nasmcpt:1:2",
+          "unitId": "nasmcpt:1",
+          "index": 2,
+          "text": "Exercise physiology: how each system responds and adapts to acute and chronic exercise",
+          "sourceHash": "fa637ec865bf",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nasmcpt:1:3",
+          "unitId": "nasmcpt:1",
+          "index": 3,
+          "text": "Bioenergetics and metabolism: energy systems and their role across intensities and durations",
+          "sourceHash": "3eade09fea0a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nasmcpt:1:4",
+          "unitId": "nasmcpt:1",
+          "index": 4,
+          "text": "Human movement science: planes of motion, muscle actions, the kinetic chain and length-tension relationships",
+          "sourceHash": "8a6bfb525a85",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nasmcpt:1:5",
+          "unitId": "nasmcpt:1",
+          "index": 5,
+          "text": "Nutrition fundamentals: macronutrients, micronutrients, hydration and energy balance",
+          "sourceHash": "7171143a31f9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nasmcpt:1:6",
+          "unitId": "nasmcpt:1",
+          "index": 6,
+          "text": "Supplements and label reading, and the trainer's scope when discussing them",
+          "sourceHash": "80109ae02062",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nasmcpt:1:7",
+          "unitId": "nasmcpt:1",
+          "index": 7,
+          "text": "Factors that influence weight management physiology: thermodynamics, sleep, hormones, medications and metabolism",
+          "sourceHash": "d17298baf949",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "nasmcpt:2",
+      "index": 2,
+      "title": "Client relations and behavioral coaching",
+      "weight": 15,
+      "gate": "Turn a client's vague wish into a measurable goal and name the behavior-change technique you'd use when they stall.",
+      "objectives": [
+        {
+          "id": "nasmcpt:2:1",
+          "unitId": "nasmcpt:2",
+          "index": 1,
+          "text": "Building and maintaining the professional client-trainer relationship: rapport, active listening and communication strategies",
+          "sourceHash": "9a61e83949ec",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nasmcpt:2:2",
+          "unitId": "nasmcpt:2",
+          "index": 2,
+          "text": "Setting and re-evaluating realistic short- and long-term goals with the client from assessment outcomes",
+          "sourceHash": "20a662cf7cb3",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nasmcpt:2:3",
+          "unitId": "nasmcpt:2",
+          "index": 3,
+          "text": "Behavior-change models and motivational techniques that sustain adherence",
+          "sourceHash": "bcb149682a08",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nasmcpt:2:4",
+          "unitId": "nasmcpt:2",
+          "index": 4,
+          "text": "Facilitating lifestyle change and handling lapses without losing the client",
+          "sourceHash": "42c1af898ae4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "nasmcpt:3",
+      "index": 3,
+      "title": "Assessment",
+      "weight": 16,
+      "gate": "Choose the right assessment for a client, run it safely, and say what a specific result changes in their program.",
+      "objectives": [
+        {
+          "id": "nasmcpt:3:1",
+          "unitId": "nasmcpt:3",
+          "index": 1,
+          "text": "Preparticipation screening, health history and when to refer to a medical professional",
+          "sourceHash": "d9ec6030a284",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nasmcpt:3:2",
+          "unitId": "nasmcpt:3",
+          "index": 2,
+          "text": "Static and dynamic postural assessments and the movement compensations they reveal",
+          "sourceHash": "bdd95d8f2931",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nasmcpt:3:3",
+          "unitId": "nasmcpt:3",
+          "index": 3,
+          "text": "Performance assessments: cardiorespiratory, strength, power, flexibility and body composition",
+          "sourceHash": "070066a683fd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nasmcpt:3:4",
+          "unitId": "nasmcpt:3",
+          "index": 4,
+          "text": "Interpreting assessment results against norms and the client's goals",
+          "sourceHash": "ebe5f0382b42",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nasmcpt:3:5",
+          "unitId": "nasmcpt:3",
+          "index": 5,
+          "text": "Reassessment criteria: time elapsed, plateaus, changed goals or health status",
+          "sourceHash": "4f72a9a9f9c4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "nasmcpt:4",
+      "index": 4,
+      "title": "Program design",
+      "weight": 20,
+      "gate": "Write a client-specific program with phase, acute variables and progression, and justify every choice from the assessment.",
+      "objectives": [
+        {
+          "id": "nasmcpt:4:1",
+          "unitId": "nasmcpt:4",
+          "index": 1,
+          "text": "The OPT model's phases and how a client moves between stabilization, strength and power",
+          "sourceHash": "c765bccbdd39",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nasmcpt:4:2",
+          "unitId": "nasmcpt:4",
+          "index": 2,
+          "text": "Designing flexibility, core, balance and reactive (plyometric) components from assessment results",
+          "sourceHash": "efa6a6f304f5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nasmcpt:4:3",
+          "unitId": "nasmcpt:4",
+          "index": 3,
+          "text": "Designing resistance and cardiorespiratory training with appropriate acute variables",
+          "sourceHash": "a020cc756902",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nasmcpt:4:4",
+          "unitId": "nasmcpt:4",
+          "index": 4,
+          "text": "Speed, agility and quickness training and where it fits",
+          "sourceHash": "d8c2ce978663",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nasmcpt:4:5",
+          "unitId": "nasmcpt:4",
+          "index": 5,
+          "text": "Modifying programs for modality, environment and equipment constraints",
+          "sourceHash": "ddc81f67514d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nasmcpt:4:6",
+          "unitId": "nasmcpt:4",
+          "index": 6,
+          "text": "Program design considerations for special populations: youth, older adults, prenatal, clinical and obese clients",
+          "sourceHash": "1b95c8c821b6",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "nasmcpt:5",
+      "index": 5,
+      "title": "Exercise technique and training instruction",
+      "weight": 24,
+      "gate": "Spot a technique fault on a named exercise, explain the kinetic-chain cause, and give the cue or regression that fixes it.",
+      "objectives": [
+        {
+          "id": "nasmcpt:5:1",
+          "unitId": "nasmcpt:5",
+          "index": 1,
+          "text": "Instructing and demonstrating proper technique across flexibility, core, balance, plyometric, SAQ, resistance and cardio exercises",
+          "sourceHash": "ea95faadf6c7",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nasmcpt:5:2",
+          "unitId": "nasmcpt:5",
+          "index": 2,
+          "text": "Observing and analyzing movement to identify compensations and faults",
+          "sourceHash": "1072b6c3aea9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nasmcpt:5:3",
+          "unitId": "nasmcpt:5",
+          "index": 3,
+          "text": "Correcting technique with verbal, visual and kinesthetic cues and kinetic-chain checkpoints",
+          "sourceHash": "0a0ab32db372",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nasmcpt:5:4",
+          "unitId": "nasmcpt:5",
+          "index": 4,
+          "text": "Regressions and progressions matched to the client's ability",
+          "sourceHash": "3e4baaeb40e9",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nasmcpt:5:5",
+          "unitId": "nasmcpt:5",
+          "index": 5,
+          "text": "Spotting, safety and equipment use during instruction",
+          "sourceHash": "6459129d6de5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "nasmcpt:6",
+      "index": 6,
+      "title": "Professional development and responsibility",
+      "weight": 10,
+      "gate": "Name the scope-of-practice line in a client scenario and the right referral or action.",
+      "objectives": [
+        {
+          "id": "nasmcpt:6:1",
+          "unitId": "nasmcpt:6",
+          "index": 1,
+          "text": "Scope of practice and when to refer to other health professionals",
+          "sourceHash": "52f95783415a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nasmcpt:6:2",
+          "unitId": "nasmcpt:6",
+          "index": 2,
+          "text": "Professional conduct, ethics and the code of professional conduct",
+          "sourceHash": "50cf6dafc864",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nasmcpt:6:3",
+          "unitId": "nasmcpt:6",
+          "index": 3,
+          "text": "Legal and risk-management basics: liability, documentation, emergency response",
+          "sourceHash": "e286cf46f915",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "nasmcpt:6:4",
+          "unitId": "nasmcpt:6",
+          "index": 4,
+          "text": "Business fundamentals: marketing, sales and client retention for personal trainers",
+          "sourceHash": "47f3b88be3e2",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/fitness.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-10-08T00:00:00Z",
+    "officialObjectivesUrl": "https://2494739.fs1.hubspotusercontent-na1.net/hubfs/2494739/NASM%20Website/Web%20Resources/NASM%20Candidate%20Handbook%20.pdf",
+    "providerName": "National Academy of Sports Medicine",
+    "credentialName": "NASM Certified Personal Trainer (NASM-CPT)",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 6,
+    "objectives": 31,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}

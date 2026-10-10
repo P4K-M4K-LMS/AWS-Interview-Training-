@@ -7,6 +7,9 @@
  * interview sessions are stored in IndexedDB.
  */
 
+import type { StudyField, StudyLevel } from "../content/study/paths.ts";
+export type { StudyField, StudyLevel };
+
 export const SCHEMA_VERSION = 2 as const;
 /** Export bundles OpsForge can still import. v1 had no Study tables. */
 export const SUPPORTED_SCHEMA_VERSIONS: readonly number[] = [1, 2];
@@ -621,6 +624,8 @@ export interface LearnerSettings {
   explanationLevel?: ExplanationLevel;
   /** Study: order objectives by learning style. Unset = mixed (catalog order). Never hides anything. */
   studyStyle?: StudyStyle;
+  /** Health disclaimer versions accepted, by field ("nursing", "pt"). Unset = never accepted. */
+  studyAcknowledgements?: Partial<Record<"nursing" | "pt", number>>;
 }
 
 export interface LearnerProfile {
@@ -1028,6 +1033,9 @@ export interface StudyCourse {
   title: string;
   description: string;
   trackType: "graduate" | "certification";
+  field: StudyField;
+  /** Health courses: the learner accepts a disclaimer before any lesson is shown. */
+  requiresAcknowledgement?: true;
   units: StudyUnit[];
   provenance: StudyProvenance;
   counts: { units: number; objectives: number; bookkeeping: number; linked: number };
@@ -1039,7 +1047,9 @@ export interface StudyCourseSummary {
   title: string;
   description: string;
   trackType: "graduate" | "certification";
-  group: "aws" | "core";
+  group: StudyField;
+  level: StudyLevel;
+  requiresAcknowledgement?: true;
   examCode?: string;
   credentialStatus?: string;
   retirementDate?: string;
@@ -1047,6 +1057,19 @@ export interface StudyCourseSummary {
   modalities: Record<StudyModality, number>;
   file: string; // course JSON file name
   hash: string; // sha256 of the course JSON, for cache-busting
+}
+
+/** Every objective's text, for search on the Study home. Loaded only when the learner searches. */
+export interface StudySearchIndex {
+  schemaVersion: 1;
+  /** [objective id, objective text]; the id ("saa-c03:2:12") is also the route. */
+  objectives: Array<[string, string]>;
+}
+
+/** Which courses have lessons, so the Study home can say so without loading every lessons file. */
+export interface StudyLessonsIndex {
+  schemaVersion: 1;
+  courses: Record<string, { generated: number; imported: number; scenarios: number }>;
 }
 
 export interface StudyCatalogIndex {

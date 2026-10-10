@@ -4,6 +4,7 @@
   "title": "AWS Machine Learning Engineer Associate",
   "description": "AWS Certified Machine Learning Engineer - Associate (MLA-C02): building and running ML and generative AI systems on AWS -- data preparation, training and fine-tuning, deploying models, agents and RAG pipelines, and then monitoring, costing, and securing all of it in production.",
   "trackType": "certification",
+  "field": "aws",
   "units": [
     {
       "id": "mla-c02:1",

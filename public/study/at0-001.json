@@ -1,0 +1,204 @@
+{
+  "id": "at0-001",
+  "code": "AUTOOPSPLUS",
+  "title": "AutoOps+",
+  "description": "CompTIA AutoOps+ (AT0-001) exam prep across 4 weighted domains -- automation coding concepts, system configuration, continuous integration, and continuous delivery.",
+  "trackType": "certification",
+  "field": "it",
+  "units": [
+    {
+      "id": "at0-001:1",
+      "index": 1,
+      "title": "Automation Coding Concepts",
+      "weight": 31,
+      "gate": "Given an automation script or a Git workflow to fix, name the specific coding, IaC, or source-control concept at fault -- not a generic 'the code is broken' answer.",
+      "objectives": [
+        {
+          "id": "at0-001:1:1",
+          "unitId": "at0-001:1",
+          "index": 1,
+          "text": "Writing, testing, and maintaining automation scripts using variables, functions, and loops",
+          "sourceHash": "241bde712d94",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "at0-001:1:2",
+          "unitId": "at0-001:1",
+          "index": 2,
+          "text": "Source control practices: Git remote/local operations, branching strategies, and semantic versioning",
+          "sourceHash": "c47a8632a7e1",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "at0-001:1:3",
+          "unitId": "at0-001:1",
+          "index": 3,
+          "text": "Infrastructure-as-code principles: reusability, immutability, idempotency, and declarative vs. imperative approaches",
+          "sourceHash": "c5cfa24d5f6d",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "at0-001:1:4",
+          "unitId": "at0-001:1",
+          "index": 4,
+          "text": "Troubleshooting the code life cycle: syntax errors, runtime errors, and merge conflicts",
+          "sourceHash": "51feb81a303b",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "at0-001:2",
+      "index": 2,
+      "title": "System Configuration",
+      "weight": 25,
+      "gate": "Given a drifted or misconfigured system, apply the specific configuration-management or REST API fix the scenario calls for -- not a vague 'redeploy it' answer.",
+      "objectives": [
+        {
+          "id": "at0-001:2:1",
+          "unitId": "at0-001:2",
+          "index": 1,
+          "text": "Configuration management techniques: drift detection, remediation, and state management",
+          "sourceHash": "c7613ea04862",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "at0-001:2:2",
+          "unitId": "at0-001:2",
+          "index": 2,
+          "text": "Automation approaches compared: remote vs. local, declarative vs. imperative, and push vs. pull methods",
+          "sourceHash": "9862248f081f",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "at0-001:2:3",
+          "unitId": "at0-001:2",
+          "index": 3,
+          "text": "REST API operations: create, read, update, and delete (CRUD) using APIs and associated tools",
+          "sourceHash": "559070a540b4",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "at0-001:2:4",
+          "unitId": "at0-001:2",
+          "index": 4,
+          "text": "Troubleshooting configuration issues: API communication failures, certificate problems, and configuration-file syntax errors",
+          "sourceHash": "029e259d50a5",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "at0-001:3",
+      "index": 3,
+      "title": "Continuous Integration",
+      "weight": 24,
+      "gate": "Given a CI pipeline definition or failure, identify the specific secrets-management, artifact-management, or workflow-orchestration concept responsible.",
+      "objectives": [
+        {
+          "id": "at0-001:3:1",
+          "unitId": "at0-001:3",
+          "index": 1,
+          "text": "CI environment factors: secrets management, artifact management, and task runners",
+          "sourceHash": "87ec000d5c52",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "at0-001:3:2",
+          "unitId": "at0-001:3",
+          "index": 2,
+          "text": "CI workflow management: orchestration, dependency handling, and automated rollback techniques",
+          "sourceHash": "4d4b1b5192bd",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "at0-001:3:3",
+          "unitId": "at0-001:3",
+          "index": 3,
+          "text": "Configuring basic automation pipelines: hooks, triggers, and pipeline definitions in tools such as Jenkins or GitHub Actions",
+          "sourceHash": "4c1aa68d6189",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    },
+    {
+      "id": "at0-001:4",
+      "index": 4,
+      "title": "Continuous Delivery",
+      "weight": 20,
+      "gate": "Given a release requirement or a provider-connection risk, choose the specific delivery strategy or IAM control that fits -- not a generic 'ship it carefully' answer.",
+      "objectives": [
+        {
+          "id": "at0-001:4:1",
+          "unitId": "at0-001:4",
+          "index": 1,
+          "text": "Continuous delivery techniques: canary, blue-green, rolling, and in-place deployment strategies",
+          "sourceHash": "8f540803e79a",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "at0-001:4:2",
+          "unitId": "at0-001:4",
+          "index": 2,
+          "text": "Application service-level concepts: SLOs, SLAs, uptime, MTTR, and feedback loops",
+          "sourceHash": "8276e5452cfb",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        },
+        {
+          "id": "at0-001:4:3",
+          "unitId": "at0-001:4",
+          "index": 3,
+          "text": "Securing connections to providers: CLI, SDK, and IAM configuration for automated delivery pipelines",
+          "sourceHash": "26094de0d680",
+          "kind": "objective",
+          "modality": "read",
+          "modalitySource": "default"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "sourceRepo": "ascendra",
+    "sourceFile": "backend/supabase/seed/tracks/comptia.ts",
+    "sourceCommit": "e1ac219b22688230c330bed7dc3de1130b531b48",
+    "sourceVerifiedAt": "2026-09-26T00:00:00Z",
+    "officialObjectivesUrl": "https://www.comptia.org/en-us/certifications/autoops/",
+    "providerName": "CompTIA",
+    "credentialName": "CompTIA AutoOps+",
+    "examCode": "AT0-001",
+    "credentialStatus": "active",
+    "note": "Objectives paraphrased from the publicly published exam guide or degree plan by the Ascendra project; unofficial; not affiliated with or endorsed by any vendor or credentialing body."
+  },
+  "counts": {
+    "units": 4,
+    "objectives": 14,
+    "bookkeeping": 0,
+    "linked": 0
+  }
+}
