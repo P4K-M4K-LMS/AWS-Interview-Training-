@@ -41,7 +41,7 @@ describe("Study catalog (Ascendra snapshot)", () => {
     for (const c of built.courses) {
       expect(readFileSync(path.join(OUT, `${c.id}.json`), "utf8"), c.id).toBe(stableJson(c));
     }
-    const courseFiles = readdirSync(OUT).filter((f) => f.endsWith(".json") && f !== "index.json" && !f.endsWith(".lessons.json"));
+    const courseFiles = readdirSync(OUT).filter((f) => f.endsWith(".json") && f !== "index.json" && !f.endsWith(".lessons.json") && !f.endsWith(".imported.json"));
     expect(courseFiles.sort()).toEqual(built.courses.map((c) => `${c.id}.json`).sort());
     const committedModule = readFileSync(path.resolve(__dirname, "..", "src", "content", "study", "missionLinks.ts"), "utf8");
     expect(committedModule).toBe(missionLinksModule(built));

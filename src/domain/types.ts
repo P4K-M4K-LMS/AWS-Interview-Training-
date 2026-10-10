@@ -1147,3 +1147,28 @@ export interface StudyLessonsFile {
   lessons: StudyLesson[];
   scenarios: StudyScenario[];
 }
+
+/**
+ * A lesson Ascendra wrote at request time and cached in its own database,
+ * exported from there and converted. Thinner than a generated lesson: no
+ * plain paragraph, no explain-it-back, and two questions (one fade, one solo)
+ * instead of four. A generated lesson for the same objective replaces it.
+ */
+export interface StudyImportedLesson {
+  objectiveId: string;
+  sourceHash: string; // must equal the catalog objective's hash
+  model: string;
+  generatedAt: string;
+  guessPrompt: string;
+  teach: string;
+  questions: StudyChoiceQuestion[]; // 1 fade + 1 solo
+}
+
+export interface StudyImportedFile {
+  courseId: string;
+  imported: { source: "ascendra"; importedAt: string; models: string[] };
+  lessons: StudyImportedLesson[];
+}
+
+/** What the lesson player gets: a generated lesson, or an imported one where none is generated yet. */
+export type PlayableLesson = ({ origin: "generated" } & StudyLesson) | ({ origin: "imported" } & StudyImportedLesson);

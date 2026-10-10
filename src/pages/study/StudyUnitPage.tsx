@@ -5,7 +5,7 @@ import { STUDY_DISCLAIMER } from "../../content/study/disclaimer";
 import { ENGINE_BY_ID } from "../../content/study/engines";
 import { LAB_LABELS } from "../../content/study/labs";
 import { MODALITY_LABELS } from "../../content/study/links";
-import { useStudyCourse, useStudyLessons } from "../../services/study/catalog";
+import { useCourseLessons, useStudyCourse } from "../../services/study/catalog";
 import { orderObjectives } from "../../engine/study/select";
 import { useProfile, useStudyUnitStates } from "../../data/hooks";
 import { ScenarioPlayer } from "../../components/study/ScenarioPlayer";
@@ -75,7 +75,7 @@ function ObjectiveRow({ o, state, courseId, unitIndex, hasLesson }: { o: StudyOb
 export function StudyUnitPage() {
   const { courseId, unitIndex } = useParams();
   const course = useStudyCourse(courseId);
-  const lessons = useStudyLessons(courseId);
+  const lessons = useCourseLessons(courseId);
   const states = useStudyStates();
   const unitStates = useStudyUnitStates();
   const profile = useProfile();
@@ -102,8 +102,8 @@ export function StudyUnitPage() {
   const bookkeeping = unit.objectives.filter((o) => o.kind === "bookkeeping");
   const style = profile?.settings.studyStyle;
   const learnable = orderObjectives(unit.objectives.filter((o) => o.kind === "objective"), style);
-  const lessonIds = new Set(lessons.status === "ready" ? (lessons.data?.lessons ?? []).map((l) => l.objectiveId) : []);
-  const scenario = lessons.status === "ready" ? lessons.data?.scenarios.find((s) => s.unitId === unit.id) : undefined;
+  const lessonIds = new Set(lessons.status === "ready" ? lessons.data.byObjective.keys() : []);
+  const scenario = lessons.status === "ready" ? lessons.data.generated?.scenarios.find((s) => s.unitId === unit.id) : undefined;
   const engine = unit.gateEngine ? ENGINE_BY_ID.get(unit.gateEngine) : undefined;
   const unitReadiness = courseReadiness({ units: [unit] }, states);
   return (
@@ -139,7 +139,7 @@ export function StudyUnitPage() {
           <ol className="space-y-2" data-testid="study-objectives">
             {learnable.map((o) => <ObjectiveRow key={o.id} o={o} state={states.get(o.id)} courseId={c.id} unitIndex={unit.index} hasLesson={lessonIds.has(o.id)} />)}
           </ol>
-          {lessons.status === "ready" && !lessons.data && <p className="muted text-xs mt-3" data-testid="unit-no-lessons">No lessons generated for this course yet; objectives open to their catalog entry and mission link.</p>}
+          {lessons.status === "ready" && lessons.data.byObjective.size === 0 && <p className="muted text-xs mt-3" data-testid="unit-no-lessons">No lessons generated for this course yet; objectives open to their catalog entry and mission link.</p>}
           <p className="muted text-xs mt-3">Status follows the 0–4 rubric: a mission credit reaches Guided, open answers you rate yourself reach Independent, Transfer-ready needs two answers graded by the proxy. Lessons and check questions arrive with the generated content; the mission links work today.</p>
         </Panel>
       )}

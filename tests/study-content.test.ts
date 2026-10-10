@@ -1,11 +1,12 @@
 import { readdirSync, readFileSync, statSync } from "node:fs";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
-import { validateLessonsFile } from "../src/services/study/validate";
-import type { StudyCourse, StudyLessonsFile } from "../src/domain/types";
+import { validateImportedFile, validateLessonsFile } from "../src/services/study/validate";
+import type { StudyCourse, StudyImportedFile, StudyLessonsFile } from "../src/domain/types";
 
 const OUT = path.resolve(__dirname, "..", "public", "study");
 const files = readdirSync(OUT).filter((f) => f.endsWith(".lessons.json"));
+const importedFiles = readdirSync(OUT).filter((f) => f.endsWith(".imported.json"));
 
 describe("committed Study lessons", () => {
   it("every committed lessons file validates against its course and stays under the size limit", () => {
@@ -16,6 +17,17 @@ describe("committed Study lessons", () => {
       const problems = validateLessonsFile(lessons, course);
       expect(problems, `${f}: ${problems.slice(0, 5).map((p) => `${p.where}: ${p.message}`).join("; ")}`).toEqual([]);
       expect(statSync(path.join(OUT, f)).size, `${f} too large; split per unit`).toBeLessThan(900_000);
+    }
+  });
+
+  it("every committed file of lessons imported from Ascendra validates against its course", () => {
+    for (const f of importedFiles) {
+      const courseId = f.replace(/\.imported\.json$/, "");
+      const course = JSON.parse(readFileSync(path.join(OUT, `${courseId}.json`), "utf8")) as StudyCourse;
+      const imported = JSON.parse(readFileSync(path.join(OUT, f), "utf8")) as StudyImportedFile;
+      const problems = validateImportedFile(imported, course);
+      expect(problems, `${f}: ${problems.slice(0, 5).map((p) => `${p.where}: ${p.message}`).join("; ")}`).toEqual([]);
+      expect(statSync(path.join(OUT, f)).size, `${f} too large`).toBeLessThan(900_000);
     }
   });
 

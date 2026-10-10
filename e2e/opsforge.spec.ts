@@ -1306,3 +1306,60 @@ test("labs fit a narrow phone: no lab page scrolls sideways at 320 px with an ex
   const input = await page.getByTestId("terminal-input").boundingBox();
   expect(input!.x + input!.width).toBeLessThanOrEqual(320);
 });
+
+test("study, imported lessons: an Ascendra lesson plays without the explain-it-back step, says where it came from, and a generated lesson for the same objective wins", async ({ page }) => {
+  await onboard(page);
+  const question = (objectiveId: string, i: number, role: "fade" | "solo") => ({ id: `${objectiveId}:q${i}`, role, prompt: `Question ${i} on ${objectiveId}`, choices: [`wrong A ${i}`, `right ${i}`, `wrong C ${i}`, `wrong D ${i}`], correctIndex: 1, why: `Because ${i}.` });
+  const imported = (objectiveId: string) => ({ objectiveId, sourceHash: "fixture", model: "ascendra-model", generatedAt: "2026-03-01T12:00:00.000Z", guessPrompt: `Guess for ${objectiveId}`, teach: `Imported teaching for ${objectiveId}.`, questions: [question(objectiveId, 1, "fade"), question(objectiveId, 2, "solo")] });
+  const importedFile = { courseId: "saa-c03", imported: { source: "ascendra", importedAt: "2026-10-10", models: ["ascendra-model"] }, lessons: [imported("saa-c03:2:1"), imported("saa-c03:2:12")] };
+  const generatedFile = {
+    courseId: "saa-c03",
+    generated: { scriptVersion: 1, promptVersion: 1, generatedAt: "2026-10-09T00:00:00.000Z", models: ["fixture-model"] },
+    lessons: [
+      {
+        objectiveId: "saa-c03:2:12",
+        sourceHash: "fixture",
+        promptVersion: 1,
+        model: "fixture-model",
+        generatedAt: "2026-10-09T00:00:00.000Z",
+        plain: "A plain paragraph.",
+        guessPrompt: "Generated guess.",
+        teach: "Generated teaching for read replicas.",
+        questions: [1, 2, 3, 4].map((i) => question("saa-c03:2:12", i, i === 1 ? "fade" : "solo")),
+        explainPrompt: "Explain it.",
+        modelAnswer: "The model answer.",
+        rubricPoints: ["One", "Two"],
+      },
+    ],
+    scenarios: [],
+  };
+  await page.route("**/study/saa-c03.imported.json", (route) => route.fulfill({ status: 200, contentType: "application/json", body: JSON.stringify(importedFile) }));
+  await page.route("**/study/saa-c03.lessons.json", (route) => route.fulfill({ status: 200, contentType: "application/json", body: JSON.stringify(generatedFile) }));
+  await page.goto("/#/study/saa-c03/2");
+  await expect(page.getByTestId("study-objective-1")).toContainText("lesson");
+  await page.getByTestId("study-open-1").click();
+  const loop = page.getByTestId("lesson-loop");
+  await expect(loop).toHaveAttribute("data-step", "guess");
+  await expect(page.getByTestId("guess-prompt")).toContainText("Guess for saa-c03:2:1");
+  await expect(loop.getByText("Explain it back")).toHaveCount(0);
+  await page.getByTestId("guess-skip").click();
+  await expect(page.getByTestId("lesson-teach")).toContainText("Imported teaching");
+  await expect(page.getByTestId("lesson-plain")).toHaveCount(0);
+  await page.getByTestId("teach-next").click();
+  await page.locator('[data-testid^="choice-"][data-correct="1"]').click();
+  await page.getByTestId("another-question").click();
+  await page.locator('[data-testid^="choice-"][data-correct="1"]').click();
+  // Two questions in an imported lesson: no third.
+  await expect(page.getByTestId("another-question")).toHaveCount(0);
+  await expect(page.getByTestId("practice-next")).toHaveText("Finish");
+  await page.getByTestId("practice-next").click();
+  await expect(loop).toHaveAttribute("data-step", "summary");
+  await expect(page.getByTestId("summary-status")).toContainText("Guided");
+  await expect(page.getByTestId("summary-status")).toContainText("imported from Ascendra");
+  await expect(page.getByTestId("lesson-origin")).toHaveAttribute("data-origin", "imported");
+  await expect(page.getByTestId("lesson-origin")).toContainText("Imported from Ascendra: written there by ascendra-model on 2026-03-01");
+  // The same objective in both files: the generated lesson is the one shown.
+  await page.goto("/#/study/saa-c03/2/12");
+  await expect(page.getByTestId("guess-prompt")).toContainText("Generated guess.");
+  await expect(page.getByTestId("lesson-origin")).toHaveAttribute("data-origin", "generated");
+});

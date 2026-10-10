@@ -57,6 +57,42 @@ Promote suggestions you agree with from `review` into `src/content/study/links.t
 |---|---|---|---|
 | (not yet run) | saa-c03 | 1 | |
 
+## Importing the lessons Ascendra already wrote
+
+Ascendra wrote each lesson the first time a learner opened an objective and cached it in its own database (Supabase, table `lesson_content`; scenarios in `pbq_scenarios`). Those lessons can be brought in without a key. They are thinner than generated ones: no plain paragraph, no explain-it-back, one fade and one solo question, written from the objective title alone. The player labels them as imported, and they take an objective to Guided at most. A generated lesson for the same objective replaces the imported one, so both can be used: import now, generate later.
+
+1. In the Supabase project, open **SQL Editor** (restore the project first if it is paused) and run:
+
+   ```sql
+   select distinct on (t.code, u.sort_order, o.sort_order)
+     t.code as course_code, u.sort_order as unit_order, u.title as unit_title,
+     o.sort_order as objective_order, o.title as objective,
+     l.guess_prompt, l.teach,
+     l.fade_problem, l.fade_choices, l.fade_correct_index, l.fade_why,
+     l.solo_check, l.solo_choices, l.solo_correct_index, l.solo_why,
+     l.model, l.generated_at
+   from lesson_content l
+   join objectives o on o.id = l.objective_id
+   join course_units u on u.id = o.unit_id
+   join subject_tracks t on t.id = u.track_id
+   order by t.code, u.sort_order, o.sort_order, l.generated_at desc;
+   ```
+
+   It reads lesson text only: no accounts, emails or progress.
+
+2. Download the result as JSON (or CSV) into `tools/ascendra-export/` in this repo. That folder is gitignored: the raw export is never committed.
+
+3. Convert it:
+
+   ```bash
+   npx tsx scripts/generate-study.mts import --file tools/ascendra-export/<file>.json
+   npx tsx scripts/generate-study.mts validate
+   ```
+
+   The command writes one `public/study/<course>.imported.json` per catalog course it found rows for and prints how many objectives each covers, the rows for courses outside the catalog, the rows whose objective text matched nothing, and any rows left out by validation. `--course saa-c03` limits it to one course. Re-running replaces the imported files.
+
+4. Commit the `*.imported.json` files. `build-catalog` keeps them.
+
 ## Honesty
 
 Every lesson footer in the app names the model and date from the file's metadata. The material is unofficial, not reviewed by any vendor, and finishing a course is not a credential. Objective status still comes only from answered questions and completed missions, never from reading.

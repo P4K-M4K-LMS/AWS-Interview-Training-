@@ -6,7 +6,7 @@ import { MODALITY_HELP, MODALITY_LABELS } from "../../content/study/links";
 import { LAB_LABELS, labExercisePath } from "../../content/study/labs";
 import { useProfile, useStudyStates } from "../../data/hooks";
 import { effectiveExplanationLevel } from "../../engine/learner/explanation";
-import { useStudyCourse, useStudyLessons } from "../../services/study/catalog";
+import { useCourseLessons, useStudyCourse } from "../../services/study/catalog";
 import { DEFAULT_SETTINGS } from "../../data/db";
 
 /** One objective: its lesson loop when generated content exists, otherwise what to do instead. */
@@ -14,7 +14,7 @@ export function StudyObjectivePage() {
   const { courseId, unitIndex, objectiveIndex } = useParams();
   const [params] = useSearchParams();
   const course = useStudyCourse(courseId);
-  const lessons = useStudyLessons(courseId);
+  const lessons = useCourseLessons(courseId);
   const states = useStudyStates();
   const profile = useProfile();
   if (course.status === "loading" || lessons.status === "loading") return <p className="muted text-sm">Loading…</p>;
@@ -29,7 +29,7 @@ export function StudyObjectivePage() {
   const unit = c.units.find((u) => u.index === Number(unitIndex));
   const objective = unit?.objectives.find((o) => o.index === Number(objectiveIndex));
   if (!unit || !objective) return <EmptyState title="Objective not found" body="This unit has no objective with that number." cta={{ to: `/study/${c.id}`, label: `Back to ${c.title}` }} />;
-  const lesson = lessons.status === "ready" ? lessons.data?.lessons.find((l) => l.objectiveId === objective.id) : undefined;
+  const lesson = lessons.status === "ready" ? lessons.data.byObjective.get(objective.id) : undefined;
   const mission = objective.link?.kind === "mission" ? MISSION_BY_ID.get(objective.link.missionId) : undefined;
   const state = states.get(objective.id);
   const review = params.get("review") === "1" && Boolean(state?.nextReviewAt);
@@ -56,7 +56,7 @@ export function StudyObjectivePage() {
           {lessons.message}
         </Callout>
       ) : lesson ? (
-        <LessonLoopPlayer objective={objective} lesson={lesson} state={state} level={effectiveExplanationLevel(profile)} review={review} generatedBy={{ model: lesson.model, generatedAt: lesson.generatedAt }} settings={profile?.settings ?? DEFAULT_SETTINGS} />
+        <LessonLoopPlayer key={`${objective.id}:${lesson.origin}`} objective={objective} lesson={lesson} state={state} level={effectiveExplanationLevel(profile)} review={review} generatedBy={{ model: lesson.model, generatedAt: lesson.generatedAt }} settings={profile?.settings ?? DEFAULT_SETTINGS} />
       ) : (
         <Callout kind="warn" title="No lesson generated yet">
           <span data-testid="no-lesson">The owner has not generated this course's lessons yet (see docs/STUDY_GENERATION.md).</span>
