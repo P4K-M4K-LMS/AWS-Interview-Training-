@@ -39,3 +39,6 @@ public/go/
 # Study generation scratch (scripts/generate-study.mts generate)
 scripts/study/.failures.json
 public/study/*.tmp
+
+# Raw exports from Ascendra's database; only the converted public/study/*.imported.json is committed.
+tools/ascendra-export/

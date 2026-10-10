@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import type { StudyCatalogIndex, StudyCourse, StudyLessonsFile } from "../../domain/types";
+import type { PlayableLesson, StudyCatalogIndex, StudyCourse, StudyImportedFile, StudyLessonsFile } from "../../domain/types";
 
 /**
  * Loads the Study catalog JSON from public/study on demand and memoises it
@@ -33,23 +33,52 @@ export async function loadCourse(courseId: string): Promise<StudyCourse> {
   return fetchJson<StudyCourse>(`${courseId}.json`);
 }
 
+/** A file that may not exist yet: null on a 404, or on the dev server's HTML fallback. */
+function fetchOptional<T>(file: string): Promise<T | null> {
+  let p = cache.get(file) as Promise<T | null> | undefined;
+  if (!p) {
+    p = fetch(`${base}${file}`).then(async (r) => {
+      if (r.status === 404) return null;
+      if (!r.ok) throw new Error(`Study lessons: ${file} returned ${r.status}`);
+      // Vite's dev server answers a missing file with the app's HTML page and a 200, not a 404.
+      if (!(r.headers.get("content-type") ?? "").includes("json")) return null;
+      return (await r.json()) as T;
+    });
+    cache.set(file, p);
+    p.catch(() => cache.delete(file));
+  }
+  return p;
+}
+
 /** Generated lessons for a course; null when none have been generated yet (404, or the dev server's HTML fallback). */
 export async function loadLessons(courseId: string): Promise<StudyLessonsFile | null> {
   if (!/^[a-z0-9-]+$/.test(courseId)) throw new Error("Study catalog: bad course id");
-  const key = `${courseId}.lessons.json`;
-  let p = cache.get(key) as Promise<StudyLessonsFile | null> | undefined;
-  if (!p) {
-    p = fetch(`${base}${key}`).then(async (r) => {
-      if (r.status === 404) return null;
-      if (!r.ok) throw new Error(`Study lessons: ${key} returned ${r.status}`);
-      // Vite's dev server answers a missing file with the app's HTML page and a 200, not a 404.
-      if (!(r.headers.get("content-type") ?? "").includes("json")) return null;
-      return (await r.json()) as StudyLessonsFile;
-    });
-    cache.set(key, p);
-    p.catch(() => cache.delete(key));
-  }
-  return p;
+  return fetchOptional<StudyLessonsFile>(`${courseId}.lessons.json`);
+}
+
+/** Lessons imported from Ascendra's database; null when none were imported for this course. */
+export async function loadImported(courseId: string): Promise<StudyImportedFile | null> {
+  if (!/^[a-z0-9-]+$/.test(courseId)) throw new Error("Study catalog: bad course id");
+  return fetchOptional<StudyImportedFile>(`${courseId}.imported.json`);
+}
+
+export interface CourseLessons {
+  generated: StudyLessonsFile | null;
+  imported: StudyImportedFile | null;
+  /** One playable lesson per objective: the generated one when it exists, otherwise the imported one. */
+  byObjective: Map<string, PlayableLesson>;
+}
+
+export function mergeLessons(generated: StudyLessonsFile | null, imported: StudyImportedFile | null): CourseLessons {
+  const byObjective = new Map<string, PlayableLesson>();
+  for (const l of imported?.lessons ?? []) byObjective.set(l.objectiveId, { origin: "imported", ...l });
+  for (const l of generated?.lessons ?? []) byObjective.set(l.objectiveId, { origin: "generated", ...l });
+  return { generated, imported, byObjective };
+}
+
+export async function loadCourseLessons(courseId: string): Promise<CourseLessons> {
+  const [generated, imported] = await Promise.all([loadLessons(courseId), loadImported(courseId)]);
+  return mergeLessons(generated, imported);
 }
 
 export type Loaded<T> = { status: "loading" } | { status: "ready"; data: T } | { status: "error"; message: string };
@@ -81,8 +110,8 @@ export function useStudyCourse(courseId: string | undefined): Loaded<StudyCourse
   return useLoaded(courseId ? () => loadCourse(courseId) : null, courseId ?? "");
 }
 
-export function useStudyLessons(courseId: string | undefined): Loaded<StudyLessonsFile | null> {
-  return useLoaded(courseId ? () => loadLessons(courseId) : null, `${courseId ?? ""}.lessons`);
+export function useCourseLessons(courseId: string | undefined): Loaded<CourseLessons> {
+  return useLoaded(courseId ? () => loadCourseLessons(courseId) : null, `${courseId ?? ""}.lessons`);
 }
 
 /** Test seam: forget everything fetched so far. */

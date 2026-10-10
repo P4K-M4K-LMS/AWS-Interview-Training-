@@ -16,15 +16,20 @@
  *       catalog, for promotion into src/content/study/links.ts by hand.
  *
  *   npx tsx scripts/generate-study.mts validate [--course saa-c03]
- *       Validates committed lessons files against the catalog.
+ *       Validates committed lessons and imported files against the catalog.
+ *
+ *   npx tsx scripts/generate-study.mts import --file <export.json|export.csv> [--course saa-c03]
+ *       Converts lessons exported from Ascendra's database into
+ *       public/study/<course>.imported.json. No network, no key.
  */
 import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
 import { buildCatalog, missionLinksModule, stableJson } from "./study/catalog.mts";
 import { generateCourse, readLessonsFile, reviewTable } from "./study/generate.mts";
-import type { StudyCourse, StudyLessonsFile } from "../src/domain/types.ts";
-import { validateLessonsFile } from "../src/services/study/validate.ts";
+import { convertRows, readRows } from "./study/importAscendra.mts";
+import type { StudyCatalogIndex, StudyCourse, StudyImportedFile, StudyLessonsFile } from "../src/domain/types.ts";
+import { validateImportedFile, validateLessonsFile } from "../src/services/study/validate.ts";
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..");
 const OUT = path.join(ROOT, "public", "study");
@@ -43,7 +48,7 @@ function has(args: string[], name: string): boolean {
 function buildCatalogCommand(): void {
   const built = buildCatalog();
   mkdirSync(OUT, { recursive: true });
-  for (const f of readdirSync(OUT)) if (f.endsWith(".json") && !f.endsWith(".lessons.json")) rmSync(path.join(OUT, f));
+  for (const f of readdirSync(OUT)) if (f.endsWith(".json") && !f.endsWith(".lessons.json") && !f.endsWith(".imported.json")) rmSync(path.join(OUT, f));
   writeFileSync(path.join(OUT, "index.json"), stableJson(built.index));
   for (const c of built.courses) writeFileSync(path.join(OUT, `${c.id}.json`), stableJson(c));
   const module = missionLinksModule(built);
@@ -118,18 +123,53 @@ function reviewCommand(args: string[]): void {
 
 function validateCommand(args: string[]): void {
   const only = flag(args, "course");
-  const files = readdirSync(OUT).filter((f) => f.endsWith(".lessons.json") && (!only || f === `${only}.lessons.json`));
+  const files = readdirSync(OUT).filter((f) => /\.(lessons|imported)\.json$/.test(f) && (!only || f.startsWith(`${only}.`)));
   let bad = 0;
   for (const f of files) {
-    const courseId = f.replace(/\.lessons\.json$/, "");
-    const file = JSON.parse(readFileSync(path.join(OUT, f), "utf8")) as StudyLessonsFile;
-    const problems = validateLessonsFile(file, loadCourse(courseId));
-    console.log(`${f}: ${file.lessons.length} lessons, ${file.scenarios.length} scenarios, ${problems.length} problem(s)`);
+    const courseId = f.replace(/\.(lessons|imported)\.json$/, "");
+    const course = loadCourse(courseId);
+    let problems;
+    if (f.endsWith(".imported.json")) {
+      const file = JSON.parse(readFileSync(path.join(OUT, f), "utf8")) as StudyImportedFile;
+      problems = validateImportedFile(file, course);
+      console.log(`${f}: ${file.lessons.length} imported lessons, ${problems.length} problem(s)`);
+    } else {
+      const file = JSON.parse(readFileSync(path.join(OUT, f), "utf8")) as StudyLessonsFile;
+      problems = validateLessonsFile(file, course);
+      console.log(`${f}: ${file.lessons.length} lessons, ${file.scenarios.length} scenarios, ${problems.length} problem(s)`);
+    }
     for (const p of problems.slice(0, 40)) console.log(`  ${p.where}: ${p.message}`);
     bad += problems.length;
   }
-  if (!files.length) console.log("no lessons files committed yet");
+  if (!files.length) console.log("no lessons or imported files committed yet");
   if (bad) process.exitCode = 1;
+}
+
+function importCommand(args: string[]): void {
+  const file = flag(args, "file");
+  if (!file) throw new Error("import needs --file <export.json|export.csv> (see docs/STUDY_GENERATION.md for the export query)");
+  const only = flag(args, "course");
+  const index = JSON.parse(readFileSync(path.join(OUT, "index.json"), "utf8")) as StudyCatalogIndex;
+  const courses = index.courses.filter((c) => !only || c.id === only).map((c) => loadCourse(c.id));
+  if (only && !courses.length) throw new Error(`no catalog course "${only}"`);
+  const rows = readRows(readFileSync(path.resolve(file), "utf8"));
+  const { files, report } = convertRows(rows, courses, new Date().toISOString().slice(0, 10));
+  for (const f of files) {
+    writeFileSync(path.join(OUT, `${f.courseId}.imported.json`), stableJson(f));
+    const learnable = courses.find((c) => c.id === f.courseId)!.units.flatMap((u) => u.objectives).filter((o) => o.kind === "objective").length;
+    console.log(`  ${f.courseId.padEnd(12)} ${String(f.lessons.length).padStart(3)} of ${learnable} objectives`);
+  }
+  console.log(`read ${report.rows} row(s): imported ${report.imported} lesson(s) into ${files.length} course file(s); ${report.duplicates} duplicate row(s) collapsed to the newest`);
+  const other = Object.entries(report.otherCourses);
+  if (other.length) console.log(`skipped ${other.reduce((a, [, n]) => a + n, 0)} row(s) for courses outside the catalog${only ? " or --course" : ""}: ${other.map(([c, n]) => `${c} (${n})`).join(", ")}`);
+  if (report.unmatched.length) {
+    console.log(`${report.unmatched.length} row(s) matched no objective text (the catalog may have changed since Ascendra wrote them):`);
+    for (const u of report.unmatched.slice(0, 20)) console.log(`  ${u.course}: ${u.objective}`);
+  }
+  if (report.invalid.length) {
+    console.log(`${report.invalid.length} problem(s) in rows left out:`);
+    for (const p of report.invalid.slice(0, 20)) console.log(`  ${p.where}: ${p.message}`);
+  }
 }
 
 const [command, ...rest] = process.argv.slice(2);
@@ -147,8 +187,11 @@ try {
     case "validate":
       validateCommand(rest);
       break;
+    case "import":
+      importCommand(rest);
+      break;
     default:
-      console.error("usage: npx tsx scripts/generate-study.mts <build-catalog|generate|review|validate> [options]");
+      console.error("usage: npx tsx scripts/generate-study.mts <build-catalog|generate|review|validate|import> [options]");
       process.exit(2);
   }
 } catch (e) {

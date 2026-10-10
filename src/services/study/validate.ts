@@ -1,4 +1,4 @@
-import type { StudyCourse, StudyLesson, StudyLessonsFile, StudyScenario } from "../../domain/types.ts";
+import type { StudyChoiceQuestion, StudyCourse, StudyImportedFile, StudyImportedLesson, StudyLesson, StudyLessonsFile, StudyObjective, StudyScenario } from "../../domain/types.ts";
 
 /**
  * Hand-written validation of a generated lessons file against its course.
@@ -14,7 +14,6 @@ const MIN_PLAIN_WORDS = 45;
 const MAX_PLAIN_WORDS = 140;
 const MIN_TEACH_WORDS = 80;
 const CHOICES = 4;
-const QUESTIONS = 4;
 
 export function words(s: string): number {
   return s.trim().split(/\s+/).filter(Boolean).length;
@@ -26,15 +25,41 @@ function nonEmpty(s: unknown): s is string {
   return typeof s === "string" && s.trim().length > 0;
 }
 
-export function validateLesson(lesson: StudyLesson, course: StudyCourse, out: Problem[]): void {
-  const where = `lesson ${lesson.objectiveId}`;
-  const objective = course.units.flatMap((u) => u.objectives).find((o) => o.id === lesson.objectiveId);
+function findObjective(course: StudyCourse, objectiveId: string, sourceHash: string, where: string, out: Problem[]): StudyObjective | undefined {
+  const objective = course.units.flatMap((u) => u.objectives).find((o) => o.id === objectiveId);
   if (!objective) {
     out.push({ where, message: "objective not in the catalog" });
-    return;
+    return undefined;
   }
   if (objective.kind === "bookkeeping") out.push({ where, message: "bookkeeping lines get no lesson" });
-  if (lesson.sourceHash !== objective.sourceHash) out.push({ where, message: `source hash ${lesson.sourceHash} does not match the catalog (${objective.sourceHash}); regenerate` });
+  if (sourceHash !== objective.sourceHash) out.push({ where, message: `source hash ${sourceHash} does not match the catalog (${objective.sourceHash}); regenerate` });
+  return objective;
+}
+
+/** The question bank: the roles in order, ids `${objectiveId}:q<n>`, four distinct choices, a key in range and a why. */
+function validateQuestions(questions: StudyChoiceQuestion[] | undefined, objectiveId: string, roles: Array<StudyChoiceQuestion["role"]>, rolesText: string, where: string, out: Problem[]): void {
+  if (!Array.isArray(questions) || questions.length !== roles.length) {
+    out.push({ where, message: `expected ${roles.length} questions` });
+    return;
+  }
+  if (questions.some((q, i) => q.role !== roles[i])) out.push({ where, message: `questions must be ${rolesText}` });
+  const prompts = new Set<string>();
+  questions.forEach((q, i) => {
+    const qw = `${where} q${i + 1}`;
+    if (q.id !== `${objectiveId}:q${i + 1}`) out.push({ where: qw, message: `id should be ${objectiveId}:q${i + 1}` });
+    if (!nonEmpty(q.prompt)) out.push({ where: qw, message: "empty prompt" });
+    if (prompts.has(q.prompt)) out.push({ where: qw, message: "duplicate prompt" });
+    prompts.add(q.prompt);
+    if (!Array.isArray(q.choices) || q.choices.length !== CHOICES || !q.choices.every(nonEmpty)) out.push({ where: qw, message: `need ${CHOICES} non-empty choices` });
+    else if (new Set(q.choices.map((c) => c.trim().toLowerCase())).size !== CHOICES) out.push({ where: qw, message: "choices repeat" });
+    if (!Number.isInteger(q.correctIndex) || q.correctIndex < 0 || q.correctIndex >= CHOICES) out.push({ where: qw, message: "correctIndex out of range" });
+    if (!nonEmpty(q.why)) out.push({ where: qw, message: "empty why" });
+  });
+}
+
+export function validateLesson(lesson: StudyLesson, course: StudyCourse, out: Problem[]): void {
+  const where = `lesson ${lesson.objectiveId}`;
+  if (!findObjective(course, lesson.objectiveId, lesson.sourceHash, where, out)) return;
   if (!Number.isInteger(lesson.promptVersion) || lesson.promptVersion < 1) out.push({ where, message: "promptVersion missing" });
   if (!nonEmpty(lesson.model) || !nonEmpty(lesson.generatedAt)) out.push({ where, message: "model and generatedAt required" });
   for (const field of ["plain", "guessPrompt", "teach", "explainPrompt", "modelAnswer"] as const) {
@@ -45,24 +70,7 @@ export function validateLesson(lesson: StudyLesson, course: StudyCourse, out: Pr
   if (/`/.test(lesson.plain ?? "")) out.push({ where, message: "plain contains code formatting" });
   if (words(lesson.teach ?? "") < MIN_TEACH_WORDS) out.push({ where, message: `teach is under ${MIN_TEACH_WORDS} words` });
   if (!Array.isArray(lesson.rubricPoints) || lesson.rubricPoints.length < 2 || lesson.rubricPoints.length > 6 || !lesson.rubricPoints.every(nonEmpty)) out.push({ where, message: "rubricPoints must be 2-6 non-empty strings" });
-  if (!Array.isArray(lesson.questions) || lesson.questions.length !== QUESTIONS) {
-    out.push({ where, message: `expected ${QUESTIONS} questions` });
-  } else {
-    const roles = lesson.questions.map((q) => q.role);
-    if (roles[0] !== "fade" || roles.slice(1).some((r) => r !== "solo")) out.push({ where, message: "questions must be one fade then three solo" });
-    const prompts = new Set<string>();
-    lesson.questions.forEach((q, i) => {
-      const qw = `${where} q${i + 1}`;
-      if (q.id !== `${lesson.objectiveId}:q${i + 1}`) out.push({ where: qw, message: `id should be ${lesson.objectiveId}:q${i + 1}` });
-      if (!nonEmpty(q.prompt)) out.push({ where: qw, message: "empty prompt" });
-      if (prompts.has(q.prompt)) out.push({ where: qw, message: "duplicate prompt" });
-      prompts.add(q.prompt);
-      if (!Array.isArray(q.choices) || q.choices.length !== CHOICES || !q.choices.every(nonEmpty)) out.push({ where: qw, message: `need ${CHOICES} non-empty choices` });
-      else if (new Set(q.choices.map((c) => c.trim().toLowerCase())).size !== CHOICES) out.push({ where: qw, message: "choices repeat" });
-      if (!Number.isInteger(q.correctIndex) || q.correctIndex < 0 || q.correctIndex >= CHOICES) out.push({ where: qw, message: "correctIndex out of range" });
-      if (!nonEmpty(q.why)) out.push({ where: qw, message: "empty why" });
-    });
-  }
+  validateQuestions(lesson.questions, lesson.objectiveId, ["fade", "solo", "solo", "solo"], "one fade then three solo", where, out);
   const allText = [lesson.plain, lesson.teach, lesson.guessPrompt, lesson.explainPrompt, lesson.modelAnswer, ...(lesson.rubricPoints ?? []), ...(lesson.questions ?? []).flatMap((q) => [q.prompt, q.why, ...(q.choices ?? [])])].join("\n");
   for (const re of FORBIDDEN) if (re.test(allText)) out.push({ where, message: `text matches a forbidden claim (${re.source})` });
   if (lesson.suggested) {
@@ -104,6 +112,30 @@ export function validateLessonsFile(file: StudyLessonsFile, course: StudyCourse)
     if (seenUnits.has(s.unitId)) out.push({ where: `scenario ${s.unitId}`, message: "duplicate scenario" });
     seenUnits.add(s.unitId);
     validateScenario(s, course, out);
+  }
+  return out;
+}
+
+/** An imported Ascendra lesson: the fields it has, one fade and one solo question, no forbidden claims. */
+export function validateImportedLesson(lesson: StudyImportedLesson, course: StudyCourse, out: Problem[]): void {
+  const where = `imported ${lesson.objectiveId}`;
+  if (!findObjective(course, lesson.objectiveId, lesson.sourceHash, where, out)) return;
+  if (!nonEmpty(lesson.model) || !nonEmpty(lesson.generatedAt)) out.push({ where, message: "model and generatedAt required" });
+  for (const field of ["guessPrompt", "teach"] as const) if (!nonEmpty(lesson[field])) out.push({ where, message: `${field} is empty` });
+  validateQuestions(lesson.questions, lesson.objectiveId, ["fade", "solo"], "one fade then one solo", where, out);
+  const allText = [lesson.teach, lesson.guessPrompt, ...(lesson.questions ?? []).flatMap((q) => [q.prompt, q.why, ...(q.choices ?? [])])].join("\n");
+  for (const re of FORBIDDEN) if (re.test(allText)) out.push({ where, message: `text matches a forbidden claim (${re.source})` });
+}
+
+export function validateImportedFile(file: StudyImportedFile, course: StudyCourse): Problem[] {
+  const out: Problem[] = [];
+  if (file.courseId !== course.id) out.push({ where: "file", message: `courseId ${file.courseId} is not ${course.id}` });
+  if (file.imported?.source !== "ascendra" || !nonEmpty(file.imported?.importedAt) || !Array.isArray(file.imported?.models)) out.push({ where: "file", message: "imported metadata missing" });
+  const seen = new Set<string>();
+  for (const l of file.lessons ?? []) {
+    if (seen.has(l.objectiveId)) out.push({ where: `imported ${l.objectiveId}`, message: "duplicate lesson" });
+    seen.add(l.objectiveId);
+    validateImportedLesson(l, course, out);
   }
   return out;
 }
